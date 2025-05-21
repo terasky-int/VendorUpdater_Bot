@@ -9,9 +9,9 @@ embedding model: bedrock ...
 build as a contenerized app.  
 
 ## app description: ##
-this app will listen to an email inbox (provided in config file),
-this inbox will include updates from our vendords and buisness partners.
-the app will extract all data from the email, ingest it to be ai-accessable, enrich ti and finally index it.
+this app will listen to an email inbox (provided in config file),  
+this inbox will include updates from our vendords and buisness partners.  
+the app will extract all data from the email, ingest it to be ai-accessable, enrich it and finally index it.
 
 this data should be later available as a datasource for ai-agents to provide information about a specific vendor or product, and will be able to suggest better solutions, more attractive pricings etc.
 
