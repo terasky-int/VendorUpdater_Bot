@@ -1,12 +1,12 @@
 # Vendor Updater APP #
 
 ## app tech stack: ##
-language: python
-vector_db: chromaDB
-relational_db: sqlite
-llms: bedrock Claude
-embedding model: bedrock ...
-build as a contenerized app.
+language: python  
+vector_db: chromaDB  
+relational_db: sqlite  
+llms: bedrock Claude  
+embedding model: bedrock ...  
+build as a contenerized app.  
 
 ## app description: ##
 this app will listen to an email inbox (provided in config file),
@@ -17,13 +17,13 @@ this data should be later available as a datasource for ai-agents to provide inf
 
 ## pipeline: ##
 
-1. read email account inbox:
-    a. fetch unread emails
-    b. retrieve email metadata
-    b. retrieve email content
-    c. retrieve email attachments
-2. convert all collected data to plain text (supported files: doc,ppt,xls,pdf,images,txt).
-3. save converted data to chromadb in a raw data collection.
+1. read email account inbox:  
+    a. fetch unread emails  
+    b. retrieve email metadata  
+    b. retrieve email content  
+    c. retrieve email attachments  
+2. convert all collected data to plain text (supported files: doc,ppt,xls,pdf,images,txt).  
+3. save converted data to chromadb in a raw data collection.  
 4. embed/vectorize the collected data (metadata: timestamp,sender,subject,vendor)
 5. index raw data and extract metadata such as: Vendor,Type(update,fix,valnerability,news,event,deal,sale,info,other),Product,etc.
 6. move processed email to used folder
