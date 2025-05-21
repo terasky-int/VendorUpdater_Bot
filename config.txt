@@ -1,9 +1,0 @@
-email_addr: test@terasky.com
-email_user: email_user
-email_pass: email_pass
-known_vendors_security: Hashicorp,Aqua,Palo Alto,Prompt Security,Snyk,Firefly
-known_vendors_storage: Dell,Pure,Lenovo
-known_vendors_backup: Veem,DataDomain,...
-known_vendors_euc: ...
-known_vendors_k8s:
-known_vendors_cloud: aws,gcp,azure,oracle

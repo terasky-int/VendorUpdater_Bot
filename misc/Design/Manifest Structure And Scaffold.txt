@@ -1,0 +1,24 @@
+project_root/
+├── config/                # YAML config lives here
+├── data/                  # Artifacts by processing step
+│   ├── raw_emails/        
+│   ├── clean_text/
+│   ├── metadata/
+│   ├── chunks/
+│   ├── embeddings/
+│   └── index/
+├── logs/                  # Logs for debugging
+├── src/                   # Core modules
+│   ├── harvest.py
+│   ├── normalize.py
+│   ├── enrich.py
+│   ├── classify.py
+│   ├── chunker.py
+│   ├── embedder.py
+│   ├── indexer.py
+│   ├── manifest.py
+│   └── evaluate.py
+├── main.py                # Entrypoint: CLI/cron-callable
+├── Dockerfile             # Containerization
+├── requirements.txt
+└── cronjob.sh             # Optional cron execution script

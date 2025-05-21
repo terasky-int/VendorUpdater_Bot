@@ -1,4 +1,9 @@
-beautifulsoup4==4.12.2
-imaplib2==3.6
-langdetect==1.0.9
-chromadb>=0.4.18
+imapclient
+pyyaml
+langdetect
+textract
+
+# beautifulsoup4==4.12.2
+# imaplib2==3.6
+# langdetect==1.0.9
+# chromadb>=0.4.18

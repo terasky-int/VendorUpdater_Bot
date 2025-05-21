@@ -1,0 +1,40 @@
+// # Example structure for manifest.jsonl entries
+// 📘 manifest.jsonl Entry Structure
+// This is a single-line JSON object per indexed email, containing:
+// Email metadata
+// Classification tags
+// Chunk list with IDs, text, and optional embedding references
+// Timestamps and status tracking
+// 🔹 This supports:
+// Full traceability of how a document was processed
+// Index rebuilds
+// Debugging and versioning
+
+
+{
+  "email_id": "<unique_msg_id>",
+  "hash": "<sha256_of_email_and_attachments>",
+  "subject": "Important Update: New Product Launch",
+  "sender": "updates@vendor.com",
+  "received_at": "2025-05-21T10:32:00Z",
+  "vendor": "VendorName",
+  "product": ["ProductX"],
+  "type": ["product update", "announcement"],
+  "language": "en",
+  "chunks": [
+    {
+      "chunk_id": "email-<uuid>-chunk-0",
+      "text": "...cleaned and chunked text...",
+      "embedding_vector": "<vector_ref_or_id>",
+      "position": 0
+    },
+    {
+      "chunk_id": "email-<uuid>-chunk-1",
+      "text": "...",
+      "embedding_vector": "<vector_ref_or_id>",
+      "position": 1
+    }
+  ],
+  "indexed_at": "2025-05-21T12:00:00Z",
+  "status": "indexed"
+}

@@ -1,0 +1,50 @@
+email:
+  imap_server: imap.example.com
+  email_address: user@example.com
+  password: yourpassword  # Secure via .env or secrets manager in prod
+  folder: INBOX
+  mark_as_read: true
+  fetch_interval_minutes: 120
+
+classification:
+  labels:
+    marketing:
+      - promo
+      - event
+      - webinar
+      - announcement
+    security:
+      - vulnerability
+      - patch
+      - maintenance
+    technical:
+      - support
+      - product update
+      - whitepaper
+  multi_label: true
+
+data_processing:
+  language_support:
+    - en
+    - he
+  chunk_size_tokens: 512
+  chunk_overlap: 20
+  save_intermediate_artifacts: true
+
+embedding:
+  provider: aws_bedrock
+  model: titan
+
+indexing:
+  vector_db: chromadb
+  hybrid_search: true
+  manifest_path: ./index_manifest.jsonl
+
+debug:
+  enabled: true
+  verbose_logging: true
+  save_all_artifacts: true
+  evaluation:
+    enabled: true
+    top_k: 3
+    show_confidence_score: true
