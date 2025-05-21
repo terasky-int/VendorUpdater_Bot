@@ -3,7 +3,7 @@ import email
 from email.header import decode_header
 from bs4 import BeautifulSoup
 
-def fetch_unread_emails(username, password, mailbox="INBOX", max_emails=5):
+def fetch_unread_emails(username, password, mailbox="INBOX", max_emails=100):
     # Connect to Gmail's IMAP server
     imap_server = "imap.gmail.com"
     mail = imaplib.IMAP4_SSL(imap_server)
@@ -38,10 +38,27 @@ def fetch_unread_emails(username, password, mailbox="INBOX", max_emails=5):
         # Decode email subject
         subject, encoding = decode_header(msg["Subject"])[0]
         if isinstance(subject, bytes):
-            subject = subject.decode(encoding or "utf-8")
+            try:
+                # Try with the specified encoding
+                if encoding:
+                    subject = subject.decode(encoding)
+                else:
+                    subject = subject.decode("utf-8")
+            except (LookupError, UnicodeDecodeError):
+                # Fallback for Hebrew and other encodings
+                try:
+                    if encoding == "iso-8859-8-i":
+                        subject = subject.decode("iso-8859-8")
+                    else:
+                        subject = subject.decode("utf-8", errors="ignore")
+                except:
+                    subject = subject.decode("utf-8", errors="ignore")
 
         # Get sender information
         from_header = msg.get("From", "")
+        
+        # Get date information
+        date_header = msg.get("Date", "")
 
         # Extract body
         body = ""
@@ -62,7 +79,8 @@ def fetch_unread_emails(username, password, mailbox="INBOX", max_emails=5):
         result.append({
             "subject": subject,
             "body": body.strip(),
-            "from": from_header
+            "from": from_header,
+            "date": date_header
         })
 
     mail.logout()

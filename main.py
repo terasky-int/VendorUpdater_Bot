@@ -1,13 +1,16 @@
 import email_handling
+import os
+
+CHROMA_DB_PATH = "./chroma_db"
 
 def read_email_account():
     # a. fetch unread emails using OAuth2 authentication
     emails = email_handling.fetch_unread_emails("davidplayground333@gmail.com", "wbqq qntg rxys fwid")
     # b. retrieve email metadata
-    metadata = [{"subject": email["subject"], "sender": email["from"]} for email in emails]
-    # b. retrieve email content
+    metadata = [{"subject": email["subject"], "sender": email["from"], "date": email.get("date", "")} for email in emails]
+    # c. retrieve email content
     content = [email["body"] for email in emails]
-    # c. retrieve email attachments
+    # d. retrieve email attachments
     attachments = [email.get("attachments", []) for email in emails]
     return metadata, content, attachments
 
@@ -19,17 +22,110 @@ def move_used_email_to_archive():
 
 def save_raw_data_to_chromadb(data):
     # save converted data to chromadb in a raw data collection.
-    move_used_email_to_archive()
-    pass
+    import chromadb
+    import uuid
+    import json
+    from datetime import datetime
+    
+    # Initialize ChromaDB client
+    os.makedirs(CHROMA_DB_PATH, exist_ok=True)
+    client = chromadb.PersistentClient(path=CHROMA_DB_PATH)
+    
+    # Get or create collection for raw data
+    collection = client.get_or_create_collection(name="raw_email_data")
+    
+    # Generate unique ID for this data entry
+    doc_id = str(uuid.uuid4())
+    
+    # Extract email metadata
+    email_metadata = data.get("metadata", [])
+    if email_metadata and len(email_metadata) > 0:
+        # Use the first email's metadata as the base metadata
+        base_metadata = {
+            "sender": email_metadata[0].get("sender", ""),
+            "subject": email_metadata[0].get("subject", ""),
+            "date": email_metadata[0].get("date", ""),
+            "processed_at": datetime.now().isoformat()
+        }
+    else:
+        base_metadata = {"processed_at": datetime.now().isoformat()}
+    
+    # Store text content with email metadata
+    if data["text"]:
+        collection.add(
+            documents=data["text"],
+            metadatas=[{**base_metadata, "type": "text"} for _ in data["text"]],
+            ids=[f"{doc_id}_text_{i}" for i in range(len(data["text"]))]
+        )
+    
+    # Store links as a single document with email metadata
+    if data["links"]:
+        collection.add(
+            documents=[json.dumps(data["links"])],
+            metadatas=[{**base_metadata, "type": "links"}],
+            ids=[f"{doc_id}_links"]
+        )
+    
+    # Store other data types with email metadata
+    for data_type in ["attachments", "images", "tables", "code", "audio", "video", "other"]:
+        if data[data_type]:
+            collection.add(
+                documents=[json.dumps(data[data_type])],
+                metadatas=[{**base_metadata, "type": data_type}],
+                ids=[f"{doc_id}_{data_type}"]
+            )
+    
+    # move_used_email_to_archive()
+    print(f"Data saved to ChromaDB with ID: {doc_id}")
+    print(f"Email metadata: {base_metadata}")
+    return doc_id
 
 def normaliaze_and_clean_data(data): 
     # normalize and clean data
-    # remove duplicates
-    # remove empty data
-    # remove non-text data
-    # keep only English and Hebrew text
-    # remove non-relevant data
-    pass
+    import re
+    from langdetect import detect, LangDetectException
+    
+    clean_data = {
+        "text": [],
+        "attachments": data["attachments"],
+        "links": list(set(data["links"])),  # Remove duplicate links
+        "images": data["images"],
+        "tables": data["tables"],
+        "code": data["code"],
+        "audio": data["audio"],
+        "video": data["video"],
+        "other": data["other"],
+        "metadata": data.get("metadata", [])  # Preserve metadata
+    }
+    
+    # Process text content
+    seen_texts = set()  # For duplicate detection
+    for text in data["text"]:
+        if not text or not text.strip():
+            continue  # Skip empty content
+            
+        # Basic cleaning
+        text = text.strip()
+        
+        # Remove excessive whitespace
+        text = re.sub(r'\s+', ' ', text)
+        
+        # Skip if duplicate
+        if text in seen_texts:
+            continue
+        seen_texts.add(text)
+        
+        # Check if text is English or Hebrew
+        try:
+            lang = detect(text)
+            if lang in ['en', 'he', 'iw']:  # 'iw' is an old code for Hebrew
+                clean_data["text"].append(text)
+        except LangDetectException:
+            # If language detection fails, keep the text if it contains Hebrew characters
+            if re.search(r'[\u0590-\u05FF]', text):
+                clean_data["text"].append(text)
+    
+    return clean_data
 
 def extract_text(data):
     # extract data from email
@@ -43,7 +139,8 @@ def extract_text(data):
         "code": [],
         "audio": [],
         "video": [],
-        "other": []
+        "other": [],
+        "metadata": metadata  # Store the email metadata
     }
     
     # a. extract text from email
@@ -88,10 +185,10 @@ def extract_text(data):
 def convert_to_text(data):
     # supported files: doc,ppt,xls,pdf,images,txt
     plainText = extract_text(data)
-    print("plainText", plainText)
 
     # save converted data to chromadb in a raw data collection.
-    clean_data = normaliaze_and_clean_data(data)
+    clean_data = normaliaze_and_clean_data(plainText)
+    
     save_raw_data_to_chromadb(clean_data)
     pass
 
@@ -113,7 +210,7 @@ def log_new_email():
 
 if __name__ == "__main__":
     data = read_email_account()
-    print("data", data)
+    
     raw_data = convert_to_text(data)
     # embed_new_data(raw_data)
     # enrich_and_index()    
