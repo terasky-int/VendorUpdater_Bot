@@ -1,30 +1,31 @@
-# Vendor Updater APP #
+# Gmail OAuth2 Setup Instructions
 
-## app tech stack: ##
-language: python  
-vector_db: chromaDB  
-relational_db: sqlite  
-llms: bedrock Claude  
-embedding model: bedrock ...  
-build as a contenerized app.  
+To use OAuth2 authentication with Gmail, follow these steps:
 
-## app description: ##
-this app will listen to an email inbox (provided in config file),  
-this inbox will include updates from our vendords and buisness partners.  
-the app will extract all data from the email, ingest it to be ai-accessable, enrich it and finally index it.
+1. **Create a Google Cloud Project**:
+   - Go to [Google Cloud Console](https://console.cloud.google.com/)
+   - Create a new project
+   - Enable the Gmail API for your project
 
-this data should be later available as a datasource for ai-agents to provide information about a specific vendor or product, and will be able to suggest better solutions, more attractive pricings etc.
+2. **Create OAuth2 Credentials**:
+   - Go to "APIs & Services" > "Credentials"
+   - Click "Create Credentials" > "OAuth client ID"
+   - Select "Desktop app" as the application type
+   - Name your client and click "Create"
+   - Download the credentials JSON file
 
-## pipeline: ##
+3. **Save the Credentials File**:
+   - Rename the downloaded file to `credentials.json`
+   - Place it in the root directory of this project
 
-1. read email account inbox:  
-    a. fetch unread emails  
-    b. retrieve email metadata  
-    b. retrieve email content  
-    c. retrieve email attachments  
-2. convert all collected data to plain text (supported files: doc,ppt,xls,pdf,images,txt).  
-3. save converted data to chromadb in a raw data collection.  
-4. embed/vectorize the collected data (metadata: timestamp,sender,subject,vendor)
-5. index raw data and extract metadata such as: Vendor,Type(update,fix,valnerability,news,event,deal,sale,info,other),Product,etc.
-6. move processed email to used folder
-7. log the new email processed in sqlite.
+4. **Install Dependencies**:
+   ```
+   pip install -r requirements.txt
+   ```
+
+5. **Run the Application**:
+   - The first time you run the application, it will open a browser window asking you to authorize the application
+   - After authorization, a token will be saved locally for future use
+
+## Note
+The token is stored in `token.pickle` and will be used for subsequent runs until it expires.
