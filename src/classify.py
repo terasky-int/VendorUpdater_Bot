@@ -1,6 +1,7 @@
 import logging
 import boto3
 import json
+import re
 
 def label_content(enriched_data, config):
     model_id = config['embedding']['model']
@@ -60,9 +61,17 @@ def generate_prompt(data, config):
 
 def parse_labels_from_output(output):
     try:
-        labels = json.loads(output)
-        if isinstance(labels, list):
-            return labels
-        return [labels]
-    except:
+        # Look for a JSON list inside the output string
+        match = re.search(r'\[(.*?)\]', output, re.DOTALL)
+        if match:
+            content = match.group(0)
+            labels = json.loads(content)
+            if isinstance(labels, list):
+                return labels
+        else:
+            # fallback: try to split comma-separated string
+            raw = output.strip().lower()
+            return [label.strip() for label in raw.split(',') if label.strip()]
+    except Exception as e:
+        logging.warning(f"Failed to parse LLM output: {e}")
         return []

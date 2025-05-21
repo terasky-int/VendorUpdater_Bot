@@ -20,15 +20,29 @@ def clean_email(raw_path, config):
         for part in msg.walk():
             content_type = part.get_content_type()
             disposition = str(part.get_content_disposition())
+            charset = part.get_content_charset()
+
+            # Handle unknown or broken encodings
+            if charset and charset.lower() == 'iso-8859-8-i':
+                charset = 'iso-8859-8'
 
             if content_type == "text/plain" and disposition != "attachment":
-                body_text += part.get_content().strip() + "\n"
+                try:
+                    text = part.get_content()
+                except Exception:
+                    payload = part.get_payload(decode=True)
+                    text = payload.decode(charset or 'utf-8', errors='ignore') if payload else ''
+                body_text += text.strip() + "\n"
             elif part.get_filename():
                 text = extract_attachment_text(part, config)
                 if text:
                     attachments_text.append(text)
     else:
-        body_text = msg.get_content().strip()
+        try:
+            body_text = msg.get_content().strip()
+        except Exception:
+            payload = msg.get_payload(decode=True)
+            body_text = payload.decode('utf-8', errors='ignore') if payload else ''
 
     full_text = subject + "\n" + body_text + "\n" + "\n".join(attachments_text)
 
