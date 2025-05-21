@@ -1,0 +1,479 @@
+1. Harvest:
+What are your data sources?
+Emails
+
+source is semi-structured, email is structured, the data might include msg body, and various doc attachmants like docs,pps,xls,pdf..
+
+Do you need change detection or incremental harvesting?
+will run every X hours and get all unread emails.
+
+2. Normalize:
+What formats need conversion or cleanup?
+email content with various attachments mostly word,xls,pdf,clear text,ppt in mostly english but need to suppot hebrew too
+
+Is document segmentation important?
+the emails are all incomming vendor emails that might contain:
+updates, invites, new releases, events, sale promotions, and other similar, not sure what segmentation will be most valuable in this case.
+
+Do you need to resolve references or links?
+dont think so, at this stage. might be required on later iterations of the app.
+
+3. Enrich:
+What metadata is necessary for retrieval or filtering?
+email metadata:
+sender,
+date recieved,
+email subject,
+expiration (relevant to the email content like a special limited deal, or event, etc)
+topic,
+vendor (might be extracted from senders email domain)
+product (discussed in the email),
+i would like for the ai-agent that will condume this, have an optimized way to reference only a specific vendor,product,type emails,
+any other ideas for classification?
+
+Do you need any NLP enrichments?
+yes
+Named Entity Recognition? Topic modeling?
+
+Is language detection or translation needed?
+Are you supporting multilingual documents?
+should support english -primary and hebrew -secondary
+
+4. Embed:
+What’s your chunking strategy?
+Fixed tokens? Semantic breaks? Sliding windows?
+dont know - need leading questions to define
+
+Which embedding model(s) will you use?
+dont know - need leading questions to define
+i do have access to aws bedrock models, and if there is a uniqe value of using local models, that also might be an option, but if local model is chosen,should be light weight and not requiring gpu
+
+Are you preserving chunk-to-document mapping?
+Do you store full document context along with the chunk?
+dont know - need leading questions to define
+
+5. Index:
+Which database fits your search needs?
+ChromaDB
+
+Do you need hybrid search?
+Vector + keyword or metadata filters?
+i think so, validating the semantic search with metadata can be more accurate.
+
+Will you handle versioning or re-indexing?
+How do you update or invalidate old entries?
+dont know - need leading questions to define
+
+6. Optimize for LLMs:
+How will you test retrieval relevance?
+dont know - need leading questions or suggestions to define
+
+Golden set of questions? Manual review? RAG eval tools?
+Will you apply re-ranking or summarization post-retrieval?
+e.g., use an LLM to sort results by answer likelihood?
+Are you optimizing prompts based on data structure?
+e.g., custom system prompts based on chunk source?
+dont know - need leading questions or suggestions to define
+
+7. Other Considerations:
+Security: Are there sensitive documents? Need encryption or access control?
+not at this stage.
+
+Monitoring: Do you need alerts for harvest failures, low embedding quality, or index corruption?
+not at this stage
+
+Scalability: How much data? Will it grow over time? Need batch processing or streaming?
+dont know - need leading questions or suggestions to define
+preferably should work as a container
+
+
+
+
+
+
+
+
+
+ANSWER:
+Refined Pipeline Flow
+Based on your input, the revised flow becomes:
+
+Harvest → Normalize → Enrich → Classify → Chunk → Embed → Index → Optimize for LLM
+
+📨 1. Harvest (Emails)
+Your Setup:
+Source: IMAP (Gmail, Outlook, etc.)
+Criteria: Pull all unread emails with attachments
+Schedule: Cron-based (X hours)
+Tag processed emails (e.g., move to a "digested" folder or mark as read)
+
+Extract:
+Email metadata
+Plain text from body (strip signatures/HTML)
+Attachments (convert to text)
+
+
+🧹 2. Normalize
+Formats:
+DOCX, XLS(X), PDF, PPT, HTML/MSG → Clean Text
+Languages: English + Hebrew (ensure UTF-8 support)
+Recommendations:
+Use libraries:
+textract or unstructured for parsing diverse formats
+langdetect for detecting language (ensure fallback)
+
+Normalize structure:
+Remove headers/footers
+Flatten tables/slides into sentence-like blocks
+
+Follow-up:
+⤴️ Would you like to segment based on:
+Paragraphs per topic? - not sure
+Time-based (e.g., email body first vs attachment)? - not sure
+Entity mentions (e.g., each section that talks about a product/vendor)? - definatly key identifires (vendor, product, type of content)
+
+🧠 3. Enrich
+Your Plan:
+Extract:
+date and time,Sender, subject, vendor, product, content classification(might require llm for content classify)
+Expiration date (if exists) (i think that it needs an llm to determin)
+Topic type (e.g., promotion, invite, release, update, valnerability, patch, etc.)
+
+Suggestions:
+NER:
+what is ner?
+use Bedrock Claude/LLM for vendor/product extraction if not found in text or sender email domain
+
+Classification:
+Train a simple classifier for:
+type = ["event", "release", "promo", "news", "support", "valnerability", "patch"]
+
+Additional Ideas:
+Detect urgency (e.g., "last chance", "limited offer") - nice but optional
+Detect dates related to events (for filtering expired info) - yes
+
+🧩 4. Chunking & Embedding
+Chunking — You’re unsure. Here's how to choose:
+📌 Key Questions:
+Do attachments or email bodies contain multi-topic sections?
+not sure.
+
+Do you want the LLM to retrieve a full concept, even if long?
+not sure.
+
+Recommendations:
+Start with:
+Fixed-size token chunks (e.g., 512–750 tokens) with 20% overlap
+sounds good
+
+Refine to:
+Semantic chunking using LangChain’s text splitter or unstructured
+
+Embedding — You’re unsure. Here's how to choose:
+📌 Key Questions:
+Is AWS Bedrock sufficient in your case?
+you tell me.
+
+Prefer local? dont have a preferance, what are the pros/cons ?
+
+Recommendations:
+Start with:
+Titan Embeddings (fully managed, scalable)
+Keep fallback to:
+bge-small locally via sentence-transformers if needed
+sounds good
+Preserve document ↔ chunk mapping for traceability.
+
+📇 5. Index
+Your Plan:
+Use ChromaDB
+
+Suggestions:
+Yes to hybrid search:
+Store: embedding + full text + metadata
+Allow: keyword filter on vendor, product, type, date_range
+Leading Questions:
+Will documents expire? (e.g., event passed, sale expired)
+probably in some cases. so lets consider periodically re-harvest and update index
+
+How to re-index?
+Keep an index manifest (JSON) per run with hashes → detect content changes for update/delete logic.
+
+🧪 6. LLM Optimization
+
+Retrieval Relevance Testing
+📌 Questions:
+Can you create a set of test queries?
+e.g., "Show all Dell product releases from May"
+i can work on some example queries that might be highly relevant or popular.
+
+Do you expect the LLM to retrieve only one answer, or a set of summaries?
+might be a set, i might consider multiple iterations - with one answer at a time.
+
+Techniques:
+Manual: Review retrieval output vs expected
+Automated: Use LangChain's RAG evaluator or ask the LLM to self-grade answers
+not sure- please advise
+
+Prompt Optimization:
+Include source metadata in the context (e.g., “Dell – Release – 2024-05-01”)
+
+Tailor system prompt:
+“You are a knowledge assistant helping summarize vendor email updates. Focus on vendor, product, and type.”
+
+🚀 7. Scalability & Execution
+You mentioned:
+Containerized
+Run via cron
+
+✅ Excellent. Add:
+--dry-run mode for testing
+
+Logging JSON files for post-run QA
+Optional Slack/email alert (e.g., 0 results, embedding failure)
+might be a good option - for a later phase, i can work with a local txt log file at this stage
+
+Key Next Steps:
+Decide:
+Titan embeddings or local model
+lets start with tiatn unless not sugested by you
+Chunking strategy (start fixed, plan for semantic)
+
+Define:
+Metadata fields per document
+Classification labels and NER targets
+
+Prototype:
+Single email + attachment run-through
+Save intermediate steps (text, metadata, chunk, vector)
+
+Would you like me to generate a working folder structure, Python module blueprint, and starter scripts (cron-ready + Dockerized)?
+lets keep working on the definitions and boundaries for this app, please ask more relevant questions to focus even more.
+
+
+
+
+
+
+*****
+
+
+Perfect — your responses help solidify the foundation. Before jumping into implementation, let’s now zoom in further on 4 critical areas to finalize the core design:
+
+🔍 Section 1: NER (Named Entity Recognition) and Classification
+🤖 Tools:
+SpaCy (fast, local)
+Bedrock LLM (Claude or Titan Text models) – better for fuzzy, informal content
+Option: run NER → classify → extract in one Bedrock prompt
+sounds good, i dont really understand the meaning, please advise.
+
+✅ Follow-up Question:
+Do you want NER as a standalone step, or combined with classification inside an LLM prompt?
+what would be more effectice and accurate ?
+
+Do you want to build a small dataset for fine-tuning a classifier later (optional)?
+i dont really understand the meaning, please advise.
+
+🧠 Section 2: Classification Labels (and Future Expandability)
+You've listed:
+type = ["event", "release", "promo", "news", "support", "vulnerability", "patch"]
+🔍 Suggestions to Expand/Refine:
+Add: "product update", "webinar", "whitepaper", "announcement", "maintenance"
+sure, i like it.
+
+Group into buckets:
+marketing: ["promo", "event", "webinar", "announcement"]
+security: ["vulnerability", "patch", "maintenance"]
+technical: ["support", "product update", "whitepaper"]
+- perfect
+
+🧩 Follow-up Question:
+Would you like to maintain these labels in a config file so you can easily update them without changing the code?
+yes, also add the email address and password to the config, and i can also add a list of products, but this will not be complete
+Do you want multi-label classification? (e.g., "promo" + "product update")
+if it adds significant value, sure.
+
+🪜 Section 3: Embedding Model Choice - Titan vs Local
+You're starting with Titan – good default.
+
+🧩 Follow-up Question:
+Do you want to benchmark Titan vs local on your real data later for accuracy/cost tradeoffs?
+no, lets start with titan for simplicity.
+
+Will you need to encrypt embeddings or anonymize data before sending to Titan?
+no
+
+🧠 Section 4: Indexing & Re-indexing Logic
+You liked the idea of using a manifest (JSON) with hashes.
+
+🔍 We can define a plan:
+{
+  "email_id": "<msg_id>",
+  "hash": "<content_sha256>",
+  "vendor": "dell.com",
+  "type": "patch",
+  "status": "indexed",
+  "indexed_at": "2025-05-21T12:00:00"
+}
+
+🧩 Follow-up Questions:
+What is the granularity of indexing?
+Per email?
+Per attachment?
+Per chunk?
+not sure what is the tradeoff, please suggest
+
+Do you want to maintain:
+A central manifest (e.g., one file for all indexed emails)
+central
+
+🔬 Section 5: LLM Optimization Strategy
+You’re open to:
+Manual review - at the initial steps to better debug.
+LangChain’s RAG evaluator - sure, dont know what it is :)
+LLM-based self-evaluation - sure, dont know what it is :)
+
+📌 Questions:
+How often do you plan to evaluate retrieval quality?
+After every change?
+Weekly/monthly?
+Only on user feedback?
+for each new email that is being fetched. i think.. not sure
+
+Would you like the app to have a “debug mode” to:
+verbose text file log.
+Print top-k chunks retrieved for a query - if it might help you debug.
+Print the final answer from LLM - sure
+Print a similarity confidence score? - yes
+
+📦 Bonus: Intermediate Artifacts
+Your pipeline could optionally persist intermediate steps like:
+raw_email.txt
+clean_text.json
+metadata.json
+chunks.json
+embeddings.npy
+index.log
+what does it mean ?
+
+🧩 Final Question for Now:
+Do you want these intermediate artifacts to be:
+Always saved (for transparency/debugging)?
+Only saved in debug/dry-run mode?
+Discarded after indexing?
+always saved for the debuging phase, laster on for production please suggest.
+
+
+
+
+*******
+
+
+This is excellent progress — your answers make it clear you're designing this system with both short-term experimentation and long-term maintainability in mind. Let's finalize the core design choices, explain the open concepts, and suggest best practices where you're unsure.
+
+🔍 Section 1: NER & Classification
+✅ Clarification: What is NER and Why Use It?
+NER (Named Entity Recognition) is the process of extracting specific data points from unstructured text, like:
+Text Example	Entities Detected
+"Dell is releasing PowerMax on June 5"	vendor: Dell, product: PowerMax, date: June 5
+Usefulness:
+Structure chaotic data (e.g., emails, attachments)
+Extract structured metadata for indexing and search
+good
+
+🔁 LLM Prompt vs. Standalone NER
+Option	Pros	Cons
+Standalone NER (e.g., SpaCy)	Fast, free, deterministic	Less accurate for ambiguous or novel inputs
+LLM Prompt (e.g., Claude on Bedrock)	High accuracy, context-aware	Higher cost, slower, requires structured prompting
+✅ Recommendation:
+Combine them:
+Use heuristics + SpaCy to extract obvious stuff
+Fall back to Claude prompt when confidence is low or missing data
+sure - i accept
+
+📌 Clarification: Fine-Tuning a Classifier
+This means creating your own model trained on labeled examples of your data (emails labeled with types, products, etc.). You don’t need this now, since:
+You can start with LLM-based classification
+It adds engineering overhead and requires labeled data
+✅ Skip fine-tuning for now.
+sure - i accept
+
+🧠 Section 2: Classification & Configs
+You're clear: ✅
+Use config file for classification labels
+Add product list (even if incomplete)
+Add email credentials (securely, e.g., .env or mounted secrets in container)
+Allow multi-label classification
+✅ We'll design config.yaml to handle this flexibly.
+
+🧩 Section 3: Embedding Model
+You're going with Titan – good for managed scalability. ✅ No encryption needed, no local fallback for now.
+
+🗃️ Section 4: Indexing Strategy
+📌 Clarification: Indexing Granularity
+Chunk-level	Best for LLM retrieval	More metadata & mapping	✅ Best option
+sure - i accept
+
+✅ Recommendation:
+Index per chunk, but retain mapping to email & attachment
+Include metadata like:
+Email subject, sender, vendor, attachment name
+Chunk position within the document
+✅ Store manifest centrally as a single JSON file (e.g., manifest.jsonl)
+sure - i accept
+
+🧪 Section 5: LLM Optimization
+📌 Clarification:
+LangChain RAG Evaluator: Measures how well retrieved chunks help answer a question
+LLM Self-Evaluation: Ask the model: “On a scale of 1–5, how relevant was the input context to answering the question?”
+
+✅ Recommendation:
+Enable debug mode to output:
+Top-K retrieved chunks
+Final answer
+Confidence score (e.g., cosine similarity)
+Evaluate for each new email → Ideal during development
+Switch to batch eval (daily/weekly) in production for performance
+sure - i accept
+
+📦 Bonus: Intermediate Artifacts
+📌 Clarification:
+These are files saved at each step of processing. For example:
+File	Description
+raw_email.txt	Full email body
+clean_text.json	Parsed email + attachments as clean text
+metadata.json	Enriched metadata (vendor, type, etc.)
+chunks.json	Tokenized chunks with IDs
+embeddings.npy	Vector representations of chunks
+index.log	Log of what was indexed, when, and how
+
+✅ Recommendation:
+Development: Save everything by default
+sure - i accept
+
+Production:
+Save metadata, chunks, and index.log
+Discard large files like embeddings.npy if not needed for audit
+Use a --debug or --save-artifacts flag in CLI
+sure - i accept
+
+✅ Summary of Design Decisions
+Component	Choice
+NER & Classification	Combo: Heuristics → Claude fallback
+Classifier Labels	Stored in config.yaml, multi-label enabled
+Embedding Model	AWS Titan (start simple)
+Indexing Granularity	Per chunk with full mapping
+Evaluation	Per-email debug during dev; batch optional later
+Artifacts	Save all during debug; flag-controlled in prod
+
+Would you like me to now generate:
+config.yaml template
+yes
+
+manifest.json structure
+yes
+
+Folder/module structure and starter Python files (Dockerized & cron-ready)
+yes
+
+also, a flowchat to visualize the project flow and steps.
