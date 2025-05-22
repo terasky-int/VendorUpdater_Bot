@@ -1,21 +1,21 @@
 {
   "ids": [
     [
-      "chunk-19",
-      "chunk-22",
-      "chunk-16",
-      "chunk-23",
-      "chunk-26"
+      "chunk-57",
+      "chunk-17",
+      "chunk-43",
+      "chunk-40",
+      "chunk-21"
     ]
   ],
   "embeddings": null,
   "documents": [
     [
-      "Disaster recovery strategies with Terraform<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86Z436FZyh_Ybg96iWLyzAeSSqlcMbtkOZrpuf473Eniwpjudk1LBFoR9XBFHSjWCvXA=> – Terraform is in a unique position to not only quickly re-create infrastructure in the case of an outage, but also create sandboxed, ephemeral infrastructure environments for testing your disaster recovery (DR) strategy. This article will walk through some simple exercises you can use right now with Terraform to test your DR strategy. by ANDRE",
-      ".....\r\nAce your Terraform Professional exam: 5 tips from certified pros<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86G8qk_duVmU_7ofrCm2--qRo90wJW4_UuL2p-wZTpws-ljv4rR2U9qfkTGIaKLftgrE=> – The Terraform Authoring and Ops Pro exam is a great way to showcase your advanced Terraform expertise. But where do you start when preparing for a 4-hour, lab-based exam? We sat down with three certified professionals to get their tips and jumpstart your exam preparation. by LAUREN CAREY\r\n.....",
-      ".....\r\n\r\n\r\nCase study | The great migration: How Helvetia moved 200 apps to the cloud in one year<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86GUtt8WUvDu1hi-MetKOidMjjneRdGvtzyYG2bjUHHVlm_8gTBP00g0olCaPg5FDczI=>\r\n\r\nFind out how Helvetia Insurance Group used HashiCorp Terraform to migrate 200 applications in one year with automation and standardization.\r\n\r\n[sparkles_emoji.png]\r\n\r\nFROM HASHICORP",
-      ".....\r\nDeploying Azure landing zones with Terraform Stacks<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86cS1U7UkBgc5ew7NAiLfYVcIq6PaAfy4ucIIVS_isqXRSibM6S9z_mMhBysumVSDAaU=> – Looking for more examples of how to use Terraform Stacks? This HashiTalks session shows how you can adapt the Azure Landing Zone module with Terraform Stacks, making it a lot easier to manage. by NED BELLAVANCE\r\n.....",
-      "Wednesday, May 7 — Sign up for this hands-on session to learn how to secure applications, manage identities, and protect sensitive data with HashiCorp Vault.\r\nHCP Terraform quickstart virtual hands-on workshop<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86HCRXJXWbVHP9BVqg82o4-qrYWjP5HM_AM7YZ8oM6vPNMwpkKqSvXha1VjOgvGPkeqk=>\r\nWednesday, May 21 — Learn how to navigate the full infrastructure lifecycle with HCP Terraform — from provisioning and state management to collaboration and governance."
+      "_QXGg==%2FMTEyLVRaTS03NjYAAAGaklvAF4cIoBCQs29faHvACcp2e0gfiEre-b7U4Cu-XFXaqan8jfbGJqcHpnqXLWqkm5188eE=/1/01000196f3637ee3-44238e9e-c3bb-4102-b070-2c6955f8b6bb-000000/hTHI9PKmeS0brXAPWt1Qqd7sACA=427>",
+      "[AWS on YouTube] <https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com%2FMTEyLVRaTS03NjYAAAGaklvAF9z2zQ_mxfOTt5xFD6u3QSff7QJCLEC6OKbDXjQKx0BsXo3qZh5INjoW7auVA1pi9xo=/1/01000196f3637ee3-44238e9e-c3bb-4102-b070-2c6955f8b6bb-000000/Vs8wk5GrvKOOHo4WhUUMM9bQnfU=427>     [AWS Podcast]",
+      "| AWS",
+      "| Events &",
+      "cp2e0gfiEre-b7U4Cu-XFXaqan8jfbGJqcHpnqXLWqkm5188eE=/1/01000196f3637ee3-44238e9e-c3bb-4102-b070-2c6955f8b6bb-000000/XGV_cqIM-qEt3bGs03ydew9BLPY=427>"
     ]
   ],
   "uris": null,
@@ -28,44 +28,44 @@
   "metadatas": [
     [
       {
-        "date": "1970-01-01",
+        "product": "unknown",
         "vendor": "terasky",
-        "type": "unknown",
-        "product": "unknown"
+        "date": "1970-01-01",
+        "type": "unknown"
       },
       {
-        "product": "unknown",
         "date": "1970-01-01",
+        "product": "unknown",
         "type": "unknown",
         "vendor": "terasky"
       },
       {
         "vendor": "terasky",
         "type": "unknown",
+        "date": "1970-01-01",
+        "product": "unknown"
+      },
+      {
+        "vendor": "terasky",
         "product": "unknown",
+        "type": "unknown",
         "date": "1970-01-01"
       },
       {
+        "product": "unknown",
         "type": "unknown",
         "vendor": "terasky",
-        "date": "1970-01-01",
-        "product": "unknown"
-      },
-      {
-        "date": "1970-01-01",
-        "type": "unknown",
-        "vendor": "terasky",
-        "product": "unknown"
+        "date": "1970-01-01"
       }
     ]
   ],
   "distances": [
     [
-      1.3262925148010254,
-      1.3814287185668945,
-      1.571622371673584,
-      1.6491749286651611,
-      1.6668020486831665
+      1.7899185419082642,
+      1.8042104244232178,
+      1.8100247383117676,
+      1.814777135848999,
+      1.8178815841674805
     ]
   ]
 }

@@ -1,28 +1,53 @@
-# src/indexer.py
 import logging
-from src.llm_utils import load_config, get_chroma_collection
+from chromadb import PersistentClient
+import llm_utils
+from llm_utils import load_config, get_chroma_collection
 
-def index_chunks(chunks, config):
-    try:
-        config = load_config()
-        collection = get_chroma_collection(config)
+def index_documents(texts, metadatas, ids, embeddings):
+    collection = get_chroma_collection()
 
-        valid_chunks = [
-            c for c in chunks
-            if c.get("embedding") and isinstance(c.get("metadata"), dict)
-        ]
+    collection.add(
+        documents=texts,
+        metadatas=metadatas,
+        ids=ids,
+        embeddings=embeddings
+    )
 
-        if not valid_chunks:
-            logging.warning("⚠️ No valid chunks to index.")
-            return
+    logging.info(f"✅ Indexed {len(texts)} documents into the vector store")
 
-        collection.add(
-            documents=[c["text"] for c in valid_chunks],
-            metadatas=[c["metadata"] for c in valid_chunks],
-            ids=[c["chunk_id"] for c in valid_chunks],
-            embeddings=[c["embedding"] for c in valid_chunks]
-        )
-        logging.info(f"✅ Indexed {len(valid_chunks)} chunks into ChromaDB.")
+if __name__ == "__main__":
+    import random
 
-    except Exception as e:
-        logging.error(f"❌ Failed to index chunks: {str(e)}")
+    test_texts = [
+        "Join our upcoming Terraform webinar on infrastructure automation. #synthetic-test",
+        "A new vulnerability was found in IBM Cloud Pak — patch it today. #synthetic-test"
+    ]
+
+    test_metadata = [
+        {
+            "vendor": "hashicorp",
+            "product": "terraform",
+            "type": "webinar",
+            "date": "2025-04-10"
+        },
+        {
+            "vendor": "ibm",
+            "product": "cloud pak",
+            "type": "vulnerability",
+            "date": "2025-05-01"
+        }
+    ]
+
+    test_ids = ["test-doc-001", "test-doc-002"]
+
+    # Titan expects 1024-dim embeddings; we'll fake them for now
+    test_embeddings = [[random.uniform(-1, 1) for _ in range(1024)] for _ in range(2)]
+
+    index_documents(
+        texts=test_texts,
+        metadatas=test_metadata,
+        ids=test_ids,
+        embeddings=test_embeddings
+    )
+
+    print("✅ Test documents indexed. You can now search for '#synthetic-test' to verify.")

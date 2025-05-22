@@ -30,7 +30,7 @@ def run_pipeline():
     logging.info("Starting LLM data digestion pipeline")
 
     # Connect to ChromaDB collection once
-    collection = llm_utils.get_chroma_collection(config)
+    collection = llm_utils.get_chroma_collection()
 
     # Harvest
     emails = harvest.fetch_unread_emails(config)

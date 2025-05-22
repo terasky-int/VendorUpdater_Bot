@@ -24,8 +24,7 @@ def print_all_documents(collection):
         print("❌ Could not retrieve vector store contents.")
 
 def search_query():
-    config = llm_utils.load_config()
-    collection = llm_utils.get_chroma_collection(config)  
+    collection = llm_utils.get_chroma_collection()  
 
     print_all_documents(collection)
 
@@ -53,7 +52,7 @@ def search_query():
         chroma_where = filters[0] if len(filters) == 1 else {"$and": filters} if filters else None
 
         try:
-            embedding = llm_utils.embed_text_titan(query, config)
+            embedding = llm_utils.embed_text_titan(query)
             results = collection.query(
                 query_embeddings=[embedding],
                 n_results=5,
