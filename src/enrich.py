@@ -2,7 +2,8 @@ import os
 import logging
 import langdetect
 from datetime import datetime
-
+import tldextract
+import re
 
 def extract_metadata(clean_text, original_email, config):
     # Fallback values
@@ -36,9 +37,51 @@ def extract_metadata(clean_text, original_email, config):
     logging.info(f"Extracted metadata for sender {sender}, vendor {vendor}, language {language}")
     return metadata
 
-
 def infer_vendor(sender_email):
-    if "@" in sender_email:
-        domain = sender_email.split("@")[-1]
-        return domain.split(".")[0].lower()
-    return "unknown"
+    # Extract actual email from display string
+    match = re.search(r"<(.+?)>", sender_email)
+    if match:
+        sender_email = match.group(1)
+
+    # Use tldextract for domain parsing
+    import tldextract
+    ext = tldextract.extract(sender_email)
+    domain = ext.domain
+    return domain.lower() if domain else "unknown"
+
+
+# def infer_vendor(sender_email):
+#     try:
+#         domain = sender_email.split("@")[-1]
+#         parts = domain.lower().split(".")
+
+#         # Strip known generic subdomains
+#         generic_prefixes = {"info", "support", "noreply", "no-reply", "alerts", "marketing", "email", "updates", "reply"}
+#         filtered_parts = [p for p in parts if p not in generic_prefixes]
+
+#         # Heuristic: Take the second-level domain (e.g. 'vmware' from 'marketing.vmware.co.uk')
+#         if len(filtered_parts) >= 2:
+#             return filtered_parts[-2]
+#         elif filtered_parts:
+#             return filtered_parts[0]
+#     except Exception:
+#         pass
+
+#     return "unknown"
+
+
+
+if __name__ == "__main__":
+    test_senders = [
+        "davidg@terasky.com",                       # ✅ terasky
+        "no-reply@reply.hashicorp.com",            # ✅ hashicorp
+        "support@ibm.com",                         # ✅ ibm
+        "updates@marketing.vmware.co.uk",          # ✅ vmware
+        "alerts@security.microsoft.io",            # ✅ microsoft
+        "noreply@info.google.net",                 # ✅ google
+        "random@email"                             # ❌ unknown
+    ]
+
+    for email in test_senders:
+        vendor = infer_vendor(email)
+        print(f"{email:40s} => {vendor}")

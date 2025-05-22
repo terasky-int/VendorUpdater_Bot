@@ -1,97 +1,99 @@
 Delivered-To: davidplayground333@gmail.com
-Received: by 2002:a05:6214:5287:b0:6f8:ae21:68cc with SMTP id kj7csp991201qvb;
-        Wed, 21 May 2025 02:13:18 -0700 (PDT)
+Received: by 2002:a05:6214:5287:b0:6f8:ae21:68cc with SMTP id kj7csp943560qvb;
+        Wed, 21 May 2025 00:16:37 -0700 (PDT)
 X-Google-Smtp-Source: 
- AGHT+IFwUElVk8rsU8yDTp4gDQMJ29XRRX+GmGdIKr/Fll5IjpAEgc0eB/5fF7KYR9C95tIF9r66
-X-Received: by 2002:a05:690c:8d0f:b0:70c:bc98:ec36 with SMTP id
- 00721157ae682-70cbc98ec53mr163510077b3.24.1747818797698;
-        Wed, 21 May 2025 02:13:17 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1747818797; cv=pass;
+ AGHT+IGcxBqVIUwJ+76V6cWZJiUPbNXqVYG5+0Ryk1kYKKHBDs4bl991PmW2U6Og7arYvwlLTOsD
+X-Received: by 2002:a05:6808:3a13:b0:3f4:1c2:874a with SMTP id
+ 5614622812f47-404d87b82d4mr12564274b6e.24.1747811797427;
+        Wed, 21 May 2025 00:16:37 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1747811797; cv=pass;
         d=google.com; s=arc-20240605;
-        b=IbbYQ18olgyZCy7jw+mygxjzciVGH7O7wV9sf4lQ2go2zJimwS3pC7qMT/AOg0eWqx
-         c2uMTO0stS/M7tC3JkJ8ahzOcpTmPOda3cP4PJh4EFTviPGp/mOZTNEPqExfD8jL0YYc
-         LkgRlAOyxsCWaWe4u2yNWjgop8s78qaen4CVpV5pmmgnjxQGhcQUgSkUoDtEbzxDpocx
-         QYlflxKoTO7gR5kBrt+1jLA29Gywm1kSc6MAlZwZkohUsF74wV+/JZBVQtSaadTbEVHw
-         CyhKzXiw1F5AhMOfMVepdE9fOZtk7+5X29tiMVsLzoriEvFyRsSbY9CjrWiffc009HON
-         4OFg==
+        b=GsOJURsWZiwzEQqZCI+LA4dAOs4R9GhXPH0SyMkGhIkpARWQlW7xmc+OaBWmQ+Cw/U
+         hk7y3j0IhuTWO+dk4is4Kr/2Et13Vu7YdXIDbe5/R9rFH4dEa2qcw+0qA98fQ3PwpSes
+         KGMLuP8qTG3LIUuKQHS1UF6EEPQg1JHvIBgjE5sbVUd8+7lqeX5q0TTUwXzjcLAJVNNP
+         SGAoAaRVCfZPotdxSSHEivRrL5lIeAYDcaKjaBcyWkUUyQgzhhewjRqC+UHwxOmfCbqH
+         YPbeokVbcze9CV4QOfJPcjB9E+4CJOJSQIRXqNRWbFul9dcWQt62/HEAawjKc+Wx70aA
+         s8og==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
  s=arc-20240605;
         h=mime-version:msip_labels:content-language:accept-language
          :in-reply-to:references:message-id:date:thread-index:thread-topic
          :subject:to:from:dkim-signature;
-        bh=UW82Pr3cjp8XdrrvCcCtr6CVPNJE6cqAhnJRPZXFplI=;
+        bh=w3JJ/RMSIZtddYh0sEyKdGtDCzce/aiFUoNBxw1aTAk=;
         fh=zJUbf4+MzNLbnYiOvj5SMthfshsBB/YnyQlXFAy2njE=;
-        b=QRFIsDcGP8z1198nItiDaF03mYtUD4jaxTjwDbxcgbeXd3DgzBN+Mx7LCp27VePceT
-         mhH/hzaBHLumbCbPrE5ivvP6mQwbljA/DsC6DjZ20rDOUPpJT3NVpiVqwh21ZOK2f4i5
-         cGdhU7X3yQHI1AYjeufYYPjPhMyXWd9uIRw8wN8EEAXO9ln+U398+O+g+5fxUmWK6iFj
-         arbgAxxUDb0MpwcXUaPOtb8fZ7xfBtZosKQKOCrsGghcah5jvPJs1/wdyVSdbSXy281j
-         KpkBN5b5z4tXR8Pi/8zAhV10diwQChYWJ6tGohUNBjqKfLBkZ/9e6CMmKqwSB2ceC7JT
-         mbpg==;
+        b=Qlu88L+9iHhcdf10vJz/BjYDDglMqOD+Wm7e+fyyH8Co9YBh8B5cJN7+4zyvlJTBkf
+         FUR9e3gAFTTKWFADjg+i895PUaaXIgeKvyPaVvxfxyBkT32Nx3AYPdSpkyPoTUIG2gEA
+         3zLPvZNUKYp+G13uWT/Bbiwz7B2LaaGeyzzd51XHyqZEgk3lZQ9oLYeimtsOb/9zwYUv
+         IrbpaT3OWAiWwTfwZSdDDOKrgJYU5sSmXX02Cas17uF74v15MTNSMwvGniSrxgCnfoeZ
+         cx+RR0apz3QFA8Hglp0eDrtTglwVDFmjoit4wRnbi2FcK2Mxnj9EpNvBxcBxZv1WdFeR
+         fgYg==;
         dara=google.com
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@terasky.com header.s=selector2 header.b=mfouhj4X;
+       dkim=pass header.i=@terasky.com header.s=selector2 header.b=T2vh0f8b;
        arc=pass (i=1 spf=pass spfdomain=terasky.com dkim=pass
  dkdomain=terasky.com dmarc=pass fromdomain=terasky.com);
        spf=pass (google.com: domain of davidg@terasky.com designates
- 2a01:111:f403:260e::722 as permitted sender)
+ 2a01:111:f403:2613::71f as permitted sender)
  smtp.mailfrom=davidg@terasky.com;
        dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
  header.from=terasky.com
 Return-Path: <davidg@terasky.com>
-Received: from EUR03-AM7-obe.outbound.protection.outlook.com
- (mail-am7eur03on20722.outbound.protection.outlook.com.
- [2a01:111:f403:260e::722])
+Received: from EUR05-VI1-obe.outbound.protection.outlook.com
+ (mail-vi1eur05on2071f.outbound.protection.outlook.com.
+ [2a01:111:f403:2613::71f])
         by mx.google.com with ESMTPS id
- 00721157ae682-70ca84d199csi101763827b3.231.2025.05.21.02.13.17
+ 5614622812f47-404d991684csi6382242b6e.251.2025.05.21.00.16.36
         for <davidplayground333@gmail.com>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 21 May 2025 02:13:17 -0700 (PDT)
+        Wed, 21 May 2025 00:16:37 -0700 (PDT)
 Received-SPF: pass (google.com: domain of davidg@terasky.com designates
- 2a01:111:f403:260e::722 as permitted sender)
- client-ip=2a01:111:f403:260e::722;
+ 2a01:111:f403:2613::71f as permitted sender)
+ client-ip=2a01:111:f403:2613::71f;
 Authentication-Results: mx.google.com;
-       dkim=pass header.i=@terasky.com header.s=selector2 header.b=mfouhj4X;
+       dkim=pass header.i=@terasky.com header.s=selector2 header.b=T2vh0f8b;
        arc=pass (i=1 spf=pass spfdomain=terasky.com dkim=pass
  dkdomain=terasky.com dmarc=pass fromdomain=terasky.com);
        spf=pass (google.com: domain of davidg@terasky.com designates
- 2a01:111:f403:260e::722 as permitted sender)
+ 2a01:111:f403:2613::71f as permitted sender)
  smtp.mailfrom=davidg@terasky.com;
        dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
  header.from=terasky.com
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=n+EUyomKrQ82hNfhZLBLiwQ2Z1iWrMQzIRQldgctMih+xFe97eTbwcAmjwmjJfms63J1iOA7hYOOeCJ2z0P3WBWpOALMHGY8e07qHMlAzjOs4IbzO3VJhSQ0BDtySm2XUZDu0aTazne26v1vAvRohhOMDhfdpXiePOPyeNDUJ97A7YWawD1thJYqdATrRybtFghbHi+2ESgVh5uUUrHH/aiasKRkpYRODMhWdHSY7VeFn7nhBIUTG/C/+5AJHafNznw1QBsmZ8tSHUoWXTPa8ZN3KxfIJ7HXjVs6X4fTBnRVlwxXy66w+2E6v1UE7gKttLC4ngSme8BvZv4qa4NUfw==
+ b=kj+MIFF4gulGc3Vk+IyCTrFpsY9Yb6H2vUbo+AMVRNM7d0MG+iZbRGADh81vtzTwdsAQOJsmyyV4+A8uRlEzR03U74E2e1r6tn2HYzu8Ax/S67V7hcFPgfvSXmjk6DnPTKcFHCdYDF+nzKSVxH5wYiIy0fFSezslB7VAZwlLT/50cAtwg2fcj7dOqX+VI8N/nIWU/KowHiCMFdSGh7p/3BB+/xBD5SfmN7uO3tYEV537fFkAXX/AhRmUaP1zwvWITdB95Rqm6wk27iB/9nbX6JpVevBP13yUwhoJ/yd9Rp7NKJ2oTvcLk8eGUkjU8QRxQUXc1DmxWvA8cdV1M4z7Ig==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=UW82Pr3cjp8XdrrvCcCtr6CVPNJE6cqAhnJRPZXFplI=;
- b=wy8Fug6aiGTCeSLlwtdv8BdIwy21A5tdoDiNgCVooYKu1OpqU3Zwgf3k+SRrCo4pD7Ng8xSbgDOdy3eKunVLrYyO1tyhUpq3DeNV+/64hS8C3puvvVLh5MQ7ocXfiY7vssY3Fg2WxvLQYdRezvsbuy7Rxragepe++I74VHn5wKukuiwZBQ8ih20UVozdCIUl5LV0cEgCnoIoZKfQAau2zZ+563vCFaISglTd2htHe7Yb7uKYy+YVz8jy9lclKzpEvJ4oT94c743GQj6FMJ0Iy7kAc2DqhqfI6OX7HVB1AjU0l30QeYb5l4QWJ/SwCPPLyC93r+jmWZbmIsZ81CyRBA==
+ bh=w3JJ/RMSIZtddYh0sEyKdGtDCzce/aiFUoNBxw1aTAk=;
+ b=JYCL6A/eg/POpbVZ3wvMIA/Ka+a12C/1hme68sWVv9LubdnQwcOY22l7KMVbW7cUIe+lRKT0bhsx5exasKyGtPhXQFuxD3cx6+/6OdN71IGbUP8c8yVl+8sSL4AeprPckV0EA2hTGWFmAM0rEDS51YBH8DCIT5VYA/wVo/iDOqg0YsgQyBqdkMCfwU+MNSdITuvFR4ZD4hv/7IzTwkvO5ggLd6fJ55MnW6IXQVBHZICr1UAdgMqNdiX7IkFwv3DdOmGkbS94WUTqncKkzGfe85k9tWeuoLmSsEWcdkryzMRf8RpK4cxYpIXWATzGHqpRgrZ2NAQk2H7ZpCm4avZ77A==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=terasky.com; dmarc=pass action=none header.from=terasky.com;
  dkim=pass header.d=terasky.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=terasky.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UW82Pr3cjp8XdrrvCcCtr6CVPNJE6cqAhnJRPZXFplI=;
- b=mfouhj4XN844ol3TGRh+9iBRO/V3IU8VhPNM6Yqdfji6XZNJI0RQmIhMWwDIhMBYdzei3YvXh7VA5m/fQcr2gvQZP3+9f2484c11evDE+E/d00VZ/rvdSV9J62a7/uc1ZLuPeQeIHZ/Blbg+exp2+qWEcppqw6PiExkbwm/QP40TJAXNw85QmzfjQBA8wN7O054h4BTJQtPpl0rDFLpekg508/wW67CUGq0gViPrjhKdT9JNJLW+TlqQ1RVHyCfRGJszzxL7H9+85fN3sClchLitF/3d8a5q3suvafKt0kq+XR2cqXvH8hKCjNL3GJ0BfTUMKrK/upawwy48FeH6iw==
+ bh=w3JJ/RMSIZtddYh0sEyKdGtDCzce/aiFUoNBxw1aTAk=;
+ b=T2vh0f8bCWvlOmhATLcLl97hAf8Jgkatlv76hMlVzhpzvO9Ca5LIQJ2x0hYdk78snVsXXn8aGb6JmoLyBq906xuJCAqfYZhD33FmXKuZI8LdxtgqwHO16nSnUj4E+D2jjPaIl7vPPcd6cgXexCqimnwk8cMi4XuCa8XuBeSV04ihARXZwk7WXlWzR2tTQQ/fWWK215yCEEOoWPfPCV74DIfeCnlPwwEq2K9Lo+pwFD1k1oLC65bK9BC7/3V4FrzkhDaVQKl5zR7+c4XK4SZStcjQczBmDoc91IfFU00RH2seAOilC+m+hkpYU7Zj0SLb5Sdxtr4sSyAYCE8/m23img==
 Received: from PAXP194MB1277.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:1a0::11)
- by PR3P194MB1618.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:171::21) with
+ by AM9P194MB1268.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:3af::5) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8746.31; Wed, 21 May
- 2025 09:13:14 +0000
+ 2025 07:16:34 +0000
 Received: from PAXP194MB1277.EURP194.PROD.OUTLOOK.COM
  ([fe80::47dc:cf83:d811:c80f]) by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM
  ([fe80::47dc:cf83:d811:c80f%6]) with mapi id 15.20.8769.019; Wed, 21 May 2025
- 09:13:14 +0000
+ 07:16:34 +0000
 From: David Gidony <davidg@terasky.com>
 To: "davidplayground333@gmail.com" <davidplayground333@gmail.com>
-Subject: Fw: HCP Vault Radar is now GA
-Thread-Topic: HCP Vault Radar is now GA
-Thread-Index: AQHbufb+PAuDkzeHkkyFz4gWwJsjhrPc7TEB
-Date: Wed, 21 May 2025 09:13:14 +0000
+Subject: =?iso-8859-8-i?B?Rnc6IPDgIOzk6+n4IFdBU0FCSSAo9Pjx5e76KQ==?=
+Thread-Topic: =?iso-8859-8-i?B?8OAg7OTr6fggV0FTQUJJICj0+PHl7vop?=
+Thread-Index: AQHbyh6cW248N2ihiESYqOxz7An5PbPcrBSQgAAAOGI=
+Date: Wed, 21 May 2025 07:16:34 +0000
 Message-ID: 
- <PAXP194MB1277FC2A637A74F5B50BF87BCF9EA@PAXP194MB1277.EURP194.PROD.OUTLOOK.COM>
-References: <1912243129.73538614.1746034837462@abmktmail-batch1i.marketo.org>
-In-Reply-To: <1912243129.73538614.1746034837462@abmktmail-batch1i.marketo.org>
+ <PAXP194MB1277495AAC4783342D05C6E5CF9EA@PAXP194MB1277.EURP194.PROD.OUTLOOK.COM>
+References: <cc62fe6bb8b445408ffca1ce0fb80842@c-data.co.il>
+ <AS8P194MB1096C8AD838D51DC81F5F3FAAC9EA@AS8P194MB1096.EURP194.PROD.OUTLOOK.COM>
+In-Reply-To: 
+ <AS8P194MB1096C8AD838D51DC81F5F3FAAC9EA@AS8P194MB1096.EURP194.PROD.OUTLOOK.COM>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: yes
@@ -100,96 +102,96 @@ msip_labels:
 authentication-results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=terasky.com;
 x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: PAXP194MB1277:EE_|PR3P194MB1618:EE_
-x-ms-office365-filtering-correlation-id: fefc5e99-3982-4c2d-c634-08dd9847b74d
+x-ms-traffictypediagnostic: PAXP194MB1277:EE_|AM9P194MB1268:EE_
+x-ms-office365-filtering-correlation-id: 8a8e73bf-0e11-4113-15eb-08dd98376b11
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
 x-microsoft-antispam: 
- BCL:0;ARA:13230040|4022899009|1800799024|366016|69100299015|376014|38070700018|13003099007|4053099003|8096899003;
+ BCL:0;ARA:13230040|1800799024|366016|69100299015|376014|38070700018|13003099007|4053099003|8096899003;
 x-microsoft-antispam-message-info: 
- =?Windows-1252?Q?EiThnGb+VTknglJGd6I8KvEkt3QhK6Fuv9KYHGFeMPQ+6XelbsinH2Xe?=
- =?Windows-1252?Q?uNQ1c3YpZiyYVcEVm1kx9msNEx1/Bgf00YaiQOsb8JFkRtDNfvp6CsDv?=
- =?Windows-1252?Q?fUrdAmmq85gwNSiA4JzTnrr28mr3kXyVq+TkLrpPG9FYI9NXTcfm9IPP?=
- =?Windows-1252?Q?0XbB6KkAxNkdrRgDS5g41SvX4x9ZuvuEZp3GitDDD2xZaZL/uPd3i6Dr?=
- =?Windows-1252?Q?EAUK00mkM5Y4mM2R5s9mHSkTdRN+mo5u6r44nsCj+7QvqAMtDqgrLcfD?=
- =?Windows-1252?Q?J6oUapxlzCvA8sBOrey7nwgOQZNG+5aH6Ah3TT76LHMAAi4u9hfKofyQ?=
- =?Windows-1252?Q?3mPPA/gdI00mA7qBRWGqczvOQ5aF5qSlXkpmrN8+YPmzpsIUcUoD9JKM?=
- =?Windows-1252?Q?AOu/OhietJWOknKacV0os9z+M/5+U69W1PIwm6Fp8MhCbFs+1aMKVYI/?=
- =?Windows-1252?Q?qghfdQLadHUr9yjLwrs+hvS11kk147lVa7a/bscTdO1U9XAWKMeRVl1i?=
- =?Windows-1252?Q?RRL67NnFCvmvr0irl/SUAB/7Zw2lTAy2YoSLin1MVrKwXhJtfubatUH0?=
- =?Windows-1252?Q?ucLdnaRcxR+5ilzv8brzjGyjN4Tvli4sspGGqkbllcDxI7li4oKk4lTT?=
- =?Windows-1252?Q?k+7vVhn5fuNshdJhZyFfMb4pF0lXDtwE2/nHCgmWBy7DeCtaSYhoXdQ0?=
- =?Windows-1252?Q?zxbtuo+kvrMYkaTYNH0GjHhkrQ24RfzojvvmdC9wk5GlpugIdHmlvdnH?=
- =?Windows-1252?Q?+ooaLXoy3LhRU8Jb9nWa7sRaD767bCZz2bwphzUWVbJU7jzGoqzVjCQu?=
- =?Windows-1252?Q?A53Pq5UZfUCuCjolaf1pC1jOhqHOw9F8N142odHxRrCUtREZNnWpRe65?=
- =?Windows-1252?Q?AViMlBiox19VnKEuWVBC1qBGjD3jezrqW/G7gTTC5eeBlWzzCfD45eRR?=
- =?Windows-1252?Q?QGPu16Vyt9yrLcjBZonBedL+W4JA3rq7MnUowjwyQ4LwbChJh3c2kypD?=
- =?Windows-1252?Q?33iptxXb8dblOwLrWZHXybSXQGoC8BHFjrISYDzie3eIFwF1JVJWWU2M?=
- =?Windows-1252?Q?q8BY4Nm2ZnQoYkkBhCm+jWCAQlR4HvrTnMMLybBUt7C5brKBTZ+GNzTO?=
- =?Windows-1252?Q?69JaxMx8JV8Z0PcqhMXRxnpptqtsvCxPZXqH3w/tRHuq2ZEARwbOb13Z?=
- =?Windows-1252?Q?a405gyVsBrzI5tPQgVER2b+QfkIfr/RmFMWm5AoO+f6gUQaABVeKznhN?=
- =?Windows-1252?Q?dkUHJRj41p5MIGoQ64YK9/ce/07sUxl8rmVkfmzk0snMY8qio8HnAxEB?=
- =?Windows-1252?Q?8xyh19agRTH2KzCBJLu5D5vBkDAZwC1xuOc8Jy2q5+DQ4QueYhvuSU5a?=
- =?Windows-1252?Q?eoarB3EeTdnETvZnvp1db+9zcwgcU/l1c26Ww5rSemTTbxzwKapsin3Z?=
- =?Windows-1252?Q?XsWSVnmTU5a0PXNZoesT2XGpe3iWHQOltDvF1W+NkFXlkqQmIMjhE+lr?=
- =?Windows-1252?Q?PXKrVDLfH/cGqL0zi9Kv8Ic7XjMhkLR1QOXrcbz+dKfa3RMuq4g=3D?=
+ =?iso-8859-8-i?Q?w5GvgMd3GthowpcNOTUm9mpJnT6nI7FNtyLRK/qPjGMmkbXnrmPOOau6?=
+ =?iso-8859-8-i?Q?ETbqTgKj+wgiON9iFe1lZjlnyVe+v8qUxpdRSgjorXkqL6QCUHdWd5HH?=
+ =?iso-8859-8-i?Q?sdBOlZYkWs9QjKvlGIQdHI9hGq6qjLBcmfqthaXB2GRjL8/kPFIfSIR8?=
+ =?iso-8859-8-i?Q?u5Ilk3smpvrCoR6Dd83G7m6hAcCJG4IvgiVpCA14oXgQ58V/Xf4oeta+?=
+ =?iso-8859-8-i?Q?r/mRnK024DsRhxtGDOa8UDgTKpDqZHhSUQE1NgCEUYteILSITTltWfH/?=
+ =?iso-8859-8-i?Q?8YjCqm6imuNeA4HrPhtSrWSEDEkmOjoC8FqVwi5P7o4454H6WzhSJ+ma?=
+ =?iso-8859-8-i?Q?gVC6IHaL+inkJMyE3Tb7mrmmuUoNarqmXyJKFeUBetnXUWc71y5C4ERb?=
+ =?iso-8859-8-i?Q?k8nPRAEF+tSWFXdz7cZKUFlt56I33ihYBj7Z5aKCSF8hVd/6sStxLUyl?=
+ =?iso-8859-8-i?Q?SU2mcM1BjZGB8qatwZ5hYJrJEIA3XG0pPlHDV6oigz5nlkd7PwGYvZnV?=
+ =?iso-8859-8-i?Q?VInCHivCKSVWqubiOSQeDn+qPzXKk8u0p/2Nmutn0uuclhuLdfm8n2Au?=
+ =?iso-8859-8-i?Q?u0ysUZ+WCyOxsCH271+7qBl0EBEuLA8QyYIZ/mkzKipaIhUpP4wd/+DA?=
+ =?iso-8859-8-i?Q?Rfa7LVl8mG3PhDAysqk97/ZS0O80HxvNTQyCAWhc1lCyu+c/+Sm2RAZu?=
+ =?iso-8859-8-i?Q?V5fbYkCd9eW/LOjJ9bE58KX2bqloarBJO50xekn/tAMzaQxFITPHKGUg?=
+ =?iso-8859-8-i?Q?GqKxF88FSFGIRYlr2ayXEkoAcZ/8t0F2fy5GvQOSpMvDHMiRLEleosuJ?=
+ =?iso-8859-8-i?Q?66y5I3j4990WhkyhGz/c3VidkbHXbFZRve9lFt2grk1AhHKSpZRNZRGD?=
+ =?iso-8859-8-i?Q?4Z9OAX58dLt1ubFQTlMc6z24YCdaSZiekQPw+8/jv5vp1tVUQRl599KY?=
+ =?iso-8859-8-i?Q?Zbce6ceOkuQPE92zqPixZLMkzTAh50CqgyVvZC44olvJ5QvNC6MNVBTM?=
+ =?iso-8859-8-i?Q?GK+SpmHkpgG85YI/lwfq7mw916DLNaYxcd/ZySXr5QThbJUyROY4ClV9?=
+ =?iso-8859-8-i?Q?ujJbRkJJMHRG2UaOt+xRN6VHEDEQuvX4DyggWPXbyOhlgrjbVvtXLFpn?=
+ =?iso-8859-8-i?Q?bkreMga2dINXtzCZX4CIovo/PKZHJad3TbhgE03NNipDKCa8bCwoijid?=
+ =?iso-8859-8-i?Q?BNUpTZ+ssA75pcBCFUl9uWnsYFaBY0P8zWAXcn5XbNc8bPoY4Mc9LQQp?=
+ =?iso-8859-8-i?Q?hJjlUv+xMxF7YeySe1/JMtwTP7eFlYcfchzkvGNbKYrYTmy+R06pUxA0?=
+ =?iso-8859-8-i?Q?FdbNor01a6lolAwyclSeefOvVKvaaeS7FzScqiRj7zlUnAwBbTg2bc2p?=
+ =?iso-8859-8-i?Q?K0ZJ4Chf7LMWt+ejRZBp0WNW7LXkMzQN1uENUgFcgsPIMmySuf8ow8/h?=
+ =?iso-8859-8-i?Q?HcPKcTwDgVgRQUM+amzQMtXxl+w8i9ajMRssB0GcK/fHYqwkR7014l7s?=
+ =?iso-8859-8-i?Q?i2AsiVhZ4R/BpFdWW9R/WT5txIunaIWVE8xfOjFqe0p6SxvqxnQ=3D?=
 x-forefront-antispam-report: 
- CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXP194MB1277.EURP194.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(4022899009)(1800799024)(366016)(69100299015)(376014)(38070700018)(13003099007)(4053099003)(8096899003);DIR:OUT;SFP:1102;
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXP194MB1277.EURP194.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(69100299015)(376014)(38070700018)(13003099007)(4053099003)(8096899003);DIR:OUT;SFP:1102;
 x-ms-exchange-antispam-messagedata-chunkcount: 1
 x-ms-exchange-antispam-messagedata-0: 
- =?Windows-1252?Q?4Wp03na8PZ6VQi/chIkmo3rTCek6g67gkHHOxkM4IFd3e+qlKstR8xRZ?=
- =?Windows-1252?Q?caZwJECiLGzP1U4bJgqj6YnqGQfukrbszJAp5FCoB2Hc95Fmtn9n7c7f?=
- =?Windows-1252?Q?Se6/p2LhgkdYr6jH5WZgjdwfi/5Js+s1WU4MtyVbpVughA5nxa50QnBf?=
- =?Windows-1252?Q?2HsTQP41VyZ/68uTmCtiDFPb3sxtYvMj65oL/1bYtANJuY88k9LzMPUD?=
- =?Windows-1252?Q?KI7L8bpWZ0R9MtVAn7q2O8oZ0kiziwYWvWVKEY4Z4io4dhvutxtJkIvc?=
- =?Windows-1252?Q?dwbZn9YFtGv6Ye8fItim4rG1K62S5OZmVXCSDZJm6RxcpwvvbHQll3i2?=
- =?Windows-1252?Q?ai7FkUPopNr6iQBBpxfTH3MZgbEYvjZ5moqwIK9smNzF7ZdGTUP8y3ik?=
- =?Windows-1252?Q?IRZrGALF7xREvwfOj5l3l9sg+iyDFPKVl/gG0l4qajwvnaXvtE+DVJ8s?=
- =?Windows-1252?Q?5xRRyHG8V7wIvfGqcK3ogtCH/NjPezDCPL0Bkp97b2S+W9y9pINa3d4M?=
- =?Windows-1252?Q?Mehcp8uSPLJapWPfT1x878MzToR+NEVowXYwRQD2WUGOjtqfi06OHGod?=
- =?Windows-1252?Q?r1Bdt+2jqdQUgG/nLTFO2YpDbPPbrSLfDUZ8rDEFUmWP5lyTu04lSQT6?=
- =?Windows-1252?Q?VvcQB0EuGqrZYf4I1ogQZeGNYh5+/cdd9VpbO77D1AEmYQ3ZZum+SZ2C?=
- =?Windows-1252?Q?v4kT4I7xGlRhjy7wtJu108PYvT4ZSuaaPPLUPSnW/oUYaGnC8RGK3/Fd?=
- =?Windows-1252?Q?cJ2kj0xQK0eaahhPuknXV2XDbZy09Q0HI0GFKh6wXkwciXEUZfr8hMxw?=
- =?Windows-1252?Q?lxUtBRQtF/WUGumskIHwoppQvLygxOgBSB9XB51ZvbVg4JybaydnX0ZC?=
- =?Windows-1252?Q?eo84bNu/l9dn7EevvstLoGHkyhyV8lDCD2bjIlz0uPH1J7e6VkHVOmR/?=
- =?Windows-1252?Q?RJHW/1qTRskFNLC/jtATg+KxELsiN3hmLYb3vG56a+DDbur2VXOzC/HV?=
- =?Windows-1252?Q?g5x5osvnTIwu/mVvZ+x5KYjUbnOUKt2thO/PNOmrhFccIsBqZi464eM9?=
- =?Windows-1252?Q?3WyZgSBLj7hxPi9IHwUSCMF+5drDpo1bZORcDjxNopX5aXlt642EyDd8?=
- =?Windows-1252?Q?ovvDKa3N52e9/mVG2uzROZAvM0SxFy16BSC312khdgHTOsU40zyhUtHx?=
- =?Windows-1252?Q?jpsqOGutpnNCXwpirsDYqUe2nVZN/9pmplhGzMTYM90te8InEbt8AKy6?=
- =?Windows-1252?Q?DGWlfCjSryXZS/3R+mOUDyTM4sk5fz/CK1F6D4vnBsQD5jaZ9VKRu86a?=
- =?Windows-1252?Q?PHgtxtU8vasbHeTIls6lZ6S3X/18q7fOqZImCnzyHBdpDMIORv6LvFV5?=
- =?Windows-1252?Q?jjVkbV0YE9Wa+s5GieadJi3abNDik0VDhWAqgIp1HeyyUr1374OhCC5z?=
- =?Windows-1252?Q?mifhm6wiEinCV3fU02cvAdjAjkO+ahmYW/MqB8miskXpoPNHCzau1g6d?=
- =?Windows-1252?Q?G0Oe+mICjtEIb6Vq2TYa/Nt2S8s9bm8EVzsZb4MHhTKHRef/3bnW64B9?=
- =?Windows-1252?Q?t3Pc8AlM85/PHCvZg+g5QTSsmhtf7hrXGtbgrmeoglWbXIuKg9y6nLYT?=
- =?Windows-1252?Q?WfaGTSe2iuT/dxlT6iHuPU77zFbDnXihNIZILdQJjEZIG3etMZEUgYN1?=
- =?Windows-1252?Q?5DuUSD964LA=3D?=
+ =?iso-8859-8-i?Q?zgvF3py9aklLF+FkxVmlwY9GWYN79flqEPOca6kN1VmmmcPlCodOYLaE?=
+ =?iso-8859-8-i?Q?8X+EhdOL/z6P8R9E7KcTUyPLfsnx7ZSLrvm9V0K9d/pU8toy1XMw6xx7?=
+ =?iso-8859-8-i?Q?jNSNNK8T6AkuIRXcqkgsH4TcJpCCLAcHrN50f66xdeX2Bo7FGrTP4D5I?=
+ =?iso-8859-8-i?Q?kq1kvRjC9hoeKmrw9BUKfDI/Hdjmf2Mwtkjoenx7CfxtAHq8Yi2yduzX?=
+ =?iso-8859-8-i?Q?ns//TPJXLDhmHrgbISez+q5hFpH+uYB5quQ5zjP290a+LazDtWexYIhn?=
+ =?iso-8859-8-i?Q?qFRvwyEKx4nuM94eGZaVALfuBSkdPLBjlqwdFnW4AituoO2u7hzvV/ob?=
+ =?iso-8859-8-i?Q?lPcMiskuDgLOMK1OHtgITmx0rJvMPQJzFboIayMUsp4gAYOW/ipkN3T3?=
+ =?iso-8859-8-i?Q?UKGSARXZAo4Cx+2bocJE3EwI5H7+kQAUyzFUb4gwJ00lCxJML9opa0KQ?=
+ =?iso-8859-8-i?Q?pC+V8cT+7zCO8YFiXFAGS9xp8aD9OSBr6VIwCOUy66UOMYieCzYb+ara?=
+ =?iso-8859-8-i?Q?lrUml3T1cctCd50rVVEJmG74g6rXJGFlF7gZqH6PX2dK528euwFANVRy?=
+ =?iso-8859-8-i?Q?B6+dpkv/8n0INY58yCHdZNiIGmWuUrJxbqCNdRhfadOitUSVipWq12Vl?=
+ =?iso-8859-8-i?Q?8dEGSnnSIfdIFtgtHgq0b41npWfTsb9bxt7FCQOnG0J82r+0GU/FZP5G?=
+ =?iso-8859-8-i?Q?0SBm/+oIx9vdi5OSdCGLVF+FzcKG1ZxZrJNEAEFbnGV5ip0mh7lfbSd0?=
+ =?iso-8859-8-i?Q?6v1k6JzbWsx4IFNC/M/c1L+PHfpstcL8IL5Cn0NfxY+1A8WVSuCTEQdq?=
+ =?iso-8859-8-i?Q?ZEr5SsfGYjhkY6zoGlrJ8bJ0yPFsC367pmLz+3zTXKxMcUktGajbLooE?=
+ =?iso-8859-8-i?Q?RPsi6V6znNd+XAP3f4OaMf0Z01nCYXmex4zKX8g6OnG2UNOHitd++JDr?=
+ =?iso-8859-8-i?Q?o1jFUaZ8ocnzdoVRG/QIfl+w4sPMLvMmWF9t2bxNxbjJ4JmWES4g53BJ?=
+ =?iso-8859-8-i?Q?Wo1kqjViIeYBbkeuHrUiA7+01hHl8W0L4X3e8b1oQo+T2oRI2emspL+c?=
+ =?iso-8859-8-i?Q?v4x9voWFct9C7yxrAKVNrbt2KnX5QafC2MH69XTJd8YJhEonLSRE8D1p?=
+ =?iso-8859-8-i?Q?wRR/a0st3o5LhDJ6W8gJkuEk4Nd31e6YeEWvixw5g8HbZive1blzPG/q?=
+ =?iso-8859-8-i?Q?38b/gYjxD3ZX6wFMbRECx3jCVlzLhKBdzCSCopvFNpK4UoWL/j6bG9B7?=
+ =?iso-8859-8-i?Q?mn3srRXaUVaj+vO+MDTSUgr0jlWGEykiVar9dHEqspV4joc9qs1o6o9e?=
+ =?iso-8859-8-i?Q?8HsQPWAoERg9tf6Bk5lJkRZC3yVaHPEx0/3lXz0PWFi9uIviPC/uCaV4?=
+ =?iso-8859-8-i?Q?4AsQl5h/zATtbXn44OZjFyXOqpzPztp4Kfawd7zoGp+jhjCehrJHLDXV?=
+ =?iso-8859-8-i?Q?ZMpmotpN5yPAXPpNAiAmW9ziS2O+od3NrDOnyf0jOjOCVWoNUuNvgSMr?=
+ =?iso-8859-8-i?Q?hnXv/l5TvLm1b1Y1hmJ2IOBRsSpts0vhNyWqjrotFvwYjSNALLU05L04?=
+ =?iso-8859-8-i?Q?z3jME28KGsbUshWw1Q91xjo/OzvErY3UbWQnrTQwGVx2ixguku0hxe21?=
+ =?iso-8859-8-i?Q?d5JoHH2gESEJI5KJ/QB7UDZNYunBTUdpZ0ql4lY8QvwAtc4CXPQMQHPY?=
+ =?iso-8859-8-i?Q?gCwWRkuVYrU=3D?=
 Content-Type: multipart/related;
-	boundary="_004_PAXP194MB1277FC2A637A74F5B50BF87BCF9EAPAXP194MB1277EURP_";
+	boundary="_004_PAXP194MB1277495AAC4783342D05C6E5CF9EAPAXP194MB1277EURP_";
 	type="multipart/alternative"
 MIME-Version: 1.0
 X-OriginatorOrg: terasky.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
 X-MS-Exchange-CrossTenant-AuthSource: PAXP194MB1277.EURP194.PROD.OUTLOOK.COM
 X-MS-Exchange-CrossTenant-Network-Message-Id: 
- fefc5e99-3982-4c2d-c634-08dd9847b74d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 May 2025 09:13:14.1495
+ 8a8e73bf-0e11-4113-15eb-08dd98376b11
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 May 2025 07:16:34.2828
  (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: a982d310-fc08-418d-aca0-6b30ba7c0235
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: 
- u8kaKhFnuBZnSYa+vc8Ucd7TlBYVWZzXk2jZBBkgoCzmOhOvbbbgEmE4IOKZw6wdcuqGjaWDQYX9dqtGOK8beg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PR3P194MB1618
+ ai3r9t2RimK+PttA/1avvx38fOjbaa32V0jbXY/Gy4a43/tP5iEeGr0ft/FrTKPuFzSvjWjDmjbF398MWBps3Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9P194MB1268
 
---_004_PAXP194MB1277FC2A637A74F5B50BF87BCF9EAPAXP194MB1277EURP_
+--_004_PAXP194MB1277495AAC4783342D05C6E5CF9EAPAXP194MB1277EURP_
 Content-Type: multipart/alternative;
-	boundary="_000_PAXP194MB1277FC2A637A74F5B50BF87BCF9EAPAXP194MB1277EURP_"
+	boundary="_000_PAXP194MB1277495AAC4783342D05C6E5CF9EAPAXP194MB1277EURP_"
 
---_000_PAXP194MB1277FC2A637A74F5B50BF87BCF9EAPAXP194MB1277EURP_
-Content-Type: text/plain; charset="Windows-1252"
+--_000_PAXP194MB1277495AAC4783342D05C6E5CF9EAPAXP194MB1277EURP_
+Content-Type: text/plain; charset="iso-8859-8-i"
 Content-Transfer-Encoding: quoted-printable
 
 
@@ -206,93 +208,90 @@ www.terasky.com
 
 
 
-[cid:165eadad-fcb8-49e6-9e34-337c9fafae9a]
+[cid:6a5f5f16-3c9e-4cbc-a9c1-e461f3230374]
 
 
 
 ________________________________
-From: HashiCorp <hello@reply.hashicorp.com>
-Sent: Wednesday, April 30, 2025 8:40 PM
-To: David Gidony <davidg@terasky.com>
-Subject: HCP Vault Radar is now GA
+From: Aviv Rahamim <avivr@terasky.com>
+Sent: Wednesday, May 21, 2025 10:16 AM
+To: Vendor Promotions <vendor_promotions@terasky.com>
+Cc: David Gidony <davidg@terasky.com>; Lev Andelman <lev@terasky.com>
+Subject: FW: =F0=E0 =EC=E4=EB=E9=F8 WASABI (=F4=F8=F1=E5=EE=FA)
 
-It=92s not a secret anymore.
-View in browser<https://view.hashicorp.com/v/ODQ1LVpMRi0xOTEAAAGaJsH30ROdcb=
-oGem8iDEhTxC936nB1l2Bkw12PMUTPMHE7gkkwWJFIn2TcFtXxBuSUjA6NcKQ=3D>  |  Updat=
-e your preferences<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30TE-r=
-A71IjtmwaW1gRdcjE8B3CZmCozws1iClaIBu8Rqv5cSxkNsulormQJdO4oX-tQ=3D>
-[Hashicorp Logo] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30dbaXl=
--25xLT-y_ZuhiFClQdheu7c5-zOBjj920MbkZg-aMSAhJqGKGwej0HnKUuTOg=3D>
-[Email Banner_Vault Radar GA_Announcement Email.png]<https://view.hashicorp=
-.com/ODQ1LVpMRi0xOTEAAAGaJsH30UFeS5whxvgyp2dAX8TaR47Up7Ex-Dr5C2tW0NAuUCa54B=
-B7telCQ7tIglYo1H2FePc=3D>
-Hi David,
 
-It=92s not a secret anymore =97 HCP Vault Radar is now generally available.
 
-HCP Vault Radar<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30e4hjK08=
-FnYXGUfJnQQbQHGCz-dCxFl8pFuKjbJ7WGp8fcXqip3MijiPdyR27BmW8QI=3D> helps Platf=
-orm, DevOps, and security teams find, remediate, and secure unmanaged data =
-in three steps:
 
-1. Proliferation
-Scan everything from code repositories to CI/CD platforms for leaked secret=
-s. Even on-premises datacenters and collaboration tools like Slack.
 
-2. Prioritization
-Once secrets are discovered, they=92re ranked by risk level so you can get =
-them under control fast using a comprehensive set of data points and remedi=
-ation workflows.
 
-3. Prevention
-Stop future leaks before they happen. Scan pull requests and notify develop=
-ers of exposed secrets before they merge code into the main production bran=
-ch.
-Start your free trial<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30U=
-FeS5whxvgyp2dAX8TaR47Up7Ex-Dr5C2tW0NAuUCa54BB7telCQ7tIglYo1H2FePc=3D>
-Ready to get started? Check out this guide<https://view.hashicorp.com/ODQ1L=
-VpMRi0xOTEAAAGaJsH30Vw4MQUhgP85HSgcdfNwgJ_ug_noiIjRUph3o5EE7Ldgac04e3gThS_S=
-RzyI_5zVCj4=3D> to HCP Vault Radar and sign up<https://view.hashicorp.com/O=
-DQ1LVpMRi0xOTEAAAGaJsH30UFeS5whxvgyp2dAX8TaR47Up7Ex-Dr5C2tW0NAuUCa54BB7telC=
-Q7tIglYo1H2FePc=3D> for your free trial today.
+From: C-Data <events@c-data.co.il>
+Sent: Wednesday, 21 May 2025 10:05
+To: Aviv Rahamim <avivr@terasky.com>
+Subject: =F0=E0 =EC=E4=EB=E9=F8 WASABI (=F4=F8=F1=E5=EE=FA)
 
-The HCP Vault Radar Team
 
-[HashiCorp logo]<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30QeXHdA=
-V8ul9YmnA4YZALlXjbWZh0YuHW_aXm4trThOH7Z4ilBrcd1Iln4vv6VqSjpg=3D>
-[https://go.hashicorp.com/rs/845-ZLF-191/images/Octocat%20Copy%203.png]<htt=
-ps://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30Zc4wHy68glI5Avrv66bRhkQ-n9=
-iM0u2Kd-IlQsYj4nLyuHkbhU__wtvObrXDNO4hro=3D>     [https://go.hashicorp.com/=
-rs/845-ZLF-191/images/X-logo-black.png] <https://view.hashicorp.com/ODQ1LVp=
-MRi0xOTEAAAGaJsH30eDHHMo4ZXhYqhkxzJuyZQLr-4E6_QLUOqTeIsnZR14hn5WI0M2ZlmMzc6=
-0Drl7FnsQ=3D>      [https://go.hashicorp.com/rs/845-ZLF-191/images/Path%20C=
-opy%209.png] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30ZuVtTlJMp=
-euSqTT0EdJJkbQnQRYNPLpl0P3RIgv7cZT8LPm2iD3TttnJ8eUI9aDshw=3D>
-Manage Preferences <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30TE-=
-rA71IjtmwaW1gRdcjE8B3CZmCozws1iClaIBu8Rqv5cSxkNsulormQJdO4oX-tQ=3D>      Un=
-subscribe<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30fhYNvASyHCaT6=
--_a4MjvzHVz1HqvE97PMZEjl0ojmIj4tHdbZnZ7xysCAZBDkhIQGU=3D>      Contact Us<h=
-ttps://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30c0cm2qPBo4jwHOw04c2xjCN_=
-odpIXg8dDRJJMxuZJFh9bE94s7yEwoJMdeZ2DTt94I=3D>      Privacy Policy <https:/=
-/view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30fIwce0pk0E9WQnSR__e532Et-3yjWb=
-4euGKliI3ojK7yZUKo7oJmLiUKEMHpLvMS3o=3D>
-Copyright =A9 2025 HashiCorp. All rights reserved. 101 2nd St.#700, San Fra=
-ncisco, CA 94105
-<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30QFTJ4lUnd98a7i2cC41Gw7=
-xmzjF_DBfR8whFRHl7kn2JxOD7XHed1o6UPYORsVWDLc=3D>
+
+
+
+=E0=ED =E0=E9=F0=EA =F8=E5=E0=E4 =EE=E9=E9=EC =E6=E4 =EC=E7=F5 =EB=E0=EF<ht=
+tps://trailer.web-view.net/Show/0X72E08A0977F33885214897B350C5D0F9C03A96A6E=
+C87568D79DC7FAF6783F23DEA45B0491EAE6318.htm>
+
+[=EC=E7=F5 =EC=F7=E1=EC=FA =EC=E2=F8=F1=E4 =E4=F0=E2=E9=F9=E4]<https://trai=
+ler.web-view.net/Links/0X2E4BAAF1972A42E88EE2219997740F635717AC4D100AA1AF10=
+B1F7EC671ED1982E076B2DE81D4DD29ED537EDBE94692A0244C83C23EDCCC98825497143DE2=
+637851F12DFAA8A0E7E.htm>
+
+
+
+[______-____8]<https://trailer.web-view.net/Links/0XF44C273CDA075A81CB9F8E1=
+6FC24343E97410E671B156A77432A774D364856343CC4C7BCC45D6D859ED537EDBE94692A02=
+44C83C23EDCCC98825497143DE2637851F12DFAA8A0E7E.htm>
+
+[Facebook]<https://trailer.web-view.net/Links/0XEC1E3BD5A376FCD3C41899F1CE5=
+C34FC66E6374BAFD980F9FB358055DD04137E3CDEFE5EB6BBBE8D9ED537EDBE94692A0244C8=
+3C23EDCCC98825497143DE2637851F12DFAA8A0E7E.htm>
+
+[Instagram]<https://trailer.web-view.net/Links/0X2A2E4922A9F6E4C96319C7EADA=
+426DB3D905164AD5509D7BF29A02F1CD046638940B04D6157CE24C9ED537EDBE94692A0244C=
+83C23EDCCC98825497143DE2637851F12DFAA8A0E7E.htm>
+
+[LinkedIn]<https://trailer.web-view.net/Links/0X85453D22040B43C7681B4B6EDD1=
+ED6AE314B982D19A4150F97FFEF1916DABBB5371F1000F21C2F949ED537EDBE94692A0244C8=
+3C23EDCCC98825497143DE2637851F12DFAA8A0E7E.htm>
+
+[Website]<https://trailer.web-view.net/Links/0X0E2DAFAE1DD3109F29F8C4A569DD=
+33F20402312CC7FAB72BD668433EC23C7F6B7DBA93D5489BEFEC9ED537EDBE94692A0244C83=
+C23EDCCC98825497143DE2637851F12DFAA8A0E7E.htm>
+
+
+
+=F7=E5=EE=F4=E9=E5=E8=F8 =F1=E9 =E3=E0=E8=E4 | =E4=F1=E9=E1=E9=ED 43 | =F4=
+=FA=E7 =FA=F7=E5=E5=E4 | Israel | 03-9140000
+
+=E4=F1=F8<https://trailer.web-view.net/Out_0X72E08A0977F33885214897B350C5D0=
+F9C03A96A6EC87568D79DC7FAF6783F23DEA45B0491EAE6318.htm> | =E3=E5=E5=E7 =EB=
+=F1=F4=E0=ED<https://trailer.web-view.net/SpamAbuse_0X72E08A0977F3388521489=
+7B350C5D0F9C03A96A6EC87568D79DC7FAF6783F23DEA45B0491EAE6318.htm>
+
+=F0=F9=EC=E7 =E1=E0=EE=F6=F2=E5=FA =FA=E5=EB=F0=FA ActiveTrail<https://trai=
+ler.web-view.net/nslinks/0XA7B345C74AEB82B7BA022830AA129F80AE751E8DF83E5340=
+4402EBD2F42C2690BE03F61F56173B90B95D29F255FEE7606F04B3FFA18E95307C1CD139524=
+1FB41BFA19C57546167EC1603DE791398666FBE96209353B62676C6585023A343148A92C88C=
+510BD5B1CABF2B8A52F813D52F.htm>
 
 [CAUTION: This email originated from outside of the organization. Do not cl=
 ick links or open attachments unless you recognize the sender and know the =
 content is safe]
 
---_000_PAXP194MB1277FC2A637A74F5B50BF87BCF9EAPAXP194MB1277EURP_
-Content-Type: text/html; charset="Windows-1252"
+--_000_PAXP194MB1277495AAC4783342D05C6E5CF9EAPAXP194MB1277EURP_
+Content-Type: text/html; charset="iso-8859-8-i"
 Content-Transfer-Encoding: quoted-printable
 
 <html>
 <head>
-<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
-252">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+8-i">
 <style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
 ttom:0;} </style>
 </head>
@@ -345,333 +344,186 @@ ght: 115%;"><b><a href=3D"www.terasky.com" style=3D"color: rgb(240, 122, 88=
 <p>&nbsp;</p>
 <p><img width=3D"412" height=3D"65" style=3D"width: 4.298in; height: 0.68in=
 ; margin-top: 0px; margin-bottom: 0px;" data-outlook-trace=3D"F:1|T:1" src=
-=3D"cid:165eadad-fcb8-49e6-9e34-337c9fafae9a"></p>
+=3D"cid:6a5f5f16-3c9e-4cbc-a9c1-e461f3230374"></p>
 <p>&nbsp;</p>
 </div>
 <div id=3D"appendonsend"></div>
 <hr style=3D"display:inline-block;width:98%" tabindex=3D"-1">
 <div id=3D"divRplyFwdMsg" dir=3D"ltr"><font face=3D"Calibri, sans-serif" st=
-yle=3D"font-size:11pt" color=3D"#000000"><b>From:</b> HashiCorp &lt;hello@r=
-eply.hashicorp.com&gt;<br>
-<b>Sent:</b> Wednesday, April 30, 2025 8:40 PM<br>
-<b>To:</b> David Gidony &lt;davidg@terasky.com&gt;<br>
-<b>Subject:</b> HCP Vault Radar is now GA</font>
+yle=3D"font-size:11pt" color=3D"#000000"><b>From:</b> Aviv Rahamim &lt;aviv=
+r@terasky.com&gt;<br>
+<b>Sent:</b> Wednesday, May 21, 2025 10:16 AM<br>
+<b>To:</b> Vendor Promotions &lt;vendor_promotions@terasky.com&gt;<br>
+<b>Cc:</b> David Gidony &lt;davidg@terasky.com&gt;; Lev Andelman &lt;lev@te=
+rasky.com&gt;<br>
+<b>Subject:</b> FW: =F0=E0 =EC=E4=EB=E9=F8 WASABI (=F4=F8=F1=E5=EE=FA)</fon=
+t>
 <div>&nbsp;</div>
 </div>
-<style type=3D"text/css">
+<style>
 <!--
-div
-	{background-color:#f7f7f9;
-	margin:0!important;
-	padding:0!important}
-table td
-	{border-collapse:collapse}
-table
-	{border-spacing:0}
-p
-	{margin:0;
-	padding:0;
-	margin-bottom:0;
-	padding-bottom:10px}
-h1, h2, h3, h4, h5, h6
-	{margin:0;
-	padding:0}
-div
-	{background-color:#f7f7f9;
-	width:100%;
-	min-width:100%!important}
-a[x-apple-data-detectors]
-	{color:inherit!important;
-	text-decoration:none!important;
-	font-size:inherit!important;
-	font-family:inherit!important;
-	font-weight:inherit!important;
-	line-height:inherit!important}
-a, a:link, a:visited
-	{color:#2e71e5;
+@font-face
+	{font-family:Helvetica}
+@font-face
+	{font-family:"Cambria Math"}
+@font-face
+	{font-family:Calibri}
+@font-face
+	{font-family:Aptos}
+p.x_MsoNormal, li.x_MsoNormal, div.x_MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif}
+a:link, span.x_MsoHyperlink
+	{color:blue;
 	text-decoration:underline}
+span.x_canspam-companyname
+	{}
+span.x_canspam-address1
+	{}
+span.x_canspam-city
+	{}
+span.x_canspam-country
+	{}
+span.x_canspam-phone
+	{}
+span.x_bl-link-sep
+	{}
+p.x_msonormal0, li.x_msonormal0, div.x_msonormal0
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif}
+span.x_EmailStyle31
+	{font-family:"Aptos",sans-serif;
+	color:windowtext;
+	font-weight:normal;
+	font-style:normal}
+.x_MsoChpDefault
+	{font-size:10.0pt}
+@page WordSection1
+	{margin:72.0pt 72.0pt 72.0pt 72.0pt}
+div.x_WordSection1
+	{}
 -->
 </style>
-<div style=3D"background-color:#f7f7f9"><style type=3D"text/css">
-<!--
-div#x_emailPreHeader
-	{display:none!important}
--->
-</style>
-<div id=3D"x_emailPreHeader" style=3D"visibility:hidden; opacity:0; color:t=
-ransparent; line-height:0; font-size:0px; overflow:hidden; border-width:0; =
-display:none!important">
-It=92s not a secret anymore.</div>
-<table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
-=3D"0" border=3D"0" align=3D"center" style=3D"background-color:#f7f7f9; mar=
-gin:0px auto; width:100%!important; min-width:100%!important">
-<tbody>
-<tr>
-<td>
-<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" border=3D"=
-0" width=3D"640" class=3D"x_tableCollapse" align=3D"center" style=3D"margin=
-:0px auto; width:640px">
-<tbody>
-<tr>
-<td class=3D"x_mktoContainer x_pad0" id=3D"x_MainContainer" align=3D"center=
-" valign=3D"top" style=3D"padding-top:0px; padding-bottom:0px">
-<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
-nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"x_mktoModul=
-e" id=3D"x_HeaderLinksModule01" style=3D"background-color:#ffffff; margin:0=
-px auto; width:100%!important; min-width:100%!important">
-<tbody>
-<tr>
-<td class=3D"x_mktEditable x_mobCenter x_w20" id=3D"x_FWBodyTxt03" style=3D=
-"padding-top:40px; padding-bottom:0px; padding-left:80px; padding-right:80p=
-x; font-family:Helvetica,Arial,sans-serif; font-size:12px; line-height:16px=
-; color:#727274; text-align:center; font-weight:normal">
-<div><a href=3D"https://view.hashicorp.com/v/ODQ1LVpMRi0xOTEAAAGaJsH30ROdcb=
-oGem8iDEhTxC936nB1l2Bkw12PMUTPMHE7gkkwWJFIn2TcFtXxBuSUjA6NcKQ=3D" target=3D=
-"_blank" style=3D"text-decoration:underline; color:#727274"><span style=3D"=
-text-decoration:underline; color:#727274">View
- in browser</span></a> &nbsp;|&nbsp; <a href=3D"https://view.hashicorp.com/=
-ODQ1LVpMRi0xOTEAAAGaJsH30TE-rA71IjtmwaW1gRdcjE8B3CZmCozws1iClaIBu8Rqv5cSxkN=
-sulormQJdO4oX-tQ=3D" style=3D"text-decoration:underline; color:#727274">
-<span style=3D"text-decoration:underline; color:#727274">Update your prefer=
-ences</span></a>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
-nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"x_mktoModul=
-e" id=3D"x_LogoModule01" style=3D"background-color:#ffffff; margin:0px auto=
-; width:100%!important; min-width:100%!important">
-<tbody>
-<tr>
-<td class=3D"x_w10 x_mobLeft" style=3D"padding-top:24px; padding-bottom:24p=
-x; padding-left:60px; padding-right:60px; text-align:left">
-<div class=3D"x_mktoImg x_w100" id=3D"x_Logo01" style=3D"display:inline-blo=
-ck"><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30dbaXl-25=
-xLT-y_ZuhiFClQdheu7c5-zOBjj920MbkZg-aMSAhJqGKGwej0HnKUuTOg=3D" target=3D"_b=
-lank"><img width=3D"170" border=3D"0" alt=3D"Hashicorp Logo" style=3D"width=
-:170px; height:auto; display:inline-block; border:none; outline:none; text-=
-decoration:none; vertical-align:middle" src=3D"https://go.hashicorp.com/rs/=
-845-ZLF-191/images/hashicorp-logo-170x55-do-2x.png">
-</a></div>
-</td>
-</tr>
-</tbody>
-</table>
-<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
-nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"x_mktoModul=
-e" id=3D"x_FWImgModule019adf2645-7300-412a-9b51-421ea4572fa6" style=3D"back=
-ground-color:#ffffff; margin:0px auto; width:100%!important; min-width:100%=
-!important">
-<tbody>
-<tr>
-<td class=3D"x_mobCenter" style=3D"text-align:center; padding-top:0px; padd=
-ing-bottom:0px">
-<div class=3D"x_mktoImg x_w100" id=3D"x_FWImage01ec7e268b-1456-4a6e-bf7c-f5=
-aea7289e5d" style=3D"display:inline-block">
-<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30UFeS5whxvgyp=
-2dAX8TaR47Up7Ex-Dr5C2tW0NAuUCa54BB7telCQ7tIglYo1H2FePc=3D" target=3D"_blank=
-"><img width=3D"7800" height=3D"2400" alt=3D"Email Banner_Vault Radar GA_An=
-nouncement Email.png" style=3D"width:640px; height:auto; display:inline-blo=
-ck; border:none; outline:none; text-decoration:none; vertical-align:top; bo=
-rder-radius:0px" src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/Emai=
-l Banner_Vault Radar GA_Announcement Email.png"></a>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
-nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"x_mktoModul=
-e" id=3D"x_BodyTxtModule01105f4c5c-7f98-47c6-a9b4-3149e1e2e186" style=3D"ba=
-ckground-color:#ffffff; margin:0px auto; width:100%!important; min-width:10=
-0%!important">
-<tbody>
-<tr>
-<td class=3D"x_mktEditable x_mobLeft x_w20" id=3D"x_BodyTxt0123382297-6f5f-=
-44d1-a883-f4bb4419e5d2" style=3D"padding-top:20px; padding-bottom:20px; pad=
-ding-left:70px; padding-right:70px; font-family:Helvetica,Arial,sans-serif;=
- font-size:14px; line-height:23px; color:#000001; text-align:left; font-wei=
-ght:normal">
-<div>Hi David, <br>
+<div lang=3D"en-IL" link=3D"blue" vlink=3D"purple" style=3D"background-colo=
+r:white; word-wrap:break-word">
+<div class=3D"x_WordSection1">
+<p class=3D"x_MsoNormal"><span lang=3D"en-IL" style=3D"font-size:11.0pt">&n=
+bsp;</span></p>
+<p class=3D"x_MsoNormal"><span lang=3D"en-IL" style=3D"font-size:11.0pt">&n=
+bsp;</span></p>
+<div>
+<div style=3D"border:none; border-top:solid #E1E1E1 1.0pt; padding:3.0pt 0c=
+m 0cm 0cm">
+<p class=3D"x_MsoNormal"><b><span lang=3D"EN-US" style=3D"font-size:11.0pt;=
+ font-family:&quot;Calibri&quot;,sans-serif">From:</span></b><span lang=3D"=
+EN-US" style=3D"font-size:11.0pt; font-family:&quot;Calibri&quot;,sans-seri=
+f"> C-Data &lt;events@c-data.co.il&gt;
 <br>
+<b>Sent:</b> Wednesday, 21 May 2025 10:05<br>
+<b>To:</b> Aviv Rahamim &lt;avivr@terasky.com&gt;<br>
+<b>Subject:</b> </span><span lang=3D"HE" dir=3D"RTL" style=3D"font-size:11.=
+0pt; font-family:&quot;Calibri&quot;,sans-serif">=F0=E0 =EC=E4=EB=E9=F8</sp=
+an><span dir=3D"LTR"></span><span dir=3D"LTR"></span><span lang=3D"EN-US" s=
+tyle=3D"font-size:11.0pt; font-family:&quot;Calibri&quot;,sans-serif"><span=
+ dir=3D"LTR"></span><span dir=3D"LTR"></span>
+ WASABI (</span><span lang=3D"HE" dir=3D"RTL" style=3D"font-size:11.0pt; fo=
+nt-family:&quot;Calibri&quot;,sans-serif">=F4=F8=F1=E5=EE=FA</span><span di=
+r=3D"LTR"></span><span dir=3D"LTR"></span><span lang=3D"EN-US" style=3D"fon=
+t-size:11.0pt; font-family:&quot;Calibri&quot;,sans-serif"><span dir=3D"LTR=
+"></span><span dir=3D"LTR"></span>)</span></p>
 </div>
-<div>It=92s not a secret anymore =97 HCP Vault Radar is now generally avail=
-able. <br>
-<br>
 </div>
-<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30e4hjK08=
-FnYXGUfJnQQbQHGCz-dCxFl8pFuKjbJ7WGp8fcXqip3MijiPdyR27BmW8QI=3D" target=3D"_=
-blank">HCP Vault Radar</a> helps Platform, DevOps, and security teams find,=
- remediate, and secure unmanaged data
- in three steps: <br>
-<br>
-</div>
-<div><strong>1. Proliferation&nbsp;</strong> </div>
-<div>Scan everything from code repositories to CI/CD platforms for leaked s=
-ecrets. Even on-premises datacenters and collaboration tools like Slack.
-<br>
-<br>
-</div>
-<div><strong>2. Prioritization&nbsp;</strong> </div>
-<div>Once secrets are discovered, they=92re ranked by risk level so you can=
- get them under control fast using a comprehensive set of data points and r=
-emediation workflows.
-<br>
-<br>
-</div>
-<div><strong>3. Prevention&nbsp;</strong> </div>
-<div>Stop future leaks before they happen. Scan pull requests and notify de=
-velopers of exposed secrets before they merge code into the main production=
- branch.
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
-nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"x_mktoModul=
-e" id=3D"x_BtnModule014ff56773-d0a1-4734-9ff9-0e6e10dbfa6e" style=3D"backgr=
-ound-color:#ffffff; margin:0px auto; width:100%!important; min-width:100%!i=
-mportant">
+<p class=3D"x_MsoNormal">&nbsp;</p>
+<p class=3D"x_MsoNormal" style=3D"line-height:15.0pt"><span style=3D"font-s=
+ize:10.5pt; font-family:&quot;Helvetica&quot;,sans-serif; color:#333333"><i=
+mg width=3D"1" height=3D"1" id=3D"x__x0000_i1031" style=3D"width:.0104in; h=
+eight:.0104in" src=3D"https://trailer.web-view.net/Open/0X72E08A0977F338852=
+14897B350C5D0F9C03A96A6EC87568D79DC7FAF6783F23DEA45B0491EAE6318.gif"></span=
+><span style=3D"font-size:10.5pt; font-family:&quot;Helvetica&quot;,sans-se=
+rif; color:#333333"></span></p>
+<div>
+<table class=3D"x_MsoNormalTable" border=3D"0" cellpadding=3D"0" width=3D"1=
+00%" style=3D"width:100.0%">
 <tbody>
 <tr>
-<td class=3D"x_mktEditable x_w20" align=3D"center" id=3D"x_Btn016bd81825-f5=
-f8-41ac-952a-4131b55a6c3c" style=3D"padding-top:10px; padding-bottom:20px; =
-padding-left:80px; padding-right:80px">
-<table role=3D"presentation" class=3D"x_mobLeft" align=3D"center" cellspaci=
-ng=3D"0" cellpadding=3D"0" border=3D"0">
+<td width=3D"100%" id=3D"x_mso-global-td" style=3D"width:100.0%; padding:0c=
+m 0cm 0cm 0cm">
+<div>
+<div align=3D"center">
+<table class=3D"x_MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" width=3D"100%" id=3D"x_mso-global-table" style=3D"width:100.0%; bac=
+kground:#F9F9F9; border-collapse:collapse">
 <tbody>
 <tr>
-<td style=3D"background-color:#000001; border:1px solid #000001; font-famil=
-y:Helvetica,Arial,sans-serif; text-align:center; font-size:16px; line-heigh=
-t:16px; font-weight:normal; color:#ffffff; border-radius:3px">
-<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30UFeS5wh=
-xvgyp2dAX8TaR47Up7Ex-Dr5C2tW0NAuUCa54BB7telCQ7tIglYo1H2FePc=3D" target=3D"_=
-blank" style=3D"display:block; padding:7px 19px 7px 19px; text-decoration:n=
-one; color:#ffffff"><span style=3D"text-decoration:none; color:#ffffff">Sta=
-rt
- your free trial</span></a> </div>
+<td width=3D"100%" valign=3D"top" name=3D"x_FrameworkZone" style=3D"width:1=
+00.0%; padding:7.5pt 7.5pt 7.5pt 7.5pt">
+<div align=3D"center">
+<table class=3D"x_MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" width=3D"600" style=3D"width:450.0pt">
+<tbody>
+<tr>
+<td width=3D"600" valign=3D"top" style=3D"width:450.0pt; padding:0cm 0cm 0c=
+m 0cm">
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" style=3D"max-width:450.0pt; background:white">
+<tbody>
+<tr>
+<td width=3D"100%" valign=3D"top" style=3D"width:100.0%; padding:0cm 0cm 0c=
+m 0cm">
+<div align=3D"left">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td width=3D"100%" valign=3D"top" style=3D"width:100.0%; padding:0cm 0cm 0c=
+m 0cm">
+<div name=3D"x_header">
+<div>
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td style=3D"padding:0cm 0cm 0cm 0cm">
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%; background:#F9F9F=
+9">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:13.5pt 0cm 13.5pt 0cm">
+<div align=3D"center">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td width=3D"100%" valign=3D"top" style=3D"width:100.0%; padding:0cm 0cm 0c=
+m 0cm">
+<div align=3D"center">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td style=3D"padding:0cm 0cm 0cm 0cm">
+<p class=3D"x_MsoNormal" align=3D"center" dir=3D"RTL" style=3D"text-align:c=
+enter; direction:rtl; unicode-bidi:embed">
+<span lang=3D"HE" style=3D"font-size:10.5pt; font-family:&quot;Arial&quot;,=
+sans-serif; color:#606060">=E0=ED =E0=E9=F0=EA =F8=E5=E0=E4 =EE=E9=E9=EC =
+=E6=E4
+<a href=3D"https://trailer.web-view.net/Show/0X72E08A0977F33885214897B350C5=
+D0F9C03A96A6EC87568D79DC7FAF6783F23DEA45B0491EAE6318.htm">
+<span style=3D"color:#00008C; border:none windowtext 1.0pt; padding:0cm; te=
+xt-decoration:none">=EC=E7=F5 =EB=E0=EF</span></a></span><span dir=3D"LTR" =
+style=3D"font-size:10.5pt; font-family:&quot;Arial&quot;,sans-serif; color:=
+#606060"></span></p>
 </td>
 </tr>
 </tbody>
 </table>
-</td>
-</tr>
-</tbody>
-</table>
-<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
-nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"x_mktoModul=
-e" id=3D"x_BodyTxtModule01ce1e25bf-41c8-4577-9ff4-7bcdd46a4394" style=3D"ba=
-ckground-color:#ffffff; margin:0px auto; width:100%!important; min-width:10=
-0%!important">
-<tbody>
-<tr>
-<td class=3D"x_mktEditable x_mobLeft x_w20" id=3D"x_BodyTxt01403afc6e-ef66-=
-4c20-a3d6-fcaf1e95b77c" style=3D"padding-top:20px; padding-bottom:0px; padd=
-ing-left:70px; padding-right:70px; font-family:Helvetica,Arial,sans-serif; =
-font-size:14px; line-height:23px; color:#000001; text-align:left; font-weig=
-ht:normal">
-<div>Ready to get started? <a href=3D"https://view.hashicorp.com/ODQ1LVpMRi=
-0xOTEAAAGaJsH30Vw4MQUhgP85HSgcdfNwgJ_ug_noiIjRUph3o5EE7Ldgac04e3gThS_SRzyI_=
-5zVCj4=3D" target=3D"_blank">
-Check out this guide</a> to HCP Vault Radar and <a href=3D"https://view.has=
-hicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30UFeS5whxvgyp2dAX8TaR47Up7Ex-Dr5C2tW0NAu=
-UCa54BB7telCQ7tIglYo1H2FePc=3D" target=3D"_blank">
-sign up</a> for your free trial today.&nbsp; <br>
-<br>
-</div>
-<div>The HCP Vault&nbsp;Radar Team </div>
-</td>
-</tr>
-</tbody>
-</table>
-<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
-nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"x_mktoModul=
-e" id=3D"x_WhiteSpacerModule01" style=3D"background-color:#ffffff; margin:0=
-px auto; width:100%!important; min-width:100%!important">
-<tbody>
-<tr>
-<td class=3D"x_mktEditable" id=3D"x_CustomHtml01" height=3D"20" style=3D"he=
-ight:20px; font-size:1px; line-height:1px">
-&nbsp;</td>
-</tr>
-</tbody>
-</table>
-<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
-nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"x_mktoModul=
-e" id=3D"x_FooterModule01221a5ef6-ac17-4bdb-9d4d-0dcd4e5f0f5c" style=3D"bac=
-kground-color:#ffffff; margin:0px auto; width:100%!important; min-width:100=
-%!important">
-<tbody>
-<tr>
-<td style=3D"padding-top:18px; padding-bottom:30px; padding-left:20px; padd=
-ing-right:20px">
-<table role=3D"presentation" bgcolor=3D"#f5f7f7" width=3D"100%" align=3D"ce=
-nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-=
-color:#f5f7f7; margin:0px auto; width:100%!important; min-width:100%!import=
-ant; border-radius:8px">
-<tbody>
-<tr>
-<td style=3D"padding:24px 30px 24px 30px">
-<div class=3D"x_mktoSnippet" id=3D"x_Footer0181db3643-38b6-49f7-8af8-7a6d4f=
-7889ef">
-<table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
-=3D"0" border=3D"0" align=3D"center" style=3D"margin:0px auto; width:100%!i=
-mportant; min-width:100%!important">
-<tbody>
-<tr>
-<td style=3D"text-align:left; padding-bottom:35px">
-<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30QeXHdAV=
-8ul9YmnA4YZALlXjbWZh0YuHW_aXm4trThOH7Z4ilBrcd1Iln4vv6VqSjpg=3D" target=3D"_=
-blank" title=3D"HashiCorp"><img alt=3D"HashiCorp logo" width=3D"150" src=3D=
-"https://go.hashicorp.com/rs/845-ZLF-191/images/HashiCorp-logo-330x74px.png=
-"></a>
-</div>
-</td>
-<td style=3D"text-align:right; padding-bottom:35px">
-<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30Zc4wHy6=
-8glI5Avrv66bRhkQ-n9iM0u2Kd-IlQsYj4nLyuHkbhU__wtvObrXDNO4hro=3D" target=3D"_=
-blank"><img width=3D"21" height=3D"20" src=3D"https://go.hashicorp.com/rs/8=
-45-ZLF-191/images/Octocat Copy 3.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30eDHHMo4ZXhYq=
-hkxzJuyZQLr-4E6_QLUOqTeIsnZR14hn5WI0M2ZlmMzc60Drl7FnsQ=3D">
-<img width=3D"20" height=3D"20" src=3D"https://go.hashicorp.com/rs/845-ZLF-=
-191/images/X-logo-black.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30ZuVtTlJMpeuS=
-qTT0EdJJkbQnQRYNPLpl0P3RIgv7cZT8LPm2iD3TttnJ8eUI9aDshw=3D">
-<img width=3D"20" height=3D"20" src=3D"https://go.hashicorp.com/rs/845-ZLF-=
-191/images/Path Copy 9.png"></a>
-</div>
-</td>
-</tr>
-<tr>
-<td colspan=3D"2" style=3D"padding-bottom:25px; font-family:Helvetica,Arial=
-,sans-serif; font-size:14px; line-height:17px; font-weight:normal; text-ali=
-gn:left">
-<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30TE-rA71=
-IjtmwaW1gRdcjE8B3CZmCozws1iClaIBu8Rqv5cSxkNsulormQJdO4oX-tQ=3D" style=3D"co=
-lor:#000; text-decoration:none">Manage Preferences
-</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.com/ODQ1LVpM=
-Ri0xOTEAAAGaJsH30fhYNvASyHCaT6-_a4MjvzHVz1HqvE97PMZEjl0ojmIj4tHdbZnZ7xysCAZ=
-BDkhIQGU=3D" target=3D"_blank" style=3D"color:#000001; text-decoration:none=
-">
-Unsubscribe</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.=
-com/ODQ1LVpMRi0xOTEAAAGaJsH30c0cm2qPBo4jwHOw04c2xjCN_odpIXg8dDRJJMxuZJFh9bE=
-94s7yEwoJMdeZ2DTt94I=3D" style=3D"color:#000001; text-decoration:none">
-Contact Us</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.c=
-om/ODQ1LVpMRi0xOTEAAAGaJsH30fIwce0pk0E9WQnSR__e532Et-3yjWb4euGKliI3ojK7yZUK=
-o7oJmLiUKEMHpLvMS3o=3D" style=3D"color:#000001; text-decoration:none">
-Privacy Policy </a></div>
-</td>
-</tr>
-<tr>
-<td colspan=3D"2" style=3D"font-family:Helvetica,Arial,sans-serif; font-siz=
-e:12px; line-height:17px; font-weight:normal; text-decoration:none; color:#=
-656a70; text-align:left">
-<div>Copyright =A9 2025 HashiCorp. All rights reserved. 101 2nd St.#700, Sa=
-n Francisco, CA 94105
 </div>
 </td>
 </tr>
@@ -682,62 +534,389 @@ n Francisco, CA 94105
 </tr>
 </tbody>
 </table>
+</div>
 </td>
 </tr>
 </tbody>
 </table>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaJsH30QFTJ4lUnd98a=
-7i2cC41Gw7xmzjF_DBfR8whFRHl7kn2JxOD7XHed1o6UPYORsVWDLc=3D"></a><img width=
-=3D"1" height=3D"1" alt=3D"" style=3D"display:none!important" src=3D"https:=
-//view.hashicorp.com/trk?t=3D1&amp;mid=3DODQ1LVpMRi0xOTEAAAGaJsH30Vnvn8Jv-X=
-Iw6EwUJQ1PCgFYXCcDr2QqFDvKgwfqIhuKYqRKge3JPgPFswH90fvK0fNwSOJXR_ZD_6c4jxdts=
-6qzvH-ZlNDJcDn5IQ_Z5TmEU5VKLhdJx1WhfDel0mZBdPogcZkr3_qybw">
-<center>
-<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" bgco=
-lor=3D"#ffffff" style=3D"width:100%; background:#ffffff">
+</div>
+</div>
+</div>
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%; background:#F9F9F=
+9">
 <tbody>
 <tr>
-<td>
-<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"600" align=
-=3D"center" bgcolor=3D"#ffffff" style=3D"background:#ffffff">
+<td style=3D"padding:0cm 0cm 0cm 0cm">
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%; background:#F9F9F=
+9">
 <tbody>
 <tr>
-</tr>
-</tbody>
-</table>
+<td width=3D"100%" valign=3D"top" style=3D"width:100.0%; padding:0cm 0cm 0c=
+m 0cm">
+<div align=3D"center">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td width=3D"100%" valign=3D"top" style=3D"width:100.0%; padding:0cm 0cm 0c=
+m 0cm">
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td style=3D"padding:0cm 0cm 0cm 0cm">
+<p class=3D"x_MsoNormal" dir=3D"RTL" style=3D"text-align:right; direction:r=
+tl; unicode-bidi:embed">
+<a href=3D"https://trailer.web-view.net/Links/0X2E4BAAF1972A42E88EE22199977=
+40F635717AC4D100AA1AF10B1F7EC671ED1982E076B2DE81D4DD29ED537EDBE94692A0244C8=
+3C23EDCCC98825497143DE2637851F12DFAA8A0E7E.htm"><span dir=3D"LTR" style=3D"=
+font-size:11.5pt; font-family:&quot;Arial&quot;,sans-serif; color:#00008C; =
+border:none windowtext 1.0pt; padding:0cm; text-decoration:none"><img borde=
+r=3D"0" width=3D"22" height=3D"22" id=3D"x__x0000_i1030" alt=3D"=EC=E7=F5 =
+=EC=F7=E1=EC=FA =EC=E2=F8=F1=E4 =E4=F0=E2=E9=F9=E4" style=3D"width:.2291in;=
+ height:.2291in" src=3D"https://cdn-media.web-view.net/app/img/Icon/limited=
+Opportunities.png"></span></a><span dir=3D"LTR" style=3D"font-size:11.5pt; =
+font-family:&quot;Arial&quot;,sans-serif; color:#606060"></span></p>
 </td>
 </tr>
 </tbody>
 </table>
-</center>
-<p></p>
-<div style=3D"">
-<p class=3D"x_=94MsoNormal=94" style=3D""><b></b><span style=3D"">[CAUTION:=
- This email originated from outside of the organization. Do not click links=
- or open attachments unless you recognize the sender and know the content i=
-s safe]</span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div name=3D"x_image">
+<div>
+<p class=3D"x_MsoNormal" dir=3D"RTL" style=3D"text-align:right; direction:r=
+tl; unicode-bidi:embed">
+<span dir=3D"LTR">&nbsp;</span></p>
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%; min-width:100%">
+<tbody>
+<tr>
+<td style=3D"padding:0cm 0cm 0cm 0cm">
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%; min-width:100%">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:0cm 0cm 0cm 0cm">
+<div align=3D"center">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%; border-spacing:0p=
+x">
+<tbody>
+<tr>
+<td width=3D"100%" valign=3D"top" style=3D"width:100.0%; padding:0cm 0cm 0c=
+m 0cm">
+<p class=3D"x_MsoNormal" align=3D"center" dir=3D"RTL" style=3D"text-align:c=
+enter; direction:rtl; unicode-bidi:embed">
+<a href=3D"https://trailer.web-view.net/Links/0XF44C273CDA075A81CB9F8E16FC2=
+4343E97410E671B156A77432A774D364856343CC4C7BCC45D6D859ED537EDBE94692A0244C8=
+3C23EDCCC98825497143DE2637851F12DFAA8A0E7E.htm" target=3D"_blank"><span dir=
+=3D"LTR" style=3D"font-size:11.5pt; font-family:&quot;Arial&quot;,sans-seri=
+f; border:none windowtext 1.0pt; padding:0cm; text-decoration:none"><img bo=
+rder=3D"0" width=3D"600" height=3D"904" id=3D"x__x0000_i1029" alt=3D"______=
+-____8" style=3D"width:6.25in; height:9.4166in" src=3D"https://cdn-media.we=
+b-view.net/i/zw3djtdcap8h/______-____8.jpg?cache=3D1747809342735"></span></=
+a><span dir=3D"LTR" style=3D"font-size:11.5pt; font-family:&quot;Arial&quot=
+;,sans-serif; color:#606060"></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td style=3D"padding:0cm 0cm 0cm 0cm">
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:0cm 0cm 0cm 0cm">
+<div align=3D"center">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td width=3D"100%" valign=3D"top" style=3D"width:100.0%; padding:0cm 0cm 0c=
+m 0cm">
+<div>
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td style=3D"padding:0cm 0cm 0cm 0cm">
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td style=3D"padding:0cm 0cm 0cm 0cm">
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" align=3D"left">
+<tbody>
+<tr>
+<td width=3D"26" style=3D"width:19.5pt; padding:1.5pt 1.5pt 1.5pt 1.5pt">
+<p class=3D"x_MsoNormal" dir=3D"RTL" style=3D"text-align:right; direction:r=
+tl; unicode-bidi:embed">
+<a href=3D"https://trailer.web-view.net/Links/0XEC1E3BD5A376FCD3C41899F1CE5=
+C34FC66E6374BAFD980F9FB358055DD04137E3CDEFE5EB6BBBE8D9ED537EDBE94692A0244C8=
+3C23EDCCC98825497143DE2637851F12DFAA8A0E7E.htm" target=3D"_blank"><span dir=
+=3D"LTR" style=3D"color:#00008C; border:none windowtext 1.0pt; padding:0cm;=
+ text-decoration:none"><img border=3D"0" width=3D"26" height=3D"26" id=3D"x=
+__x0000_i1028" alt=3D"Facebook" style=3D"width:.2708in; height:.2708in" src=
+=3D"https://cdn-media.web-view.net/templates/builder/public/Social/FindUs/F=
+indUs_small_fb_circle_BOW.png"></span></a><span dir=3D"LTR"></span></p>
+</td>
+<td width=3D"26" style=3D"width:19.5pt; padding:1.5pt 1.5pt 1.5pt 1.5pt">
+<p class=3D"x_MsoNormal" dir=3D"RTL" style=3D"text-align:right; direction:r=
+tl; unicode-bidi:embed">
+<a href=3D"https://trailer.web-view.net/Links/0X2A2E4922A9F6E4C96319C7EADA4=
+26DB3D905164AD5509D7BF29A02F1CD046638940B04D6157CE24C9ED537EDBE94692A0244C8=
+3C23EDCCC98825497143DE2637851F12DFAA8A0E7E.htm" target=3D"_blank"><span dir=
+=3D"LTR" style=3D"color:#00008C; border:none windowtext 1.0pt; padding:0cm;=
+ text-decoration:none"><img border=3D"0" width=3D"26" height=3D"26" id=3D"x=
+__x0000_i1027" alt=3D"Instagram" style=3D"width:.2708in; height:.2708in" sr=
+c=3D"https://cdn-media.web-view.net/templates/builder/public/Social/FindUs/=
+FindUs_small_ins_circle_BOW.png"></span></a><span dir=3D"LTR"></span></p>
+</td>
+<td width=3D"26" style=3D"width:19.5pt; padding:1.5pt 1.5pt 1.5pt 1.5pt">
+<p class=3D"x_MsoNormal" dir=3D"RTL" style=3D"text-align:right; direction:r=
+tl; unicode-bidi:embed">
+<a href=3D"https://trailer.web-view.net/Links/0X85453D22040B43C7681B4B6EDD1=
+ED6AE314B982D19A4150F97FFEF1916DABBB5371F1000F21C2F949ED537EDBE94692A0244C8=
+3C23EDCCC98825497143DE2637851F12DFAA8A0E7E.htm" target=3D"_blank"><span dir=
+=3D"LTR" style=3D"color:#00008C; border:none windowtext 1.0pt; padding:0cm;=
+ text-decoration:none"><img border=3D"0" width=3D"26" height=3D"26" id=3D"x=
+__x0000_i1026" alt=3D"LinkedIn" style=3D"width:.2708in; height:.2708in" src=
+=3D"https://cdn-media.web-view.net/templates/builder/public/Social/FindUs/F=
+indUs_small_in_circle_BOW.png"></span></a><span dir=3D"LTR"></span></p>
+</td>
+<td width=3D"26" style=3D"width:19.5pt; padding:1.5pt 1.5pt 1.5pt 1.5pt">
+<p class=3D"x_MsoNormal" dir=3D"RTL" style=3D"text-align:right; direction:r=
+tl; unicode-bidi:embed">
+<a href=3D"https://trailer.web-view.net/Links/0X0E2DAFAE1DD3109F29F8C4A569D=
+D33F20402312CC7FAB72BD668433EC23C7F6B7DBA93D5489BEFEC9ED537EDBE94692A0244C8=
+3C23EDCCC98825497143DE2637851F12DFAA8A0E7E.htm" target=3D"_blank"><span dir=
+=3D"LTR" style=3D"color:#00008C; border:none windowtext 1.0pt; padding:0cm;=
+ text-decoration:none"><img border=3D"0" width=3D"26" height=3D"26" id=3D"x=
+__x0000_i1025" alt=3D"Website" style=3D"width:.2708in; height:.2708in" src=
+=3D"https://cdn-media.web-view.net/templates/builder/public/Social/FindUs/F=
+indUs_small_we_circle_BOW.png"></span></a><span dir=3D"LTR"></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class=3D"x_MsoNormal">&nbsp;</p>
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" style=3D"max-width:450.0pt; min-width:0px">
+<tbody>
+<tr>
+<td width=3D"100%" valign=3D"top" name=3D"x_FooterZone" style=3D"width:100.=
+0%; padding:0cm 0cm 0cm 0cm">
+<div align=3D"left">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td width=3D"100%" valign=3D"top" style=3D"width:100.0%; padding:0cm 0cm 0c=
+m 0cm">
+<div name=3D"x_Footer">
+<div>
+<div>
+<div align=3D"right">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:0cm 6.75pt 0cm 6.75pt">
+<div align=3D"center">
+<table class=3D"x_MsoNormalTable" dir=3D"rtl" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%">
+<tbody>
+<tr>
+<td width=3D"100%" valign=3D"top" style=3D"width:100.0%; padding:0cm 6.75pt=
+ 0cm 6.75pt">
+<p class=3D"x_MsoNormal" align=3D"center" dir=3D"RTL" style=3D"text-align:c=
+enter; direction:rtl; unicode-bidi:embed">
+<span class=3D"x_canspam-companyname"><span lang=3D"HE" style=3D"font-size:=
+9.0pt; font-family:&quot;Arial&quot;,sans-serif; color:#606060">=F7=E5=EE=
+=F4=E9=E5=E8=F8 =F1=E9 =E3=E0=E8=E4</span></span><span lang=3D"HE" style=3D=
+"font-size:9.0pt; font-family:&quot;Arial&quot;,sans-serif; color:#606060">=
+ |
+<span class=3D"x_canspam-address1">=E4=F1=E9=E1=E9=ED 43 </span>| <span cla=
+ss=3D"x_canspam-city">
+=F4=FA=E7 =FA=F7=E5=E5=E4</span> | </span><span class=3D"x_canspam-country"=
+><span dir=3D"LTR" style=3D"font-size:9.0pt; font-family:&quot;Arial&quot;,=
+sans-serif; color:#606060">Israel</span></span><span dir=3D"RTL"></span><sp=
+an dir=3D"RTL"></span><span lang=3D"HE" style=3D"font-size:9.0pt; font-fami=
+ly:&quot;Arial&quot;,sans-serif; color:#606060"><span dir=3D"RTL"></span><s=
+pan dir=3D"RTL"></span>
+ | <span class=3D"x_canspam-phone">03-9140000</span></span><span dir=3D"LTR=
+" style=3D"font-size:9.0pt; font-family:&quot;Arial&quot;,sans-serif; color=
+:#606060"></span></p>
+<p class=3D"x_MsoNormal" align=3D"center" dir=3D"RTL" style=3D"text-align:c=
+enter; direction:rtl; unicode-bidi:embed">
+<span lang=3D"HE" style=3D"font-size:10.5pt; font-family:&quot;Arial&quot;,=
+sans-serif; color:#606060"><a href=3D"https://trailer.web-view.net/Out_0X72=
+E08A0977F33885214897B350C5D0F9C03A96A6EC87568D79DC7FAF6783F23DEA45B0491EAE6=
+318.htm"><span style=3D"color:#0088CC; border:none windowtext 1.0pt; paddin=
+g:0cm; text-decoration:none">=E4=F1=F8</span></a><span class=3D"x_bl-link-s=
+ep">&nbsp;|&nbsp;</span><a href=3D"https://trailer.web-view.net/SpamAbuse_0=
+X72E08A0977F33885214897B350C5D0F9C03A96A6EC87568D79DC7FAF6783F23DEA45B0491E=
+AE6318.htm"><span style=3D"color:#0088CC; border:none windowtext 1.0pt; pad=
+ding:0cm; text-decoration:none">=E3=E5=E5=E7
+ =EB=F1=F4=E0=ED</span></a></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td width=3D"100%" style=3D"width:100.0%; padding:0cm 0cm 0cm 0cm">
+<p class=3D"x_MsoNormal" align=3D"center" dir=3D"RTL" style=3D"text-align:c=
+enter; direction:rtl; unicode-bidi:embed">
+<span lang=3D"HE" style=3D"font-size:9.0pt; font-family:&quot;Arial&quot;,s=
+ans-serif; color:#606060">=F0=F9=EC=E7 =E1=E0=EE=F6=F2=E5=FA =FA=E5=EB=F0=
+=FA&nbsp;<a href=3D"https://trailer.web-view.net/nslinks/0XA7B345C74AEB82B7=
+BA022830AA129F80AE751E8DF83E53404402EBD2F42C2690BE03F61F56173B90B95D29F255F=
+EE7606F04B3FFA18E95307C1CD1395241FB41BFA19C57546167EC1603DE791398666FBE9620=
+9353B62676C6585023A343148A92C88C510BD5B1CABF2B8A52F813D52F.htm" target=3D"_=
+blank"><span lang=3D"en-IL" dir=3D"LTR" style=3D"color:#0088CC; text-decora=
+tion:none">ActiveTrail</span></a></span><span dir=3D"LTR"></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<p class=3D"x_msonormal0" style=3D"line-height:15.0pt"><span style=3D"font-=
+size:10.5pt; font-family:&quot;Helvetica&quot;,sans-serif; color:#333333">[=
+CAUTION: This email originated from outside of the organization. Do not cli=
+ck links or open attachments unless you recognize
+ the sender and know the content is safe]<span lang=3D"HE" dir=3D"RTL"></sp=
+an></span></p>
+</div>
 </div>
 </div>
 </body>
 </html>
 
---_000_PAXP194MB1277FC2A637A74F5B50BF87BCF9EAPAXP194MB1277EURP_--
+--_000_PAXP194MB1277495AAC4783342D05C6E5CF9EAPAXP194MB1277EURP_--
 
---_004_PAXP194MB1277FC2A637A74F5B50BF87BCF9EAPAXP194MB1277EURP_
-Content-Type: image/png; name="Outlook-a3mjb0z3.png"
-Content-Description: Outlook-a3mjb0z3.png
-Content-Disposition: inline; filename="Outlook-a3mjb0z3.png"; size=38508;
-	creation-date="Wed, 21 May 2025 09:13:13 GMT";
-	modification-date="Wed, 21 May 2025 09:13:13 GMT"
-Content-ID: <165eadad-fcb8-49e6-9e34-337c9fafae9a>
+--_004_PAXP194MB1277495AAC4783342D05C6E5CF9EAPAXP194MB1277EURP_
+Content-Type: image/png; name="Outlook-cqhq25tp.png"
+Content-Description: Outlook-cqhq25tp.png
+Content-Disposition: inline; filename="Outlook-cqhq25tp.png"; size=38508;
+	creation-date="Wed, 21 May 2025 07:16:34 GMT";
+	modification-date="Wed, 21 May 2025 07:16:34 GMT"
+Content-ID: <6a5f5f16-3c9e-4cbc-a9c1-e461f3230374>
 Content-Transfer-Encoding: base64
 
 iVBORw0KGgoAAAANSUhEUgAAAoQAAABmCAIAAADdxhe4AAAAAXNSR0IArs4c6QAAAARnQU1BAACx
@@ -1417,4 +1596,4 @@ fOD1vKSktLi4BJ6SgHFe1gsR4+SUtMSklPiEpPzSiqIqC4STGMJgrH00tUP2GWOa1TOW7TNuDsYQ
 3WHqJjBMo+gcNwljDEevMjzAGHmHmIbjVj8KiSE8wzS8wTRycW2GF9dwFKw2LbYwBjXpRAvE0cXg
 ajwKa7XyL13//d//P2jA86fNk7ojAAAAAElFTkSuQmCC
 
---_004_PAXP194MB1277FC2A637A74F5B50BF87BCF9EAPAXP194MB1277EURP_--
+--_004_PAXP194MB1277495AAC4783342D05C6E5CF9EAPAXP194MB1277EURP_--

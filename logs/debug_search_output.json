@@ -1,22 +1,10 @@
 {
   "ids": [
-    [
-      "chunk-57",
-      "chunk-17",
-      "chunk-43",
-      "chunk-40",
-      "chunk-21"
-    ]
+    []
   ],
   "embeddings": null,
   "documents": [
-    [
-      "_QXGg==%2FMTEyLVRaTS03NjYAAAGaklvAF4cIoBCQs29faHvACcp2e0gfiEre-b7U4Cu-XFXaqan8jfbGJqcHpnqXLWqkm5188eE=/1/01000196f3637ee3-44238e9e-c3bb-4102-b070-2c6955f8b6bb-000000/hTHI9PKmeS0brXAPWt1Qqd7sACA=427>",
-      "[AWS on YouTube] <https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com%2FMTEyLVRaTS03NjYAAAGaklvAF9z2zQ_mxfOTt5xFD6u3QSff7QJCLEC6OKbDXjQKx0BsXo3qZh5INjoW7auVA1pi9xo=/1/01000196f3637ee3-44238e9e-c3bb-4102-b070-2c6955f8b6bb-000000/Vs8wk5GrvKOOHo4WhUUMM9bQnfU=427>     [AWS Podcast]",
-      "| AWS",
-      "| Events &",
-      "cp2e0gfiEre-b7U4Cu-XFXaqan8jfbGJqcHpnqXLWqkm5188eE=/1/01000196f3637ee3-44238e9e-c3bb-4102-b070-2c6955f8b6bb-000000/XGV_cqIM-qEt3bGs03ydew9BLPY=427>"
-    ]
+    []
   ],
   "uris": null,
   "included": [
@@ -26,46 +14,9 @@
   ],
   "data": null,
   "metadatas": [
-    [
-      {
-        "product": "unknown",
-        "vendor": "terasky",
-        "date": "1970-01-01",
-        "type": "unknown"
-      },
-      {
-        "date": "1970-01-01",
-        "product": "unknown",
-        "type": "unknown",
-        "vendor": "terasky"
-      },
-      {
-        "vendor": "terasky",
-        "type": "unknown",
-        "date": "1970-01-01",
-        "product": "unknown"
-      },
-      {
-        "vendor": "terasky",
-        "product": "unknown",
-        "type": "unknown",
-        "date": "1970-01-01"
-      },
-      {
-        "product": "unknown",
-        "type": "unknown",
-        "vendor": "terasky",
-        "date": "1970-01-01"
-      }
-    ]
+    []
   ],
   "distances": [
-    [
-      1.7899185419082642,
-      1.8042104244232178,
-      1.8100247383117676,
-      1.814777135848999,
-      1.8178815841674805
-    ]
+    []
   ]
 }

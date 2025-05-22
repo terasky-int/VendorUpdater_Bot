@@ -4,6 +4,7 @@ pyyaml
 langdetect
 textract
 langchain
+tldextract
 chromadb
 
 # beautifulsoup4==4.12.2

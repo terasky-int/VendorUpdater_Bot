@@ -1,103 +1,96 @@
 Delivered-To: davidplayground333@gmail.com
-Received: by 2002:a05:6214:5287:b0:6f8:ae21:68cc with SMTP id kj7csp943168qvb;
-        Wed, 21 May 2025 00:15:40 -0700 (PDT)
+Received: by 2002:a05:6214:5287:b0:6f8:ae21:68cc with SMTP id
+ kj7csp1763508qvb;
+        Thu, 22 May 2025 04:27:14 -0700 (PDT)
 X-Google-Smtp-Source: 
- AGHT+IE3P6hxkUdHsd7n4m5qnYreyfSVlc3KCCRKNQSMnoxRff22jj6Sa3W2WT7VltoOjXPgFLxo
-X-Received: by 2002:a05:6602:751c:b0:85b:3f8e:f186 with SMTP id
- ca18e2360f4ac-86a231afb14mr2830459139f.6.1747811740499;
-        Wed, 21 May 2025 00:15:40 -0700 (PDT)
-ARC-Seal: i=2; a=rsa-sha256; t=1747811740; cv=pass;
+ AGHT+IF6qXGsDWMlNW3B5/fUKnnZ9kSLNyyj4yrEx3GKunWj0mr7oKgUjtPC+W6f7dxV55NcZego
+X-Received: by 2002:a05:690c:968e:b0:70e:779:7e6a with SMTP id
+ 00721157ae682-70e077981e7mr28098537b3.22.1747913233989;
+        Thu, 22 May 2025 04:27:13 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1747913233; cv=pass;
         d=google.com; s=arc-20240605;
-        b=RFjMMNLoPnwwULoeISYZRwnGTN4X9ekiJpJOQ8EnGrEF5N3+hbZufZ0LLF+kZ/ARBa
-         oWaarrxkB4e3MkU+jSdmzeKCypwx8VB+aonf4W/4RZhC2gfGl0JzrScNg9wC/t4wc+DC
-         0rIFl3FrLDFeR4ArNq2JlqkDz9/6SywpGyaiaq8J5/OW/le7nNtOfJXi09q8lAyaDNl0
-         3vVrsDwIqkL0JHSNyA6H5p7lyBijFMRurT/lBOSwqltEIWfWO+rachA8z8DG1QJEMvCr
-         R3V/dYvz+cn9JGkOX0M/j44KsHJnDEpz+wL7GsTewylbDg2ub9tY6HRG4rM3UGP3QrXl
-         BU1A==
+        b=H9/zYP8zwAREIhQRxF8N0xGEQA40Fe1Jqv9LMdKSToBwQ6OQM+0YmxTVeOkI5QryQj
+         /IVg7ezFYYsNNRieFg9VvGD0lv4WDfFaQdeC2E/Iggkrs1k8j6bsAhMl5bRCLm05X8Yt
+         UhejyNTN1RllFuNUh+3m0agbwP7+K2Tusj0VeYGJ5Zh9/LU2siSFwjsplUeM3rpaHP8E
+         Y8pFGTD7bHD2I/zLHGNy7iOg4kTw/Mdu2TamMLt6uOS1osjzoSySSKPdMgPQgq+cy0j1
+         L2TAuxJr8dQgv+bvNHPSX2LseT4rtVuAwHrp1+HNo741raBOxjZHZRYggjbSdCCPU64o
+         Jc2A==
 ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
  s=arc-20240605;
         h=mime-version:msip_labels:content-language:accept-language
-         :in-reply-to:references:message-id:date:thread-index:thread-topic
-         :subject:to:from:dkim-signature;
-        bh=E+HFsTU2o/Euzsik5QbqiS4cMFo/pDLGUN/fGJrUTJA=;
+         :message-id:date:thread-index:thread-topic:subject:to:from
+         :dkim-signature;
+        bh=iG6EVGVt8rDnEY4O8QI3yfDrsDXsjmb2LdHuPXAKcEg=;
         fh=zJUbf4+MzNLbnYiOvj5SMthfshsBB/YnyQlXFAy2njE=;
-        b=V1/WgQXyoTGQMLpRVFupzWH1u2lHReMtp8/a9OiJTUQLJAaMLPL1VJof8i0CVCvcw1
-         SmRAMaqvai1e3zInhHVxxfXRenjIXO69/3xui03mw7d55X+qZto5dz0YL/iDNtSkyCv6
-         EoYa6aa4JDvw/xI+jR/WXjvK9Z6spkoBJjzMm44VvY7b7CGChmiH4aL6UQPqeIwX/NtO
-         pqR8kTMcarfT7EppeLdQ5KhiZACl5e9l+STZLzbAxJIbSnJTrDyWnzPv7NaEFb4hQBw8
-         iZ8WkHwBr7OtmGJvp2jwIyI7ehLdgj+K69RG7iyuKiuHBeg0oD5LvEH6yFN60lezLtqX
-         3uiQ==;
+        b=W0wNoz8BSImPhkbzpSubxTUotFEh1kR4br5dY+AwHzGXFBZbQqgMsmacoHyavUEpGa
+         uEFZ/NA9rSRb/AtoWu/HabiYhOdmfdyuVzGQUvlCmYN23qzfe4W+LnWDn3n6eECzJsj7
+         AEuBCsmWagES2roLj9ZOmVYC7zC4543vjv1UHxmKpISzIR8VaQQ00qNNk4Svxit6i7en
+         esQyKAQOTpO3KBWvSxiMarQd/MAc/4SGvVPDEkf1Bxlyd5sHFhJjwztm/ksOFQuXb3Zh
+         4qrqOOoXTRbXR1/Jypughen5x/jpoRzRc3PZR2v5SLms0Tb6iT/x6tJ8V1S11aKIVHPF
+         SYbg==;
         dara=google.com
 ARC-Authentication-Results: i=2; mx.google.com;
-       dkim=pass header.i=@terasky.com header.s=selector2 header.b=vCq5vi9P;
+       dkim=pass header.i=@terasky.com header.s=selector2 header.b="ugoVGyR/";
        arc=pass (i=1 spf=pass spfdomain=terasky.com dkim=pass
  dkdomain=terasky.com dmarc=pass fromdomain=terasky.com);
        spf=pass (google.com: domain of davidg@terasky.com designates
- 2a01:111:f403:2612::704 as permitted sender)
+ 2a01:111:f403:2607::709 as permitted sender)
  smtp.mailfrom=davidg@terasky.com;
        dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
  header.from=terasky.com
 Return-Path: <davidg@terasky.com>
-Received: from EUR05-AM6-obe.outbound.protection.outlook.com
- (mail-am6eur05on20704.outbound.protection.outlook.com.
- [2a01:111:f403:2612::704])
+Received: from EUR02-VI1-obe.outbound.protection.outlook.com
+ (mail-vi1eur02on20709.outbound.protection.outlook.com.
+ [2a01:111:f403:2607::709])
         by mx.google.com with ESMTPS id
- ca18e2360f4ac-86a2376dbc6si489977139f.125.2025.05.21.00.15.40
+ 00721157ae682-70dee7288dbsi42187817b3.323.2025.05.22.04.27.13
         for <davidplayground333@gmail.com>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Wed, 21 May 2025 00:15:40 -0700 (PDT)
+        Thu, 22 May 2025 04:27:13 -0700 (PDT)
 Received-SPF: pass (google.com: domain of davidg@terasky.com designates
- 2a01:111:f403:2612::704 as permitted sender)
- client-ip=2a01:111:f403:2612::704;
+ 2a01:111:f403:2607::709 as permitted sender)
+ client-ip=2a01:111:f403:2607::709;
 Authentication-Results: mx.google.com;
-       dkim=pass header.i=@terasky.com header.s=selector2 header.b=vCq5vi9P;
+       dkim=pass header.i=@terasky.com header.s=selector2 header.b="ugoVGyR/";
        arc=pass (i=1 spf=pass spfdomain=terasky.com dkim=pass
  dkdomain=terasky.com dmarc=pass fromdomain=terasky.com);
        spf=pass (google.com: domain of davidg@terasky.com designates
- 2a01:111:f403:2612::704 as permitted sender)
+ 2a01:111:f403:2607::709 as permitted sender)
  smtp.mailfrom=davidg@terasky.com;
        dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE)
  header.from=terasky.com
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=QKENHRk4wl8gLLgTV3OBIxiTLJ8stdZ6cFkbKNKQ6VJ3mB8f+bGZbaRDHh1M+NICqFAzqSenSL3o7IT/uDc5yPlHGUoZA2TGUtR6Sq0Ef+/LCG3OyRukngJ+5EfYMG4zBXrd7h9zPghWkSj/0RgLjG0lgfUR2ANOHXoU47ulgpJe/fHV0GJrzZ6Xk9aLL+UQTxB/4KOc/qhqqT3j7+TwTInhIUR3V3extDgFKjv9TF1WgPYKmG/FXi8g0PVV52ilPxsDSfsHTfaACIkkd6pNay1VB7MWj2uUR90iChkqkT4NeZRCM5cBecW6L7/q9yVgoeBzFEDagNmltTJHGvxe2g==
+ b=Uer23CPQ5GskL8CLlUlLr4umgs73Ia6iwiG2J9rClBUosfntaUsvuokTxcsEZaCAVQAz2q9+MhZFo5kl45YyUyf36U7/w+5bO2MgPvej7rcj/o/eJEbbb2/UmDBqVoBR0PlleGfdDiq9uNqp0sGzBTnW11Bb5zBOF7gLg/flq5I6ExYLYSbL7bZ0p1p505ZY1BRU/V60lX6FMz7WpiRPR9LLMlDSWK09+6rb9P+yWJAJQDR5YFDFiCM8SxmC2bfk+5sxL0llBICKcQV2KGsBYfScNjR1gHR5zfPVLChxEF/5inipaWqSJJkPwVpp+FUE+IEB3RysUkrIqm3KJtY8Sw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=E+HFsTU2o/Euzsik5QbqiS4cMFo/pDLGUN/fGJrUTJA=;
- b=y0pBk1NqJvXtsZtsSlQD+aRdFHSCPTIYyXVFJK4szUUYHp31lmuiuLT6S0I2VAtzEKAiYhi1QBiJVRSwZr+TZg+VP5cat6TWis41XAf8tU8QwyTVNk86+N1ubG91XHKAThXa9IEoy2DBAydgvj4tFwrL6sjauEpxVckJjhLY2o5P+TZK3PY03Q0ExbL0+/9AImiQfGCQ6KcgGuXL7UWK/2UQvWuQtpYiZq2zk5URtbUJtEqp8oTudR8Bkr1e5/ZDAAhtrypYwLwXQ23ElA7vIJ87GhH/gOOUX+7++NjcUTSa2Pl0Ydiu2c65HtywQbBK4hgim7U7fnMskRF9APfOjQ==
+ bh=iG6EVGVt8rDnEY4O8QI3yfDrsDXsjmb2LdHuPXAKcEg=;
+ b=NKe01V0egrtDi1iV/gKXR3vbm99hPrZLvSNuD3yXyl8/fsF608En5fsTZibDFK/rrczZCEyK88AohZraKbLw5SKQcTZfl6Tg9+2USpH0jbb12aYKjkpOZ60mLiG+VEZ/ZEXh7RJdCzDolvVctrTKZa1+VVlD2DtdWHY4NCSwMF2Vp42cAdTq4TV5z2kymcMl9ZiKMm4mh3yUJ479MOzV9z+YoYvqw7dqNzQldz+Ys76QNdc6hbDNgmNW0Wzp9AN7nl8SzppHcWRDzdeWrU5037Qeitpo7zTK7QcK+Pwo2UxqC3A5cncLtQ7UrNtfzdAjynDdO+pywYUymu1TNyvYZw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=terasky.com; dmarc=pass action=none header.from=terasky.com;
  dkim=pass header.d=terasky.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=terasky.com;
  s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=E+HFsTU2o/Euzsik5QbqiS4cMFo/pDLGUN/fGJrUTJA=;
- b=vCq5vi9PGDNGf75voZUHpSYurZTkxC+TbZyy10cPnchmx+9GXiCGgzWtFdBss/R4Jndq0gLrQkG3IJboWs0RqpbhwLs1O6i6kDtOdXvvVdPjs25LlpqQnakxhEiARJSohR/gVJDu464uL6E7v7UuiTWUOuopGwOckw9WaW5CbLK4Mqh/mTt3SKYo5WcdYx0H1i5gDu/3P3ECuoLHE5FE0qCzl5ShJxQOVUBUOIvf8kS1utv6N/H8JIk4HaQCj/YmL+mxr39+AJWK7Nd7V33DukQR0dGaL8QnbYbl1bNmNFVwVRguX5IlYSRO4lcHp2jDkg3kAtpLdlhMyOmuILF90A==
+ bh=iG6EVGVt8rDnEY4O8QI3yfDrsDXsjmb2LdHuPXAKcEg=;
+ b=ugoVGyR/Cc7OXCZ6++iYzevnvodjwLiDUZJPdPhyq2Ayg/rPD+yWfJVAOenirDE0PqrHz0nScEAOOJOfGZZM/JgoyTyns6N+4aZe8xkLFRyGxodq/J2jiHI7jAsP/8N1exOjV9nRz4KHH2v5XgSJhFbgDtD+5QJ3pUBaT8ZNZZLwZJ4aaJx46R5eqhzBWqPSc8JaIeiq8AX/gKx39dsqQGNMjGbm/ihSe+gL5fJ4aTAPM4ghwqyYtKaoJxyGY059mXENvQJF1zrqwfeBdsa3fxCrFALq0el9U1BYp3pL1sVmnDWmxq4ybeQ/GmfJkZ3Eeh6NwTCGgobFz0UUBLh6KA==
 Received: from PAXP194MB1277.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:1a0::11)
- by DU0P194MB1745.EURP194.PROD.OUTLOOK.COM (2603:10a6:10:3a7::14) with
+ by PR3P194MB0601.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:25::18) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8746.30; Wed, 21 May
- 2025 07:15:36 +0000
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8769.21; Thu, 22 May
+ 2025 11:27:10 +0000
 Received: from PAXP194MB1277.EURP194.PROD.OUTLOOK.COM
  ([fe80::47dc:cf83:d811:c80f]) by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM
- ([fe80::47dc:cf83:d811:c80f%6]) with mapi id 15.20.8769.019; Wed, 21 May 2025
- 07:15:36 +0000
+ ([fe80::47dc:cf83:d811:c80f%6]) with mapi id 15.20.8769.019; Thu, 22 May 2025
+ 11:27:10 +0000
 From: David Gidony <davidg@terasky.com>
 To: "davidplayground333@gmail.com" <davidplayground333@gmail.com>
-Subject: 
- =?Windows-1252?Q?Fw:_Check_out_what=92s_coming_to_Google_Cloud_Summit_Tel?=
- =?Windows-1252?Q?_Aviv_|_June_25?=
-Thread-Topic: 
- =?Windows-1252?Q?Check_out_what=92s_coming_to_Google_Cloud_Summit_Tel_Avi?=
- =?Windows-1252?Q?v_|_June_25?=
-Thread-Index: AQHbyKBgK9ZHMaVozkmeW5U/+aebebPcrwHz
-Date: Wed, 21 May 2025 07:15:36 +0000
+Subject: special invite 
+Thread-Topic: special invite 
+Thread-Index: AQHbywxoAb9lz3HwoUattIHrhKXN5w==
+Date: Thu, 22 May 2025 11:27:10 +0000
 Message-ID: 
- <PAXP194MB12771FA7D95803FF9990D1F8CF9EA@PAXP194MB1277.EURP194.PROD.OUTLOOK.COM>
-References: 
- <CACgGB55-t3tt57uhPX-jQy4si=KFoGtUefzC17pY30gOKMDfDg@mail.gmail.com>
-In-Reply-To: 
- <CACgGB55-t3tt57uhPX-jQy4si=KFoGtUefzC17pY30gOKMDfDg@mail.gmail.com>
+ <PAXP194MB1277EF876FDAA25F3C4504A1CF99A@PAXP194MB1277.EURP194.PROD.OUTLOOK.COM>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: yes
@@ -106,97 +99,99 @@ msip_labels:
 authentication-results: dkim=none (message not signed)
  header.d=none;dmarc=none action=none header.from=terasky.com;
 x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: PAXP194MB1277:EE_|DU0P194MB1745:EE_
-x-ms-office365-filtering-correlation-id: 3e22b024-6fbb-454d-bb38-08dd983748b5
+x-ms-traffictypediagnostic: PAXP194MB1277:EE_|PR3P194MB0601:EE_
+x-ms-office365-filtering-correlation-id: 1aa5c317-1cc9-4912-3aa8-08dd99239784
 x-ms-exchange-senderadcheck: 1
 x-ms-exchange-antispam-relay: 0
 x-microsoft-antispam: 
- BCL:0;ARA:13230040|1800799024|366016|376014|69100299015|38070700018|4053099003|13003099007|8096899003;
+ BCL:0;ARA:13230040|366016|376014|1800799024|13003099007|4053099003|8096899003|38070700018;
 x-microsoft-antispam-message-info: 
- =?Windows-1252?Q?F2hZknMvlQFLIZJjst3hKPH4jYQTZ7cwqSQChGuFJ80ShGFogQX+hcFU?=
- =?Windows-1252?Q?mv1gQOGy05rBLFqKR62Y9HS7oeAMkWsdyAYZgAQoEHRosxqz8TwKm7vj?=
- =?Windows-1252?Q?p19Dv1mdznTWdgXZIa2WNA+wozVWsOWZggblHygQAizLIOsMKQHE8RQQ?=
- =?Windows-1252?Q?LoaiU4bObmGrZjz67d7o9afbIBC1wzlNz7NnoLJsTgwrWyTNR08K79gX?=
- =?Windows-1252?Q?pU4Qdz6Z4jNClPN0HP1YPuqDvEA+QuLOvfJM/dsasHySuArzaAiEGDgb?=
- =?Windows-1252?Q?MUCqWBywYWZKFTTLHPfD4pTdL6FoPOxPL2bUmX4s/YVx+EzK8DpbFLJT?=
- =?Windows-1252?Q?6JqP/RlrGV82Bmmyxpl0Umdx/lHjj9NuVr0GbiJe4W1H+ELZK3JK4xgZ?=
- =?Windows-1252?Q?ZgZWI2P/48dag64DIeh5cQ1oPs5tRzz9KtTHtP0cR2nynvy1FbO8woeR?=
- =?Windows-1252?Q?TZH5N5AKEsPLzVXGx1HRXDkwHyO6calqqNKfEOCa85Evz9Da0pfiil16?=
- =?Windows-1252?Q?yvRraxurAEG1pFRGfAvhmxRmlYFvVrZw2Kc/8z19Gkp+VFaknj+mZDGE?=
- =?Windows-1252?Q?CDzrWeYvZOFxbIhbamRAfbmmHGFIwPtiPKBY81r2jJRG0WniiSkuxpcj?=
- =?Windows-1252?Q?to+L/bI4Vr63A6mkT+EZXceRlYBrStIWQ3mnEqRjE/J3D+Uyoo0J/uOk?=
- =?Windows-1252?Q?/+lC+vBKHHkr/jOBksYlcZ+0w8oGlbf0TbQBtgrSUjoHnV7h+/crrHp3?=
- =?Windows-1252?Q?X7AN/w2L11oS4p7xN3mORyYX3VFvmEVbDcHgFtdbhl+Tz8r1r99txpft?=
- =?Windows-1252?Q?xxgK2tOEfuj+vMwr1M7BZzetzvJCv7p3yqScZKxHDtdLF4hyu+X1ezxp?=
- =?Windows-1252?Q?vfYg3se/OG94AEji3EWoMsy3M3Qs/RbZ6d59bN3BCNdJ4rJyJQF/PRbf?=
- =?Windows-1252?Q?0xtQx3bT7KjKXtu/5HPF/XG5nDdlMUuAlc7CxosWbfKaHk5AIai33JVv?=
- =?Windows-1252?Q?6cPqPTFrjXWJ9YLK90/ItCWAePsjiWwRpafFlFtrLYuyCSfY3I8JWgGU?=
- =?Windows-1252?Q?5dcKDulFUO/6Rsr7nwfLTzRDUs/8/m/M1r+u/b47SXh1usgbSr6qrr++?=
- =?Windows-1252?Q?AH756Yfv3r4SYqSI3uGPdIARLkObRvMlkoRwGcZ+8xsz9l+LHOFijUQm?=
- =?Windows-1252?Q?OXNyJvU6Ryx4svOLDss27ASuugQ8dSkqCbEdXuRyw5KlFt+aSRAKDfiC?=
- =?Windows-1252?Q?0rYXgE+BFv1LECtruDEabZDgAkwijGq8JuRbyh57zL3YDVqTRf8Ll4dw?=
- =?Windows-1252?Q?B/KEpLRVjI/SYvXhOyCPhCJx1TwHKPz57rmBMtSzQCbg4u4kIA8qYqLi?=
- =?Windows-1252?Q?MW6jeruNfRFdhDf8I/6dYyeOo3e4yUIFW6zcM80OXDPVWS6SUmhKhL3s?=
- =?Windows-1252?Q?jZavCG2N5ifEK+DsrE5ZArmuKUYDxcOlNd9Erl9IWMNKcYEqWvK2YVpN?=
- =?Windows-1252?Q?+lYhwfxFWNlfqRCoat/D1AO1XoInMO1QuWW13sejCbnG4C/H3Es=3D?=
+ =?iso-8859-1?Q?7PpDCjG2djUPUTtsH9btxnq/WIrk/Ha/nPQUmAsTIAsvhPh6PJHLgDvt3P?=
+ =?iso-8859-1?Q?wM2oDuZIjp/f+UDn1Q1ANGYNdsWzmEatWaW1uAZ367gfIDwLvxnwwB7XuH?=
+ =?iso-8859-1?Q?If14zkeBV6UMWD0MSH7fFxdbx0CkLigxM2+mITgt/91Im6/tu9L7bZlFhi?=
+ =?iso-8859-1?Q?w24GL1DQEz1US5SQyXtsO8nqaRlWeoJ+dtXtvBegwROh6iHoRK8E4p4mvR?=
+ =?iso-8859-1?Q?Tq0NlyamiUcjsedjPyyZ4cZmE6tUtWtLulQ7quvz1K/Ta+DP3h74iQ81a3?=
+ =?iso-8859-1?Q?sfGZCRbp4kOfCgHANRxaE+4/6OymKF8URr6uCjRFEOSFw0IWjahN4SFOFi?=
+ =?iso-8859-1?Q?hnrEX8ZIOrWdArCGa2/gzoxr/uazR7D5H37wzAZVy0WCsrOuYAR0J8JGAA?=
+ =?iso-8859-1?Q?azHGV/HAwU0wEZEJTSh4mCBIl1l69x73MhsvTCOgsHOu+2ZLD1evi3bZlo?=
+ =?iso-8859-1?Q?TqUWDnlUTrUgOjIts0pfpq1gheLPfKvJNaPehfpBPR3uL61JguRTueyzJd?=
+ =?iso-8859-1?Q?BwuOzBn6fN/uOH/OnPQQnwmxiGwfD/hkCEbYIdnTwDvFwDu4pNHEXBu1kv?=
+ =?iso-8859-1?Q?pu5fOJqFO4vITNOVstNncr0o5k+O86vJ5nPmRigZVHGpdaIbYdFRwzi3kX?=
+ =?iso-8859-1?Q?h7ZFP/Qh7PNei7hXmd9WWGfnh6p1eB95U3p/yd1yNJaGycT73pQZ0JdvZO?=
+ =?iso-8859-1?Q?kxS4APqCGrlmLY53EcHLLJ74p2J921VGxSQkVKaU36fYiEU7Hd2u87745X?=
+ =?iso-8859-1?Q?XfWV5IICuFWi12wWwndxXZdfb8VDIHOr8CL2gxCQ7B0EP+Vi/yI0iNRsOf?=
+ =?iso-8859-1?Q?nCQ2gY6TiOINEclfcbPgqlkD6z08MOPd4BVgyVF6L0dFJe1A6VTSSf73sx?=
+ =?iso-8859-1?Q?+Y/AEIN8AN57iRn/Wme7b0XFLbwC/tSGRDS2+l8x2UU+Gh7J3tX7u5d43q?=
+ =?iso-8859-1?Q?J8UnoqgzrUuB9q1mMx3NBqLJggQvAeQgIujKloe6JDwtMzxHPpCgA0HiZa?=
+ =?iso-8859-1?Q?J4JNxt+NUcPMMZ2WUqOrNYcbP48xu9PBzyRojuCOnUOpAIkn9/vyg2FL4b?=
+ =?iso-8859-1?Q?zht5jQN+/bT/GBRPgYRrc7POat2RKS6sIHyuLDSk2zxuOqBwkJZCNFcY90?=
+ =?iso-8859-1?Q?kEYzpcsWbzmmp2sKPc8xv+SqNRRCmqf7uPofqwJNK7KEYzqmtbirp3C7Qu?=
+ =?iso-8859-1?Q?pSB9lQOVZn1L2IRwEmKE1uyupLG6l2pRwqox3GpgtrudIyDdRXyyI3I2lw?=
+ =?iso-8859-1?Q?vzK3drEbLZV/ZqTYGJabJm3DSGFXOjUUtUUrqzIwtimbM/wY1jzX7Jx9jA?=
+ =?iso-8859-1?Q?msyGCmLVkdLpOofqhB65Li7GXqJ0bjQbIXCwCC3tDugy36XdvzCml6sXJd?=
+ =?iso-8859-1?Q?I3NphDDTnoSxfqnVIISm524II1rlMeypt113czUGtxv6b+9UoUGhpWjVaq?=
+ =?iso-8859-1?Q?aIQhperN43gWvgapDSaPMlVk++VOa9pnLk5FMrNwx0RDBUpNuF5q0N2d6s?=
+ =?iso-8859-1?Q?w=3D?=
 x-forefront-antispam-report: 
- CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXP194MB1277.EURP194.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(69100299015)(38070700018)(4053099003)(13003099007)(8096899003);DIR:OUT;SFP:1102;
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PAXP194MB1277.EURP194.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(1800799024)(13003099007)(4053099003)(8096899003)(38070700018);DIR:OUT;SFP:1102;
 x-ms-exchange-antispam-messagedata-chunkcount: 1
 x-ms-exchange-antispam-messagedata-0: 
- =?Windows-1252?Q?fec5ogAI4NH4mfGQgabgd8niPevx9qlGpJIe0OMAk0PD+ky2blARQ3B6?=
- =?Windows-1252?Q?Cq8DPIGSah7MyoGvbUJBKTB5DG4a/AQXe8H7wWmqtGm0gplMyVH6L+JL?=
- =?Windows-1252?Q?0h/BWiBTuyOWJerV7fnGioVdQ4RnrkMTBNHUEUw1/R+gRPpOcy7tuUNj?=
- =?Windows-1252?Q?biX1lILChfDnrVnPcMldyAdnY57CAeU6okstPY2vg5weyPF/fuSz03hF?=
- =?Windows-1252?Q?5xDM4Q/Wl0HRUOYccm79jarASWsHVc8mWqYGS0+8rAM9+Lamm2ImdSsH?=
- =?Windows-1252?Q?FrkxVOhLsqNu3okYGmYL+A14z9HuB1KQ32q0LpCif5UhG0oWRq/4Psba?=
- =?Windows-1252?Q?5yru8A8z+7bbbRlJkt4QR8rvGuMfOG7FFNzMPL9/luN2aGJdp11Wuehm?=
- =?Windows-1252?Q?h364TDM1whJZl9e/2xhmPGxnNBV99qx3E1WMNfX41Zd9XmkhY6MpeGwg?=
- =?Windows-1252?Q?8B+N5uzrmaYxpePDc/eVrYe9mne7TZ4tfivcHVnFoQiaA+wIp7PNNTcW?=
- =?Windows-1252?Q?s7crT72IkbQZW0r2aI6IzL8fKY+lnTSJ1YsYaPYtb19KEhPr58qEcxJq?=
- =?Windows-1252?Q?NCw3RNTYd9N62urEbADiaCqSpR4cqMWdY0h06lWkxg2CyWnZ0bTd1XIT?=
- =?Windows-1252?Q?0Y/HF3MElmldgRIfx4IZICBdfy9iv1Vqoovzs98GaFqiu0DtORR4F5WI?=
- =?Windows-1252?Q?MErKNw2BItBdtuZVMHo731tbH0i+2auJ1eeVRYUW1l9VKldSB9Bw+Kbs?=
- =?Windows-1252?Q?VlRYThNfnNgO1cYOEuAJZfvKHOe4+sWChZ8zp3Cr3JbWVDVPf261P7z5?=
- =?Windows-1252?Q?PlhtqxMvw46/Xn6wEdgGWaQluw6DsMJH09eqs23Ju24oeBwkSAz40UBy?=
- =?Windows-1252?Q?NANEnHyfVlyc0KW2KTe9vJsR5QZnZWwfunGr69nprZB77iSNOjDWOKbb?=
- =?Windows-1252?Q?p/hmetqx18qQsHgu2hsi3j2uiQO3IqeCbVeY85KM4vkRFTlXOMLKrU4w?=
- =?Windows-1252?Q?BAtucbKUz7ik/ARzwBl/Jj2Syq1w9MdONpccUF+bLrfsDsG8JBpXGsUp?=
- =?Windows-1252?Q?u6W29DkRB89xe82V1HJXdkmTqlsNUcg3sgXzcaYqb4IlrmvfmWC2ptVt?=
- =?Windows-1252?Q?J2kzSWhOehRluiKsPPPwMiY76o1SsepzQiL2TiZr7gqY3VIMHfPy2E9B?=
- =?Windows-1252?Q?08U9h2WmfaRpf3a0mUDjJZMTorlImExJlZ+n7nqH0AkPVP6QEIacmEAX?=
- =?Windows-1252?Q?TVnh5mo6efTsYtOpR9upK4bgtWGtZFibb713B7Rzv5P91PKgGF1nJDiC?=
- =?Windows-1252?Q?x1ZU4FaBP1b0E/m6fDZUprGt+T84YIHNRT0jORADVudHTOaulZuGlFj5?=
- =?Windows-1252?Q?iZFPk0oB4LZHHv3hz8PjO7UDtVkGYwf26kix8M/kIPS4FNlGDKDqeAHh?=
- =?Windows-1252?Q?PrIn7y92cI1dWZgas1g4ii7XZNJgZhPdPjdHcdfz3sT5k7Av2iq4z6lf?=
- =?Windows-1252?Q?YGHbYH4m0/9eI3O8TRDdfHdLqWGpZNAKiPRK4jJogv0SBXsIU36H4kqL?=
- =?Windows-1252?Q?/yUW1rF07gC8xmEFnhX3noHWon8arW8Rm/2VI6EWOQ/fnk/EefJXEprI?=
- =?Windows-1252?Q?2VJ194d4cp4rmHwSdnLUw93DGmC2sGtsmJ9dICO25FuW/fuy8oPvFBb7?=
- =?Windows-1252?Q?o+zL+XrTxVs=3D?=
+ =?iso-8859-1?Q?PIcctJTbpOLjiWAcQgxt3p6wo4V8EnBN0/69FQBbLDAuUELG0lmPWxWKCu?=
+ =?iso-8859-1?Q?wuyQaa+CfKC0g1L2WOT1CdyP4P8nks+t0Owlr6jcEPxCq/uYh3CpzMfLyY?=
+ =?iso-8859-1?Q?kQRbvkHKuxvoFaTxbQBV8cGUhSXyblplAHIFM/G5/cdW5thI+wDJfjbyj9?=
+ =?iso-8859-1?Q?Vv/J0cg653cC9aerwdSHg5UyGSqrKG8stk9+FJ1RlIK/QGAkUXLBfqjWbS?=
+ =?iso-8859-1?Q?jOEAx/FNuc1dpITOKdmM4afjVZ9f1yznoLhrCBOM67v+5Z4Fgql2LM+z3i?=
+ =?iso-8859-1?Q?tBtmS0iffp6kKClngPj29Bckl62bELngjzOHQ7SpA+2JPLF7JwdpV6ykaS?=
+ =?iso-8859-1?Q?twgLw04JDICSJA8BJyQMUhW4WCeC7Nc0zTkBglaMWaRuYHrj01b9Tv2r+q?=
+ =?iso-8859-1?Q?LfTg1snsD9TQNkeBpXMOE6W3N7y4XB5Ex0x+nkgXiwWHxT2CXUr4GDhhCr?=
+ =?iso-8859-1?Q?AHHjdsvsxW7gP3LHi6gosdLKzbJc75eOHfNxZZFPV3sCYT7Q/8cCH7kDo8?=
+ =?iso-8859-1?Q?g7erv39uxz0rN8qm49XiTEttIjKhb33Wj8TYbaVQaEp92hU0QNECBea/UP?=
+ =?iso-8859-1?Q?c/yYZyF1rGNzvDyfTaLlGGvCyLm4gfQpHBLRbYJcpTMh8VZvBUA3mllfGA?=
+ =?iso-8859-1?Q?sD6c3Lb2smDFc+j94zNHlTvS+m0e26QWzya+zHoGQrICYKlPtVYMJVYDCT?=
+ =?iso-8859-1?Q?f9sG2lf7weA/osm4J+5WfyF/Ommz29tySQKvJ7BNVWb4ujjjo4H9wmDr7s?=
+ =?iso-8859-1?Q?dM7XJIIgukXiKi5HBBTMFysYA7yZdOrTbJfH3jlZD5iMeqoN1m0MzLqLYR?=
+ =?iso-8859-1?Q?o4B7afXsErkkoijr7be/PAiW72cJBGncRT/acX/LcAMt54JzSO5iYUPnkt?=
+ =?iso-8859-1?Q?0uu5gmqUaOLukXuGvbvzg7yt5+A9g0P0ETd6oiFK7iqo/YzzMuNAV8hiLr?=
+ =?iso-8859-1?Q?00WflNK5Ui5HrSeFRAtqUBPEGQuu9hXzHfv9tyyzxhfku4Yz4FEZYfOr3C?=
+ =?iso-8859-1?Q?qZIKjPnXhivZrUE2c6izOC1J2b4QiuAPMZFuXja5gYW5OM6HYgq7TVDLy6?=
+ =?iso-8859-1?Q?di4FYJkg5w5wG/AVM0SCBQW/xnXNi8AZvVM1xAfDG3b36ZsV7jDt6oglcN?=
+ =?iso-8859-1?Q?NNj23sVKWr5vKyPggYFHXxh6UaoZR71J8409/V48Hik7HcApccxEey4ZN1?=
+ =?iso-8859-1?Q?l5/Pok/9isfRtx6eldsyTSq69vTBK8DvSzOKkdj3G9lo6eTTjf3bnfDiGk?=
+ =?iso-8859-1?Q?0rCSSAsgBniDinjatemp1grT15GECekhoH6Whu1ecpOGH7mTjt1JtZgfKs?=
+ =?iso-8859-1?Q?YsgTv1C9N/nLRs1s4wGLGkvbSg/JeBNn+yMwZwDEqlDL8epppRJGndKBmR?=
+ =?iso-8859-1?Q?mOPZblSSmFuLoMuBX5z9ktl4UfhQOjJAbGEMxyez38pgOHVWEsd3C9l3E6?=
+ =?iso-8859-1?Q?qFbrl1TZS9W7xEOxtEWiBkFnYB/BKbo3gnn9z2jOpXWjq/uEz+xYNQOYGI?=
+ =?iso-8859-1?Q?efi5eOkqD9td5YR4CEqaY7ahBbGGpZuGOoDA7jCUsCWEViofJyCysRAFQw?=
+ =?iso-8859-1?Q?fpKyuK9d5aqYifNDG/5dAN8dRLCocKQWijiW/qhIhEIWy36oM6vkMpvCqt?=
+ =?iso-8859-1?Q?la2lr/USh2fHo=3D?=
 Content-Type: multipart/related;
-	boundary="_004_PAXP194MB12771FA7D95803FF9990D1F8CF9EAPAXP194MB1277EURP_";
+	boundary="_004_PAXP194MB1277EF876FDAA25F3C4504A1CF99APAXP194MB1277EURP_";
 	type="multipart/alternative"
 MIME-Version: 1.0
 X-OriginatorOrg: terasky.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
 X-MS-Exchange-CrossTenant-AuthSource: PAXP194MB1277.EURP194.PROD.OUTLOOK.COM
 X-MS-Exchange-CrossTenant-Network-Message-Id: 
- 3e22b024-6fbb-454d-bb38-08dd983748b5
-X-MS-Exchange-CrossTenant-originalarrivaltime: 21 May 2025 07:15:36.6894
+ 1aa5c317-1cc9-4912-3aa8-08dd99239784
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2025 11:27:10.1149
  (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: a982d310-fc08-418d-aca0-6b30ba7c0235
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
 X-MS-Exchange-CrossTenant-userprincipalname: 
- V2cgEn0w6S2skIddPyFnhfFnPiWT2ZWcnpiRyG3uw28w/fZEuJlSFfVl0TU4g5oK5oxuk9ViNjNlQ7UHDDDFcg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU0P194MB1745
+ vGAPk+lKYfCgY5jnPVq25Kk3IEwZsUUV+Zf+aHKxYRDyq6USfRfuBKB/ZAGKXzUyZqSHzUAdeFwcs1UZ7xy/kg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PR3P194MB0601
 
---_004_PAXP194MB12771FA7D95803FF9990D1F8CF9EAPAXP194MB1277EURP_
+--_004_PAXP194MB1277EF876FDAA25F3C4504A1CF99APAXP194MB1277EURP_
 Content-Type: multipart/alternative;
-	boundary="_000_PAXP194MB12771FA7D95803FF9990D1F8CF9EAPAXP194MB1277EURP_"
+	boundary="_000_PAXP194MB1277EF876FDAA25F3C4504A1CF99APAXP194MB1277EURP_"
 
---_000_PAXP194MB12771FA7D95803FF9990D1F8CF9EAPAXP194MB1277EURP_
-Content-Type: text/plain; charset="Windows-1252"
+--_000_PAXP194MB1277EF876FDAA25F3C4504A1CF99APAXP194MB1277EURP_
+Content-Type: text/plain; charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
+
+Inject a known email body with "vendor: IBM", "product: Cloud Pak", and a k=
+nown date like "2025-05-01".
 
 
 
@@ -212,92 +207,26 @@ www.terasky.com
 
 
 
-[cid:b4796ad5-41e9-4d15-b8ad-46496d4bd068]
+[cid:17dcb9e3-e8f0-43e9-ace5-c02e869dae8f]
 
 
 
-________________________________
-From: Maya Tal <mtal@google.com>
-Sent: Monday, May 19, 2025 12:28 PM
-To: David Gidony <davidg@terasky.com>
-Subject: Check out what=92s coming to Google Cloud Summit Tel Aviv | June 2=
-5
-
-
-Hi David
-
-I'm thrilled to invite you to experience the new way to cloud at the Google=
- Cloud Summit<https://cloudonair.withgoogle.com/events/summit-tel-aviv-2025=
-?utm_source=3Dsales_contacts&utm_medium=3Demail&utm_campaign=3DFY25-Q2-EMEA=
--EME32238-physicalevent-er-sum-tlv-24047&utm_content=3Dinvite_marketing&utm=
-_term=3D-> on June 25th in Tel Aviv!
-
-Join us for an insightful day where you'll have the opportunity to explore =
-the latest innovations, demo our newest technologies, connect with experts,=
- and discover how Google Cloud can help you innovate and achieve your busin=
-ess goals.
-
-Here's a sneak peek at the exciting content tracks we have planned for you:
-
-  *   Gen AI: Explore live demos, cutting-edge architectures, and customer =
-success stories showcasing the revolution of applications with Generative A=
-I, including the latest releases like Gemini 2.5 and Gemma 3.
-  *   Build, Secure, Manage, Deploy: Master the foundations of AI infrastru=
-cture on Google Cloud, learning about the latest advancements in compute, n=
-etworking, storage, and security to optimize AI workloads at scale.
-  *    Google's AI-Ready Data Cloud: Discover how to harness the power of A=
-I with Google's AI-ready data cloud, exploring new features and practical s=
-trategies to unlock deeper insights from your data.
-  *   Building with Gen AI: A Developer's Practical Workshop (Hands-on trac=
-k): This workshop equips developers, engineers, and technical leads with th=
-e practical skills to effectively harness Gen AI=92s power.
-  *   From Ideation to Deployment: Mastering Gen AI in Product Development =
-(Hands-on track): Mastering Gen AI in product development. Learn concrete t=
-echniques and utilize cutting-edge tools to practically integrate Gen AI in=
-to every stage of your product development lifecycle.
-  *   The Founder's Story track: Hear inspiring stories from diverse startu=
-p founders, gain insights from investors, discuss fundraising in uncertain =
-times, and explore how AI is disrupting the ecosystem and how to plan ahead=
-.
-
-This is your chance to dive deep into the technologies that are shaping the=
- future of cloud and AI right here in Tel Aviv. Don't miss out on this incr=
-edible opportunity to learn, connect, and innovate.
-
-Register here | view agenda<https://cloudonair.withgoogle.com/events/summit=
--tel-aviv-2025?utm_source=3Dsales_contacts&utm_medium=3Demail&utm_campaign=
-=3DFY25-Q2-EMEA-EME32238-physicalevent-er-sum-tlv-24047&utm_content=3Dinvit=
-e_marketing&utm_term=3D->
-
-Best regards,
-
-Maya Tal, Marketing Manager, Startups,
-Google Cloud Israel
-
-[https://lh4.googleusercontent.com/QNnz03fOmBkoIO68D-zTHQsvl7logUTL0BmxKISq=
-07Uk3ym-YlMIJsYOnKpmSIo2N1Isv_JpJ9yWjaXAI7Nm3mKO0AdhaaIl2iVI0t5LcHndwM27s56=
-mQvjflHdS246zVg2r3ux6DWSF4WKGGLXYPjcvo0bwtIN6_rle-k5ZDKjVVyxa-g2TsuBOQEwI57=
-4]
-
-[CAUTION: This email originated from outside of the organization. Do not cl=
-ick links or open attachments unless you recognize the sender and know the =
-content is safe]
-
---_000_PAXP194MB12771FA7D95803FF9990D1F8CF9EAPAXP194MB1277EURP_
-Content-Type: text/html; charset="Windows-1252"
+--_000_PAXP194MB1277EF876FDAA25F3C4504A1CF99APAXP194MB1277EURP_
+Content-Type: text/html; charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
 
 <html>
 <head>
-<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
-252">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
 <style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
 ttom:0;} </style>
 </head>
 <body dir=3D"ltr">
-<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
-Calibri, Helvetica, sans-serif; font-size: 11pt; color: rgb(0, 0, 0);">
-</div>
+<span style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService,=
+ Calibri, Helvetica, sans-serif; font-size: 11pt; color: rgb(0, 0, 0);">Inj=
+ect a known email body with &quot;vendor: IBM&quot;, &quot;product: Cloud P=
+ak&quot;, and a known date like &quot;2025-05-01&quot;.</span>
 <div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
 nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 11pt; c=
 olor: rgb(0, 0, 0);">
@@ -328,14 +257,17 @@ t: 115%;"><b>David Gidony, Solution Architect</b></span></p>
 mily: Arial, sans-serif; font-size: 9pt; color: rgb(44, 44, 62); line-heigh=
 t: 115%;">+972-52-2808442</span></p>
 <p style=3D"line-height: 115%; margin-left: 1.55pt;"><a href=3D"mailto:davi=
-dg@terasky.com" style=3D"margin-top: 0px; margin-bottom: 0px;">davidg</a><s=
-pan style=3D"font-family: Arial, sans-serif; font-size: 9pt; line-height: 1=
-15%;"><a href=3D"mailto:davidg@terasky.com" style=3D"margin-top: 0px; margi=
-n-bottom: 0px;">@terasky.com</a></span></p>
+dg@terasky.com" id=3D"OWA15063292-48b7-1616-0add-af7ba8e24b45" class=3D"OWA=
+AutoLink" style=3D"margin-top: 0px; margin-bottom: 0px;">davidg</a><span st=
+yle=3D"font-family: Arial, sans-serif; font-size: 9pt; line-height: 115%;">=
+<a href=3D"mailto:davidg@terasky.com" id=3D"OWAb4d833b5-9d84-9fdf-6e01-f68d=
+d2af082e" class=3D"OWAAutoLink" style=3D"margin-top: 0px; margin-bottom: 0p=
+x;">@terasky.com</a></span></p>
 <p style=3D"line-height: 115%; margin-left: 1.55pt;"><span style=3D"font-fa=
 mily: Arial, sans-serif; font-size: 9pt; color: rgb(240, 122, 88); line-hei=
-ght: 115%;"><b><a href=3D"www.terasky.com" style=3D"color: rgb(240, 122, 88=
-); margin-top: 0px; margin-bottom: 0px;">www.terasky.com</a></b></span></p>
+ght: 115%;"><b><a href=3D"www.terasky.com" id=3D"OWAa4ea6033-ec26-3d54-00e5=
+-1ccd35704ae9" class=3D"OWAAutoLink" style=3D"color: rgb(240, 122, 88); mar=
+gin-top: 0px; margin-bottom: 0px;">www.terasky.com</a></b></span></p>
 </td>
 </tr>
 </tbody>
@@ -343,104 +275,21 @@ ght: 115%;"><b><a href=3D"www.terasky.com" style=3D"color: rgb(240, 122, 88=
 <p>&nbsp;</p>
 <p><img width=3D"412" height=3D"65" style=3D"width: 4.298in; height: 0.68in=
 ; margin-top: 0px; margin-bottom: 0px;" data-outlook-trace=3D"F:1|T:1" src=
-=3D"cid:b4796ad5-41e9-4d15-b8ad-46496d4bd068"></p>
+=3D"cid:17dcb9e3-e8f0-43e9-ace5-c02e869dae8f"></p>
 <p>&nbsp;</p>
-</div>
-<div id=3D"appendonsend"></div>
-<hr style=3D"display:inline-block;width:98%" tabindex=3D"-1">
-<div id=3D"divRplyFwdMsg" dir=3D"ltr"><font face=3D"Calibri, sans-serif" st=
-yle=3D"font-size:11pt" color=3D"#000000"><b>From:</b> Maya Tal &lt;mtal@goo=
-gle.com&gt;<br>
-<b>Sent:</b> Monday, May 19, 2025 12:28 PM<br>
-<b>To:</b> David Gidony &lt;davidg@terasky.com&gt;<br>
-<b>Subject:</b> Check out what=92s coming to Google Cloud Summit Tel Aviv |=
- June 25</font>
-<div>&nbsp;</div>
-</div>
-<div>
-<p><span>Hi David</span></p>
-<p><span style=3D"font-weight:400">I'm thrilled to invite you to experience=
- the new way to cloud at the
-<a href=3D"https://cloudonair.withgoogle.com/events/summit-tel-aviv-2025?ut=
-m_source=3Dsales_contacts&amp;utm_medium=3Demail&amp;utm_campaign=3DFY25-Q2=
--EMEA-EME32238-physicalevent-er-sum-tlv-24047&amp;utm_content=3Dinvite_mark=
-eting&amp;utm_term=3D-">
-Google Cloud Summit</a> on June 25th in Tel Aviv!&nbsp;</span></p>
-<p><span style=3D"font-weight:400">Join us for an insightful day where you'=
-ll have the opportunity to explore the latest innovations, demo our newest =
-technologies, connect with experts, and discover how Google Cloud can help =
-you innovate and achieve your business
- goals.</span></p>
-<p><span style=3D"font-weight:400">Here's a sneak peek at the exciting cont=
-ent tracks we have planned for you:</span></p>
-<ul>
-<li aria-level=3D"1" style=3D"font-weight:400"><strong>Gen AI: </strong><sp=
-an style=3D"font-weight:400">Explore live demos, cutting-edge architectures=
-, and customer success stories showcasing the revolution of applications wi=
-th Generative AI, including the latest
- releases like Gemini 2.5 and Gemma 3.</span></li><li aria-level=3D"1" styl=
-e=3D"font-weight:400"><strong>Build, Secure, Manage, Deploy</strong><span s=
-tyle=3D"font-weight:400">: Master the foundations of AI infrastructure on G=
-oogle Cloud, learning about the latest advancements in compute, networking,=
- storage, and
- security to optimize AI workloads at scale.</span></li><li aria-level=3D"1=
-" style=3D"font-weight:400"><strong>&nbsp;Google's AI-Ready Data Cloud:</st=
-rong><span style=3D"font-weight:400"> Discover how to harness the power of =
-AI with Google's AI-ready data cloud, exploring new features and practical =
-strategies to unlock deeper
- insights from your data.</span></li><li aria-level=3D"1" style=3D"font-wei=
-ght:400"><strong>Building with Gen AI: A Developer's Practical Workshop (Ha=
-nds-on track):</strong><span style=3D"font-weight:400"> This workshop equip=
-s developers, engineers, and technical leads with the practical skills to e=
-ffectively
- harness Gen AI=92s power.</span></li><li aria-level=3D"1" style=3D"font-we=
-ight:400"><strong>From Ideation to Deployment: Mastering Gen AI in Product =
-Development (Hands-on track):</strong><span style=3D"font-weight:400"> Mast=
-ering Gen AI in product development. Learn concrete techniques and utilize =
-cutting-edge
- tools to practically integrate Gen AI into every stage of your product dev=
-elopment lifecycle.</span></li><li aria-level=3D"1" style=3D"font-weight:40=
-0"><strong>The Founder's Story track</strong><span style=3D"font-weight:400=
-">: Hear inspiring stories from diverse startup founders, gain insights fro=
-m investors, discuss fundraising in uncertain times, and explore how
- AI is disrupting the ecosystem and how to plan ahead.</span></li></ul>
-<p><span style=3D"font-weight:400">This is your chance to dive deep into th=
-e technologies that are shaping the future of cloud and AI right here in Te=
-l Aviv. Don't miss out on this incredible opportunity to learn, connect, an=
-d innovate.</span><span style=3D"font-weight:400">&nbsp;</span></p>
-<p><a href=3D"https://cloudonair.withgoogle.com/events/summit-tel-aviv-2025=
-?utm_source=3Dsales_contacts&amp;utm_medium=3Demail&amp;utm_campaign=3DFY25=
--Q2-EMEA-EME32238-physicalevent-er-sum-tlv-24047&amp;utm_content=3Dinvite_m=
-arketing&amp;utm_term=3D-                "><span style=3D"font-weight:400">=
-Register
- here | view agenda</span></a></p>
-<p>Best regards,</p>
-<p>Maya Tal, Marketing Manager, Startups,<br>
-Google Cloud Israel&nbsp;</p>
-<p><img class=3D"x_CToWUd" width=3D"238" height=3D"32" src=3D"https://lh4.g=
-oogleusercontent.com/QNnz03fOmBkoIO68D-zTHQsvl7logUTL0BmxKISq07Uk3ym-YlMIJs=
-YOnKpmSIo2N1Isv_JpJ9yWjaXAI7Nm3mKO0AdhaaIl2iVI0t5LcHndwM27s56mQvjflHdS246zV=
-g2r3ux6DWSF4WKGGLXYPjcvo0bwtIN6_rle-k5ZDKjVVyxa-g2TsuBOQEwI574"></p>
-<p></p>
-<div style=3D"">
-<p class=3D"x_=94MsoNormal=94" style=3D""><b></b><span style=3D"">[CAUTION:=
- This email originated from outside of the organization. Do not click links=
- or open attachments unless you recognize the sender and know the content i=
-s safe]</span></p>
-</div>
 </div>
 </body>
 </html>
 
---_000_PAXP194MB12771FA7D95803FF9990D1F8CF9EAPAXP194MB1277EURP_--
+--_000_PAXP194MB1277EF876FDAA25F3C4504A1CF99APAXP194MB1277EURP_--
 
---_004_PAXP194MB12771FA7D95803FF9990D1F8CF9EAPAXP194MB1277EURP_
-Content-Type: image/png; name="Outlook-2thn0ci5.png"
-Content-Description: Outlook-2thn0ci5.png
-Content-Disposition: inline; filename="Outlook-2thn0ci5.png"; size=38508;
-	creation-date="Wed, 21 May 2025 07:15:36 GMT";
-	modification-date="Wed, 21 May 2025 07:15:36 GMT"
-Content-ID: <b4796ad5-41e9-4d15-b8ad-46496d4bd068>
+--_004_PAXP194MB1277EF876FDAA25F3C4504A1CF99APAXP194MB1277EURP_
+Content-Type: image/png; name="Outlook-sc2o2gj3.png"
+Content-Description: Outlook-sc2o2gj3.png
+Content-Disposition: inline; filename="Outlook-sc2o2gj3.png"; size=38508;
+	creation-date="Thu, 22 May 2025 11:27:09 GMT";
+	modification-date="Thu, 22 May 2025 11:27:09 GMT"
+Content-ID: <17dcb9e3-e8f0-43e9-ace5-c02e869dae8f>
 Content-Transfer-Encoding: base64
 
 iVBORw0KGgoAAAANSUhEUgAAAoQAAABmCAIAAADdxhe4AAAAAXNSR0IArs4c6QAAAARnQU1BAACx
@@ -1120,4 +969,4 @@ fOD1vKSktLi4BJ6SgHFe1gsR4+SUtMSklPiEpPzSiqIqC4STGMJgrH00tUP2GWOa1TOW7TNuDsYQ
 3WHqJjBMo+gcNwljDEevMjzAGHmHmIbjVj8KiSE8wzS8wTRycW2GF9dwFKw2LbYwBjXpRAvE0cXg
 ajwKa7XyL13//d//P2jA86fNk7ojAAAAAElFTkSuQmCC
 
---_004_PAXP194MB12771FA7D95803FF9990D1F8CF9EAPAXP194MB1277EURP_--
+--_004_PAXP194MB1277EF876FDAA25F3C4504A1CF99APAXP194MB1277EURP_--

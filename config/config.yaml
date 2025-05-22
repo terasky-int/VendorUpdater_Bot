@@ -34,10 +34,12 @@ data_processing:
 embedding:
   provider: amazon
   model: amazon.titan-embed-text-v2:0
+  region: eu-west-1
 
 bedrock:
   region: eu-west-1
   embedding_model: amazon.titan-embed-text-v2:0
+  classification_model: anthropic.claude-3-haiku-20240307-v1:0
 
 indexing:
   vector_db: chromadb
@@ -50,8 +52,8 @@ vector_store:
 
 debug:
   enabled: true
-  verbose_logging: true
-  save_all_artifacts: true
+  verbose_logging: false
+  save_all_artifacts: false
   evaluation:
     enabled: true
     top_k: 3
