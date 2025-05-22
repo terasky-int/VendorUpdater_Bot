@@ -33,12 +33,16 @@ data_processing:
 
 embedding:
   provider: amazon
-  model: anthropic.claude-3-haiku-20240307-v1:0
+  model: amazon.titan-embed-text-v2:0
 
 indexing:
   vector_db: chromadb
   hybrid_search: true
   manifest_path: ./index_manifest.jsonl
+
+vector_store:
+  persist_directory: data/chroma
+  collection_name: vendor_emails
 
 debug:
   enabled: true

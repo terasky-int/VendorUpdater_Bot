@@ -1,0 +1,22 @@
+{
+  "ids": [
+    []
+  ],
+  "embeddings": null,
+  "documents": [
+    []
+  ],
+  "uris": null,
+  "included": [
+    "metadatas",
+    "documents",
+    "distances"
+  ],
+  "data": null,
+  "metadatas": [
+    []
+  ],
+  "distances": [
+    []
+  ]
+}

@@ -1,0 +1,109 @@
+ Fw: Breaking up the “Terralith” 🧱— strategies for better Terraform configurations
+TERASKY
+
+David Gidony, Solution Architect
+
++972-52-2808442
+
+davidg<mailto:davidg@terasky.com>@terasky.com<mailto:davidg@terasky.com>
+
+www.terasky.com
+
+
+
+[cid:1f7a8ab7-3a5c-48e8-b83f-37863fbe6bb4]
+
+
+
+________________________________
+From: HashiCorp <no-reply@reply.hashicorp.com>
+Sent: Wednesday, April 16, 2025 3:35 PM
+To: David Gidony <davidg@terasky.com>
+Subject: Breaking up the “Terralith” 🧱— strategies for better Terraform configurations
+
+AI+LLM operations are getting real. See how Terraform & Vault fit into the picture.
+
+April 2025
+
+WEB VERSION<https://view.hashicorp.com/v/ODQ1LVpMRi0xOTEAAAGZ3ZE86JPbKZElDFCsuqivz7-bUYtd2hkA1OhFYx_dr8NCW6cRlM-i7grTCcC27c0u56cr3X0=> | UNSUBSCRIBE<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86fUDsKU_cqd9HD35BNiSYTY0SdIJw8G93iVijcP1hls7VwbRKJbhclDgr81M4lFPl_E=>
+[HashiBits]<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86WUQtKMzD85Vttm_GfY9Po4H-UxjWzSdMMWKYR36oC5eZNdZrcHvoWtUgZWrC2zh8ig=>
+Welcome to HashiBits, our monthly newsletter with the latest and most relevant news about HashiCorp’s products and community.
+Listen to the first edition of our podcast series, HashiCast: CHANGELOG<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86MLlentXt8KdCKCHEZHgIpLACnnB87nsTyzEnZU9V5URU1fobzWDdh096JmvFPEJi6w=>, where our developer advocates discuss the new features in Vault 1.19 and Terraform 1.11.
+[https://go.hashicorp.com/rs/845-ZLF-191/images/pattern_header.png]
+[handshake_emoji.png]
+
+FROM THE HASHICORP COMMUNITY
+AI MCP experiments with Vault and Terraform<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86Kd7lQHKP0ceCYa0JzF6QhuRipDRBk0I1cEdvNHH_OXVDdDRg7DEfZSnOWyHGG7C32Y=> – Interested in experimenting with AI model context protocol (MCP) and Terraform or Vault? Check out these recent experiments: Start a Vault development environment<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86dw9ZhIPU1kehGif2xk5wij8q9_D6WnfBeo1eZpgwBDO_3_U5iJ4NXOHSsyzrFDXalA=> and enable AWS secrets engine with Claude, or try this Terraform Registry MCP server<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86WVdRatd_33HyNgpdRTB9-JjNWoMl2BMNSEKMWF6xfr8R87yUzV_fZCe8embGXU-X6o=>.  by PAUL THRASHER and SEBASTIAN MANIAK
+.....
+Terraliths: Breaking up is hard to do<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86D9395uAOFllcURVLZTL4FSOMicrFZbtLVx_dKicaFczk8Dg2Hpam3NL0cx0gPJDIFg=> – This interview with Matt Gowie of MasterPoint includes advice on how to break up monoliths<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86M8x1IyUC4Ud_lhxrM27YMKtX6VZOQdr2S8hmTp7ZL4jp6TobIZVQLwA3xGMhztyREA=> in your Terraform code while also exploring the nuances of state management, access control, and remote state pitfalls. by NED BELLAVANCE
+.....
+He’s worked at Netflix, Apple, Amazon, and now…<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86IgRoazX2FjuWHRyVWJ21-rVRtEZ3LMO6RBfvUZL7C983N1KMzTtoujG4YPZYKTLICQ=> – This episode of The Programming Podcast features Robbie Wagner — an Ember core team member and new engineer at HashiCorp. Listen to his journey through some of the biggest tech companies and check out his own podcast episode on what makes a good job in tech<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86BsoF0Eo2lA_zzzYxL4HIDLFgIm97Wno30pHwufES9byiVqdwa43n4sfgri2RfjC4wA=>. by DANNY THOMPSON and LEON NOEL
+.....
+AI engineering in the real world<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86WNChldcPDNQHACvlm0b74PAtWFle1bRiFfusDcvYw0DqQVKUan6EpHBzoRfUk2bK14=> – What do tech stacks, challenges, strategies, and final products look like for AI engineers building apps that use large language models (LLMs)? This deep dive shares lessons from engineers at seven companies. by GERGELY OROSZ
+.....
+Configure high availability for HashiCorp Vault seals<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86RL-kOJ9eFwKpR038MJiXQTEVobq6BA1uzoUBECOOg80JL4PQH2xaXB2xvz-vt6VpXM=> – Learn how to set up Vault for auto-unseal and create multiple keys in case one becomes unavailable. Also, check out this author’s new Terraform course and labs<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86K8dLjno8rbM4zQRpLb7TbVIWAMtr4c5OsvBaXdhw51pSqeRDjTK6quKVHPJ-qBw_iU=>.  by BRYAN KRAUSEN
+.....
+Migrate Terraform state locking from DynamoDB to S3<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86bt_M7cRY68f2-xdRsidXsrCIoSeK27afvVUZJWBFnwKWYu_2CyeCEf5s-JRurJhvU8=> – With DynamoDB-based locking now deprecated in newer versions of Terraform, learn how to migrate your state locking setup to Amazon S3. by LUTHFI ANANDRA
+.....
+Public secrets exposure leads to supply chain attack on GitHub CodeQL<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86X5kNREw-sUIaGzNMvndvi7ZaC3aSeB63_29sP06Mmz2cMa79WFg9eF6rpZ7S6lbkjo=> –Even a company with as much engineering prowess as GitHub is not immune to secret exposure. Learn more about this supply chain attack on GitHub CodeQL and how to prevent secret leaks<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86alIPOv7GOoIypWxyiUT9A1Xe9fqD6AOwDvWZIEIj_sC8yVe-rQNcUh_NmIqc3gi6-U=> and supply chain attacks<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86Rxvc1QlfIiu7dW111knK7Wa44ZE1v83KNeX9LSfBT-qPWJqaw4lkfmQTDfV4CLUsPg=> with tools like HCP Vault Radar and HCP Packer. by JOHN STAWINSKI
+.....
+
+
+Case study | The great migration: How Helvetia moved 200 apps to the cloud in one year<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86GUtt8WUvDu1hi-MetKOidMjjneRdGvtzyYG2bjUHHVlm_8gTBP00g0olCaPg5FDczI=>
+
+Find out how Helvetia Insurance Group used HashiCorp Terraform to migrate 200 applications in one year with automation and standardization.
+
+[sparkles_emoji.png]
+
+FROM HASHICORP
+Protect data privacy in Amazon Bedrock with Vault<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86E5Sf_VbFhbjr2htSX7cgqoFo1s3skPfzrYdMs3AizwyCTtcrUayPpcuTAIKe7yFG_k=> – Learn how to create an Amazon Bedrock Knowledge Base with Terraform and ingest sensitive data encrypted by Vault transit secrets engine. by ROSEMARY WANG
+.....
+Why we need short-lived credentials and how to adopt them<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86Aqit-oGipM1vywEuW3EgMOONE-2d3lc6FmfcgUoCpJtuskwoXV0xGEjfji2Y8O2tPY=> – The shorter the life of every secret in your organization, the more secure you’ll be. Here’s the evidence and the framework you need to get buy-in and get started with dynamic secrets. by ROOPESH CHANDRAN
+.....
+Disaster recovery strategies with Terraform<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86Z436FZyh_Ybg96iWLyzAeSSqlcMbtkOZrpuf473Eniwpjudk1LBFoR9XBFHSjWCvXA=> – Terraform is in a unique position to not only quickly re-create infrastructure in the case of an outage, but also create sandboxed, ephemeral infrastructure environments for testing your disaster recovery (DR) strategy. This article will walk through some simple exercises you can use right now with Terraform to test your DR strategy. by ANDRE FARIA
+.....
+Preventative beats reactive: Modern risk management for infrastructure vulnerabilities<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86UKQYIrmyvH2dQHAtfhFNX6-367szCYym7qv3SU9qkkgPFWDuQX_BJrH_5tNh-pE9NQ=> – Struggling to address vulnerabilities in infrastructure? Learn how preventing them in the first place and reducing the window of exploitation can help alleviate the burden of lengthy patching processes. by MITCHELL ROSS
+.....
+Ace your Terraform Professional exam: 5 tips from certified pros<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86G8qk_duVmU_7ofrCm2--qRo90wJW4_UuL2p-wZTpws-ljv4rR2U9qfkTGIaKLftgrE=> – The Terraform Authoring and Ops Pro exam is a great way to showcase your advanced Terraform expertise. But where do you start when preparing for a 4-hour, lab-based exam? We sat down with three certified professionals to get their tips and jumpstart your exam preparation. by LAUREN CAREY
+.....
+Deploying Azure landing zones with Terraform Stacks<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86cS1U7UkBgc5ew7NAiLfYVcIq6PaAfy4ucIIVS_isqXRSibM6S9z_mMhBysumVSDAaU=> – Looking for more examples of how to use Terraform Stacks? This HashiTalks session shows how you can adapt the Azure Landing Zone module with Terraform Stacks, making it a lot easier to manage. by NED BELLAVANCE
+.....
+Securely connecting to my home network with Boundary<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86Z15_8xz4LoKSbR7XDgp9wB62_E_e7zU2J7ncpkIgRPDXCpduw-UaMog4ltsnRqjMRk=> – Learn how a HashiCorp engineer moved from a traditional VPN setup to using HashiCorp Boundary to access their home network. by FREDRIK WARFVINGE
+.....
+HashiTalks 2025 video playlist<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86cvLJTACcbUjSlsEmDYhJu2h_wa48e4NSdLA5IDcT0IJUgZBvVxqw13tLKEVZpqnaNw=> – Watch all of our HashiTalks 2025 recordings from our annual online community conference. by HASHICORP COMMUNITY
+.....
+[red_apple_emoji.png]
+
+ATTEND A WEBINAR
+Vault quickstart virtual hands-on workshop<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86GnB3UKRrrhuYO-AMBm2yiLqFtvxMvvWo3mrNXU0KJrfBtgs2LWxZvX1FcRb_RDOs1A=>
+Wednesday, May 7 — Sign up for this hands-on session to learn how to secure applications, manage identities, and protect sensitive data with HashiCorp Vault.
+HCP Terraform quickstart virtual hands-on workshop<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86HCRXJXWbVHP9BVqg82o4-qrYWjP5HM_AM7YZ8oM6vPNMwpkKqSvXha1VjOgvGPkeqk=>
+Wednesday, May 21 — Learn how to navigate the full infrastructure lifecycle with HCP Terraform — from provisioning and state management to collaboration and governance.
+[https://go.hashicorp.com/rs/845-ZLF-191/images/spiral_calendar_pad_emoji.png]
+
+EVENTS
+HashiTalks: Italia
+Thursday, May 8<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86GJ4klcpa6NMpOjYNGzxITjTMd9tF8okj6uDDHN6HlAl8UrfvpqWDBiE-iG0vKs4WnE=> — Join us for the first edition of this free, virtual event for the HashiCorp community in Italy. Talks during this event will be delivered in Italian.
+HashiTalks Hub
+May 2025 - January 2026<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86Chq1SE03X9NGJYCag_30Yby8sd54biCtGw8ZOKTyK72EW5xKRp7cTdZP9Ba-_BBW2g=>  — Check out the full schedule of HashiTalks events in 2025. Join speakers of all experience levels and curious learners sharing knowledge virtually.
+HashiDays
+June 3 ( London<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86THYCNfC4kZDjMb_hSo5tjY_w3ZNl1P--EIOetO4kfQST9QDUzR8pSK7faeP_kiEKtw=> ) July 22 ( Singapore<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86TMr4V2WkCHQzoluu5jnRgM7pCverCpHj9n4uJxFJBC2jzpEObVWAMiGBbHeoIF5R9E=> )  — Registration for HashiDays Singapore is now open! Join us there on July 22 or in London on June 3 for HashiCorp’s regional community conference on all things cloud.
+HashiTalks: Securely building
+June 25-26<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86Cz4_jfA8t0j6JP2k2x4iOxbzDwOppM1TanQDzBxQJ_kUaRcNwie-mHR9Dp9gFt_jFI=> — Join us for this free, virtual event for the HashiCorp community of security professionals, programmers, developers, and builders.
+We’re hiring
+
+We have positions to fill across many departments<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86KabNluUudl15Xe4HMq2lWFYap3yEFkFBaQoIOEYNcXo_Qp-yRlgVSG_Gqm9TjPoptY=>. HashiCorp is remote-friendly and hiring for many open positions worldwide. We’ve been certified by the Great Place to Work Trust Index survey and are ranked among the Best Workplaces for parents, millennials, and women.
+Copyright © 2025 HashiCorp. All rights reserved.
+101 2nd St. #700, San Francisco, CA 94105
+
+[https://go.hashicorp.com/rs/845-ZLF-191/images/HashiBits-twitter.png]<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86bbRe_PYZealGGEoWW7dyaGaaB5-luBIc7HN5D_J5gR_J_9DUu0jit1ugwxuj1yG9l8=> [https://go.hashicorp.com/rs/845-ZLF-191/images/HashiBits-GitHub.png] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86WQR27ZtpKGHdwau2FQzUJdC6nBCmBtqFjEPN9gxX6Ga_YmfTDASjZqUGwwfSAfrjXA=>         [https://go.hashicorp.com/rs/845-ZLF-191/images/HashiBits-LinkedIn.png] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86ZEsI2anvuAZSyB9MoPXhkhs0suUv6ZkVbtJ2r1KHo2pqaYHc92wytj7WlGePdxWqEs=>
+
+Manage Preferences <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86fUDsKU_cqd9HD35BNiSYTY0SdIJw8G93iVijcP1hls7VwbRKJbhclDgr81M4lFPl_E=>       Unsubscribe<https://go.hashicorp.com/UnsubscribePage.html?mkt_unsubscribe=1&mkt_tok=ODQ1LVpMRi0xOTEAAAGZ3ZE86eUZNxGYYdlOEHqjEnukpZM7BCsKiyOGIcSEqqXiHRFNZ9QvFY-CxA3WqmxnOZRFcxzrqIG0wKdTxYQ-IpTMDAY5Ows6d7JrNNDA8ebiUUM>       Contact Us<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86DZxFdlPOUIajPyse4l0ffVwh_MgDpovRl4hBR15oW1GOZMBa-JrQBYMdcshoKFn1U8=>
+
+[HashiCorp]<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86JyZi8V5QF3XFGkj8mzVPAK_WHvPKjMr4OcEF0gKgjp57UEmHnGkyyraMGW8hjkXk_g=>
+
+
+<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86MV9h520_yNxiA8wZFSGP_j0Cs209b2a_k8I9i1_PiWkRMcID_xKnoh7bl2H6-CVqmI=>
+
+[CAUTION: This email originated from outside of the organization. Do not click links or open attachments unless you recognize the sender and know the content is safe]
+

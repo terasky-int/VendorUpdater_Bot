@@ -1,7 +1,7 @@
 import os
 import logging
 import yaml
-from src import harvest, normalize, enrich, classify #, chunker, embedder, indexer, manifest, evaluate
+from src import harvest, normalize, enrich, classify, chunker, embedder #, indexer, manifest, evaluate
 
 # Load configuration
 def load_config(path="config/config.yaml"):
@@ -32,8 +32,10 @@ def run_pipeline():
             clean_text = normalize.clean_email(raw_path, config)
             enriched_data = enrich.extract_metadata(clean_text, email_obj, config)
             classified_data = classify.label_content(enriched_data, config)
-            # chunks = chunker.chunk_text(classified_data["text"], config)
-            # embeddings = embedder.embed_chunks(chunks, config)
+            chunks = chunker.chunk_text(classified_data["text"], config)
+            embeddings = embedder.embed_chunks(chunks, config)
+            # print(f"Embedded {len(embeddings)} chunks.")
+            # print(embeddings[0])  # Show a sample vector
             # indexer.index(chunks, embeddings, classified_data, config)
             # manifest.record_entry(email_id, chunks, classified_data, config)
 

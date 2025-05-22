@@ -1,0 +1,3 @@
+* send an email of any new email parsed and added to db with a sumaary of it metadata and contents
+* support microsoft email account
+* 

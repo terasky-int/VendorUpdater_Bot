@@ -1,0 +1,72 @@
+[
+  {
+    "chunk_id": "chunk-0",
+    "text": "Fw: Find and fix leaked secrets fast with HCP Vault Radar\nTERASKY\n\nDavid Gidony, Solution Architect\n\n+972-52-2808442\n\ndavidg<mailto:davidg@terasky.com>@terasky.com<mailto:davidg@terasky.com>\n\nwww.terasky.com\n\n\n\n[cid:ea867495-e307-4400-8260-b34d83301c59]\n\n\n\n________________________________\nFrom: HashiCorp <hello@reply.hashicorp.com>\nSent: Thursday, May 1, 2025 8:12 PM\nTo: David Gidony <davidg@terasky.com>\nSubject: Find and fix leaked secrets fast with HCP Vault Radar",
+    "position": 0
+  },
+  {
+    "chunk_id": "chunk-1",
+    "text": "Start securing your secrets in minutes.\nView in browser<https://view.hashicorp.com/v/ODQ1LVpMRi0xOTEAAAGaK86qjPk_nI3NRT5tLKQz7MiuC9TTHb9anKAhegtwqQBvSeRM-yydyHuA-UYQLacxoIlQQC8=>  |  Update your preferences<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjArVoXL863KUqG2V0LjoATnASnFW5roAVdFZrRxfWLeUaEvYlN3HTSTlVUuF_VkTtlU=>\n[Hashicorp Logo] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjNw1cS244Pni1Gsa5x2DDttotF6dtQQ9_ix0gCztXYdVpAqTJ8qJGz5P_evkhnH7fds=>",
+    "position": 1
+  },
+  {
+    "chunk_id": "chunk-2",
+    "text": "[Radar banner]<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjH4dqrXDor2PHfOyqffxmqEiUM-6mCT5vBsHOU8CrIKaiaGCwiGh9F3kpzF8_9BVbhc=>\nHi David,",
+    "position": 2
+  },
+  {
+    "chunk_id": "chunk-3",
+    "text": "Secrets don’t stay secret for long when they’re hardcoded, copied, or forgotten.\n\nHCP Vault Radar<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjKHxaejmWq6LHj_1hYEUeMvVZaC6gDps18fY-9GP0cxjeWpbiRudF32FvU6ka2eb_gY=>, now generally available, is a powerful new way to detect, manage, and prevent leaked secrets across all environments.\n\nWith just a few clicks, platform, DevOps, and security teams can:",
+    "position": 3
+  },
+  {
+    "chunk_id": "chunk-4",
+    "text": "*   Detect leaks across code repos, CI/CD systems, tools like Confluence, and even on-prem\n  *   Prioritize risks automatically using rich metadata and built-in remediation workflows\n  *   Prevent future leaks by scanning pull requests and alerting developers before secrets hit production",
+    "position": 4
+  },
+  {
+    "chunk_id": "chunk-5",
+    "text": "Start securing your environments<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjH4dqrXDor2PHfOyqffxmqEiUM-6mCT5vBsHOU8CrIKaiaGCwiGh9F3kpzF8_9BVbhc=> without re-architecting your stack — no prior HashiCorp setup required.\nStart your free trial<https://view.hashicorp.com/dc/u6hO_DunZCxxdAJChjUMsQIxGoi_4zy6gpYIQDyaJP8uGhCmAcOmOQEyyQEwTop-/ODQ1LVpMRi0xOTEAAAGaK86qjKW05qfA5DFAePOjnt7QZUAm2F7auS94hIt2-3hC0bpvClcGaZyPxZpfGMzYYv_swm4=>",
+    "position": 5
+  },
+  {
+    "chunk_id": "chunk-6",
+    "text": "[SLM_Prac_130x130.png]<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjKtO8CBpd3aXPwpbynUOiy52evPTHzAjHG7Ul9nvQI2SgR37D-ZPN4zbGMMNZTI3i7Q=>\n\nUpcoming webinar series <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjKtO8CBpd3aXPwpbynUOiy52evPTHzAjHG7Ul9nvQI2SgR37D-ZPN4zbGMMNZTI3i7Q=>\nLearn how to protect, detect, and remediate secrets at scale with HCP Vault Radar.",
+    "position": 6
+  },
+  {
+    "chunk_id": "chunk-7",
+    "text": "[HashiCorp logo]<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjFkeLZgKjI55FuH7Ru-FrcCVvCUjYwa89DZM9DYo3SlyCMRpmM83QOydxjIWRAWS5U0=>",
+    "position": 7
+  },
+  {
+    "chunk_id": "chunk-8",
+    "text": "[https://go.hashicorp.com/rs/845-ZLF-191/images/Octocat%20Copy%203.png]<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjNIIpnaMi9nl4_QX7ivEaCmvaCN5c38On2k1em-qEThd8139tm1MHLBh3M1NhO8DEeY=>     [https://go.hashicorp.com/rs/845-ZLF-191/images/X-logo-black.png] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjIzLc0t3YNZDayyf3zXOXOJMj3DjEen_DxuU6jh8iZpAEJaC6-0cF73hD43qjdf7p2M=>      [https://go.hashicorp.com/rs/845-ZLF-191/images/Path%20Copy%209.png]",
+    "position": 8
+  },
+  {
+    "chunk_id": "chunk-9",
+    "text": "<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjKsnw8mzM6I214b0x53Jz7zyz7qSCs1J2Z04QPFKNu1y2FoZYnvqs_vFXQ4nu8uT364=>",
+    "position": 9
+  },
+  {
+    "chunk_id": "chunk-10",
+    "text": "Manage Preferences <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjArVoXL863KUqG2V0LjoATnASnFW5roAVdFZrRxfWLeUaEvYlN3HTSTlVUuF_VkTtlU=>      Unsubscribe<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjGYnAFy9qXsZa_mrWVzUruznml-nhxKDPK1MTrfDwUgqq-cjGUOEGLv9wAL_gDKesWY=>      Contact Us<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjDSFORtKCWidz2CdAZI22x7rOKsiCSrhrQ79m_ARkp6Ty41uOCbsNaMiIHdivPhiM8k=>      Privacy Policy",
+    "position": 10
+  },
+  {
+    "chunk_id": "chunk-11",
+    "text": "Privacy Policy <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjHw_He_qQP6WjU34IgT7QJMtLuL8roUjO0LMSXdX_kDREl9swPp95XsR3W3oLaKraGI=>",
+    "position": 11
+  },
+  {
+    "chunk_id": "chunk-12",
+    "text": "Copyright © 2025 HashiCorp. All rights reserved. 101 2nd St.#700, San Francisco, CA 94105\n<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaK86qjCCXMHBKpo64EUDwMs3GQwbZM3aWGw1Wlvpu1WWO6JA7JwRSrh0eUAb9TtJPV3SXXg0=>",
+    "position": 12
+  },
+  {
+    "chunk_id": "chunk-13",
+    "text": "[CAUTION: This email originated from outside of the organization. Do not click links or open attachments unless you recognize the sender and know the content is safe]",
+    "position": 13
+  }
+]
