@@ -1,10 +1,22 @@
 {
   "ids": [
-    []
+    [
+      "chunk-1",
+      "chunk-6",
+      "chunk-8",
+      "chunk-0",
+      "chunk-19"
+    ]
   ],
   "embeddings": null,
   "documents": [
-    []
+    [
+      "Subject: Breaking up the “Terralith” 🧱— strategies for better Terraform configurations\r\n\r\nAI+LLM operations are getting real. See how Terraform & Vault fit into the picture.\r\n\r\nApril 2025\r\n\r\nWEB VERSION<https://view.hashicorp.com/v/ODQ1LVpMRi0xOTEAAAGZ3ZE86JPbKZElDFCsuqivz7-bUYtd2hkA1OhFYx_dr8NCW6cRlM-i7grTCcC27c0u56cr3X0=> | UNSUBSCRIBE<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86fUDsKU_cqd9HD35BNiSYTY0SdIJw8G93iVijcP1hls7VwbRKJbhclDgr81M4lFPl_E=>",
+      ".....",
+      ".....",
+      "Fw: Breaking up the “Terralith” 🧱— strategies for better Terraform configurations\nTERASKY\r\n\r\nDavid Gidony, Solution Architect\r\n\r\n+972-52-2808442\r\n\r\ndavidg<mailto:davidg@terasky.com>@terasky.com<mailto:davidg@terasky.com>\r\n\r\nwww.terasky.com\r\n\r\n\r\n\r\n[cid:1f7a8ab7-3a5c-48e8-b83f-37863fbe6bb4]\r\n\r\n\r\n\r\n________________________________\r\nFrom: HashiCorp <no-reply@reply.hashicorp.com>\r\nSent: Wednesday, April 16, 2025 3:35 PM\r\nTo: David Gidony <davidg@terasky.com>",
+      "Disaster recovery strategies with Terraform<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86Z436FZyh_Ybg96iWLyzAeSSqlcMbtkOZrpuf473Eniwpjudk1LBFoR9XBFHSjWCvXA=> – Terraform is in a unique position to not only quickly re-create infrastructure in the case of an outage, but also create sandboxed, ephemeral infrastructure environments for testing your disaster recovery (DR) strategy. This article will walk through some simple exercises you can use right now with Terraform to test your DR strategy. by ANDRE"
+    ]
   ],
   "uris": null,
   "included": [
@@ -14,9 +26,46 @@
   ],
   "data": null,
   "metadatas": [
-    []
+    [
+      {
+        "product": "unknown",
+        "date": "1970-01-01",
+        "vendor": "terasky",
+        "type": "unknown"
+      },
+      {
+        "vendor": "terasky",
+        "product": "unknown",
+        "type": "unknown",
+        "date": "1970-01-01"
+      },
+      {
+        "type": "unknown",
+        "vendor": "terasky",
+        "product": "unknown",
+        "date": "1970-01-01"
+      },
+      {
+        "product": "unknown",
+        "date": "1970-01-01",
+        "vendor": "terasky",
+        "type": "unknown"
+      },
+      {
+        "date": "1970-01-01",
+        "type": "unknown",
+        "product": "unknown",
+        "vendor": "terasky"
+      }
+    ]
   ],
   "distances": [
-    []
+    [
+      1.2641754150390625,
+      1.270982265472412,
+      1.270982265472412,
+      1.2830085754394531,
+      1.3262925148010254
+    ]
   ]
 }

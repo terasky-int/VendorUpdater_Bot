@@ -1,14 +1,31 @@
 import os
 import json
 import logging
+import boto3
 from chromadb import PersistentClient
-from chromadb.utils.embedding_functions import DefaultEmbeddingFunction
+from typing import List
 
 
 def load_config():
     import yaml
     with open("config/config.yaml", "r") as f:
         return yaml.safe_load(f)
+
+
+def embed_with_titan(text: str) -> List[float]:
+    bedrock_client = boto3.client("bedrock-runtime", region_name="eu-west-1")
+    try:
+        response = bedrock_client.invoke_model(
+            modelId="amazon.titan-embed-text-v2:0",
+            body=json.dumps({"inputText": text}),
+            contentType="application/json",
+            accept="application/json"
+        )
+        body = json.loads(response["body"].read().decode("utf-8"))
+        return body["embedding"]
+    except Exception as e:
+        logging.error(f"Embedding failed for text: {text[:100]}... — {str(e)}")
+        raise
 
 
 def print_all_documents(collection):
@@ -33,8 +50,6 @@ def search_query():
     client = PersistentClient(path=chroma_path)
     collection = client.get_or_create_collection(name=collection_name)
 
-    embed_fn = DefaultEmbeddingFunction()
-
     # Debug mode: show everything in DB once
     print_all_documents(collection)
 
@@ -44,10 +59,10 @@ def search_query():
         if query.lower() == "exit":
             break
 
-        vendor = input("🔎 Filter by vendor (leave blank for any): ")
-        product = input("🔎 Filter by product (leave blank for any): ")
-        doc_type = input("🔎 Filter by type (leave blank for any): ")
-        date_limit = input("🕓 Max date (YYYY-MM-DD, leave blank to ignore): ")
+        vendor = input("🔎 Filter by vendor (leave blank for any): ").strip()
+        product = input("🔎 Filter by product (leave blank for any): ").strip()
+        doc_type = input("🔎 Filter by type (leave blank for any): ").strip()
+        date_limit = input("🕓 Max date (YYYY-MM-DD, leave blank to ignore): ").strip()
 
         # Build metadata filter
         filters = []
@@ -67,8 +82,9 @@ def search_query():
             chroma_where = {"$and": filters}
 
         try:
+            embedding = embed_with_titan(query)
             results = collection.query(
-                query_texts=[query],
+                query_embeddings=[embedding],
                 n_results=5,
                 where=chroma_where if chroma_where else None
             )
