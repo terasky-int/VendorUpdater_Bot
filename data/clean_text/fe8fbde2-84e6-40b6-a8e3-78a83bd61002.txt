@@ -1,0 +1,19 @@
+special invite 
+Inject a known email body with "vendor: IBM", "product: Cloud Pak", and a known date like "2025-05-01".
+
+
+
+TERASKY
+
+David Gidony, Solution Architect
+
++972-52-2808442
+
+davidg<mailto:davidg@terasky.com>@terasky.com<mailto:davidg@terasky.com>
+
+www.terasky.com
+
+
+
+[cid:17dcb9e3-e8f0-43e9-ace5-c02e869dae8f]
+
