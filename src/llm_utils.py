@@ -3,10 +3,15 @@ import json
 import yaml
 import boto3
 import logging
+from chromadb import PersistentClient
 
 def load_config(path="config/config.yaml"):
     with open(path, "r") as f:
         return yaml.safe_load(f)
+
+def get_chroma_collection(config):
+    client = PersistentClient(path=config["vector_store"]["persist_directory"])
+    return client.get_or_create_collection(name=config["vector_store"]["collection_name"])
 
 def embed_text_titan(text: str, config: dict) -> list:
     try:

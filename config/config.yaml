@@ -35,6 +35,10 @@ embedding:
   provider: amazon
   model: amazon.titan-embed-text-v2:0
 
+bedrock:
+  region: eu-west-1
+  embedding_model: amazon.titan-embed-text-v2:0
+
 indexing:
   vector_db: chromadb
   hybrid_search: true

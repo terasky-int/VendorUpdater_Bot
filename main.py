@@ -1,14 +1,11 @@
 import os
 import logging
-import yaml
 import json
-from chromadb import PersistentClient
-from src import harvest, normalize, enrich, classify, chunker, embedder #, indexer, manifest, evaluate
+from src import llm_utils, harvest, normalize, enrich, classify, chunker, embedder #, indexer, manifest, evaluate
 
 # Load configuration
 def load_config(path="config/config.yaml"):
-    with open(path, "r") as f:
-        return yaml.safe_load(f)
+    return llm_utils.load_config(path)
 
 # Setup logging
 def setup_logging(debug_mode):
@@ -33,10 +30,7 @@ def run_pipeline():
     logging.info("Starting LLM data digestion pipeline")
 
     # Connect to ChromaDB collection once
-    chroma_path = config["vector_store"]["persist_directory"]
-    collection_name = config["vector_store"]["collection_name"]
-    client = PersistentClient(path=chroma_path)
-    collection = client.get_or_create_collection(name=collection_name)
+    collection = llm_utils.get_chroma_collection(config)
 
     # Harvest
     emails = harvest.fetch_unread_emails(config)

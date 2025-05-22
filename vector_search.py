@@ -3,7 +3,12 @@ import json
 import logging
 from chromadb import PersistentClient
 from chromadb.utils.embedding_functions import DefaultEmbeddingFunction
-from llm_utils import load_config, embed_text_titan
+from src import llm_utils
+# from llm_utils import load_config, embed_text_titan
+
+# Load configuration
+def load_config(path="config/config.yaml"):
+    return llm_utils.load_config(path)
 
 def print_all_documents(collection):
     print("\n🗌 Dumping all metadata from the vector store...")
@@ -19,12 +24,8 @@ def print_all_documents(collection):
         print("❌ Could not retrieve vector store contents.")
 
 def search_query():
-    config = load_config()
-    chroma_path = config["vector_store"].get("persist_directory", "data/chroma")
-    collection_name = config["vector_store"].get("collection_name", "vendor_emails")
-
-    client = PersistentClient(path=chroma_path)
-    collection = client.get_or_create_collection(name=collection_name)
+    config = llm_utils.load_config()
+    collection = llm_utils.get_chroma_collection(config)  
 
     print_all_documents(collection)
 
@@ -52,7 +53,7 @@ def search_query():
         chroma_where = filters[0] if len(filters) == 1 else {"$and": filters} if filters else None
 
         try:
-            embedding = embed_text_titan(query, config)
+            embedding = llm_utils.embed_text_titan(query, config)
             results = collection.query(
                 query_embeddings=[embedding],
                 n_results=5,
