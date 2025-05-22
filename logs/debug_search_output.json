@@ -1,21 +1,21 @@
 {
   "ids": [
     [
-      "chunk-1",
-      "chunk-6",
-      "chunk-8",
-      "chunk-0",
-      "chunk-19"
+      "chunk-19",
+      "chunk-22",
+      "chunk-16",
+      "chunk-23",
+      "chunk-26"
     ]
   ],
   "embeddings": null,
   "documents": [
     [
-      "Subject: Breaking up the “Terralith” 🧱— strategies for better Terraform configurations\r\n\r\nAI+LLM operations are getting real. See how Terraform & Vault fit into the picture.\r\n\r\nApril 2025\r\n\r\nWEB VERSION<https://view.hashicorp.com/v/ODQ1LVpMRi0xOTEAAAGZ3ZE86JPbKZElDFCsuqivz7-bUYtd2hkA1OhFYx_dr8NCW6cRlM-i7grTCcC27c0u56cr3X0=> | UNSUBSCRIBE<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86fUDsKU_cqd9HD35BNiSYTY0SdIJw8G93iVijcP1hls7VwbRKJbhclDgr81M4lFPl_E=>",
-      ".....",
-      ".....",
-      "Fw: Breaking up the “Terralith” 🧱— strategies for better Terraform configurations\nTERASKY\r\n\r\nDavid Gidony, Solution Architect\r\n\r\n+972-52-2808442\r\n\r\ndavidg<mailto:davidg@terasky.com>@terasky.com<mailto:davidg@terasky.com>\r\n\r\nwww.terasky.com\r\n\r\n\r\n\r\n[cid:1f7a8ab7-3a5c-48e8-b83f-37863fbe6bb4]\r\n\r\n\r\n\r\n________________________________\r\nFrom: HashiCorp <no-reply@reply.hashicorp.com>\r\nSent: Wednesday, April 16, 2025 3:35 PM\r\nTo: David Gidony <davidg@terasky.com>",
-      "Disaster recovery strategies with Terraform<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86Z436FZyh_Ybg96iWLyzAeSSqlcMbtkOZrpuf473Eniwpjudk1LBFoR9XBFHSjWCvXA=> – Terraform is in a unique position to not only quickly re-create infrastructure in the case of an outage, but also create sandboxed, ephemeral infrastructure environments for testing your disaster recovery (DR) strategy. This article will walk through some simple exercises you can use right now with Terraform to test your DR strategy. by ANDRE"
+      "Disaster recovery strategies with Terraform<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86Z436FZyh_Ybg96iWLyzAeSSqlcMbtkOZrpuf473Eniwpjudk1LBFoR9XBFHSjWCvXA=> – Terraform is in a unique position to not only quickly re-create infrastructure in the case of an outage, but also create sandboxed, ephemeral infrastructure environments for testing your disaster recovery (DR) strategy. This article will walk through some simple exercises you can use right now with Terraform to test your DR strategy. by ANDRE",
+      ".....\r\nAce your Terraform Professional exam: 5 tips from certified pros<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86G8qk_duVmU_7ofrCm2--qRo90wJW4_UuL2p-wZTpws-ljv4rR2U9qfkTGIaKLftgrE=> – The Terraform Authoring and Ops Pro exam is a great way to showcase your advanced Terraform expertise. But where do you start when preparing for a 4-hour, lab-based exam? We sat down with three certified professionals to get their tips and jumpstart your exam preparation. by LAUREN CAREY\r\n.....",
+      ".....\r\n\r\n\r\nCase study | The great migration: How Helvetia moved 200 apps to the cloud in one year<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86GUtt8WUvDu1hi-MetKOidMjjneRdGvtzyYG2bjUHHVlm_8gTBP00g0olCaPg5FDczI=>\r\n\r\nFind out how Helvetia Insurance Group used HashiCorp Terraform to migrate 200 applications in one year with automation and standardization.\r\n\r\n[sparkles_emoji.png]\r\n\r\nFROM HASHICORP",
+      ".....\r\nDeploying Azure landing zones with Terraform Stacks<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86cS1U7UkBgc5ew7NAiLfYVcIq6PaAfy4ucIIVS_isqXRSibM6S9z_mMhBysumVSDAaU=> – Looking for more examples of how to use Terraform Stacks? This HashiTalks session shows how you can adapt the Azure Landing Zone module with Terraform Stacks, making it a lot easier to manage. by NED BELLAVANCE\r\n.....",
+      "Wednesday, May 7 — Sign up for this hands-on session to learn how to secure applications, manage identities, and protect sensitive data with HashiCorp Vault.\r\nHCP Terraform quickstart virtual hands-on workshop<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGZ3ZE86HCRXJXWbVHP9BVqg82o4-qrYWjP5HM_AM7YZ8oM6vPNMwpkKqSvXha1VjOgvGPkeqk=>\r\nWednesday, May 21 — Learn how to navigate the full infrastructure lifecycle with HCP Terraform — from provisioning and state management to collaboration and governance."
     ]
   ],
   "uris": null,
@@ -28,44 +28,44 @@
   "metadatas": [
     [
       {
+        "vendor": "terasky",
         "product": "unknown",
         "date": "1970-01-01",
-        "vendor": "terasky",
         "type": "unknown"
       },
       {
         "vendor": "terasky",
-        "product": "unknown",
-        "type": "unknown",
-        "date": "1970-01-01"
-      },
-      {
-        "type": "unknown",
-        "vendor": "terasky",
-        "product": "unknown",
-        "date": "1970-01-01"
-      },
-      {
-        "product": "unknown",
         "date": "1970-01-01",
+        "type": "unknown",
+        "product": "unknown"
+      },
+      {
+        "type": "unknown",
+        "product": "unknown",
+        "vendor": "terasky",
+        "date": "1970-01-01"
+      },
+      {
+        "date": "1970-01-01",
+        "product": "unknown",
         "vendor": "terasky",
         "type": "unknown"
       },
       {
-        "date": "1970-01-01",
         "type": "unknown",
         "product": "unknown",
+        "date": "1970-01-01",
         "vendor": "terasky"
       }
     ]
   ],
   "distances": [
     [
-      1.2641754150390625,
-      1.270982265472412,
-      1.270982265472412,
-      1.2830085754394531,
-      1.3262925148010254
+      1.3262925148010254,
+      1.3814287185668945,
+      1.571622371673584,
+      1.6491749286651611,
+      1.6668020486831665
     ]
   ]
 }
