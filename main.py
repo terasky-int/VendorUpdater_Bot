@@ -3,7 +3,7 @@ import logging
 import json
 
 import yaml
-from src import llm_utils, harvest, normalize, enrich, classify, chunker, embedder #, indexer, manifest, evaluate
+from src import llm_utils, harvest, normalize, enrich, classify, chunker, embedder, indexer#, manifest, evaluate
 import argparse
 from dotenv import load_dotenv
 
@@ -65,9 +65,7 @@ def run_pipeline():
             logging.debug(f"Classified data: {classified_data}")
             chunks = chunker.chunk_text(classified_data["text"], config)
             embeddings = embedder.embed_chunks(chunks, config)
-            # print(f"Embedded {len(embeddings)} chunks.")
-            # print(embeddings[0])  # Show a sample vector
-            # indexer.index(chunks, embeddings, classified_data, config)
+            indexer.index(chunks, embeddings, classified_data, config)
             # manifest.record_entry(email_id, chunks, classified_data, config)
 
             # if config["debug"]["evaluation"]["enabled"]:

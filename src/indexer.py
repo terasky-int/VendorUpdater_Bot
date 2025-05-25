@@ -1,10 +1,10 @@
 import logging
 from chromadb import PersistentClient
-import llm_utils
-from llm_utils import load_config, get_chroma_collection
+from src import llm_utils
+# from llm_utils import load_config, get_chroma_collection
 
 def index_documents(texts, metadatas, ids, embeddings):
-    collection = get_chroma_collection()
+    collection = llm_utils.get_chroma_collection()
 
     collection.add(
         documents=texts,
@@ -14,6 +14,17 @@ def index_documents(texts, metadatas, ids, embeddings):
     )
 
     logging.info(f"✅ Indexed {len(texts)} documents into the vector store")
+
+def index(chunks, embeddings, metadatas, config=None):
+    texts = [c["text"] for c in chunks]
+    ids = [c["id"] for c in chunks]
+
+    index_documents(
+        texts=texts,
+        metadatas=metadatas,
+        ids=ids,
+        embeddings=embeddings
+    )
 
 if __name__ == "__main__":
     import random
