@@ -123,6 +123,9 @@ vector_store:
   persist_directory: data/chroma
   collection_name: vendor_emails
 
+ocr:
+  tesseract_path: "C:\\Users\\DavidGidony\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe"
+
 debug:
   enabled: True
   verbose_logging: False

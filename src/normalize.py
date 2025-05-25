@@ -2,7 +2,7 @@ import os
 import email
 import logging
 import textract
-
+import subprocess
 from email import policy
 from email.parser import BytesParser
 
@@ -69,9 +69,25 @@ def extract_attachment_text(part, config):
         f.write(attachment_data)
 
     try:
+        tesseract_path = config.get("ocr", {}).get("tesseract_path")
+        if tesseract_path:
+            os.environ["TESSERACT_PATH"] = tesseract_path  # helpful for textract subprocess
+            os.environ["PATH"] = os.pathsep.join([tesseract_path, os.environ.get("PATH", "")])
+
         text = textract.process(temp_path).decode("utf-8", errors="ignore")
-        os.remove(temp_path)
         return text
+
     except Exception as e:
         logging.warning(f"Failed to extract attachment {filename}: {e}")
         return None
+
+    finally:
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+    # try:
+    #     text = textract.process(temp_path).decode("utf-8", errors="ignore")
+    #     os.remove(temp_path)
+    #     return text
+    # except Exception as e:
+    #     logging.warning(f"Failed to extract attachment {filename}: {e}")
+    #     return None

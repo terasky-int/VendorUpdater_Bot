@@ -104,8 +104,8 @@ def run_pipeline():
             else:
                 logging.warning(f"⚠️ No valid chunks for email ID {email_id}")
                 
-
-            harvest.mark_email_as_read(eid, config)
+            if not args.local:
+                harvest.mark_email_as_read(eid, config)
             doc_count = collection.count()
             logging.info(f"ChromaDB now contains {doc_count} total documents.")
 
