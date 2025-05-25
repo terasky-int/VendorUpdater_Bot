@@ -1,7 +1,7 @@
 email:
   imap_server: imap.gmail.com
   email_address: davidplayground333@gmail.com
-  password: wbqq qntg rxys fwid  # Secure via .env or secrets manager in prod
+  email_password: ${EMAIL_PASS}
   folder: INBOX
   mark_as_read: true
   fetch_interval_minutes: 120

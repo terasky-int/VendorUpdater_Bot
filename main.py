@@ -1,13 +1,17 @@
 import os
 import logging
 import json
+
+import yaml
 from src import llm_utils, harvest, normalize, enrich, classify, chunker, embedder #, indexer, manifest, evaluate
 import argparse
+from dotenv import load_dotenv
 
 parser = argparse.ArgumentParser(description="VendorUpdater Bot Pipeline")
 parser.add_argument("--local", action="store_true", help="Run using local .eml files instead of a live server")
 parser.add_argument("--folder", type=str, help="Path to folder containing .eml files (required with --local)")
 args = parser.parse_args()
+load_dotenv()  # loads from .env in current working dir
 
 # Load configuration
 def load_config(path="config/config.yaml"):
@@ -33,6 +37,8 @@ def ensure_primitive(value):
 # Main pipeline function
 def run_pipeline():
     config = load_config()
+    config = json.loads(json.dumps(config))  # convert to string
+    config = yaml.safe_load(os.path.expandvars(json.dumps(config)))
     setup_logging(config["debug"]["enabled"])
     logging.info("Starting LLM data digestion pipeline")
 

@@ -11,7 +11,7 @@ msg_id_map = {}
 def fetch_unread_emails(config):
     server = config['email']['imap_server']
     user = config['email']['email_address']
-    password = config['email']['password']
+    password = config['email']['email_password']
     folder = config['email'].get('folder', 'INBOX')
 
     mail = imaplib.IMAP4_SSL(server)
