@@ -23,7 +23,7 @@ def extract_metadata(clean_text, original_email, config):
         parsed_date = datetime.strptime(date[:25], "%a, %d %b %Y %H:%M:%S")
         received_at = parsed_date.isoformat()
     except Exception:
-        received_at = datetime.utcnow().isoformat()
+        received_at = datetime.now().isoformat()
 
     metadata = {
         "subject": subject,
@@ -48,26 +48,6 @@ def infer_vendor(sender_email):
     ext = tldextract.extract(sender_email)
     domain = ext.domain
     return domain.lower() if domain else "unknown"
-
-
-# def infer_vendor(sender_email):
-#     try:
-#         domain = sender_email.split("@")[-1]
-#         parts = domain.lower().split(".")
-
-#         # Strip known generic subdomains
-#         generic_prefixes = {"info", "support", "noreply", "no-reply", "alerts", "marketing", "email", "updates", "reply"}
-#         filtered_parts = [p for p in parts if p not in generic_prefixes]
-
-#         # Heuristic: Take the second-level domain (e.g. 'vmware' from 'marketing.vmware.co.uk')
-#         if len(filtered_parts) >= 2:
-#             return filtered_parts[-2]
-#         elif filtered_parts:
-#             return filtered_parts[0]
-#     except Exception:
-#         pass
-
-#     return "unknown"
 
 
 

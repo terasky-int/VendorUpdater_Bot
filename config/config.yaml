@@ -6,7 +6,7 @@ email:
   mark_as_read: true
   fetch_interval_minutes: 120
 
-classification:
+type_classification:
   labels:
     marketing:
       - promo
@@ -21,6 +21,79 @@ classification:
       - support
       - product update
       - whitepaper
+  multi_label: true
+
+product_classification:
+  vendors:
+    hashicorp:
+      - HCP
+      - vault
+      - terraform
+      - boundary
+      - consul
+      - nomad
+      - packer
+      - waypoint
+      - sentinel
+      - terraform cloud
+    palo alto:
+      - prisma cloud
+      - cortex xdr
+      - cortex xpanse
+      - cortex xsoar
+    snyk:
+      - snyk code
+      - snyk open source
+      - snyk container
+      - snyk iaac
+      - snyk developer security
+    aqua security:
+      - cloud native security platform
+      - container security
+      - serverless security
+      - runtime protection
+      - vulnerability management
+    prompt security:
+      - prompt security platform
+      - prompt security employee
+      - prompt security developer
+      - prompt security homegrown
+    dell storage:
+      - powerstore
+      - powermax
+      - unity xt
+      - isilon
+      - vnx
+      - powerflex
+    pure storage:
+      - flashblade
+      - flasharray
+      - pure1
+      - airgap
+      - cloud block store
+    aws:
+      - ec2
+      - s3
+      - rds
+      - lambda
+      - dynamodb
+      - cloudformation
+      - cloudwatch
+      - vpc
+    azure:
+      - virtual machines
+      - app service
+      - azure sql database
+      - azure storage
+      - azure functions
+      - azure kubernetes service
+    gcp:
+      - compute engine
+      - cloud storage
+      - cloud sql
+      - cloud functions
+      - kubernetes engine
+      - bigquery
   multi_label: true
 
 data_processing:
@@ -43,7 +116,7 @@ bedrock:
 
 indexing:
   vector_db: chromadb
-  hybrid_search: true
+  hybrid_search: True
   manifest_path: ./index_manifest.jsonl
 
 vector_store:
@@ -51,10 +124,10 @@ vector_store:
   collection_name: vendor_emails
 
 debug:
-  enabled: true
-  verbose_logging: false
-  save_all_artifacts: false
+  enabled: True
+  verbose_logging: False
+  save_all_artifacts: False
   evaluation:
-    enabled: true
+    enabled: True
     top_k: 3
-    show_confidence_score: true
+    show_confidence_score: True

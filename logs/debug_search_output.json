@@ -1,0 +1,71 @@
+{
+  "ids": [
+    [
+      "chunk-44",
+      "chunk-61",
+      "chunk-35",
+      "chunk-38",
+      "chunk-53"
+    ]
+  ],
+  "embeddings": null,
+  "documents": [
+    [
+      "| AWS",
+      "This message was produced and distributed by Amazon Web Services, Inc. or its affiliates<https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com%2FMTEyLVRaTS03NjYAAAGaiwpbWfef44ngNMapmw81SmWLGWLyLUP2aB8XhGx67oSiWinOWBSvgMTow2CXCPwSPqXt0yU=/1/01000196ec11c9a6-19074aed-9ab1-460a-ab4a-bff2810295a1-000000/u0YTMGa25BUTv6l_VZ4TVBtRGXE=426>, 410 Terry Ave. North, Seattle, WA 98109.",
+      "|",
+      "|",
+      "|"
+    ]
+  ],
+  "uris": null,
+  "included": [
+    "metadatas",
+    "documents",
+    "distances"
+  ],
+  "data": null,
+  "metadatas": [
+    [
+      {
+        "vendor": "terasky",
+        "product": "",
+        "date": "2025-05-21T06:30:20",
+        "type": "event, webinar"
+      },
+      {
+        "product": "",
+        "date": "2025-05-21T06:30:20",
+        "vendor": "terasky",
+        "type": "event, webinar"
+      },
+      {
+        "date": "2025-05-21T06:30:20",
+        "vendor": "terasky",
+        "product": "",
+        "type": "event, webinar"
+      },
+      {
+        "product": "",
+        "date": "2025-05-21T06:30:20",
+        "type": "event, webinar",
+        "vendor": "terasky"
+      },
+      {
+        "vendor": "terasky",
+        "product": "",
+        "type": "event, webinar",
+        "date": "2025-05-21T06:30:20"
+      }
+    ]
+  ],
+  "distances": [
+    [
+      0.7990804314613342,
+      1.2390296459197998,
+      1.3950474262237549,
+      1.3950474262237549,
+      1.3950474262237549
+    ]
+  ]
+}

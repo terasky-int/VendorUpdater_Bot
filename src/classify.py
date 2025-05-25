@@ -1,25 +1,25 @@
-
 import logging
 import json
 import boto3
 import re
 
-def label_content(data, config):
+def classify_message_type(data,config):
     try:
         # Initialize Bedrock client
         client = boto3.client("bedrock-runtime", region_name=config["bedrock"]["region"])
         model_id = config["bedrock"]["classification_model"]
-
-        # Create prompt for classification
+        label_categories = config["type_classification"]["labels"]
+        all_labels = [label for group in label_categories.values() for label in group]
+        label_list = ", ".join(all_labels)
+        # Prompt asking for clean JSON list only
         prompt = (
             "You are a classification model for vendor emails.\n"
-            "Classify the email into one or more of the following types:\n"
-            "promo, event, webinar, announcement, vulnerability, patch, maintenance, support, product update, whitepaper.\n"
-            "Return a JSON list of matching labels.\n\n"
+            f"Classify the email into one or more of the following types:\n{label_list}.\n"
+            "Return only a valid JSON list of matching labels, with no explanation or extra text.\n\n"
             f"Email content:\n{data['text']}"
         )
 
-        # Prepare request for Claude via Bedrock
+        # Send request to Claude via Bedrock
         body = {
             "anthropic_version": "bedrock-2023-05-31",
             "max_tokens": 300,
@@ -39,56 +39,127 @@ def label_content(data, config):
 
         labels = []
 
-        # Claude-style response: [{"type": "text", "text": "..."}]
-        if isinstance(parsed, list) and parsed and isinstance(parsed[0], dict) and "text" in parsed[0]:
+        # Claude response: list of dicts with 'text'
+        if isinstance(parsed, list) and parsed and "text" in parsed[0]:
             raw_text = parsed[0]["text"]
             logging.debug(f"LLM raw content: {repr(raw_text)}")
 
-            match = re.search(r'\[\s*(?:\"[^\"]+\"\s*,?\s*)+\]', raw_text, re.DOTALL)
-            if match:
-                try:
-                    labels = json.loads(match.group(0))
-                except json.JSONDecodeError as e:
-                    logging.error(f"❌ Failed to decode label JSON: {e}")
-                    labels = []
-            else:
-                logging.warning("⚠️ No label array found in response text.")
+            try:
+                labels = json.loads(raw_text)  # <- THIS is now the only decoding needed
+            except Exception as e:
+                logging.error(f"❌ Failed to decode JSON from text: {e}")
                 labels = []
-####### NEED TO SOLVE THIS PART ########
-        # Alt response: direct dict with a 'content' key
+
         elif isinstance(parsed, dict) and "content" in parsed:
-            content = parsed["content"]
+            content = parsed['content'][0]["text"]
             logging.debug(f"LLM raw content: {repr(content)}")
-            if isinstance(content, str):
-                labels = json.loads(content)
-            elif isinstance(content, list):
-                labels = content
-            else:
-                raise ValueError(f"Unexpected format in 'content': {type(content)}")
+            try:
+                labels = json.loads(content) if isinstance(content, str) else content
+            except Exception as e:
+                logging.error(f"❌ Failed to decode fallback content: {e}")
+                labels = []
 
         else:
-            raise ValueError(f"Unsupported response format: {type(parsed)}")
+            raise ValueError(f"Unsupported response format: {parsed}")
 
-        # Validate and return classification
+        # Final validation
         if isinstance(labels, list) and all(isinstance(x, str) for x in labels):
             label_string = ", ".join(labels)
             logging.info(f"✅ Classified labels: {label_string}")
-            return {
-                "text": data["text"],
-                "vendor": data.get("vendor", "unknown"),
-                "product": data.get("product", "unknown"),
-                "date": data.get("date", "1970-01-01"),
-                "type": label_string
-            }
+            return labels
         else:
             raise ValueError(f"Parsed labels are not valid: {labels}")
 
     except Exception as e:
         logging.error(f"❌ Classification failed: {str(e)}")
-        return {
-            "text": data.get("text", ""),
-            "vendor": data.get("vendor", "unknown"),
-            "product": data.get("product", "unknown"),
-            "date": data.get("date", "1970-01-01"),
-            "type": "unknown"
+        return "unknown"
+        
+    
+
+def classify_message_products(data,config):
+    try:
+        # Initialize Bedrock client
+        client = boto3.client("bedrock-runtime", region_name=config["bedrock"]["region"])
+        model_id = config["bedrock"]["classification_model"]
+        vendor = (data.get("vendor") or "unknown").lower()
+        vendor_products = config["product_classification"]["vendors"].get(vendor, [])
+        product_list = ", ".join(vendor_products)
+        # Prompt asking for clean JSON list only
+        if vendor_products:
+            hint_text = f"Try to identify product names discussed in this email. These might include (but are not limited to):\n{product_list}"
+        else:
+            hint_text = "Try to identify product names discussed in this email."
+
+        prompt = (
+            "You are an AI email analyst helping categorize content.\n"
+            f"The vendor mentioned is: {vendor}.\n"
+            f"{hint_text}\n"
+            "Return only a valid JSON list of product names mentioned in the email. No explanation, no extra formatting.\n\n"
+            f"Email content:\n{data['text']}"
+        )
+
+        # Send request to Claude via Bedrock
+        body = {
+            "anthropic_version": "bedrock-2023-05-31",
+            "max_tokens": 300,
+            "temperature": 0.0,
+            "messages": [{"role": "user", "content": prompt}]
         }
+
+        response = client.invoke_model(
+            modelId=model_id,
+            body=json.dumps(body),
+            contentType="application/json",
+            accept="application/json"
+        )
+
+        response_body = response["body"].read().decode()
+        parsed = json.loads(response_body)
+
+        labels = []
+
+        # Claude response: list of dicts with 'text'
+        if isinstance(parsed, list) and parsed and "text" in parsed[0]:
+            raw_text = parsed[0]["text"]
+            logging.debug(f"LLM raw content: {repr(raw_text)}")
+
+            try:
+                labels = json.loads(raw_text)  # <- THIS is now the only decoding needed
+            except Exception as e:
+                logging.error(f"❌ Failed to decode JSON from text: {e}")
+                labels = []
+
+        elif isinstance(parsed, dict) and "content" in parsed:
+            content = parsed['content'][0]["text"]
+            logging.debug(f"LLM raw content: {repr(content)}")
+            try:
+                labels = json.loads(content) if isinstance(content, str) else content
+            except Exception as e:
+                logging.error(f"❌ Failed to decode fallback content: {e}")
+                labels = []
+
+        else:
+            raise ValueError(f"Unsupported response format: {parsed}")
+
+        # Final validation
+        if isinstance(labels, list) and all(isinstance(x, str) for x in labels):
+            label_string = ", ".join(labels)
+            logging.info(f"✅ Classified labels: {label_string}")
+            return labels
+        else:
+            raise ValueError(f"Parsed labels are not valid: {labels}")
+
+    except Exception as e:
+        logging.error(f"❌ Classification failed: {str(e)}")
+        return "unknown"
+
+def label_content(data, config):
+    type_classification = classify_message_type(data, config)
+    product_classification = classify_message_products(data, config)
+    return {
+        "text": data.get("text"),
+        "vendor": data.get("vendor"),
+        "product": product_classification,
+        "date": data.get("received_at"),
+        "type": type_classification
+    }

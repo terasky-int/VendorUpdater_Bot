@@ -1,0 +1,1130 @@
+Received: from AM8P194MB1028.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:24a::16)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Fri, 23 May 2025
+ 00:41:04 +0000
+Received: from AS4P195CA0035.EURP195.PROD.OUTLOOK.COM (2603:10a6:20b:65a::19)
+ by AM8P194MB1028.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:24a::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8769.21; Fri, 23 May
+ 2025 00:41:00 +0000
+Received: from AMS0EPF000001A6.eurprd05.prod.outlook.com
+ (2603:10a6:20b:65a:cafe::da) by AS4P195CA0035.outlook.office365.com
+ (2603:10a6:20b:65a::19) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8769.21 via Frontend Transport; Fri,
+ 23 May 2025 00:41:00 +0000
+Authentication-Results: spf=pass (sender IP is 192.254.121.144)
+ smtp.mailfrom=em6178.mail.events.redhat.com; dkim=pass (signature was
+ verified) header.d=mail.events.redhat.com;dmarc=pass action=none
+ header.from=mail.events.redhat.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of
+ em6178.mail.events.redhat.com designates 192.254.121.144 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.254.121.144;
+ helo=o1.email.certain.com; pr=C
+Received: from o1.email.certain.com (192.254.121.144) by
+ AMS0EPF000001A6.mail.protection.outlook.com (10.167.16.233) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8769.18
+ via Frontend Transport; Fri, 23 May 2025 00:40:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mail.events.redhat.com;
+	h=from:subject:mime-version:content-type:content-transfer-encoding:
+	reply-to:to:cc:content-type:from:subject:to;
+	s=rh9; bh=5U5ynCNqY9ApYnCVkC9yLx1xSe+tO/FxO2PDFLVpFNM=;
+	b=f7CvilQUm0ApKfl3vdGxVNrDuz4sHhy850EK1gzv7cdVAunDg6gGSbML8xTerGuxHCCw
+	YVHqeJXfnP5ATQO6tALD1EjLLWmbScdlpRpgt4UvRSSxxKjbRbtO3tYSbXk85kdOOTPa3c
+	RGolIzsRr9T+zYbs0M/SFCl8padOLnBIgcDuH3CD2auX0sG8MiifmJyh3K+Ui3lmx/ZAuL
+	+eJTu7xN4mnxKb1nNCTYZwtvPHFqknR8/LzYD5EqtFrMMsomidgJtdKupbpmd54L3bilyw
+	bwuacHBT9lp3cYXl7ogLyByG4xRTpqIx05C5tttaOzVWe7e3PN0yBPr8dgO6VTEw==
+Received: by recvd-cb85bb4c4-9kl5s with SMTP id recvd-cb85bb4c4-9kl5s-1-682FC419-3A
+	2025-05-23 00:40:57.929969397 +0000 UTC m=+3810780.129683305
+Received: from app205.pod3.prod.va.certainaws.com (unknown)
+	by geopod-ismtpd-15 (SG) with ESMTP id lTQl71WqR3qilw_NTMEzlw
+	for <davidg@terasky.com>; Fri, 23 May 2025 00:40:57.873 +0000 (UTC)
+Date: Fri, 23 May 2025 00:40:57 +0000
+From: Red Hat EMEA <emeaevents@mail.events.redhat.com>
+Message-ID: <809587742.7077.1747960857846@app205.pod3.prod.va.certainaws.com>
+Subject: You're Confirmed!
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+X-Mailer: Certain
+Reply-To: Red Hat EMEA <emeaevents@mail.events.redhat.com>
+X-SG-EID: =?us-ascii?Q?u001=2E9YxJObiMw1XbY4Vl9CueLtpKMs9affAkFgEDPgmbzi4OrQuZ=2FZGrQewy9?=
+ =?us-ascii?Q?i78iBC2GrY5ypCPFFt3sPs=2F8fxmswo665YFtjpm?=
+ =?us-ascii?Q?iaD7RIayv8PNPpjBjB909aeLxPgaAH+ft0j1JCi?=
+ =?us-ascii?Q?tk+N4Qul9E8Xou=2FckwRnbVjniTiMFxoQIZ0jeSZ?=
+ =?us-ascii?Q?Ci6cTHWp=2FSixUi+IohFtH8XP2i6ZvOJcPhsnuKs?=
+ =?us-ascii?Q?SGOJxNQtwrMwYPshL2=2F4GXESnQKYT5TfkDgXc71?= =?us-ascii?Q?mUCp?=
+X-SG-ID: =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprDfZ4KFC89z+vjQ1?=
+ =?us-ascii?Q?JW+0zQzpWHn6lBtpylBsvsmugz7c4thmx=2F075uX?=
+ =?us-ascii?Q?PfEngMV=2FoycLTF33UNIomLGDmSODmmbVf8Hi+4h?=
+ =?us-ascii?Q?Gj+MS5+fNaygbWBR2h2DtP10Hz2av9G=2FUic9uQv?=
+ =?us-ascii?Q?NiJR5TE5RpmI5+qFpD0gUT5+xcF+f+KNe8Y5Izw?=
+ =?us-ascii?Q?kcRezISl=2FMH6r2QWI9maqKrolnFwHUbhl8RdKLu?=
+ =?us-ascii?Q?5PtCvBAjAqB=2Fe3JU34y3UO1ccDINy2=2FR2zitI2I?=
+ =?us-ascii?Q?XaLxqJDfK6yvYGlArHRnFSQToqaGobDVxUB3gDW?=
+ =?us-ascii?Q?qWQH0dZiRTYNWS7B6iL5RJt28n693wsHEYFNKk3?=
+ =?us-ascii?Q?RbXwuCbcEn64Csh1MGAvZCzPPrdt0w2deXHaFkJ?=
+ =?us-ascii?Q?Y9StfHWZlkiXkEo1dxN5gk5LuK98gA42ffOKy55?=
+ =?us-ascii?Q?t39vKO4s+ysC3oEMa=2FZjjJlah53pBbqHrrOu9=2FC?=
+ =?us-ascii?Q?n9dqf3JgCuaMwihnGvlGjWyLYSqjjRyj+7oY+Ay?=
+ =?us-ascii?Q?GEFulkJXuo7LoNloJGU+wT+84yvnCO0N+M1B5PN?=
+ =?us-ascii?Q?e6JOa+P4=2FUlGNGCzaaUoNvFnnF3hpl7IaRhh9Kf?=
+ =?us-ascii?Q?BDxnighrLe3J9ZBAuPvS1G6wVDCTyn=2F0LT0R7Td?=
+ =?us-ascii?Q?M2aTbMRT7QVmc++3kNR2W0UZTIoEHjw0LJ8Exf9?=
+ =?us-ascii?Q?awvhbstKJcSpfpMVHBG0txHMkGUZ6zlolX2jxyK?=
+ =?us-ascii?Q?SyQpGg=3D=3D?=
+To: David =?UTF-8?b?R2lkb2554oCs4oCP?= <davidg@terasky.com>
+X-Entity-ID: u001.CE0MiWCWtJrkRH6vVCS2cw==
+Return-Path: bounces+59165-a867-davidg=terasky.com@em6178.mail.events.redhat.com
+X-MS-Exchange-Organization-ExpirationStartTime: 23 May 2025 00:41:00.4136
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: aae075e6-9096-4197-12fa-08dd99927d5f
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AMS0EPF000001A6:EE_|AM8P194MB1028:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AMS0EPF000001A6.eurprd05.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: aae075e6-9096-4197-12fa-08dd99927d5f
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|29132699027|5063199012|30052699003|5073199012|2092899012|69100299015|12012899012|1032899013|4123199012|2066899003|8096899003;
+X-Forefront-Antispam-Report: CIP:192.254.121.144;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:o1.email.certain.com;PTR:o1.email.certain.com;CAT:NONE;SFS:(13230040)(29132699027)(5063199012)(30052699003)(5073199012)(2092899012)(69100299015)(12012899012)(1032899013)(4123199012)(2066899003)(8096899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 May 2025 00:40:59.9080
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: aae075e6-9096-4197-12fa-08dd99927d5f
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AMS0EPF000001A6.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8P194MB1028
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:05.0721487
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8769.014
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(4710137)(4712077)(4999163)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?VmtFWnpBRDU1Si9YczRpdm5naGVPaElXZHkzaEpFaGp2NGUrb0RxN20rREVC?=
+ =?utf-8?B?cGo2TVZvSTVsbk5pZGw2dEhYVER5RGlYWE1FdXcxYmUvOE5RcmlNTTQ4TVdW?=
+ =?utf-8?B?VE9nbkhjY0x6Q2F4Tlh6dk56dGZibTg2ZElnM1VCWmxqMzlXZUlhNytIeEMz?=
+ =?utf-8?B?YzNOaFlMbFlOUW9sY0RGODdaT0YwTytqdnhSUDNkaFBFc2ZGUndIdld2MS9j?=
+ =?utf-8?B?SjhVamppRG1acWtGK2s0bTlYVGpROEdoU0hFVjZHRTdJb05uWnVVNWl0T05F?=
+ =?utf-8?B?c2hyTTB4WGlRRi8xa1ZIcWwvbWFDSXdLUHJIVjFSN1RWN1ZWeXpWRWs4a2ZK?=
+ =?utf-8?B?ZU1wQllmWUZPOHU3L3BuNVpBUmlGYm1JOWxZRHlKRnQ2Vi9VZjQ0YXZaNjZq?=
+ =?utf-8?B?RUdxZ21nMkV1Q0ZBVG9tWUtmUWRxLzZUMU9qY2E4aE5mRlM5WVRMSTNSK1pF?=
+ =?utf-8?B?ZE5VNlBDVzV2eno2QTBLQlN3R1Z2UjlJK1dhL3NzOTZOUGRwanFRZjR4TXY1?=
+ =?utf-8?B?NmNtbENkN3pOMUJLbHNXODk2V2J3NmlOdGVZY1VtaUFucmtQNUMxQ1V0Vm81?=
+ =?utf-8?B?cFdBVmxTS3ZQcFNRUlo4ejRXWTBDT2hlcDY5TnV4eVR3c3FqSzA4Y3RsUjZr?=
+ =?utf-8?B?MmRXZGwrV2llVmUzdVBJb0thdllaWlE4eTFqaUh2OTdvbk4vQUcrSU84Q05v?=
+ =?utf-8?B?TE9UUGNiRE0zQ3hQbzRzVG5XWHhscHlwcmVMWnBpREh3V3Zyc0V1NGZiS0VF?=
+ =?utf-8?B?UTNtWGYvMEJnZTczYkZJRHRwK01VVzN3R3d0K0UzcnhrK3JhMCsxL25yMWkx?=
+ =?utf-8?B?bDl4OXJib1RERjMvOGJtZytSMTFQK1VJSWhEYWdaTUFVUU5mQnpnZVU2SjAy?=
+ =?utf-8?B?RUR1MytKUUtWSytsNnJrRHlFenFsc09veitMQno4Uk1sN1FaTTFqWmFlSkJw?=
+ =?utf-8?B?WnkzakdWZ2lYeHUyS0NWN3UyMGl3TXlUbXByTHE2UmJhNndNN1dyaVpYWHli?=
+ =?utf-8?B?N0tIY1dZS20yUHdnOFkyOWpWVmJmcG4rMytqN2ozbmpQTytHM2lwT3hXVW9u?=
+ =?utf-8?B?RXp1S2ZCU3F3ODI0cGhxQ3BCOUtldkZtam0vdnYvbFBRVjRWYnUyRVRQR3hF?=
+ =?utf-8?B?b1J3WGplSThhQ1lGK2FGdk16MTRRTnd3QnE2UXZSaUowVmZGRXhWbTZaYmJW?=
+ =?utf-8?B?OUZ5cHdOTmNRU01JVE9TMUZnWkVCNk5VYWJ5a3lBYi9OR3AwTHhMa3EvcTZ2?=
+ =?utf-8?B?ZTllcllHaHNRQXhLN0lRNG9nbkZvbFNjU1pCZkVDbnlBVW5UNGRwUzBEMkVa?=
+ =?utf-8?B?eDBITnFWZHNGMElNTVI0ZkNBMEhLSUV3dTVla3d4bE82ckRvVnVkSWlNbVZq?=
+ =?utf-8?B?Y1U1M0dtUWNDc3laNitxbnhIR09FaTlSZ0pzTVlSRFA5Nnh1N08vSjErZmha?=
+ =?utf-8?B?Z1lCaTZaT1BTb1MvTEFSenUzRHdqcDc3ZllxUWhHN1B6YTJ4N1RTN2IzNVhr?=
+ =?utf-8?B?OE5xa0s1Z3pHa3FDWnA4V296N0JwdXZxcFdoNmZXT1dhWlJsMlhCNm5lZ1dV?=
+ =?utf-8?B?aDFEZ25BRlhJOFJYZksrcWtQL1gvWjF1Nmw0QktJbmphakNya01nT2JUWGcy?=
+ =?utf-8?B?OGk4TS9WSzVGLzVsbldzMjlmcHFpV2YxcllZY05KN1JiMW1YZXBlYTR5Rkdl?=
+ =?utf-8?B?REVuQzVTUnNEYW9jYUs2bHRFMnloQmhhVkVwVGxzaDZXck9WQUF2dDRiL0lL?=
+ =?utf-8?B?bmpQU3ppRDB2NmxjTXczWXVpRDhKbmpBOTJYSDZYN0lOSm04VmdPWlczc25E?=
+ =?utf-8?B?NmcrbzhYNXBxckJZRFpuQllnWFRMWWRlVVMyV1ZIUWRjeWMzcU5TQmQraHAv?=
+ =?utf-8?B?ZnQvN2F0MXJLSXQxbWlsNHpoSTNMSEJhcElIcjVnREJrd1R0MHdTVHkvL09E?=
+ =?utf-8?B?Z1V2eTNtZzZhUU1qMXVHZnNpMFl3c1pYT01FeHdqaHIzT2tFc2N0TnZiQlV5?=
+ =?utf-8?B?aDhKdDEraXpDNEw1QlRRUVpjWWpldjVXd3M5Vjk5ZFhGRHRzNG5IbDdQUE44?=
+ =?utf-8?B?alZrU0tyNUlNUTlIQ0NzTnB2T0MyaWJKRE1IM0IwQjBRY1d0SGxXNi9JeHNV?=
+ =?utf-8?B?MnBDL1BSWldlQVRpNGI1VkZ2bFEwNmVGNG9Pa0VhUmNNZG9GcXh4Um1nWUZC?=
+ =?utf-8?B?YTlqcGpxbTJYWUdrejMyVHlKNlhkY0tvb0pPMTR5NmhvNEIyK3VuM0RvQlBX?=
+ =?utf-8?B?UFljaWoyNE5tNVd1bG45VlNWV0dDU3hTeVZ2Sm4xNW5GbjdqL3lOdWl0Z01r?=
+ =?utf-8?B?SnNFeVR6TEE0Z0Foa0NQQXVrc0xjcGUzdThWQitRQVo0Q1M1QmVtNDRVWDJx?=
+ =?utf-8?B?dTBkOVFJZStlbVNGYXR1bWZSRlVaT0RHVXo3UFQwcW0zQjNqZ2thaStFU3NF?=
+ =?utf-8?B?Wm8vUnA5d3Faa1NWNzI5WGs1UHppZlRtNWJJWGhIZlJEbmNhR0U2c0NtUHls?=
+ =?utf-8?B?b1lYVGlpdEw3V0lQOEdTNnB1S24zb29DbUxybjJnbUl2QTlHbGZvc2U2dzFV?=
+ =?utf-8?B?aXg5WjZIb3VmZmY0QWxCTzFoaWYrbEE5eDJlZWluaTd5OTB3T29uR3NBWU8w?=
+ =?utf-8?B?VmpMYjY4VCt2NzBxQlA4cWVucCtNVEw3bDQ5ZTgzdHI4bURiVTZvcjdGbnFZ?=
+ =?utf-8?B?UWdQNmlmUis1OVlVRU12TVJ3cytKcTEzK29sRWpwa0Z4dHNkYmF2dXU4RkhL?=
+ =?utf-8?B?QUNHY0J0My84d3pRMTM0NUQxYVN6TXBBVForako2SkRDU3p5YVJ2cDlpT3Rj?=
+ =?utf-8?B?NXpiQTBHZVlPWFVDclJjdkQ4TXRoVitGNUE5NnIyRXQ3QnZnZnVwUFJBMlBo?=
+ =?utf-8?B?UFJnSzkzc1o1WTUxUzA3dExIcS9KVldYOHZYRXpCSzFRUC9SeU0xUTNpcWpF?=
+ =?utf-8?B?YUdBNnlBbmxZRG1ydEt3M0p4ZmtTcGU4YjhzYTZDRHI0RUdKWGJNcldoU0Ja?=
+ =?utf-8?Q?dXbV4LQZkL0DbIW7UknYxVim15KgYvu4Wgw?=
+MIME-Version: 1.0
+
+<!-- /*! Reset list item styling so items are aligned correctly */
+		li{text-indent:0}
+		/*! Globally reset any font styling on major layout elements for Outlook =
+*/
+		a,body,h1,h2,h3,h4,h5,h6,p,span,strong,table,td{
+font-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica, he=
+lvetica, arial, sans-serif;
+font-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;
+}
+a, a:link {font-family: RedHatText,'Red Hat Text','Overpass', Overpass, Hel=
+vetica, helvetica, arial, sans-serif; font-size: 16px; color: #cc0000; lett=
+er-spacing: 0.001em;}
+.subheader, .text, font {
+font-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica, he=
+lvetica, arial, sans-serif; font-size: 16px; color: #6f6f6f; letter-spacing=
+: 0.001em;font-weight:normal;
+}
+ .mail-footer span, .mail-footer p, .mail-footer b, .mail-footer strong, .m=
+ail-footer div, .mail-footer td, .mail-footer th, .mail-footer a {
+ font-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica, h=
+elvetica, arial, sans-serif; 	font-size: 11px !important;
+}
+.mail-footer b, .mail-footer strong{
+ font-weight: 600;
+}
+* {
+			webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			text-size-adjust: none;
+			-webkit-text-size-adjust: none;
+			-moz-text-size-adjust: none;
+			-ms-text-size-adjust: none
+		}
+
+		#outlook a {
+			padding: 0
+		}
+
+		body {
+			width: 100%!important;
+			height: 100%!important;
+			margin: 0 auto!important;
+			padding: 0!important
+		}
+.subheader, .text, font {
+font-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica, he=
+lvetica, arial, sans-serif; font-size: 16px; color: #6f6f6f; letter-spacing=
+: 0.001em;font-weight:normal;
+}
+		.ExternalClass,
+		.ReadMsgBody {
+			width: 100%
+		}
+
+		.ExternalClass,
+		.ExternalClass div,
+		.ExternalClass font,
+		.ExternalClass p,
+		.ExternalClass span,
+		.ExternalClass td {
+			line-height: 100%
+		}
+
+		#main-wrapper {
+			margin: 0;
+			padding: 0;
+			width: 100%!important;
+			line-height: 100%!important
+		}
+
+		a,
+		a:link {
+			color: #cc0000;
+			text-decoration: none;
+font-family: RedHatText,'Red Hat Text','Overpass', Overpass, Helvetica, hel=
+vetica, arial, sans-serif; font-size: 16px; color: #cc0000; letter-spacing:=
+ 0.001em;
+		}
+
+		p a,
+		p a:link {
+			text-decoration: underline;
+font-family: RedHatText,'Red Hat Text','Overpass', Overpass, Helvetica, hel=
+vetica, arial, sans-serif; font-size: 16px; color: #cc0000; letter-spacing:=
+ 0.001em;
+		}
+
+		a img {
+			border: none
+		}
+
+		img {
+		=09
+			border: none;
+			outline: 0;
+			text-decoration: none;
+			-ms-interpolation-mode: bicubic
+		}
+
+		table {
+			border-collapse: collapse;
+			mso-table-lspace: 0pt;
+			mso-table-rspace: 0pt
+		}
+
+		table td {
+			border-collapse: collapse
+		}
+
+		.appleLinksWhite a {
+			color: #ffffff!important;
+			text-decoration: none!important
+		}
+
+		.appleLinksBlack a {
+			color: #000000!important;
+			text-decoration: none!important
+		}
+
+		a[x-apple-data-detectors] {
+			color: inherit!important;
+			text-decoration: none!important;
+			font-size: inherit!important;
+			font-family: inherit!important;
+			font-weight: inherit!important;
+			line-height: inherit!important
+		}
+
+		@media screen {
+			@font-face {
+				font-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica=
+, helvetica, arial, sans-serif;
+				font-style: normal;
+				font-weight: 700;
+				src: local('Overpass Bold'), local('Overpass-Bold'), url(https://fonts.=
+gstatic.com/s/overpass/v2/z_QV2-z5a6o4brQE8JEVyogp9Q8gbYrhqGlRav_IXfk.woff2=
+) format('woff2');
+			}
+			@font-face {
+				font-family:RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica,=
+ helvetica, arial, sans-serif;
+				font-style: normal;
+				font-weight: 400;
+				src: local('Overpass-Regular'), url(https://fonts.gstatic.com/s/overpas=
+s/v1/n_MBJY8bhXgAxUcp8SMNzHYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+			}
+		}
+
+		h2 {
+			font-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica,=
+ helvetica, arial, sans-serif;
+			font-weight: normal;
+			color: #ffffff;
+			font-size: 36px;
+			line-height: 1.2em;
+			margin: 1em 0;
+		}
+
+		a.button {
+			background-color: #ffffff;
+			border-bottom: 3px solid #820000;
+			color: #a30000;
+			display: inline-block;
+			text-transform: uppercase;
+			font-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica,=
+ helvetica, arial, sans-serif;
+			font-size: 16px;
+			font-weight: bold;
+			line-height: 44px;
+			text-align: center;
+			text-decoration: none !important;
+			width: 200px;
+			transition: all .3s;
+			-webkit-transition: all .3s;
+			-webkit-text-size-adjust: none;
+		}
+
+		a.button:hover {
+			background-color: #dcdcdc !important;
+			border-bottom: 3px solid #a30000;
+		}
+
+		@media screen and (max-device-width:600px),
+		screen and (max-width:600px) {
+			.email-container {
+				width: 100% !important;
+				min-width: 100% !important;
+			}
+
+			.stack-column-center {
+				display: block !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				direction: ltr !important;
+			}
+		}
+
+		@media only screen and (min-device-width: 375px) and (max-device-width: 4=
+13px) {
+			/* iPhone 6 and 6+ */
+			.email-container {
+				min-width: 375px !important;
+			}
+		}
+Unlocking Innovation Dear David,
+
+=20
+
+Thank you very much for your registration to our upcoming event.
+
+=20
+
+Event details:
+
+=20
+
+Unlocking Inovation
+
+Date: 18.06.2025
+
+Time: 08:00 - 15:00
+
+Location: Lago Events, HaMea VeEsrim 6 St., Rishon LeZion, Israel
+
+=20
+
+You will receive a final confirmation with all logistics details a few week=
+s prior to this event.
+
+=20
+
+In the meantime, if you have questions about the event, please feel free to=
+ email us directly. Or if you need to cancel your registration, please clic=
+k here.
+
+=20
+
+We look forward to seeing you soon!
+
+=20
+
+Kind regards,
+
+Red Hat Team
+
+=20
+
+Return to Registration Form
+
+*******************=20
+
+ADD TO YOUR CALENDAR:=20
+                               =20
+                               =20
+                                    Apple Calendar
+                               =20
+                                 |
+                           =20
+                           =20
+                                =20
+                                   =20
+                                   =20
+                                        Google (online)
+                                   =20
+                                 |
+                           =20
+                            =20
+                           =20
+                           =20
+                               =20
+                                   =20
+                                   =20
+                                        Office 365 (online)
+                                   =20
+                                 |=20
+                           =20
+                           =20
+                             =20
+                                   =20
+                                   =20
+                                        Outlook
+                                   =20
+                                =20
+		=09
+=09
+	=09
+		=09
+		=09
+			=09
+				=09
+					=09
+					=09
+						=09
+							=09
+									=20
+								=09
+								=09
+									=09
+										=09
+										=09
+										=09
+												contact our sales team
+										=09
+										=09
+											=09
+											=09
+												=09
+													=09
+														=09
+															manage your newsletter preferences  |  read our privacy poli=
+cy
+														=09
+													=09
+												=09
+											=09
+											=09
+										=09
+										=09
+												=20
+										=09
+										=09
+												This is a transactional email providing information about your =
+account or business relationship with Red Hat.
+
+												If you have any questions, please contact emea-events@redhat.co=
+m
+										=09
+										=09
+												=20
+										=09
+										=09
+												=E2=80=9CRed Hat=E2=80=9D and the =E2=80=9CRed Hat logo" are tr=
+ademarks or registered trademarks of Red Hat, Inc.
+
+												Linux is a registered trademark of Linus Torvalds.
+
+											=09
+
+												=C2=A92025 Red Hat, Inc. All rights reserved.
+
+											=09
+
+												 Red Hat UK Ltd
+
+												Peninsular House,
+30-36 Monument St,
+
+												London EC3R 8NB
+		=09
+		=09
+			!-----------------------------------------------------------------------=
+--------
+			! NOTE: This is the end of this message.  Your email client cannot read =
+HTML.
+			! The rest of the text below is the HTML version of the above message.
+			!-----------------------------------------------------------------------=
+-------><!DOCTYPE html><html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<base href=3D"http://events.redhat.com"><link href=3D"/profile/style.css" r=
+el=3D"stylesheet">
+<meta name=3D"taxonomy-event-type-tid" content=3D"531">
+<meta name=3D"taxonomy-product-tid" content=3D"">
+<meta name=3D"taxonomy-product-line-tid" content=3D"">
+<meta name=3D"taxonomy-industry-tid" content=3D"">
+<meta name=3D"taxonomy-partners-tid" content=3D"">
+<meta name=3D"taxonomy-services-tid" content=3D"">
+<meta name=3D"taxonomy-topic-tid" content=3D"">
+<meta property=3D"og:url" content=3D"https://events.redhat.com/profile/form=
+/index.cfm?PKformID=3D0x1396045e5e0">
+<style>
+.rh-band-group-wrapper{
+background-image:url('/accounts/register123/redhat/readhat2/rhemea/events/7=
+016e000001f3nsaaa/=D7=A2=D7=99=D7=A6=D7=95=D7=91 =D7=9C=D7=9C=D7=90 =D7=A9=
+=D7=9D.png');
+}
+
+@media screen and (max-width: 767px ) {
+	.rh-band-group-wrapper, .rh-band-group-background {
+		/*background-image: none !important;*/
+		background-image:url('/accounts/register123/redhat/readhat2/rhemea/events=
+/7016e000001f3nsaaa/=D7=A2=D7=99=D7=A6=D7=95=D7=91 =D7=9C=D7=9C=D7=90 =D7=
+=A9=D7=9D (4).png');
+background-color: #FFFFFF;
+}
+
+}
+</style>
+</head>
+<body>
+<table class=3D"form-table">
+<tbody>
+<tr>
+<td><font class=3D"text">
+<meta content=3D"IE=3Dedge" http-equiv=3D"X-UA-Compatible">
+<meta content=3D"width=3Ddevice-width, initial-scale=3D1" name=3D"viewport"=
+>
+<title></title>
+<style style=3D"text/css" type=3D"text/css">/*! Reset list item styling so =
+items are aligned correctly */
+		li{text-indent:0}
+		/*! Globally reset any font styling on major layout elements for Outlook =
+*/
+		a,body,h1,h2,h3,h4,h5,h6,p,span,strong,table,td{
+font-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica, he=
+lvetica, arial, sans-serif;
+font-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;
+}
+a, a:link {font-family: RedHatText,'Red Hat Text','Overpass', Overpass, Hel=
+vetica, helvetica, arial, sans-serif; font-size: 16px; color: #cc0000; lett=
+er-spacing: 0.001em;}
+.subheader, .text, font {
+font-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica, he=
+lvetica, arial, sans-serif; font-size: 16px; color: #6f6f6f; letter-spacing=
+: 0.001em;font-weight:normal;
+}
+ .mail-footer span, .mail-footer p, .mail-footer b, .mail-footer strong, .m=
+ail-footer div, .mail-footer td, .mail-footer th, .mail-footer a {
+ font-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica, h=
+elvetica, arial, sans-serif; 	font-size: 11px !important;
+}
+.mail-footer b, .mail-footer strong{
+ font-weight: 600;
+}
+</style><!--[endif]----><style type=3D"text/css">* {
+			webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			text-size-adjust: none;
+			-webkit-text-size-adjust: none;
+			-moz-text-size-adjust: none;
+			-ms-text-size-adjust: none
+		}
+
+		#outlook a {
+			padding: 0
+		}
+
+		body {
+			width: 100%!important;
+			height: 100%!important;
+			margin: 0 auto!important;
+			padding: 0!important
+		}
+.subheader, .text, font {
+font-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica, he=
+lvetica, arial, sans-serif; font-size: 16px; color: #6f6f6f; letter-spacing=
+: 0.001em;font-weight:normal;
+}
+		.ExternalClass,
+		.ReadMsgBody {
+			width: 100%
+		}
+
+		.ExternalClass,
+		.ExternalClass div,
+		.ExternalClass font,
+		.ExternalClass p,
+		.ExternalClass span,
+		.ExternalClass td {
+			line-height: 100%
+		}
+
+		#main-wrapper {
+			margin: 0;
+			padding: 0;
+			width: 100%!important;
+			line-height: 100%!important
+		}
+
+		a,
+		a:link {
+			color: #cc0000;
+			text-decoration: none;
+font-family: RedHatText,'Red Hat Text','Overpass', Overpass, Helvetica, hel=
+vetica, arial, sans-serif; font-size: 16px; color: #cc0000; letter-spacing:=
+ 0.001em;
+		}
+
+		p a,
+		p a:link {
+			text-decoration: underline;
+font-family: RedHatText,'Red Hat Text','Overpass', Overpass, Helvetica, hel=
+vetica, arial, sans-serif; font-size: 16px; color: #cc0000; letter-spacing:=
+ 0.001em;
+		}
+
+		a img {
+			border: none
+		}
+
+		img {
+		=09
+			border: none;
+			outline: 0;
+			text-decoration: none;
+			-ms-interpolation-mode: bicubic
+		}
+
+		table {
+			border-collapse: collapse;
+			mso-table-lspace: 0pt;
+			mso-table-rspace: 0pt
+		}
+
+		table td {
+			border-collapse: collapse
+		}
+
+		.appleLinksWhite a {
+			color: #ffffff!important;
+			text-decoration: none!important
+		}
+
+		.appleLinksBlack a {
+			color: #000000!important;
+			text-decoration: none!important
+		}
+
+		a[x-apple-data-detectors] {
+			color: inherit!important;
+			text-decoration: none!important;
+			font-size: inherit!important;
+			font-family: inherit!important;
+			font-weight: inherit!important;
+			line-height: inherit!important
+		}
+
+		@media screen {
+			@font-face {
+				font-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica=
+, helvetica, arial, sans-serif;
+				font-style: normal;
+				font-weight: 700;
+				src: local('Overpass Bold'), local('Overpass-Bold'), url(https://fonts.=
+gstatic.com/s/overpass/v2/z_QV2-z5a6o4brQE8JEVyogp9Q8gbYrhqGlRav_IXfk.woff2=
+) format('woff2');
+			}
+			@font-face {
+				font-family:RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica,=
+ helvetica, arial, sans-serif;
+				font-style: normal;
+				font-weight: 400;
+				src: local('Overpass-Regular'), url(https://fonts.gstatic.com/s/overpas=
+s/v1/n_MBJY8bhXgAxUcp8SMNzHYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+			}
+		}
+
+		h2 {
+			font-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica,=
+ helvetica, arial, sans-serif;
+			font-weight: normal;
+			color: #ffffff;
+			font-size: 36px;
+			line-height: 1.2em;
+			margin: 1em 0;
+		}
+
+		a.button {
+			background-color: #ffffff;
+			border-bottom: 3px solid #820000;
+			color: #a30000;
+			display: inline-block;
+			text-transform: uppercase;
+			font-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica,=
+ helvetica, arial, sans-serif;
+			font-size: 16px;
+			font-weight: bold;
+			line-height: 44px;
+			text-align: center;
+			text-decoration: none !important;
+			width: 200px;
+			transition: all .3s;
+			-webkit-transition: all .3s;
+			-webkit-text-size-adjust: none;
+		}
+
+		a.button:hover {
+			background-color: #dcdcdc !important;
+			border-bottom: 3px solid #a30000;
+		}
+
+		@media screen and (max-device-width:600px),
+		screen and (max-width:600px) {
+			.email-container {
+				width: 100% !important;
+				min-width: 100% !important;
+			}
+
+			.stack-column-center {
+				display: block !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				direction: ltr !important;
+			}
+		}
+
+		@media only screen and (min-device-width: 375px) and (max-device-width: 4=
+13px) {
+			/* iPhone 6 and 6+ */
+			.email-container {
+				min-width: 375px !important;
+			}
+		}
+</style>
+<table align=3D"center" bgcolor=3D"#e6e7e8" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" bgcolor=3D"#e6e7e8" valign=3D"top">
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">Unlocking =
+Innovation</div>
+<!-- Visually Hidden Preheader Text : END --><!-- Red Hat logo : START -->
+<table align=3D"center" bgcolor=3D"#fff" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" class=3D"email-container" role=3D"presentation" style=3D"wid=
+th: 600px; margin: 0 auto;" width=3D"600">
+<tbody>
+<tr>
+<td align=3D"right" bgcolor=3D"#fff" style=3D"padding: 20px 20px 10px 0;" v=
+align=3D"top">
+<img alt=3D"Red Hat" src=3D"https://events.redhat.com/accounts/register123/=
+redhat/readhat2/RHEMEA/Logo-RedHat-BlackText.png" style=3D"border-width:0px=
+; border-style:solid; float:right"></td>
+</tr>
+</tbody>
+</table>
+<!-- Red Hat logo : END -->
+<table align=3D"center" bgcolor=3D"#ffffff" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"email-container" role=3D"presentation" style=3D"=
+width: 600px;
+margin: 0 auto;backgroud-color:#fff;" width=3D"600">
+<tbody>
+<tr>
+<td align=3D"center" bgcolor=3D"#8f0100" valign=3D"top">
+<div align=3D"center">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%">
+<tbody>
+<tr>
+<td><img alt=3D"" src=3D"https://events.redhat.com/accounts/register123/red=
+hat/readhat2/RHEMEA/Email-Generic-Events.png"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td bgcolor=3D"#ffffff">
+<div>&nbsp;</div>
+<div style=3D"padding:0 20px;">
+<table class=3D"form-table" id=3D"crtn-tbl-content-block-logic">
+<tbody>
+<tr>
+<td colspan=3D"2">
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+Dear David,</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+&nbsp;</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+Thank you very much for your registration to our upcoming event.</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+&nbsp;</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+Event details:</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+&nbsp;</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+<b>Unlocking Inovation</b></div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+<b>Date: </b>18.06.2025</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+<b>Time: </b>08:00 - 15:00</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+<b>Location:&nbsp;</b>Lago Events, HaMea VeEsrim 6 St., Rishon LeZion,&nbsp=
+;Israel</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+&nbsp;</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px;color: #6f6f6f; letter-spacing: 0.001em;">
+You will receive a final confirmation with all logistics details a few week=
+s prior to this event.</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px;color: #6f6f6f; letter-spacing: 0.001em;">
+&nbsp;</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px;color: #6f6f6f; letter-spacing: 0.001em;">
+In the meantime, if you have questions about the event, please feel free to=
+ email us directly. Or if you need to cancel your registration, please
+<a clicktracking=3D"off" href=3D"https://events.redhat.com/profile/form/ind=
+ex.cfm?PKformID=3D0x1372922bf5a&amp;pkRegID=3D0x6017643531959" styl=3D"font=
+-family: RedHatText,'Red Hat Text', 'Overpass', Overpass, Helvetica, helvet=
+ica, arial, sans-serif; font-size: 16px; color: #cc0000;" style=3D"font-fam=
+ily: RedHatText,'Red Hat Text','Overpass', Overpass, Helvetica, helvetica, =
+arial, sans-serif; font-size: 16px; color: #cc0000; letter-spacing: 0.001em=
+;">
+click here</a>.</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text', 'Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; f=
+ont-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+&nbsp;</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text', 'Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; f=
+ont-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+We look forward to seeing you soon!</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px;color: #6f6f6f; letter-spacing: 0.001em;">
+&nbsp;</div>
+<div style=3D"text-align: left; padding:0px; font-family: RedHatText,'Red H=
+at Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fon=
+t-size: 16px;color: #6f6f6f; letter-spacing: 0.001em;">
+Kind regards,</div>
+<div style=3D"text-align: left; padding:0px; font-family: RedHatText,'Red H=
+at Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fon=
+t-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+Red Hat Team</div>
+<div style=3D"text-align: left; padding: 0px; font-family: RedHatText,'Red =
+Hat Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+&nbsp;</div>
+<div style=3D"text-align: left; padding: 0px;font-family: RedHatText,'Red H=
+at Text', 'Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fo=
+nt-size: 16px; color: #6f6f6f; letter-spacing: 0.001em;">
+Return to <a clicktracking=3D"off" href=3D"https://events.redhat.com/profil=
+e/form/index.cfm?PKformID=3D0x1396045bc7b" style=3D"font-family: RedHatText=
+,'Red Hat Text', 'Overpass', Overpass, Helvetica, helvetica, arial, sans-se=
+rif; font-size: 16px; color: #cc0000; letter-spacing: 0.001em;">
+Registration Form</a></div>
+<div style=3D"text-align: left; padding: 0px; font-family:RedHatText,'Red H=
+at Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fon=
+t-size: 14px; color: #6f6f6f; letter-spacing: 0.001em;">
+<b>******************* </b></div>
+<div style=3D"text-align: left; padding: 0px; font-family:RedHatText,'Red H=
+at Text','Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; fon=
+t-size: 14px; color: #6f6f6f; letter-spacing: 0.001em;">
+<b>ADD TO YOUR CALENDAR:</b></div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"2"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div style=3D"padding:0 20px;">&nbsp;</div>
+<div style=3D"padding:0 20px;"><a clicktracking=3D"off" style=3D"" href=3D"=
+https://www.addevent.com/dir/?service=3Dapple&amp;client=3Dan37qd3bszekwxde=
+rmx49584&amp;start=3D06/18/2025+08:00&amp;end=3D06/18/2025+15:00&amp;timezo=
+ne=3DAsia/Jerusalem&amp;calname=3DUnlocking%5FInnovation&amp;location=3DLag=
+o%20Events&amp;title=3DUnlocking%20Innovation&amp;description=3DUnlocking%2=
+0Innovation%0A%0AMore%20info%20at%3A%20%3Ca%20href%3D%22https%3A%2F%2Fevent=
+s%2Eredhat%2Ecom%2Fprofile%2Fform%2Findex%2Ecfm%3FPKFormID%3D0x1372960ae74%=
+22%3ERegistration%20Form%3C%2Fa%3E&amp;alarm=3D15"><img src=3D"https://cdn.=
+certain.com/8.3.27.2/assets/vendor/gfx/icon-apple-t5.png" border=3D"0" widt=
+h=3D"20" height=3D"20" align=3D"absmiddle">
+ Apple Calendar </a>| <a clicktracking=3D"off" style=3D"" href=3D"https://w=
+ww.addevent.com/dir/?service=3Dgoogle&amp;client=3Dan37qd3bszekwxdermx49584=
+&amp;start=3D06/18/2025+08:00&amp;end=3D06/18/2025+15:00&amp;timezone=3DAsi=
+a/Jerusalem&amp;calname=3DUnlocking%5FInnovation&amp;location=3DLago%20Even=
+ts&amp;title=3DUnlocking%20Innovation&amp;description=3DUnlocking%20Innovat=
+ion%0A%0AMore%20info%20at%3A%20%3Ca%20href%3D%22https%3A%2F%2Fevents%2Eredh=
+at%2Ecom%2Fprofile%2Fform%2Findex%2Ecfm%3FPKFormID%3D0x1372960ae74%22%3EReg=
+istration%20Form%3C%2Fa%3E&amp;alarm=3D15">
+<img src=3D"https://cdn.certain.com/8.3.27.2/assets/vendor/gfx/icon-google-=
+t5.png" border=3D"0" width=3D"20" height=3D"20" align=3D"absmiddle"> Google=
+ (online)
+</a>| <a clicktracking=3D"off" style=3D"" href=3D"https://www.addevent.com/=
+dir/?service=3Doffice365&amp;client=3Dan37qd3bszekwxdermx49584&amp;start=3D=
+06/18/2025+08:00&amp;end=3D06/18/2025+15:00&amp;timezone=3DAsia/Jerusalem&a=
+mp;calname=3DUnlocking%5FInnovation&amp;location=3DLago%20Events&amp;title=
+=3DUnlocking%20Innovation&amp;description=3DUnlocking%20Innovation%0A%0AMor=
+e%20info%20at%3A%20%3Ca%20href%3D%22https%3A%2F%2Fevents%2Eredhat%2Ecom%2Fp=
+rofile%2Fform%2Findex%2Ecfm%3FPKFormID%3D0x1372960ae74%22%3ERegistration%20=
+Form%3C%2Fa%3E&amp;alarm=3D15">
+<img src=3D"https://cdn.certain.com/8.3.27.2/assets/vendor/gfx/icon-office3=
+65-t5.png" border=3D"0" width=3D"20" height=3D"20" align=3D"absmiddle"> Off=
+ice 365 (online)
+</a>| <a clicktracking=3D"off" style=3D"" href=3D"https://www.addevent.com/=
+dir/?service=3Doutlook&amp;client=3Dan37qd3bszekwxdermx49584&amp;start=3D06=
+/18/2025+08:00&amp;end=3D06/18/2025+15:00&amp;timezone=3DAsia/Jerusalem&amp=
+;calname=3DUnlocking%5FInnovation&amp;location=3DLago%20Events&amp;title=3D=
+Unlocking%20Innovation&amp;description=3DUnlocking%20Innovation%0A%0AMore%2=
+0info%20at%3A%20%3Ca%20href%3D%22https%3A%2F%2Fevents%2Eredhat%2Ecom%2Fprof=
+ile%2Fform%2Findex%2Ecfm%3FPKFormID%3D0x1372960ae74%22%3ERegistration%20For=
+m%3C%2Fa%3E&amp;alarm=3D15">
+<img src=3D"https://cdn.certain.com/8.3.27.2/assets/vendor/gfx/icon-outlook=
+-t5.png" border=3D"0" width=3D"20" height=3D"20" align=3D"absmiddle"> Outlo=
+ok
+</a></div>
+<div>&nbsp;</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"form-table" id=3D"crtn-tbl-content-block-logic">
+<tbody>
+<tr>
+<td colspan=3D"2">
+<table bgcolor=3D"#e6e7e8" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ class=3D"mail-footer" style=3D"background-color: #e6e7e8; margin-top: 0; p=
+adding-top: 0; mso-cellspacing: 0px; mso-padding-alt: 0px 0px 0px 0px;" wid=
+th=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center">
+<table align=3D"center" bgcolor=3D"#e6e7e8" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"deviceWidth tableLayout" style=3D"background-col=
+or: #e6e7e8; margin-top: 0 auto; padding-top: 0; text-align: center; width:=
+ 100%; mso-cellspacing: 0px; mso-padding-alt: 0px 0px 0px 0px;" width=3D"60=
+0">
+<tbody>
+<tr>
+<td align=3D"center" bgcolor=3D"#e6e7e8" style=3D"background-color: #e6e7e8=
+;">
+<table bgcolor=3D"#e6e7e8" cellpadding=3D"0" cellspacing=3D"0" style=3D"bac=
+kground-color: #e6e7e8; width: 100%; mso-cellspacing: 0px; mso-padding-alt:=
+ 0px 0px 0px 0px;" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#e6e7e8" style=3D"background-color: #e6e7e8;" width=3D"24">&=
+nbsp;</td>
+<td bgcolor=3D"#e6e7e8" height=3D"300" style=3D"background-color: #e6e7e8;"=
+>
+<table bgcolor=3D"#e6e7e8" cellpadding=3D"0" cellspacing=3D"0" style=3D"bac=
+kground-color: #e6e7e8; width: 100%; mso-cellspacing: 0px; mso-padding-alt:=
+ 0px 0px 0px 0px;" width=3D"100%">
+<tbody>
+<tr>
+</tr>
+<tr>
+<td style=3D"color: rgb(76, 76, 76); font: 12px/18px Red Hat Text, RedHat T=
+ext, Overpass, Overpass, Helvetica, helvetica, arial, sans-serif; text-alig=
+n: center;">
+<a clicktracking=3D"off" href=3D"https://www.redhat.com/en/store/contact-sa=
+les?event_type=3Dcontact_sales" style=3D"color: #4c4c4c !important;"><span =
+style=3D"color:#4c4c4c;">contact our sales team</span></a></td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"color:#4c4c4c; font:12px/18px Red Hat Text, R=
+edHat Text, 'Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; =
+text-align: center;">
+<table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin=
+:0 auto; text-align: center; mso-cellspacing: 0px; mso-padding-alt: 0px 0px=
+ 0px 0px;">
+<tbody>
+<tr>
+<td style=3D"color:#4c4c4c; font:12px/14px Red Hat Text, RedHat Text, 'Over=
+pass', Overpass, Helvetica, helvetica, arial, sans-serif; text-align: cente=
+r">
+<p style=3D"color:#4c4c4c !important; font:12px/18px Red Hat Text, RedHat T=
+ext, 'Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; text-al=
+ign: center;">
+<a clicktracking=3D"off" href=3D"https://www.redhat.com/en/email-preference=
+s" style=3D"color: #4c4c4c !important;"><span style=3D"color:#4c4c4c;">mana=
+ge your newsletter preferences</span></a> &nbsp;|&nbsp;
+<a clicktracking=3D"off" data-targettype=3D"webpage" href=3D"https://www.re=
+dhat.com/en/about/privacy-policy" style=3D"color: #4c4c4c !important;">
+<span style=3D"color:#4c4c4c;">read our privacy policy</span></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"16">&nbsp;</td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"color:#4c4c4c; font:11px/16px Red Hat Text, R=
+edHat Text, 'Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; =
+text-align: center;">
+This is a transactional email providing information about your account or b=
+usiness relationship with Red Hat.<br>
+If you have any questions, please contact <a clicktracking=3D"off" data-tar=
+gettype=3D"email" href=3D"mailto:emea-events@redhat.com">
+emea-events@redhat.com</a></td>
+</tr>
+<tr>
+<td height=3D"16">&nbsp;</td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"color:#4c4c4c; font:11px/16px Red Hat Text, R=
+edHat Text, 'Overpass', Overpass, Helvetica, helvetica, arial, sans-serif; =
+text-align: center;">
+=E2=80=9CRed Hat=E2=80=9D and the =E2=80=9CRed Hat logo&quot; are trademark=
+s or registered trademarks of Red Hat, Inc.<br>
+Linux is a registered trademark of Linus Torvalds.<br>
+<br>
+=C2=A92025 Red Hat, Inc. All rights reserved.<br>
+<br>
+<!-- Remove iOS link styles --><span style=3D"color: inherit !important; te=
+xt-decoration: inherit !important;">Red Hat UK Ltd<br>
+Peninsular House,<br>
+30-36 Monument St,<br>
+London EC3R 8NB </span></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td bgcolor=3D"#e6e7e8" style=3D"background-color: #e6e7e8;" width=3D"24">&=
+nbsp;</td>
+</tr>
+<tr>
+<td colspan=3D"3" height=3D"30">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan=3D"2"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</font></td>
+</tr>
+</tbody>
+</table>
+<img src=3D"https://u59165.ct.sendgrid.net/ss/o/u001.zpPTa9VVkzPzWCrANM31bQ=
+/4gq/vd9jXpEAS9eAs2p3QbUhtg/ho.gif" alt=3D"" width=3D"1" height=3D"1" borde=
+r=3D"0" style=3D"height:1px !important;width:1px !important;border-width:0 =
+!important;margin-top:0 !important;margin-bottom:0 !important;margin-right:=
+0 !important;margin-left:0 !important;padding-top:0 !important;padding-bott=
+om:0 !important;padding-right:0 !important;padding-left:0 !important;">
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+ </body>
+</html>
