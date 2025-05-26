@@ -59,6 +59,16 @@ def clean_data_folders():
                 if os.path.isfile(file_path):
                     os.remove(file_path)
                     logging.info(f"Removed file: {file_path}")
+
+        if not os.path.exists("data/eval"):
+            os.makedirs("data/eval")
+        else:
+            for filename in os.listdir("data/eval"):
+                file_path = os.path.join("data/eval", filename)
+                if os.path.isfile(file_path):
+                    os.remove(file_path)
+                    logging.info(f"Removed file: {file_path}")
+                    
     except Exception as e:
         logging.error(f"Error cleaning data folders: {str(e)}")
         raise

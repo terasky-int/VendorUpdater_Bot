@@ -76,5 +76,22 @@ def search_query():
             logging.error(f"Search failed: {e}")
             print("❌ Failed to execute query. Check logs.")
 
+def query(query_text, top_k=3, filters=None):
+    collection = llm_utils.get_chroma_collection()
+
+    if filters:
+        chroma_where = filters[0] if len(filters) == 1 else {"$and": filters}
+    else:
+        chroma_where = None
+
+    embedding = llm_utils.embed_text_titan(query_text)
+    results = collection.query(
+        query_embeddings=[embedding],
+        n_results=top_k,
+        where=chroma_where
+    )
+    return results
+
+
 if __name__ == "__main__":
     search_query()

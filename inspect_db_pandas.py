@@ -25,11 +25,15 @@ if __name__ == "__main__":
             raise ValueError("--csvpath is required when using --csvout mode")
         try:
             df.to_csv(args.csvpath, index=False)
+            print(f"Data exported to {args.csvpath}")
+            if args.stdout:
+                print(df.head())
+            exit()
         except Exception as e:
             print(f"Error writing to CSV: {e}")
             exit(1)
             
-    if args.stdout:
-        print(df.head())
+    print(df.head())
+    
         
         

@@ -137,3 +137,8 @@ debug:
     enabled: True
     top_k: 3
     show_confidence_score: True
+    queries:
+      - "Veeam vulnerability"
+      - "Webinar about Kubernetes"
+      - "Hashicorp updates"
+      - "All events and webinar announcements received in the last 2 weeks"
