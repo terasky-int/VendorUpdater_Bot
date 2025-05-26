@@ -3,7 +3,7 @@ email:
   email_address: davidplayground333@gmail.com
   email_password: ${EMAIL_PASS}
   folder: INBOX
-  mark_as_read: true
+  mark_as_read: True
   fetch_interval_minutes: 120
 
 type_classification:
@@ -21,7 +21,7 @@ type_classification:
       - support
       - product update
       - whitepaper
-  multi_label: true
+  multi_label: True
 
 product_classification:
   vendors:
@@ -94,7 +94,7 @@ product_classification:
       - cloud functions
       - kubernetes engine
       - bigquery
-  multi_label: true
+  multi_label: True
 
 data_processing:
   language_support:
@@ -102,7 +102,7 @@ data_processing:
     - he
   chunk_size_tokens: 512
   chunk_overlap: 20
-  save_intermediate_artifacts: true
+  save_intermediate_artifacts: True
 
 embedding:
   provider: amazon

@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 parser = argparse.ArgumentParser(description="VendorUpdater Bot Pipeline")
 parser.add_argument("--local", action="store_true", help="Run using local .eml files instead of a live server")
 parser.add_argument("--folder", type=str, help="Path to folder containing .eml files (required with --local)")
+parser.add_argument("--deletelog", action="store_true", help="delete log file before running the pipeline")
 args = parser.parse_args()
 load_dotenv()  # loads from .env in current working dir
 
@@ -23,8 +24,11 @@ def setup_logging(debug_mode):
         filename="logs/pipeline.log",
         level=logging.DEBUG if debug_mode else logging.INFO,
         format="%(asctime)s - %(levelname)s - %(message)s",
+        filemode="w" if args.deletelog else "a",
         encoding="utf-8"
     )
+    if args.deletelog:
+        logging.info("Log file deleted before running the pipeline")
 
 def ensure_primitive(value):
     if isinstance(value, list):
@@ -39,6 +43,8 @@ def run_pipeline():
     config = load_config()
     config = json.loads(json.dumps(config))  # convert to string
     config = yaml.safe_load(os.path.expandvars(json.dumps(config)))
+
+            
     setup_logging(config["debug"]["enabled"])
     logging.info("Starting LLM data digestion pipeline")
 
@@ -62,20 +68,38 @@ def run_pipeline():
             clean_text = normalize.clean_email(raw_path, config)
             enriched_data = enrich.extract_metadata(clean_text, email_obj, config)
             classified_data = classify.label_content(enriched_data, config)
-            logging.debug(f"Classified data: {classified_data}")
+            # logging.debug(f"Classified data: {classified_data}")
             chunks = chunker.chunk_text(classified_data["text"], config)
+
             embeddings = embedder.embed_chunks(chunks, config)
-            indexer.index(chunks, embeddings, classified_data, config)
+
+            ### WORK ON INDEXER - BUGGY !!!!!
+            metadatas = [
+                {
+                    "vendor": ensure_primitive(classified_data.get("vendor", "unknown")),
+                    "product": ensure_primitive(classified_data.get("product", "unknown")),
+                    "type": ensure_primitive(classified_data.get("type", "unknown")),
+                    "date": ensure_primitive(classified_data.get("date", "1970-01-01")),
+                    "chunk_index": chunk["position"]
+                }
+                for chunk in chunks
+            ]
+
+            indexer.index(
+                chunks,
+                embeddings,
+                metadatas,
+                config   #TypeError('list indices must be integers or slices, not str')
+            )
+
             # manifest.record_entry(email_id, chunks, classified_data, config)
 
             # if config["debug"]["evaluation"]["enabled"]:
             #     evaluate.run_rag_test(email_id, chunks, config)
 
             # Merge embeddings into chunks
-            for chunk in chunks:
-                match = next((e for e in embeddings if e["chunk_id"] == chunk["chunk_id"]), None)
-                if match and match["embedding"]:
-                    chunk["embedding"] = match["embedding"]
+            for i, chunk in enumerate(chunks):
+                chunk["embedding"] = embeddings[i]
 
                 # ✅ Always ensure metadata is set
                 if "metadata" not in chunk:

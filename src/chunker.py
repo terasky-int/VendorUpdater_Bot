@@ -35,6 +35,7 @@ def chunk_text(text: str, config: dict) -> List[dict]:
     for i, chunk in enumerate(raw_chunks):
         chunks.append({
             "chunk_id": f"chunk-{i}",
+            "id": f"chunk-{i}",
             "text": chunk,
             "position": i
         })
