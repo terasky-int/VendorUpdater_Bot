@@ -126,6 +126,9 @@ vector_store:
 ocr:
   tesseract_path: "C:\\Users\\DavidGidony\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe"
 
+storage:
+  manifest_file: "manifest.jsonl"
+
 debug:
   enabled: True
   verbose_logging: False

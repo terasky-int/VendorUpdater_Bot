@@ -3,7 +3,7 @@ import logging
 import json
 
 import yaml
-from src import llm_utils, harvest, normalize, enrich, classify, chunker, embedder, indexer #, manifest, evaluate
+from src import llm_utils, harvest, normalize, enrich, classify, chunker, embedder, indexer, manifest, evaluate
 import argparse
 from dotenv import load_dotenv
 
@@ -116,10 +116,10 @@ def run_pipeline():
                 config   #TypeError('list indices must be integers or slices, not str')
             )
 
-            # manifest.record_entry(email_id, chunks, classified_data, config)
+            manifest.record_entry(email_id, chunks, classified_data, config)
 
-            # if config["debug"]["evaluation"]["enabled"]:
-            #     evaluate.run_rag_test(email_id, chunks, config)
+            if config["debug"]["evaluation"]["enabled"]:
+                evaluate.run_rag_test(email_id, chunks, config)
 
             # Merge embeddings into chunks
             for i, chunk in enumerate(chunks):

@@ -22,7 +22,7 @@ BOILERPLATE_RE = re.compile(
 # Strip HTML tags
 HTML_TAG_RE = re.compile(r'<[^>]+>')
 # Strip HTML comments
-HTML_COMMENT_RE = re.compile(r'<!--([\s\S]*?)-->', re.MULTILINE)\# Strip <style> blocks
+HTML_COMMENT_RE = re.compile(r'<!--([\s\S]*?)-->', re.MULTILINE) # Strip <style> blocks
 STYLE_TAG_RE = re.compile(r'<style[\s\S]+?</style>', re.IGNORECASE)
 
 
