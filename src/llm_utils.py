@@ -5,6 +5,7 @@ import logging
 from typing import List, Optional
 from chromadb import PersistentClient
 from chromadb.api.models.Collection import Collection
+import os
 
 CONFIG_PATH = "config/config.yaml"
 
@@ -13,7 +14,9 @@ CONFIG_PATH = "config/config.yaml"
 # ----------------------------------------------------------------------
 def load_config(path: str = CONFIG_PATH) -> dict:
     with open(path, "r") as f:
-        return yaml.safe_load(f)
+        config = json.loads(os.path.expandvars(json.dumps(yaml.safe_load(f))))  # convert to string
+        # config = yaml.safe_load((config)))
+        return config
 
 # ----------------------------------------------------------------------
 # ✅ ChromaDB Collection Accessor

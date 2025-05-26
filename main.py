@@ -41,10 +41,7 @@ def ensure_primitive(value):
 # Main pipeline function
 def run_pipeline():
     config = load_config()
-    config = json.loads(json.dumps(config))  # convert to string
-    config = yaml.safe_load(os.path.expandvars(json.dumps(config)))
 
-            
     setup_logging(config["debug"]["enabled"])
     logging.info("Starting LLM data digestion pipeline")
 
@@ -80,7 +77,8 @@ def run_pipeline():
                     "product": ensure_primitive(classified_data.get("product", "unknown")),
                     "type": ensure_primitive(classified_data.get("type", "unknown")),
                     "date": ensure_primitive(classified_data.get("date", "1970-01-01")),
-                    "chunk_index": chunk["position"]
+                    "chunk_index": chunk["position"],
+                    "email_id": email_id 
                 }
                 for chunk in chunks
             ]
@@ -132,8 +130,8 @@ def run_pipeline():
             else:
                 logging.warning(f"⚠️ No valid chunks for email ID {email_id}")
                 
-            if not args.local:
-                harvest.mark_email_as_read(eid, config)
+            # if not args.local:
+            #     harvest.mark_email_as_read(eid, config)
             doc_count = collection.count()
             logging.info(f"ChromaDB now contains {doc_count} total documents.")
 

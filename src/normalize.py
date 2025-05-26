@@ -84,10 +84,3 @@ def extract_attachment_text(part, config):
     finally:
         if os.path.exists(temp_path):
             os.remove(temp_path)
-    # try:
-    #     text = textract.process(temp_path).decode("utf-8", errors="ignore")
-    #     os.remove(temp_path)
-    #     return text
-    # except Exception as e:
-    #     logging.warning(f"Failed to extract attachment {filename}: {e}")
-    #     return None
