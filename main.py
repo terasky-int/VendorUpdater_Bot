@@ -3,7 +3,7 @@ import logging
 import json
 
 import yaml
-from src import llm_utils, harvest, normalize, enrich, classify, chunker, embedder, indexer#, manifest, evaluate
+from src import llm_utils, harvest, normalize, enrich, classify, chunker, embedder, indexer #, manifest, evaluate
 import argparse
 from dotenv import load_dotenv
 
@@ -11,6 +11,7 @@ parser = argparse.ArgumentParser(description="VendorUpdater Bot Pipeline")
 parser.add_argument("--local", action="store_true", help="Run using local .eml files instead of a live server")
 parser.add_argument("--folder", type=str, help="Path to folder containing .eml files (required with --local)")
 parser.add_argument("--deletelog", action="store_true", help="delete log file before running the pipeline")
+parser.add_argument("--emptydatafolders", action="store_true", help="delete all files in data folders before running the pipeline")
 args = parser.parse_args()
 load_dotenv()  # loads from .env in current working dir
 
@@ -37,13 +38,40 @@ def ensure_primitive(value):
         return value
     else:
         return str(value)
-    
+
+def clean_data_folders():
+    """Clean up data folders if needed."""
+    try:
+        if not os.path.exists("data/clean_text"):
+            os.makedirs("data/clean_text")
+        else:
+            for filename in os.listdir("data/clean_text"):
+                file_path = os.path.join("data/clean_text", filename)
+                if os.path.isfile(file_path):
+                    os.remove(file_path)
+                    logging.info(f"Removed file: {file_path}")
+
+        if not os.path.exists("data/raw_emails"):
+            os.makedirs("data/raw_emails")
+        else:
+            for filename in os.listdir("data/raw_emails"):
+                file_path = os.path.join("data/raw_emails", filename)
+                if os.path.isfile(file_path):
+                    os.remove(file_path)
+                    logging.info(f"Removed file: {file_path}")
+    except Exception as e:
+        logging.error(f"Error cleaning data folders: {str(e)}")
+        raise
+
 # Main pipeline function
 def run_pipeline():
     config = load_config()
 
     setup_logging(config["debug"]["enabled"])
     logging.info("Starting LLM data digestion pipeline")
+
+    if args.emptydatafolders:
+        clean_data_folders()
 
     # Connect to ChromaDB collection once
     collection = llm_utils.get_chroma_collection()
@@ -62,12 +90,10 @@ def run_pipeline():
     for eid, email_obj in emails:
         try:
             email_id, raw_path = harvest.save_raw_email(email_obj, config)
-            clean_text = normalize.clean_email(raw_path, config)
+            clean_text = normalize.clean_email(raw_path, config, do_medium_clean=True)
             enriched_data = enrich.extract_metadata(clean_text, email_obj, config)
             classified_data = classify.label_content(enriched_data, config)
-            # logging.debug(f"Classified data: {classified_data}")
             chunks = chunker.chunk_text(classified_data["text"], config)
-
             embeddings = embedder.embed_chunks(chunks, config)
 
             ### WORK ON INDEXER - BUGGY !!!!!

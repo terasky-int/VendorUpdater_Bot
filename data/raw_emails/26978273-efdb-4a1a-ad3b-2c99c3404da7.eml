@@ -1,0 +1,1020 @@
+Received: from PR3P194MB0603.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:3e::7) by
+ PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Tue, 15 Apr 2025 13:02:36
+ +0000
+Received: from AS4P192CA0021.EURP192.PROD.OUTLOOK.COM (2603:10a6:20b:5e1::15)
+ by PR3P194MB0603.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:3e::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8632.34; Tue, 15 Apr
+ 2025 13:02:30 +0000
+Received: from AM2PEPF0001C70F.eurprd05.prod.outlook.com
+ (2603:10a6:20b:5e1:cafe::b5) by AS4P192CA0021.outlook.office365.com
+ (2603:10a6:20b:5e1::15) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8632.34 via Frontend Transport; Tue,
+ 15 Apr 2025 13:02:30 +0000
+Authentication-Results: spf=pass (sender IP is 5.61.117.37)
+ smtp.mailfrom=paloaltonetworkspartners.nw023.com; dkim=pass (signature was
+ verified) header.d=paloaltonetworks.com;dmarc=pass action=none
+ header.from=paloaltonetworks.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of
+ paloaltonetworkspartners.nw023.com designates 5.61.117.37 as permitted
+ sender) receiver=protection.outlook.com; client-ip=5.61.117.37;
+ helo=29.mta.nw023.com; pr=C
+Received: from 29.mta.nw023.com (5.61.117.37) by
+ AM2PEPF0001C70F.mail.protection.outlook.com (10.167.16.203) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8655.12
+ via Frontend Transport; Tue, 15 Apr 2025 13:02:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; t=1744722148;
+	s=poppulo; d=paloaltonetworks.com;	=?utf-8?q?h=3DSubject=3ASender=3APoppulo?=
+ =?utf-8?q?-Customer-Ref=3AReply-To=3AFrom=3ATo=3AList-Unsubscribe=3AFeedbac?=
+ =?utf-8?q?k-ID=3AContent-Type=3AMIME-Version=3AMessage-ID=3ADate=3B?=
+	bh=1HZmLUWPS3jdNyRgHxFEv+WkSfcb0tUDBgOi7T6c2pg=;
+	b=fGMyeW0Y3u2tY2tpGyBupEg/nuQddZlQG7lWt6IUsCi7Tx0bdbYn7Au2Jh60q8Il
+	ERcB7YCH7JktpY2j5aXaypVYTPHdG2jXqDLeVLAQKMCx4ZEWN7oomtDztsvhSOVN780
+	q5I2cxvliMa+IlOwwkomI5oX9Z84KbL+bRT2ihY0QAhPPMutuwUJaYRejVNsnwXGgxm
+	ZxeMj06f9oLgPWJGmLhy50r0e4E6tNFWdExo4fS7tpIgcEsyo63t1EUFpckbqIAagwH
+	KfLq1e4ZiF5S4WWUkvlG71TElZYGKmTFqDszgCyPUa2EXbs4FxqtUCdY6emNgOrarPQ
+	BJQ1BrByow==
+Date: Tue, 15 Apr 2025 13:02:28 +0000 (UTC)
+Message-ID: <NewsWeaver.201yzqs6krcixtfz29brwy.18yrdj7xzx0.17447221476168648388@paloaltonetworkspartners.nw023.com>
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_26091888_1241427615.1744722148759"
+Feedback-ID: acct_paloaltonetworkspartners:Newsweaver
+List-Unsubscribe: =?utf-8?q?=3Chttp=3A//paloaltonetworkspartners=2Eus=2Enews?=
+ =?utf-8?q?weaver=2Ecom/cyberforcewelcome/subscriber/unsubscribe=2Ehtml=3Fli?=
+ =?utf-8?q?st=3Dtrue=26nw=5Fint=5Fpfc=3Dtrue=26subscriberId=3D18yrdj7xzx0=26?=
+ =?utf-8?q?mailingRecordId=3D201yzqs6krcixtfz29brwy=3E=2C=3Cmailto=3Alist-un?=
+ =?utf-8?q?subscribe=40paloaltonetworkspartners=2Enw023=2Ecom=3Fsubject=3Dun?=
+ =?utf-8?q?subscribe=26body=3Dunsubscribe=2520NewsWeaver=2E201yzqs6krcixtfz2?=
+ =?utf-8?q?9brwy=2E18yrdj7xzx0=2E17447221476168648388=3E?=
+To: davidg@terasky.com
+From: CYBERFORCE <cyberforce@paloaltonetworks.com>
+Reply-To: CYBERFORCE <cyberforce@paloaltonetworks.com>
+Poppulo-Customer-Ref: paloaltonetworksent
+X-NW-Ref: =?utf-8?q?=3CNewsWeaver=2E201yzqs6krcixtfz29brwy=2E18yrdj7xzx0=2E1?=
+ =?utf-8?q?7447221476168648388=40paloaltonetworkspartners=2Enw023=2Ecom=3E?=
+X-NW-Mailer:
+ domain=nw023.com;tls=no;speed=2;relay=;bulk=true;size=19221;shard=201;
+Sender: CYBERFORCE <cyberforce@paloaltonetworkspartners.nw023.com>
+Subject: Earn XP for PRO Certification
+Return-Path: cyberforce@paloaltonetworkspartners.nw023.com
+X-MS-Exchange-Organization-ExpirationStartTime: 15 Apr 2025 13:02:30.4129
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 5f360fad-a097-4c3d-bb61-08dd7c1dc7c7
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic:
+ AM2PEPF0001C70F:EE_|PR3P194MB0603:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource:
+ AM2PEPF0001C70F.eurprd05.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 5f360fad-a097-4c3d-bb61-08dd7c1dc7c7
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: =?utf-8?q?BCL=3A0=3BARA=3A13230040=7C31052699007=7C391?=
+ =?utf-8?q?42699007=7C5073199012=7C4022899009=7C5063199012=7C4123199012=7C10?=
+ =?utf-8?q?32899013=7C69100299015=7C13003099007=7C8096899003=7C4076899003=7C?=
+ =?utf-8?q?2066899003=3B?=
+X-Forefront-Antispam-Report: =?utf-8?b?Q0lQOjUuNjEuMTE3LjM3O0NUUlk6SUU7TEFO?=
+ =?utf-8?b?RzplbjtTQ0w6MTtTUlY6O0lQVjpOTEk7U0ZWOk5TUE07SDoyOS5tdGEubncwMjMu?=
+ =?utf-8?b?Y29tO1BUUjoyOS5tdGEubncwMjMuY29tO0NBVDpOT05FO1NGUzooMTMyMzAwNDAp?=
+ =?utf-8?q?=2831052699007=29=2839142699007=29=285073199012=29=284022899009?=
+ =?utf-8?q?=29=285063199012=29=284123199012=29=281032899013=29=2869100299015?=
+ =?utf-8?q?=29=2813003099007=29=288096899003=29=284076899003=29=282066899003?=
+ =?utf-8?q?=29=3BDIR=3AINB=3B?=
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 15 Apr 2025 13:02:30.0379
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id:
+ 5f360fad-a097-4c3d-bb61-08dd7c1dc7c7
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource:
+ AM2PEPF0001C70F.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PR3P194MB0603
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:06.2430496
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8632.030
+X-Microsoft-Antispam-Mailbox-Delivery: 	=?utf-8?q?ucf=3A0=3Bjmr=3A0=3Bauth?=
+ =?utf-8?b?OjA7ZGVzdDpJO0VORzooOTEwMDA1KSg5NDQ1MDY0NzgpKDk0NDYyNjYwNCkoNDcx?=
+ =?utf-8?b?MDEzNykoNDcxMjA3NykoNDk5OTA2OCkoOTIwMDk3KSg5MzAwOTcpKDE0MDAwMyk7?=
+X-Microsoft-Antispam-Message-Info: 
+	=?utf-8?B?dkh6MWd2Sy92WDBBN2dxUm5MNFpHYW5nV1c5RzB6UDJxdzlLSXp4Y3krSGtu?=
+ =?utf-8?B?c2FnTFM0ZlpzcGU5N3A0SUNtY0pna3BVQzNUNCtncHFqK3phVXhkNHpPQXRG?=
+ =?utf-8?B?Um1zZFhaTlBsK1QyaklqS2FtTXlmQmw5N0VCQW83dlJraW9CemFTdWkwYnZY?=
+ =?utf-8?B?Zmh4WkhPOXRSUFBmSGQ3WVNDK0VVaWowdGdSNktpUlorZDlMOXU5NE1QQm9m?=
+ =?utf-8?B?MGF3Uk8ya3Y0ODRvL2FkOFRrcThOZmVzbitjd1FwVmczekJ0Q2dkUWVqWElE?=
+ =?utf-8?B?SFNqWWpHRlFrUFZqbVFWd0lyTGxiQ2RkRW9kV3cyODNtcFdaSmpIdnBhL1Fw?=
+ =?utf-8?B?bWI0ZzA0UUFJTzA4dDZyd1Ryc3VqOFFpOVRhWEp2ZG0vN0ZEdFVBbUE5OHF2?=
+ =?utf-8?B?bTF4UndxcjRGbmZkTXRZWFZ1UnJpM3BlWk9ZcjAyb0xUaC9KUExGaDBVS3lF?=
+ =?utf-8?B?V2diUmw4YnpMWjNVZHdFQVlyY2RTUEFhOUN1WVg2MGZaemNPeVd6MWpjQW5Q?=
+ =?utf-8?B?bUtZZ2toaTBOMTNuMWxuZnU2cXczK3UrZi9jQWM0U1RFd0xNeHQ2TVFyZ09T?=
+ =?utf-8?B?cmM4anhCOThFNlBFR3BPNXlGckJiT2l6dnR6b3RMcGhnT01WbVpidkY0UHVh?=
+ =?utf-8?B?Unk3bmJJM2l1RFpjRmdob3l1MGJBNmtjUktyenVqZzlvOEhQMG5Od3l6RnVk?=
+ =?utf-8?B?K3FmK0phdSthSEdXc0ZJSUdoc2tJdzlzNjQ1OUJtUkZIMlNUa2NvSWdtRUJG?=
+ =?utf-8?B?Uy85d1lpejZoamdTTkcwbStvdklaQTVjODE2aFhreEk5UVdUOUh4WE8wVGNz?=
+ =?utf-8?B?S21Wa1lVUkVQbFMvQ0FUM2Y3dU1wTS95Um93bVdRcVN2NE5HaVdHejZvZ01I?=
+ =?utf-8?B?azM1VnlhVUlmSUNnamZNYjJ6Ykx5M1FGRVhZUmp0U0tnWGtaajBERGRwWXJQ?=
+ =?utf-8?B?L1VFNjFKY2tjdnROeU82aWxmTkhiaTNFKzBYcVBDUUxPNXJBZlNxdkt6NnlD?=
+ =?utf-8?B?aHF0ZUtYN0l2Mm85VjE2WVd2QllXS3oveWlVOVJ3VzJhTmpJRTRud1JzZGQy?=
+ =?utf-8?B?SmI2QS91bEg1TnIxbHVzNjNIRExNQllZbUFVZUJiZnZxWEdiaWVYU1RuVnNS?=
+ =?utf-8?B?MUI5YkRMMHhuZE1GQjdCSWdGL01DZW9SOWVZNW15K0puNU8vMmtqY1IzdTc5?=
+ =?utf-8?B?T20yK0pNUVRNckRpbm5IN2pxTGZKaUJsWWllejV5amVEV21FZ2Nldm9VZFRX?=
+ =?utf-8?B?N1pta3pLWTVsTXNMbjczVHFGcFUyZjFneCs4b3k4Y2pRWEl0VVRQM0lYTi9j?=
+ =?utf-8?B?SnFLZExSY2Q4d1lObGI2dFliS1k2TUkxN1crWVFYZHFaZXdaU0k2TzZtNUIw?=
+ =?utf-8?B?amFkSUZPS3ZyODVMd1VWWkdWeTJFZ2psc1JkcGo4aTVIQUFrRWFzY1U5R1c5?=
+ =?utf-8?B?NkV0SlBKc2J5SGVrSFJwSzRnVGw3dEVKYlRZa0JJSlRLM1pTUUNOWnV0S3pr?=
+ =?utf-8?B?amZ0dWxpanFyZlQ5YjNCNHI1SXcxUm9Zdk1oVDBPdC9SakZQcTVzVUZhOVdm?=
+ =?utf-8?B?UGJ6d2x0T3I3SzBUZWc1U1RERHROdnZ3blBSSDYxSCttY3dhbndSTGJHeE1j?=
+ =?utf-8?B?Rk8wYVBNaEs0aVFXMG1hdzNMQ1VhYWhUcU96UEN1WGRKSkhzRDFPV01oYkNC?=
+ =?utf-8?B?a0hlL2xXN0YvMVoyN3RJRTVHWUhIVVhQNXNZcWwzK2hkNlFkbkVRMm4rY2JC?=
+ =?utf-8?B?eXo5YWJsazQ3d0o1UFlNbjVTVkJONWxvd2sxYXIwQ3BHTG5BV3prVlB3djgw?=
+ =?utf-8?B?bFVMUnNIaUFlclp0cWMvU2FPMEI5elRYQW1JN2ZTY1hIM3JocXA4ZW5iU1dO?=
+ =?utf-8?B?QmVZcTVhU2dJTjFlQmF5VFdhdmZNbjZReXRsQldJbGhZbXliN01MYyszUFl2?=
+ =?utf-8?B?ZmRxZ1hVc2R6U1hJdVBTYlo1d2krSm10bGxnOEk5RHlWaGl6ODdEeWkvZk54?=
+ =?utf-8?B?Y2Y0dHh4bE52TWlBV1ZKclRSMStkcmtZQUd6WlEzMnBOek9BblJySjNqQk5S?=
+ =?utf-8?B?bCs1UHJGUUdNMFJVdHBHYVhYdE94em85ckpDdUJhMndMOUtNcS93N2hSSTBy?=
+ =?utf-8?B?RFZ5V1IyK0F1K296OVFZY0xpK1U3RFpOY3NYVWdLYmI1dW9Vc1BGUS9wbEkw?=
+ =?utf-8?B?L2swaTF1dEhCSlBoWnNCckRJVWtqUGJNVmlJM2Y2QlR0TDlyZmQ4MUJOMHNw?=
+ =?utf-8?B?anRLc3dJMHVoOUs0WnBEeU1EN3RDaWFMZC9yYkJxclRWTVJXb0tnN1VEVGhm?=
+ =?utf-8?B?V3djdWM1elNxUXEwVk1OVHB0MjM0TGl1NzEwalZ5cU11N25nRGZYcEd5bE1n?=
+ =?utf-8?B?a2F2R3VDM2dWemhKbnpGOTQwZTl6cng2Mm9OVjh5S3NWVTRJeThCeVJUR1I1?=
+ =?utf-8?B?enpPeVA3enJSMHhpTUo5bGVaZkdIVUpMTEhJRis2ckp5MHZXTUE1NHFFbUQv?=
+ =?utf-8?B?cVQzVzVPZHRnMnpnNjU5cWhRMFE4WVAxeklrVXJBL0F5TXN3QXkzMFpuc1Zx?=
+ =?utf-8?B?UHBEMnZHaWtTdnlJZWxLa29QYTJiVEZLb29IRzhtRGpuSzduTHQ3YWlUbStG?=
+ =?utf-8?B?d21oeWJEdjZiMlJVc1l5M3YwYVJTd0NjeEIyM2hwQ2ZTRnRZWFAwaEtBR3Rm?=
+ =?utf-8?B?WEhLVXZZMTJEVWo4RjlLYVRBMnNFR2p4dFFCeDRpZkpJVm5Yb2FnMVBlNldP?=
+ =?utf-8?B?TUMzMW9uWFFZMGN6MzZUU0ZpOE9uQmlYcG1HVUJEOTV5VjNXdG5RZlIzUno0?=
+ =?utf-8?B?RWRXeEtBNkY3M0RudHNDOG1oVTdzTGVvM1hmT1UveVA4Z0pkL081TG1Pa3I1?=
+ =?utf-8?B?cEErTmRwS0tyelYwSFdORWZWbk9hK05Iemc5K0NxbEk3a0NZRkp6YWwrK2gv?=
+ =?utf-8?B?bWwxb3lLTWZCeVNoMFZZKzY0TlZ3MGZWcUhzZmVLOUdSLzdNbURyNGdLcXVl?=
+ =?utf-8?Q?pg6s7+SBUEdexLki5NRm56o79fTGZHHBJ9H?=
+MIME-Version: 1.0
+
+------=_Part_26091888_1241427615.1744722148759
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+ =E2=80=8C
+ =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C
+ =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C
+ =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C
+
+View web version<http://paloaltonetworkspartners.us.newsweaver.com/cyberfor=
+cewelcome/51uceypyzp518yrdj7xzx0?email=3Dtrue&lang=3Den&a=3D11&p=3D16553617=
+> | Unsubscribe<http://paloaltonetworkspartners.us.newsweaver.com/cyberforc=
+ewelcome/unsubscribe/unsubscribe.html?s=3D18yrdj7xzx0&m=3D201yzqs6krcixtfz2=
+9brwy&email=3Dtrue&lang=3Den>
+Please add cyberforce@paloaltonetworks.com<mailto:cyberforce@paloaltonetwor=
+ks.com> to your address book to ensure that our emails reach your inbox.
+<http://paloaltonetworkspartners.us.newsweaver.com/cyberforcewelcome/51ucey=
+pyzp518yrdj7xzx0?email=3Dtrue&lang=3Den&a=3D6&p=3D16553617&t=3D5021076>
+[https://paloaltonetworkspartners.us.newsweaver.com/v3files/shard201/100100=
+9/07/70c8c62e10a6a466dc59ca.jpg]<http://paloaltonetworkspartners.us.newswea=
+ver.com/cyberforcewelcome/51uceypyzp518yrdj7xzx0?email=3Dtrue&lang=3Den&a=
+=3D6&p=3D16553617&t=3D5021065>
+
+Hi David,
+
+
+
+The end of our fiscal year, July 31, 2025, will be here before you know it.=
+ Check your CYBERFORCE status<http://paloaltonetworkspartners.us.newsweaver=
+.com/cyberforcewelcome/ffqz3uw0jwh18yrdj7xzx0/external?email=3Dtrue&a=3D6&p=
+=3D16553617&t=3D5021067> now to re-earn your status or achieve the next lev=
+el.
+
+
+
+Do you need more XP? If you earn a Cortex, Prisma Cloud, or SASE PSE: Pro c=
+ertification between April 1 and July 31, 2025, you will earn an extra 10 X=
+P. If you need to claim a voucher, please refer to the available<http://pal=
+oaltonetworkspartners.us.newsweaver.com/cyberforcewelcome/6sv6dxawyur18yrdj=
+7xzx0/external?email=3Dtrue&a=3D6&p=3D16553617&t=3D5021067> vouchers<http:/=
+/paloaltonetworkspartners.us.newsweaver.com/cyberforcewelcome/6sv6dxawyur18=
+yrdj7xzx0/external?email=3Dtrue&i=3D2&a=3D6&p=3D16553617&t=3D5021067>.
+
+
+
+And, make your deals count! If your name is missing from a deal that=E2=80=
+=99s already closed, use this Google form<http://paloaltonetworkspartners.u=
+s.newsweaver.com/cyberforcewelcome/7c32zj15rpo18yrdj7xzx0/external?email=3D=
+true&a=3D6&p=3D16553617&t=3D5021067> to submit a claim.
+
+
+
+For more information, view the CYBERFORCE resources<http://paloaltonetworks=
+partners.us.newsweaver.com/cyberforcewelcome/1fr9fwv1cmi18yrdj7xzx0/externa=
+l?email=3Dtrue&a=3D6&p=3D16553617&t=3D5021067>.
+
+
+
+Got questions? Contact cyberforce@paloaltonetworks.com<mailto:cyberforce@pa=
+loaltonetworks.com>.
+
+Copyright 2025 Palo Alto Networks
+
+This email was sent to davidg@terasky.com<mailto:davidg@terasky.com> from c=
+yberforce@paloaltonetworks.com
+Unsubscribe<http://paloaltonetworkspartners.us.newsweaver.com/cyberforcewel=
+come/unsubscribe/unsubscribe.html?s=3D18yrdj7xzx0&m=3D201yzqs6krcixtfz29brw=
+y&email=3Dtrue&lang=3Den> | Report Misuse<http://paloaltonetworkspartners.u=
+s.newsweaver.com/cyberforcewelcome/51uceypyzp518yrdj7xzx0/abuse.html> | Rec=
+eive in Plain Text<http://paloaltonetworkspartners.us.newsweaver.com/cyberf=
+orcewelcome/subscriber/switchFormat.html?subscriberId=3D18yrdj7xzx0&mailing=
+RecordId=3D201yzqs6krcixtfz29brwy&to=3DTEXT&email=3Dtrue&lang=3Den>
+
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_26091888_1241427615.1744722148759
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd"><html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<title>CYBERFORCE - Earn XP for PRO Certification</title>
+<meta name=3D"robots" content=3D"noindex,nofollow">
+<style media=3D"all" type=3D"text/css">
+			a {color: blue;}
+		</style><link href=3D"https://paloaltonetworkspartners.us.newsweaver.com/=
+v3files/shard201/1001009/1008647/1788051/flyer.css?t=3D1744722017366" media=
+=3D"all" rel=3D"stylesheet" type=3D"text/css"><link rel=3D"canonical" href=
+=3D"http://paloaltonetworkspartners.us.newsweaver.com/cyberforcewelcome/51u=
+ceypyzp5">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1,=
+ maximum-scale=3D1">
+<meta name=3D"x-apple-disable-message-reformatting">
+<!--[if gte mso 9]><xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml><![endif]-->
+</head>
+<body style=3D"background-color: #ffffff; margin: 0; padding: 0;">
+<style title=3D"notessa-stylesheet-body" media=3D"screen" type=3D"text/css"=
+><!--
+
+--></style>
+<div style=3D"display:none;font-size:0;line-height:0;max-height:0;max-width=
+:0;width:0;opacity:0;overflow:hidden;">
+&nbsp;=E2=80=8C </div>
+<div style=3D"display:none;font-size:0;line-height:0;max-height:0;max-width=
+:0;width:0;opacity:0;overflow:hidden;">
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C </div>
+<div style=3D"display:none;font-size:0;line-height:0;max-height:0;max-width=
+:0;width:0;opacity:0;overflow:hidden;">
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C </div>
+<div style=3D"display:none;font-size:0;line-height:0;max-height:0;max-width=
+:0;width:0;opacity:0;overflow:hidden;">
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C=
+&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C
+</div>
+<div style=3D"font-size:1px"><img height=3D"1" width=3D"1" src=3D"http://pa=
+loaltonetworkspartners.us.newsweaver.com/cyberforcewelcome/tracking/18yrdj7=
+xzx0.201yzqs6krcixtfz29brwy.gif" style=3D"border: none;"></div>
+<table align=3D"center" id=3D"before_text" style=3D"border-collapse: collap=
+se; border-spacing: 0; width: 100%;">
+<tbody>
+<tr>
+<td class=3D"before_text" id=3D"inner_before_text" style=3D"color: #7e7b7b;=
+ font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-style: norm=
+al; font-weight: normal; padding: 0; text-decoration: none;">
+<table style=3D"background-color: #ffffff; width: 100%;" class=3D"before_te=
+xt_wrapper" align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tbody>
+<tr>
+<td style=3D"color: #000001; font-family: Arial,Helvetica,sans-serif; font-=
+size: 11px; font-style: normal; font-weight: normal; padding: 4px 0px; text=
+-decoration: none;">
+<table style=3D"width: 650px;" align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td style=3D"color: #000001; font-family: Arial,Helvetica,sans-serif; font-=
+size: 11px; font-style: normal; font-weight: normal; padding: 4px 0px; text=
+-decoration: none;">
+<a href=3D"http://paloaltonetworkspartners.us.newsweaver.com/cyberforcewelc=
+ome/51uceypyzp518yrdj7xzx0?email=3Dtrue&amp;lang=3Den&amp;a=3D11&amp;p=3D16=
+553617" style=3D"color: #000001; font-style: normal; font-weight: normal; t=
+ext-decoration: underline;">View web version</a> |
+<a href=3D"http://paloaltonetworkspartners.us.newsweaver.com/cyberforcewelc=
+ome/unsubscribe/unsubscribe.html?s=3D18yrdj7xzx0&amp;m=3D201yzqs6krcixtfz29=
+brwy&amp;email=3Dtrue&amp;lang=3Den " style=3D"color: #000001; font-style: =
+normal; font-weight: normal; text-decoration: underline;">
+Unsubscribe</a><br>
+Please add <a href=3D"mailto:cyberforce@paloaltonetworks.com" style=3D"colo=
+r: #000001; font-style: normal; font-weight: normal; text-decoration: under=
+line;">
+cyberforce@paloaltonetworks.com</a> to your address book to ensure that our=
+ emails reach your inbox.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class=3D"content" id=3D"wrapper" style=3D"background-color: #ffffff; m=
+argin: 0; padding: 0; padding-top: 1em;">
+<div class=3D"nw_layout_LAYOUT1">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"CoverPage" id=3D"CoverPage" style=3D"background-color: #ffffff; marg=
+in-bottom: 1em; width: 650px;" width=3D"650">
+<tbody>
+<tr>
+<!-- buildCellForTableRow --><!-- buildCellForTableRow -->
+<td id=3D"header" valign=3D"top" width=3D"650" style=3D"color: #7e7b7b; fon=
+t-family: Arial,Helvetica,sans-serif; font-size: 14px; font-style: normal; =
+font-weight: normal; padding: 20px; text-decoration: none; width: 100%;">
+<!-- renderCellComponentsList --><!-- renderCellComponentsList_list --><!--=
+ renderTemplateComponent -->
+<table id=3D"nw_mastheadeditable_wrapper" class=3D"nw_component_wrapper" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"width: 100%;">
+<tbody>
+<tr>
+<td class=3D"nw-componentSpacerMainCell" style=3D"color: #7e7b7b; font-fami=
+ly: Arial,Helvetica,sans-serif; font-size: 14px; font-style: normal; font-w=
+eight: normal; padding-bottom: 0px; text-decoration: none;">
+<!-- buildTemplateComponentStructure -->
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"ContentBlock" id=3D"mas=
+theadeditable" style=3D"margin-top:0px;margin-bottom:0px;margin-left:0px;ma=
+rgin-right:0px;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"nw-componentMainCell" style=3D"background-color: transparent; =
+color: #7e7b7b; font-family: Arial,Helvetica,sans-serif; font-size: 14px; f=
+ont-style: normal; font-weight: normal; padding: 0; padding-bottom: 0px; te=
+xt-decoration: none;">
+<table style=3D"width: 100%;" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" align=3D"right">
+<tbody>
+<tr>
+<td class=3D"logo" style=3D"background-color: transparent; color: #7e7b7b; =
+font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-style: norma=
+l; font-weight: normal; text-decoration: none;">
+<a href=3D"http://paloaltonetworkspartners.us.newsweaver.com/cyberforcewelc=
+ome/51uceypyzp518yrdj7xzx0?email=3Dtrue&amp;lang=3Den&amp;a=3D6&amp;p=3D165=
+53617&amp;t=3D5021076" style=3D"color: #0198c5; font-style: normal; font-we=
+ight: normal; text-decoration: underline;"></a></td>
+<td class=3D"sub_title" align=3D"right" style=3D"background-color: transpar=
+ent; color: #7e7b7b; font-family: Arial,Helvetica,sans-serif; font-size: 14=
+px; font-style: normal; font-weight: normal; padding-left: 10px; text-decor=
+ation: none;">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- /buildTemplateComponentStructure --></td>
+</tr>
+</tbody>
+</table>
+<!-- /renderTemplateComponent --><!-- /renderCellComponentsList_list --><!-=
+- renderCellComponentsList_list --><!-- renderTemplateComponent -->
+<table id=3D"nw_masthead_wrapper" class=3D"nw_component_wrapper" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"width: 100%;">
+<tbody>
+<tr>
+<td class=3D"nw-componentSpacerMainCell" style=3D"color: #7e7b7b; font-fami=
+ly: Arial,Helvetica,sans-serif; font-size: 14px; font-style: normal; font-w=
+eight: normal; padding-bottom: 0px; text-decoration: none;">
+<!-- buildTemplateComponentStructure -->
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"ContentBlock" id=3D"mas=
+thead" style=3D"margin-top:0px;margin-bottom:0px;margin-left:0px;margin-rig=
+ht:0px;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"nw-componentMainCell" style=3D"background-color: transparent; =
+color: #7e7b7b; font-family: Arial,Helvetica,sans-serif; font-size: 14px; f=
+ont-style: normal; font-weight: normal; padding: 0; text-decoration: none;"=
+>
+<a href=3D"http://paloaltonetworkspartners.us.newsweaver.com/cyberforcewelc=
+ome/51uceypyzp518yrdj7xzx0?email=3Dtrue&amp;lang=3Den&amp;a=3D6&amp;p=3D165=
+53617&amp;t=3D5021065" style=3D"color: #0198c5; font-style: normal; font-we=
+ight: normal; text-decoration: underline;"><img alt=3D"" src=3D"https://pal=
+oaltonetworkspartners.us.newsweaver.com/v3files/shard201/1001009/07/70c8c62=
+e10a6a466dc59ca.jpg" width=3D"650" height=3D"97" style=3D"border: none; dis=
+play: block;"></a>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- /buildTemplateComponentStructure --></td>
+</tr>
+</tbody>
+</table>
+<!-- /renderTemplateComponent --><!-- /renderCellComponentsList_list --><!-=
+- /renderCellComponentsList --></td>
+<!-- /buildCellForTableRow -->
+</tr>
+<tr>
+<!-- buildCellForTableRow --><!-- buildCellForTableRow -->
+<td id=3D"main" valign=3D"top" width=3D"650" style=3D"background-color: #ff=
+ffff; color: #7e7b7b; font-family: Arial,Helvetica,sans-serif; font-size: 1=
+4px; font-style: normal; font-weight: normal; padding-left: 20px; padding-r=
+ight: 20px; text-decoration: none; width: 100%;">
+<!-- renderCellComponentsList --><!-- renderCellComponentsList_list --><!--=
+ renderTemplateComponent -->
+<table id=3D"nw_maintitle_wrapper" class=3D"nw_component_wrapper" cellpaddi=
+ng=3D"0" cellspacing=3D"0" style=3D"width: 100%;">
+<tbody>
+<tr>
+<td class=3D"nw-componentSpacerMainCell" style=3D"color: #7e7b7b; font-fami=
+ly: Arial,Helvetica,sans-serif; font-size: 14px; font-style: normal; font-w=
+eight: normal; padding-bottom: 0px; text-decoration: none;">
+<!-- buildTemplateComponentStructure -->
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"ContentBlock" id=3D"mai=
+ntitle" style=3D"margin-top:0px;margin-bottom:0px;margin-left:0px;margin-ri=
+ght:0px;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"nw-componentMainCell" style=3D"background-color: transparent; =
+color: #7e7b7b; font-family: Arial,Helvetica,sans-serif; font-size: 14px; f=
+ont-style: normal; font-weight: normal; padding: 0; text-decoration: none;"=
+>
+<table style=3D"width: 100%;" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0">
+<tbody>
+<tr>
+<td class=3D"main_title" style=3D"background-color: transparent; color: #01=
+98c5; font-family: Arial,Helvetica,sans-serif; font-size: 22px; font-style:=
+ normal; font-weight: normal; padding-bottom: 0px; text-decoration: none;">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- /buildTemplateComponentStructure --></td>
+</tr>
+</tbody>
+</table>
+<!-- /renderTemplateComponent --><!-- /renderCellComponentsList_list --><!-=
+- renderCellComponentsList_list --><!-- renderTemplateComponent -->
+<table id=3D"nw_maincontent_wrapper" class=3D"nw_component_wrapper" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"width: 100%;">
+<tbody>
+<tr>
+<td class=3D"nw-componentSpacerMainCell" style=3D"color: #7e7b7b; font-fami=
+ly: Arial,Helvetica,sans-serif; font-size: 14px; font-style: normal; font-w=
+eight: normal; padding-bottom: 0px; text-decoration: none;">
+<!-- buildTemplateComponentStructure -->
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"ContentBlock" id=3D"mai=
+ncontent" style=3D"margin-top:0px;margin-bottom:0px;margin-left:0px;margin-=
+right:0px;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"nw-componentMainCell" style=3D"background-color: transparent; =
+color: #7e7b7b; font-family: Arial,Helvetica,sans-serif; font-size: 14px; f=
+ont-style: normal; font-weight: normal; padding: 0; text-decoration: none;"=
+>
+<table style=3D"width: 100%;" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0">
+<tbody>
+<tr>
+<td class=3D"main_content" style=3D"background-color: #ffffff; color: #7e7b=
+7b; font-family: Arial,Helvetica,sans-serif; font-size: 14px; font-style: n=
+ormal; font-weight: normal; padding-bottom: 20px; text-decoration: none;">
+<p style=3D"line-height: 1.2; margin: 0; margin-bottom: 0pt; margin-top: 0p=
+t; padding: 0;">
+<span style=3D"font-size: 12px; font-family: Arial, Helvetica, sans-serif; =
+white-space-collapse: preserve;">Hi David,</span></p>
+<p style=3D"margin: 0; margin-bottom: 0pt; margin-top: 0pt; padding: 0;">&n=
+bsp;</p>
+<p style=3D"margin: 0; margin-bottom: 0pt; margin-top: 0pt; padding: 0;"><s=
+pan style=3D"font-size: 12px; font-family: Arial, Helvetica, sans-serif;"><=
+span style=3D"white-space-collapse: preserve;">The end of our fiscal year, =
+July 31, 2025, will be here before you
+ know it. Check your </span><a style=3D"color: #0198c5; font-style: normal;=
+ font-weight: normal; text-decoration: none;" href=3D"http://paloaltonetwor=
+kspartners.us.newsweaver.com/cyberforcewelcome/ffqz3uw0jwh18yrdj7xzx0/exter=
+nal?email=3Dtrue&amp;a=3D6&amp;p=3D16553617&amp;t=3D5021067"><span style=3D=
+"color: rgb(17, 85, 204); text-decoration: underline; text-decoration-skip-=
+ink: none; white-space-collapse: preserve;">CYBERFORCE
+ status</span></a><span style=3D"white-space-collapse: preserve;"> now to r=
+e-earn your status or achieve the next level.</span></span></p>
+<p style=3D"line-height: 1.2; margin: 0; margin-bottom: 0pt; margin-top: 0p=
+t; padding: 0;">
+&nbsp;</p>
+<p style=3D"margin: 0; margin-bottom: 0pt; margin-top: 0pt; padding: 0;"><s=
+pan style=3D"font-size: 12px; font-family: Arial, Helvetica, sans-serif;"><=
+span style=3D"white-space-collapse: preserve;">Do you need more XP? If you =
+earn a Cortex, Prisma Cloud, or SASE PSE:
+ Pro certification between April 1 and July 31, 2025, you will earn an </sp=
+an><strong><span style=3D"white-space-collapse: preserve;">extra 10 XP</spa=
+n></strong><span style=3D"white-space-collapse: preserve;">. If you need to=
+ claim a voucher,
+</span><span style=3D"color: rgb(126, 140, 141); white-space-collapse: pres=
+erve;">please refer to
+</span><span style=3D"box-sizing: border-box; margin: 0px; padding: 0px;"><=
+span style=3D"color: rgb(34, 34, 34);"><span style=3D"color: rgb(126, 140, =
+141);">the</span>&nbsp;</span><a href=3D"http://paloaltonetworkspartners.us=
+.newsweaver.com/cyberforcewelcome/6sv6dxawyur18yrdj7xzx0/external?email=3Dt=
+rue&amp;a=3D6&amp;p=3D16553617&amp;t=3D5021067" target=3D"_blank" rel=3D"no=
+opener" style=3D"color: #0198c5; font-style: normal; font-weight: normal; t=
+ext-decoration: underline;"><span style=3D"color: rgb(17, 85, 204); backgro=
+und-color: rgb(255, 255, 255);">available</span></a></span><a style=3D"colo=
+r: #0198c5; font-style: normal; font-weight: normal; text-decoration: none;=
+" href=3D"http://paloaltonetworkspartners.us.newsweaver.com/cyberforcewelco=
+me/6sv6dxawyur18yrdj7xzx0/external?email=3Dtrue&amp;i=3D2&amp;a=3D6&amp;p=
+=3D16553617&amp;t=3D5021067"><span style=3D"color: rgb(17, 85, 204); backgr=
+ound-color: rgb(255, 255, 255); text-decoration: underline; text-decoration=
+-skip-ink: none; white-space-collapse: preserve;">
+ vouchers</span></a><span style=3D"color: rgb(34, 34, 34); background-color=
+: rgb(255, 255, 255); white-space-collapse: preserve;">.</span></span></p>
+<p style=3D"line-height: 1.2; margin: 0; margin-bottom: 0pt; margin-top: 0p=
+t; padding: 0;">
+&nbsp;</p>
+<p style=3D"margin: 0; margin-bottom: 0pt; margin-top: 0pt; padding: 0;"><s=
+pan style=3D"font-size: 12px; font-family: Arial, Helvetica, sans-serif;"><=
+span style=3D"white-space-collapse: preserve;">And, make your deals count! =
+If your name is missing from a deal that=E2=80=99s
+ already closed, </span><span style=3D"color: rgb(34, 34, 34); background-c=
+olor: rgb(255, 255, 255); white-space-collapse: preserve;"><span style=3D"c=
+olor: rgb(126, 140, 141);">use this</span>
+</span><a style=3D"color: #0198c5; font-style: normal; font-weight: normal;=
+ text-decoration: none;" href=3D"http://paloaltonetworkspartners.us.newswea=
+ver.com/cyberforcewelcome/7c32zj15rpo18yrdj7xzx0/external?email=3Dtrue&amp;=
+a=3D6&amp;p=3D16553617&amp;t=3D5021067"><span style=3D"color: rgb(17, 85, 2=
+04); background-color: rgb(255, 255, 255); text-decoration: underline; text=
+-decoration-skip-ink: none; white-space-collapse: preserve;">Google
+ form</span></a><span style=3D"white-space-collapse: preserve;"> to submit =
+a claim.</span></span></p>
+<p style=3D"line-height: 1.2; margin: 0; margin-bottom: 0pt; margin-top: 0p=
+t; padding: 0;">
+&nbsp;</p>
+<p style=3D"margin: 0; margin-bottom: 0pt; margin-top: 0pt; padding: 0;"><s=
+pan style=3D"font-size: 12px; font-family: Arial, Helvetica, sans-serif;"><=
+span style=3D"white-space-collapse: preserve;">For more information, view t=
+he
+</span><a style=3D"color: #0198c5; font-style: normal; font-weight: normal;=
+ text-decoration: none;" href=3D"http://paloaltonetworkspartners.us.newswea=
+ver.com/cyberforcewelcome/1fr9fwv1cmi18yrdj7xzx0/external?email=3Dtrue&amp;=
+a=3D6&amp;p=3D16553617&amp;t=3D5021067"><span style=3D"color: rgb(17, 85, 2=
+04); text-decoration: underline; text-decoration-skip-ink: none; white-spac=
+e-collapse: preserve;">CYBERFORCE
+ resources</span></a><span style=3D"white-space-collapse: preserve;">.</spa=
+n></span></p>
+<p style=3D"line-height: 1.2; margin: 0; margin-bottom: 0pt; margin-top: 0p=
+t; padding: 0;">
+&nbsp;</p>
+<p style=3D"margin: 0; margin-bottom: 0pt; margin-top: 0pt; padding: 0;"><s=
+pan style=3D"font-size: 12px; font-family: Arial, Helvetica, sans-serif;"><=
+span style=3D"white-space-collapse: preserve;">Got questions? Contact
+</span><a style=3D"color: #0198c5; font-style: normal; font-weight: normal;=
+ text-decoration: none;" href=3D"mailto:cyberforce@paloaltonetworks.com"><s=
+pan style=3D"color: rgb(17, 85, 204); text-decoration: underline; text-deco=
+ration-skip-ink: none; white-space-collapse: preserve;">cyberforce@paloalto=
+networks.com</span></a><span style=3D"white-space-collapse: preserve;">.&nb=
+sp;</span></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- /buildTemplateComponentStructure --></td>
+</tr>
+</tbody>
+</table>
+<!-- /renderTemplateComponent --><!-- /renderCellComponentsList_list --><!-=
+- /renderCellComponentsList --></td>
+<!-- /buildCellForTableRow -->
+</tr>
+<tr>
+<!-- buildCellForTableRow --><!-- buildCellForTableRow -->
+<td id=3D"footer" valign=3D"top" width=3D"650" style=3D"color: #7e7b7b; fon=
+t-family: Arial,Helvetica,sans-serif; font-size: 14px; font-style: normal; =
+font-weight: normal; text-decoration: none; width: 100%;">
+<!-- renderCellComponentsList --><!-- renderCellComponentsList_list --><!--=
+ renderTemplateComponent -->
+<table id=3D"nw_footerblock_wrapper" class=3D"nw_component_wrapper" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"width: 100%;">
+<tbody>
+<tr>
+<td class=3D"nw-componentSpacerMainCell" style=3D"color: #7e7b7b; font-fami=
+ly: Arial,Helvetica,sans-serif; font-size: 14px; font-style: normal; font-w=
+eight: normal; padding-bottom: 0px; text-decoration: none;">
+<!-- buildTemplateComponentStructure -->
+<table cellpadding=3D"0" cellspacing=3D"0" class=3D"ContentBlock" id=3D"foo=
+terblock" style=3D"margin-top:0px;margin-bottom:0px;margin-left:0px;margin-=
+right:0px;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"nw-componentMainCell" style=3D"background-color: #fa582d; colo=
+r: #ffffff; font-family: Arial,Helvetica,sans-serif; font-size: 12px; font-=
+style: normal; font-weight: normal; padding: 20px; text-decoration: none;">
+<p style=3D"margin: 0; padding: 0;">Copyright 2025 Palo Alto Networks</p>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- /buildTemplateComponentStructure --></td>
+</tr>
+</tbody>
+</table>
+<!-- /renderTemplateComponent --><!-- /renderCellComponentsList_list --><!-=
+- /renderCellComponentsList --></td>
+<!-- /buildCellForTableRow -->
+</tr>
+</tbody>
+</table>
+<table align=3D"center" id=3D"after_text" style=3D"background-color: #fffff=
+f; width: 100%;">
+<tbody>
+<tr>
+<td class=3D"after_text" style=3D"color: #000001; font-family: Arial,Helvet=
+ica,sans-serif; font-size: 11px; font-style: normal; font-weight: normal; p=
+adding-bottom: 10px; padding-top: 10px; text-align: center; text-decoration=
+: none;">
+This email was sent to <a href=3D"mailto:davidg@terasky.com" style=3D"color=
+: #000001; font-style: normal; font-weight: normal; text-decoration: underl=
+ine;">
+davidg@terasky.com</a> from cyberforce@paloaltonetworks.com<br>
+<a href=3D"http://paloaltonetworkspartners.us.newsweaver.com/cyberforcewelc=
+ome/unsubscribe/unsubscribe.html?s=3D18yrdj7xzx0&amp;m=3D201yzqs6krcixtfz29=
+brwy&amp;email=3Dtrue&amp;lang=3Den " style=3D"color: #000001; font-style: =
+normal; font-weight: normal; text-decoration: underline;">Unsubscribe</a>
+ | <a href=3D"http://paloaltonetworkspartners.us.newsweaver.com/cyberforcew=
+elcome/51uceypyzp518yrdj7xzx0/abuse.html" style=3D"color: #000001; font-sty=
+le: normal; font-weight: normal; text-decoration: underline;">
+Report Misuse</a> | <a href=3D"http://paloaltonetworkspartners.us.newsweave=
+r.com/cyberforcewelcome/subscriber/switchFormat.html?subscriberId=3D18yrdj7=
+xzx0&amp;mailingRecordId=3D201yzqs6krcixtfz29brwy&amp;to=3DTEXT&amp;email=
+=3Dtrue&amp;lang=3Den" style=3D"color: #000001; font-style: normal; font-we=
+ight: normal; text-decoration: underline;">
+Receive in Plain Text</a><br>
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+------=_Part_26091888_1241427615.1744722148759--
