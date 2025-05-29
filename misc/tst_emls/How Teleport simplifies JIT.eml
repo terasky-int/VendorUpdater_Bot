@@ -1,0 +1,550 @@
+Received: from AM0P194MB0579.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:148::23)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Tue, 27 May 2025
+ 06:45:18 +0000
+Received: from AM8P189CA0014.EURP189.PROD.OUTLOOK.COM (2603:10a6:20b:218::19)
+ by AM0P194MB0579.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:148::23) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8769.29; Tue, 27 May
+ 2025 06:45:15 +0000
+Received: from AM4PEPF00025F98.EURPRD83.prod.outlook.com
+ (2603:10a6:20b:218:cafe::74) by AM8P189CA0014.outlook.office365.com
+ (2603:10a6:20b:218::19) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8769.18 via Frontend Transport; Tue,
+ 27 May 2025 06:45:14 +0000
+Authentication-Results: spf=pass (sender IP is 192.28.150.203)
+ smtp.mailfrom=bounce.goteleport.com; dkim=pass (signature was verified)
+ header.d=goteleport.com;dkim=pass (signature was verified)
+ header.d=mktdns.com;dmarc=pass action=none
+ header.from=goteleport.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of bounce.goteleport.com
+ designates 192.28.150.203 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.28.150.203;
+ helo=bounce.goteleport.com; pr=C
+Received: from bounce.goteleport.com (192.28.150.203) by
+ AM4PEPF00025F98.mail.protection.outlook.com (10.167.16.7) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8813.0 via Frontend Transport; Tue, 27 May 2025 06:45:14 +0000
+X-MSFBL: 7NlBMoj7IMvthP5UxcyDCLwMxVYC/8JBqEatLJ9AADk=|eyJyIjoiZGF2aWRnQHR
+	lcmFza3kuY29tIiwidSI6IjgxOS1XSFQtNDgzOjA6Nzc3Mjo1NzQ1NzoyNDIzNTc
+	6ODUxNjo5OjYyNDczOjMxODIzNDUiLCJiIjoiZHZwLTE5Mi0yOC0xNTAtMjAzIiw
+	iZyI6ImJnLWFiZC00NTcifQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1748328312;
+	s=m1; d=goteleport.com; i=@goteleport.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=36J8KwLArrfTGxmhzmm6DiRvXqngnJO5xL7sbmdVLgg=;
+	b=TolO72b8gvkPt9ZCvOOjuNp9dx56M/pvTYLxfYhh7N7w05yakYTN9Djxy91wRrwf
+	4SRHTOZEWAJx6L0cV5rWvTXB2qrgTXB9r2SBnDgYnTuV6sCTUyHx8J+U/XscGSYhJtR
+	3fqwMQuto0E7GWX29QBabDGU1A/gM3euG+9flw3w=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1748328312;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=36J8KwLArrfTGxmhzmm6DiRvXqngnJO5xL7sbmdVLgg=;
+	b=FLRonKkFkQoYURcfLbJIX8AYJ8JUvz4inwsRQEcABhGyPjASRHNBDQTWKULGFDFw
+	z/CeDkif/BckacX1OBLIcgTirbHu6QntzYw6xX/AwQCerTYOcDV3c8v+1Yoj/n8IYxe
+	fztVHj5SlMVtn50gIxPVRDVlBBBgqdGJwzv97I1I=
+Date: Tue, 27 May 2025 01:45:12 -0500 (CDT)
+From: Teleport <hello@goteleport.com>
+Reply-To: hello@goteleport.com
+To: davidg@terasky.com
+Message-ID: <2029708517.21390128.1748328312611@abmktmail-batch1o.marketo.org>
+Subject: How Teleport simplifies JIT
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_21390127_1266567490.1748328312611"
+X-Binding: bg-abd-457
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://em.goteleport.com/u/ODE5LVdIVC00ODMAAAGar3WfIbhq4uiV-FpA-j9RbzbYVuFCz09Vd6jNglnmPVQ9TnmFi8k-xDncpJDzHYGFYU53-PY=?emailAddress=ODE5LVdIVC00ODMAAAGar3WfIK6WDP7tHmCJyWCxYZ5jQhhzfjDpllM_7qcRZSDHh4Zf5M2Gisv-RHbRl9V1eO4>, <mailto:GFMXS5SIPBIFQM2JNNKE442WOM2XMYJWPF3T2PI=.62473.8516.9@unsub-ab.mktomail.com>
+X-MarketoID: 819-WHT-483:0:7772:57457:242357:8516:9:62473:3182345
+X-Mailfrom: 819-WHT-483.0.62473.0.0.8516.9.3182345@bounce.goteleport.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+Return-Path: 819-WHT-483.0.62473.0.0.8516.9.3182345@bounce.goteleport.com
+X-MS-Exchange-Organization-ExpirationStartTime: 27 May 2025 06:45:14.6958
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 43dcfc97-f119-435b-e500-08dd9cea0930
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM4PEPF00025F98:EE_|AM0P194MB0579:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AM4PEPF00025F98.EURPRD83.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 43dcfc97-f119-435b-e500-08dd9cea0930
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:2;ARA:13230040|4022899009|5062899012|1032899013|69100299015|12012899012|3072899012|2092899012|31052699007|39142699007|4076899003|8096899003|2066899003|13003099007;
+X-Forefront-Antispam-Report: CIP:192.28.150.203;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:bounce.goteleport.com;PTR:bounce.goteleport.com;CAT:NONE;SFS:(13230040)(4022899009)(5062899012)(1032899013)(69100299015)(12012899012)(3072899012)(2092899012)(31052699007)(39142699007)(4076899003)(8096899003)(2066899003)(13003099007);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 May 2025 06:45:14.2747
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 43dcfc97-f119-435b-e500-08dd9cea0930
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AM4PEPF00025F98.EURPRD83.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0P194MB0579
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:04.6220989
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8769.014
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?RmxNTWp1TEp6RER6ckxQT1JRMkpLendLREZRaUh1MmtmRjAvTHpWSUtGZHB6?=
+ =?utf-8?B?b20zMzFwaTZpQWh0TXJ2WWxEaFlIclk1MFVZb29rOHJqUXBYalpWQzlSc0RX?=
+ =?utf-8?B?S3g3dGZmRTI5YStzSnFNbWsrdUIvUE1hQlF1ZVdoR2FjK1NETjNkb1c5RVl4?=
+ =?utf-8?B?SThWQ3czRFJkQXZOMDAxd3NMZklDNVhXaUg0K3k4cHlnWUI0eFduUFA2RVRs?=
+ =?utf-8?B?RFhENWFDWUI1Mlo2clZOaHRWMWlIaFhITGNwRWM4OHZ5NWxIRE5DckZDTk9z?=
+ =?utf-8?B?MUpqKzQ2RkhVKzQwdDVPRXV6cGhOVi9jc0I3R1R5QnNkZ3FEZXFpV1p4YTZH?=
+ =?utf-8?B?NUd3L0R4SVArcWJiTllpeG00NUQzb09OMFpLQ21IbENTaWJwVDFybDBxNEYz?=
+ =?utf-8?B?NzVOblpQc05ENis1dys1OHRHc1N5RXQvYTVKNHNBcHlHRnNIaExQR0x0Vzl2?=
+ =?utf-8?B?aUtaOGd0LzVNK0FYazExZENaL0dHenE1T1RJWVZFbmhqK2paWVN4d1dNQ2pj?=
+ =?utf-8?B?bHY5WG5EUk1HSVRPWUdWNGo1YUQyalRYT0hHS1R0TEMzTWtuUWtPa0d0eEJG?=
+ =?utf-8?B?YzVnUkQxeUl5OEJYZTNtcjZkOHV3ZEJhcC9vNW9IOUY2aTRuOXJKMXVvUjVz?=
+ =?utf-8?B?cUNiUUF4UTZMTmp1MmhMcHF1NTNJQW1nZy91VXdOQ0JZbkk1cS85eEVtVEQ3?=
+ =?utf-8?B?RG0ySUxYTWQ4NTJWc0czZS9LbGJPc1QybnVXQ25rVm5SdmtoRGl2QXhzMloz?=
+ =?utf-8?B?c241S0V5TXhYc3gvM2NOaEU3aiswVzVNbnFRbjZKN29pRHBtdUdzOHBpZXcw?=
+ =?utf-8?B?WGVvcW1OV096eFU3THU2bllBREpHOThHZUhCT25hWkxiMmhZWXd3WXphS25u?=
+ =?utf-8?B?d29TU1EvM0g3Zm9Eam0zRFBzOS9PNWZPeUNqNzJaQ2VIQ2wyNTBIM3NJbDIv?=
+ =?utf-8?B?SmlqYzk2Zy9lczlycXJ0OWtWYTRzdnJESVgvNEpEdTdDMGZnOEJoYTBiWFlo?=
+ =?utf-8?B?eUFCbllrSjhPRDJrTXh2Ulp1bjBhY05raGttSURaQ0d3UFErMmRQWGV3SXFj?=
+ =?utf-8?B?MUgvQnBXT1p0YjJxd2lFWm94N2VXWlpvYXZiK1BodXZDelZ3MzlXV3ZaRDhk?=
+ =?utf-8?B?cTh5RTRmZm9VczZTSnVtbU0xanlTUUdiZ21jSkhDbnhmR3JsRkthdm1lWFI5?=
+ =?utf-8?B?dUd0ZXlzb2dJNnhlWVNSTSthb0M4aWFmREpDMmdHQlQxdWdPOVlrL01QK2dC?=
+ =?utf-8?B?MzBrYXNWZERxSGFIOHROcXc2dUJvN2tSdGl2aGg5NVJFSmpmaGFCaWI3OWxI?=
+ =?utf-8?B?clRpYjBObWNCajEyb21TSG9qdnNhb0Y1Ujh4bVBIeE1JNW1CcElTdUFQQmpG?=
+ =?utf-8?B?WXJIMkYvYU1udW5adEpkTTQyYklaSUZmV2dPeU5taWRkdk03M0hIQjJOVTNP?=
+ =?utf-8?B?QVdrSnVNQTB0L1dRV0RTN0Jjb2VUKzFLaFExb1JsYTBpYmsvYlBxWGpVTVho?=
+ =?utf-8?B?MDdYZzNtakJpbTFLRzNKRDVwQmhtYnVzcWR0MkpBUnUwV3JrRllYc0JFNHJU?=
+ =?utf-8?B?TGYvb0xacUZXZm9uNkVPU1hiVFlZd0tDcHc3RHFFT3dRSndiSEhGVkZhdzJR?=
+ =?utf-8?B?aUl1aTJZQmtyQXBmUzNvUnM1RDlidjZyNlBrSEJCMlBPTnZkc01WSFcvaEhB?=
+ =?utf-8?B?dzdkM3VoMTEvNnRzR0N2M2NWMXB1ZWp0UHpQT3hyWW94MDF0WCs1WU92RGpx?=
+ =?utf-8?B?dCt4UGR1NUVCNWRYNis2TnVrRFdnMVp0VHNjVmNnZTF2QkRwcHdGS3BHbXZ4?=
+ =?utf-8?B?c09zM0dGeEhzT2RwTGxUaFM2VmtzZjl3aVNNdFFSaG9RR2dCSVB2RmxVZGRR?=
+ =?utf-8?B?NHh6UXhHdldZYklKQjVyejVVNkRDZ2RuVVpEQy9MT1h1UjljQS9FNUNVVGhH?=
+ =?utf-8?B?cC9oODZNMk9ubVVIakFadXVpaUhSVy8yOHBTUzlPNWVYMUdzNHBwT1ZoVXVP?=
+ =?utf-8?B?Z29HbmxGc0tmYytOUFlaOC81UEdWbWJpWTlkZUIwSjA3eE1LbU5kc2xKYk1s?=
+ =?utf-8?B?c2h2Tng3SHhSZjl2WWxMWDg2TEpaL1Q5NmI2QmVjdEdGUThYZTc5ZXVmVmt4?=
+ =?utf-8?B?Y3ppaWpvdHpkQ0h4R2xTMVRhZzl1UlZHbGlXQzVtcXhKN2YxVk0zN2tkTVhI?=
+ =?utf-8?B?NytWdlIwNnd3K0Y3SmpGK0dQZ3ZkcW52Mlg2eUZoRmdNbFBNK3lCclkvaWtv?=
+ =?utf-8?B?WU5FWGN2Z3dqYk84OXhuMnl0bTltamlEWExRbnNOY2hXZlRzNDFvM1dsUGtU?=
+ =?utf-8?B?NTdKZUN3aDE1TVAyR0hMN2tON2ROZm83ZFNRMWo3dW4weGtyQkozaXNuaUF4?=
+ =?utf-8?B?TWlIUTROZUpzd2dXTVBBYkRZQnU5dTJ1ZUhrbXU2djlIUFVYWjR1dkY3bU0v?=
+ =?utf-8?B?RkFaOFg4UTYxTEh3NVZ1dWdMRDJxZzVlYktQZmQrRDYrVmVRL3lkb2ZRUnNB?=
+ =?utf-8?B?b2FPOXRqNEdoYnRpN2tQUG5XN1RXVG02VFJUVmJtcEVvYkNsdXVhSjgxOUx4?=
+ =?utf-8?B?akpxdVI2V1laR2tFT2hQckYvT2xPdjZrN21RWUpqYVdKbzdWdEttVjdZZXZv?=
+ =?utf-8?B?UGpHeU1DeVZ5OFFBd1dHaXBEazdiMmpCVktiYWc0bXRnUFFiS3FnWTU0U2xY?=
+ =?utf-8?B?UldYZlFzYXM0U1Q2cFVoUmx0djAwZkR0WlVoQU93NC9tR2RwNXROZXAzY2dn?=
+ =?utf-8?Q?nzN+r8zSEMiP2aTf2HtBST6?=
+MIME-Version: 1.0
+
+------=_Part_21390127_1266567490.1748328312611
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Just-in-time access reduces your attack surface, but...
+[JIT email.png]<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGar3WfIb4VUtN66=
+AwgFVUCukb9LhfnrybccS3LiyM1mGQiXRW2V9_yMyIBCRYVSdOqXRKBIfo=3D>
+
+Hi David,
+
+Just-in-time access reduces your attack surface, but if your implementation=
+ is based on a manual workflow or handling of static credentials, it may be=
+ too slow and cumbersome for the engineers that work at speed in your cloud=
+-native infrastructure.
+
+Teleport transforms access requests for engineering teams with these needs =
+in mind, leveraging:
+
+  *   Automated workflows and approvals
+  *   Short-lived privileges governed by certificates
+  *   Unified access across all infrastructure
+  *   Dynamic discovery of available resources
+
+Read Blog<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGar3WfIb4VUtN66AwgFVU=
+Cukb9LhfnrybccS3LiyM1mGQiXRW2V9_yMyIBCRYVSdOqXRKBIfo=3D>
+
+Teleport, 2100 Franklin St, Suite 400, Oakland, CA 94612
+
+If you no longer wish to receive these emails anymore, click on the followi=
+ng link:
+
+UNSUBSCRIBE<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGar3WfIZNU58-vbq-5a=
+QkdzvFiCWbjQ8eN8GmpeEBSiV-HMfMQ8DNjBenMUdO-8NgYnLJfIx8=3D>
+
+TERMS OF SERVICE<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGar3WfIY4fy_6o=
+0BBjLapNtrakyJVxshIjB0Ejz97WT64wlHocRyUbmlkbxJ48sWIfUqWzVjU=3D> | PRIVACY P=
+OLICY<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGar3WfIbRI7CZ0Xix7hM91cPe=
+1QhfJbTmIFPsMZ-Iv7aDRKuRKbQoGwdlCdEu2kIbAqEm3szI=3D> | SECURITY POLICY<http=
+s://em.goteleport.com/ODE5LVdIVC00ODMAAAGar3WfIbnNNbSYq4cX2nj0Tbon9C_qjZBYl=
+25XmEV3G1iKhPQmiV_h-Fsx6GA8S-ii32v3WVE=3D>
+
+<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGar3WfIV_16Qjt6wygsRYul17HTLwB=
+FfUFL58aUuWzK6-IHbfcBsE2OvcbfzComrIBFByUJPY=3D>
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_21390127_1266567490.1748328312611
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:=
+schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:offi=
+ce"><!--
+Built by upcraft.io
+--><head><!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>=20
+</xml><![endif]-->
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+<!-- START Marketo Variables --><!-- Global Variables--><!-- Background Var=
+iables--><!-- Content Variables--><!-- Toggle Variables--><!-- Button 1 Var=
+iables--><!-- Button 2 Variables--><!-- END Marketo Variables -->
+<title>Company Name</title>
+<style>
+/* START - WEBFONTS, ALWAYS use import method for email to avoid automation=
+ tracking issues */
+@import url('https://fonts.googleapis.com/css?family=3DOpen+Sans:300,400,60=
+0,700&display=3Dswap');
+/* END - WEBFONTS, ALWAYS use import method for email to avoid automation t=
+racking issues */
+=09
+/* START - Universal styles */
+body {
+    font-family: arial, helvetica;
+    font-size: 14px;
+    line-height: 1.6em;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: 100%;
+}
+img, a img {
+    outline: none;
+    text-decoration: none;
+    border: none;
+    -ms-interpolation-mode: bicubic;
+}
+.imgblock img {
+    display: block;
+}
+.img100, .img100 img {
+    width: 100% !important;
+    height: auto !important;
+}
+p {
+    margin-top: 0;
+    padding-top: 0;
+}
+a {
+    color: #047AED;
+}
+
+/* END - Universal styles  */
+=09
+/* START - Mobile universal styles */
+@media screen and (max-width: 480px) {
+body {
+    margin: 0 !important;
+    padding: 0;
+}
+.t100 {
+    width: 100% !important;
+    float: none !important;
+}
+.mimg100 img, .mimg100 {
+    width: 100% !important;
+    height: auto !important;
+}
+.logoimg {
+    max-width: 125px !important;
+    height: auto !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.heightauto {
+    height: auto !important;
+}
+.p0 {
+    padding: 0 !important;
+}
+.pt5 {
+    padding-top: 5px !important;
+}
+.pr5 {
+    padding-right: 5px !important;
+}
+.pb5 {
+    padding-bottom: 5px !important;
+}
+.pl5 {
+    padding-left: 5px !important;
+}
+.pt10 {
+    padding-top: 10px !important;
+}
+.pr10 {
+    padding-right: 10px !important;
+}
+.pb10 {
+    padding-bottom: 10px !important;
+}
+.pl10 {
+    padding-left: 10px !important;
+}
+.p15 {
+    padding: 16px !important;
+}
+.pt15 {
+    padding-top: 16px !important;
+}
+.pr15 {
+    padding-right: 16px !important;
+}
+.pb15 {
+    padding-bottom: 16px !important;
+}
+.pl15 {
+    padding-left: 16px !important;
+}
+.pt20 {
+    padding-top: 20px !important;
+}
+.pr20 {
+    padding-right: 20px !important;
+}
+.pb20 {
+    padding-bottom: 20px !important;
+}
+.pl20 {
+    padding-left: 20px !important;
+}
+.pt30 {
+    padding-top: 30px !important;
+}
+.pr30 {
+    padding-right: 30px !important;
+}
+.pb30 {
+    padding-bottom: 30px !important;
+}
+.pl30 {
+    padding-left: 30px !important;
+}
+.plr15 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+.mpad {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+}
+/* END - Mobile universal styles */
+
+/* START - Webfont fix, keeps Outlook from rendering Times. Loads for all d=
+evices except Outlook. */
+@media {
+body {
+font-family: 'Open Sans', sans-serif !important;
+}
+}
+
+/* END - Webfont fix, keeps Outlook from rendering Times. Loads for all dev=
+ices except Outlook. */
+
+=09
+=09
+/* START - Custom CSS */
+=09
+/* END -  Custom CSS */
+=09
+=09
+=09
+/* START - Custom mobile CSS */
+@media screen and (max-width: 480px) {
+}
+/* END -  Custom mobile CSS */
+</style><!--[if (gte mso 9)|(IE)]>
+<style type=3D"text/css">
+table {
+border-collapse: collapse;
+border-spacing: 0; }
+</style>
+<![endif]-->
+</head>
+<body style=3D"background: #DDDDDD; min-width:100%; margin:10px; padding:0;=
+">
+<style type=3D"text/css">div#emailPreHeader{ display: none !important; }</s=
+tyle>
+<div id=3D"emailPreHeader" style=3D"mso-hide:all; visibility:hidden; opacit=
+y:0; color:transparent; mso-line-height-rule:exactly; line-height:0; font-s=
+ize:0px; overflow:hidden; border-width:0; display:none !important;">
+Just-in-time access reduces your attack surface, but...</div>
+<table width=3D"600" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"t100" style=3D"width:600px;">
+<tbody>
+<tr>
+<td id=3D"wrapper" style=3D"background: #ffffff; padding: 0;" class=3D"mkto=
+Container">
+<table width=3D"600" style=3D"width:600px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100 mktoModule" id=3D"img13508=
+ca48-e060-45f9-8ede-1fd6246a0d78">
+<tbody>
+<tr>
+<td style=3D"padding: 0;" class=3D"mimg100">
+<div class=3D"mktoImg" id=3D"kdf9292b68b685-86aa-4cd3-9f7b-8fdf8b8f2f41" mk=
+tolockimgsize=3D"true" mktolockimgstyle=3D"true">
+<a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGar3WfIb4VUtN66AwgFV=
+UCukb9LhfnrybccS3LiyM1mGQiXRW2V9_yMyIBCRYVSdOqXRKBIfo=3D" target=3D"_blank"=
+><img style=3D"display:block;" alt=3D"JIT email.png" src=3D"https://learn.g=
+oteleport.co/rs/819-WHT-483/images/JIT email.png" width=3D"600" class=3D"mi=
+mg100"></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"mktoModule" id=3D"slkgsdg">
+<tbody>
+<tr>
+<td style=3D"background: #FFFFFF;">
+<table width=3D"540" style=3D"width:540px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100" id=3D"CS-2" mktoname=3D"M=
+odule">
+<tbody>
+<tr>
+<td style=3D" padding: 15px 0 0px 0;" class=3D"mpad mktoText" id=3D"skgodkd=
+">
+<p>Hi David,&nbsp;</p>
+<p>Just-in-time access reduces your attack surface, but if your implementat=
+ion is based on a manual workflow or handling of static credentials, it may=
+ be too slow and cumbersome for the engineers that work at speed in your cl=
+oud-native infrastructure.&nbsp;</p>
+<p>Teleport transforms access requests for engineering teams with these nee=
+ds in mind, leveraging:</p>
+<ul>
+<li>Automated workflows and approvals</li><li>Short-lived privileges govern=
+ed by certificates</li><li>Unified access across all infrastructure</li><li=
+>Dynamic discovery of available resources</li></ul>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"mktoModule" id=3D"slkgodk08df1066-967b-452b-a670-408473981b86">
+<tbody>
+<tr>
+<td style=3D"background: #FFFFFF;">
+<table width=3D"540" style=3D"width:540px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100" id=3D"BT-1-C" mktoname=3D=
+"Module">
+<tbody>
+<tr>
+<td style=3D"padding: 16px 0 16px 0;">
+<table border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" class=3D"cta" style=3D"background-color:#512FC9;font-f=
+amily:sans-serif;font-size:16px;font-weight:bold;text-align:center;-webkit-=
+text-size-adjust:none; padding: 14px 28px 14px 28px; line-height: 1; border=
+-radius:0px;">
+<a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGar3WfIb4VUtN66AwgFV=
+UCukb9LhfnrybccS3LiyM1mGQiXRW2V9_yMyIBCRYVSdOqXRKBIfo=3D" style=3D"color: #=
+ffffff; text-decoration: none;">Read Blog</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"600" style=3D"width:600px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100 mktoModule" id=3D"F-1">
+<tbody>
+<tr>
+<td style=3D"padding: 16px 0 16px 0; text-align: center; background: #F5F5F=
+5; font-size: 12px; line-height: 1.4em;" class=3D"mktoText" id=3D"kdjwe9">
+<div style=3D"text-align: center;">
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-size: 14px; font-family: arial, helvetica, sans-serif; =
+color: #000000; background-color: transparent; font-weight: 400; font-varia=
+nt: normal; text-decoration: none; vertical-align: baseline; white-space: p=
+re-wrap;">Teleport, 2100 Franklin
+ St, Suite 400, Oakland, CA 94612</span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-family: arial, helvetica, sans-serif; font-size: 14px;"=
+><span style=3D"color: #000000; background-color: transparent; font-weight:=
+ 400; font-variant: normal; text-decoration: none; vertical-align: baseline=
+; white-space: pre-wrap;">If you no
+ longer wish to receive these emails anymore, click on the following link: =
+</span>
+</span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-family: arial, helvetica, sans-serif; color: #000000; f=
+ont-size: 14px;"><a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGar=
+3WfIZNU58-vbq-5aQkdzvFiCWbjQ8eN8GmpeEBSiV-HMfMQ8DNjBenMUdO-8NgYnLJfIx8=3D" =
+style=3D"color: #000000;">UNSUBSCRIBE</a></span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<br>
+<span style=3D"font-family: arial, helvetica, sans-serif; color: #000000; f=
+ont-size: 14px;"><a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGar=
+3WfIY4fy_6o0BBjLapNtrakyJVxshIjB0Ejz97WT64wlHocRyUbmlkbxJ48sWIfUqWzVjU=3D" =
+style=3D"color: #000000;" target=3D"_blank">TERMS
+ OF SERVICE</a> | <a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGa=
+r3WfIbRI7CZ0Xix7hM91cPe1QhfJbTmIFPsMZ-Iv7aDRKuRKbQoGwdlCdEu2kIbAqEm3szI=3D"=
+ style=3D"color: #000000;">
+PRIVACY POLICY</a> | <a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAA=
+AGar3WfIbnNNbSYq4cX2nj0Tbon9C_qjZBYl25XmEV3G1iKhPQmiV_h-Fsx6GA8S-ii32v3WVE=
+=3D" style=3D"color: #000000;">
+SECURITY POLICY</a></span><br>
+</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGar3WfIV_16Qjt6wygsR=
+Yul17HTLwBFfUFL58aUuWzK6-IHbfcBsE2OvcbfzComrIBFByUJPY=3D"></a><img src=3D"h=
+ttps://em.goteleport.com/trk?t=3D1&amp;mid=3DODE5LVdIVC00ODMAAAGar3WfIXKGY0=
+0y-mnq3vld5pW9QTGYI0O2kCCJ9A-oEAsKJJlJ5ekKdXySrYPHSG5NS3602N-bCP2gGxwTWOjHP=
+O9-ZuxkSk-f1hz-BSeHYO9dJMwXejv53RavfDq-ZBgS3-WO-nwhGg" width=3D"1" height=
+=3D"1" style=3D"display:none !important;" alt=3D"">
+<p><font face=3D"Verdana" size=3D"1"></font></p>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+------=_Part_21390127_1266567490.1748328312611--

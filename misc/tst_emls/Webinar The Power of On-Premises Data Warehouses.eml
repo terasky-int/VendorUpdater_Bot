@@ -1,0 +1,648 @@
+Received: from AS2P194MB2023.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:5e4::8)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Mon, 26 May 2025
+ 13:58:14 +0000
+Received: from PR0P264CA0050.FRAP264.PROD.OUTLOOK.COM (2603:10a6:100:1d::14)
+ by AS2P194MB2023.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:5e4::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8769.25; Mon, 26 May
+ 2025 13:58:10 +0000
+Received: from AM2PEPF0001C711.eurprd05.prod.outlook.com
+ (2603:10a6:100:1d:cafe::28) by PR0P264CA0050.outlook.office365.com
+ (2603:10a6:100:1d::14) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8769.19 via Frontend Transport; Mon,
+ 26 May 2025 13:58:10 +0000
+Authentication-Results: spf=pass (sender IP is 3.210.190.48)
+ smtp.mailfrom=3369268m.exasol.com; dkim=pass (signature was verified)
+ header.d=3369268m.exasol.com;dkim=pass (signature was verified)
+ header.d=exasol.com;dmarc=pass action=none
+ header.from=exasol.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of 3369268m.exasol.com
+ designates 3.210.190.48 as permitted sender) receiver=protection.outlook.com;
+ client-ip=3.210.190.48; helo=bcg29e.3369268m.exasol.com; pr=C
+Received: from bcg29e.3369268m.exasol.com (3.210.190.48) by
+ AM2PEPF0001C711.mail.protection.outlook.com (10.167.16.181) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8769.18 via Frontend Transport; Mon, 26 May 2025 13:58:09 +0000
+Received: by 172.16.201.86 with SMTP id a0ckhq39om1k7d91sahmdm7ck7hdau7te0bllwcoxca;
+        Mon, 26 May 2025 13:58:07 GMT
+DKIM-Signature: v=1; s=hs2; d=3369268m.exasol.com; 
+        i=@3369268m.exasol.com; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id:list-unsubscribe-post; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=42YJe6mcOr17OjZJ7jsdDTWuqRBuZplgqbkNfh//PAY=; 
+        b=R7jBisCFJIe4p2af1ZtcTRyTpT9dUF+1Jx/mMZ/tMd0rPLrEjCxdXctMsXIbmp
+         sW5TiTcsSaE+VuOBioDdDBaYWD8xIp7UMGDoMAl+01c9J051on0HH/XwjmsnWPF
+         g2vBU424xa15oXbjRoQqj4A8ziRWeiMA6xZInK7orI6ERVKS9fT8o+y1vu1I5a4
+         DwQ0vOCmKgWc1QQCbgCBeapfAYKd+c8V7a8XmWg9DlYK81tHVEqfLlit5jhZLyf
+         uOvQS+wO3BA7rpTabzc9irIU+Knh8v6idDlBOcbh0hMVlqBbQSuT/NTN2XGNM3U
+         QU+ugKS2fUe2CST6Ik9bzH9z+Jww==; q=dns/txt; t=1748259959; 
+        x=1748522759;
+DKIM-Signature: v=1; s=hs1; d=exasol.com; i=@exasol.com; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id:list-unsubscribe-post; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=42YJe6mcOr17OjZJ7jsdDTWuqRBuZplgqbkNfh//PAY=; 
+        b=hdQqi/Cp5Vbz6OrKyM33di0ddLSgvPFyB72dZeW1GAkR214jmhjnj4SrIL25AF
+         L06bAPsmGP5pkr87VHSEg1/gfjI176WQDWuNPPRXlvU9aJCRtMPi5TT0etW3mZM
+         J8guuII7blchGaxZWdKzXQ0LN6T7jDIXaD53VKr3/natQFr7g1CdzEZr6Z2HLJW
+         KRXFP0yAXtileyolyS3w/kWYfkdRTYpnPRlR/XkbG0yzURjdNXqyV/r1MfwMSM+
+         fptFJRhAUv6iAhLohkEPWOx26qYhOp6vGd2S5/gWzE62WPE00vrwV1zam5dXhVi
+         spLVieUWUpk1tHjOAZrmB0Jw4J1A==; q=dns/txt; t=1748259959; 
+        x=1748522759;
+Return-Path: 1axcl5ygk7ejl8ufx07sli3y1iyxmegjwh2zwf-davidg=terasky.com@3369268m.exasol.com
+X-HS-Cid: 1axfswe7v5auw6dibpaydjgfpg0bcbpt9g7s4v
+List-Unsubscribe: <mailto:1axdif2h7fnnvlue5vx35zviggwsd1aawjp2wv-davidg=terasky.com@3369268m.exasol.com?subject=unsubscribe>, <https://hub.exasol.com/hs/subscription-preferences/v2/unsubscribe-all?data=W2nXS-N30h-M0W2-brcn3d7KfNW2WxhKk2YKwL0W3gsB3_36yzhpW2Rtj1D2CwnyzW2xGmxS2CXrCCW2MNYqb3LJFDCW1VpfVn2qMtZmW3db9Q83P75PfW4p8xYG3SCMN_W3z24M31SlvyWW1QtQsH32DG_hW3C5_CG3DVL7dW2RN7zg1N4nFQW3NTx6V3XH8wmW32mYlg2vNmkdW41WvbG30zCBXW36wTLn32qvTSW32B8DK309hcYW3dynlD3b2wHGW3Q-_Dh1QbLK7W49yljG22WlD6W34mPkY4kHPmjW2FS5bG1Szz2PW1Vcz_-1N7LtyW2-H6pf3dghs-W2HSNWy1S4PnBW3jl2dt3XPqYCW2KqbLB2MPNsMW41Qtgw1-ZJMFW3JSlMH4mbkrPW41Wvms22VYk4W2v_V8g49KRcCW3gs9pJ4fjnjWW1SgkKD2Rg7YSW1Sr6Mc3LG578W2q-y0y43B-t5W2FXLj-1S4MmWW3D_Fwr3g5Nw1W2Kqf4N3X_bmDW2Ft8r12PnbmNW2TBS_j30kGlsW34j2SY38kGR5W3bwvkV1Nx5wdW2sJLXN4fw9wQ0>
+Date: Mon, 26 May 2025 15:58:07 +0200
+From: Exasol <marketing@exasol.com>
+Reply-To: marketing@exasol.com
+To: davidg@terasky.com
+Message-ID: <1748259953555.243694f2-5a10-4aee-b077-a6628e226d59@3369268m.exasol.com>
+Subject: Webinar: The Power of On-Premises Data Warehouses
+Content-Type: multipart/alternative;
+	boundary="----=_Part_9505273_1887822997.1748259959429"
+X-Report-Abuse-To: abuse@hubspot.com (see
+ https://policy.hubspot.com/abuse-complaints)
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-MS-Exchange-Organization-ExpirationStartTime: 26 May 2025 13:58:09.7642
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 668a3da2-0612-441b-0b48-08dd9c5d5920
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM2PEPF0001C711:EE_|AS2P194MB2023:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AM2PEPF0001C711.eurprd05.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 668a3da2-0612-441b-0b48-08dd9c5d5920
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:2;ARA:13230040|4022899009|69100299015|2092899012|4123199012|5063199012|5073199012|39142699007|31052699007|27102699006|1032899013|3072899012|12012899012|2066899003|4076899003|8096899003;
+X-Forefront-Antispam-Report: CIP:3.210.190.48;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:bcg29e.3369268m.exasol.com;PTR:bcg29e.3369268m.exasol.com;CAT:NONE;SFS:(13230040)(4022899009)(69100299015)(2092899012)(4123199012)(5063199012)(5073199012)(39142699007)(31052699007)(27102699006)(1032899013)(3072899012)(12012899012)(2066899003)(4076899003)(8096899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 26 May 2025 13:58:09.5102
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 668a3da2-0612-441b-0b48-08dd9c5d5920
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AM2PEPF0001C711.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS2P194MB2023
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:04.5701108
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8769.014
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(4710137)(4713078)(4714097)(4999163)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?S1R1TVdORWpFY3AvTVZCMnltejJiOHFIcjVYbTVQVURBSm1rRVBOcWFMZzJG?=
+ =?utf-8?B?WEZwYW40eTFHeFIrSTV4eXBlcjFOY1ZBY1NmMVdoK0NrUFhmNlBwMmRnUjBr?=
+ =?utf-8?B?dHU4N0lSdUhFY3ZWYXVsYXJjM0U0KzFCSUtYTmdTdlNPZGJ3SnVvcUhQS2N6?=
+ =?utf-8?B?ODB5eCtndjVCRSt2WndST3YvK1FsVFJrQ1lWQmovZVkySTN2RTZzOVUzVWhH?=
+ =?utf-8?B?cGFvMi9mdEJ6d3dkVTFUSmxNcVBEbGNRc0x5cEllWXhteTd3QWZ5VUwwNldB?=
+ =?utf-8?B?QjVNb3NldUN2d1ZYaExyWW9JNzNNQjNuMXVtbzllK2ZhSitJeC96RWFYVGx0?=
+ =?utf-8?B?eC9Ld05pNm9ZQ2JIRVg5Wm84dEFmUCtCc09taVVCQjVlT2N6NTBvNDh3Y2cr?=
+ =?utf-8?B?eFRGVEkwUEFUSFNlcUJpN1N2bWZIQy90eUVySUhNc0lrT1p6Y2dxUXE1WU9I?=
+ =?utf-8?B?S2QzNSs1OG5iQklPTGVYeWdYSXlZOFg1Z0ZqSE1xVVN5bzgvakpiV0JaYTA2?=
+ =?utf-8?B?MWZ4V3pLYUs0aXdZMjdwcE9nTlRyOFlSVnc3ellLZ3VKUkdlcXU1QkpES1o2?=
+ =?utf-8?B?UHI0VE5uV0ZEdGxjOFI4U2RWbFIxSDZzSGd3VlFlZkIxakNuWmJNK2Rkc3BP?=
+ =?utf-8?B?bmZZMmFBb3UvREhvdzkyTWVyaHNKMU5hS1RpWHpUS2lMMVRFcm5RS0Njbzhh?=
+ =?utf-8?B?VnpIVXhhRk9WOExKWXFKTms1dnBtcEE5M2RPeVJ2RTNkRTFQNmM0c0txSmNO?=
+ =?utf-8?B?aTM3YVp1dGZYYWF5UUVSVStERWlLak54cEdlanpINjByTm1xWUdUcGt0dEll?=
+ =?utf-8?B?OFNqUjhSbUhPSVYxb0FkdkFrYTI4WS9jZ0szckVkUStrZWdMWkhzL3JGZ3Vj?=
+ =?utf-8?B?dEdvSFljaUtPemFabVVzcXVtKzRhSnVUaWwwWk9wWnZxMzczRWc0clhlc3NH?=
+ =?utf-8?B?UU11Z3ZSYTlSem1ORkphVXpYR09MbEo0V3FIQTJuNzB5dGZXS1pZSDluZ2F4?=
+ =?utf-8?B?Z1FvdEZJc3greHFDbkJTUjJza0V6a25tdGNsbUdCY2E2NHNtc0c0aU9DOFJB?=
+ =?utf-8?B?UG84YlNTeTNiQkxkbEQ4Z2V5Nnh6YWxNaW8wRnpqc2RZN0tGSW5MN1p4VVdX?=
+ =?utf-8?B?bGMzYVNiaUZoL3p3aVZidFdKbEpGTlQ4ejRkZlpPUXorNG84eUxMUEVNaWFK?=
+ =?utf-8?B?TFk5Z01LY3JMN2JkaEo2UlA5R0pBU0x4SmVlTGF6ZU8zS2NOTE1HUEZKdita?=
+ =?utf-8?B?eldjd0VENTR4T1RrNVk4MytWLzFqcG00R3FrSzdKT3FDQ0hzTHVLUU5oTWQ1?=
+ =?utf-8?B?aTd4Zk1zbmdZSjdQT0NDdjdsYythaUFXZ3R2ZGZxOWpsd1VBaUxnSHVLTE1p?=
+ =?utf-8?B?Rm45ZEJkQ1JHSU9HN1pibWh1b0xlYnlrNkhmM052SVlTK3hWbUU4cDhCOFJO?=
+ =?utf-8?B?NjFTcWVsajQ5UXRHdVhES1NkZVpuVWdNSU55UE84VFZCZFVCcklPUnN2M3NX?=
+ =?utf-8?B?Z2EzbjJKWkZRcVBmUEdNZTE0bEtCUlNYbkFIRUVSNU5oMG9KdlJlRDlTZGJh?=
+ =?utf-8?B?c2JGRjFWU2lDZUpaTW1VYk0rdkFHTjB6UDAxaGxFRkJUNGZlSVhHb3N4VDBn?=
+ =?utf-8?B?VnBWRlg0UDQyVUozaUNZTC9UWVlZRTJCZnJzT0ppQVJiQ0l1cHNYWk1rS1BU?=
+ =?utf-8?B?bVhvZUFzUnZ1d1JwMVU4c3FLM3lEbGpwSTRnY3F4ak0zUGp5aHpvVlB1QkJy?=
+ =?utf-8?B?WGhzTUl1RzZ1b3RJTTRUQmpPaW0xOG0wbWtBbTkyS2lWMWRYL2ZaZWFlbEdF?=
+ =?utf-8?B?K1ZFaW10eE9GektZNGVpdk5aL1lwTjRmdkNYMHJsNHFjZzhrS1ArNElsc0Fs?=
+ =?utf-8?B?cUtVRjZabzlXb1lUMDJBUWkwZmFtMXdSSXhvL2Nwek5MOWwzemN0bytza2lt?=
+ =?utf-8?B?QjdXcU9UMVFmbWpPTlUvRS8zNlJadWFCcWc0ZldpOUFHOStxZGJiS3JJaGtq?=
+ =?utf-8?B?YW84RjVOZm1semgzTDFkOWsySlU5bGk1WFpLeTEvdWE5QjN4RUwxbFdCTzcx?=
+ =?utf-8?B?VWdnNU95MzlYeTJHQkxleDNIcnh3Q1owYXp6V3NMSVhMblIzejdHcE9nM0RN?=
+ =?utf-8?B?V1l1SEd5cXBmczk5V0I3V05PSnhpak9UMVprc1oreEhoblpTRWFWVkVPdFNV?=
+ =?utf-8?B?YXY3c1UyVEJuUTZwbTc2WkZ4enEvSDA5OFdOZEdCVGxCQnl6d2JTbkxObHN5?=
+ =?utf-8?B?di8yN2g3TjV0MU9wbHhNclpaenQzRkxEZkhDcXFWTXZMOHBDeldJQXdoZFds?=
+ =?utf-8?B?Qm13SG5oQUt2MTBiSSsvbTJpb280L0ZsTDdXSVF0bENleFlvWGE5TmFUWmZ5?=
+ =?utf-8?B?Q1kvWGdsR05BcEMvUlViVGg5L3JFbkl0K2tGc3B4Vm8wZ1k4Wnpyc0M0VUF5?=
+ =?utf-8?B?bU84d0Y0a0k3cHJWR3JsZWw3MU0xN2xnbDBucHpsYVdjN2xTZWNjYnc4b0NW?=
+ =?utf-8?B?b0NwYWpYdWVOMmNRaENUdHIyN2Vwc1R4ZmhuQkNSQUJJWW1jbWRsUXNaWlBl?=
+ =?utf-8?B?WXJkNEtVcXF3MXBTT1RiM1lUbzNpSzhWZHRyL0d1bVdtalFDbFJua3dHNFlN?=
+ =?utf-8?B?S2tRUVg1UC9IcjUvS3c4c3huUGl6amxJaGdwOVowcE9JWGN0MGxXdUpMaFpj?=
+ =?utf-8?B?ZThjRHFKYkJnVUNxN3E3V01lK2YwVzR0TzRoNlNaZXZkS2FZM283V0xuTE5J?=
+ =?utf-8?B?TDlMNitMYnI5NG9PdUsvdUNJY0dFY3QvTFJYUkhCa1BlV1dvNitaeDFSQnlr?=
+ =?utf-8?B?MWdKSkU5RDlJY01Tams1cFFjRTFRV3ordE5qcXVjRG0rV1NpeVg1V1phMlVm?=
+ =?utf-8?B?OXpadWxydlNRWHBkVnp6bXk3RDh0cGV2QTZRamlRMlVOeXpIY1RLYkpQUkxs?=
+ =?utf-8?B?dDZPaFZQRmRWUWREbEZLdWpSM3BSL2ZJVytseWltSzJYczdQY1E9PQ==?=
+MIME-Version: 1.0
+
+------=_Part_9505273_1887822997.1748259959429
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hear strategic guidance and expert insight from Mike Ferguson on the compel=
+ling role of on-premises data warehouses
+[Exasol] <https://hub.exasol.com/e3t/Ctc/LV+113/cpprT04/VVF9ZT8T9J-KW8KZtT6=
+3CsJMNW3fCDQw5x1H0mN5n2LQC3qgyTW6N1vHY6lZ3kQW7wzn0_6RLWwBVFMZvB1ccFDqW6RzJM=
+N4D-lTcW7vV8jT14-NnSN17-sRjKrm55W5N_NF462zVw5W3jYkd098myCkW5FzFKP6d6SywW5Gf=
+-wN6SRtwwW6Vl9Y36hRrWpW2Gl4qn3n3KXsN43SnSDsf8MhN4F0KZtnC55vW76hQKP38JStcW9b=
+zHf914pZnBW1mw7pM7WYgQfW958Lkh4C--42W5t8LyL1rL30tW6Sh3jN4hb6nSW4fbmQb7-QFgZ=
+W1PnhgD76DnMJW5GxCxz2wDhHPf7gmpGF04>
+Discover the Future of Data Warehousing
+
+Join our expert-led webinar to explore the strategic advantages of on-premi=
+ses data warehouses in today's cloud-first world - and how to leverage thes=
+e solutions for optimal performance.
+
+
+
+Receive strategic guidance and insightful analysis from Mike Ferguson, CEO =
+of Intelligent Business Strategies Limited, and author of our latest whitep=
+aper, The Power of On-Premises Data Warehouses in a Cloud-First World.
+
+
+
+Learn about:
+
+=E2=9C=85 The most pressing challenges in data management and analytics
+
+=E2=9C=85 Perspectives on balancing cloud and on-prem strategies
+
+=E2=9C=85 Navigating digital transformations and maximizing AI advancements
+
+=E2=9C=85 How Exasol can optimize your data landscape
+
+
+
+=F0=9F=93=85 18 June 2025
+=F0=9F=95=92 3:00 PM CEST / 2:00 PM GMT / 9:00 EST
+=F0=9F=8E=A4 Live
+
+=F0=9F=91=89 Register now <https://hub.exasol.com/e3t/Ctc/LV+113/cpprT04/VV=
+F9ZT8T9J-KW8KZtT63CsJMNW3fCDQw5x1H0mN5n2LRv3qgyTW8wLKSR6lZ3nXW5rYpQk8JV0qyV=
+hQK4-5BH8SDW4mDJrb4LNKYZN2Y98l4WKSCTW8crKbN8g1nGsW4VDSWp1txc8bW3SfB3S85rF1P=
+VPlhwQ1kGFrxV8M-277nBBpbN6qkJHCfMZw_W3MNxcn3-pWYlVK-wjF4Ds2FSW3FmfKY1npgpCW=
+693v3j1rpzBsW723MzX9hd-bcW47ZG5j6-ckJZW8C1-bw1SlgrBW55Wzdd1W8Z57N3k456PM5Hb=
+xVZqKdf6WW18jW9ll2yF6xD7CHV7Zy3Y4s6p9YW2h0HxY1dXTWTW7BbxzJ40TSycW7HZw603X_4=
+6HW59TdbQ5X32G6W1dR7694bGK9fN4VxzKBfpwt1f3l2rdd04>
+
+Can=E2=80=99t attend live?
+
+Register anyway to get access to the full session on-demand after the event=
+.
+
+
+
+Best,
+
+The Exasol Event Team
+
+Exasol AG, Neumeyerstrasse 22-26, Nuremberg, Bavaria 90411, Germany
+
+Unsubscribe<https://hub.exasol.com/hs/preferences-center/en/direct?data=3DW=
+2nXS-N30h-zNW1NyLG42YrSMSW1Scr5_348-ZVW3VBQq93F9F-1W3Zx3nC3DWzfPW4pB0YF3GWN=
+6ZW47y7CV1-Yrh1W2KG7mk47PNjCW3gbPrH3F4FY3W2CtKtD43H8slW3SYkgh3j08bbW3JQgc92=
+56CylW2KNRQn34h8R0W3c_N7M30b-m4W4hvd313ZCb5LW47K9Lb20Zw_FW34BQ5g36pBZnW2Yfx=
+nt1VtqlBW2PvpRt3z9C-9W25dSSQ3ZvnqTW3gflmf1QvcMNW2KnwTj2WfgVpW3M3wDc49LF_wW3=
+4x5tx2vwdCBW4mk0-n2D0vczW3SKJLr2p1LxbW1R_n6K1Nhb-hW2w0DJg4fpNlCW3_FWCh41rrH=
+xW32zR511QgvrrW49mjh22D0Y9bW3T5Tgb2FDr6qW1LhL3-4fxqYDW49Vd-l30DqcZW1NG9St1X=
+h_fLW3_DdKt1LxJ6KW3BQlbl1Sx5XXW3VBn__3VztHlW1V7pQw4p7FdjW4tBsPS23ndHVW2CDHX=
+b3z1Kh-W3g73Mg41pS0nW3C1W6g3VPDzFW34pP3l3dfvW3W1Qcc4V3NVph3f3QS30904&utm_ca=
+mpaign=3D12608942-2025_04_Legacy%20Replacement&utm_source=3Dhs_email&utm_me=
+dium=3Demail&utm_content=3D363264858&_hsenc=3Dp2ANqtz--dNq0z-9z1GMn9J7VqWBD=
+V5xxks3mLUD8VqxZboJnk4GWAzsc1G6zSBGusFFybSI-zNf0eIoMrNtBTT2e1_nbQAsGwNA&_hs=
+mi=3D363264858> Manage preferences<https://hub.exasol.com/hs/preferences-ce=
+nter/en/page?data=3DW2nXS-N30h-zNW1NyLG42YrSMSW1Scr5_348-ZVW3VBQq93F9F-1W3Z=
+x3nC3DWzfPW4pB0YF3GWN6ZW47y7CV1-Yrh1W2KG7mk47PNjCW3gbPrH3F4FY3W2CtKtD43H8sl=
+W3SYkgh3j08bbW3JQgc9256CylW2KNRQn34h8R0W3c_N7M30b-m4W4hvd313ZCb5LW47K9Lb20Z=
+w_FW34BQ5g36pBZnW2Yfxnt1VtqlBW2PvpRt3z9C-9W25dSSQ3ZvnqTW3gflmf1QvcMNW2KnwTj=
+2WfgVpW3M3wDc49LF_wW34x5tx2vwdCBW4mk0-n2D0vczW3SKJLr2p1LxbW1R_n6K1Nhb-hW2w0=
+DJg4fpNlCW3_FWCh41rrHxW32zR511QgvrrW49mjh22D0Y9bW3T5Tgb2FDr6qW1LhL3-4fxqYDW=
+49Vd-l30DqcZW1NG9St1Xh_fLW3_DdKt1LxJ6KW3BQlbl1Sx5XXW3VBn__3VztHlW1V7pQw4p7F=
+djW4tBsPS23ndHVW2CDHXb3z1Kh-W3g73Mg41pS0nW3C1W6g3VPDzFW34pP3l3dfvW3W1Qcc4V3=
+NVph3f3QS30904&utm_campaign=3D12608942-2025_04_Legacy%20Replacement&utm_sou=
+rce=3Dhs_email&utm_medium=3Demail&utm_content=3D363264858&_hsenc=3Dp2ANqtz-=
+-dNq0z-9z1GMn9J7VqWBDV5xxks3mLUD8VqxZboJnk4GWAzsc1G6zSBGusFFybSI-zNf0eIoMrN=
+tBTT2e1_nbQAsGwNA&_hsmi=3D363264858>
+
+
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_9505273_1887822997.1748259959429
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3=
+.org/1999/xhtml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:=
+v=3D"urn:schemas-microsoft-com:vml" lang=3D"en"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<title>Webinar: The Power of On-Premises Data Warehouses</title>
+<meta property=3D"og:title" content=3D"Webinar: The Power of On-Premises Da=
+ta Warehouses">
+<meta name=3D"twitter:title" content=3D"Webinar: The Power of On-Premises D=
+ata Warehouses">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+<!--[if gte mso 9]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings><w:WordDocument xmlns:w=3D"urn:schemas-micro=
+soft-com:office:word">
+      <w:DontUseAdvancedTypographyReadingMail/>
+    </w:WordDocument></xml>
+ =20
+  <style>
+    ul > li {
+      text-indent: -1em;
+    }
+  </style>
+<![endif]--><!--[if mso]>
+<style type=3D"text/css">
+ body, td {font-family: Arial, Helvetica, sans-serif;}
+ .hse-body-wrapper-table {background-color: #EEEEEE;}
+</style>
+<![endif]--><!--[if mso | IE]>
+  <style type=3D"text/css">
+    .hse-column-container { border: none !important; padding: 0 !important;=
+ }
+  </style>
+<![endif]-->
+<meta name=3D"generator" content=3D"HubSpot">
+<meta property=3D"og:url" content=3D"https://hub.exasol.com/-temporary-slug=
+-81c8ab1e-0de0-41eb-9b97-369ef026608c">
+<meta name=3D"robots" content=3D"noindex,follow">
+<!--[if !((mso)|(IE))]><!-- --><style type=3D"text/css">@media only screen =
+and (max-width:639px){img.stretch-on-mobile,.hs_rss_email_entries_table img=
+,.hs-stretch-cta .hs-cta-img{height:auto !important;width:100% !important}
+.display_block_on_small_screens{display:block}.hs_padded{padding-left:20px =
+!important;padding-right:20px !important}
+.hs-hm,table.hs-hm{display:none}.hs-hd{display:block !important}table.hs-hd=
+{display:table !important}
+}@media only screen and (max-width:639px){.hse-border-m{border-left:1px sol=
+id #eaf0f6 !important;border-right:1px solid #eaf0f6 !important;box-sizing:=
+border-box}
+.hse-border-bottom-m{border-bottom:1px solid #eaf0f6 !important}.hse-border=
+-top-m{border-top:1px solid #eaf0f6 !important}
+.hse-border-top-hm{border-top:none !important}.hse-border-bottom-hm{border-=
+bottom:none !important}
+}.moz-text-html .hse-column-container{max-width:600px !important;width:600p=
+x !important}
+.moz-text-html .hse-column{display:table-cell;vertical-align:top}.moz-text-=
+html .hse-section .hse-size-12{max-width:600px !important;width:600px !impo=
+rtant}
+@media only screen and (min-width:640px){.hse-column-container{max-width:60=
+0px !important;width:600px !important}
+.hse-column{display:table-cell;vertical-align:top}.hse-section .hse-size-12=
+{max-width:600px !important;width:600px !important}
+}@media only screen and (max-width:639px){.hse-body-wrapper-td{padding-top:=
+20px !important}
+#section_165306393217918 .hse-column-container{background-color:#fff !impor=
+tant}
+}@media only screen and (max-width:639px){.hse-body-wrapper-td{padding-bott=
+om:20px !important}
+#section-2 .hse-column-container{background-color:#fff !important} }</style=
+><!--<![endif]--><style type=3D"text/css">#hs_body #hs_cos_wrapper_main a[x=
+-apple-data-detectors]{color:inherit !important;text-decoration:none !impor=
+tant;font-size:inherit !important;font-family:inherit !important;font-weigh=
+t:inherit !important;line-height:inherit !important}
+a{text-decoration:underline}p{margin:0}body{-ms-text-size-adjust:100%;-webk=
+it-text-size-adjust:100%;-webkit-font-smoothing:antialiased;moz-osx-font-sm=
+oothing:grayscale}
+table{border-spacing:0;mso-table-lspace:0;mso-table-rspace:0}table,td{borde=
+r-collapse:collapse}
+img{-ms-interpolation-mode:bicubic}p,a,li,td,blockquote{mso-line-height-rul=
+e:exactly}</style>
+</head>
+<body id=3D"hs_body" bgcolor=3D"#EEEEEE" style=3D"margin:0 !important; padd=
+ing:0 !important; font-family:Arial, sans-serif; font-size:15px; color:#000=
+000; word-break:break-word">
+<div id=3D"preview_text" style=3D"display:none;font-size:1px;color:#EEEEEE;=
+line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;" la=
+ng=3D"en">
+Hear strategic guidance and expert insight from Mike Ferguson on the compel=
+ling role of on-premises data warehouses</div>
+<!--[if gte mso 9]>
+<v:background xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"t">
+    <v:fill type=3D"tile" size=3D"100%,100%" color=3D"#ffffff"/>
+</v:background>
+<![endif]-->
+<div class=3D"hse-body-background" lang=3D"en" style=3D"background-color:#e=
+eeeee" bgcolor=3D"#eeeeee">
+<table role=3D"presentation" class=3D"hse-body-wrapper-table" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"margin:0; padding:0; width:100% !importan=
+t; min-width:320px !important; height:100% !important" width=3D"100%" heigh=
+t=3D"100%">
+<tbody>
+<tr>
+<td class=3D"hse-body-wrapper-td" valign=3D"top" style=3D"font-family:Arial=
+, sans-serif; font-size:15px; color:#000000; word-break:break-word; padding=
+-top:20px; padding-bottom:20px">
+<div id=3D"hs_cos_wrapper_main" class=3D"hs_cos_wrapper hs_cos_wrapper_widg=
+et hs_cos_wrapper_type_dnd_area" style=3D"color: inherit; font-size: inheri=
+t; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-t=
+ype=3D"dnd_area">
+<div id=3D"section_165306393217918" class=3D"hse-section hse-section-first"=
+ style=3D"padding-left:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+     =20
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column-0-0" class=3D"hse-column hse-size-12">
+<div id=3D"hs_cos_wrapper_module_165306393217917" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; f=
+ont-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widge=
+t" data-hs-cos-type=3D"module">
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td class=3D"hs_padded" align=3D"left" valign=3D"top" style=3D"font-family:=
+Arial, sans-serif; color:#000000; word-break:break-word; text-align:left; p=
+adding:40px 20px 30px 40px; font-size:0px">
+<a href=3D"https://hub.exasol.com/e3t/Ctc/LV+113/cpprT04/VVF9ZT8T9J-KW8KZtT=
+63CsJMNW3fCDQw5x1H0mN5n2LQC3qgyTW6N1vHY6lZ3kQW7wzn0_6RLWwBVFMZvB1ccFDqW6RzJ=
+MN4D-lTcW7vV8jT14-NnSN17-sRjKrm55W5N_NF462zVw5W3jYkd098myCkW5FzFKP6d6SywW5G=
+f-wN6SRtwwW6Vl9Y36hRrWpW2Gl4qn3n3KXsN43SnSDsf8MhN4F0KZtnC55vW76hQKP38JStcW9=
+bzHf914pZnBW1mw7pM7WYgQfW958Lkh4C--42W5t8LyL1rL30tW6Sh3jN4hb6nSW4fbmQb7-QFg=
+ZW1PnhgD76DnMJW5GxCxz2wDhHPf7gmpGF04" target=3D"_blank" style=3D"color:#00a=
+4bd" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"UoTsTbRe"><img alt=3D"Exas=
+ol" src=3D"https://hub.exasol.com/hs-fs/hubfs/logodark.png?width=3D300&amp;=
+upscale=3Dtrue&amp;name=3Dlogodark.png" style=3D"outline:none; text-decorat=
+ion:none; border:none; max-width:100%; font-size:16px" width=3D"150" align=
+=3D"middle">
+</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section-0" class=3D"hse-section" style=3D"padding-left:10px; pad=
+ding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+     =20
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column-17313328052131-0" class=3D"hse-column hse-size-12">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#000000; word-break:break-word; padding:10px 40px 0px">
+<div id=3D"hs_cos_wrapper_module-0-0-1" class=3D"hs_cos_wrapper hs_cos_wrap=
+per_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font-size: =
+inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs=
+-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module-0-0-1_" class=3D"hs_cos_wrapper hs_cos_wra=
+pper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit; font-si=
+ze: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" dat=
+a-hs-cos-type=3D"rich_text">
+<h1 style=3D"margin:0; mso-line-height-rule:exactly; line-height:175%; font=
+-size:28px; font-weight:bold">
+Discover the Future of Data Warehousing</h1>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">Join our expert=
+-led webinar to explore the strategic advantages of on-premises data wareho=
+uses in today's cloud-first world - and how to leverage these solutions for=
+ optimal performance.</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">Receive strateg=
+ic guidance and insightful analysis from Mike Ferguson, CEO of Intelligent =
+Business Strategies Limited, and author of our latest whitepaper, The Power=
+ of On-Premises Data Warehouses in
+ a Cloud-First World.&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-weight: bold;">Learn about:</span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%; padding-left:40=
+px">=E2=9C=85 The<span style=3D"font-weight: normal;">&nbsp;most pressing c=
+hallenges in data management and analytics</span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%; padding-left:40=
+px">=E2=9C=85 Perspectives on balancing cloud and on-prem strategies</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%; padding-left:40=
+px">=E2=9C=85 Navigating digital transformations and maximizing AI advancem=
+ents</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%; padding-left:40=
+px">=E2=9C=85 How Exasol can&nbsp;optimize your data landscape</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">=F0=9F=93=85 18=
+ June&nbsp;2025&nbsp;<br>
+=F0=9F=95=92 3:00 PM CEST /&nbsp;2:00 PM GMT / 9:00 EST<br>
+=F0=9F=8E=A4 Live</p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#000000; word-break:break-word; padding:10px 20px">
+<div id=3D"hs_cos_wrapper_module_17373801205492" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"border-collapse:separate!important">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"middle" bgcolor=3D"#76bc1d" style=3D"font-fa=
+mily:Arial, sans-serif; font-size:15px; color:#000000; word-break:break-wor=
+d; border-radius:8px; cursor:auto; background-color:#76bc1d; mso-padding-al=
+t:12px 18px">
+<a href=3D"https://hub.exasol.com/e3t/Ctc/LV+113/cpprT04/VVF9ZT8T9J-KW8KZtT=
+63CsJMNW3fCDQw5x1H0mN5n2LRv3qgyTW8wLKSR6lZ3nXW5rYpQk8JV0qyVhQK4-5BH8SDW4mDJ=
+rb4LNKYZN2Y98l4WKSCTW8crKbN8g1nGsW4VDSWp1txc8bW3SfB3S85rF1PVPlhwQ1kGFrxV8M-=
+277nBBpbN6qkJHCfMZw_W3MNxcn3-pWYlVK-wjF4Ds2FSW3FmfKY1npgpCW693v3j1rpzBsW723=
+MzX9hd-bcW47ZG5j6-ckJZW8C1-bw1SlgrBW55Wzdd1W8Z57N3k456PM5HbxVZqKdf6WW18jW9l=
+l2yF6xD7CHV7Zy3Y4s6p9YW2h0HxY1dXTWTW7BbxzJ40TSycW7HZw603X_46HW59TdbQ5X32G6W=
+1dR7694bGK9fN4VxzKBfpwt1f3l2rdd04" target=3D"_blank" style=3D"color:#00a4bd=
+; font-size:16px; font-family:Arial, sans-serif; Margin:0; text-transform:n=
+one; text-decoration:none; padding:12px 18px; display:block" data-hs-link-i=
+d=3D"0" data-hs-link-id-v2=3D"03MrVvTl"><strong style=3D"color:#ffffff;font=
+-weight:normal;text-decoration:none;font-style:normal;">=F0=9F=91=89
+ Register now</strong> </a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#000000; word-break:break-word; padding:10px 40px 20px">
+<div id=3D"hs_cos_wrapper_module_17470354646713" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17470354646713_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-weight: bold;">Can=E2=80=99t attend live?
+</span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">Register anyway=
+ to get access to the full session on-demand after the event.</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">Best,&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%; font-weight:bol=
+d">The Exasol Event Team&nbsp;</p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section-2" class=3D"hse-section hse-section-last" style=3D"paddi=
+ng-left:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff; padding-=
+top:10px" bgcolor=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+     =20
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;padding-top:10px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column-2-0" class=3D"hse-column hse-size-12">
+<div id=3D"hs_cos_wrapper_module-2-0-1" class=3D"hs_cos_wrapper hs_cos_wrap=
+per_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font-size: =
+inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs=
+-cos-type=3D"module">
+<table role=3D"presentation" class=3D"hse-footer hse-secondary" width=3D"10=
+0%" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-family:Arial, sans-se=
+rif; font-size:12px; line-height:135%; color:#23496d; margin-bottom:0; padd=
+ing:0">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"font-family:Arial, sans-serif;=
+ font-size:15px; color:#000000; word-break:break-word; text-align:center; m=
+argin-bottom:0; line-height:135%; padding:10px 20px">
+<p style=3D"font-family:Arial, sans-serif;font-size:12px;font-weight:normal=
+;text-decoration:none;font-style:normal;color:#000000">
+Exasol AG, Neumeyerstrasse 22-26, Nuremberg, Bavaria 90411, Germany </p>
+<p><a data-unsubscribe=3D"true" href=3D"https://hub.exasol.com/hs/preferenc=
+es-center/en/direct?data=3DW2nXS-N30h-zNW1NyLG42YrSMSW1Scr5_348-ZVW3VBQq93F=
+9F-1W3Zx3nC3DWzfPW4pB0YF3GWN6ZW47y7CV1-Yrh1W2KG7mk47PNjCW3gbPrH3F4FY3W2CtKt=
+D43H8slW3SYkgh3j08bbW3JQgc9256CylW2KNRQn34h8R0W3c_N7M30b-m4W4hvd313ZCb5LW47=
+K9Lb20Zw_FW34BQ5g36pBZnW2Yfxnt1VtqlBW2PvpRt3z9C-9W25dSSQ3ZvnqTW3gflmf1QvcMN=
+W2KnwTj2WfgVpW3M3wDc49LF_wW34x5tx2vwdCBW4mk0-n2D0vczW3SKJLr2p1LxbW1R_n6K1Nh=
+b-hW2w0DJg4fpNlCW3_FWCh41rrHxW32zR511QgvrrW49mjh22D0Y9bW3T5Tgb2FDr6qW1LhL3-=
+4fxqYDW49Vd-l30DqcZW1NG9St1Xh_fLW3_DdKt1LxJ6KW3BQlbl1Sx5XXW3VBn__3VztHlW1V7=
+pQw4p7FdjW4tBsPS23ndHVW2CDHXb3z1Kh-W3g73Mg41pS0nW3C1W6g3VPDzFW34pP3l3dfvW3W=
+1Qcc4V3NVph3f3QS30904&amp;utm_campaign=3D12608942-2025_04_Legacy%20Replacem=
+ent&amp;utm_source=3Dhs_email&amp;utm_medium=3Demail&amp;utm_content=3D3632=
+64858&amp;_hsenc=3Dp2ANqtz--dNq0z-9z1GMn9J7VqWBDV5xxks3mLUD8VqxZboJnk4GWAzs=
+c1G6zSBGusFFybSI-zNf0eIoMrNtBTT2e1_nbQAsGwNA&amp;_hsmi=3D363264858" style=
+=3D"font-family:Helvetica,Arial,sans-serif; font-size:12px; color:#000000; =
+font-weight:normal; text-decoration:none; font-style:normal" data-hs-link-i=
+d=3D"0" data-hs-link-id-v2=3D"SFRZzEXk" target=3D"_blank">Unsubscribe</a>
+<a data-unsubscribe=3D"true" href=3D"https://hub.exasol.com/hs/preferences-=
+center/en/page?data=3DW2nXS-N30h-zNW1NyLG42YrSMSW1Scr5_348-ZVW3VBQq93F9F-1W=
+3Zx3nC3DWzfPW4pB0YF3GWN6ZW47y7CV1-Yrh1W2KG7mk47PNjCW3gbPrH3F4FY3W2CtKtD43H8=
+slW3SYkgh3j08bbW3JQgc9256CylW2KNRQn34h8R0W3c_N7M30b-m4W4hvd313ZCb5LW47K9Lb2=
+0Zw_FW34BQ5g36pBZnW2Yfxnt1VtqlBW2PvpRt3z9C-9W25dSSQ3ZvnqTW3gflmf1QvcMNW2Knw=
+Tj2WfgVpW3M3wDc49LF_wW34x5tx2vwdCBW4mk0-n2D0vczW3SKJLr2p1LxbW1R_n6K1Nhb-hW2=
+w0DJg4fpNlCW3_FWCh41rrHxW32zR511QgvrrW49mjh22D0Y9bW3T5Tgb2FDr6qW1LhL3-4fxqY=
+DW49Vd-l30DqcZW1NG9St1Xh_fLW3_DdKt1LxJ6KW3BQlbl1Sx5XXW3VBn__3VztHlW1V7pQw4p=
+7FdjW4tBsPS23ndHVW2CDHXb3z1Kh-W3g73Mg41pS0nW3C1W6g3VPDzFW34pP3l3dfvW3W1Qcc4=
+V3NVph3f3QS30904&amp;utm_campaign=3D12608942-2025_04_Legacy%20Replacement&a=
+mp;utm_source=3Dhs_email&amp;utm_medium=3Demail&amp;utm_content=3D363264858=
+&amp;_hsenc=3Dp2ANqtz--dNq0z-9z1GMn9J7VqWBDV5xxks3mLUD8VqxZboJnk4GWAzsc1G6z=
+SBGusFFybSI-zNf0eIoMrNtBTT2e1_nbQAsGwNA&amp;_hsmi=3D363264858" style=3D"fon=
+t-family:Helvetica,Arial,sans-serif; font-size:12px; color:#000000; font-we=
+ight:normal; text-decoration:none; font-style:normal" data-hs-link-id=3D"0"=
+ data-hs-link-id-v2=3D"qjPJqCop" target=3D"_blank">
+Manage preferences</a> </p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<img src=3D"https://hub.exasol.com/e3t/Cto/LV+113/cpprT04/VVF9ZT8T9J-KW8KZt=
+T63CsJMNW3fCDQw5x1H0mW5n2LzJ3CMQgS112" alt=3D"" width=3D"1" height=3D"1" bo=
+rder=3D"0" style=3D"display:none!important;min-height:1px!important;width:1=
+px!important;border-width:0!important;margin-top:0!important;margin-bottom:=
+0!important;margin-right:0!important;margin-left:0!important;padding-top:0!=
+important;padding-bottom:0!important;padding-right:0!important;padding-left=
+:0!important">
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+------=_Part_9505273_1887822997.1748259959429--

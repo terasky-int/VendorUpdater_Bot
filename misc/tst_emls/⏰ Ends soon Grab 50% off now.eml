@@ -1,0 +1,1220 @@
+Received: from VI1P194MB0560.EURP194.PROD.OUTLOOK.COM (2603:10a6:800:155::12)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Wed, 28 May 2025
+ 13:04:33 +0000
+Received: from DUZPR01CA0226.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:4b4::13) by VI1P194MB0560.EURP194.PROD.OUTLOOK.COM
+ (2603:10a6:800:155::12) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8769.26; Wed, 28 May
+ 2025 13:04:25 +0000
+Received: from DB5PEPF00014B8A.eurprd02.prod.outlook.com
+ (2603:10a6:10:4b4:cafe::6a) by DUZPR01CA0226.outlook.office365.com
+ (2603:10a6:10:4b4::13) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8769.26 via Frontend Transport; Wed,
+ 28 May 2025 13:04:28 +0000
+Authentication-Results: spf=pass (sender IP is 192.174.86.20)
+ smtp.mailfrom=bounces.pluralsightskills.com; dkim=pass (signature was
+ verified) header.d=pluralsightskills.com;dmarc=pass action=none
+ header.from=pluralsightskills.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of
+ bounces.pluralsightskills.com designates 192.174.86.20 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.174.86.20;
+ helo=mta-174-86-20.sparkpostmail.com; pr=E
+Received: from mta-174-86-20.sparkpostmail.com (192.174.86.20) by
+ DB5PEPF00014B8A.mail.protection.outlook.com (10.167.8.198) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8769.18 via Frontend Transport; Wed, 28 May 2025 13:04:24 +0000
+Return-Path: msprvs1=20243qBJBTizP=bounces-280172-2015@bounces.pluralsightskills.com
+X-MSFBL: Rlt3PcFCE8aXPM1SCA9hxSlvi2SOUQYtSHx8oeHJWqw=|eyJ0ZW5hbnRfaWQiOiJ
+	zcGMiLCJtZXNzYWdlX2lkIjoiNjgyZmQ2MDkzNzY4ODYxMDVmNTgiLCJyIjoidHJ
+	haW5pbmdjZEB0ZXJhc2t5LmNvbSIsInN1YmFjY291bnRfaWQiOiIyMDE1IiwiY3V
+	zdG9tZXJfaWQiOiIyODAxNzIifQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=pluralsightskills.com; s=scph0325; t=1748437462;
+	i=@pluralsightskills.com;
+	bh=k37W86so/vSkAIq1z0OYNuFewCwOF3/LkcADtNXzM+I=;
+	h=To:Message-ID:Date:Content-Type:List-Unsubscribe:
+	 List-Unsubscribe-Post:Subject:From:From:To:Cc:Subject;
+	b=cHAdDbTLe+/ou70OHdVpEQzKFS782xDGl1Ud5fBvH229NtRP825p3wMK4t/1UtUfC
+	 RaxN02XSxXwsU24coBplRS+87s7KDnWrkYbo0+Gi7e8EdDrgrmWwdsOhRGzaYxDL1e
+	 Jl3eHoRiX5TE0rH6BRMv77YBRN26rSGifIE8O+IE=
+Received: from [10.90.9.80] ([10.90.9.80])
+	by i-0cf4bb92c53c9fd71.mta1vrest.sd.prd.sparkpost (ecelerity 5.0.0.74392 r(msys-ecelerity:tags/5.0.0.3)) with REST
+	id 85/FD-59160-6D907386; Wed, 28 May 2025 13:04:22 +0000
+To: trainingcd@terasky.com
+Message-ID: <85.FD.59160.6D907386@i-0cf4bb92c53c9fd71.mta1vrest.sd.prd.sparkpost>
+Date: Wed, 28 May 2025 13:04:22 +0000
+Content-Type: multipart/alternative; boundary="_----rhta4FL9hlMvEmg9iOb18A===_94/FD-59160-6D907386"
+X-Campaign-ID: 13614122
+List-Unsubscribe: <https://links.iterable.com/s/u/CYUUGaNR6ud1YrljW_1zhR2AMkJExhHXM9c1pLaqNK81ZyuSN3KkZWZaOq-B_ZAuamyYWDEbxAmTpWz25Y6DGtmhIGBT1FL_IUxVmflhzzG-__jzkdO7vglmZbzyiJuCOVwoFpSXEUypwjEdDvyjCKe2a9Bw0J1b8YrK8eBeRQPRpnAiftOEtAXjbDQVZN8QP9x6LF75rpLaKH2S/XFW9TPp6s4d0kK9aj4Mhj9Ho2laffm6T/9>,<mailto:unsubscribe+13614122+17800069@unsubscribe.iterable.com>
+X-Message-ID: 4448946d724b46e290c4d25ffbfa69d5
+X-Feedback-ID: 17800069:13614122:119602:iterable
+Reply-To: info@pluralsightskills.com
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Subject: =?utf-8?B?4o+wIEVuZHMgc29vbjogR3JhYiA1MCUgb2ZmIG5vdw==?=
+From: "Pluralsight" <hello@pluralsightskills.com>
+Feedback-ID: 17800069:13614122:119602:iterable
+X-MS-Exchange-Organization-ExpirationStartTime: 28 May 2025 13:04:24.9615
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 2f7e0af0-4ca2-4760-b5b8-08dd9de82bd1
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB5PEPF00014B8A:EE_|VI1P194MB0560:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: DB5PEPF00014B8A.eurprd02.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 2f7e0af0-4ca2-4760-b5b8-08dd9de82bd1
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:3;ARA:13230040|30052699003|29132699027|12012899012|5062899012|2092899012|3072899012|4022899009|69100299015|3092899012|1032899013|31052699007|39142699007|8096899003|2066899003|13003099007;
+X-Forefront-Antispam-Report: CIP:192.174.86.20;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mta-174-86-20.sparkpostmail.com;PTR:mta-174-86-20.sparkpostmail.com;CAT:NONE;SFS:(13230040)(30052699003)(29132699027)(12012899012)(5062899012)(2092899012)(3072899012)(4022899009)(69100299015)(3092899012)(1032899013)(31052699007)(39142699007)(8096899003)(2066899003)(13003099007);DIR:INB;
+X-Auto-Response-Suppress: DR, OOF, AutoReply
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 May 2025 13:04:24.2232
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2f7e0af0-4ca2-4760-b5b8-08dd9de82bd1
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: DB5PEPF00014B8A.eurprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1P194MB0560
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:09.6129607
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8769.014
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?TFFlQmtCQXFmalRndUttUXVpNFd1UEZCRGlwWHBnTWh4ZVF5VERCVXMraGdU?=
+ =?utf-8?B?KzdnRXFYUFBWbU5ndVRDOUozcVk1MlBIUmNEWGl3RHZzaUV3dWY4cjFvSWNq?=
+ =?utf-8?B?QzRQMERrZlluaXgvVUs4QjVodWZxek1kT05VQ2FvN2pxT1NkQmJzV2ZHK0tI?=
+ =?utf-8?B?SGVRZUFna1pqOWdCY3IwaFc5RStGZWZwamhMQUJrTGcxcVlNRmFZRGk3NDh5?=
+ =?utf-8?B?ZWJTcVlOOTE5a2Zlbi80TlF0UnQyeGZFL1dFQWJLLzBERVJpR1NmZDNhYWRC?=
+ =?utf-8?B?cGp4N1VoVytqUmF3aGVEYkhEZEZmd3llbUg2clpSZ1FyVGU0N1czOFZ3UmR2?=
+ =?utf-8?B?dDgybGt3OW9wZ2VMdTVpRlg5MlBLZUhPMkhsc081UFZqRmx5TWZSRHZONTNM?=
+ =?utf-8?B?N0dFRnlVQWRsa2xPMlpjaXRNcGNMYWsrQThTU0tpQzlYNml6WU51YVRsakxY?=
+ =?utf-8?B?UXJHMHZuL2FNMUc3NFJlZ1RGOHBtY3Z4SHFCRkJNSEEzZGxyZjU2SkhwRkRl?=
+ =?utf-8?B?dFdmYVo3YnlUZ1ZHV1FqVUVzZ2grSEpKeEVKbCtnc1N3Wnl2c09USGFuMHh2?=
+ =?utf-8?B?aitIaHdnSFYvWUJ0ZkM1SEhNVTRJZVBaL3JQY1MvdkFGYXVXR2c4S041WkRa?=
+ =?utf-8?B?RE1RNW13V1d6OFFNQlZZcGxYNWtHWGJMQThiQmY4VWxXSzlUcE1FU0JjSDZH?=
+ =?utf-8?B?K21ia2w4b1ROM0hFblI2TWVNR2ljMWJSajRqa1FtWXNxaTFxWldOVE1nVHVJ?=
+ =?utf-8?B?OXBRZHY2bnB1R1JVcVlVeW95MnZwRk9hNFZCcjVpSGVYMk9iY2FNT3J0akph?=
+ =?utf-8?B?VDBjQnJxSGgyWUdTd0RYd0srRUhLRHdoNVM3aEsyV0twUHQ4eEdWa2RrQ0FH?=
+ =?utf-8?B?OVB0MU5UMDl0TnNUaTdaRkNEbk1vb3VlVVNMamRISWF0T1JJc0FxSEJnUmxW?=
+ =?utf-8?B?THlKbWVYUU1wUmFZUzkrQ1oxR0prTXVvSU85Qm1tMWFjS3hBS1JIT1FibnNX?=
+ =?utf-8?B?d2s4b2xhbSsvTVh1VzRnaDVlZWFoa1llei9YZFMrOGxLbFVlK3ZkaitOd2pw?=
+ =?utf-8?B?dHZwaXlSYzRwUGpOdkxqMFZocUhIc1B3NVBmQVJWUytWV1JBSGpBRndHZGI3?=
+ =?utf-8?B?TW1HS3pnREZ1QjhvTUxacEIzQzlscXRnMmRDNHMzTHVWZHd6MGZlaytYalNu?=
+ =?utf-8?B?WWcrQTNZTE4yVmNiVERLZ3JRTFF3SVVFcUZuQ3d5L2RWSStRSmllZzdNSmxx?=
+ =?utf-8?B?blZFeEdsOVJNYXZrQU0vMDI1a1VqRlkzTXNubmFJMU1jdEFaaE00dGFGTEVt?=
+ =?utf-8?B?dUNCVUtIZjJWUFF5b1BFR2xzaC81di9WRkpKYW03OFAzZ0hMdkNmY3dBc2Rr?=
+ =?utf-8?B?N2xoT3psVHJ2NWtWcUdLTXU5NFQzVGVCQmRvaTF2cTFGUWNZbVpYam5EUVM3?=
+ =?utf-8?B?L0U4ak4yWmJqbkgxMWlyUnJnSFRSZEVGT2NUOGdtZXBYWUpQa2phNXVhWVhQ?=
+ =?utf-8?B?R1VBazZJdWNLVnR0a0NTWkY2UWNKVEVncmdaM05MUW5FOXhUY1FPNTd5d1oz?=
+ =?utf-8?B?cnZGVFNLaE5UekkvMG85OE82a2JlV2Q5dXdKcVk2SjdCYi96TlUyVnp6ekVI?=
+ =?utf-8?B?K0tLd2JYSzN5cEgzK1NrMVBHM09OSjNHUVpWSEZiOEpYR29RQVhlbmRGY0Fv?=
+ =?utf-8?B?ZjNlaDNHb2xQQlZjVkJxdlBrMmNrS2JvYVlMV0VjU3JqNUhNVDdOMk9LenFt?=
+ =?utf-8?B?QlAxTmI4S1JzT0xIRU1ybkRvcnExTjQrZHZhbXFTWHRSSFA4clR3U3FCUzRy?=
+ =?utf-8?B?eXlkYThzbHM1RllCSUlxeXY0aVV3eVorV2RPVDF4WEZKandqWjA2TVZGOTJT?=
+ =?utf-8?B?TzVDSExvREh2R0IyQ3BzQlQzYkNoa2JzcVF2V0kzNDAyaTFyZEJNR0dqZVFG?=
+ =?utf-8?B?TWl3OTYxc0tTRlNPOUVmWjh1UjhtZTlxKzZ0M3ZOTFVvRDZUVituQnp4SGNm?=
+ =?utf-8?B?L2tyMlpqdi85OWR6MU9vTVIwYTlWdm01YTNJWmpEaGJEVENwVmJTVVBUanMv?=
+ =?utf-8?B?MS93TDhLSHBXVXVXN1N4VmJlL0VRV2QwaTlpdW9SdXMrelRQZVBrOWZKY3E3?=
+ =?utf-8?B?dUE0NDg3MUhGdWtJMnlCWFB4WXBFNmM2eFkvNDRGS1VrSTQvYWlzOWlTT1Ey?=
+ =?utf-8?B?Q0NtWElITzU4aEd5cjFWYTJOOUs4WXN5aUl2TkhVaHZQbW80ck9RZ1c4RDlJ?=
+ =?utf-8?B?N2ZVM0NoamRmUjBRWmJ0STVDOGNQeC9nbzIzaVFGY0Fld0wwa05rRnZyRkwx?=
+ =?utf-8?B?Z2tBbEV4WmpzMG5vQ1Q4WWNzdFo3dlJhSFl1VVFQNlI0ZTBtTDQ2L2NId1o1?=
+ =?utf-8?B?SEdTOGNwcjEvMk9BY213cElYZWd3NDFBMjFXQWRNM0UwSHd1LzBUZFNkOGI3?=
+ =?utf-8?B?WjVJdWt2dlRWN0F6a0YvUll6VWlhelk4d2VRVDRqMlZqMTlnMFlNM2VFZG5s?=
+ =?utf-8?B?R2dGczdMMmZ5UWxMNHdXeXRnM21VOTFsR1NtQi9DVW56T2h4ck9aUjIrQ1hV?=
+ =?utf-8?B?TFg0a0t5RGhCYTZTeUZhMGRLMEJ0eDZ5UzJacDRETkNtejlGMDVWUlFpVDhS?=
+ =?utf-8?B?Qk5xMllYeWRHRlpWN3IxcCtVLzZXMlh0Qm5MVm9kMTU0UmM1Rjk1Z2Y1SlVu?=
+ =?utf-8?B?YnRFK3JxN2RiVHBiMGd1OE5zODZVOW5JeHZ5WTRmaXFvUThiL05WcDlFZEt5?=
+ =?utf-8?B?NWx4d0dGWE1iQnozU09TZkFpbjYybmtXbitYYUhUYnMwU2IwUDV6QzM5N0J1?=
+ =?utf-8?B?bEUrS0lQT3E2c25ZRVFiWG9hOTVLMXZxWk55Q1Y0cnl4bDk3SUhaNnQvUGpk?=
+ =?utf-8?B?YkNKbjVxYnBWTGlHMEhacm54bi9teXc0QW1vWjI5ZGNNcHJVbHAyQU5wRTZG?=
+ =?utf-8?B?OVRYWjdLUVlBdjFlMUJUeVlzdXdBVXV5Ni9WcXliaXNkaVFIVm56VzgvZnAw?=
+ =?utf-8?B?eGxJNHZJTGVvR25OTHU3NWx6RkpYYTlxUE9jSk1LT05uMkVaMTQ5WHZIcXJM?=
+ =?utf-8?B?aFhMcXdhYTZQcmVyVHZYdDh2S1FlWndQSjlyRUF6MjVTUWlMeVBybmp6UEdO?=
+ =?utf-8?Q?hFnjT3tkg?=
+MIME-Version: 1.0
+
+--_----rhta4FL9hlMvEmg9iOb18A===_94/FD-59160-6D907386
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+
+The clock is ticking. Access the courses, assessments, and immersive experi=
+ences that=E2=80=99ll grow your tech skills faster.
+[Pluralsight]<https://links.pluralsightskills.com/s/c/gnf8wCQKE1LXVvYuh1u_7=
+cGFZCsdQvfZYe6aeoAlsvygs0l-bd7gxUt2RPDXMznZmtnWhGYfXzGuVHJL7taC9zAZUQ1C1Fq4=
+78xFQz2_xgb2vvzSauqWwsRRSSwjqhiqxRYIaHFh2OUjtS3V5dEbhZTNpdJ-fGG--n1P_DbC-PS=
+rQ6SnRMhpOo_BKwQqrbKZETWi8SJPDujeCTLMHx3hmZgDlwXR8LNd1F1GxEqu_rFIK9KrwEMsU0=
+YNapTiNd_JoNpDgYH8a5vYTwJatEBvL6fpl4Lrqp--PCASCbm8mia9Z2y2mOYlH7zd8j2OnlaqJ=
+AzP_iiQgaziROQmf-EHL-9jm6b9QxPppxegbAydJxE1qE_qKta0sHil7othpjkuzWSKfg/oJUAA=
+cLg3LTc6KpTbvDcd3D85HIrQT7D/9>
+[Final countdown]<https://links.pluralsightskills.com/s/c/W7TfuCf9WIvy0Cwup=
+6ca2OlbaJqdm8JrsPRP351A_OLXP_8BQS4jSBtnYwYnQfBYDzGzKv7aXVuRkagFUiQxI3tH52Zb=
+nZxzRoIQNNthS7tp1pZJ7TiHRIaOpUDaiHVD_jPAO8kVh0Y6AlkKb8hAsVaYFIkkNK2vpa_3CI2=
+OA7Vz8RWbh5dEH4P5xd4HImVH7ZpIGE_sHQPpy2u7SCasFbZjzlNfYFgzmGBDIDRflciNdyOX08=
+UT5vT6fAqoNRaDspUBKbB8XC9WvZgWTW-8bzKzkIkw3aeTOpyAUT3fN3WZ_gGwPwXKqBsCQuvJU=
+2CsZLEDeNNAhKg1TrSS5LeDBmuGwXfNThkFwnQAjW-EvBdxr3_4WhoUUBiBgtL6bTHNY5Jy9rvS=
+nGAr3b4bUeCmMG9LjIuqAXA/fvD55e-NSBA67m0mn8uRW1Iyrrg4iH1V/9>
+[a gif depicting a countdown timer]
+[spacer]<https://links.pluralsightskills.com/s/c/LMaFk-Kxj6l3WG7FiyrfBoDm5J=
+OaJ3r0IcRX15k9sfzvA_cewoz6-WDNX1aLh6zEqtdXI3qPmT0Q58GoTk_f3o5DcXtNcSTpkAPlg=
+BNPx4ig7V1S4sNjefMP5vO00Hf_LbkMd0qaqq8Q35Y5feDTT-KHopJHB0_QadloNM93c1ReYSMB=
+BbR8yi33r58A2DxFhxUcnfDM-ARMyN24FCcBlkjQXj4R9j6L9XvE25OG1vU3WZwC5cWSl-0fPVd=
+B24DBHZ3h18C-MWQlWeLqB5tIGj8fHoexCkBhxacX-VsDSLZYRw6jgkAYfPXHAfY4En26Ih_Gi8=
+giskq6GRwQKN_a-Se1VRIZxTCrQwgMYtLCtUb27ekJPWcZcFDE7pHbGfv1SnFOZChMczAh0-qtM=
+dHZWhUxEddnZK0/tsU5OjiX5j94-kY03auMbQ7hkfk6cB_2/9>
+
+Claim your 50% off
+
+Claim your 50% off
+
+Grow your tech skills faster with access to courses, assessments, and hands=
+-on learning experiences. Sign up for any new yearly plan to lock in your s=
+avings.1
+
+Save 50% <https://links.pluralsightskills.com/s/c/4ubhGrMxUHEq7f4w2UbJafjyk=
+gvB3a4m2yWoD-X4Lcq_dyU-973WPHpEhomoSQ84UqVFFj4Gi9cj6E5IdMvEvGc2mG2YfUT10xSI=
+QL2QJ3D2NJtdJvq-DeXAIzTH2hosYUGsOpWCsW27gPsLJ3GakEmf0A5eLlhBnu3eQzRtHREmmnd=
+J-_-_NiIW977eyeYqO0-m714lv7N_BHIJQtF-FMHNbHsTclL4y33m7PZWUdc0tBJByf2b5HI_3l=
+L3MIu1UL1eabj7kCyudB7XuazTg57FYj_Xn8KMt5mbVRlE1yAqV51m3YGifBXJqiJvrPLtvvNE1=
+FlipSbu7pESv7FqohN8DmNuqSPzUu5tcSQMVe20n_vId7RvpIoRC2-Pdgk-1NPTA5Eg6IalmRrU=
+hTqmM-UdQuH6Ru4/TbS_qPAKSdI4Y1VdgNcWsBfvUKHTNMQb/9>
+
+Use promo code TECH50
+
+[Instagram]<https://links.pluralsightskills.com/s/c/V7CxGVFWpxdK8-Gv73jQrBZ=
+2x8mtqSWvElZsgXgD9MXDF5bcYF5KWkMeDgnMl0kKCsa5agjyCPyEHH4yfuD4vbFbnkgGokgADK=
+lK_x7FOgLkYRewsVPmtqTuE6pKxEEpNV02VAq4ykZoeLkYA4_F0JDtKIeIheUc3dXtXsm6T5y3k=
+wv90h1-jO96Ii-kyKaM3hOK4qG5cRJ4cM8qIaGLJiyTvvOkuk_SMpDkB5udjLdvysb-yjaUiw-G=
+URLCwBWtg0HkQCz5O5Hu3EPkOKbEDV7RG_9ntUnRfng2ueI6W05wxXOqyGKCm6OkURzpFBNkjIp=
+2-ByOD6CgCt6vLTe6V0aEFwaKDg_v78IPKrI4M-z2h5vSuEFYg9Wc7zeWVzc1QM3-Iy1Dp2taVO=
+fu/DQZVGGJ8X0U_DkqEtfXfQBq5TV3rTUS6/9>        [Facebook] <https://links.plu=
+ralsightskills.com/s/c/q7O6j2cSQtSqO1j78s-wtBhqYpWZpXh-bEsoUD8VkLk80h1v6Wbr=
+XZevru3KIvnjW4t34bSOwXcgJ5nE2e4RPaLY4TowJPTymLJfnT4lYh96kyrWN6dxEXtt6jN8f75=
+ko83DB8BetLKlB9UCfG7TMfcog5GGFNN1LohzQke6ZmZ_HV-GrBKxB91MfhPxUtI2ChDoZv929S=
+qa1KTYh_WUA11Y6jA685m4s3NezLXJh_otdBj4jAYTdq9Y4QGL5x2uOk6TuPQvcppjPZ-6622qV=
+R9FogvADYMMHYPGYscENPeSd2fRrAHmORMDvzYRH4_0R1kvl4ZT0PvjVRrKEqzBYfqOfINnPlLH=
+_06Ez7Qrke6NFRTz34Unj1u7lZMXGnVoDebeN7xRCRU7apI/qcFAbinRx1i3ywjXKaVxtMOPGFv=
+IWdee/9>         [YouTube] <https://links.pluralsightskills.com/s/c/U_c4SvL=
+9jGenPZZaYJ8Qyj7mAA9Hl7N_CbWWSVlTWuBMEqbfS8lkqoVzsztY2oUE0qCOi43-osYKr4HHOP=
+v94FyrUPLPsWBvgSdIxi7t7P8oXPPzZM_AgmjYehhCdK1j1KJxSuFygZsejWPjqzM4suvam6dcA=
+FpjfrScmmBuUTOju9eiDHM5bUskEWKNXTluxbY6gyYL-4FHOHR_AbkyxBe6TzVskomtM-iReEWU=
+_LAjBpPQZcqfkYOcK5D9Nmqonx_vWhnRR2pHnfG3XxBWfX_tKk3-CRXt_BXGnMl9lqDJ8V80ZXl=
+cTiMVG-tlJkb-MSSiU9_NsEalaq8ZiXswG0v3uNWG4DDBUWfxOVdfNScAk0k9p9ogAegH3z1xNx=
+FXVmUw6S8ofsP3xGSEVATt4w/CRSN6d2_ybgvjGGRA41pmE_EThPDzrOp/9>   [LinkedIn] <=
+https://links.pluralsightskills.com/s/c/vYFXyeBPeb-FxhQT75v9HZvAZHxietVyelF=
+9us_67CZHxrrCPjl-c0KxnTfPNHYfY0AlWo_I1MNofrmj6I8Uswp1YU99NWWaMwXJhBI-prr6Hg=
+K1VOoXjzYxrFtZML7iXiMpo8O4hzAlaCeyueETNEtJ_rjjTtEfBOfLbD5LvSLXrmgeli5zom_tB=
+-DVZy7Cv3zKiSffXD9kesRhQMGkOHPYT5w5FUc-aK-XbCgxAjmUSaHuQLZAWIvwjY9DWVM96DJT=
+2YFGwrvPatWWbN3iqIwKIxybcpLS6R36fUNzwUzvShh_msehH-0pmXrOtD5leoN9EQ1B7h3OgRB=
+zgsYMKCVr-R1ZXD3Z_n9lUUS-K2rQxRtFngrXt0GSqzC15jX4lU38z_5Lv2OaVctHe_lNFZuJzU=
+0/gD01wAJW-9V6bGwQCwipiVHVSBGMo-vt/9>     [X] <https://links.pluralsightski=
+lls.com/s/c/loe7bITW_CHDw-VpdQo46nlSD8jifCjqGGu2eVuvQjriFwz0a9eLin_OwlxoWRK=
+c4KPt1SghMBvx7BByLY9lb2Ipo8t9F2eCiW2LRuxvdPDfGSXqpTPVfxoVacizOcJOcM5g1aLuMb=
+nY7jekoUct5-dvSJ30oz1Lh_rhmau1O2-fWf8JU4rsCDZ6GE48zcRWvsm1q-CxaOo7-wt66iQbH=
+DvM4yNa4F9NWDpbjvT_QAwWCwVNdEPCISHA7996Z_LWOp8NHM-2Q85AtfL6ixl-nfxdRtAcoxED=
+z1YU4Je-TbIqaPCIy2VIoBhaS4GlxbsrlmC5yWFOJDe7h5pqfTYq9MTliypZ1-Y4gd-CfKSzPuR=
+Y3Qr_yl1HCeXKUW-MG50adyWmtcpp/Cc8oJxX8ianEJe9jnDa0ho1_SVQGS1fb/9>
+
+Preferences<https://links.pluralsightskills.com/s/c/LT-2bVLi-lkkkPQLpjhd9E8=
+pQIXP6Zw_cG2O1uV86SLCJd8kO_Dg-Dy_XCvX3LMsx_Rksmr6EH4LV0W_UnTjrreqKubU9H0mRi=
+Q0DPt3YJODrjUqSwD-QuCiz42IIKQpKWOp0dGKznupQbyKCvYLEWX3CbfnEZin0878sXHejPZDo=
+l-dXeqDbkzi6or--L1LJ02ktaV9p5o1Lc6oHF8WmhATrBHStEb_cqf3MnIcAo9wrLZa1kUjsp8_=
+XaoMUDcFVK1UkkzqiTTcdeaaAhg6HQz5lkxalnhOUx4JgCsoZiCc6sytp97iV5eBRKtz24lhLz3=
+IItG0ml6K4g19kUwodBa6pyIZKwE4-vkUME3P_mLraFLAs-vskCjRNO7ZAf-cG9eRbOJXrVcZ0o=
+7HRuMeJP0m0Xy4cVxpJ8k/X2QffJk37xZq0RVtS0Dnqn-SA7-AlFPM/9>  |  Help Center<h=
+ttps://links.pluralsightskills.com/s/c/CL1D5oP6xYQuYwByeufX2M_x0hu3zE4enY-X=
+AcD70XE5RIzYKvHIBzKFutwc3xXZrcffZWeIA2yrIkkzVptt-OQLqdMqn1wCHxA-F9BWLZxITfy=
+wucQcnvMf8IGZQNyJfk68C9NCsiJ_11BgYj-qxMXsfpvcTzOIlv1dosTvqKZNiMYd0NaV4mQZwH=
+cxS2OSLYfw7BwOyk1Gbh-WKf1N1UUMQVtL_jVqXXg_b8KvB6YoPQLobuB8ieqPMQ8P2aI5sqASr=
+H2qN8xGy5cG-xh8I1FWmCLYeJo5ltHgZy-Tb8ZxNNQ2jiXv9hV6OwMEaRO9bK-TlDHRnUcQag_8=
+1eWsUKpcrLoJbosDPCNIZruOQgrbeO9E_h-4A7zlDVXG0A_GfKgjdWEQ_8b6QYnd1Q/dMFcoqbW=
+Gdjt25hxlWHypjCDggXYoz0i/9>  |  Support<https://links.pluralsightskills.com=
+/s/c/JJIWq-xsWmB4jsTxfdI4U6wR9-EJSnS0NSXckesG-BkfGnXebEcCrz9pjjWRF1H45LT_uj=
+NMUpwi07pVm9QCVmI0mIbFsoTsZnup6xQ8vwkPn4PhVF6Thj_-SGo2K4MYYdR2XcQmDNuLGrIDk=
+gEfZUuli9wev_6TA8X4hBEj4ZlCw5JP__aeMLqwpTzt8l2sky-om_DmQvQUIKklLCh0Fu83wzl_=
+TQBQFsWnbFuB-wmgQk8-zditaPb11OhBM_fRr2ZbGTmiW3cVNtvoHxuRwI4GVpRlMSlzoapwNYE=
+Rq7AhGsYSC5pjJp4hvmM6PY5fVzbd8ZR_s_EX928bzRi1liZYEwrE-1E1V3WZ7ACsz2LLa5dzEe=
+5yjJ9ebx5ngqyboYsBz21HaGhsBJw/ciYONtW5bLgtnW41B0Z8fXeIH_JrHs2x/9>
+
+1Offer valid from 12 a.m. MT on May 23, 2025, until 11:59 p.m. MT on May 28=
+, 2025, and applies only to customers who purchase new subscriptions on a y=
+early plan. Yearly discount only applies to the first year of the subscript=
+ion. Discount cannot be retroactively applied to existing subscriptions. Of=
+fer may not be combined with other offers and includes access to the Plural=
+sight Skills platform only. Limited time availability subject to change wit=
+hout notice. Additional terms and conditions may apply. We reserve the righ=
+t to modify or cancel the offer at any time. Purchases made in connection w=
+ith this offer are subject to the Terms of Use<https://links.pluralsightski=
+lls.com/s/c/P06W-n34ANjc_QSMdYxTUpinyezycYrqRFA8KdZkg4VX5URR0WHLuTwPCTQBWY9=
+eK_SzaUvn5rZi-Y-QSA_cTbA1fSMEUficDAnxaeBC9bFM9OiQem0TkXq769KCJEMj-LHS0J2xT0=
+zA2PaPKu75S0jodWBgMvJ0KqS1aA4TuK9zM1DHmrNKO_eSefKsH2QDWCXzilckyPIFV3qsDFQEE=
+SWhJ500I_cSDtRCwWFF9929X_P7rdkNikwgvo4oYmbaejIzcLwff3sB5YIZR8C-fA0AWqD_dJpN=
+UQm_W4yPd8Jhu--e4b9yUzFeLyU2F8-ZeQfSOHOXN1GD0_2K4oDzuUCDm4oovBdnM4OfMXYrilI=
+NkGsLT1T8GEFLBFzVyr1TS_ZDVXLpinZutKgEthQX5US_zf52BP9OVA/nV9_g4kxZw79JwV5E4j=
+s_3NVNen0Di8O/9> and Privacy Policy<https://links.pluralsightskills.com/s/c=
+/ovtJzUO-T0eAXRLeuyJ5Mt03rG3_r-88fGNF_i7aRle6qklyW7Qk6vgiHqfYMNnmjp1NWZVchc=
+rGZgDmbAFAZ74vMN0OVJHkJak-utP8YL-9kLJoJF4ObCuAYHXZMOu1uaNFyJK5-XVLsHXtf3muF=
+7lDlVIg9bDwi3-qFZGyKAexJzSa85aal_91YgE7q9zLsCwKwel9NlRtFzu8zUugb37FBRHq-P5Q=
+1XAIBY1c9b4jtVKT_xmzc5LgqX0C9ar24GLX5gbwHJ-TyjbTFjReXfx6qqmQCL9I899pCXjP1eL=
+swKTIUB-0a1IJORef_hzj2MAiRGC_VUB_pd4bSzx4dM8Fhwi8msApJJVHykeEDCpQ4z_dRgdiv7=
+GNovJ2abOmg1fQfMHqqLZbADeQbplHwq27ocrUJ93OEQ0YeF5Urft_mA/X-B2Z2htKZglA7Xy0S=
+Komx-8_NNgreRj/9>. For more information, please visit our Promotions FAQ<ht=
+tps://links.pluralsightskills.com/s/c/r8SoTkdP64s-7SprAexuRNHecSutoghiXuwz1=
+LLxc9m1ufV_8R-i0ZwSsLIcDOwSoq_38tJQgSewOYAYZxGTGZvBd_-R4R6rx5jnYa0ETQkPsRZQ=
+XHsEIKPMdNZRagxMJ1zkc4IzLfMfXiKfvO9XA86fipu2d7H50Nr79UxQCBo6DeBcY5msxajSGjt=
+VREML_zPY-_JmFcidAmAsz360A1K90t-vmP-eKz_ymthVLypuYPt9FEQ5ZqQTfJizKIg4cPlsFh=
+AkEt0NeDRmQlHQ__0BJBPj71SmgaMGeAHHBa2Uggo3YLPnEtTVioYBJ3264iyMCcbsg_xEqcuFj=
+kJ1Pa_FgPrudsgFbgjGXshS9iiM7jtyv1yRE1PB3_w5flW7MaGF_t89PKi5nDO_PZGLbuj6UUiK=
+zhJVJE9xGHa8CvSfawAFz-mhtH-H8MDjSioPSOHD/nft53yyuZjjENG6jQ4ahseDb4FUhaThY/9=
+>.
+
+This email was sent to trainingcd@terasky.com. If you no longer wish to rec=
+eive our emails you can unsubscribe<https://links.pluralsightskills.com/s/u=
+/baALk763U0gO6BZVMWnElFyozOdszFGNos2xFIAcCBz5ZIUfAP0VDS6nTrRynvXJ58cI2QArQf=
+9abWz1Sivbp2XeBxQhSUod8vhfp-u-Sq9XNRJaL50RnPTcDjkOcS6U1mFpRAuMEzHloOfbFILP1=
+AdW1yEeeTWf2iwfnf0ST-qC6vBWuZ4OdLCtyG6YTTtPX8oYLo8IjLFss5rc/hGkDlHp5zNzNDnA=
+kqfG0mq9mki8Dr_WA/9>.
+
+
+
+Privacy Policy<https://links.pluralsightskills.com/s/c/2kp7q9nbRww2OVtabC47=
+Ifc-Qz_HRF1TzDjJec5XKnnqouhnCdtSRCzfNJrkmxJZvIMEMHZdpBaqFMQV7NbgL4BrzvcMEKl=
+tiVejdWPnjCMTnlWZ234nwxr3ewrmV9Gx9xgM9uhnZvs9fwwKY3UX5oRQHeScohrDKMTVEGgylB=
+Tpsvb2iqRgyIn0ocpM8-dFtEyIS3FZADhXL6o8hJGCjSi9zRoIHsIkn1x4jkCdxn6-lmsK0MRzj=
+Ljd3GbOfLdtFHeRo7B3hlmyXkshHGsbygRIjdS1I230IfBRx7h1wL1uT2ZoHQqswpn5wmsCVj1P=
+STpTs4jbDpsO_FjfjYGzgzxqeOgfNHIz58BF16sg4kNCtyRDaYqCA4jcjLUAY3Ib6SAdAg3kU4j=
+rMzCQ_SkMb6NvCfY0VD-sfJuEby3e7kXtQA/vmpNzIpvVLyge8AjkMNVkwB4p1DQ5ZTh/9> | T=
+erms of Use<https://links.pluralsightskills.com/s/c/i3yFP3sUe8BEyWM1i_6Y3KY=
+q-c2tgq4MUJCX92_yZxn3Du94cmqXxnDV-p_XMTaymB8-7U-_Y7HEFSASISx1790w9NjAoL0aW2=
+M-R8MwBz-Jg2n9vW7HwKT3eFlKsx_a_yydTmxsA9_XupiNi8iXV5tMMLyVCMNtVqHCBDjF4Mk9w=
+BPva_w1TBbN3BVOIJixuGs9HosJmeT2bc05jEqOSZ_2HgU4-O5odo-bKZiMlEcZRRKchnYbYauD=
+ym_O1Rels8kQAdvp9kKwNSNsaxJng65VNv7IBCZ3ISGykvDq9WThk2IZyFdK8ZCrFnZ0ZuEkXVG=
+qe7zkVL8NL24fV6UhKD_Ko6tXI-B9XF0x2XlPpHNe5kJe2jeYmBXAc5Um0qMAtl9VaMBfZb8-7b=
+g8o5B1ytTWAbiMkSIhHOzz0qRrcFaxahImTSgq7cWg6Dri_N6CUTLKt03QzgU8VtywifQ/NsDsZ=
+T_mUKaq790LTy-ieIKce7aPehOC/9>
+
+
+
+All logos and trademarks are properties of their respective owners
+
+
+
+Copyright =C2=A9 2004 - 2025 Pluralsight LLC
+
+
+
+42 Future Way Draper, UT 84020
+
+
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+--_----rhta4FL9hlMvEmg9iOb18A===_94/FD-59160-6D907386
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html><html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"u=
+rn:schemas-microsoft-com:office:office" lang=3D"en" style=3D"box-sizing: bo=
+rder-box;"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<title></title>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1">
+<!--[if mso]><xml><w:WordDocument xmlns:w=3D"urn:schemas-microsoft-com:offi=
+ce:word"><w:DontUseAdvancedTypographyReadingMail/></w:WordDocument> <o:Offi=
+ceDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch><o:AllowPNG/></o:Of=
+ficeDocumentSettings></xml><![endif]--><style>*{box-sizing:border-box}body{=
+margin:0;padding:0}a[x-apple-data-detectors]{color:inherit!important;text-d=
+ecoration:inherit!important}#MessageViewBody a{color:inherit;text-decoratio=
+n:none}p{line-height:inherit}.desktop_hide,.desktop_hide table{mso-hide:all=
+;display:none;max-height:0;overflow:hidden}.image_block img+div{display:non=
+e}sub,sup{font-size:75%;line-height:0}@media(max-width:620px){.image_block =
+div.fullWidth{max-width:100%!important}.mobile_hide{display:none}.row-conte=
+nt{width:100%!important}.stack .column{width:100%;display:block}.mobile_hid=
+e{min-height:0;max-height:0;max-width:0;overflow:hidden;font-size:0}.deskto=
+p_hide,.desktop_hide table{display:table!important;max-height:none!importan=
+t}}</style><!--[if mso ]><style>sup,sub{font-size:100%!important}sup{mso-te=
+xt-raise:10%}sub{mso-text-raise:-10%}</style><![endif]-->
+</head>
+<body class=3D"body" style=3D"box-sizing: border-box; background-color: #ff=
+f; margin: 0; padding: 0; -webkit-text-size-adjust: none; text-size-adjust:=
+ none;">
+<div style=3D"color:transparent;visibility:hidden;opacity:0;font-size:0px;b=
+order:0;max-height:1px;width:1px;margin:0px;padding:0px;border-width:0px!im=
+portant;display:none!important;line-height:0px!important;">
+<img border=3D"0" width=3D"1" height=3D"1" src=3D"https://post.spmailtechno=
+lo.com/q/_3-jKZf549Izi6LNons_jA~~/AARGbBA~/ELau0W2XDZFwRYszcTgRzKJWgfyLwSKP=
+Vs8gU2Bspat9p8viLV8Gfjp9Y3WmfJshr1mFld62Yq0MmMcFG0QAvg~~" alt=3D""></div>
+<span style=3D"color:transparent;visibility:hidden;display:none;opacity:0;h=
+eight:0;width:0;font-size:0;">The clock is ticking. Access the courses, ass=
+essments, and immersive experiences that=E2=80=99ll grow your tech skills f=
+aster.
+</span><img src=3D"https://links.pluralsightskills.com/s/eo/cxIGYVELGTFCmXe=
+EhBWyeDofenhUlFL0_ARm68w5a-5gOF034TnOkyFAmMCRVTSe-nFSLc6PW4NrcW6YZS1ZOX4Eb_=
+-scZGETGfvFHWPbEcP5Pyp9wi1TUuO0we4abjk9occ-Bhel1NleeRFl0t07986yQ37D94sXgUsR=
+iw2zEMrFClkcr7_j_X6ygSfMqPH-44YYmPThPKVNJ2iVv1BWxVm5R4beCXa3i6a/44ifO8qyFS3=
+v7q0n0LFaZBrj2o8hPSKk/9" style=3D"border:0;width:1px;height:1px;border-widt=
+h:0px!important;display:none!important;line-height:0!important;" width=3D"1=
+" height=3D"1">
+<table class=3D"nl-container" width=3D"100%" border=3D"0" cellpadding=3D"0"=
+ cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-box; m=
+so-table-lspace: 0; mso-table-rspace: 0; background-color: #fff;" bgcolor=
+=3D"#fff">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">
+<table class=3D"row row-1" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing:=
+ border-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #f=
+5f7fa;" bgcolor=3D"#f5f7fa">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border=
+-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #f4f7fa; =
+border-radius: 0; color: #000; width: 600px; margin: 0 auto;" width=3D"600"=
+ bgcolor=3D"#f4f7fa">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-bo=
+x; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: =
+left; padding-bottom: 20px; padding-top: 25px; vertical-align: top;" align=
+=3D"left" valign=3D"top">
+<table class=3D"image_block block-1" width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border=
+-box; mso-table-lspace: 0; mso-table-rspace: 0;">
+<tbody>
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"pad" style=3D"box-sizing: border-box; width: 100%; padding-rig=
+ht: 0; padding-left: 0;" width=3D"100%">
+<div class=3D"alignment" align=3D"center" style=3D"box-sizing: border-box;"=
+>
+<div style=3D"box-sizing: border-box; max-width: 210px;"><a href=3D"https:/=
+/links.pluralsightskills.com/s/c/gnf8wCQKE1LXVvYuh1u_7cGFZCsdQvfZYe6aeoAlsv=
+ygs0l-bd7gxUt2RPDXMznZmtnWhGYfXzGuVHJL7taC9zAZUQ1C1Fq478xFQz2_xgb2vvzSauqWw=
+sRRSSwjqhiqxRYIaHFh2OUjtS3V5dEbhZTNpdJ-fGG--n1P_DbC-PSrQ6SnRMhpOo_BKwQqrbKZ=
+ETWi8SJPDujeCTLMHx3hmZgDlwXR8LNd1F1GxEqu_rFIK9KrwEMsU0YNapTiNd_JoNpDgYH8a5v=
+YTwJatEBvL6fpl4Lrqp--PCASCbm8mia9Z2y2mOYlH7zd8j2OnlaqJAzP_iiQgaziROQmf-EHL-=
+9jm6b9QxPppxegbAydJxE1qE_qKta0sHil7othpjkuzWSKfg/oJUAAcLg3LTc6KpTbvDcd3D85H=
+IrQT7D/9" target=3D"_blank" style=3D"box-sizing: border-box; outline: none;=
+" tabindex=3D"-1"><img src=3D"https://d15k2d11r6t6rl.cloudfront.net/public/=
+users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6dd6a/19c380c476f344a88deb=
+950bb1e3cfe4/Logos/email%20logo_header%402x.png" style=3D"box-sizing: borde=
+r-box; display: block; height: auto; border: 0; width: 100%;" width=3D"210"=
+ alt=3D"Pluralsight" title=3D"Pluralsight" height=3D"auto"></a></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"row row-2" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing:=
+ border-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #f=
+5f7fa;" bgcolor=3D"#f5f7fa">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border=
+-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #242145; =
+border-radius: 20px 20px 0 0; color: #000; width: 600px; margin: 0 auto;" w=
+idth=3D"600" bgcolor=3D"#242145">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-bo=
+x; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: =
+left; padding-bottom: 20px; padding-top: 60px; vertical-align: top;" align=
+=3D"left" valign=3D"top">
+<table class=3D"image_block block-1" width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border=
+-box; mso-table-lspace: 0; mso-table-rspace: 0;">
+<tbody>
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"pad" style=3D"box-sizing: border-box; width: 100%; padding-rig=
+ht: 0; padding-left: 0;" width=3D"100%">
+<div class=3D"alignment" align=3D"center" style=3D"box-sizing: border-box;"=
+>
+<div style=3D"box-sizing: border-box; max-width: 120px;"><a href=3D"https:/=
+/links.pluralsightskills.com/s/c/W7TfuCf9WIvy0Cwup6ca2OlbaJqdm8JrsPRP351A_O=
+LXP_8BQS4jSBtnYwYnQfBYDzGzKv7aXVuRkagFUiQxI3tH52ZbnZxzRoIQNNthS7tp1pZJ7TiHR=
+IaOpUDaiHVD_jPAO8kVh0Y6AlkKb8hAsVaYFIkkNK2vpa_3CI2OA7Vz8RWbh5dEH4P5xd4HImVH=
+7ZpIGE_sHQPpy2u7SCasFbZjzlNfYFgzmGBDIDRflciNdyOX08UT5vT6fAqoNRaDspUBKbB8XC9=
+WvZgWTW-8bzKzkIkw3aeTOpyAUT3fN3WZ_gGwPwXKqBsCQuvJU2CsZLEDeNNAhKg1TrSS5LeDBm=
+uGwXfNThkFwnQAjW-EvBdxr3_4WhoUUBiBgtL6bTHNY5Jy9rvSnGAr3b4bUeCmMG9LjIuqAXA/f=
+vD55e-NSBA67m0mn8uRW1Iyrrg4iH1V/9" target=3D"_blank" style=3D"box-sizing: b=
+order-box; outline: none;" tabindex=3D"-1"><img src=3D"https://d15k2d11r6t6=
+rl.cloudfront.net/public/users/Integrators/669d5713-9b6a-46bb-bd7e-c542cff6=
+dd6a/19c380c476f344a88deb950bb1e3cfe4/B2C%20Campaign%20Assets/250528-EB-B2C=
+%2025_may_pubpromo-V1/May25_email%2014_final%20countdown%20tag%402x.png" st=
+yle=3D"box-sizing: border-box; display: block; height: auto; border: 0; wid=
+th: 100%;" width=3D"120" alt=3D"Final countdown" title=3D"Final countdown" =
+height=3D"auto"></a>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"row row-3" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing:=
+ border-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #f=
+5f7fa;" bgcolor=3D"#f5f7fa">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border=
+-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #242145; =
+border-radius: 0; color: #000; width: 600px; margin: 0 auto;" width=3D"600"=
+ bgcolor=3D"#242145">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-bo=
+x; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: =
+left; padding-left: 40px; padding-right: 40px; vertical-align: top;" align=
+=3D"left" valign=3D"top">
+<table class=3D"html_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0;">
+<tbody>
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"pad" style=3D"box-sizing: border-box;">
+<div style=3D"box-sizing: border-box; font-family: Arial,'Helvetica Neue',H=
+elvetica,sans-serif; text-align: center;" align=3D"center">
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" style=3D"box-sizi=
+ng: border-box; width: 100%;">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td align=3D"center" style=3D"box-sizing: border-box; text-align: center;">=
+<img src=3D"https://image.ltms.app/t/m2e3786jqcwcjr9me6ecicl62.gif?exp=3D20=
+25-05-28T23%3A59%3A00.0000000-06%3A00" border=3D"0" alt=3D"a gif depicting =
+a countdown timer" width=3D"376" height=3D"auto" style=3D"box-sizing: borde=
+r-box; border-top-left-radius: 999px; border-top-right-radius: 999px; borde=
+r-bottom-left-radius: 999px; border-bottom-right-radius: 999px; width: 376p=
+x; height: auto; max-width: 100% !important; display: inline-block !importa=
+nt;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"row row-4" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing:=
+ border-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #f=
+5f7fa;" bgcolor=3D"#f5f7fa">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border=
+-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #242145; =
+border-radius: 0; color: #000; width: 600px; margin: 0 auto;" width=3D"600"=
+ bgcolor=3D"#242145">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-bo=
+x; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: =
+left; padding-bottom: 30px; padding-left: 40px; padding-right: 40px; paddin=
+g-top: 30px; vertical-align: top;" align=3D"left" valign=3D"top">
+<table class=3D"image_block block-1" width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border=
+-box; mso-table-lspace: 0; mso-table-rspace: 0;">
+<tbody>
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"pad" style=3D"box-sizing: border-box; width: 100%; padding-rig=
+ht: 0; padding-left: 0;" width=3D"100%">
+<div class=3D"alignment" align=3D"center" style=3D"box-sizing: border-box;"=
+>
+<div class=3D"fullWidth" style=3D"box-sizing: border-box; max-width: 364px;=
+"><a href=3D"https://links.pluralsightskills.com/s/c/LMaFk-Kxj6l3WG7FiyrfBo=
+Dm5JOaJ3r0IcRX15k9sfzvA_cewoz6-WDNX1aLh6zEqtdXI3qPmT0Q58GoTk_f3o5DcXtNcSTpk=
+APlgBNPx4ig7V1S4sNjefMP5vO00Hf_LbkMd0qaqq8Q35Y5feDTT-KHopJHB0_QadloNM93c1Re=
+YSMBBbR8yi33r58A2DxFhxUcnfDM-ARMyN24FCcBlkjQXj4R9j6L9XvE25OG1vU3WZwC5cWSl-0=
+fPVdB24DBHZ3h18C-MWQlWeLqB5tIGj8fHoexCkBhxacX-VsDSLZYRw6jgkAYfPXHAfY4En26Ih=
+_Gi8giskq6GRwQKN_a-Se1VRIZxTCrQwgMYtLCtUb27ekJPWcZcFDE7pHbGfv1SnFOZChMczAh0=
+-qtMdHZWhUxEddnZK0/tsU5OjiX5j94-kY03auMbQ7hkfk6cB_2/9" target=3D"_blank" st=
+yle=3D"box-sizing: border-box; outline: none;" tabindex=3D"-1"><img src=3D"=
+https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrators/669d5713-9b6=
+a-46bb-bd7e-c542cff6dd6a/19c380c476f344a88deb950bb1e3cfe4/B2C%20Campaign%20=
+Assets/250528-EB-B2C%2025_may_pubpromo-V1/May25_email%2014_gradient%20line%=
+402x.png" style=3D"box-sizing: border-box; display: block; height: auto; bo=
+rder: 0; width: 100%;" width=3D"364" alt=3D"spacer" title=3D"spacer" height=
+=3D"auto"></a></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"row row-5" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing:=
+ border-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #f=
+5f7fa;" bgcolor=3D"#f5f7fa">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border=
+-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #242145; =
+border-radius: 0; color: #000; width: 600px; margin: 0 auto;" width=3D"600"=
+ bgcolor=3D"#242145">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-bo=
+x; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: =
+left; padding-bottom: 20px; padding-left: 40px; padding-right: 40px; vertic=
+al-align: top;" align=3D"left" valign=3D"top">
+<table class=3D"text_block block-1 mobile_hide" width=3D"100%" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-siz=
+ing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; word-break: brea=
+k-word;">
+<tbody>
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"pad" style=3D"box-sizing: border-box; padding-bottom: 10px;">
+<div style=3D"box-sizing: border-box; font-family: Arial,sans-serif;">
+<div class=3D"" style=3D"box-sizing: border-box; font-size: 14px; font-fami=
+ly: Arial,'Helvetica Neue',Helvetica,sans-serif; mso-line-height-alt: 16.8p=
+x; color: #130f25; line-height: 1.2;">
+<p style=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-s=
+ize: 14px; text-align: center; mso-line-height-alt: 16.8px;">
+<strong style=3D"box-sizing: border-box;"><span style=3D"box-sizing: border=
+-box; word-break: break-word; font-size: 46px; color: #ffffff;">Claim your =
+50% off</span></strong></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"text_block block-2 desktop_hide" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-si=
+zing: border-box; mso-table-lspace: 0; mso-table-rspace: 0; mso-hide: all; =
+display: none; max-height: 0; overflow: hidden; word-break: break-word;">
+<tbody>
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"pad" style=3D"box-sizing: border-box; padding-bottom: 10px;">
+<div style=3D"box-sizing: border-box; font-family: Arial,sans-serif;">
+<div class=3D"" style=3D"box-sizing: border-box; font-size: 14px; font-fami=
+ly: Arial,'Helvetica Neue',Helvetica,sans-serif; mso-line-height-alt: 16.8p=
+x; color: #130f25; line-height: 1.2;">
+<p style=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-s=
+ize: 14px; text-align: center; mso-line-height-alt: 16.8px;">
+<span style=3D"box-sizing: border-box; word-break: break-word; font-size: 3=
+4px; color: #ffffff;"><strong style=3D"box-sizing: border-box;">Claim your =
+50% off</strong></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"text_block block-3" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0; word-break: break-word;">
+<tbody>
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"pad" style=3D"box-sizing: border-box;">
+<div style=3D"box-sizing: border-box; font-family: Arial,sans-serif;">
+<div class=3D"" style=3D"box-sizing: border-box; font-size: 14px; font-fami=
+ly: Arial,'Helvetica Neue',Helvetica,sans-serif; mso-line-height-alt: 21px;=
+ color: #130f25; line-height: 1.5;">
+<p style=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-s=
+ize: 14px; text-align: center; mso-line-height-alt: 24px;">
+<span style=3D"box-sizing: border-box; word-break: break-word; font-size: 1=
+6px; color: #ffffff;">Grow your tech skills faster with access to courses, =
+assessments, and hands-on learning experiences. Sign up for any new yearly =
+plan to lock in your savings.<sup style=3D"box-sizing: border-box; font-siz=
+e: 75%; line-height: 0;">1&nbsp;</sup></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"row row-6" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing:=
+ border-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #f=
+5f7fa;" bgcolor=3D"#f5f7fa">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border=
+-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #242145; =
+border-radius: 0 0 20px 20px; color: #000; width: 600px; margin: 0 auto;" w=
+idth=3D"600" bgcolor=3D"#242145">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-bo=
+x; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: =
+left; padding-bottom: 60px; vertical-align: top;" align=3D"left" valign=3D"=
+top">
+<table class=3D"button_block block-1" width=3D"100%" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: borde=
+r-box; mso-table-lspace: 0; mso-table-rspace: 0;">
+<tbody>
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"pad" style=3D"box-sizing: border-box; padding-left: 40px; padd=
+ing-right: 40px; text-align: center;" align=3D"center">
+<div class=3D"alignment" align=3D"center" style=3D"box-sizing: border-box;"=
+><a href=3D"https://links.pluralsightskills.com/s/c/4ubhGrMxUHEq7f4w2UbJafj=
+ykgvB3a4m2yWoD-X4Lcq_dyU-973WPHpEhomoSQ84UqVFFj4Gi9cj6E5IdMvEvGc2mG2YfUT10x=
+SIQL2QJ3D2NJtdJvq-DeXAIzTH2hosYUGsOpWCsW27gPsLJ3GakEmf0A5eLlhBnu3eQzRtHREmm=
+ndJ-_-_NiIW977eyeYqO0-m714lv7N_BHIJQtF-FMHNbHsTclL4y33m7PZWUdc0tBJByf2b5HI_=
+3lL3MIu1UL1eabj7kCyudB7XuazTg57FYj_Xn8KMt5mbVRlE1yAqV51m3YGifBXJqiJvrPLtvvN=
+E1FlipSbu7pESv7FqohN8DmNuqSPzUu5tcSQMVe20n_vId7RvpIoRC2-Pdgk-1NPTA5Eg6IalmR=
+rUhTqmM-UdQuH6Ru4/TbS_qPAKSdI4Y1VdgNcWsBfvUKHTNMQb/9" target=3D"_blank" sty=
+le=3D"box-sizing: border-box; color: #ffffff; text-decoration: none;"><!--[=
+if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"u=
+rn:schemas-microsoft-com:office:word" href=3D"https://links.pluralsightskil=
+ls.com/s/c/7wO6t45U4BYmtG4TAQd7mQVmlXTr58SAz01msrCLIaR9j6twWhf-exwy5J58rSYc=
+Jqq6civUfemLqhrrX-RUXKZoyIT2I4fl1YimQxbbRrnSWk2ezLlbN5fB9f1zlm4yPFOPUDb2f8X=
+XrbybqutnxpGdzagc4EoIsT8HF8wIq6FJ80E_iNSjFjiDPvpuJn1M5ojg2mu402nxOUvAG-r4vp=
+Mz0QeZt_LxC_v_AbF1uRzdKgJcJgFwr4yhLbi3xhDVMxozvM24gJ3Bsvo10aNgM8b5LBdiUUews=
+ILe0IGwLJYthJiniJgkvMvjhL10poWvCjfJcuncmEJTzy4UCI8Tyks2cC2N0yFeK6Wy-WijtvHE=
+Ac8w9-gYGq-FQZmG2qD_Fn29Q7-WJav_tIW7mEJ3MSlED12_9JE/9-hbOoYPj32MNaNwmlyqwb3=
+qL8SsDyq4/9" style=3D"height:66px;width:163px;v-text-anchor:middle;" arcsiz=
+e=3D"76%" fillcolor=3D"#e7005e"> <v:stroke dashstyle=3D"Solid" weight=3D"0p=
+x" color=3D"#e7005e"/> <w:anchorlock/> <v:textbox inset=3D"0px,0px,0px,0px"=
+> <center dir=3D"false" style=3D"color:#ffffff;font-family:Arial, sans-seri=
+f;font-size:18px"><![endif]--><span class=3D"button" style=3D"box-sizing: b=
+order-box; background-color: #e7005e; border-bottom: 0px solid transparent;=
+ border-left: 0px solid transparent; border-radius: 50px; border-right: 0px=
+ solid transparent; border-top: 0px solid transparent; color: #ffffff; disp=
+lay: inline-block; font-family: Arial, 'Helvetica Neue', Helvetica, sans-se=
+rif; font-size: 18px; font-weight: 700; mso-border-alt: none; padding-botto=
+m: 15px; padding-top: 15px; padding-left: 40px; padding-right: 40px; text-a=
+lign: center; width: auto; word-break: keep-all; letter-spacing: normal;"><=
+span style=3D"box-sizing: border-box; word-break: break-word; line-height: =
+36px;">Save
+ 50%</span></span><!--[if mso]></center></v:textbox></v:roundrect><![endif]=
+--> </a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"text_block block-2" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0; word-break: break-word;">
+<tbody>
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"pad" style=3D"box-sizing: border-box; padding-top: 20px;">
+<div style=3D"box-sizing: border-box; font-family: Arial,sans-serif;">
+<div class=3D"" style=3D"box-sizing: border-box; font-size: 14px; font-fami=
+ly: Arial,'Helvetica Neue',Helvetica,sans-serif; mso-line-height-alt: 21px;=
+ color: #130f25; line-height: 1.5;">
+<p style=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-s=
+ize: 14px; text-align: center; mso-line-height-alt: 21px;">
+<span style=3D"box-sizing: border-box; word-break: break-word; color: #ffff=
+ff;">Use promo code
+<strong style=3D"box-sizing: border-box;">TECH50</strong></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"row row-7" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing:=
+ border-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #f=
+5f7fa;" bgcolor=3D"#f5f7fa">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border=
+-box; mso-table-lspace: 0; mso-table-rspace: 0; border-radius: 0; color: #0=
+00; width: 600px; margin: 0 auto;" width=3D"600">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-bo=
+x; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: =
+left; padding-bottom: 5px; padding-top: 5px; vertical-align: top;" align=3D=
+"left" valign=3D"top">
+<table class=3D"html_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0;">
+<tbody>
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"pad" style=3D"box-sizing: border-box;">
+<div style=3D"box-sizing: border-box; font-family: Arial,'Helvetica Neue',H=
+elvetica,sans-serif; text-align: center;" align=3D"center">
+<table style=3D"box-sizing: border-box;">
+</table>
+<table class=3D"row row-86" align=3D"center" width=3D"100%" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-=
+lspace:0; mso-table-rspace:0; background-color:#f5f7fa; text-align: center;=
+ margin:auto;">
+<tbody>
+<tr>
+<td>
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0; background-color:#f5f7fa; border-radius:0; color:#000;=
+ width:600px; margin:0 auto; text-align:center;" width=3D"600">
+<tbody>
+<tr>
+<td class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspace:0; m=
+so-table-rspace:0; font-weight:400; text-align:left; padding-left:40px; pad=
+ding-right:40px; padding-top:60px; vertical-align:top">
+<table class=3D"social_block block-1" width=3D"100%" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:=
+0; mso-table-rspace:0">
+<tbody>
+<tr>
+<td class=3D"pad" style=3D"text-align:center; padding-right:0; padding-left=
+:0">
+<div class=3D"alignment" align=3D"center">
+<table class=3D"social-table" width=3D"180px" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0; mso-=
+table-rspace:0;">
+<tbody>
+<tr>
+<td style=3D"padding:0 2px 0 2px"><a href=3D"https://links.pluralsightskill=
+s.com/s/c/V7CxGVFWpxdK8-Gv73jQrBZ2x8mtqSWvElZsgXgD9MXDF5bcYF5KWkMeDgnMl0kKC=
+sa5agjyCPyEHH4yfuD4vbFbnkgGokgADKlK_x7FOgLkYRewsVPmtqTuE6pKxEEpNV02VAq4ykZo=
+eLkYA4_F0JDtKIeIheUc3dXtXsm6T5y3kwv90h1-jO96Ii-kyKaM3hOK4qG5cRJ4cM8qIaGLJiy=
+TvvOkuk_SMpDkB5udjLdvysb-yjaUiw-GURLCwBWtg0HkQCz5O5Hu3EPkOKbEDV7RG_9ntUnRfn=
+g2ueI6W05wxXOqyGKCm6OkURzpFBNkjIp2-ByOD6CgCt6vLTe6V0aEFwaKDg_v78IPKrI4M-z2h=
+5vSuEFYg9Wc7zeWVzc1QM3-Iy1Dp2taVOfu/DQZVGGJ8X0U_DkqEtfXfQBq5TV3rTUS6/9" tar=
+get=3D"_blank"><img alt=3D"Instagram" height=3D"15" src=3D"https://library.=
+iterable.com/3535/26921/8d183e34c5fb40bcb951a91bc4565333-instagram2x.png" s=
+tyle=3D"display:block; height:auto; border:0; margin:auto;" width=3D"15" ti=
+tle=3D"Instagram"></a></td>
+<td style=3D"padding:0 2px 0 2px"><a href=3D"https://links.pluralsightskill=
+s.com/s/c/q7O6j2cSQtSqO1j78s-wtBhqYpWZpXh-bEsoUD8VkLk80h1v6WbrXZevru3KIvnjW=
+4t34bSOwXcgJ5nE2e4RPaLY4TowJPTymLJfnT4lYh96kyrWN6dxEXtt6jN8f75ko83DB8BetLKl=
+B9UCfG7TMfcog5GGFNN1LohzQke6ZmZ_HV-GrBKxB91MfhPxUtI2ChDoZv929Sqa1KTYh_WUA11=
+Y6jA685m4s3NezLXJh_otdBj4jAYTdq9Y4QGL5x2uOk6TuPQvcppjPZ-6622qVR9FogvADYMMHY=
+PGYscENPeSd2fRrAHmORMDvzYRH4_0R1kvl4ZT0PvjVRrKEqzBYfqOfINnPlLH_06Ez7Qrke6NF=
+RTz34Unj1u7lZMXGnVoDebeN7xRCRU7apI/qcFAbinRx1i3ywjXKaVxtMOPGFvIWdee/9" targ=
+et=3D"_blank"><img alt=3D"Facebook" height=3D"15" src=3D"https://library.it=
+erable.com/3535/26921/9be5de9db0e04c8083a5c7862acb407d-facebook2x.png" styl=
+e=3D"display:block; height:auto; border:0; margin:auto;" width=3D"10" title=
+=3D"Facebook"></a></td>
+<td style=3D"padding:0 2px 0 2px"><a href=3D"https://links.pluralsightskill=
+s.com/s/c/U_c4SvL9jGenPZZaYJ8Qyj7mAA9Hl7N_CbWWSVlTWuBMEqbfS8lkqoVzsztY2oUE0=
+qCOi43-osYKr4HHOPv94FyrUPLPsWBvgSdIxi7t7P8oXPPzZM_AgmjYehhCdK1j1KJxSuFygZse=
+jWPjqzM4suvam6dcAFpjfrScmmBuUTOju9eiDHM5bUskEWKNXTluxbY6gyYL-4FHOHR_AbkyxBe=
+6TzVskomtM-iReEWU_LAjBpPQZcqfkYOcK5D9Nmqonx_vWhnRR2pHnfG3XxBWfX_tKk3-CRXt_B=
+XGnMl9lqDJ8V80ZXlcTiMVG-tlJkb-MSSiU9_NsEalaq8ZiXswG0v3uNWG4DDBUWfxOVdfNScAk=
+0k9p9ogAegH3z1xNxFXVmUw6S8ofsP3xGSEVATt4w/CRSN6d2_ybgvjGGRA41pmE_EThPDzrOp/=
+9" target=3D"_blank"><img alt=3D"YouTube" height=3D"13" src=3D"https://libr=
+ary.iterable.com/3535/26921/97a130924a9a4a999b1b9cf2144ff427-youtube2x.png"=
+ style=3D"display:block; height:auto; border:0; margin:auto;" width=3D"18" =
+title=3D"YouTube"></a></td>
+<td style=3D"padding:0 2px 0 2px"><a href=3D"https://links.pluralsightskill=
+s.com/s/c/vYFXyeBPeb-FxhQT75v9HZvAZHxietVyelF9us_67CZHxrrCPjl-c0KxnTfPNHYfY=
+0AlWo_I1MNofrmj6I8Uswp1YU99NWWaMwXJhBI-prr6HgK1VOoXjzYxrFtZML7iXiMpo8O4hzAl=
+aCeyueETNEtJ_rjjTtEfBOfLbD5LvSLXrmgeli5zom_tB-DVZy7Cv3zKiSffXD9kesRhQMGkOHP=
+YT5w5FUc-aK-XbCgxAjmUSaHuQLZAWIvwjY9DWVM96DJT2YFGwrvPatWWbN3iqIwKIxybcpLS6R=
+36fUNzwUzvShh_msehH-0pmXrOtD5leoN9EQ1B7h3OgRBzgsYMKCVr-R1ZXD3Z_n9lUUS-K2rQx=
+RtFngrXt0GSqzC15jX4lU38z_5Lv2OaVctHe_lNFZuJzU0/gD01wAJW-9V6bGwQCwipiVHVSBGM=
+o-vt/9" target=3D"_blank"><img alt=3D"LinkedIn" height=3D"15" src=3D"https:=
+//library.iterable.com/3535/26921/02a88bc4d5b742598f20f2c41abdc44c-linkedin=
+2x.png" style=3D"display:block; height:auto; border:0; margin:auto;" width=
+=3D"15" title=3D"LinkedIn"></a></td>
+<td style=3D"padding:0 2px 0 2px"><a href=3D"https://links.pluralsightskill=
+s.com/s/c/loe7bITW_CHDw-VpdQo46nlSD8jifCjqGGu2eVuvQjriFwz0a9eLin_OwlxoWRKc4=
+KPt1SghMBvx7BByLY9lb2Ipo8t9F2eCiW2LRuxvdPDfGSXqpTPVfxoVacizOcJOcM5g1aLuMbnY=
+7jekoUct5-dvSJ30oz1Lh_rhmau1O2-fWf8JU4rsCDZ6GE48zcRWvsm1q-CxaOo7-wt66iQbHDv=
+M4yNa4F9NWDpbjvT_QAwWCwVNdEPCISHA7996Z_LWOp8NHM-2Q85AtfL6ixl-nfxdRtAcoxEDz1=
+YU4Je-TbIqaPCIy2VIoBhaS4GlxbsrlmC5yWFOJDe7h5pqfTYq9MTliypZ1-Y4gd-CfKSzPuRY3=
+Qr_yl1HCeXKUW-MG50adyWmtcpp/Cc8oJxX8ianEJe9jnDa0ho1_SVQGS1fb/9" target=3D"_=
+blank"><img alt=3D"X" height=3D"15" src=3D"https://library.iterable.com/353=
+5/26921/56ede2f6cbaf468589ce0f416631e8b7-x2x.png" style=3D"display:block; h=
+eight:auto; border:0; margin:auto;" width=3D"15" title=3D"X"></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"row row-87" align=3D"center" width=3D"100%" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-=
+lspace:0; mso-table-rspace:0; background-color:#f5f7fa">
+<tbody>
+<tr>
+<td>
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+; mso-table-rspace:0; background-color:#f5f7fa; border-radius:0; color:#000=
+; width:600px; margin:0 auto" width=3D"600">
+<tbody>
+<tr>
+<td class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspace:0; m=
+so-table-rspace:0; font-weight:400; text-align:left; padding-bottom:20px; p=
+adding-left:40px; padding-right:40px; padding-top:20px; vertical-align:top"=
+>
+<table class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+ mso-table-rspace:0; word-break:break-word">
+<tbody>
+<tr>
+<td class=3D"pad">
+<div style=3D"font-family:Arial,sans-serif">
+<div style=3D"font-size:14px; font-family:Arial,'Helvetica Neue',Helvetica,=
+sans-serif; mso-line-height-alt:16.8px; color:#242145; line-height:1.2">
+<p style=3D"margin:0; font-size:14px; text-align:center; mso-line-height-al=
+t:16.8px; letter-spacing:normal">
+<strong><u></u><a href=3D"https://links.pluralsightskills.com/s/c/LT-2bVLi-=
+lkkkPQLpjhd9E8pQIXP6Zw_cG2O1uV86SLCJd8kO_Dg-Dy_XCvX3LMsx_Rksmr6EH4LV0W_UnTj=
+rreqKubU9H0mRiQ0DPt3YJODrjUqSwD-QuCiz42IIKQpKWOp0dGKznupQbyKCvYLEWX3CbfnEZi=
+n0878sXHejPZDol-dXeqDbkzi6or--L1LJ02ktaV9p5o1Lc6oHF8WmhATrBHStEb_cqf3MnIcAo=
+9wrLZa1kUjsp8_XaoMUDcFVK1UkkzqiTTcdeaaAhg6HQz5lkxalnhOUx4JgCsoZiCc6sytp97iV=
+5eBRKtz24lhLz3IItG0ml6K4g19kUwodBa6pyIZKwE4-vkUME3P_mLraFLAs-vskCjRNO7ZAf-c=
+G9eRbOJXrVcZ0o7HRuMeJP0m0Xy4cVxpJ8k/X2QffJk37xZq0RVtS0Dnqn-SA7-AlFPM/9" tar=
+get=3D"_blank" title=3D"Preferences" style=3D"text-decoration: none; color:=
+ #242145;" rel=3D"noopener">Preferences</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=
+=3D"https://links.pluralsightskills.com/s/c/CL1D5oP6xYQuYwByeufX2M_x0hu3zE4=
+enY-XAcD70XE5RIzYKvHIBzKFutwc3xXZrcffZWeIA2yrIkkzVptt-OQLqdMqn1wCHxA-F9BWLZ=
+xITfywucQcnvMf8IGZQNyJfk68C9NCsiJ_11BgYj-qxMXsfpvcTzOIlv1dosTvqKZNiMYd0NaV4=
+mQZwHcxS2OSLYfw7BwOyk1Gbh-WKf1N1UUMQVtL_jVqXXg_b8KvB6YoPQLobuB8ieqPMQ8P2aI5=
+sqASrH2qN8xGy5cG-xh8I1FWmCLYeJo5ltHgZy-Tb8ZxNNQ2jiXv9hV6OwMEaRO9bK-TlDHRnUc=
+Qag_81eWsUKpcrLoJbosDPCNIZruOQgrbeO9E_h-4A7zlDVXG0A_GfKgjdWEQ_8b6QYnd1Q/dMF=
+coqbWGdjt25hxlWHypjCDggXYoz0i/9" target=3D"_blank" title=3D"Help Center" st=
+yle=3D"text-decoration: none; color: #242145;" rel=3D"noopener">Help
+ Center</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href=3D"https://links.pluralsightski=
+lls.com/s/c/JJIWq-xsWmB4jsTxfdI4U6wR9-EJSnS0NSXckesG-BkfGnXebEcCrz9pjjWRF1H=
+45LT_ujNMUpwi07pVm9QCVmI0mIbFsoTsZnup6xQ8vwkPn4PhVF6Thj_-SGo2K4MYYdR2XcQmDN=
+uLGrIDkgEfZUuli9wev_6TA8X4hBEj4ZlCw5JP__aeMLqwpTzt8l2sky-om_DmQvQUIKklLCh0F=
+u83wzl_TQBQFsWnbFuB-wmgQk8-zditaPb11OhBM_fRr2ZbGTmiW3cVNtvoHxuRwI4GVpRlMSlz=
+oapwNYERq7AhGsYSC5pjJp4hvmM6PY5fVzbd8ZR_s_EX928bzRi1liZYEwrE-1E1V3WZ7ACsz2L=
+La5dzEe5yjJ9ebx5ngqyboYsBz21HaGhsBJw/ciYONtW5bLgtnW41B0Z8fXeIH_JrHs2x/9" ta=
+rget=3D"_blank" title=3D"Support" style=3D"text-decoration: none; color: #2=
+42145;" rel=3D"noopener">Support</a></strong></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"row row-8" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing:=
+ border-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #f=
+5f7fa;" bgcolor=3D"#f5f7fa">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border=
+-box; mso-table-lspace: 0; mso-table-rspace: 0; border-radius: 0; color: #0=
+00; background-color: #f5f7fa; width: 600px; margin: 0 auto;" width=3D"600"=
+ bgcolor=3D"#f5f7fa">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-bo=
+x; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: =
+left; padding-left: 40px; padding-right: 40px; padding-top: 10px; vertical-=
+align: top;" align=3D"left" valign=3D"top">
+<table class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0; word-break: break-word;">
+<tbody>
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"pad" style=3D"box-sizing: border-box;">
+<div style=3D"box-sizing: border-box; font-family: Arial,sans-serif;">
+<div class=3D"" style=3D"box-sizing: border-box; font-size: 14px; font-fami=
+ly: Arial,'Helvetica Neue',Helvetica,sans-serif; mso-line-height-alt: 21px;=
+ color: #747188; line-height: 1.5;">
+<p style=3D"box-sizing: border-box; line-height: inherit; margin: 0; font-s=
+ize: 14px; text-align: center; mso-line-height-alt: 18px;">
+<span style=3D"box-sizing: border-box; word-break: break-word; font-size: 1=
+2px; color: #546f92;"><sup style=3D"box-sizing: border-box; font-size: 75%;=
+ line-height: 0;">1</sup>Offer valid from 12 a.m. MT on May 23, 2025, until=
+ 11:59 p.m. MT on May 28, 2025, and
+ applies only to customers who purchase new subscriptions on a yearly plan.=
+ Yearly discount only applies to the first year of the subscription. Discou=
+nt cannot be retroactively applied to existing subscriptions. Offer may not=
+ be combined with other offers and
+ includes access to the Pluralsight Skills platform only. Limited time avai=
+lability subject to change without notice. Additional terms and conditions =
+may apply. We reserve the right to modify or cancel the offer at any time. =
+Purchases made in connection with
+ this offer are subject to the <a href=3D"https://links.pluralsightskills.c=
+om/s/c/P06W-n34ANjc_QSMdYxTUpinyezycYrqRFA8KdZkg4VX5URR0WHLuTwPCTQBWY9eK_Sz=
+aUvn5rZi-Y-QSA_cTbA1fSMEUficDAnxaeBC9bFM9OiQem0TkXq769KCJEMj-LHS0J2xT0zA2Pa=
+PKu75S0jodWBgMvJ0KqS1aA4TuK9zM1DHmrNKO_eSefKsH2QDWCXzilckyPIFV3qsDFQEESWhJ5=
+00I_cSDtRCwWFF9929X_P7rdkNikwgvo4oYmbaejIzcLwff3sB5YIZR8C-fA0AWqD_dJpNUQm_W=
+4yPd8Jhu--e4b9yUzFeLyU2F8-ZeQfSOHOXN1GD0_2K4oDzuUCDm4oovBdnM4OfMXYrilINkGsL=
+T1T8GEFLBFzVyr1TS_ZDVXLpinZutKgEthQX5US_zf52BP9OVA/nV9_g4kxZw79JwV5E4js_3NV=
+Nen0Di8O/9" target=3D"_blank" style=3D"box-sizing: border-box; text-decorat=
+ion: underline; color: #546f92;" rel=3D"noopener">
+Terms of Use</a> and <a href=3D"https://links.pluralsightskills.com/s/c/ovt=
+JzUO-T0eAXRLeuyJ5Mt03rG3_r-88fGNF_i7aRle6qklyW7Qk6vgiHqfYMNnmjp1NWZVchcrGZg=
+DmbAFAZ74vMN0OVJHkJak-utP8YL-9kLJoJF4ObCuAYHXZMOu1uaNFyJK5-XVLsHXtf3muF7lDl=
+VIg9bDwi3-qFZGyKAexJzSa85aal_91YgE7q9zLsCwKwel9NlRtFzu8zUugb37FBRHq-P5Q1XAI=
+BY1c9b4jtVKT_xmzc5LgqX0C9ar24GLX5gbwHJ-TyjbTFjReXfx6qqmQCL9I899pCXjP1eLswKT=
+IUB-0a1IJORef_hzj2MAiRGC_VUB_pd4bSzx4dM8Fhwi8msApJJVHykeEDCpQ4z_dRgdiv7GNov=
+J2abOmg1fQfMHqqLZbADeQbplHwq27ocrUJ93OEQ0YeF5Urft_mA/X-B2Z2htKZglA7Xy0SKomx=
+-8_NNgreRj/9" target=3D"_blank" style=3D"box-sizing: border-box; text-decor=
+ation: underline; color: #546f92;" rel=3D"noopener">
+Privacy Policy</a>. For more information, please visit our <a href=3D"https=
+://links.pluralsightskills.com/s/c/r8SoTkdP64s-7SprAexuRNHecSutoghiXuwz1LLx=
+c9m1ufV_8R-i0ZwSsLIcDOwSoq_38tJQgSewOYAYZxGTGZvBd_-R4R6rx5jnYa0ETQkPsRZQXHs=
+EIKPMdNZRagxMJ1zkc4IzLfMfXiKfvO9XA86fipu2d7H50Nr79UxQCBo6DeBcY5msxajSGjtVRE=
+ML_zPY-_JmFcidAmAsz360A1K90t-vmP-eKz_ymthVLypuYPt9FEQ5ZqQTfJizKIg4cPlsFhAkE=
+t0NeDRmQlHQ__0BJBPj71SmgaMGeAHHBa2Uggo3YLPnEtTVioYBJ3264iyMCcbsg_xEqcuFjkJ1=
+Pa_FgPrudsgFbgjGXshS9iiM7jtyv1yRE1PB3_w5flW7MaGF_t89PKi5nDO_PZGLbuj6UUiKzhJ=
+VJE9xGHa8CvSfawAFz-mhtH-H8MDjSioPSOHD/nft53yyuZjjENG6jQ4ahseDb4FUhaThY/9" t=
+arget=3D"_blank" style=3D"box-sizing: border-box; text-decoration: underlin=
+e; color: #546f92;" rel=3D"noopener">
+Promotions FAQ</a>.</span> </p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"row row-9" align=3D"center" width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing:=
+ border-box; mso-table-lspace: 0; mso-table-rspace: 0; background-color: #f=
+5f7fa;" bgcolor=3D"#f5f7fa">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td style=3D"box-sizing: border-box;">
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border=
+-box; mso-table-lspace: 0; mso-table-rspace: 0; border-radius: 0; color: #0=
+00; width: 600px; margin: 0 auto;" width=3D"600">
+<tbody style=3D"box-sizing: border-box;">
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"column column-1" width=3D"100%" style=3D"box-sizing: border-bo=
+x; mso-table-lspace: 0; mso-table-rspace: 0; font-weight: 400; text-align: =
+left; padding-bottom: 5px; vertical-align: top;" align=3D"left" valign=3D"t=
+op">
+<table class=3D"html_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"box-sizing: border-=
+box; mso-table-lspace: 0; mso-table-rspace: 0;">
+<tbody>
+<tr style=3D"box-sizing: border-box;">
+<td class=3D"pad" style=3D"box-sizing: border-box;">
+<div style=3D"box-sizing: border-box; font-family: Arial,'Helvetica Neue',H=
+elvetica,sans-serif; text-align: center;" align=3D"center">
+<table style=3D"box-sizing: border-box;">
+</table>
+<table class=3D"row row-88" align=3D"center" width=3D"100%" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-=
+lspace:0;mso-table-rspace:0;background-color:#f5f7fa">
+<tbody>
+<tr>
+<td>
+<table class=3D"row-content stack" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0=
+;mso-table-rspace:0;background-color:#f5f7fa;border-radius:0;color:#000;wid=
+th:600px;margin:0 auto" width=3D"600">
+<tbody>
+<tr>
+<td class=3D"column column-1" width=3D"100%" style=3D"mso-table-lspace:0;ms=
+o-table-rspace:0;font-weight:400;text-align:left;padding-bottom:40px;paddin=
+g-left:40px;padding-right:40px;padding-top:20px;vertical-align:top">
+<table class=3D"text_block block-1" width=3D"100%" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;=
+mso-table-rspace:0;word-break:break-word">
+<tbody>
+<tr>
+<td class=3D"pad">
+<div style=3D"font-family:Arial,sans-serif">
+<div class=3D"" style=3D"font-size:14px;font-family:Arial,'Helvetica Neue',=
+Helvetica,sans-serif;mso-line-height-alt:16.8px;color:#546f92;line-height:1=
+.2">
+<p style=3D"margin:0;font-size:14px;text-align:center;mso-line-height-alt:1=
+6.8px"><span style=3D"word-break: break-word; font-size: 12px;">This email =
+was sent to trainingcd@terasky.com. If you no longer wish to receive our em=
+ails you can
+<a href=3D"https://links.pluralsightskills.com/s/u/baALk763U0gO6BZVMWnElFyo=
+zOdszFGNos2xFIAcCBz5ZIUfAP0VDS6nTrRynvXJ58cI2QArQf9abWz1Sivbp2XeBxQhSUod8vh=
+fp-u-Sq9XNRJaL50RnPTcDjkOcS6U1mFpRAuMEzHloOfbFILP1AdW1yEeeTWf2iwfnf0ST-qC6v=
+BWuZ4OdLCtyG6YTTtPX8oYLo8IjLFss5rc/hGkDlHp5zNzNDnAkqfG0mq9mki8Dr_WA/9" targ=
+et=3D"_blank" rel=3D"noopener" style=3D"color: #546f92;">
+unsubscribe</a></span><span style=3D"word-break: break-word; font-size: 12p=
+x;">.</span></p>
+<p style=3D"margin:0;font-size:14px;text-align:center;mso-line-height-alt:1=
+6.8px">&nbsp;</p>
+<p style=3D"margin:0;font-size:14px;text-align:center;mso-line-height-alt:1=
+6.8px"><span style=3D"word-break: break-word; font-size: 12px;"><a href=3D"=
+https://links.pluralsightskills.com/s/c/2kp7q9nbRww2OVtabC47Ifc-Qz_HRF1TzDj=
+Jec5XKnnqouhnCdtSRCzfNJrkmxJZvIMEMHZdpBaqFMQV7NbgL4BrzvcMEKltiVejdWPnjCMTnl=
+WZ234nwxr3ewrmV9Gx9xgM9uhnZvs9fwwKY3UX5oRQHeScohrDKMTVEGgylBTpsvb2iqRgyIn0o=
+cpM8-dFtEyIS3FZADhXL6o8hJGCjSi9zRoIHsIkn1x4jkCdxn6-lmsK0MRzjLjd3GbOfLdtFHeR=
+o7B3hlmyXkshHGsbygRIjdS1I230IfBRx7h1wL1uT2ZoHQqswpn5wmsCVj1PSTpTs4jbDpsO_Fj=
+fjYGzgzxqeOgfNHIz58BF16sg4kNCtyRDaYqCA4jcjLUAY3Ib6SAdAg3kU4jrMzCQ_SkMb6NvCf=
+Y0VD-sfJuEby3e7kXtQA/vmpNzIpvVLyge8AjkMNVkwB4p1DQ5ZTh/9" target=3D"_blank" =
+title=3D"Privacy Policy" style=3D"text-decoration: underline; color: #546f9=
+2;" rel=3D"noopener">Privacy
+ Policy</a> | <a href=3D"https://links.pluralsightskills.com/s/c/i3yFP3sUe8=
+BEyWM1i_6Y3KYq-c2tgq4MUJCX92_yZxn3Du94cmqXxnDV-p_XMTaymB8-7U-_Y7HEFSASISx17=
+90w9NjAoL0aW2M-R8MwBz-Jg2n9vW7HwKT3eFlKsx_a_yydTmxsA9_XupiNi8iXV5tMMLyVCMNt=
+VqHCBDjF4Mk9wBPva_w1TBbN3BVOIJixuGs9HosJmeT2bc05jEqOSZ_2HgU4-O5odo-bKZiMlEc=
+ZRRKchnYbYauDym_O1Rels8kQAdvp9kKwNSNsaxJng65VNv7IBCZ3ISGykvDq9WThk2IZyFdK8Z=
+CrFnZ0ZuEkXVGqe7zkVL8NL24fV6UhKD_Ko6tXI-B9XF0x2XlPpHNe5kJe2jeYmBXAc5Um0qMAt=
+l9VaMBfZb8-7bg8o5B1ytTWAbiMkSIhHOzz0qRrcFaxahImTSgq7cWg6Dri_N6CUTLKt03QzgU8=
+VtywifQ/NsDsZT_mUKaq790LTy-ieIKce7aPehOC/9" target=3D"_blank" title=3D"Term=
+s of Use" style=3D"text-decoration: underline; color: #546f92;" rel=3D"noop=
+ener">
+Terms of Use</a></span></p>
+<p style=3D"margin:0;font-size:14px;text-align:center;mso-line-height-alt:1=
+6.8px">&nbsp;</p>
+<p style=3D"margin:0;font-size:14px;text-align:center;mso-line-height-alt:1=
+6.8px"><span style=3D"word-break: break-word; font-size: 12px;">All logos a=
+nd trademarks are properties of their respective owners</span></p>
+<p style=3D"margin:0;font-size:14px;text-align:center;mso-line-height-alt:1=
+6.8px">&nbsp;</p>
+<p style=3D"margin:0;font-size:14px;text-align:center;mso-line-height-alt:1=
+6.8px"><span style=3D"word-break: break-word; font-size: 12px;">Copyright =
+=C2=A9 2004 - 2025 Pluralsight LLC</span></p>
+<p style=3D"margin:0;font-size:14px;text-align:center;mso-line-height-alt:1=
+6.8px">&nbsp;</p>
+<p style=3D"margin:0;font-size:14px;text-align:center;mso-line-height-alt:1=
+6.8px"><span style=3D"word-break: break-word; font-size: 12px;">42 Future W=
+ay Draper, UT 84020</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- End --><img border=3D"0" width=3D"1" height=3D"1" alt=3D"" src=3D"http=
+s://post.spmailtechnolo.com/q/RLxSXLKQsLW8nNU-v5lptA~~/AARGbBA~/mELraGHHZ4G=
+9hdDA4kWeV2GvyaPgCtN2i31zzAM2i-KcvW8ww7RQOcQQrtOfmRRXZapqVkADP3ybhPk2tt7wsg=
+~~">
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+ </body>
+</html>
+
+--_----rhta4FL9hlMvEmg9iOb18A===_94/FD-59160-6D907386--

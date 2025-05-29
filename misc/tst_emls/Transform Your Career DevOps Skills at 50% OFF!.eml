@@ -1,0 +1,1309 @@
+Received: from PR3P194MB0889.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:4d::16)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Tue, 27 May 2025
+ 08:08:15 +0000
+Received: from AM8P190CA0028.EURP190.PROD.OUTLOOK.COM (2603:10a6:20b:219::33)
+ by PR3P194MB0889.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:4d::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8769.26; Tue, 27 May
+ 2025 08:08:11 +0000
+Received: from AMS0EPF0000019D.eurprd05.prod.outlook.com
+ (2603:10a6:20b:219:cafe::fb) by AM8P190CA0028.outlook.office365.com
+ (2603:10a6:20b:219::33) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8769.24 via Frontend Transport; Tue,
+ 27 May 2025 08:08:11 +0000
+Authentication-Results: spf=pass (sender IP is 143.244.91.45)
+ smtp.mailfrom=bf54x.hubspotemail.net; dkim=pass (signature was verified)
+ header.d=bf54x.hubspotemail.net;dkim=pass (signature was verified)
+ header.d=mail.kodekloud.com;dmarc=pass action=none
+ header.from=mail.kodekloud.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of bf54x.hubspotemail.net
+ designates 143.244.91.45 as permitted sender)
+ receiver=protection.outlook.com; client-ip=143.244.91.45;
+ helo=bd77glb.bf54x.hubspotemail.net; pr=C
+Received: from bd77glb.bf54x.hubspotemail.net (143.244.91.45) by
+ AMS0EPF0000019D.mail.protection.outlook.com (10.167.16.249) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8769.18 via Frontend Transport; Tue, 27 May 2025 08:08:11 +0000
+Received: by 172.16.157.3 with SMTP id a0b2377bl4ybydtfyw75pwdaf0mxh1ohij27w2p9pdz;
+        Tue, 27 May 2025 08:08:10 GMT
+DKIM-Signature: v=1; s=hs2; d=bf54x.hubspotemail.net; 
+        i=@bf54x.hubspotemail.net; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id:list-unsubscribe-post; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=f5LkpGcHAIQV33tplmXOvER5erFALT30zumjfw3qLuQ=; 
+        b=PbsGD5dnlL+xNEGVBZNitYsb69pj3m4DPpLIM/J9tKC5U5vbRQISuCnK/A8bOb
+         34As3tb1sh6wredSXoBTdO80XHa07ZqcNhMw7fstLP9ejGnRZC80+R8ZFZJNpiV
+         2oihGSN4CzD4P3v4TcYTdErqqrJvGkbc0vt5XudrwiK+KlEbvIg4ilPnvv6rC4l
+         C5o+2jPTVlp5u2lzYwzP67dx2asrYUhq27JB4nsHnpxeZeefJdb6rKO9UpatrzF
+         fbNMq7X+yhupeHLqVBeamqScgUcrQ9wJNupr6ZWPo4Ut+GpEqhv6cKIXz1cnPG3
+         Vx6uEGcr67q4kf1O3FvNn+jB04Kg==; q=dns/txt; t=1748333290; 
+        x=1748596090;
+DKIM-Signature: v=1; s=hs1-6783951; d=mail.kodekloud.com; 
+        i=@mail.kodekloud.com; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id:list-unsubscribe-post; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=f5LkpGcHAIQV33tplmXOvER5erFALT30zumjfw3qLuQ=; 
+        b=NkuXFJFWyCoZIaKDbxg8IPjcJ6/jR0Od/mkaoKGwkFqS7YPOCUctYNPhZ4REfZ
+         0xfeXvu3WEs6xKYuUpMezpWZcJi8gZ1K/70Y7Su7FDaUOwqYEw9vzlVBI3MUGZS
+         yNvgIJVlRIfWafGpj4ao4Re6k66GUHUv8pzJQj1QLT3uNQZn6g14YtvNBFaF4AK
+         ARpqa5hKouFf9keSChiGJ7XoT2CmdNlxDdAacP/T2ie2MSvUG7xtllr5y+gVjcn
+         L1PAqjOcfCodB2Al1rXbbZaEA0e59TSSU/kosreU/WBDAskjb9/glNl4f7/X5/Z
+         sKq0DwKT4I3yiI8TSqz7i8gLq/xQ==; q=dns/txt; t=1748333290; 
+        x=1748596090;
+Return-Path: 1axbk0my6reyfiswl49lhi2pt563055e3n2p0v-davidg=terasky.com@bf54x.hubspotemail.net
+X-HS-Cid: 1axfczmp7u6bxpenkf1ny4sph8ro13u6g319fj
+List-Unsubscribe: <mailto:1axcrjvvhk75bu28zfm2xgj9jpniuj6j0a4vnj-davidg=terasky.com@bf54x.hubspotemail.net?subject=unsubscribe>, <https://team.kodekloud.com/hs/subscription-preferences/v2/unsubscribe-all?data=W2nXS-N30h-BlW2MlGkr4rrdw0W1Z0Vtt25g9X9W2zDpSh2xBw16W2xRXSJ2xzHCPW2nGLqb1Lk1RCW3T1lQY2p0S8rW3gfj4n1BqW_zW2Wq2kC41-dmYW2HYJt12sLpgGW43CSbf2xNyYbW4kn9XD4cHChlW2HDcrQ2YNS07W2RCs1-3LHJ-xW30tZJY2KNRslW2Wq3c049BpbyW2zM7sB1Z75-zW2-lghF2Rs7wqW34wDXH4chlC2W4ff1752x-MXmW2sKHpr2RR3SfW3ZSyM31NcTScW2xJnS949xqmMW4fNnt-3C8_BPW3C1t6l2vYxnRW4t6rNQ1VnLCFW47QHX52-JRSTW23l82C25mCxpW4rwWmS2CKH9NW3DSJc52sZzNmW3JPr9s3QBpRtW4rJ0ly4rqqfhW2RyV8_3SQDMBW3H9s8445WprsW2HX3dK41DW8tW2KnXyr2TJg3MW3KcKPr36mYdwW4pl5Nq2vYVC7W2HB9Cc4htRzdW41VdYf49TjMHW4mLyl22xPqQpW4pb8GY2qP5yBW3Zx5bQ3G-yVcW45n6tx3QTQcLW2vSTw64hq1GFf45vlC_04>
+Date: Tue, 27 May 2025 16:08:10 +0800
+From: KodeKloud Team <team@mail.kodekloud.com>
+Reply-To: team@kodekloud.com
+To: davidg@terasky.com
+Message-ID: <1748333289175.faf0e73d-87c1-4d19-82a2-c3f1862f04a9@bf54x.hubspotemail.net>
+Subject: Transform Your Career: DevOps Skills at 50% OFF!
+Content-Type: multipart/alternative;
+	boundary="----=_Part_11817277_15479748.1748333290204"
+X-Report-Abuse-To: abuse@hubspot.com (see
+ https://policy.hubspot.com/abuse-complaints)
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-MS-Exchange-Organization-ExpirationStartTime: 27 May 2025 08:08:11.3470
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 0d89ad0f-6945-449f-9b93-08dd9cf59f81
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AMS0EPF0000019D:EE_|PR3P194MB0889:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AMS0EPF0000019D.eurprd05.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 0d89ad0f-6945-449f-9b93-08dd9cf59f81
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:5;ARA:13230040|29132699027|4022899009|5063199012|39142699007|31052699007|69100299015|12012899012|2092899012|5073199012|4123199012|1032899013|2066899003|8096899003;
+X-Forefront-Antispam-Report: CIP:143.244.91.45;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:bd77glb.bf54x.hubspotemail.net;PTR:bd77glb.bf54x.hubspotemail.net;CAT:NONE;SFS:(13230040)(29132699027)(4022899009)(5063199012)(39142699007)(31052699007)(69100299015)(12012899012)(2092899012)(5073199012)(4123199012)(1032899013)(2066899003)(8096899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 May 2025 08:08:11.1472
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0d89ad0f-6945-449f-9b93-08dd9cf59f81
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AMS0EPF0000019D.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PR3P194MB0889
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:04.6559230
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8769.014
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(4710137)(4713078)(4714097)(4999163)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?bFFLVVc3TzRFL0JLb3BjRW5sdzBLSFBYVkViYXE0SGIrZFhVNFdCWUs4ZFF0?=
+ =?utf-8?B?eEN0K1pJbWRVZXZOY1hSeUJGZlNwSUNleCtkWXFDTzVvTDkydkducEt0QTMy?=
+ =?utf-8?B?T0lWSXlnd3ZNY3F5RGxzaktkVjRmMzZRdm5lMmFOODBRdXAvdnl2TmV6QWxL?=
+ =?utf-8?B?WjhSMFkyeHZ2bmFIU0g1b083a1JMNEphVGtzT09KQllaZWZDWWdleEZiK01G?=
+ =?utf-8?B?MnNNVWJEMjlubUUvcy9tbDZxV01DOXkyVFB0Z2JqNkN1SGhwVzEvNk1uK1FR?=
+ =?utf-8?B?WUZjZUxmM2RTMDV4ZHl4czFYTWJlcHgrVG80N0JlVjRKT3JLcGwrbUNSK1hx?=
+ =?utf-8?B?QmF4VXFSSGVpUkgyV1pLMWQrbUY5eFJMWXE2WXpDcXZHS2lwbTFLbGJuMTYy?=
+ =?utf-8?B?WGM2M2Jsd29Jb0xLSHpDazd1ZlhGVmVNcG1xN0hNTWVEUDVIWGNja0NUL09a?=
+ =?utf-8?B?VndhYVVFbCs0My85ZmFPK1hISTJVOERUdVkyTGNWOXRIRlVqTHRCSEIrTmJU?=
+ =?utf-8?B?UjJsNVdHWDZGa05wZ05lRkpOVjA2QUJ2U1FKTTEyTCtxbXFHdk0rMk5wRDBi?=
+ =?utf-8?B?OFQrWll3bDIzeW55a0J4WjV6N2t0cGNrRnF1OHlQbmkzSkMvUkU5amd1N21m?=
+ =?utf-8?B?dHI1UVVNUUdCaUVNdGJEWlBPYThaTVlLM1lJSS9PRnlUMStITHd0SUtHUTdi?=
+ =?utf-8?B?WnJ0QkxiSVU4cUJGM0pUQ1IvUmhPYWM5dWMxajl4UEpYc3gzR2U5Z1F0aXN0?=
+ =?utf-8?B?b0pJUjMzc2lFYmVxYVFRa3NoYkZqRW5oZ3pRSVVVRmZQWmxTKys3VjFzWmxP?=
+ =?utf-8?B?TjZhZGk5aC9RMyt3N1hKNkZ6ZEFUNHRoRncvWURtSFdBVW9rZW8vSW9uOVlp?=
+ =?utf-8?B?VER6OHlhQlRjMS9WRWg5N2NHZ0QxWk85a1B4dEkyZ0U3b2NZa2NYUFVJbTlK?=
+ =?utf-8?B?aE10Z0hhQ25oekh3TlhLSi9SeStmN0FNRTh3ZmRNSE0zKzQ2ZTMxS1hSRERj?=
+ =?utf-8?B?ZWl2aFYxckJUdWRTY2NqdXpJWCtMZ1h2dHVBeTI4M2xiU1VrMHhBTjBsaWJK?=
+ =?utf-8?B?clIwM1lLeU9wRThKSXlqMkE3aktyQXA2VEpLYkdndlJrQ05lS2ZSNm94S0pl?=
+ =?utf-8?B?Kyt6TC9mWkI4SWNxTkJvRzRHTDQ1UEdNN2s4K2dqUk9iMHNDVndVRjhxMU1u?=
+ =?utf-8?B?SlFiVllLVGdnUk1IbjNEUS9NZXJVWkNzTUJjbldDSE5hU084c0tNRGV3ZkNM?=
+ =?utf-8?B?bXRpTmIwOHl0WktDUTJpWlM4dXZUS3RlT1RHdUJ0T21EcWxzSmMwcmd4SG5M?=
+ =?utf-8?B?SzkyeEZFODBOREYzR0dwM0UyRTF1dW56TWoxU2t0cDcwSlduODVmY1B0dUxE?=
+ =?utf-8?B?S0FPdFNCVjNQbkRvbTBZOFY0N0dZZTQ5YjR3QnRseERXbmhCN1hhc3hMV1lr?=
+ =?utf-8?B?U0ZXbmxieFFkaXVDOWxaSm96aXFiNlpnYWpkdEpITkh3Um1GcTd5MDVUWVVY?=
+ =?utf-8?B?ajJkN0NyK1JndVZCeUtaOFA0Mk9rKzF4RlpCaWhFYm0zTlpsYXZrK2FURjZz?=
+ =?utf-8?B?OEdVQ2pJbjJmUXY4dlAyOEtnVHdmYW1oVURoUTkzaXdMOWJETFJJbVE4b25G?=
+ =?utf-8?B?RUdrbVhORG52UFJCeWU2dHNKMTNBcXVNZG9JaEs4eDhnMC9jUk9MWFFjNk95?=
+ =?utf-8?B?S0kxVlkvcnUzaWg2MTdYcVZKeFppWWVLamRBLzFNbDRVZG5iaUV3alhyNm9t?=
+ =?utf-8?B?azZIVzhNY1haR1A0VkNua3NFeWZpblN0djViMWFYN1ptVHB4Z1JZUTRSZUZu?=
+ =?utf-8?B?YVVxZFBGWGpqOTI1OUlIVEdaNm5YZng1VjZGQmkyVS9GWS9Lb1VkSFFycTRv?=
+ =?utf-8?B?M1A1TVRhWHdRb0VyWGlIckdJZmY5cm9VOEpPVmRYbmJUVHRsdzgwMi93eURo?=
+ =?utf-8?B?VnFINGVVcTlhNjd0dzc1d2tFakpPY0lWcTlsSlhHRVRoVkVtMzZyeXZLOXBq?=
+ =?utf-8?B?Yk9CVFl6UHBUS29RZytPbnNLNjlJTXVteS9YdzJ6amVCYUtRcHdNOVlOQUNl?=
+ =?utf-8?B?SU54bWpkeFJONS9XZ1BEampjcUFyUFlXUHRkazNOYS85YmhJSzYxV0U5MkZj?=
+ =?utf-8?B?KzBsWStFbk94aSt0U3ZNMVpvZk5pRDdpaExkcmFka050bUVyV2dtUUN5WThD?=
+ =?utf-8?B?b0Y4V28xQzJzdHRES1dseFlwcUh4QXQ2Q25udW1rOVdZYjBlM0dGdzF3clI4?=
+ =?utf-8?B?MmErakRqVDAvUkdBc3prZGJBcDRRMjc2UUxIRDBWZmNscXZ4ZjNEMWEyWndO?=
+ =?utf-8?B?akZ0VFVCNmRlYm01bFNIVEtaMGp5RXV1azJIL2RiZFhMOUx0TDJqMlVxYjFn?=
+ =?utf-8?B?Sk1pL25IMWdVYzV3cHVWTE1pUFZ5eDJpVDgvUithOXNKM3VLQk5qVEpjZzNR?=
+ =?utf-8?B?M0ZPdlQ4bzRUUDBLTWVEeFI1UFNQR2lZSG5YQTVaSHV4SnJmQUtSWjB3K3hx?=
+ =?utf-8?B?MDROUzRIKzhtZURDclhmb0hJZHpLNUdaK1Yxa0Y0RExJd0RFMGlQc2d0bGcr?=
+ =?utf-8?B?RnU4Ui9OVjlYUHlSNjJCOHM5MWtuTjMxZGpjWW4zM2FKZllKT2xSVGFhTzRr?=
+ =?utf-8?B?S1hRKytYS1NCclV2REVLQXdZblRmNEtvdVBmRUFYT0xVMC9XeTFLcjFhTHpC?=
+ =?utf-8?B?SThTcU14OVVzUFc1ZS9nWkZPcU1tYlh1SFFucnprQ1JBWFVxK2FncE9wdy92?=
+ =?utf-8?B?RU5zdHRlSmwwbk9wakhJbkc3VUhzWjcxWUF3eWkwVkdzZWpMUW9aOHdVRXRD?=
+ =?utf-8?B?Zko5c291QXhQWGFwL0pOWnZzY2NjV3BOZlFzeXVhbmhzVk9mV093U1B6dzFK?=
+ =?utf-8?B?VTFDRVdsZzhWWTlPWklUaVNWazB1aGhBZnY5OTBjeEdORU40SFBhbzBtSDIy?=
+ =?utf-8?B?RDI1V0wvRmNDN2tYWk55WDZHTjc0QkFOSDFuK2NRcXFMcDRabnR0Vmlhbloz?=
+ =?utf-8?B?OHNmR0syR3R0UXNMT1JaUmJLUUNGakJWOXhRNm1jb08rNklTUHRzNlBLMlNR?=
+ =?utf-8?B?RHNTS2YrUThzaEpMaGp1WE5mWDNMN3pKak5EN1JVdngyc3JFbm1MS2tIN3dD?=
+ =?utf-8?B?MzFmMkd5OGNTY3ZuU3lJZ0FQTHIxMjFJTXMxaGJZRnk0UzBPZVdJZ0NYbFlO?=
+ =?utf-8?B?a2ZEL0pRR2VXQ3hRREMyZzlEUkErN0J2UUlUeHg2ZENyTG8xSDVHWnlHaW9W?=
+ =?utf-8?B?WjZVMGc9PQ==?=
+MIME-Version: 1.0
+
+------=_Part_11817277_15479748.1748333290204
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Transform your future with hands-on DevOps training. Offer ends June 1st!
+View in browser<https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fp=
+RMJVYl1B58Ryx2WW69sl4k5x3vfjN7TcW2v5nR32W7lCGcx6lZ3pmW5lKyY771QqZzW5SK5zC5M=
+NmmkW2fYZbx5q3TLfW8RqD7k7_QYqfW5RCv5T4_crfRW464RLn62CDkLVkdLV36MZs3pW5rj5hz=
+8gDc39W2Vh1KS1c3qG0W7Nswbx4TpBlCW78n5MV7Zjdk8W6pPN-64DMc92W2lvM7k5wJ6DvW5bF=
+k2K6xKbPMW5xLXHm7827gzW2GYcR_3_p1g6W2rSNHy3prHDfMMlF_pPGLnNW3fqb426VzyVgV3k=
+3Yt5JVWtGW1-TxHN5RPkMrW8xc5MY2VGT0GW8g8nCK1wTChzVzhZ3c5dMysnW57CMXd5wrvbLW5=
+ZXltg1pVDN-Vzk6PP6y5-6yN7YHt_vvDQ1kW1C5bDk7JdJbxN4cvY82vZ438N5-022lRcs5wW7k=
+qsC518LjQLV_fVG35--bkBW6kc6qS3ThTG2W4KSPf04tD9wnW8Sg2nK2QZBfwW57v7x_5Dzjn7W=
+5tv9rS8kXp27W3W7r6n7dzl7_Mb85wcmBng-f4BZPj004>
+[Email Banner (2) (1)-1] <https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04=
+/VXhyVX2fpRMJVYl1B58Ryx2WW69sl4k5x3vfjN7TcW2P3qgyTW7Y8-PT6lZ3pdW2ZlXVC3YrKg=
+5W2qXNJ65dV14BW7L520P5HW3djW1Mt_4k5YmshhW1P29CM9bTjhlW2FgW4d9d-b84N21_HWljj=
+ZX-W1f4nD08bLnLSW6l-lc67dxPHSVl-Yq71tt6fbVk0PBt7YBcVZVsGkjS2qPRmWW2xLNzC7GY=
+rcTVQc7GB3dJF4QW6gz4q_4JCKV4W4WhJ5l4wsW-fVHshW71DS8cZN8CyHDc8VmjXW4HNH2V4Vh=
+BgNN1N6vYrl5SvDN41RVwMRHSNjW2wnS0-12GTnMW3g-GJK4kCzFyW4VH33F4bXSfjW6xQRzg7j=
+yNXPW8jpZ781YZtYnf3SNlyl04>
+
+Hey David Gidony=E2=80=AC=E2=80=8F,
+
+
+Have you ever wondered what stands between where you are now and where you =
+dream of being?
+
+
+For thousands of our students, that gap was bridged with practical DevOps s=
+kills, skills that turned career frustration into confidence, uncertainty i=
+nto opportunity, and dreams into reality.
+
+Today, I'm thrilled to share something that could be the turning point in y=
+our professional journey:
+
+=F0=9F=8E=89 The Mega May DevOps Sale is Now Live! =F0=9F=8E=89
+
+For the next 14 days only, we're offering our most significant discounts of=
+ the year:
+
+  *   50% OFF AI Annual Plan<https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4s=
+L04/VXhyVX2fpRMJVYl1B58Ryx2WW69sl4k5x3vfjN7TcW343qgyTW8wLKSR6lZ3kRW3L08Ht4R=
+GvLwW5-9f_W6YjB1qW3GhSvt1gyfRTW93pDhb213W0mW7RTJHf8_Ztp5W95gY8t78X9h8N7N5yM=
+zwmk_PW96n3FP58S08rW4WF5fC6RwnJlW7cv4Ms45WhyvW8SVXND9cMvFqW6VMYd-5y-wdkVlmF=
+1S4fhFSvVz1yXL5DxvBFW6bSKZl8bTr4GV5GKGp2Yhxs0W4sD7Hq7P9cTcN2-kNNnXXYgLW8Vw-=
+5q1Kq631W2mK0Kx5P7cMlW7757Xn4GvrV_W4m4-gN2RldwnW8rs7sc1jlNVdW34k-nJ7QmrG8W2=
+h_l0T7BFVFYW7WC-nV94GPsJW4SPz_G1bnd3YVG_Ww09fMBpJf4lysWM04> =E2=80=93 Perso=
+nalized learning that adapts to YOU
+  *   40% OFF Pro Annual Plan<https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4=
+sL04/VXhyVX2fpRMJVYl1B58Ryx2WW69sl4k5x3vfjN7TcW343qgyTW8wLKSR6lZ3mKW4QB2t14=
+ycsp4N3w7KmgnpGDJW8V4vvp6gY7LcW4-Y1mr4Zj3MmW3D3Ps43rNdCbW7grJT76_D8QVW6xBgX=
+_1hW0kDW73LJ254DrCMHMnxxH-GXSlkW8yrSjQ3XCBHwW38Lvn15k0WGYW8Br5ZG5SqmcQVKYWN=
+y50B1SHW97PWw72yQ2nzW4YPsK45mTMf_W6l4Pxw5D8_qxW6zd6XG1p8JHtW6KpPt551XdnmW4W=
+jtc274thCmW1s15dg8Xw665N7827r_d1lk-N1WMXmgs0HGRW1dtC-V8hNwqCW83zktH3-Z4W7W3=
+wSv113H7Jm_W4yqbTy42YVDcV8Z82r50vlxDW4tHG4P99zFgrf6txlSb04> =E2=80=93 Compr=
+ehensive skills that employers DEMAND
+  *   21% OFF Standard Annual Plan<https://team.kodekloud.com/e3t/Ctc/2L+11=
+3/cQ4sL04/VXhyVX2fpRMJVYl1B58Ryx2WW69sl4k5x3vfjN7TcW343qgyTW8wLKSR6lZ3pgW6p=
+Y6cq2c_7FkVBWpNZ5xJ45kW13w_7R5LSdrfN8fVlmqD8LrdN5Mm-MFzxHcjW1kjzs16cVjTjN7c=
+RCtxbsYQ_W4XTttQ4WvQsWW4V9WnR1PpkL4VTqQ-53Xk9tDW6s-mL17GSdl5W27lLQV2jpsLRN1=
+pWddCHN1HnW17ZS2P5P-NNTVmD7Qx73S33MW8xyqzl95FydnW1PlJhL3x9b7BW75GpYV371Jv5W=
+7LwFG32X6CrBW5tZjNF5HzdN3W4KdczH7G3j2TW4fh5HQ8vTlYBW2v0_ZQ2-Z78ZW8JHCNb3kp8=
+pFN1zTyy9nVnMfN4DpBfBmXMCWN6LTFDfDfYr-VzYtgX4kJk0Yf5myQzs04> =E2=80=93 The =
+foundation that TRANSFORMS careers.
+
+[MM Sale Pricing Comparison2x (1)] <https://team.kodekloud.com/e3t/Ctc/2L+1=
+13/cQ4sL04/VXhyVX2fpRMJVYl1B58Ryx2WW69sl4k5x3vfjN7TcW2P3qgyTW7Y8-PT6lZ3ldW7=
+WWlgv8QF1SpW8dYC-c2Vf53CV15X3988pVV-W7wG1tZ5T1dRNW8JsFy96NpdkJW1VGDz361LFk9=
+W2g5qJL95W-MwW62xkp42JkpYZW1j9Bjy2NRCLsW8KXSz18nxrDGW2cRdWn47ZZ5jW3xknGM2qZ=
+sp_W3d3SlP2NRQ9ZW5g6Fpf1Q4gv2W2JbPhJ5QNFx3W64CrqL7ymGnpN4TPfqgxsqfgW2SsFxl2=
+qBlvTW28QLcw87Zb7BN8z0NZG5ZdykW8BYGbW980Y-DW1VBLF11p_RdXW65wmKV5fMRWGW2V1_J=
+42p66ZCW8Ldqhc2P6HpjW3P8vlh6CK_W0f6hwlFn04>
+
+
+
+This isn't just about saving money. It's about investing in yourself when i=
+t matters most.
+
+
+
+In today's unpredictable job market, having hands-on, practical DevOps skil=
+ls isn't just an advantage=E2=80=94it's becoming essential. While others re=
+ly on theoretical knowledge, KodeKloud graduates confidently step into inte=
+rviews, showcasing real-world experience from our immersive labs.
+
+A truly awesome platform that helps you acquire knowledge and understanding=
+ through simple and fluent lessons and relevant labs.
+Whether you want to learn something specifically, get a certification or ju=
+st need help to start, this platform has it all through it's "career paths"=
+. Thanks to it I got all my certifications. Also it has great support :)
+
+- Roman Kosanovic
+
+=F0=9F=97=93=EF=B8=8F This life-changing opportunity begins: May 20, 2025, =
+And ends: June 1, 2025
+
+I genuinely believe this could be the decision that changes everything for =
+you. You'll look back on the moment and think, "That's when it all turned a=
+round."
+
+Are you ready to take that step?
+
+YES, I'M READY TO TRANSFORM MY FUTURE <https://team.kodekloud.com/e3t/Ctc/2=
+L+113/cQ4sL04/VXhyVX2fpRMJVYl1B58Ryx2WW69sl4k5x3vfjN7TcW3n3qgyTW95jsWP6lZ3p=
+QW37fq3s4DD4sjW5DL0hz4qLhKVW5B9ndY2kJF5ZW6ZMCtX3gm408W40dtZp6LDpPwVbWhMR81p=
+0dDW6nJh5F7bfTKKW7L9Zpc3X7SxfW6yRV-W3H5D9GW5s2shs6vMgDKW1dYxHl1b0RBYVRM1Hd8=
+PMM9QW8kSFcz6m34GDW1D5X9y4wx7ZcV6w76w5b-XXFW3B3HMc4shQXFW7fCrGR4pmtMlW5_tDb=
+p38FhytW5gLz626T8_BJW6DGrNg7l6PmcW7HmZzk5yM96lW18pvsH8TrdtvW8kPlXz5vWlfVW36=
+d5sB5CDcZwW3L6tNT2fPW3pW4rgqWD3mt_pKW8ppbtj8-zjhSN5Ll-_ggVjKWW3D4TZL217dVDN=
+34LPBH1d24Pf85DGZP04>
+
+With belief in your potential,
+
+The KodeKloud Team
+
+[Kode Kloud] <https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRM=
+JVYl1B58Ryx2WW69sl4k5x3vfjN7TcW2b3qgyTW6N1vHY6lZ3m8W1Ln8y73bWsQHW8SbcHB8SBh=
+rmW6XcqWV91PxnmW2Bwzxc6sMzCgW1s4ypv7y2jdWW5D-9X94HrdZBW6q9K5V8NzdFrW5w_fT-4=
+kbTmlV3njwW5gtjrSW9cSPY05YDBlJW323Z8n1SzWpqW6w81yX4h9FhrW60kLc610DMXbW43crZ=
+-7vVz1WW1tlcqT4Z-Z2BVm976B63vgmXW1ZjD8139YvNtN5Ld0n5WsZpCW73cF-95jf4PYW2qtC=
+Zh5_fxw_W27Kr1_99DCJMW1pTkKY6YtywMf7Q_0Nl04>
+
+Learning Path<https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRM=
+JVYl1B58Ryx2WW69sl4k5x3vfjN7TcW2v3qgyTW7lCdLW6lZ3mFW5_j3J_4MK_qvW87Kbr54Rx9=
+nDW3qWVH28XYLtvW1lH-wV8ssvG0W5sgT-Y1yH6TtW4y72wt6kSx3-W1s29VG5QMW9FW4gV_052=
+W7K4-W7-qm4X8Wc6c0W51mb8-5dtD85W7QDCwG6S_9jCW4P7V3w7y3Hx1W3M0qCD4GDdrKW1xT9=
+1y1yXRpJW1pgMhr18GmJRW4q5Rhd75CGrmVfw86V4S3XfsW1Mx6zB7sXQfmW5bYF2Z4KGpD4W97=
+TrlR82dgtkW35QV8Y18FLppW2tRHNH7KXC3hW5ct19l56QVw4W51sBhz5NCYRTf8d0N1604> | =
+For Teams<https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVYl=
+1B58Ryx2WW69sl4k5x3vfjN7TcW2v3qgyTW7lCdLW6lZ3mPN8lSjnMC8c1FW7YDldc2CF4MHW18=
+FTGQ89YNk5W91lRhM5Y98hCW11R5Bl7DKnQFW5W2LX_88Dy_sVnY9-Y7jsXs7W3HC3Wc8cLB55W=
+7Njtz34htXdrV3nPjj4L2P4wVC6YRD3ftxq_VjkFMF3RLCn3W75GDN91dN7YmW7RytMd93Z_9pW=
+2CHD5H8n9kWdW4dqDWW3pwh_yW137tDH5MVbcFW3StlLh7ddB7NW55MBdd5Q93cpV5nw_n89-XR=
+mW9k6Flq7pkJPQW2758zG986t-ZW2c6ztp3-vmyZW4PMx_x2J6GZrf1sn1Zv04> |  KodeKlou=
+d Engineer<https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVY=
+l1B58Ryx2WW69sl4k5x3vfjN7TcW2v3qgyTW7lCdLW6lZ3mmW7_c6Rv2GqWPjW8MWpD33SwkQvW=
+4ZzyFv5S-WZ_VxxCNS3v00wsN3HTBSK8R86RW6NR4P77DLprxW8xLfN856mQPxN28q8Q-lN77LW=
+93gqL08rRflTVnQZyZ7_yMhnW6zsD1l1wFpGVW6tnrfZ3BNQ_FW5r4tw230lJ5SW3n6NhT4RrKb=
+nVcg3Jq4BYHVYW1N36TT8vVhNTW6wQlqG6q_KMQW5HjgN81Sg1zSW5B7cQ415T8VYW2Mv_Gg4N6=
+P6QW58gBmg36SY_rVlvZh34KWCKRVKTdvZ7QfnLSW8P9BkT32m8Mwf8fRthF04> | Playgroun=
+ds<https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVYl1B58Ryx=
+2WW69sl4k5x3vfjN7TcW2v3qgyTW7lCdLW6lZ3kXW8TxbSB4t152nVHkvNR6R31n3Vjv35-5pL5=
+ZlW336qqb4fsBzxW6SN6-23q0B--N1jffHsStPmhW3JdRsh1FsH73VZghWv54jbL2W4rw4b32kb=
+hj9W2C2kQH1mR5VfW3WTqpQ4fTgjjW35HCRK3LDdT0W7Y18Rw8_Jk9JW8DlRXf4-zYFXW4Bgvy7=
+4LWNvMW6lqZFL7XVyMTW466NRd2WWl_nW8V_bLL1r4H3XW2t0H_s6c-vpWW2Q45KY1YJPzvF5Nr=
+01VmG8BW6s5xhX1XWRQnW6m8MCC190FshW6Zwy7Q30TPb2f4sCgz-04> | Pricing<https://=
+team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVYl1B58Ryx2WW69sl4k5x=
+3vfjN7TcW2v3qgyTW7lCdLW6lZ3phW1-nJ6b4B99mXVkqhkG5xmsTJW1_MrQB6pmVGCW20_Nz_5=
+74mg4W4T6XV18g7-HjW36JVp174W0pNN6JjWkY8TDfPW9bdT9N8HLSvxN8Qs3CcTH-NnW7P1_Nv=
+8FfmV5W62qWTn16xVz3W6NBSn37_-9nsW9bNND13r5gF_W2zz-Sf7QyJZyW4nQ9Hj3p6QHFW7TH=
+lqf4wgFFDW5Mm8xH7S_598W1MBw3M7D2CSQN83fcN4gB0dTW8jN8my53CcCLW99CYvy6d4MTTV8=
+GtXd7HXZN9W6rgQp47G60b-W6TMZ945rqsZQf1Tbl8s04>
+
+[Facebook] <https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJV=
+Yl1B58Ryx2WW69sl4k5x3vfjN7TcW2P3qgyTW7Y8-PT6lZ3kZW6trjq64KgtFwVq1sLw9gbkS7W=
+5S5vdN3GjYFdW84YXWB5XbJhJW89LL_p5r50CqW1NS3qW15PzDWW5dNtP71QmVwGW1xqL6l5Q3T=
+8BW4cPcjg6vx-7cW5-4Yn57DM5k2W6V4y439htfHJW5CgY_65BqDytW976bjp63nGK5N6K-6HKd=
+wb6RW6LPXq17kzwVFW63NSQD7cKknxW3ZY6L65wGZw8W7HKZQC8SbchjMlDYR1MqpsJW37RZvm1=
+N2wFkVSgj1H7nGrvnW7ws4Y67JljZ6W1dwTjm5VdLH3W86tfT14p5d5TW8FLtHZ8Tr3y4W8MDnm=
+D8gPyyvf1FkZg804>
+[LinkedIn] <https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJV=
+Yl1B58Ryx2WW69sl4k5x3vfjN7TcW2P3qgyTW7Y8-PT6lZ3nFVN-MJN5rd2VTW1sjwVp988Zf8W=
+6z0hWJ3dYwWkW4cQS371_Tn8_W3g7NSv13QN-TW6yvQP_4NbQqbW5PdKJl8tv1b0VGlXdy2MkgZ=
+4W53_YPQ8gTC0PW8bG-6282GD64VzNqk-3Qr9SYW3Yg0CD7GrF5TW7m_1kS7x5_KGW4w3KQw14q=
+GQvN2t-d8KtXBb7W17jl_J5Bdr_ZW5pZVG357tT64W31snz78ZkqN9W1VZT0r395KdMW4Dksnd6=
+Cx_72W5-40YT1WcTgXW4clxHT5yYlSlVJjH3r104bTyW8DhH0H20Rrz0W5Q3Gxs5N3TqMW65gNM=
+31Y25nQf5d9ybs04>
+[X] <https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVYl1B58R=
+yx2WW69sl4k5x3vfjN7TcW2v3qgyTW7lCdLW6lZ3myW8jZD823VTPqlW2HCzcM52-W53W4lQtbx=
+1-3FlbW2X0Rf3765NzjVJPV6X1lc-jtW7-NpcM7pPvQ4W9cvcVb5lXP7WW4vx_K56gBrdbW5HBn=
+mZ34JbctW3JtGsY8gswT1W3z-fsv7QTgzfN5cjbyNl1q0WVhPvgb1k78lyW5Mr4cm8hVPpNW32K=
+8vP5fstLBW692Dfh1CD3KMM_SRcVX1kQMW1-Dc4y6FTB5xN8p40_31zgrQN5gk6r0kQ31PW3MVq=
+hp1q2j-4MncmLNXdrwzW28QqQN1412JvW3VKNcb7tLf8mf5LZHNY04>
+[Instagram] <https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJ=
+VYl1B58Ryx2WW69sl4k5x3vfjN7TcW2v3qgyTW7lCdLW6lZ3lSW53dcs84jPtm_N3Z3-gk7Y_WJ=
+W99vxzT3C5cdYW3md-dr2PXBZvW6Pf1XD5jvDz8N5Y5fm2Z1X6RW7PqhgF1ctFL3W6xLWjX6vJM=
+kzW3t-Vg03HyFtzW7pWc8G6656YVW55VbHc3DPQ-XW1yPR-976gCMbVhKW7p7hP283W8Q3dHz13=
+Fd9-W1bZbtN6J3yXBW37qS4T56lMBDW2pMTZ77FNL5sW44tn_v713gMlV99Jpg7bNGztW8Zs50C=
+4bp-g0W5ymRQM1HHqxKW5W8psq4Pw2wFW17PNB49jNLVNW7_t4Wv7jzHPnf5tLJRR04>
+[YouTube] <https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVY=
+l1B58Ryx2WW69sl4k5x3vfjN7TcW2v3qgyTW7lCdLW6lZ3m9N2FkTD0xZgsHW5rjp3-7jl9nZW3=
+w7kk_99md-2W5JQpth1cRSKtN46XjYpQzY9sN2_4xsJb4WT-W6f1VBg3jGyPdW5wd6bb1KydnYN=
+8rr_R8yxQXFW4lXn6z2kQQzXW13S0fR1hrw-tW5bw7wM5PzqsHW6_bspj4612BNW2s0pXX3y3g4=
+dW84Kvh18XDdWYW6TTMN16d9dM0V9XrX45VnrB7W9cBjLl2JzD76W3606Ml5t-gg5W3RvRkl1Z4=
+x9KW93WdgS8GnvZ1V1HJW94kPbY4N7jd1Cbl5NkvW8-Sh4c2JfkSCf8cbCfF04>
+
+Unsubscribe<https://team.kodekloud.com/hs/preferences-center/en/direct?data=
+=3DW2nXS-N30h-MdW2F_q3z3j8_TLW4mksdC2TxYSHW2-vBZq2PnBCTW1Zwwqz30HrBRW47VPSk=
+49Pc4FW1LvFSW36m8fhW36CtKh2WQFngW4r6gtT3JT5kLW4pbZH134qJ20W4fx6h61-X_6qW2Mj=
+ZBX3VHpkfW3LWVq-1_4mrgW1BnNhp2HRtt9W20VJkJ1LjGhLW25hpwk3H7NXcW2zYZF52HL1RJW=
+3SMjRs21g-l9W38sLQc3R11lKW1NfZb24tG6MPW2PNnLl4mmYsLW34z4XC4t4K-XW2HCt233bks=
+kKW2w3y_m1SpQjKW234k6P3JVmDQW3GKsyc2vKPV5W41q94_2Wnl7lW3d8XzW239lBbW2p2yHy4=
+pKx8ZW20YcY02sF41wW34wBWk1BL6r1W1BswWP2RTXS4W3gjh962WJQn6W4kcsFK3_Bx4sW3BM5=
+LZ3F5nf2W2KC7MR1X88rLW2p0SH74phy8ZW1_qGlX3N__fXW21kYv223mmc0W3H7j5w2KqclgW3=
+QCCxw2PV8MCW3M60mK3ZZltlW2WtJBG2FLDJyW38Dr2W2xwpy7W2p8lY24kmKKKf2Yh5yh04&ut=
+m_campaign=3D13493650-mega_may_devops_sale_2025&utm_source=3Dhs_email&utm_m=
+edium=3Demail&utm_content=3D363392440&_hsenc=3Dp2ANqtz--9ltWpcR4r12RaXz5Y6P=
+HTM4CL2VobKCoUi31zuZo01TCOZwqQDiz659MNR-D8MAldXl06GIu86IeFNmtZ3rcauqh0rw&_h=
+smi=3D363392440> or Manage Preferences<https://team.kodekloud.com/hs/prefer=
+ences-center/en/page?data=3DW2nXS-N30h-MdW2F_q3z3j8_TLW4mksdC2TxYSHW2-vBZq2=
+PnBCTW1Zwwqz30HrBRW47VPSk49Pc4FW1LvFSW36m8fhW36CtKh2WQFngW4r6gtT3JT5kLW4pbZ=
+H134qJ20W4fx6h61-X_6qW2MjZBX3VHpkfW3LWVq-1_4mrgW1BnNhp2HRtt9W20VJkJ1LjGhLW2=
+5hpwk3H7NXcW2zYZF52HL1RJW3SMjRs21g-l9W38sLQc3R11lKW1NfZb24tG6MPW2PNnLl4mmYs=
+LW34z4XC4t4K-XW2HCt233bkskKW2w3y_m1SpQjKW234k6P3JVmDQW3GKsyc2vKPV5W41q94_2W=
+nl7lW3d8XzW239lBbW2p2yHy4pKx8ZW20YcY02sF41wW34wBWk1BL6r1W1BswWP2RTXS4W3gjh9=
+62WJQn6W4kcsFK3_Bx4sW3BM5LZ3F5nf2W2KC7MR1X88rLW2p0SH74phy8ZW1_qGlX3N__fXW21=
+kYv223mmc0W3H7j5w2KqclgW3QCCxw2PV8MCW3M60mK3ZZltlW2WtJBG2FLDJyW38Dr2W2xwpy7=
+W2p8lY24kmKKKf2Yh5yh04&utm_campaign=3D13493650-mega_may_devops_sale_2025&ut=
+m_source=3Dhs_email&utm_medium=3Demail&utm_content=3D363392440&_hsenc=3Dp2A=
+Nqtz--9ltWpcR4r12RaXz5Y6PHTM4CL2VobKCoUi31zuZo01TCOZwqQDiz659MNR-D8MAldXl06=
+GIu86IeFNmtZ3rcauqh0rw&_hsmi=3D363392440>.
+
+
+
+KodeKloud (Brand owned by Zaurac Technologies PTE. LTD.)
+14 Robinson Road, #08-01A Far East Finance Building, Singapore, Central Sin=
+gapore, 048545 Singapore
+
+
+
+
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_11817277_15479748.1748333290204
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3=
+.org/1999/xhtml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:=
+v=3D"urn:schemas-microsoft-com:vml" lang=3D"en"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<title>Transform Your Career: DevOps Skills at 50% OFF!</title>
+<meta property=3D"og:title" content=3D"Transform Your Career: DevOps Skills=
+ at 50% OFF!">
+<meta name=3D"twitter:title" content=3D"Transform Your Career: DevOps Skill=
+s at 50% OFF!">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+<!--[if gte mso 9]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings><w:WordDocument xmlns:w=3D"urn:schemas-micro=
+soft-com:office:word">
+      <w:DontUseAdvancedTypographyReadingMail/>
+    </w:WordDocument></xml>
+ =20
+  <style>
+    ul > li {
+      text-indent: -1em;
+    }
+  </style>
+<![endif]--><!--[if mso]>
+<style type=3D"text/css">
+ body, td {font-family: Arial, Helvetica, sans-serif;}
+ .hse-body-wrapper-table {background-color: #f5f5f5;}
+</style>
+<![endif]--><!--[if mso | IE]>
+  <style type=3D"text/css">
+    .hse-column-container { border: none !important; padding: 0 !important;=
+ }
+  </style>
+<![endif]-->
+<meta name=3D"generator" content=3D"HubSpot">
+<meta property=3D"og:url" content=3D"https://team.kodekloud.com/transform-y=
+our-career-devops-skills-at-50-off">
+<meta name=3D"robots" content=3D"noindex,follow">
+<!--[if !((mso)|(IE))]><!-- --><style type=3D"text/css">@media only screen =
+and (max-width:639px){img.stretch-on-mobile,.hs_rss_email_entries_table img=
+,.hs-stretch-cta .hs-cta-img{height:auto !important;width:100% !important}
+.display_block_on_small_screens{display:block}.hs_padded{padding-left:20px =
+!important;padding-right:20px !important}
+.hs-hm,table.hs-hm{display:none}.hs-hd{display:block !important}table.hs-hd=
+{display:table !important}
+}@media only screen and (max-width:639px){.hse-border-m{border-left:1px sol=
+id #eaf0f6 !important;border-right:1px solid #eaf0f6 !important;box-sizing:=
+border-box}
+.hse-border-bottom-m{border-bottom:1px solid #eaf0f6 !important}.hse-border=
+-top-m{border-top:1px solid #eaf0f6 !important}
+.hse-border-top-hm{border-top:none !important}.hse-border-bottom-hm{border-=
+bottom:none !important}
+}.moz-text-html .hse-column-container{max-width:600px !important;width:600p=
+x !important}
+.moz-text-html .hse-column{display:table-cell;vertical-align:top}.moz-text-=
+html .hse-section .hse-size-12{max-width:600px !important;width:600px !impo=
+rtant}
+@media only screen and (min-width:640px){.hse-column-container{max-width:60=
+0px !important;width:600px !important}
+.hse-column{display:table-cell;vertical-align:top}.hse-section .hse-size-12=
+{max-width:600px !important;width:600px !important}
+}@media only screen and (max-width:639px){ul,blockquote{margin:0;padding:1e=
+m 40px}
+}@media only screen and (max-width:639px){.hse-body-wrapper-td{padding-top:=
+20px !important}
+#section_1735121148502 .hse-column-container{background-color:transparent !=
+important}
+#section_1735121148502 .hse-column-container{background-color:transparent !=
+important}
+}@media screen and (max-width:639px){.social-network-cell{display:inline-bl=
+ock} }
+@media only screen and (max-width:639px){.hse-body-wrapper-td{padding-botto=
+m:20px !important}
+#section_17424461996426 .hse-column-container{padding-top:20px !important;p=
+adding-bottom:20px !important}
+#section_17424461996426 .hse-column-container{background-color:#1c2943 !imp=
+ortant}
+}</style><!--<![endif]--><style type=3D"text/css">#hs_body #hs_cos_wrapper_=
+main a[x-apple-data-detectors]{color:inherit !important;text-decoration:non=
+e !important;font-size:inherit !important;font-family:inherit !important;fo=
+nt-weight:inherit !important;line-height:inherit !important}
+a{text-decoration:underline}p{margin:0}body{-ms-text-size-adjust:100%;-webk=
+it-text-size-adjust:100%;-webkit-font-smoothing:antialiased;moz-osx-font-sm=
+oothing:grayscale}
+table{border-spacing:0;mso-table-lspace:0;mso-table-rspace:0}table,td{borde=
+r-collapse:collapse}
+img{-ms-interpolation-mode:bicubic}p,a,li,td,blockquote{mso-line-height-rul=
+e:exactly}</style>
+</head>
+<body id=3D"hs_body" bgcolor=3D"#f5f5f5" style=3D"margin:0 !important; padd=
+ing:0 !important; font-family:Arial, sans-serif; font-size:15px; color:#000=
+000; word-break:break-word">
+<div id=3D"preview_text" style=3D"display:none;font-size:1px;color:#f5f5f5;=
+line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;" la=
+ng=3D"en">
+Transform your future with hands-on DevOps training. Offer ends June 1st!</=
+div>
+<!--[if gte mso 9]>
+<v:background xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"t">
+    <v:fill type=3D"tile" size=3D"100%,100%" color=3D"#ffffff"/>
+</v:background>
+<![endif]-->
+<div class=3D"hse-body-background" lang=3D"en" style=3D"background-color:#f=
+5f5f5" bgcolor=3D"#f5f5f5">
+<table role=3D"presentation" class=3D"hse-body-wrapper-table" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"margin:0; padding:0; width:100% !importan=
+t; min-width:320px !important; height:100% !important" width=3D"100%" heigh=
+t=3D"100%">
+<tbody>
+<tr>
+<td class=3D"hse-body-wrapper-td" valign=3D"top" style=3D"font-family:Arial=
+, sans-serif; font-size:15px; color:#000000; word-break:break-word; padding=
+-top:20px; padding-bottom:20px">
+<div id=3D"hs_cos_wrapper_main" class=3D"hs_cos_wrapper hs_cos_wrapper_widg=
+et hs_cos_wrapper_type_dnd_area" style=3D"color: inherit; font-size: inheri=
+t; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-t=
+ype=3D"dnd_area">
+<div id=3D"section_1735121148502" class=3D"hse-section hse-section-first" s=
+tyle=3D"padding-left:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto">
+<!--[if (mso)|(IE)]>
+     =20
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation">
+      <tr>
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column_1735121148502_0" class=3D"hse-column hse-size-12">
+<div id=3D"hs_cos_wrapper_module_17351211485002" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div style=3D"overflow:hidden">
+<table role=3D"presentation" class=3D"hse-pre-header hse-secondary" width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"text-align:right; fo=
+nt-family:Arial, sans-serif; font-size:12px; line-height:135%; color:#23496=
+d; margin-bottom:0; padding:0" align=3D"right">
+<tbody>
+<tr>
+<td align=3D"right" valign=3D"top" style=3D"color:#000000; word-break:break=
+-word; text-align:right; font-family:Arial, sans-serif; font-size:12px; pad=
+ding:10px 0; margin-bottom:0; line-height:135%">
+<a href=3D"https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVY=
+l1B58Ryx2WW69sl4k5x3vfjN7TcW2v5nR32W7lCGcx6lZ3pmW5lKyY771QqZzW5SK5zC5MNmmkW=
+2fYZbx5q3TLfW8RqD7k7_QYqfW5RCv5T4_crfRW464RLn62CDkLVkdLV36MZs3pW5rj5hz8gDc3=
+9W2Vh1KS1c3qG0W7Nswbx4TpBlCW78n5MV7Zjdk8W6pPN-64DMc92W2lvM7k5wJ6DvW5bFk2K6x=
+KbPMW5xLXHm7827gzW2GYcR_3_p1g6W2rSNHy3prHDfMMlF_pPGLnNW3fqb426VzyVgV3k3Yt5J=
+VWtGW1-TxHN5RPkMrW8xc5MY2VGT0GW8g8nCK1wTChzVzhZ3c5dMysnW57CMXd5wrvbLW5ZXltg=
+1pVDN-Vzk6PP6y5-6yN7YHt_vvDQ1kW1C5bDk7JdJbxN4cvY82vZ438N5-022lRcs5wW7kqsC51=
+8LjQLV_fVG35--bkBW6kc6qS3ThTG2W4KSPf04tD9wnW8Sg2nK2QZBfwW57v7x_5Dzjn7W5tv9r=
+S8kXp27W3W7r6n7dzl7_Mb85wcmBng-f4BZPj004" style=3D"color:#00a4bd; font-weig=
+ht:normal; text-decoration:underline; font-style:normal" data-hs-link-id=3D=
+"0" data-hs-link-id-v2=3D"ch0+k+S8" target=3D"_blank">View
+ in browser</a> </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section-0" class=3D"hse-section" style=3D"padding-left:10px; pad=
+ding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+     =20
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column-0-0" class=3D"hse-column hse-size-12">
+<div id=3D"hs_cos_wrapper_module_17476345492281" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td class=3D"hs_padded" align=3D"center" valign=3D"top" style=3D"font-famil=
+y:Arial, sans-serif; color:#000000; word-break:break-word; text-align:cente=
+r; padding:10px 20px; font-size:0px">
+<a href=3D"https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVY=
+l1B58Ryx2WW69sl4k5x3vfjN7TcW2P3qgyTW7Y8-PT6lZ3pdW2ZlXVC3YrKg5W2qXNJ65dV14BW=
+7L520P5HW3djW1Mt_4k5YmshhW1P29CM9bTjhlW2FgW4d9d-b84N21_HWljjZX-W1f4nD08bLnL=
+SW6l-lc67dxPHSVl-Yq71tt6fbVk0PBt7YBcVZVsGkjS2qPRmWW2xLNzC7GYrcTVQc7GB3dJF4Q=
+W6gz4q_4JCKV4W4WhJ5l4wsW-fVHshW71DS8cZN8CyHDc8VmjXW4HNH2V4VhBgNN1N6vYrl5SvD=
+N41RVwMRHSNjW2wnS0-12GTnMW3g-GJK4kCzFyW4VH33F4bXSfjW6xQRzg7jyNXPW8jpZ781YZt=
+Ynf3SNlyl04" target=3D"_blank" style=3D"color:#00a4bd" data-hs-link-id=3D"0=
+" data-hs-link-id-v2=3D"BQ18ipEQ"><img alt=3D"Email Banner (2) (1)-1" src=
+=3D"https://team.kodekloud.com/hs-fs/hubfs/Email%20Banner%20(2)%20(1)-1.png=
+?width=3D1120&amp;upscale=3Dtrue&amp;name=3DEmail%20Banner%20(2)%20(1)-1.pn=
+g" style=3D"outline:none; text-decoration:none; border:none; max-width:100%=
+; font-size:16px" width=3D"560" align=3D"middle">
+</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#000000; word-break:break-word; padding:10px 35px">
+<div id=3D"hs_cos_wrapper_module-0-0-1" class=3D"hs_cos_wrapper hs_cos_wrap=
+per_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font-size: =
+inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs=
+-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module-0-0-1_" class=3D"hs_cos_wrapper hs_cos_wra=
+pper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit; font-si=
+ze: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" dat=
+a-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; font-size:16px; line-height:175%"=
+>Hey David Gidony=E2=80=AC=E2=80=8F,<br>
+<br>
+</p>
+<p style=3D"mso-line-height-rule:exactly; font-size:16px; line-height:175%;=
+ font-weight:bold">
+Have you ever wondered what stands between where you are now and where you =
+dream of being?<br>
+<br>
+</p>
+<p style=3D"mso-line-height-rule:exactly; font-size:16px; line-height:175%;=
+ font-weight:normal">
+For thousands of our students, that gap was bridged with practical DevOps s=
+kills, skills that turned career frustration into confidence, uncertainty i=
+nto opportunity, and dreams into reality.</p>
+<p style=3D"mso-line-height-rule:exactly; font-size:16px; line-height:175%;=
+ font-weight:normal">
+<br>
+Today, I'm thrilled to share something that could be the turning point in y=
+our professional journey:</p>
+<ul style=3D"mso-line-height-rule:exactly; line-height:175%">
+</ul>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#000000; word-break:break-word; padding:10px 35px">
+<div id=3D"hs_cos_wrapper_module_17476352070951" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17476352070951_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<h2 style=3D"margin:0; mso-line-height-rule:exactly; font-size:20px; line-h=
+eight:115%">
+=F0=9F=8E=89 The Mega May DevOps Sale is Now Live! =F0=9F=8E=89</h2>
+<ul style=3D"mso-line-height-rule:exactly; line-height:175%">
+</ul>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#000000; word-break:break-word; padding:10px 35px">
+<div id=3D"hs_cos_wrapper_module_17476352701512" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17476352701512_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; font-size:16px; line-height:175%"=
+>For the next 14 days only, we're offering our most significant discounts o=
+f the year:</p>
+<ul style=3D"mso-line-height-rule:exactly; font-size:16px; line-height:175%=
+">
+<li aria-level=3D"1"><a href=3D"https://team.kodekloud.com/e3t/Ctc/2L+113/c=
+Q4sL04/VXhyVX2fpRMJVYl1B58Ryx2WW69sl4k5x3vfjN7TcW343qgyTW8wLKSR6lZ3kRW3L08H=
+t4RGvLwW5-9f_W6YjB1qW3GhSvt1gyfRTW93pDhb213W0mW7RTJHf8_Ztp5W95gY8t78X9h8N7N=
+5yMzwmk_PW96n3FP58S08rW4WF5fC6RwnJlW7cv4Ms45WhyvW8SVXND9cMvFqW6VMYd-5y-wdkV=
+lmF1S4fhFSvVz1yXL5DxvBFW6bSKZl8bTr4GV5GKGp2Yhxs0W4sD7Hq7P9cTcN2-kNNnXXYgLW8=
+Vw-5q1Kq631W2mK0Kx5P7cMlW7757Xn4GvrV_W4m4-gN2RldwnW8rs7sc1jlNVdW34k-nJ7QmrG=
+8W2h_l0T7BFVFYW7WC-nV94GPsJW4SPz_G1bnd3YVG_Ww09fMBpJf4lysWM04" style=3D"col=
+or:#00a4bd; text-decoration:none" rel=3D"noopener" data-hs-link-id=3D"0" da=
+ta-hs-link-id-v2=3D"uSQrllFi" target=3D"_blank"><strong><span style=3D"colo=
+r: #e04e59;">50%
+ OFF AI Annual Plan</span></strong></a> =E2=80=93 Personalized learning tha=
+t adapts to YOU</li><li aria-level=3D"1"><span style=3D"color: #e04e59;"><a=
+ href=3D"https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVYl1=
+B58Ryx2WW69sl4k5x3vfjN7TcW343qgyTW8wLKSR6lZ3mKW4QB2t14ycsp4N3w7KmgnpGDJW8V4=
+vvp6gY7LcW4-Y1mr4Zj3MmW3D3Ps43rNdCbW7grJT76_D8QVW6xBgX_1hW0kDW73LJ254DrCMHM=
+nxxH-GXSlkW8yrSjQ3XCBHwW38Lvn15k0WGYW8Br5ZG5SqmcQVKYWNy50B1SHW97PWw72yQ2nzW=
+4YPsK45mTMf_W6l4Pxw5D8_qxW6zd6XG1p8JHtW6KpPt551XdnmW4Wjtc274thCmW1s15dg8Xw6=
+65N7827r_d1lk-N1WMXmgs0HGRW1dtC-V8hNwqCW83zktH3-Z4W7W3wSv113H7Jm_W4yqbTy42Y=
+VDcV8Z82r50vlxDW4tHG4P99zFgrf6txlSb04" style=3D"text-decoration:none; color=
+:#e04e59" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"eke2=
+RznL" target=3D"_blank"><strong>40%
+ OFF Pro Annual Plan</strong></a></span> =E2=80=93 Comprehensive skills tha=
+t employers DEMAND</li><li aria-level=3D"1"><span style=3D"color: #e04e59;"=
+><a href=3D"https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJV=
+Yl1B58Ryx2WW69sl4k5x3vfjN7TcW343qgyTW8wLKSR6lZ3pgW6pY6cq2c_7FkVBWpNZ5xJ45kW=
+13w_7R5LSdrfN8fVlmqD8LrdN5Mm-MFzxHcjW1kjzs16cVjTjN7cRCtxbsYQ_W4XTttQ4WvQsWW=
+4V9WnR1PpkL4VTqQ-53Xk9tDW6s-mL17GSdl5W27lLQV2jpsLRN1pWddCHN1HnW17ZS2P5P-NNT=
+VmD7Qx73S33MW8xyqzl95FydnW1PlJhL3x9b7BW75GpYV371Jv5W7LwFG32X6CrBW5tZjNF5Hzd=
+N3W4KdczH7G3j2TW4fh5HQ8vTlYBW2v0_ZQ2-Z78ZW8JHCNb3kp8pFN1zTyy9nVnMfN4DpBfBmX=
+MCWN6LTFDfDfYr-VzYtgX4kJk0Yf5myQzs04" style=3D"text-decoration:none; color:=
+#e04e59" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"odeiW=
+Hbc" target=3D"_blank"><strong>21%
+ OFF Standard Annual Plan</strong></a></span> =E2=80=93 The foundation that=
+ TRANSFORMS careers.</li></ul>
+<ul style=3D"mso-line-height-rule:exactly; line-height:175%; font-size:16px=
+">
+</ul>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div id=3D"hs_cos_wrapper_module_17477429042202" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td class=3D"hs_padded" align=3D"center" valign=3D"top" style=3D"font-famil=
+y:Arial, sans-serif; color:#000000; word-break:break-word; text-align:cente=
+r; padding:10px 20px; font-size:0px">
+<a href=3D"https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVY=
+l1B58Ryx2WW69sl4k5x3vfjN7TcW2P3qgyTW7Y8-PT6lZ3ldW7WWlgv8QF1SpW8dYC-c2Vf53CV=
+15X3988pVV-W7wG1tZ5T1dRNW8JsFy96NpdkJW1VGDz361LFk9W2g5qJL95W-MwW62xkp42JkpY=
+ZW1j9Bjy2NRCLsW8KXSz18nxrDGW2cRdWn47ZZ5jW3xknGM2qZsp_W3d3SlP2NRQ9ZW5g6Fpf1Q=
+4gv2W2JbPhJ5QNFx3W64CrqL7ymGnpN4TPfqgxsqfgW2SsFxl2qBlvTW28QLcw87Zb7BN8z0NZG=
+5ZdykW8BYGbW980Y-DW1VBLF11p_RdXW65wmKV5fMRWGW2V1_J42p66ZCW8Ldqhc2P6HpjW3P8v=
+lh6CK_W0f6hwlFn04" target=3D"_blank" style=3D"color:#00a4bd" data-hs-link-i=
+d=3D"0" data-hs-link-id-v2=3D"WyKeagel"><img alt=3D"MM Sale Pricing Compari=
+son2x (1)" src=3D"https://team.kodekloud.com/hs-fs/hubfs/MM%20Sale%20Pricin=
+g%20Comparison2x%20(1).png?width=3D1120&amp;upscale=3Dtrue&amp;name=3DMM%20=
+Sale%20Pricing%20Comparison2x%20(1).png" style=3D"outline:none; text-decora=
+tion:none; border:none; max-width:100%; font-size:16px" width=3D"560" align=
+=3D"middle">
+</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#000000; word-break:break-word; padding:10px 35px">
+<div id=3D"hs_cos_wrapper_module_17477428849061" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17477428849061_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; line-height:115%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; font-size:16px; line-height:175%"=
+><strong>This isn't just about saving money. It's about investing in yourse=
+lf when it matters most.</strong></p>
+<p style=3D"mso-line-height-rule:exactly; font-size:16px; line-height:175%"=
+>&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; font-size:16px; line-height:175%"=
+>In today's unpredictable job market, having hands-on, practical DevOps ski=
+lls isn't just an advantage=E2=80=94it's becoming essential. While others r=
+ely on theoretical knowledge, KodeKloud graduates
+ confidently step into interviews, showcasing real-world experience from ou=
+r immersive labs.</p>
+<ul style=3D"mso-line-height-rule:exactly; line-height:175%; font-size:16px=
+">
+</ul>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#000000; word-break:break-word; padding:10px 40px">
+<div id=3D"hs_cos_wrapper_module_17476356200063" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17476356200063_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; font-size:16px; line-height:175%"=
+><em>A truly awesome platform that helps you acquire knowledge and understa=
+nding through simple and fluent lessons and relevant labs.</em><br>
+<em>Whether you want to learn something specifically, get a certification o=
+r just need help to start, this platform has it all through it's &quot;care=
+er paths&quot;. Thanks to it I got all my certifications. Also it has great=
+ support :)
+</em></p>
+<p style=3D"mso-line-height-rule:exactly; font-size:16px; line-height:175%"=
+><em>- Roman Kosanovic<br>
+</em></p>
+<ul style=3D"mso-line-height-rule:exactly; line-height:175%; font-size:16px=
+">
+</ul>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#000000; word-break:break-word; padding:10px 35px 20px">
+<div id=3D"hs_cos_wrapper_module_17387378836212" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17387378836212_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; font-size:16px; line-height:175%;=
+ font-weight:bold; text-align:center" align=3D"center">
+=F0=9F=97=93=EF=B8=8F This life-changing opportunity begins: May 20, 2025, =
+And ends: June 1, 2025&nbsp;</p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#000000; word-break:break-word; padding:10px 35px 20px">
+<div id=3D"hs_cos_wrapper_module_17447915194771" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17447915194771_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; font-size:16px; line-height:175%;=
+ font-weight:normal; text-align:left" align=3D"left">
+I genuinely believe this could be the decision that changes everything for =
+you. You'll look back on the moment and think, &quot;That's when it all tur=
+ned around.&quot;</p>
+<p style=3D"mso-line-height-rule:exactly; font-size:16px; line-height:175%;=
+ font-weight:normal; text-align:center" align=3D"center">
+<span style=3D"font-weight: bold;">Are you ready to take that step?</span><=
+/p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#000000; word-break:break-word; padding:10px 20px">
+<div id=3D"hs_cos_wrapper_module_17351202946664" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"border-collapse:separate!important">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"middle" bgcolor=3D"#1DACFE" style=3D"font-fa=
+mily:Arial, sans-serif; font-size:15px; color:#000000; word-break:break-wor=
+d; border-radius:8px; cursor:auto; background-color:#1DACFE; mso-padding-al=
+t:12px 18px">
+<a href=3D"https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVY=
+l1B58Ryx2WW69sl4k5x3vfjN7TcW3n3qgyTW95jsWP6lZ3pQW37fq3s4DD4sjW5DL0hz4qLhKVW=
+5B9ndY2kJF5ZW6ZMCtX3gm408W40dtZp6LDpPwVbWhMR81p0dDW6nJh5F7bfTKKW7L9Zpc3X7Sx=
+fW6yRV-W3H5D9GW5s2shs6vMgDKW1dYxHl1b0RBYVRM1Hd8PMM9QW8kSFcz6m34GDW1D5X9y4wx=
+7ZcV6w76w5b-XXFW3B3HMc4shQXFW7fCrGR4pmtMlW5_tDbp38FhytW5gLz626T8_BJW6DGrNg7=
+l6PmcW7HmZzk5yM96lW18pvsH8TrdtvW8kPlXz5vWlfVW36d5sB5CDcZwW3L6tNT2fPW3pW4rgq=
+WD3mt_pKW8ppbtj8-zjhSN5Ll-_ggVjKWW3D4TZL217dVDN34LPBH1d24Pf85DGZP04" target=
+=3D"_blank" style=3D"color:#00a4bd; font-size:16px; font-family:Arial, sans=
+-serif; Margin:0; text-transform:none; text-decoration:none; padding:12px 1=
+8px; display:block" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"cPOeUt6n"><=
+strong style=3D"color:#ffffff;font-weight:bold;text-decoration:none;font-st=
+yle:normal;">YES,
+ I'M READY TO TRANSFORM MY FUTURE</strong> </a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#000000; word-break:break-word; padding:10px 35px 30px">
+<div id=3D"hs_cos_wrapper_module_17397946061462" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17397946061462_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-size: 16px;">With belief in your potential,</span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%"><span style=3D"=
+font-size: 16px;">The KodeKloud Team</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_17424461996426" class=3D"hse-section hse-section-last" s=
+tyle=3D"padding-left:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#1c2943; padding-=
+bottom:20px; padding-top:20px" bgcolor=3D"#1c2943">
+<!--[if (mso)|(IE)]>
+     =20
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#1c2943">
+      <tr style=3D"background-color:#1c2943;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;padding-bottom:20px; padding-top:=
+20px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column-1742446199642-0" class=3D"hse-column hse-size-12">
+<div id=3D"hs_cos_wrapper_module_17424461996422" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"font-family:Arial, sans-serif;=
+ color:#000000; word-break:break-word; text-align:center; padding:0px; font=
+-size:0px">
+<a href=3D"https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVY=
+l1B58Ryx2WW69sl4k5x3vfjN7TcW2b3qgyTW6N1vHY6lZ3m8W1Ln8y73bWsQHW8SbcHB8SBhrmW=
+6XcqWV91PxnmW2Bwzxc6sMzCgW1s4ypv7y2jdWW5D-9X94HrdZBW6q9K5V8NzdFrW5w_fT-4kbT=
+mlV3njwW5gtjrSW9cSPY05YDBlJW323Z8n1SzWpqW6w81yX4h9FhrW60kLc610DMXbW43crZ-7v=
+Vz1WW1tlcqT4Z-Z2BVm976B63vgmXW1ZjD8139YvNtN5Ld0n5WsZpCW73cF-95jf4PYW2qtCZh5=
+_fxw_W27Kr1_99DCJMW1pTkKY6YtywMf7Q_0Nl04" target=3D"_blank" style=3D"color:=
+#00a4bd" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"4S6iHC41"><img alt=3D"=
+Kode Kloud" src=3D"https://team.kodekloud.com/hs-fs/hubfs/kodekloud-white-l=
+ogo.png?width=3D500&amp;upscale=3Dtrue&amp;name=3Dkodekloud-white-logo.png"=
+ style=3D"outline:none; text-decoration:none; border:none; max-width:100%; =
+font-size:16px" width=3D"250" align=3D"middle">
+</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#000000; word-break:break-word; padding:10px 20px">
+<div id=3D"hs_cos_wrapper_module_17424461996423" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17424461996423_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:115%" align=3D"center">
+<span style=3D"color: #ffffff;"><a href=3D"https://team.kodekloud.com/e3t/C=
+tc/2L+113/cQ4sL04/VXhyVX2fpRMJVYl1B58Ryx2WW69sl4k5x3vfjN7TcW2v3qgyTW7lCdLW6=
+lZ3mFW5_j3J_4MK_qvW87Kbr54Rx9nDW3qWVH28XYLtvW1lH-wV8ssvG0W5sgT-Y1yH6TtW4y72=
+wt6kSx3-W1s29VG5QMW9FW4gV_052W7K4-W7-qm4X8Wc6c0W51mb8-5dtD85W7QDCwG6S_9jCW4=
+P7V3w7y3Hx1W3M0qCD4GDdrKW1xT91y1yXRpJW1pgMhr18GmJRW4q5Rhd75CGrmVfw86V4S3Xfs=
+W1Mx6zB7sXQfmW5bYF2Z4KGpD4W97TrlR82dgtkW35QV8Y18FLppW2tRHNH7KXC3hW5ct19l56Q=
+Vw4W51sBhz5NCYRTf8d0N1604" style=3D"color:#ffffff" rel=3D"noopener" data-hs=
+-link-id=3D"0" data-hs-link-id-v2=3D"XMUIdBfW" target=3D"_blank"><span styl=
+e=3D"font-weight: bold;">Learning
+ Path</span></a><span style=3D"font-weight: bold;"> </span>| <a href=3D"htt=
+ps://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVYl1B58Ryx2WW69s=
+l4k5x3vfjN7TcW2v3qgyTW7lCdLW6lZ3mPN8lSjnMC8c1FW7YDldc2CF4MHW18FTGQ89YNk5W91=
+lRhM5Y98hCW11R5Bl7DKnQFW5W2LX_88Dy_sVnY9-Y7jsXs7W3HC3Wc8cLB55W7Njtz34htXdrV=
+3nPjj4L2P4wVC6YRD3ftxq_VjkFMF3RLCn3W75GDN91dN7YmW7RytMd93Z_9pW2CHD5H8n9kWdW=
+4dqDWW3pwh_yW137tDH5MVbcFW3StlLh7ddB7NW55MBdd5Q93cpV5nw_n89-XRmW9k6Flq7pkJP=
+QW2758zG986t-ZW2c6ztp3-vmyZW4PMx_x2J6GZrf1sn1Zv04" style=3D"color:#ffffff" =
+rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"GVT0AFOY" targ=
+et=3D"_blank">
+<span style=3D"font-weight: bold;">For Teams</span></a> |&nbsp; <a href=3D"=
+https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVYl1B58Ryx2WW=
+69sl4k5x3vfjN7TcW2v3qgyTW7lCdLW6lZ3mmW7_c6Rv2GqWPjW8MWpD33SwkQvW4ZzyFv5S-WZ=
+_VxxCNS3v00wsN3HTBSK8R86RW6NR4P77DLprxW8xLfN856mQPxN28q8Q-lN77LW93gqL08rRfl=
+TVnQZyZ7_yMhnW6zsD1l1wFpGVW6tnrfZ3BNQ_FW5r4tw230lJ5SW3n6NhT4RrKbnVcg3Jq4BYH=
+VYW1N36TT8vVhNTW6wQlqG6q_KMQW5HjgN81Sg1zSW5B7cQ415T8VYW2Mv_Gg4N6P6QW58gBmg3=
+6SY_rVlvZh34KWCKRVKTdvZ7QfnLSW8P9BkT32m8Mwf8fRthF04" style=3D"color:#ffffff=
+; font-weight:bold" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-=
+v2=3D"8W1g3Ane" target=3D"_blank">
+KodeKloud Engineer</a><span style=3D"font-weight: bold;"> </span>| <a href=
+=3D"https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVYl1B58Ry=
+x2WW69sl4k5x3vfjN7TcW2v3qgyTW7lCdLW6lZ3kXW8TxbSB4t152nVHkvNR6R31n3Vjv35-5pL=
+5ZlW336qqb4fsBzxW6SN6-23q0B--N1jffHsStPmhW3JdRsh1FsH73VZghWv54jbL2W4rw4b32k=
+bhj9W2C2kQH1mR5VfW3WTqpQ4fTgjjW35HCRK3LDdT0W7Y18Rw8_Jk9JW8DlRXf4-zYFXW4Bgvy=
+74LWNvMW6lqZFL7XVyMTW466NRd2WWl_nW8V_bLL1r4H3XW2t0H_s6c-vpWW2Q45KY1YJPzvF5N=
+r01VmG8BW6s5xhX1XWRQnW6m8MCC190FshW6Zwy7Q30TPb2f4sCgz-04" style=3D"color:#f=
+fffff; font-weight:bold" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-lin=
+k-id-v2=3D"Eq0XXKDH" target=3D"_blank">
+Playgrounds</a><span style=3D"font-weight: bold;">&nbsp;</span>| <a href=3D=
+"https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVYl1B58Ryx2W=
+W69sl4k5x3vfjN7TcW2v3qgyTW7lCdLW6lZ3phW1-nJ6b4B99mXVkqhkG5xmsTJW1_MrQB6pmVG=
+CW20_Nz_574mg4W4T6XV18g7-HjW36JVp174W0pNN6JjWkY8TDfPW9bdT9N8HLSvxN8Qs3CcTH-=
+NnW7P1_Nv8FfmV5W62qWTn16xVz3W6NBSn37_-9nsW9bNND13r5gF_W2zz-Sf7QyJZyW4nQ9Hj3=
+p6QHFW7THlqf4wgFFDW5Mm8xH7S_598W1MBw3M7D2CSQN83fcN4gB0dTW8jN8my53CcCLW99CYv=
+y6d4MTTV8GtXd7HXZN9W6rgQp47G60b-W6TMZ945rqsZQf1Tbl8s04" style=3D"color:#fff=
+fff; font-weight:bold" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-=
+id-v2=3D"D+omVhxV" target=3D"_blank">
+Pricing</a></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#000000; word-break:break-word; padding:10px 20px">
+<div id=3D"hs_cos_wrapper_module_17424461996424" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table role=3D"presentation" align=3D"center" style=3D"width: auto; text-al=
+ign: center;" class=3D"hs_cos_wrapper_type_social_module">
+<tbody>
+<tr align=3D"center">
+<td class=3D"social-network-cell" style=3D"font-family:Arial, sans-serif; f=
+ont-size:15px; color:#000000; word-break:break-word">
+<table role=3D"presentation" align=3D"center" style=3D"width: auto; text-al=
+ign: center;" class=3D"hs_cos_wrapper_type_social_module_single">
+<tbody>
+<tr align=3D"center">
+<td class=3D"display_block_on_small_screens" style=3D"font-family:Arial, sa=
+ns-serif; font-size:15px; color:#000000; word-break:break-word; padding:8px=
+ 5px; line-height:1; vertical-align:middle" valign=3D"middle">
+<a href=3D"https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVY=
+l1B58Ryx2WW69sl4k5x3vfjN7TcW2P3qgyTW7Y8-PT6lZ3kZW6trjq64KgtFwVq1sLw9gbkS7W5=
+S5vdN3GjYFdW84YXWB5XbJhJW89LL_p5r50CqW1NS3qW15PzDWW5dNtP71QmVwGW1xqL6l5Q3T8=
+BW4cPcjg6vx-7cW5-4Yn57DM5k2W6V4y439htfHJW5CgY_65BqDytW976bjp63nGK5N6K-6HKdw=
+b6RW6LPXq17kzwVFW63NSQD7cKknxW3ZY6L65wGZw8W7HKZQC8SbchjMlDYR1MqpsJW37RZvm1N=
+2wFkVSgj1H7nGrvnW7ws4Y67JljZ6W1dwTjm5VdLH3W86tfT14p5d5TW8FLtHZ8Tr3y4W8MDnmD=
+8gPyyvf1FkZg804" style=3D"color:#00a4bd; text-decoration:none !important" d=
+ata-hs-link-id=3D"0" data-hs-link-id-v2=3D"YgRurl83" target=3D"_blank"><img=
+ src=3D"https://team.kodekloud.com/hs/hsstatic/TemplateAssets/static-1.262/=
+img/hs_default_template_images/modules/Follow+Me+-+Email/facebook_circle_co=
+lor.png" alt=3D"Facebook" height=3D"25" style=3D"outline:none; text-decorat=
+ion:none; border:none; width:auto!important; height:25px!important; vertica=
+l-align:middle" valign=3D"middle" width=3D"auto">
+</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"social-network-cell" style=3D"font-family:Arial, sans-serif; f=
+ont-size:15px; color:#000000; word-break:break-word">
+<table role=3D"presentation" align=3D"center" style=3D"width: auto; text-al=
+ign: center;" class=3D"hs_cos_wrapper_type_social_module_single">
+<tbody>
+<tr align=3D"center">
+<td class=3D"display_block_on_small_screens" style=3D"font-family:Arial, sa=
+ns-serif; font-size:15px; color:#000000; word-break:break-word; padding:8px=
+ 5px; line-height:1; vertical-align:middle" valign=3D"middle">
+<a href=3D"https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVY=
+l1B58Ryx2WW69sl4k5x3vfjN7TcW2P3qgyTW7Y8-PT6lZ3nFVN-MJN5rd2VTW1sjwVp988Zf8W6=
+z0hWJ3dYwWkW4cQS371_Tn8_W3g7NSv13QN-TW6yvQP_4NbQqbW5PdKJl8tv1b0VGlXdy2MkgZ4=
+W53_YPQ8gTC0PW8bG-6282GD64VzNqk-3Qr9SYW3Yg0CD7GrF5TW7m_1kS7x5_KGW4w3KQw14qG=
+QvN2t-d8KtXBb7W17jl_J5Bdr_ZW5pZVG357tT64W31snz78ZkqN9W1VZT0r395KdMW4Dksnd6C=
+x_72W5-40YT1WcTgXW4clxHT5yYlSlVJjH3r104bTyW8DhH0H20Rrz0W5Q3Gxs5N3TqMW65gNM3=
+1Y25nQf5d9ybs04" style=3D"color:#00a4bd; text-decoration:none !important" d=
+ata-hs-link-id=3D"0" data-hs-link-id-v2=3D"igmByCci" target=3D"_blank"><img=
+ src=3D"https://team.kodekloud.com/hs/hsstatic/TemplateAssets/static-1.262/=
+img/hs_default_template_images/modules/Follow+Me+-+Email/linkedin_circle_co=
+lor.png" alt=3D"LinkedIn" height=3D"25" style=3D"outline:none; text-decorat=
+ion:none; border:none; width:auto!important; height:25px!important; vertica=
+l-align:middle" valign=3D"middle" width=3D"auto">
+</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"social-network-cell" style=3D"font-family:Arial, sans-serif; f=
+ont-size:15px; color:#000000; word-break:break-word">
+<table role=3D"presentation" align=3D"center" style=3D"width: auto; text-al=
+ign: center;" class=3D"hs_cos_wrapper_type_social_module_single">
+<tbody>
+<tr align=3D"center">
+<td class=3D"display_block_on_small_screens" style=3D"font-family:Arial, sa=
+ns-serif; font-size:15px; color:#000000; word-break:break-word; padding:8px=
+ 5px; line-height:1; vertical-align:middle" valign=3D"middle">
+<a href=3D"https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVY=
+l1B58Ryx2WW69sl4k5x3vfjN7TcW2v3qgyTW7lCdLW6lZ3myW8jZD823VTPqlW2HCzcM52-W53W=
+4lQtbx1-3FlbW2X0Rf3765NzjVJPV6X1lc-jtW7-NpcM7pPvQ4W9cvcVb5lXP7WW4vx_K56gBrd=
+bW5HBnmZ34JbctW3JtGsY8gswT1W3z-fsv7QTgzfN5cjbyNl1q0WVhPvgb1k78lyW5Mr4cm8hVP=
+pNW32K8vP5fstLBW692Dfh1CD3KMM_SRcVX1kQMW1-Dc4y6FTB5xN8p40_31zgrQN5gk6r0kQ31=
+PW3MVqhp1q2j-4MncmLNXdrwzW28QqQN1412JvW3VKNcb7tLf8mf5LZHNY04" style=3D"colo=
+r:#00a4bd; text-decoration:none !important" data-hs-link-id=3D"0" data-hs-l=
+ink-id-v2=3D"wIfDioR7" target=3D"_blank"><img src=3D"https://team.kodekloud=
+.com/hs/hsstatic/TemplateAssets/static-1.262/img/hs_default_template_images=
+/modules/Follow+Me+-+Email/twitter_circle_color.png" alt=3D"X" height=3D"25=
+" style=3D"outline:none; text-decoration:none; border:none; width:auto!impo=
+rtant; height:25px!important; vertical-align:middle" valign=3D"middle" widt=
+h=3D"auto">
+</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"social-network-cell" style=3D"font-family:Arial, sans-serif; f=
+ont-size:15px; color:#000000; word-break:break-word">
+<table role=3D"presentation" align=3D"center" style=3D"width: auto; text-al=
+ign: center;" class=3D"hs_cos_wrapper_type_social_module_single">
+<tbody>
+<tr align=3D"center">
+<td class=3D"display_block_on_small_screens" style=3D"font-family:Arial, sa=
+ns-serif; font-size:15px; color:#000000; word-break:break-word; padding:8px=
+ 5px; line-height:1; vertical-align:middle" valign=3D"middle">
+<a href=3D"https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVY=
+l1B58Ryx2WW69sl4k5x3vfjN7TcW2v3qgyTW7lCdLW6lZ3lSW53dcs84jPtm_N3Z3-gk7Y_WJW9=
+9vxzT3C5cdYW3md-dr2PXBZvW6Pf1XD5jvDz8N5Y5fm2Z1X6RW7PqhgF1ctFL3W6xLWjX6vJMkz=
+W3t-Vg03HyFtzW7pWc8G6656YVW55VbHc3DPQ-XW1yPR-976gCMbVhKW7p7hP283W8Q3dHz13Fd=
+9-W1bZbtN6J3yXBW37qS4T56lMBDW2pMTZ77FNL5sW44tn_v713gMlV99Jpg7bNGztW8Zs50C4b=
+p-g0W5ymRQM1HHqxKW5W8psq4Pw2wFW17PNB49jNLVNW7_t4Wv7jzHPnf5tLJRR04" style=3D=
+"color:#00a4bd; text-decoration:none !important" data-hs-link-id=3D"0" data=
+-hs-link-id-v2=3D"YfWiZU+m" target=3D"_blank"><img src=3D"https://team.kode=
+kloud.com/hs/hsstatic/TemplateAssets/static-1.262/img/hs_default_template_i=
+mages/modules/Follow+Me+-+Email/instagram_circle_color.png" alt=3D"Instagra=
+m" height=3D"25" style=3D"outline:none; text-decoration:none; border:none; =
+width:auto!important; height:25px!important; vertical-align:middle" valign=
+=3D"middle" width=3D"auto">
+</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"social-network-cell" style=3D"font-family:Arial, sans-serif; f=
+ont-size:15px; color:#000000; word-break:break-word">
+<table role=3D"presentation" align=3D"center" style=3D"width: auto; text-al=
+ign: center;" class=3D"hs_cos_wrapper_type_social_module_single">
+<tbody>
+<tr align=3D"center">
+<td class=3D"display_block_on_small_screens" style=3D"font-family:Arial, sa=
+ns-serif; font-size:15px; color:#000000; word-break:break-word; padding:8px=
+ 5px; line-height:1; vertical-align:middle" valign=3D"middle">
+<a href=3D"https://team.kodekloud.com/e3t/Ctc/2L+113/cQ4sL04/VXhyVX2fpRMJVY=
+l1B58Ryx2WW69sl4k5x3vfjN7TcW2v3qgyTW7lCdLW6lZ3m9N2FkTD0xZgsHW5rjp3-7jl9nZW3=
+w7kk_99md-2W5JQpth1cRSKtN46XjYpQzY9sN2_4xsJb4WT-W6f1VBg3jGyPdW5wd6bb1KydnYN=
+8rr_R8yxQXFW4lXn6z2kQQzXW13S0fR1hrw-tW5bw7wM5PzqsHW6_bspj4612BNW2s0pXX3y3g4=
+dW84Kvh18XDdWYW6TTMN16d9dM0V9XrX45VnrB7W9cBjLl2JzD76W3606Ml5t-gg5W3RvRkl1Z4=
+x9KW93WdgS8GnvZ1V1HJW94kPbY4N7jd1Cbl5NkvW8-Sh4c2JfkSCf8cbCfF04" style=3D"co=
+lor:#00a4bd; text-decoration:none !important" data-hs-link-id=3D"0" data-hs=
+-link-id-v2=3D"0IlcTpWg" target=3D"_blank"><img src=3D"https://team.kodeklo=
+ud.com/hs/hsstatic/TemplateAssets/static-1.262/img/hs_default_template_imag=
+es/modules/Follow+Me+-+Email/youtube_circle_color.png" alt=3D"YouTube" heig=
+ht=3D"25" style=3D"outline:none; text-decoration:none; border:none; width:a=
+uto!important; height:25px!important; vertical-align:middle" valign=3D"midd=
+le" width=3D"auto">
+</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div id=3D"hs_cos_wrapper_module_17424461996425" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table role=3D"presentation" class=3D"hse-footer hse-secondary" width=3D"10=
+0%" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-family:Arial, sans-se=
+rif; font-size:12px; line-height:135%; color:#23496d; margin-bottom:0; padd=
+ing:0">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"font-family:Arial, sans-serif;=
+ font-size:15px; color:#000000; word-break:break-word; text-align:center; m=
+argin-bottom:0; line-height:135%; padding:10px 20px">
+<p style=3D"font-size: 11px; line-height: 125%;"><span style=3D"color: #fff=
+fff;"><a href=3D"https://team.kodekloud.com/hs/preferences-center/en/direct=
+?data=3DW2nXS-N30h-MdW2F_q3z3j8_TLW4mksdC2TxYSHW2-vBZq2PnBCTW1Zwwqz30HrBRW4=
+7VPSk49Pc4FW1LvFSW36m8fhW36CtKh2WQFngW4r6gtT3JT5kLW4pbZH134qJ20W4fx6h61-X_6=
+qW2MjZBX3VHpkfW3LWVq-1_4mrgW1BnNhp2HRtt9W20VJkJ1LjGhLW25hpwk3H7NXcW2zYZF52H=
+L1RJW3SMjRs21g-l9W38sLQc3R11lKW1NfZb24tG6MPW2PNnLl4mmYsLW34z4XC4t4K-XW2HCt2=
+33bkskKW2w3y_m1SpQjKW234k6P3JVmDQW3GKsyc2vKPV5W41q94_2Wnl7lW3d8XzW239lBbW2p=
+2yHy4pKx8ZW20YcY02sF41wW34wBWk1BL6r1W1BswWP2RTXS4W3gjh962WJQn6W4kcsFK3_Bx4s=
+W3BM5LZ3F5nf2W2KC7MR1X88rLW2p0SH74phy8ZW1_qGlX3N__fXW21kYv223mmc0W3H7j5w2Kq=
+clgW3QCCxw2PV8MCW3M60mK3ZZltlW2WtJBG2FLDJyW38Dr2W2xwpy7W2p8lY24kmKKKf2Yh5yh=
+04&amp;utm_campaign=3D13493650-mega_may_devops_sale_2025&amp;utm_source=3Dh=
+s_email&amp;utm_medium=3Demail&amp;utm_content=3D363392440&amp;_hsenc=3Dp2A=
+Nqtz--9ltWpcR4r12RaXz5Y6PHTM4CL2VobKCoUi31zuZo01TCOZwqQDiz659MNR-D8MAldXl06=
+GIu86IeFNmtZ3rcauqh0rw&amp;_hsmi=3D363392440" style=3D"color:#ffffff" data-=
+unsubscribe=3D"true" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"SFRZzEXk" =
+target=3D"_blank">Unsubscribe</a>
+ or <a href=3D"https://team.kodekloud.com/hs/preferences-center/en/page?dat=
+a=3DW2nXS-N30h-MdW2F_q3z3j8_TLW4mksdC2TxYSHW2-vBZq2PnBCTW1Zwwqz30HrBRW47VPS=
+k49Pc4FW1LvFSW36m8fhW36CtKh2WQFngW4r6gtT3JT5kLW4pbZH134qJ20W4fx6h61-X_6qW2M=
+jZBX3VHpkfW3LWVq-1_4mrgW1BnNhp2HRtt9W20VJkJ1LjGhLW25hpwk3H7NXcW2zYZF52HL1RJ=
+W3SMjRs21g-l9W38sLQc3R11lKW1NfZb24tG6MPW2PNnLl4mmYsLW34z4XC4t4K-XW2HCt233bk=
+skKW2w3y_m1SpQjKW234k6P3JVmDQW3GKsyc2vKPV5W41q94_2Wnl7lW3d8XzW239lBbW2p2yHy=
+4pKx8ZW20YcY02sF41wW34wBWk1BL6r1W1BswWP2RTXS4W3gjh962WJQn6W4kcsFK3_Bx4sW3BM=
+5LZ3F5nf2W2KC7MR1X88rLW2p0SH74phy8ZW1_qGlX3N__fXW21kYv223mmc0W3H7j5w2KqclgW=
+3QCCxw2PV8MCW3M60mK3ZZltlW2WtJBG2FLDJyW38Dr2W2xwpy7W2p8lY24kmKKKf2Yh5yh04&a=
+mp;utm_campaign=3D13493650-mega_may_devops_sale_2025&amp;utm_source=3Dhs_em=
+ail&amp;utm_medium=3Demail&amp;utm_content=3D363392440&amp;_hsenc=3Dp2ANqtz=
+--9ltWpcR4r12RaXz5Y6PHTM4CL2VobKCoUi31zuZo01TCOZwqQDiz659MNR-D8MAldXl06GIu8=
+6IeFNmtZ3rcauqh0rw&amp;_hsmi=3D363392440" style=3D"color:#ffffff" data-unsu=
+bscribe=3D"true" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"qjPJqCop" targ=
+et=3D"_blank">
+Manage Preferences</a>.</span></p>
+<p style=3D"font-size: 11px; line-height: 125%;">&nbsp;</p>
+<p style=3D"font-size: 11px; line-height: 125%;"><span style=3D"color: #fff=
+fff;">KodeKloud (Brand owned by Zaurac Technologies PTE. LTD.)</span><br>
+<span style=3D"color: #ffffff;">14 Robinson Road, #08-01A Far East Finance =
+Building,&nbsp;Singapore, Central Singapore, 048545 Singapore
+</span></p>
+<p style=3D"font-size: 11px; line-height: 125%;"><span style=3D"color: #fff=
+fff;">&nbsp;</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<img src=3D"https://team.kodekloud.com/e3t/Cto/2L+113/cQ4sL04/VXhyVX2fpRMJV=
+Yl1B58Ryx2WW69sl4k5x3vfjW7TcVQh3CZXvq132" alt=3D"" width=3D"1" height=3D"1"=
+ border=3D"0" style=3D"display:none!important;min-height:1px!important;widt=
+h:1px!important;border-width:0!important;margin-top:0!important;margin-bott=
+om:0!important;margin-right:0!important;margin-left:0!important;padding-top=
+:0!important;padding-bottom:0!important;padding-right:0!important;padding-l=
+eft:0!important">
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+------=_Part_11817277_15479748.1748333290204--
