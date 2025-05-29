@@ -51,3 +51,42 @@ def embed_text_titan(text: str) -> List[float]:
     except Exception as e:
         logging.error(f"❌ Embedding failed for text: {text[:100]}... — {str(e)}")
         raise
+
+
+def generate_claude_answer(context_docs: list, question: str, config: dict) -> str:
+    """
+    Generate a natural language answer using Claude (via Bedrock).
+    """
+    try:
+        model_id = config["rag"]["answer_model"]
+        client = boto3.client("bedrock-runtime")
+
+        context = "\n\n".join(context_docs)
+        prompt = (
+            "You are a helpful assistant analyzing vendor emails.\n\n"
+            f"Context:\n{context}\n\n"
+            f"Question: {question}\n\n"
+            "Answer:"
+        )
+
+        body = {
+            "anthropic_version": "bedrock-2023-05-31",
+            "max_tokens": 500,
+            "temperature": 0.2,
+            "messages": [{"role": "user", "content": prompt}]
+        }
+
+        response = client.invoke_model(
+            modelId=model_id,
+            contentType="application/json",
+            accept="application/json",
+            body=json.dumps(body)
+        )
+
+        result = json.loads(response["body"].read())
+        return result.get("content", [])[0].get("text", "").strip()
+
+    except Exception as e:
+        logging.error(f"❌ Failed to generate answer with Claude: {e}")
+        return "❌ Claude generation failed"
+    
