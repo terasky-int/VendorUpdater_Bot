@@ -1,0 +1,598 @@
+Received: from AM7P194MB0882.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:177::13)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Tue, 3 Jun 2025
+ 05:30:53 +0000
+Received: from DU2PR04CA0054.eurprd04.prod.outlook.com (2603:10a6:10:234::29)
+ by AM7P194MB0882.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:177::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8769.37; Tue, 3 Jun
+ 2025 05:30:49 +0000
+Received: from DU2PEPF00028D0F.eurprd03.prod.outlook.com
+ (2603:10a6:10:234:cafe::68) by DU2PR04CA0054.outlook.office365.com
+ (2603:10a6:10:234::29) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8769.26 via Frontend Transport; Tue,
+ 3 Jun 2025 05:30:49 +0000
+Authentication-Results: spf=pass (sender IP is 192.28.150.203)
+ smtp.mailfrom=bounce.goteleport.com; dkim=pass (signature was verified)
+ header.d=goteleport.com;dkim=pass (signature was verified)
+ header.d=mktdns.com;dmarc=pass action=none
+ header.from=goteleport.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of bounce.goteleport.com
+ designates 192.28.150.203 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.28.150.203;
+ helo=bounce.goteleport.com; pr=C
+Received: from bounce.goteleport.com (192.28.150.203) by
+ DU2PEPF00028D0F.mail.protection.outlook.com (10.167.242.23) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8792.29 via Frontend Transport; Tue, 3 Jun 2025 05:30:48 +0000
+X-MSFBL: g+sU1KnC6/Vk2FRjNMusTbF+IuheLjfvHh85MZj78NI=|eyJ1IjoiODE5LVdIVC0
+	0ODM6MDo3Nzk4OjU3NjA1OjI0Mjk3MDo4NTY5Ojk6NjMwMjI6MzE4MjM0NSIsImI
+	iOiJkdnAtMTkyLTI4LTE1MC0yMDMiLCJnIjoiYmctYWJkLTQ1NyIsInIiOiJkYXZ
+	pZGdAdGVyYXNreS5jb20ifQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1748928646;
+	s=m1; d=goteleport.com; i=@goteleport.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=glCZnOCHD+18Lmn8xJlRuLegznyx2q4MhDt5yNIN/mg=;
+	b=d6DVEKoX45Lxe+URUYwPx5vJ4uc87Tojk0IyvOma9RqmIc0s4MHJFaFv4w368CHa
+	mcTyAgdPJIRitNLFrQ0++cUhnVEodOUAV4lGrkXSLY7RkrBoH4eCkNdnkFVq136ccNN
+	uyOyALywKsqOAzK63KLX5zswminKiXfjzPln8VQI=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1748928646;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=glCZnOCHD+18Lmn8xJlRuLegznyx2q4MhDt5yNIN/mg=;
+	b=qqVMNOZYsKRVHSQ3m1GEpW0RUrwxB5LEe6Vu2RC2wM9kvvqd7Udz5IW4e1ZgykSW
+	9/ZcHSx7QSr9rL/ItmZUsXost0xMqNYSKcp6aCT7vPhccJvCjMcygzgy123j/IGU7A1
+	3yidn1Fha9SecjgXhX+eRIGL0bDfegkokPZnuFHg=
+Date: Tue, 3 Jun 2025 00:30:46 -0500 (CDT)
+From: Teleport <hello@goteleport.com>
+Reply-To: hello@goteleport.com
+To: davidg@terasky.com
+Message-ID: <162367735.125488677.1748928646856@abmktmail-batch1k.marketo.org>
+Subject: Is Shadow Access Putting Your Infrastructure at Risk? 6 Ways It
+ Might Be
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_125488676_2142752020.1748928646855"
+X-Binding: bg-abd-457
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://em.goteleport.com/u/ODE5LVdIVC00ODMAAAGa0z3-xVa_LtDk2kf8IzT9rOTBdTip_hP8UWfyatM8BrIs2b-5Cy_idC6wixFEcykRhNG7oSU=?emailAddress=ODE5LVdIVC00ODMAAAGa0z3-xWhGTSsOCkBdvmIaVo0awdwJBvNEQ4Ife3SnwIttidPtC49YXKpo5JcbG3oZSJM>, <mailto:GFMXS5SIPBIFQM2JNNKE442WOM2XMYJWPF3T2PI=.63022.8569.9@unsub-ab.mktomail.com>
+X-MarketoID: 819-WHT-483:0:7798:57605:242970:8569:9:63022:3182345
+X-Mailfrom: 819-WHT-483.0.63022.0.0.8569.9.3182345@bounce.goteleport.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+Return-Path: 819-WHT-483.0.63022.0.0.8569.9.3182345@bounce.goteleport.com
+X-MS-Exchange-Organization-ExpirationStartTime: 03 Jun 2025 05:30:48.9079
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: a6757eec-3b0a-4a8c-000b-08dda25fcc44
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU2PEPF00028D0F:EE_|AM7P194MB0882:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: DU2PEPF00028D0F.eurprd03.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: a6757eec-3b0a-4a8c-000b-08dda25fcc44
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:3;ARA:13230040|1032899013|12012899012|69100299015|2092899012|3072899012|31052699007|4022899009|39142699007|13003099007|4076899003|8096899003|2066899003;
+X-Forefront-Antispam-Report: CIP:192.28.150.203;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:bounce.goteleport.com;PTR:bounce.goteleport.com;CAT:NONE;SFS:(13230040)(1032899013)(12012899012)(69100299015)(2092899012)(3072899012)(31052699007)(4022899009)(39142699007)(13003099007)(4076899003)(8096899003)(2066899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Jun 2025 05:30:48.5790
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a6757eec-3b0a-4a8c-000b-08dda25fcc44
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: DU2PEPF00028D0F.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7P194MB0882
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:05.0255723
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8769.031
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?N3htMjM5c3J5YVFOQXNwQ1hwU0lrbUJKdVhoNHZaNFVNSzA4ZnJWeTJvNDlG?=
+ =?utf-8?B?OTRMa3JUUGZZVTRSYmVtMUJQa3lrSnN4SDBwR2xsNkJOY0tVc1VnY0ZYcU9C?=
+ =?utf-8?B?VkpLYXkyWGxDbCtnYlRkYVU4S0NFK3hJcHA4MnBadVZGQjZyU0psWHJmd2xG?=
+ =?utf-8?B?ZXc0STZjV2tPL2tIQWs2a0pHY1lhQ215bHRkQ2hMWU5yem5yWWwzaTRkRytz?=
+ =?utf-8?B?Q0R5TWQxeFZnS3ZURVVNaXd2bGp3aW52QzYxVnZib0ppYTNUU1NlazM3UXpV?=
+ =?utf-8?B?Z3ZPQlNkOG8xRUgzZHBmeWpSU0hqT3Rjc2k4UnAvRFUxUnBpNUdPRG9HQm41?=
+ =?utf-8?B?MStvRFVrYkczdzJQRmlsemJZbmZHOVo0cUkwUFNJcy9tbmtSUU1nZW9sQVE3?=
+ =?utf-8?B?d3BKRWl2SGtab1J5dFI5QkVyU1ZBWXFXbys4djc0ckFLWFBQZ2RqWlFOSzZ6?=
+ =?utf-8?B?ZG9Qb1RyOHhHSHZFRllPbjh3dmVNa3FtMWo4U2FZdXRGelgxWnRIOVRZYnBW?=
+ =?utf-8?B?OVN1SW43bUtGNytTSFVGTUIzSWtGTm5RTzFVaWlJMUZPVlJrMFpJTld6QTFk?=
+ =?utf-8?B?M3JBM0FBL2IwalZ1VklXNUhLUXNYNThISGhkclNMNThnaXF0ZzNDbUxoUFVa?=
+ =?utf-8?B?TlhIZTNTTzdDY3VENVpkdUFJU0FDTXBGbmJ0dHo4MXpWZ0ZsOHJ1ZTRDL1Ur?=
+ =?utf-8?B?NWxaZWhFM1dUTVhQTjdmdW9GdW1QcVZpR2FDTVFEdzkwVzUzbU8wY0pyNDlX?=
+ =?utf-8?B?Y0pkeEhTY0F5YlNJeitsdmxmaVZERkhoMSs5bDZ1VDZBQVRqV3RGdFU5bmw3?=
+ =?utf-8?B?TmRvSlNmeDFRS1RqLy9BRjlENVB0UWRyNXkwTTRkWEFXUC9lNUVXVVBlSml6?=
+ =?utf-8?B?a0EzN3U5dkFKbWIwMnZaU3dLYnZBdUN3cXMrK2pUS3ZWR2VhdnZXT29DOGFS?=
+ =?utf-8?B?SDFHUVJ6SWtUZlBrN2JWaTEycVVQbkRndlYvR3A4NVRvNDlVNDJDUnBLYlpz?=
+ =?utf-8?B?L093ZEU5N3UyQVMydmtsNjBrcml2QXlmeHpqQjN4MXFMU1hQS25DdURWRWZn?=
+ =?utf-8?B?a2VIVjZzYjdpbmE3ak5ONVlqL1Rha01sWEY3MTNxTm8ySWxrRDRyS3FwcXl6?=
+ =?utf-8?B?K3dUMFZBVTlVVUF0T0NSbnFkWlhTSjFGd0RjT2J3bENNU2pVSnZsWjFROThi?=
+ =?utf-8?B?R1A0UHRKTWY5clVsU0J3Ky9sM25LVlJjTmFiOW1JNHJhaFNaWkhjQWxpOTVm?=
+ =?utf-8?B?MER6c3k1R2xzZ1VKbmljSTJnQnA2bk5Fcnl4RlY5MFBGUUpHbFV5OUZpL0VP?=
+ =?utf-8?B?WGZ6WVRaZ0hQclRXRlVpUFJTL2dyRGZOVmpKUFgvMXlNQVFidzRCV3c2SzlN?=
+ =?utf-8?B?WW95SC9HK0J1N3doaXNKY3h4UlpQWk42OGcxcGRZNzkzOUt2Q1RLOUR4c0Vv?=
+ =?utf-8?B?TkJiNVhSNXdYWXdpM084Y3VKN1BVczYycUZEMkE3RTlVcTIweG9GakQxRnkz?=
+ =?utf-8?B?ODFVS01kaDJkL044cVkzN3craGozNm8xOGZqQ1ZGc2xxNHFJdG0zYU9PQ1ZD?=
+ =?utf-8?B?MHNUbC9QVTAxU0U0RlJ1Y3RRLzJVTHVnZ1FxVE9CaXA4dUpjZkhQNFRsWXl4?=
+ =?utf-8?B?ZWRkTGdLRkV3VkpxY3ROWmluMEZHVWVaaEx2cTVsQ25EZ3hDMmoxVm90Y0xM?=
+ =?utf-8?B?RTVab1VGZjhBa3NSblY3SHo2M3hQU1htQ3VuS1htOEtSYTZpM3N2NkNVSEJm?=
+ =?utf-8?B?SEF2Q0pPaFJnZGdmQnRHcHBCYUpMVlBUcldxU1VUOFdzM1l3cjF3VS92cHlo?=
+ =?utf-8?B?NERtb3dFbXo0TkJFRUQyNkJVN1RLbFU0NFVhWDNGZklSVG96LzlhWTFBMTlk?=
+ =?utf-8?B?dm00YmtUYnZvMzdibVl4c2s4bTZ6L3BsSGFsZlBmZ2Mxc0VwNW9BRlNxZlIx?=
+ =?utf-8?B?UHJoRStQRGJVYU5FaTU4RUUwWjR1SnJ3US92NlAxYm00OTM2UnFuMWVIcWZQ?=
+ =?utf-8?B?bmYzRVNWRGM5NjNmemdjRWMwZ0pEUnI0MzkxTzZJdDJhR3oySmlWemJFcnpw?=
+ =?utf-8?B?V3JMYUhVSkNFZHA3bTZEamJrUGJzTCtNOWdMUFVzZ2NPUHF2dDJzM1lsUXgz?=
+ =?utf-8?B?TXZCNURzbjZ0NzY3aDhHUmdPVStsYUNVdVIrRms3Q3lzcjIyYktQem9aRm9m?=
+ =?utf-8?B?cUQzK1JJVjNNVnliRGk5WFVuQUtOV0JRcEc5QTljVmJib3JLVDdiS0JrR1VC?=
+ =?utf-8?B?TDd0TlhFTy9lSG9tcTA5ZG9DVjlCOWVCeWZRUENXSm8yT3RxeDY0cjIveGZh?=
+ =?utf-8?B?cjgwVXJKOGd4QUxDV3pLLzdTdk9KTis4aWd5Nnd4a3dXV0tkbFNkengycjJs?=
+ =?utf-8?B?TEsxNDdUMXlzSTZST296ZkttaUN1ZWNGZFM5ZENHcUlRMm01M1Qrd282RjRS?=
+ =?utf-8?B?SHZ0WmNoVXVIYjRyZ1hJUnZhQUEyLzNtdExFelF1bWFSS0RtVU5QVXd5RTZt?=
+ =?utf-8?B?SkFVK1pTb1B5OU5jUTVzZkNZNVp0RU9qVk53RzMycFFtUWNieHQ5bFAveUpn?=
+ =?utf-8?B?YzU2cGtBcUtwUEVjM3VGVDV4WXhwYTgwTDBzVWVzQVBpdFpTT3FjT1B6VlZW?=
+ =?utf-8?B?V2xGR241VkRSQm5yODJiT0dINVB2U2xQdUJvaTRpUzVJRGUwdFJ5eFJ3dTNt?=
+ =?utf-8?B?S21mbUJOWUlIbnl0aklmcGxWemJURzRUMjVEOWkyckszV2xnTkNwQW1wcmtp?=
+ =?utf-8?Q?HU2EfiIdSOCj0OtH1b1M6nT?=
+MIME-Version: 1.0
+
+------=_Part_125488676_2142752020.1748928646855
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Shadow access=E2=80=94unmonitored credentials, forgotten SSH keys, or undoc=
+umented backdoors
+[Eliminate the blind spots where shadow access hides]<https://em.goteleport=
+.com/ODE5LVdIVC00ODMAAAGa0z3-xU4sM-xWmiynoODwcOa-WSmC9ASo0hk1Rd-iuL4Jpyq9eu=
+kJOc41ge6EHo1Ml_IAVn0=3D>
+
+Hi David,
+
+Shadow access=E2=80=94unmonitored credentials, forgotten SSH keys, or undoc=
+umented backdoors=E2=80=94creates security risks that most traditional secu=
+rity tools fail to detect. These gaps often come from industrious engineers=
+ who just need quick access to get their work done.
+
+In our latest blog, we break down:
+
+  *   What shadow access is and why it=E2=80=99s so dangerous
+  *   The top 6 ways it sneaks into your infrastructure
+  *   How to eliminate shadow access without slowing down engineers
+
+Teleport provides real-time monitoring, just-in-time access controls, and s=
+hort-lived certificates to ensure all infrastructure access is secured with=
+ least privilege=E2=80=94reducing your attack surface without adding fricti=
+on to engineering workflows.
+
+Learn More<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGa0z3-xU4sM-xWmiynoO=
+DwcOa-WSmC9ASo0hk1Rd-iuL4Jpyq9eukJOc41ge6EHo1Ml_IAVn0=3D>
+
+P.S. Watch a replay of our webinar, =E2=80=9CEliminating Shadow Access: The=
+ Hidden Dangers of SSH and API Keys,=E2=80=9D to learn more about Shadow Ac=
+cess and how to keep it from creeping into your infrastructure stack. Watch=
+ the replay here<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGa0z3-xYEbNaYz=
+UOZ1iBJVNJ5ENHTUkJ_ed5V1NlvnUE3GyWJGlzdeqTa1_VumO0rXQbXhaGQ=3D>.
+
+Teleport, 2100 Franklin St, Suite 400, Oakland, CA 94612
+
+If you no longer wish to receive these emails anymore, click on the followi=
+ng link:
+
+UNSUBSCRIBE<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGa0z3-xfgCg1vzUam1j=
+lwXpp-6SmjB0MAgIlqohSS6vz4vA0y-lA3Z1cJN1XIquHEZRSOayG0=3D>
+
+TERMS OF SERVICE<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGa0z3-xRbGHmhz=
+7nSsX2vxfGQBkhjYkcW6S7-sTYT9cAjx0Ng7opYCKxUA9u4CHf3puGOb1mk=3D> | PRIVACY P=
+OLICY<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGa0z3-xUEFY7iwXgSO7uOxxOl=
+ufjOQcnZ-2Y3ZtnmNSpeeX3CDPUCUoFz6RJynrn-FoWeMnrQ=3D> | SECURITY POLICY<http=
+s://em.goteleport.com/ODE5LVdIVC00ODMAAAGa0z3-xTkK-4IQN2j0_Fvi7xZiibBs0mSW3=
+ZKjZmUtAYDkfLCil3ogr9krqh5Am3IXrLVkxs4=3D>
+
+<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGa0z3-xaEzzKY0XvSYs3E26wb7ne3d=
+GWtcRRAojKQslSiHv6uiTh1XCK6_gK4sdT9Wjjl9cSo=3D>
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_125488676_2142752020.1748928646855
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:=
+schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:offi=
+ce"><!--
+Built by upcraft.io
+--><head><!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>=20
+</xml><![endif]-->
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+<!-- START Marketo Variables --><!-- Global Variables--><!-- Background Var=
+iables--><!-- Content Variables--><!-- Toggle Variables--><!-- Button 1 Var=
+iables--><!-- Button 2 Variables--><!-- END Marketo Variables -->
+<title>Company Name</title>
+<style>
+/* START - WEBFONTS, ALWAYS use import method for email to avoid automation=
+ tracking issues */
+@import url('https://fonts.googleapis.com/css?family=3DOpen+Sans:300,400,60=
+0,700&display=3Dswap');
+/* END - WEBFONTS, ALWAYS use import method for email to avoid automation t=
+racking issues */
+=09
+/* START - Universal styles */
+body {
+    font-family: arial, helvetica;
+    font-size: 14px;
+    line-height: 1.6em;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: 100%;
+}
+img, a img {
+    outline: none;
+    text-decoration: none;
+    border: none;
+    -ms-interpolation-mode: bicubic;
+}
+.imgblock img {
+    display: block;
+}
+.img100, .img100 img {
+    width: 100% !important;
+    height: auto !important;
+}
+p {
+    margin-top: 0;
+    padding-top: 0;
+}
+a {
+    color: #047AED;
+}
+
+/* END - Universal styles  */
+=09
+/* START - Mobile universal styles */
+@media screen and (max-width: 480px) {
+body {
+    margin: 0 !important;
+    padding: 0;
+}
+.t100 {
+    width: 100% !important;
+    float: none !important;
+}
+.mimg100 img, .mimg100 {
+    width: 100% !important;
+    height: auto !important;
+}
+.logoimg {
+    max-width: 125px !important;
+    height: auto !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.heightauto {
+    height: auto !important;
+}
+.p0 {
+    padding: 0 !important;
+}
+.pt5 {
+    padding-top: 5px !important;
+}
+.pr5 {
+    padding-right: 5px !important;
+}
+.pb5 {
+    padding-bottom: 5px !important;
+}
+.pl5 {
+    padding-left: 5px !important;
+}
+.pt10 {
+    padding-top: 10px !important;
+}
+.pr10 {
+    padding-right: 10px !important;
+}
+.pb10 {
+    padding-bottom: 10px !important;
+}
+.pl10 {
+    padding-left: 10px !important;
+}
+.p15 {
+    padding: 16px !important;
+}
+.pt15 {
+    padding-top: 16px !important;
+}
+.pr15 {
+    padding-right: 16px !important;
+}
+.pb15 {
+    padding-bottom: 16px !important;
+}
+.pl15 {
+    padding-left: 16px !important;
+}
+.pt20 {
+    padding-top: 20px !important;
+}
+.pr20 {
+    padding-right: 20px !important;
+}
+.pb20 {
+    padding-bottom: 20px !important;
+}
+.pl20 {
+    padding-left: 20px !important;
+}
+.pt30 {
+    padding-top: 30px !important;
+}
+.pr30 {
+    padding-right: 30px !important;
+}
+.pb30 {
+    padding-bottom: 30px !important;
+}
+.pl30 {
+    padding-left: 30px !important;
+}
+.plr15 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+.mpad {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+}
+/* END - Mobile universal styles */
+
+/* START - Webfont fix, keeps Outlook from rendering Times. Loads for all d=
+evices except Outlook. */
+@media {
+body {
+font-family: 'Open Sans', sans-serif !important;
+}
+}
+
+/* END - Webfont fix, keeps Outlook from rendering Times. Loads for all dev=
+ices except Outlook. */
+
+=09
+=09
+/* START - Custom CSS */
+=09
+/* END -  Custom CSS */
+=09
+=09
+=09
+/* START - Custom mobile CSS */
+@media screen and (max-width: 480px) {
+}
+/* END -  Custom mobile CSS */
+</style><!--[if (gte mso 9)|(IE)]>
+<style type=3D"text/css">
+table {
+border-collapse: collapse;
+border-spacing: 0; }
+</style>
+<![endif]-->
+</head>
+<body style=3D"background: #DDDDDD; min-width:100%; margin:10px; padding:0;=
+">
+<style type=3D"text/css">div#emailPreHeader{ display: none !important; }</s=
+tyle>
+<div id=3D"emailPreHeader" style=3D"mso-hide:all; visibility:hidden; opacit=
+y:0; color:transparent; mso-line-height-rule:exactly; line-height:0; font-s=
+ize:0px; overflow:hidden; border-width:0; display:none !important;">
+Shadow access=E2=80=94unmonitored credentials, forgotten SSH keys, or undoc=
+umented backdoors</div>
+<table width=3D"600" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"t100" style=3D"width:600px;">
+<tbody>
+<tr>
+<td id=3D"wrapper" style=3D"background: #ffffff; padding: 0;" class=3D"mkto=
+Container">
+<table width=3D"600" style=3D"width:600px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100 mktoModule" id=3D"img13508=
+ca48-e060-45f9-8ede-1fd6246a0d78">
+<tbody>
+<tr>
+<td style=3D"padding: 0;" class=3D"mimg100">
+<div class=3D"mktoImg" id=3D"kdf9292b68b685-86aa-4cd3-9f7b-8fdf8b8f2f41" mk=
+tolockimgsize=3D"true" mktolockimgstyle=3D"true">
+<a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGa0z3-xU4sM-xWmiynoO=
+DwcOa-WSmC9ASo0hk1Rd-iuL4Jpyq9eukJOc41ge6EHo1Ml_IAVn0=3D" target=3D"_blank"=
+><img style=3D"display:block;" alt=3D"Eliminate the blind spots where shado=
+w access hides" src=3D"https://learn.goteleport.co/rs/819-WHT-483/images/El=
+iminate-the-blind-spots-where-shadow-access-hides.png" width=3D"600" class=
+=3D"mimg100"></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"mktoModule" id=3D"slkgsdg">
+<tbody>
+<tr>
+<td style=3D"background: #FFFFFF;">
+<table width=3D"540" style=3D"width:540px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100" id=3D"CS-2" mktoname=3D"M=
+odule">
+<tbody>
+<tr>
+<td style=3D" padding: 15px 0 0px 0;" class=3D"mpad mktoText" id=3D"skgodkd=
+">
+<p>Hi David,&nbsp;</p>
+<p>Shadow access=E2=80=94unmonitored credentials, forgotten SSH keys, or un=
+documented backdoors=E2=80=94creates security risks that most traditional s=
+ecurity tools fail to detect. These gaps often come from industrious engine=
+ers who just need quick access to get their work
+ done. <br>
+<br>
+In our latest blog, we break down:<br>
+</p>
+<ul>
+<li>What shadow access is and why it=E2=80=99s so dangerous</li><li>The top=
+ 6 ways it sneaks into your infrastructure</li><li>How to eliminate shadow =
+access without slowing down engineers</li></ul>
+<p>Teleport provides real-time monitoring, just-in-time access controls, an=
+d short-lived certificates to ensure all infrastructure access is secured w=
+ith least privilege=E2=80=94reducing your attack surface without adding fri=
+ction to engineering workflows.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"mktoModule" id=3D"slkgodk08df1066-967b-452b-a670-408473981b86">
+<tbody>
+<tr>
+<td style=3D"background: #FFFFFF;">
+<table width=3D"540" style=3D"width:540px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100" id=3D"BT-1-C" mktoname=3D=
+"Module">
+<tbody>
+<tr>
+<td style=3D"padding: 16px 0 16px 0;">
+<table border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" class=3D"cta" style=3D"background-color:#512FC9;font-f=
+amily:sans-serif;font-size:16px;font-weight:bold;text-align:center;-webkit-=
+text-size-adjust:none; padding: 14px 28px 14px 28px; line-height: 1; border=
+-radius:0px;">
+<a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGa0z3-xU4sM-xWmiynoO=
+DwcOa-WSmC9ASo0hk1Rd-iuL4Jpyq9eukJOc41ge6EHo1Ml_IAVn0=3D" style=3D"color: #=
+ffffff; text-decoration: none;">Learn More</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"mktoModule" id=3D"slkgsdgbcc1353b-60ff-4e60-99cc-40b4d34f5b92">
+<tbody>
+<tr>
+<td style=3D"background: #FFFFFF;">
+<table width=3D"540" style=3D"width:540px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100" id=3D"CS-2" mktoname=3D"M=
+odule">
+<tbody>
+<tr>
+<td style=3D" padding: 15px 0 0px 0;" class=3D"mpad mktoText" id=3D"skgodkd=
+055f7ada-e30f-4448-a528-45931f55e91c">
+<p><em>P.S. Watch a replay of our webinar, =E2=80=9CEliminating Shadow Acce=
+ss: The Hidden Dangers of SSH and API Keys,=E2=80=9D to learn more about Sh=
+adow Access and how to keep it from creeping into your infrastructure stack=
+.
+<a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGa0z3-xYEbNaYzUOZ1iB=
+JVNJ5ENHTUkJ_ed5V1NlvnUE3GyWJGlzdeqTa1_VumO0rXQbXhaGQ=3D" target=3D"_blank"=
+ id=3D"">
+Watch the replay here</a>.</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"600" style=3D"width:600px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100 mktoModule" id=3D"F-1">
+<tbody>
+<tr>
+<td style=3D"padding: 16px 0 16px 0; text-align: center; background: #F5F5F=
+5; font-size: 12px; line-height: 1.4em;" class=3D"mktoText" id=3D"kdjwe9">
+<div style=3D"text-align: center;">
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-size: 14px; font-family: arial, helvetica, sans-serif; =
+color: #000000; background-color: transparent; font-weight: 400; font-varia=
+nt: normal; text-decoration: none; vertical-align: baseline; white-space: p=
+re-wrap;">Teleport, 2100 Franklin
+ St, Suite 400, Oakland, CA 94612</span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-family: arial, helvetica, sans-serif; font-size: 14px;"=
+><span style=3D"color: #000000; background-color: transparent; font-weight:=
+ 400; font-variant: normal; text-decoration: none; vertical-align: baseline=
+; white-space: pre-wrap;">If you no
+ longer wish to receive these emails anymore, click on the following link: =
+</span>
+</span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-family: arial, helvetica, sans-serif; color: #000000; f=
+ont-size: 14px;"><a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGa0=
+z3-xfgCg1vzUam1jlwXpp-6SmjB0MAgIlqohSS6vz4vA0y-lA3Z1cJN1XIquHEZRSOayG0=3D" =
+style=3D"color: #000000;">UNSUBSCRIBE</a></span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<br>
+<span style=3D"font-family: arial, helvetica, sans-serif; color: #000000; f=
+ont-size: 14px;"><a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGa0=
+z3-xRbGHmhz7nSsX2vxfGQBkhjYkcW6S7-sTYT9cAjx0Ng7opYCKxUA9u4CHf3puGOb1mk=3D" =
+style=3D"color: #000000;" target=3D"_blank">TERMS
+ OF SERVICE</a> | <a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGa=
+0z3-xUEFY7iwXgSO7uOxxOlufjOQcnZ-2Y3ZtnmNSpeeX3CDPUCUoFz6RJynrn-FoWeMnrQ=3D"=
+ style=3D"color: #000000;">
+PRIVACY POLICY</a> | <a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAA=
+AGa0z3-xTkK-4IQN2j0_Fvi7xZiibBs0mSW3ZKjZmUtAYDkfLCil3ogr9krqh5Am3IXrLVkxs4=
+=3D" style=3D"color: #000000;">
+SECURITY POLICY</a></span><br>
+</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGa0z3-xaEzzKY0XvSYs3=
+E26wb7ne3dGWtcRRAojKQslSiHv6uiTh1XCK6_gK4sdT9Wjjl9cSo=3D"></a><img src=3D"h=
+ttps://em.goteleport.com/trk?t=3D1&amp;mid=3DODE5LVdIVC00ODMAAAGa0z3-xYLGBo=
+bhk5EnH2HOClWr-Wu6J_6zBtvmru4hos-IEaI-UgMBFaWLKh2Mu2X5-4bpPRSQOpmvdIR87YWSk=
+EdBKqwGhz3Im_CZv6UNewm7s5K9dzN02WnZvrTxiEbaaAYeD274TQ" width=3D"1" height=
+=3D"1" style=3D"display:none !important;" alt=3D"">
+<p><font face=3D"Verdana" size=3D"1"></font></p>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+------=_Part_125488676_2142752020.1748928646855--

@@ -38,7 +38,7 @@ def mark_email_as_read(eid, config):
 
     server = config['email']['imap_server']
     user = config['email']['email_address']
-    password = config['email']['password']
+    password = config['email']['email_password']  # Fixed key name to match config
     folder = config['email'].get('folder', 'INBOX')
 
     mail = imaplib.IMAP4_SSL(server)

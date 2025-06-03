@@ -140,7 +140,7 @@ debug:
   save_all_artifacts: False
   evaluation:
     enabled: True
-    top_k: 3
+    top_k: 15
     show_confidence_score: True
     queries:
       - "anything about price updates or changes ?"
