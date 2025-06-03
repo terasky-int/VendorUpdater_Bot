@@ -1,17 +1,27 @@
-# pip==23.2.1
+# Core dependencies
 imapclient
 pyyaml
 langdetect
 textract
 langchain
 tldextract
-chromadb
+chromadb>=0.4.18
 python-dotenv
 pandas
 streamlit
 email-reply-parser
+boto3
+psutil
 
-# beautifulsoup4==4.12.2
-# imaplib2==3.6
-# langdetect==1.0.9
-# chromadb>=0.4.18
+# API dependencies
+fastapi
+uvicorn
+pydantic
+requests
+
+# Graph database
+py2neo
+
+# Testing dependencies
+pytest
+pytest-mock

@@ -1,0 +1,582 @@
+Received: from PA1P194MB2221.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:459::18)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Thu, 27 Feb 2025
+ 19:15:59 +0000
+Received: from DU7PR01CA0028.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:50e::13) by PA1P194MB2221.EURP194.PROD.OUTLOOK.COM
+ (2603:10a6:102:459::18) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8489.21; Thu, 27 Feb
+ 2025 19:15:55 +0000
+Received: from DU2PEPF0001E9C3.eurprd03.prod.outlook.com
+ (2603:10a6:10:50e:cafe::e5) by DU7PR01CA0028.outlook.office365.com
+ (2603:10a6:10:50e::13) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8489.21 via Frontend Transport; Thu,
+ 27 Feb 2025 19:15:55 +0000
+Authentication-Results: spf=pass (sender IP is 192.28.144.154)
+ smtp.mailfrom=bounce.hashicorp.com; dkim=pass (signature was verified)
+ header.d=reply.hashicorp.com;dkim=pass (signature was verified)
+ header.d=mktdns.com;dmarc=pass action=none
+ header.from=reply.hashicorp.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of bounce.hashicorp.com
+ designates 192.28.144.154 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.28.144.154;
+ helo=bounce.hashicorp.com; pr=C
+Received: from bounce.hashicorp.com (192.28.144.154) by
+ DU2PEPF0001E9C3.mail.protection.outlook.com (10.167.8.72) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8489.16 via Frontend Transport; Thu, 27 Feb 2025 19:15:54 +0000
+X-MSFBL: VSIRU5/x6RNeaKkews89hJYdOxLYVPPN0jGbHM/LX0M=|eyJnIjoiYmctYWJkLTM
+	yNyIsImIiOiJkdnAtMTkyLTI4LTE0NC0xNTQiLCJyIjoiZGF2aWRnQHRlcmFza3k
+	uY29tIiwidSI6Ijg0NS1aTEYtMTkxOjA6NDI4NDU6MjI5NDE5OjEwMzUxNjI6OTA
+	zODY6OToxNzc0MTI6MjU2MDU0OTgifQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1740683751;
+	s=m2; d=reply.hashicorp.com; i=@reply.hashicorp.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=VLG2ON9/+8bIPx+wNjKe7yVqQ3UzrA27UtMntUTeWOg=;
+	b=fWnfLWTL7dG0kO1W1cul6XpcLsxoJwBZDGcT9EJm5wbyMzAlN+xF8E2CvsGCnrT+
+	FI0J3Wp31YFUg/+TM0GEgm/5ql2dzfUxsDuxWYAOklOgM19UsNrWBLl9C/mtf15Z0+E
+	nHGEGm8OvF7zPRH7Vtwn4nt4bpN0CPHN3lZG+cmOlhmkr4aueL/bz5kJYTzzDu96ZZu
+	dJDlrFd9GhPTvdWcq/1U6mMnKMWhgDeJE9Vf4ihPg4rdRPYFmXhDCYxev58c1Oy3S8O
+	pAnmJMaCSUdjLNJM+dpIjWKg8zepAh/LUT54Oa1obh6Sc6bSmvgINE1hFDZaSsNwP8j
+	99T1cyptJA==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1740683751;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=VLG2ON9/+8bIPx+wNjKe7yVqQ3UzrA27UtMntUTeWOg=;
+	b=o8PJqa3whYMWIkRsEd4VlgIIcylD/E5i4wOqrsNxGBCXpQxyU5vzuMnc4a/pAoJU
+	rLGLZQQvdw86Yglujg2vQOXLe4IaORpKsDXwIP4299DmUCSMavLW4RJ3QKHCtuamuMM
+	OfOOQML1ES41oNZ51JEr3vuiXWB6pb4sqlYeZTN4=
+Date: Thu, 27 Feb 2025 13:15:51 -0600 (CST)
+From: HashiCorp <partners@reply.hashicorp.com>
+Reply-To: partners@reply.hashicorp.com
+To: davidg@terasky.com
+Message-ID: <1310175948.212070773.1740683751089@abmktmail-batch1d.marketo.org>
+Subject: IBM completes acquisition of HashiCorp
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_212070771_125522292.1740683751088"
+X-Binding: bg-abd-327
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://view.hashicorp.com/u/ODQ1LVpMRi0xOTEAAAGY587erSBUfG60EwU7KIxHbyflrRBPzF_s6Fn1r6lpdsP77ZZcSIkgs0bGWrajCuAyACJSyDQ=?emailAddress=ODQ1LVpMRi0xOTEAAAGY587erJBli91vteFGAp5bhnF-h43lOD77lRNDZTPXiSw5kfBBHp9WfSVXEtsGkd7WjBY>, <mailto:KNXEGTLYK4ZUG6RZOMZTOVTPMEWUY3LTLF2UERLFMVLUONCSM5TFOV2YKNUEG4LHONKUKPI=.177412.90386.9@unsub-ab.mktomail.com>
+X-MarketoID: 845-ZLF-191:0:42845:229419:1035162:90386:9:177412:25605498
+X-PVIQ: mkto-845ZLF191-000001-000000-177412
+X-Mailfrom: 845-ZLF-191.0.177412.0.0.90386.9.25605498@bounce.hashicorp.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+Return-Path: 845-ZLF-191.0.177412.0.0.90386.9.25605498@bounce.hashicorp.com
+X-MS-Exchange-Organization-ExpirationStartTime: 27 Feb 2025 19:15:55.0851
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: b8b9f5df-413e-4ba7-24e1-08dd57632897
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU2PEPF0001E9C3:EE_|PA1P194MB2221:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: DU2PEPF0001E9C3.eurprd03.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: b8b9f5df-413e-4ba7-24e1-08dd57632897
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|4022899009|5073199012|69100299015|1032899013|31052699007|5063199012|4123199012|39142699007|13003099007|2066899003|8096899003;
+X-Forefront-Antispam-Report: CIP:192.28.144.154;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:bounce.hashicorp.com;PTR:bounce.hashicorp.com;CAT:NONE;SFS:(13230040)(4022899009)(5073199012)(69100299015)(1032899013)(31052699007)(5063199012)(4123199012)(39142699007)(13003099007)(2066899003)(8096899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 Feb 2025 19:15:54.8195
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b8b9f5df-413e-4ba7-24e1-08dd57632897
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: DU2PEPF0001E9C3.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA1P194MB2221
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:04.5257826
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8489.017
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(4710117)(4712020)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?RnFET1RwVjcvdFpZMnBkOTlsckFtV0RVbnFnUm50SFRWU0lnem5UZzJsSTc1?=
+ =?utf-8?B?ekgzSVBMUXRrMjJqcENtNDd0aGJucitxWWhXU2dJelVrUmxxTkFFUG1UL1ZE?=
+ =?utf-8?B?b1BKNkJHNEEzSTFySURoaVBUN29PZmlhdlFkUndmRnBiSUtOSkgyWmNjeW92?=
+ =?utf-8?B?QkIzR0RaLzFiWk8vMUZIZUNmVHRQdURFR09oVGlxMGZmZkl3VDY2dWFhT2E5?=
+ =?utf-8?B?ZUROY0JvQ28wZ3JqbTU0b1FReW5yTmR2NjFSQWZ2bVYrbW1XWlZ4SHFQb3RM?=
+ =?utf-8?B?MUZpeFcxNXpHTm5tUW0wZTkyNHI0UTRabzhLZ1l4SWx0UFBucTFkYWxLWnlr?=
+ =?utf-8?B?Vld6aU50Z3VyUWlxUXQrQURuR2I4VzF3S1l2aVpPbVFIMXNtRWlHSldFYkVB?=
+ =?utf-8?B?VzJ3QU9sWnNseXFJWUhRYi9jNFVDN3RlbVk5VXlmc1VjVFRwOWZKaVk5RFV0?=
+ =?utf-8?B?M1puR1I0VmJvb0FsU0FVRE13MjNubjNoUDBIMENmVU9oL3hFdjcrckVuK3dh?=
+ =?utf-8?B?UFVPQlczdkYzTkViSytEaEtqektlQm5SZFVhWjVyeWJ5TjJMKy94WE5ycUc5?=
+ =?utf-8?B?ci9BZ2Y4TFU4TmVIQkZPcDQyWlVQZG5xV2x0Z250a0FIQXVtQzMzdTlodnkz?=
+ =?utf-8?B?NDJidi82Z3ZabmpqTmhwTFNURkxZVHdjNkZUNGw0Y0EwbFdObWR1eHA5RnZO?=
+ =?utf-8?B?NnRJaW5Kdmc3N3RmdXZyZ3ZSbm5maXVSOGwxTXh6aGJTTEtjUjU5dEtteExa?=
+ =?utf-8?B?U1IrUEFnS09CSnFucXlnZ1dWakJuMUZOUW1Ea1NSQi9mWUJ3RGxTcmxYMnRD?=
+ =?utf-8?B?SVVwc0hHbVdCT3kxR1dORWtWR2ZkeEtsNVRoZS8yZnFpWURURmpSYjZJbm5z?=
+ =?utf-8?B?N1pCZmtMdk1NNzVLa0twUGorS3VEWkxZSlVtWktZd1NFZGpQMkorVFNUZ3Vm?=
+ =?utf-8?B?ckN4czZqNUliZjE0SUxsaSs0eDZrSlRuQkd4NzZZRktBU0RWaWtYbnB0Vmda?=
+ =?utf-8?B?T1ZoeHh6ZGRvWWpSbFpxUy9xaWNmQXNvNDBqa25RQ0NBN3haRy90Qlh6SUNT?=
+ =?utf-8?B?dVVEa21UYXJzWU15R0Z6L01uU082NTdQSE5aaVlsTDFYRDVxRTJCOEFkRlpS?=
+ =?utf-8?B?eEFSclord0Zsb2k1YXM0dUZIdnVvTFZFRWlXekhTNG9TRWVTOVJMajltRFZ4?=
+ =?utf-8?B?NVVZcjhod3hobG13SkRoaUROQ29kZ3lwMmwza2lNSTRpQWtBcEQ3QnU5R1BG?=
+ =?utf-8?B?NGJuUm5acEd3czhXdWxHcXRtblh2Q3pFUVRGa3NzRS94SmVuNVZYenpwaGor?=
+ =?utf-8?B?dHcyTlIxMmxVYTFlTndIekhSVzl4TnB2aUxqa0UzcHh6Unl4NkFaTG5nUXQ4?=
+ =?utf-8?B?N0xVa2QrOExiL3hqbW91ditTK0dpWFU5OENiR3dhWndFMkZ4QjdiQUR0dUVH?=
+ =?utf-8?B?QUJ2TUNmMEdidFgvUzNPczlLcFBOcVZtdkVWcENFdFplZVB5ejYxNWs2SGlT?=
+ =?utf-8?B?UU56bEhuclo1MkpKWTZtZlFrMlhGUEh3TVZRRnJ5djBsV0c0cDdheTh0ajA2?=
+ =?utf-8?B?bzdxcW8rTjFQeGkvM1BVN0lEOVZnOWhNdTF1RTJUQ3RWTGtSNDkyKzQyNUlS?=
+ =?utf-8?B?YzZEclNBeUNNYS9NRnY2c3ZweVJpMVhvdEc4RWZyNUdmVStMaUJhY2pSM3pZ?=
+ =?utf-8?B?akgra1Q0T3J5QXRJOTNRZ2Yrb1dqaUJtcDBEdGMxNzJueTJOakpGU3V0M1c1?=
+ =?utf-8?B?dDAxRUczNWFSaFdFdFNIOHZ5NDVVUDM5WFMxUHlPWjBkTU9nOFBRd1FZYnVC?=
+ =?utf-8?B?cGlFbFo0SHB0TVlEK0tjaGlZNnplVTZaS0FML1BreDJtUHdhQVVxZHR1NnNI?=
+ =?utf-8?B?WHJGdEtIc2xOMWh3S2xpRHB6L1lqcU5kdlZHVmpkWGNFQzk2dFlNdjZDZTI5?=
+ =?utf-8?B?MmhLakxWRzcrZEJwdlFSVEdISzYyOTBob3EzZmszS09jQ3dTRGZIRlBtZ3ly?=
+ =?utf-8?B?czFQZkNIWFFXRWpjSTNBN3hob0c4b1hjUi9FZ25DZHEyTzFvSjNEY0RJcnVR?=
+ =?utf-8?B?eTRYZURKZUpNUFNpdi82bE85d3c0VkhqQzMwL0x4Q2k4bXpKczRiNGxOeUR1?=
+ =?utf-8?B?YWxUZXUwQzVSSldueFA0a2RSSyszeFltc3djTWw4ek1iNjFhRFJSZmM0USsy?=
+ =?utf-8?B?TVBLUUhQZkxWVjJHOVNlbGh2bHFZelFxZjF6M3BCTk1PSlgvWllKRFpLOUdF?=
+ =?utf-8?B?VVRrU0Zxa0JEcCtKVXNOcDdrTzgzWUliTEdYVjZESWdaL0UrVllGN1VHdGcx?=
+ =?utf-8?B?VTNmMWd4dkVvVDQ2M01ESWd6OGNYL3R6bjRLbkpYa3pPdm44L3N3NzBwN1FG?=
+ =?utf-8?B?T3pVYTRZWW0wWm80MHl0Q016T0pqRFJjMEkxSHhBNFp6TU1aK3g5bWRZMWxh?=
+ =?utf-8?B?aU5FWHUzbkFqdEhtZ3lWUWNiK1B5UTlzRlFMMzJXYTZ5SHJEb3ByN1kxRzIr?=
+ =?utf-8?B?WTR1cFQvekViVTA1My9pMXRXVEYyblVWNXU2NlVOeTNnOWlZcy9GV2xmbkc2?=
+ =?utf-8?B?bTZoMHp3bzlPbWNzUktEUnppdmpyWlVsbCtCWjVycUIxcERyZWdTMjNWcElo?=
+ =?utf-8?B?SG9MbW9vK3hOd21KWEJ1cVdxQ0ZKMnpLR1VPbitCbk1qUS9DbHhldUtGcHJ2?=
+ =?utf-8?B?L1o1SlhnN3dsbDQzQUtyNXFNTTVRMTRhemJJdHV4aEZBYlRBcmY5RVV4ZlRS?=
+ =?utf-8?B?dk1WWWNOUDFRT28ycEZaK1BKdXg5Ry9rUjNjM2czdWg4aWQvWFRadFZuUVh1?=
+ =?utf-8?Q?T2+TaPXmMKhZBHSL7Lywd58EtegrfuQHBqmTqwZvVL?=
+MIME-Version: 1.0
+
+------=_Part_212070771_125522292.1740683751088
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Today, it was announced that IBM, a leading provider of global hybrid cloud=
+ and AI, has completed its acquisition of HashiCorp to strengthen its hybri=
+d cloud automation and security capabilities.
+View in browser<https://view.hashicorp.com/v/ODQ1LVpMRi0xOTEAAAGY587erUZWSR=
+fvOPBkFkSrkGQ1kJ7lqQccbw2T75fpWXLYBybjao2_G_8CT4leGx5W5HW5IUU=3D>  |  Updat=
+e your preferences<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erTRAL=
+xDgtTjGeU03vy3PRA1L95Q2MPs_zekwnVm2dx1WgJ8lM1ObFwFcnROFNQg6DM0=3D>
+[Hashicorp Logo] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erRxiJW=
+iERaQbEbzb1izYX7nFI40ZyNBdso7MhKH81cdRFkBEyfOIq5Y8kEvcqLMzeCY=3D>
+Hi David,
+
+Today, it was announced that IBM, a leading provider of global hybrid cloud=
+ and AI, has completed its acquisition of HashiCorp to strengthen its hybri=
+d cloud automation and security capabilities.
+
+As a HashiCorp partner, we believe this transition will present incremental=
+ opportunities to serve our shared customers as we accelerate our R&D and g=
+o-to-market investments. This means no immediate changes to how we work tog=
+ether.
+
+There is additional information available in the press release<https://view=
+.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erQC2fvDll5I_dRMFswD4_jc1LmbAHf8tJdqq=
+WW-k45_apzPRChErgZGSpe6qVQ2L9GM=3D> and blog<https://view.hashicorp.com/ODQ=
+1LVpMRi0xOTEAAAGY587erdXOVGh1CYYia5Cpl6eXShdzDJqQCCOhtIIPY5XSoP_KA4h4JNYzQc=
+VkAbIaEPokkyQ=3D>. We would also encourage you to learn more about the IBM =
+Partner Plus program<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587ercR=
+261si1aXScsqJWq84sDJ1oaweOumDkb9LjTpj3HX3LKnE_GJYrxFGQ4PJNavNe5E=3D> and en=
+roll if you=E2=80=99re not already.
+
+Most importantly, please do not hesitate to reach out<https://view.hashicor=
+p.com/ODQ1LVpMRi0xOTEAAAGY587ereHf3Gr-JCX_XCSIjSOwPxyeLl2lurvA3wTHbVX2eY828=
+7xx7x4DoATfbGGKD0ZXvvo=3D> if you have any questions.
+
+The HashiCorp Partner Team
+
+[HashiCorp logo]<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erSXWW28=
+YiM4_FE-lBDlX3DJA1CJeLDUvwnJtGQc70jNbwZy6489bBRuHgvyyAexRZsc=3D>
+[https://go.hashicorp.com/rs/845-ZLF-191/images/Octocat%20Copy%203.png]<htt=
+ps://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erVZ-bPrTLYrc_Aq7SskKdY88ojC=
+LnLDpw7EydKzZpnJQVyGWW0Z60fpNo6jbaMNaHks=3D>     [https://go.hashicorp.com/=
+rs/845-ZLF-191/images/X-logo-black.png] <https://view.hashicorp.com/ODQ1LVp=
+MRi0xOTEAAAGY587erWnIPRqIMvhqVkLvlY8PgVZS51ayxNuP8_Buv4RZ7N6BzFvD1m1KXAmKsj=
+wPRZZp6yU=3D>      [https://go.hashicorp.com/rs/845-ZLF-191/images/Path%20C=
+opy%209.png] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erDxaiDmIBA=
+dG1MyoeP0jRpMvANGUTev7Hqr1kyyeBq7_eSFvV1eaNFuxdtsAxedmaas=3D>
+Manage Preferences <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erTRA=
+LxDgtTjGeU03vy3PRA1L95Q2MPs_zekwnVm2dx1WgJ8lM1ObFwFcnROFNQg6DM0=3D>      Un=
+subscribe<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erfE5xmqWuoCS7p=
+ehlq2gjCkEZNlbrYH4q7qaTmceKGkiZcGuVr_U-1gHat0saj6MsVw=3D>      Contact Us<h=
+ttps://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erYTfHY_Bwn5YtrAy1bMYpeDlW=
+Y7owoBRBvRM-0C8gbuZZIqBCOGvjOdyPHji1xekSH4=3D>      Privacy Policy <https:/=
+/view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587ercYJ_6cML3mc0nDdZFQAFHBeiHUvbe-=
+PxjxnMm5DvQVukUpHI9SDr3ffwTcGrsmWLf8=3D>
+Copyright =C2=A9 2025 HashiCorp. All rights reserved. 101 2nd St.#700, San =
+Francisco, CA 94105
+<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erR8or0Fhyo4lY7w1aRk9YF9=
+U1-7bGdBVevo3iWdXJk_rzQffWcHM1fkXK2Bp93ds-J8=3D>
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_212070771_125522292.1740683751088
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html lang=3D"en" xmlns=3D"ht=
+tp://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns=
+:o=3D"urn:schemas-microsoft-com:office:office"><!-- Copyright (C) 2024 MERG=
+E - All Rights Reserved. You may use and modify this code under the terms o=
+f the MERGE Template license available here: https://mergeworld.com/merge-t=
+emplates-terms-and-conditions --><head><!--[if gte mso 9]><xml>
+        <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+        </xml><![endif]-->
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1,=
+ minimum-scale=3D1, maximum-scale=3D1">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"format-detection" content=3D"telephone=3Dno, date=3Dno, addre=
+ss=3Dno, email=3Dno, url=3Dno">
+<meta name=3D"x-apple-disable-message-reformatting">
+<title>Hashicorp</title>
+<!-- Start of Marketo Variable Definitions --><!-- Language/Head --><!-- Sp=
+acers --><!-- BG Image Hero --><!-- BG Image Hero 2 --><!--BG Image Hero 3 =
+ --><!-- Vertical Align --><!-- Align --><!-- Images --><!-- Button General=
+ Styling --><!-- Black Button --><!-- White Button --><!-- Boder Radius -->=
+<!-- Colors --><!-- End of Marketo Variable Definitions --><style type=3D"t=
+ext/css">
+            body {-webkit-text-size-adjust:none; -ms-text-size-adjust:none;=
+ background-color:#f7f7f9; -webkit-font-smoothing:antialiased; -moz-osx-fon=
+t-smoothing:grayscale; margin:0!important; padding:0!important;}
+
+            table td {border-collapse:collapse;}
+            table {mso-table-lspace:0pt; mso-table-rspace:0pt; border-spaci=
+ng:0;}
+            p {margin:0; padding:0; margin-bottom:0;}
+            h1,h2,h3,h4,h5,h6 {margin:0; padding:0;}
+
+            body {background-color:#f7f7f9; width:100%; min-width:100%!impo=
+rtant;}
+
+            a[x-apple-data-detectors] {
+                color:inherit!important;
+                text-decoration:none!important;
+                font-size:inherit!important;
+                font-family:inherit!important;
+                font-weight:inherit!important;
+                line-height:inherit!important;
+            }
+
+            a,
+            a:link,
+            a:visited {color:#2e71e5; text-decoration:underline;}
+
+            @media only screen and (max-width:640px) {
+                body {min-width:100%!important;}
+                p {padding-left:0!important; padding-right:0!important;}
+                table.tableCollapse {width:100%!important;}
+                table.mobLeft {float:left!important;}
+                td.mobLeft {text-align:left!important;}
+                td.mobCenter {text-align:center!important;}
+                table.mobCenter {float:none!important; margin-left:auto!imp=
+ortant; margin-right:auto!important;}
+                td.pad0 {padding-top:0px!important; padding-bottom:0px!impo=
+rtant;}
+                td.padBot0 {padding-bottom:0px!important;}
+                td.padBot24 {padding-bottom:24px!important;}
+                td.padTop18 {padding-top:18px!important;}
+                td.padTop20 {padding-top:20px!important;}
+                td.padTop24 {padding-top:24px!important;}
+                td.padTop36 {padding-top:36px!important;}
+                td.w0w {width:0px!important;}
+                td.w30w {width:30px!important;}
+                td.w0 {padding-left:0px!important; padding-right:0px!import=
+ant;}
+                td.w10 {padding-left:10px!important; padding-right:10px!imp=
+ortant;}
+                td.w20 {padding-left:20px!important; padding-right:20px!imp=
+ortant;}
+                img.w100 {width:100%!important; height:auto!important;}
+                div.w100 img {width:100%!important; height:auto!important;}
+                br.hideBr {display:none!important;}
+                td.hideTd {display:none!important;}
+                td.top {display:table-header-group!important; width:100%!im=
+portant;}
+                td.bottom {display:table-footer-group!important; width:100%=
+!important;}
+                tr.table {display:table!important; width:100%!important;}
+                td.mobHeight {height:auto!important;}
+                table.mobHeight {height:auto!important;}
+                td.transparent {background-color:transparent!important;}
+                img.mobRadius {border-radius:8px 8px 0px 0px!important;}
+                table.mobRadius {border-radius:0px 0px 8px 8px!important;}
+                td.mobRadius {border-radius:0px 0px 8px 8px!important;}
+            }
+        </style>
+</head>
+<body style=3D"background-color:#f7f7f9;">
+<style type=3D"text/css">div#emailPreHeader{ display: none !important; }</s=
+tyle>
+<div id=3D"emailPreHeader" style=3D"mso-hide:all; visibility:hidden; opacit=
+y:0; color:transparent; mso-line-height-rule:exactly; line-height:0; font-s=
+ize:0px; overflow:hidden; border-width:0; display:none !important;">
+Today, it was announced that IBM, a leading provider of global hybrid cloud=
+ and AI, has completed its acquisition of HashiCorp to strengthen its hybri=
+d cloud automation and security capabilities.</div>
+<table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" align=3D"center" style=3D"background-color:#f7f7f9; mar=
+gin:0px auto; width:100%!important; min-width:100%!important;">
+<tbody>
+<tr>
+<td>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0" width=3D"640" class=3D"tableCollapse" align=3D"center" style=3D"margin:0=
+px auto; width:640px;">
+<tbody>
+<tr>
+<td class=3D"mktoContainer pad0" id=3D"MainContainer" align=3D"center" vali=
+gn=3D"top" style=3D"padding-top:0px; padding-bottom:0px;">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"mktoModule"=
+ id=3D"HeaderLinksModule01" style=3D"background-color:#ffffff; margin:0px a=
+uto; width:100%!important; min-width:100%!important;">
+<tbody>
+<tr>
+<td class=3D"mktEditable mobCenter w20" id=3D"FWBodyTxt03" style=3D"padding=
+-top:40px; padding-bottom:0px; padding-left:80px; padding-right:80px; font-=
+family:Helvetica,Arial,sans-serif; font-size:12px; line-height:16px; color:=
+#727274; text-align:center; font-weight:normal;">
+<div><a href=3D"https://view.hashicorp.com/v/ODQ1LVpMRi0xOTEAAAGY587erUZWSR=
+fvOPBkFkSrkGQ1kJ7lqQccbw2T75fpWXLYBybjao2_G_8CT4leGx5W5HW5IUU=3D" target=3D=
+"_blank" style=3D"text-decoration:underline; color:#727274;"><span style=3D=
+"text-decoration:underline; color:#727274;">View
+ in browser</span></a> &nbsp;|&nbsp; <a href=3D"https://view.hashicorp.com/=
+ODQ1LVpMRi0xOTEAAAGY587erTRALxDgtTjGeU03vy3PRA1L95Q2MPs_zekwnVm2dx1WgJ8lM1O=
+bFwFcnROFNQg6DM0=3D" style=3D"text-decoration:underline; color:#727274;">
+<span style=3D"text-decoration:underline; color:#727274;">Update your prefe=
+rences</span></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"mktoModule"=
+ id=3D"LogoModule01" style=3D"background-color:#ffffff; margin:0px auto; wi=
+dth:100%!important; min-width:100%!important;">
+<tbody>
+<tr>
+<td class=3D"w10 mobLeft" style=3D"padding-top:24px; padding-bottom:24px; p=
+adding-left:60px; padding-right:60px; text-align:left">
+<div class=3D"mktoImg w100" id=3D"Logo01" style=3D"display:inline-block;" m=
+ktolockimgsize=3D"false" mktolockimgstyle=3D"false">
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erRxiJWiERaQbE=
+bzb1izYX7nFI40ZyNBdso7MhKH81cdRFkBEyfOIq5Y8kEvcqLMzeCY=3D" target=3D"_blank=
+"><img width=3D"170" border=3D"0" alt=3D"Hashicorp Logo" src=3D"https://go.=
+hashicorp.com/rs/845-ZLF-191/images/hashicorp-logo-170x55-do-2x.png" style=
+=3D"width:170px; height:auto; display:inline-block; border:none; outline:no=
+ne; text-decoration:none; vertical-align:middle;">
+</a></div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"mktoModule"=
+ id=3D"BodyTxtModule01105f4c5c-7f98-47c6-a9b4-3149e1e2e186" style=3D"backgr=
+ound-color:#ffffff; margin:0px auto; width:100%!important; min-width:100%!i=
+mportant;">
+<tbody>
+<tr>
+<td class=3D"mktEditable mobLeft w20" id=3D"BodyTxt0123382297-6f5f-44d1-a88=
+3-f4bb4419e5d2" style=3D"padding-top:20px; padding-bottom:20px; padding-lef=
+t:70px; padding-right:70px; font-family:Helvetica,Arial,sans-serif; font-si=
+ze:14px; line-height:23px; color:#000001; text-align:left; font-weight:norm=
+al;">
+Hi David,<br>
+<br>
+<div>Today, it was announced that IBM, a leading provider of global hybrid =
+cloud and AI, has completed its acquisition of HashiCorp to strengthen its =
+hybrid cloud automation and security capabilities.
+<br>
+<br>
+</div>
+<div>As a HashiCorp partner, we believe this transition will present increm=
+ental opportunities to serve our shared customers as we accelerate our R&am=
+p;D and go-to-market investments. This means no immediate changes to how we=
+ work together.
+<br>
+<br>
+</div>
+<div>There is additional information available in the <a href=3D"https://vi=
+ew.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erQC2fvDll5I_dRMFswD4_jc1LmbAHf8tJd=
+qqWW-k45_apzPRChErgZGSpe6qVQ2L9GM=3D" target=3D"_blank">
+press release</a> and <a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTE=
+AAAGY587erdXOVGh1CYYia5Cpl6eXShdzDJqQCCOhtIIPY5XSoP_KA4h4JNYzQcVkAbIaEPokky=
+Q=3D" target=3D"_blank">
+blog</a>. We would also encourage you to learn more about the <a href=3D"ht=
+tps://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587ercR261si1aXScsqJWq84sDJ1oa=
+weOumDkb9LjTpj3HX3LKnE_GJYrxFGQ4PJNavNe5E=3D" target=3D"_blank">
+IBM Partner Plus program</a> and enroll if you=E2=80=99re not already. <br>
+<br>
+</div>
+<div>Most importantly, please do not hesitate to <a href=3D"https://view.ha=
+shicorp.com/ODQ1LVpMRi0xOTEAAAGY587ereHf3Gr-JCX_XCSIjSOwPxyeLl2lurvA3wTHbVX=
+2eY8287xx7x4DoATfbGGKD0ZXvvo=3D" target=3D"_blank" id=3D"">
+reach out</a> if you have any questions. <br>
+<br>
+<span style=3D"color: #000001; font-family: Helvetica, Arial, sans-serif; f=
+ont-size: 14px; font-style: normal; font-variant-ligatures: normal; font-va=
+riant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; t=
+ext-align: left; text-indent: 0px; text-transform: none; widows: 2; word-sp=
+acing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background=
+-color: #ffffff; text-decoration-thickness: initial; text-decoration-style:=
+ initial; text-decoration-color: initial; display: inline !important; float=
+: none;">The
+ HashiCorp Partner Team</span> <br>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"mktoModule"=
+ id=3D"WhiteSpacerModule01" style=3D"background-color:#ffffff; margin:0px a=
+uto; width:100%!important; min-width:100%!important;">
+<tbody>
+<tr>
+<td class=3D"mktEditable" id=3D"CustomHtml01" height=3D"20" style=3D"height=
+:20px; font-size:1px; line-height:1px;">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"mktoModule"=
+ id=3D"FooterModule01221a5ef6-ac17-4bdb-9d4d-0dcd4e5f0f5c" style=3D"backgro=
+und-color:#ffffff; margin:0px auto; width:100%!important; min-width:100%!im=
+portant;">
+<tbody>
+<tr>
+<td style=3D"padding-top:18px; padding-bottom:30px; padding-left:20px; padd=
+ing-right:20px;">
+<table role=3D"presentation" bgcolor=3D"#f5f7f7" width=3D"100%" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-=
+color:#f5f7f7; margin:0px auto; width:100%!important; min-width:100%!import=
+ant; border-radius:8px;">
+<tbody>
+<tr>
+<td style=3D"padding:24px 30px 24px 30px;">
+<div class=3D"mktoSnippet" id=3D"Footer0181db3643-38b6-49f7-8af8-7a6d4f7889=
+ef">
+<table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"margin: 0px auto; width: 100%!important; min-w=
+idth: 100%!important;" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"text-align: left; padding-bottom: 35px;">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erSXWW28Y=
+iM4_FE-lBDlX3DJA1CJeLDUvwnJtGQc70jNbwZy6489bBRuHgvyyAexRZsc=3D" target=3D"_=
+blank" title=3D"HashiCorp"><img src=3D"https://go.hashicorp.com/rs/845-ZLF-=
+191/images/HashiCorp-logo-330x74px.png" alt=3D"HashiCorp logo" height=3D"31=
+" width=3D"140" constrain=3D"true" imagepreview=3D"false"></a>
+</div>
+</td>
+<td style=3D"text-align: right; padding-bottom: 35px;">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erVZ-bPrT=
+LYrc_Aq7SskKdY88ojCLnLDpw7EydKzZpnJQVyGWW0Z60fpNo6jbaMNaHks=3D" target=3D"_=
+blank"><img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/Octocat C=
+opy 3.png" width=3D"21" height=3D"20" constrain=3D"true" imagepreview=3D"fa=
+lse"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erWnIPRqIMvhqV=
+kLvlY8PgVZS51ayxNuP8_Buv4RZ7N6BzFvD1m1KXAmKsjwPRZZp6yU=3D">
+<img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/X-logo-black.png=
+" width=3D"20" height=3D"20" constrain=3D"true" imagepreview=3D"false"></a>=
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erDxaiDmIBAdG1=
+MyoeP0jRpMvANGUTev7Hqr1kyyeBq7_eSFvV1eaNFuxdtsAxedmaas=3D">
+<img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/Path Copy 9.png"=
+ width=3D"20" height=3D"20" constrain=3D"true" imagepreview=3D"false"></a>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"2" style=3D"padding-bottom: 25px; font-family: Helvetica,Ari=
+al,sans-serif; font-size: 14px; line-height: 17px; font-weight: normal; tex=
+t-align: left;">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erTRALxDg=
+tTjGeU03vy3PRA1L95Q2MPs_zekwnVm2dx1WgJ8lM1ObFwFcnROFNQg6DM0=3D" style=3D"co=
+lor: #000; text-decoration: none;">Manage Preferences
+</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.com/ODQ1LVpM=
+Ri0xOTEAAAGY587erfE5xmqWuoCS7pehlq2gjCkEZNlbrYH4q7qaTmceKGkiZcGuVr_U-1gHat0=
+saj6MsVw=3D" target=3D"_blank" style=3D"color: #000001; text-decoration: no=
+ne;">
+Unsubscribe</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.=
+com/ODQ1LVpMRi0xOTEAAAGY587erYTfHY_Bwn5YtrAy1bMYpeDlWY7owoBRBvRM-0C8gbuZZIq=
+BCOGvjOdyPHji1xekSH4=3D" style=3D"color: #000001; text-decoration: none;">
+Contact Us</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.c=
+om/ODQ1LVpMRi0xOTEAAAGY587ercYJ_6cML3mc0nDdZFQAFHBeiHUvbe-PxjxnMm5DvQVukUpH=
+I9SDr3ffwTcGrsmWLf8=3D" style=3D"color: #000001; text-decoration: none;">
+Privacy Policy </a></div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"2" style=3D"font-family: Helvetica,Arial,sans-serif; font-si=
+ze: 12px; line-height: 17px; font-weight: normal; text-decoration: none; co=
+lor: #656a70; text-align: left;">
+<div>Copyright =C2=A9 2025 HashiCorp. All rights reserved. 101 2nd St.#700,=
+ San Francisco, CA 94105
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGY587erR8or0Fhyo4lY=
+7w1aRk9YF9U1-7bGdBVevo3iWdXJk_rzQffWcHM1fkXK2Bp93ds-J8=3D"></a><img src=3D"=
+https://view.hashicorp.com/trk?t=3D1&amp;mid=3DODQ1LVpMRi0xOTEAAAGY587ereq-=
+bZlPOZ029TJ8C751Mp7iDqc6ofR-FDinevV6ZGJoyhLXvVrL7KEzMfTBwmb9CbAKjbWf9rrAEBn=
+O0AHjpyO40iVa-RWLwlcv7Rbc_x40HNIpxCmJZMCWTJ1pwt-LgFZBqhSOrABnPA" width=3D"1=
+" height=3D"1" style=3D"display:none !important;" alt=3D"">
+<center>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"width: 100%;" bgcolor=3D"#ffffff" style=3D"background: #ffffff;">
+<tbody>
+<tr>
+<td>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"600" align=
+=3D"center" bgcolor=3D"#ffffff" style=3D"background: #ffffff;">
+<tbody>
+<tr>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+------=_Part_212070771_125522292.1740683751088--

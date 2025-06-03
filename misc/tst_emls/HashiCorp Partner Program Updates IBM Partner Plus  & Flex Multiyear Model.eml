@@ -1,0 +1,1131 @@
+Received: from PAXP194MB1229.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:1af::18)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Fri, 2 May 2025
+ 17:15:44 +0000
+Received: from DU2PR04CA0279.eurprd04.prod.outlook.com (2603:10a6:10:28c::14)
+ by PAXP194MB1229.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:1af::18) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8699.24; Fri, 2 May
+ 2025 17:15:41 +0000
+Received: from DB5PEPF00014B90.eurprd02.prod.outlook.com
+ (2603:10a6:10:28c:cafe::42) by DU2PR04CA0279.outlook.office365.com
+ (2603:10a6:10:28c::14) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8655.41 via Frontend Transport; Fri,
+ 2 May 2025 17:15:40 +0000
+Authentication-Results: spf=pass (sender IP is 192.28.144.154)
+ smtp.mailfrom=bounce.hashicorp.com; dkim=pass (signature was verified)
+ header.d=reply.hashicorp.com;dkim=pass (signature was verified)
+ header.d=mktdns.com;dmarc=pass action=none
+ header.from=reply.hashicorp.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of bounce.hashicorp.com
+ designates 192.28.144.154 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.28.144.154;
+ helo=bounce.hashicorp.com; pr=C
+Received: from bounce.hashicorp.com (192.28.144.154) by
+ DB5PEPF00014B90.mail.protection.outlook.com (10.167.8.228) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8699.20 via Frontend Transport; Fri, 2 May 2025 17:15:40 +0000
+X-MSFBL: lWXZb5CqqqEyAck5z4epAuuJI9ieecPCNHMm9q0BV0U=|eyJ1IjoiODQ1LVpMRi0
+	xOTE6MDo0MzcxMzoyMzI5NDE6MTA0NzkyNzo5MzE3Mzo5OjE4NTY2NjoyNTk3MDI
+	xOSIsInIiOiJkYXZpZGdAdGVyYXNreS5jb20iLCJiIjoiZHZwLTE5Mi0yOC0xNDQ
+	tMTU0IiwiZyI6ImJnLWFiZC0zMjcifQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1746206140;
+	s=m2; d=reply.hashicorp.com; i=@reply.hashicorp.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=c2MmiHYWVbEATm6wBdBQ9zSW/lBD+nDFu96sMx13IqI=;
+	b=TL6moFchVGzjWAGpUgz78Td3C4GYCuncVhZM9A6GoC+DedQfSBCqQa5hNfwyuqk+
+	xZ+3PnFpWFr9F6mFQ9d1b63D3T6keIlkVmqaHqB1WvRDdCPV8R2OiF/d/y3idYA2mON
+	5gDYx1GcFG2EihBIkrLVqETbaSDOEXlP8ngYtneWslHW7fGe3v+N1Vt1IyFBZWBpuBo
+	O1Gp8+NX6JIQvEm6nAmTb4uHv5peIHG1X/dmIQLx+g+ni/9EYQ9htiEGJnhDBSoO0s2
+	x8T3ecRHLpdb7R/0YwPFISOoUqCUN7Qpy68Hvwn23tzx+8aUPgBs64Q+RlLobYqgs93
+	8bAnHPO43w==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1746206140;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=c2MmiHYWVbEATm6wBdBQ9zSW/lBD+nDFu96sMx13IqI=;
+	b=jxTU3TRWVAbGS2Xuy7XbgCmUcRxen4+xBDTPu+laDtqZtZUrtM7+/i9TKVMfH+m6
+	GTsUK+Y2x4TT2n9sWwZQ/5XbJUPGryBBuQmomolAY1r+wMuVRlLIs5RxQfCko8UgpFf
+	grm8toIifFTr/lAi5U6JBxQN46jRn1CH9WWLWsPA=
+Date: Fri, 2 May 2025 12:15:40 -0500 (CDT)
+From: HashiCorp <info@reply.hashicorp.com>
+Reply-To: info@reply.hashicorp.com
+To: davidg@terasky.com
+Message-ID: <1115874329.114557911.1746206140586@abmktmail-batch1k.marketo.org>
+Subject: HashiCorp Partner Program Updates: IBM Partner Plus  & Flex
+ Multiyear Model
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_114557910_253783976.1746206140585"
+X-Binding: bg-abd-327
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://view.hashicorp.com/u/ODQ1LVpMRi0xOTEAAAGaMPfYo5HTVivnOvh767afaZ9DHrs8vygLv-zh4BrKYkAa3NHkZUXgyFNCm-0BGpizIyVFi7g=?emailAddress=ODQ1LVpMRi0xOTEAAAGaMPfYo_3GAMM3g_3ytymCakgH2psR9ZtjtLNOfkuHt7JjJOBixEW_PLIwH2DNCHg-BI0>, <mailto:ORIGQ6LYFVCXEMCRHFSTKMDNGYYHMZCWJBCU6SRTJ5XWURBWM52WOUZWMM4VO3DRNBUFKPI=.185666.93173.9@unsub-ab.mktomail.com>
+X-MarketoID: 845-ZLF-191:0:43713:232941:1047927:93173:9:185666:25970219
+X-PVIQ: mkto-845ZLF191-000001-000000-185666
+X-Mailfrom: 845-ZLF-191.0.185666.0.0.93173.9.25970219@bounce.hashicorp.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+Return-Path: 845-ZLF-191.0.185666.0.0.93173.9.25970219@bounce.hashicorp.com
+X-MS-Exchange-Organization-ExpirationStartTime: 02 May 2025 17:15:40.9755
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 9079b7a0-2794-4545-6026-08dd899cf715
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB5PEPF00014B90:EE_|PAXP194MB1229:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: DB5PEPF00014B90.eurprd02.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 9079b7a0-2794-4545-6026-08dd899cf715
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: -1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|2092899012|27102699006|12012899012|39142699007|4022899009|31052699007|1032899013|69100299015|8096899003|2066899003|13003099007;
+X-Forefront-Antispam-Report: CIP:192.28.144.154;CTRY:US;LANG:en;SCL:-1;SRV:;IPV:NLI;SFV:SFE;H:bounce.hashicorp.com;PTR:bounce.hashicorp.com;CAT:NONE;SFS:(13230040)(2092899012)(27102699006)(12012899012)(39142699007)(4022899009)(31052699007)(1032899013)(69100299015)(8096899003)(2066899003)(13003099007);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 May 2025 17:15:40.7051
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9079b7a0-2794-4545-6026-08dd899cf715
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: DB5PEPF00014B90.eurprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAXP194MB1229
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.3373552
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8699.022
+X-Microsoft-Antispam-Mailbox-Delivery:
+	wl:1;pcwl:1;ucf:1;jmr:0;auth:0;dest:C;OFR:CustomRules;ENG:(910005)(944506478)(944626604)(920097)(811239)(255002)(410001)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?ajRVVGdXbmNQcmpFNzFsZGp1dVZubE5KMy9MMktOZ0kvQk01M21zMGF0MWQw?=
+ =?utf-8?B?NzBDLzJlTWFqbmFSS04xNGtNcnB4RHBjSWdOUG1kaUc5RnBsT2tHRElQUFEv?=
+ =?utf-8?B?dUMyODJFS2lhWGt3ZEpLNXR1dkJ2c1hGVFRRc29iMHR2dnFXK3JNaDljQnJr?=
+ =?utf-8?B?RnQvY1hsYkN5dWFLdUY4c0s1TEhMUGFHQ09qenI0Vjd5UHlqMytZaFVzb0Ro?=
+ =?utf-8?B?VU9ISnh6d1NKMGd4U0d4V3NJdW1ndC84aEtsYzI5TEY5VFBSdm5VYWU5VGhm?=
+ =?utf-8?B?VElHRk9JSFp0YXE0Ukd3TWI4UFh3WDZacTVKOUowV3R4M1E2Y2hpeFhxWXJN?=
+ =?utf-8?B?dUtVaDc0ajMzYjl4c0k2K29mU2Q3ZDFkS0Z5eUFQck04K2dwQmdVMlFNZ2hB?=
+ =?utf-8?B?cFh6TG1lL1krK3dxdVc2MmltS2o4VHhGQ0Eya2NubUZGdXdxSHFyR05MWFk2?=
+ =?utf-8?B?NUs2VExLZnlSdE1YZ3d3SWRBck9BT2tNNmxyUHlsTFBteksxbU1uWklpdWVB?=
+ =?utf-8?B?NjdTM2JiTUhsa1RlNFBJcXBUMkVNakZvajhlWGF1RkhtNlkyeExrcGgrcThF?=
+ =?utf-8?B?aHdubGlnTGEwckdZbEdqemV3TnhoTzhmUEhuWDlNSlNRVmtLUWQ2akZmMnFF?=
+ =?utf-8?B?dnlJS1BWeTh3SlBVbVIybU95UHVtYkR4a29yWjFuaHFIYk5INWMzMjRMTnBC?=
+ =?utf-8?B?N2xJdncyQWNDRDBHcmVzdUR6SjFCSm5JcXV2UG1kejQ4cDYxMGdPWm5EaUF1?=
+ =?utf-8?B?RHZxNzlGTmJ2VTh0UUI4WVlYd2FvQm9HS0tKdjNibDAyNGdwemVWV0VIaUpQ?=
+ =?utf-8?B?SDdCRUo5VXFMdy8vMGRIQW5MTExTcmM0RWpsMitacUNUci9qRHlheFNHUEp2?=
+ =?utf-8?B?VjRSM0tseElpMW9zdHowSzJwQStWU3RIeCthTS9XRkhVeHVKN2k2MXpEcGVB?=
+ =?utf-8?B?MHFHK2lDSTRGSFJWOTlobjdaelNUejhZUUdiVzhMdk13VFBXMTBwQmNIR004?=
+ =?utf-8?B?UmJneEEwSFJwMzVZamd4U2V2WFFmeFBsYVlmRldkdDByVHBqZlp6ZTdjN0JY?=
+ =?utf-8?B?aXhrSmJCU1EycjYrK2Q1Tk0xYjAySU9GVGtvL2xZMHQrUElVT1V5dG9wQXJH?=
+ =?utf-8?B?WFlkUjN1M0FialRaQWdpVE5FWDhna1gxajlEcmVHZmxUei9qMEpxb1ZTT0Nk?=
+ =?utf-8?B?NFdFTDF2WUt6a0MvMHpja1lMRmZ6d3Z0OHBQZkx4UkNDeWg0aWpMby81eTBp?=
+ =?utf-8?B?YXgwbVpPQzF6WjJmam1kRElJdlVRSENhY1VJSUxsaFd5bVBuTW9zR3MreVo5?=
+ =?utf-8?B?Z2FTWGp2RGlHYTZMOG9GQVVQaFZTVUFhTWtjOFN1MC8rOE5RWGdKOVNqZ0Ns?=
+ =?utf-8?B?Z0puRWlqSmFja01oZlNhNHNOM3RXeTArN1JkK3FJNkNPTTBtdUwvdzlYc1NP?=
+ =?utf-8?B?bCtqRGJyQS9FN2dxbGNsNXQ0TWwzS1N2emQ4eDI2Y1JFa2N4OTRwMjNpeVlD?=
+ =?utf-8?B?MHhpL1JaRCtXRXcwU25DN1JsOG1vUW9sOE81aEpPVVFtYVNheU9KYXVXcWlV?=
+ =?utf-8?B?NEpWamdqTWVaSnFiNHczL3Vvb0k4OVlIeVR5d3BUMWR2c2pOemtZUHVwdTdp?=
+ =?utf-8?B?Z1BqT09oZVkvQzJMd1M0ZHNiSWdpaDAyVWpmNlpyQnRnM1NFdEN4M1BTam1U?=
+ =?utf-8?B?K1E5SmRFMExaTzV3OTM2dXNXdHFkdlY5bDRGRXZVUGNmMjArV3RXYytJbm1V?=
+ =?utf-8?B?c2pvb0lPOHR1ZFNnamE5ZjZrWVZINDFqTWZJUmNyQXJjNjlHQ3A3T1ltcWVQ?=
+ =?utf-8?B?MzE5MzJEMnNrUUxYTDJFRU5JTnZnanJOVlVNMzNpWHFpL0xnU3J6ZGRHdURF?=
+ =?utf-8?B?SXVQSnd2b3dUM3ZTS2JYU3VxbWhpaVprTFpqOWIwU2NEMlBlOGNzTlRRdGl4?=
+ =?utf-8?B?azBWTHRkYmNqZjFGUkxwbVdEUkpydWh0N1pGcDA0VXNDUDQ0K2JVcmJ0Mmho?=
+ =?utf-8?B?OHRwWElSa1JvVlRsVHBJbHJhM2FPYlE5a2k1dXoxRmVJV1V1ZU5ON0V3Sko2?=
+ =?utf-8?B?a1FYK0t3VUFGS3RIL0Qxck1NSVcvaVN1YTdBZVF1bHRHR2dvZUdxMEZKMDBi?=
+ =?utf-8?B?NUdYNi9lSjdtaDlISTkrbWhJRXJWeTlCY09DTUdvYVR3dzFPanVNRHgzczBF?=
+ =?utf-8?B?ZXo3LzVCaXV6Wk1NbEc4YWM3ckNxd012dFBrRmlJZHZrdHl6OWdqSkMrY0hs?=
+ =?utf-8?B?eU1SVVVhUXlqa2FZcmY1d0tHeEt0N0Jyb2EzWEt5emxaZ0Z0OXZveE9GbFQw?=
+ =?utf-8?B?NUlPMW41cCsxbXh5M2U2S3FUazkwblRTdFBDMGlGQ2IyVjBYVGZoQWNDdUZo?=
+ =?utf-8?B?NTUyaE9QNDE3c1NXblZSNVhqTVZuSFNHWUgrKzdBS3hUbCtqK0krV2FjaTN0?=
+ =?utf-8?B?WEg3SlcxUzk5UUJ0S1hDWjdTZkhGVkxWdHlaNTBqUVlrd0pHL29SUkswZWgr?=
+ =?utf-8?B?ZW1ObEo0VUE3Q1VOSGxXN0xmdnNmWUtMaFRMc25FMHJxNVZIWWpZbk84bjBV?=
+ =?utf-8?B?aWo5K2VBcHNFdTd1Sk04MjltMDRFMTYrUEV0M09oTnAwVHU4YUNFS084VmFk?=
+ =?utf-8?B?UjhpWTlqTXlHRVhDRlJRR0hlVE4wODFnQ0RVV0wvdjMxREN3SUdNM3E2VmJq?=
+ =?utf-8?B?Sm5LaG5EM3pBbGZUL3hDS2w4Z3dhcjBuNGVneVBRb3MzV0VxWnJsV0F2dUox?=
+ =?utf-8?B?R0ZUeDI1blFjWHVady9DVU4zQ04xOVpjTFR4L1pDTitzdFZJclVXT3dGUEF6?=
+ =?utf-8?B?eG5pK3phalZ2WGhsdEhFeTl0VlpIVEIxRFpHRnc4djBiQ29yejU0YjdCVWNu?=
+ =?utf-8?B?MFVQN1czSkg3czB1NVZkVHRPaHNaSmVwUE14QTFjYlhrSG5PSUIxejNGTXpG?=
+ =?utf-8?B?b09KS0NMWlF6eDJnSVlSNUorSXcvUW5rSHh3dHNVZ2NzTjl6TnhEbGRGYzJw?=
+ =?utf-8?B?YitXOWIwVUJyMXE4dnRMSTNGeG8xd2pxNmdOK0JOcEhVMjlFUGlLZzI1NGN1?=
+ =?utf-8?Q?x0jgSJPEkqfhCMRIZLe3qa763oBF3AZlg=3D?=
+MIME-Version: 1.0
+
+------=_Part_114557910_253783976.1746206140585
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+View in browser <https://view.hashicorp.com/v/ODQ1LVpMRi0xOTEAAAGaMPfYoy2XG=
+k4lfHCma-hboBiIcirefdmPEVL_bQ7jcIQ_STVACiCO9MbcLAKCvOmM1yWY2t8=3D>  |  Upda=
+te your preferences <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYoyM=
+3x4p0UmccL396O-cHn50iU5gwcGgQ76A_dBlIz21SFzwNSd6PUMXzWpXDdKWoFKE=3D>
+[HashiCorp]
+HashiCorp Partner Program
+Updates: IBM Partner Plus & Flex Multiyear Model
+May
+02
+[https://go.hashicorp.com/rs/845-ZLF-191/images/2022_Partner_Newsletter_Her=
+o_Banner_500px_v3.png]
+Take Action Now:
+Join IBM Partner Plus by September 1st to continue to sell HashiCorp.
+
+As you have heard from our previous communications and webinars, we want to=
+ remind you that starting September 1st, all HashiCorp partners will need t=
+o join the IBM Partner Plus program to continue transacting HashiCorp solut=
+ions. The IBM Partner Plus<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaM=
+PfYow3mInO0y8c9BBr9rsjOHXpa0qMqecG2MXly7SxvwNk8Pe3A8TsC88mgKwSQ5nn0yeg=3D> =
+program is designed to help businesses like yours access innovative technol=
+ogy that complements HashiCorp offerings, fostering growth whether you are =
+a start-up or an established company.
+
+Benefits of Becoming an IBM Business Partner:
+
+  *   Leverage Cutting-Edge Technology: Transform your clients' businesses =
+with advanced solutions.
+  *   Demand Generation Programs: Drive growth and revenue through targeted=
+ initiatives.
+  *   Leading Tools and Skill-Building Opportunities: Enhance your offering=
+s with top-tier resources.
+
+Action Required:
+Ensure you can continue serving our clients after September 1 by registerin=
+g for IBM Partner Plus today. Don=E2=80=99t wait=E2=80=94start the process =
+now!
+
+Helpful Resources:
+
+  *   Partner Plus Welcome Video<https://view.hashicorp.com/ODQ1LVpMRi0xOTE=
+AAAGaMPfYo8VMY1XVuQZUBVJ35CogSywAdGirMddoC6ous6bXxct8Kewh6oFLgpDp5RItVFkklF=
+Q=3D>
+  *   Registration Walkthrough<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAA=
+AGaMPfYo5EmtHQPmi3R7mtwquDsyGlPSW8Hx--im6VG035sKocF2WYfsk2-H29xrUIpQhtLMxY=
+=3D>
+  *   April=E2=80=99s Welcome Webinar<https://view.hashicorp.com/ODQ1LVpMRi=
+0xOTEAAAGaMPfYozamamlJAfqykOqSCS_I2iSzuISzusbl0ZfmJ-z3TQW3FQyep3yz71YO5VaJd=
+keVrO0=3D>
+
+[https://go.hashicorp.com/rs/845-ZLF-191/images/2022_Partner_Newsletter_Sec=
+tion_Video_01_40px.png]
+
+Upcoming Live Session
+
+Join our next live session for an in-depth look at the Partner Plus program=
+, including registration details, on May 8th at either 10AM EDT or 5PM PDT =
+/ 8PM EDT.
+
+Date/Time:
+May 8th 10AM EDT: Add to calendar<https://view.hashicorp.com/ODQ1LVpMRi0xOT=
+EAAAGaMPfYo6jdHbgsQHnvXFKCGM-sQYM813vUCR6qKQH7_bM7TX6MT6kmuH31EcDPFCODe4Mo6=
+-A=3D>
+May 8th 5PM PDT / May 9th 8AM SGT: Add to calendar<https://view.hashicorp.c=
+om/ODQ1LVpMRi0xOTEAAAGaMPfYowVZDObqd2GFP0w-79ocSsyn_jg5zdPfR71tt3NriCKdcajB=
+WUuFKAng9USgUfJGs3w=3D>
+
+Registration is not required. Access this link<https://view.hashicorp.com/O=
+DQ1LVpMRi0xOTEAAAGaMPfYo3hPw9GQdPPJdXMokWHi-tN1YRv_pVfGAhKxM_07K1Vrb9Hh5yql=
+dcVsyUUOiPfwX8A=3D> to join each session.
+
+Thank you for your continued partnership. We look forward to growing togeth=
+er with IBM Partner Plus.
+
+Important Update: Delay in Launching Flex Multiyear for Partner Resell
+
+We previously announced a launch of partners reselling Flex Multiyear, with=
+ a new partner incentive program. Originally we had targeted a May launch, =
+however, we regret to inform you that there has been a delay in launching t=
+his program.
+
+We take the stability of your business with HashiCorp very seriously. Intro=
+ducing a program at the time of a larger adjustment into IBM Partner Plus P=
+rogram, is not the stability we seek to have with our valued business partn=
+ers. We are working diligently to deliver Flex Multiyear as a resell motion=
+ under the IBM Partner Plus Program.
+
+What this means for you:
+
+IBM Partner Plus Program: We encourage you to register for the IBM Partner =
+Plus Program<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYoxCqgFQslt_=
+doCj3VPlw8FXoILnEBdllYkcvWq6q3_ykqXJwMCz6BEO5PeZCpztxXFM=3D>, where you can=
+ currently transact HCP entitlements. This will ensure you can still serve =
+your clients needs today!
+Partners Reselling Flex Multiyear: We are working closely with our IBM team=
+ to build Flex product parts under the IBM umbrella and are aligning the in=
+centive program through the larger Partner Plus Program.
+Current Transactions: Until the Flex Multiyear is available as an IBM part,=
+ partners will not be able to transact Flex Multiyear deals, nor will any i=
+ncentives be awarded under this model. Please continue with the standard pr=
+ocess for non Flex Multiyear transactions until further details are provide=
+d.
+
+We apologize for any inconvenience this delay may have caused and appreciat=
+e your understanding. Stay tuned for further updates, and thank you for you=
+r continued partnership.
+
+[HashiCorp logo]<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYo9VpySJ=
+fE8nXc2VBaVhJQNPMDV9THuZJVNnifMRz8P7Rcak41p4Lq86bWwOSq-7IO28=3D>
+
+[https://go.hashicorp.com/rs/845-ZLF-191/images/Octocat%20Copy%203.png]<htt=
+ps://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYoxtgj8SCyg2SiLJEnAM80sxWFG2=
+NhTom7n76SH8U4g9tX3XBMh4eVDnhUOgupep7ImI=3D>     [https://go.hashicorp.com/=
+rs/845-ZLF-191/images/X-logo-black.png] <https://view.hashicorp.com/ODQ1LVp=
+MRi0xOTEAAAGaMPfYowJZNO1xTupM8YFmi_VRV5heZ_4GEWfEQ5q-vwtw28O7qxwc4z9mmv5vMp=
+kGDqZILAo=3D>      [https://go.hashicorp.com/rs/845-ZLF-191/images/Path%20C=
+opy%209.png] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYoxCr-YMHQ2=
+YVRPCGnraBrNoQBb4mFamGv2VKT0qghew2zyNvf-OjA53qW3EAboPpknU=3D>
+
+
+
+Manage Preferences <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYoyM3=
+x4p0UmccL396O-cHn50iU5gwcGgQ76A_dBlIz21SFzwNSd6PUMXzWpXDdKWoFKE=3D>      Un=
+subscribe<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYo5DZI1b3y-mWJc=
+77x25qjxhcIqXbWUgM07rvSH7eQsjND8YFzMesGLbWvbPN_CioYj4=3D>      Contact Us<h=
+ttps://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYo5JZeavp8uW2HKKMlSZnF00j5=
+TfbkzeHFNEtxRoLDzmb2mRPJ3Q7yR-Sk39mZ1iDTV4=3D>      Privacy Policy <https:/=
+/view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYo66Klj0-LR1A9Vf-KDSit-R6MOQhpSK=
+9e03bYKk5EB3y4dpVS3RkBT8NvIzxItAunoQ=3D>
+
+Copyright =C2=A9 2025 HashiCorp. All rights reserved. 101 2nd St.#700, San =
+Francisco, CA 94105
+
+<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYo-mSAZ503_dVhQHWinjPOfK=
+5UNLZ4jHnLPQ4FYe7n6yqtfc0FPtQVsYoTGaiLKKQfqQ=3D>
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_114557910_253783976.1746206140585
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3.=
+org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:sc=
+hemas-microsoft-com:office:office"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<title>HashiCorp</title>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1,=
+ minimum-scale=3D1, maximum-scale=3D1">
+<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>
+</xml><![endif]--><!--[if gt mso 15]>
+<style type=3D"text/css" media=3D"all">
+     /* Outlook 2016 Height Fix */
+     table, tr, td {border-collapse: collapse;}
+     tr { font-size:0px; line-height:0px; border-collapse: collapse; }
+     </style>
+<![endif]-->
+<meta name=3D"robots" content=3D"noindex,nofollow">
+<meta content=3D"telephone=3Dno" name=3D"format-detection">
+<!--Header start  here--><!--Top and bottom space--><!--
+<meta mktomodulescope=3D"true" class=3D"mktoNumber" id=3D"top_space" mktona=
+me=3D"Top Space" default=3D"25" step=3D"1" min=3D"0" max=3D"50" />
+--><!--
+<meta mktomodulescope=3D"true" class=3D"mktoNumber" id=3D"Bottom_space" mkt=
+oname=3D"Bottom Space" default=3D"25" step=3D"1" min=3D"0" max=3D"50" />
+--><!--Section Background Color--><!--Banner Image  --><!-- Black Banner Se=
+ction --><!--CTA Links --><!--
+<meta mktomodulescope=3D"true" class=3D"mktoNumber" id=3D"border_width" mkt=
+oname=3D"Border Width" default=3D"1" step=3D"1" min=3D"0" max=3D"6" />
+--><!--
+<meta class=3D"mktoColor" id=3D"BorderTopBGColor" mktoname=3D"Border Top Co=
+lor" default=3D"#1563FF" mktomodulescope=3D"true" />
+--><!-- Thanks Section --><!-- Grey Module Section w/icons --><!-- Grey Mod=
+ule Section w/icons Bottom --><!-- Padding Variables --><!-- Two Column Sec=
+tion --><!-- Headings --><!-- Icons --><!-- Side-By-Side Section --><!-- Im=
+age Headings --><!-- Images --><!-- Text --><!-- Links --><!-- Expanding Te=
+am Section --><!-- Images --><!--
+<meta mktomodulescope=3D"true" class=3D"mktoString" id=3D"Developer_img" mk=
+toname=3D"Developer Image" default=3D"https://go.hashicorp.com/rs/845-ZLF-1=
+91/images/user.jpg" />
+--><!--
+<meta mktomodulescope=3D"true" class=3D"mktoString" id=3D"Security_img" mkt=
+oname=3D"Security Image" default=3D"https://go.hashicorp.com/rs/845-ZLF-191=
+/images/user2.jpg" />
+--><!--
+<meta mktomodulescope=3D"true" class=3D"mktoString" id=3D"Operations_img" m=
+ktoname=3D"Operations Image" default=3D"https://go.hashicorp.com/rs/845-ZLF=
+-191/images/user3.jpg" />
+--><!-- Links --><!--
+<meta mktomodulescope=3D"true" class=3D"mktoString" id=3D"devel_anchor" mkt=
+oname=3D"Developer URL" default=3D"#" />
+--><!--
+<meta mktomodulescope=3D"true" class=3D"mktoString" id=3D"security_anchor" =
+mktoname=3D"Security URL" default=3D"#" />
+--><!--
+<meta mktomodulescope=3D"true" class=3D"mktoString" id=3D"opreation_anchor"=
+ mktoname=3D"Opreation URL" default=3D"#" />
+--><!-- Contact a Sales Rep Section --><!-- Boxes Section --><!-- Boxes Ima=
+ges Section -->
+<meta mktomodulescope=3D"true" class=3D"mktoImage" id=3D"Speaker1aImg" mkto=
+name=3D"Box Image Content 1a" default=3D"https://dummyimage.com/148x148/000=
+/fff&amp;text=3D148x148">
+<!--Agenda Speaker Section--><!-- Get Started Section --><!-- Providers Sec=
+tion --><!-- Links --><!-- Images --><!-- Case Studies Section --><!-- Pipe=
+line Section --><!-- Images --><!-- Links --><!-- Text --><!-- Bottom Cards=
+ Section --><!-- Borders --><!-- START: Spacer Module --><!-- END: Spacer M=
+odule --><!-- Footer Start here --><!-- Hidden Icon Headings --><!-- TWO CO=
+LUMN SECTION --><!--SIDE-BY-SIDE SECTION--><!-- Stylesheet start here --><!=
+--[if mso]>
+<style type=3D"text/css">
+td, span, p {
+font-family: Arial, sans-serif !important;
+}
+</style>
+<![endif]--><style>
+/* vvvvv CLIENT-SPECIFIC STYLES vvvvv */
+table, td {
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
+}
+img {
+    -ms-interpolation-mode: bicubic;
+}
+/*ReadMsgBody - Forces Hotmail to display at full width.
+ ExternalClass - Hotmail table centering fix.*/
+.ReadMsgBody, .ExternalClass {
+    width: 100%;
+}
+/*Forces Hotmail to display normal line spacing*/
+.ExternalClass * {
+    line-height: 100%
+}
+/* vvvvv RESET STYLES vvvvv */
+/*Resolves the issue when iPhone links dates, addresses, phone numbers*/
+a {
+    color: #2e71e5;
+    text-decoration: underline;
+}
+.appleLinksBlack a {
+    color: #000001 !important;
+    text-decoration: none !important;
+}
+/*This resolves the Outlook 07, 10, and Gmail td padding issue fix*/
+table {
+    border-collapse: collapse !important;
+}
+/*This Resets Body Styles*/
+body {
+    height: 100% !important;
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+}
+/*This CSS will make your web text look clean, crisp, and will not adjust t=
+ext 13px and lower in mobile devices.*/
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+}
+/* OL07-10-13 "Read in browser link" */
+#outlook a {
+    padding: 0;
+  	color: #2e71e5;
+  	text-decoration: underline;
+}
+/* Various OL fixes */
+img {
+    -ms-interpolation-mode: bicubic;
+}
+@import url('https://fonts.googleapis.com/css?family=3DOpen+Sans:400,600,70=
+0');
+* {
+    font-family: 'Open Sans', 'Helvetica', sans-serif !important;
+}
+.rightIcon {
+    font-style: normal;
+    font-size: 18px;
+    padding: 2px 3px;
+    line-height: normal;
+    color: inherit;
+}
+.switchToHidden {
+    display: none !important;
+    line-height: 0px !important;
+    overflow: hidden !important;
+    height: 0px !important;
+    max-height: none !important;
+    width: 0px !important;
+    max-width: 0px !important;
+    font-size: 1px !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 0px 0px 0px 0px !important;
+}
+.blockDisplay {
+    display: block;
+}
+@media only screen and (max-width: 600px) {
+*[class].deviceWidth {
+    min-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto;
+}
+*[class].deviceWidth2 {
+    min-width: 90% !important;
+    width: 90% !important;
+    margin: 0 auto;
+}
+*[class].iphn_img img {
+    width: 100% !important;
+    height: auto !important;
+}
+*[class].block {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+}
+*[class].Res_Width_full {
+    width: 100% !important;
+    height: auto !important;
+    margin: auto !important;
+}
+*[class].width100Max {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+}
+.Res_align {
+    float: none !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+.mobilePad {
+    width: 100% !important;/*
+	width: 96% !important;
+ 	padding-left: 2% !important;
+ 	padding-right: 2% !important;
+	*/
+}
+.width100 {
+    width: 100% !important;
+    height: auto !important;
+}
+.width100Max {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+}
+.width90 {
+    width: 90% !important;
+    padding-right: 5% !important;
+    padding-left: 5% !important;
+    height: auto !important;
+}
+.ReduceSidePad {
+    padding-right: 8px !important;
+    padding-left: 8px !important;
+}
+.padReset {
+    padding: 10px 0px 10px 0px !important;
+}
+.padZero {
+    padding: 0px 0px 0px 0px !important;
+}
+.hidden-xs {
+    display: none !important;
+}
+.text-center {
+    text-align: center !important;
+}
+table tr td {
+    display: block;
+}
+.mobTdCell {
+    display: table-cell !important;
+  	padding: 10px 0 !important;
+}
+#LogoMian img {
+    width: 230px !important;
+    max-width: 230px !important;
+}
+.mobCenter {
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding: 0px !important;
+}
+.mobCenter20 {
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+}   =20
+.M_mob {
+    margin: auto !important;
+}
+.px-md-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.px-md-2x {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+.res_td_width {
+    display: table-cell !important;
+}
+.boxWidthMobile {
+    width: 200px !important;
+}
+    #Newfeatures {
+        font-size: 18px !important;
+    }   =20
+.drop {
+    width: 100% !important;
+    display: block !important;
+}
+.flexWapper {
+    display: flex !important;
+    width: 37px !important;   =20
+    }=20
+.blockRadiusLeft {
+ border-radius: 10px 10px 0 0 !important;      =20
+}  =20
+.blockRadiusRight {
+ border-radius: 0 0 10px 10px !important;      =20
+} =20
+.hidden, .hide {
+    display: none;
+    display: none !important;
+    line-height: 0px !important;
+    overflow: hidden !important;
+    height: 0px !important;
+    max-height: none !important;
+}
+}
+</style>
+</head>
+<body style=3D"width: 100%; min-width: 100%; margin-top: 0; margin-right: 0=
+; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; paddi=
+ng-bottom: 0; padding-left: 0; border-left:none; border-right:none;">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" alig=
+n=3D"center" style=3D"margin:0 auto;">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" bgcolor=3D"#eaeced" width=3D"600" style=
+=3D"width:600px;" class=3D"Res_Width_full">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"600" style=
+=3D"width:600px;" class=3D"mobilePad">
+<tbody>
+<tr>
+<td style=3D"background: #eaeced;" bgcolor=3D"#eaeced">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mktoContai=
+ner deviceWidth" id=3D"template-wrapper" style=3D"border-collapse: collapse=
+; mso-table-lspace: 0; mso-table-rspace: 0; margin: 0 auto; width: 600px;" =
+width=3D"600" align=3D"center">
+<tbody>
+<tr class=3D"mktoModule" id=3D"Header">
+<td align=3D"center" valign=3D"top" bgcolor=3D"#fff" style=3D"background-co=
+lor: #fff;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"margin:0 auto;width:100%;" align=3D"center" class=3D"width90">
+<tbody>
+<tr>
+<td height=3D"25" style=3D"line-height:1px;font-size:1px;">&nbsp;</td>
+</tr>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"font-family:'Open Sans', 'Helv=
+etica', sans-serif; font-size: 12px; font-weight: normal; line-height: 100%=
+; color: #727274">
+<div class=3D"mktoText" id=3D"HeaderLinks">
+<div><a href=3D"https://view.hashicorp.com/v/ODQ1LVpMRi0xOTEAAAGaMPfYoy2XGk=
+4lfHCma-hboBiIcirefdmPEVL_bQ7jcIQ_STVACiCO9MbcLAKCvOmM1yWY2t8=3D" style=3D"=
+color: #727274; text-decoration: none;" target=3D"_blank">View in browser
+</a>&nbsp;|&nbsp; <a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAG=
+aMPfYoyM3x4p0UmccL396O-cHn50iU5gwcGgQ76A_dBlIz21SFzwNSd6PUMXzWpXDdKWoFKE=3D=
+" style=3D"color: #727274; text-decoration: none;">
+Update your preferences </a></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class=3D"mktoModule" id=3D"Headerlogo">
+<td align=3D"center" valign=3D"top" bgcolor=3D"#fff" style=3D"background-co=
+lor: #fff; padding: 20px 0 40px 0;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"margin:0 auto; width:100%;" align=3D"center" class=3D"width90">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"font-size:1px; line-height:1px;">
+<div class=3D"mktoImg" id=3D"Logo"><a href=3D"#" target=3D"_blank" title=3D=
+"HashiCorp"><img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/2022=
+_HashiCorp-Partner_v2.png" alt=3D"HashiCorp" width=3D"118" border=3D"0" sty=
+le=3D"width:100%; max-width:118px;"></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class=3D"mktoModule" id=3D"BirdTicketSection">
+<td colspan=3D"2" align=3D"center" valign=3D"top" bgcolor=3D"#ffffff" style=
+=3D"padding: 20px 30px 20px 30px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"margin:0 auto;width:100%;" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"mobTdCell text-center" style=3D"text-align: center;margin: aut=
+o; background-color: #f1f8ff; width: 100%; vertical-align:middle; border-ra=
+dius: 10px">
+<div>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"margin:0 auto;width:100%;" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"mobTdCell text-center" style=3D"margin: auto;width:100%; verti=
+cal-align:top;height:106px;" width=3D"100%">
+<table height=3D"100" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" widt=
+h=3D"100%" style=3D"margin:0 auto; width:100%;" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"block text-center px-md-0 Res_Width_full" style=3D"width:75%; =
+padding:5px 0px 5px 0px; vertical-align:middle;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"margin:0 auto;width:100%;" align=3D"center" class=3D"deviceWidth2 text=
+-center">
+<tbody>
+<tr>
+<td class=3D"mobTdCell text-center" style=3D"color:#FFFFFF;font-size: 14px;=
+font-family:'Open Sans', 'Helvetica', sans-serif; padding:20px 15px 5px 25p=
+x; text-align:left; text-transform: uppercase;">
+<div id=3D"evntDate" class=3D"mktoText"></div>
+</td>
+</tr>
+<tr>
+<td class=3D"mobTdCell text-center" style=3D"color:#000;font-size: 14px;fon=
+t-family:'Open Sans', 'Helvetica', sans-serif; padding:0px 15px 8px 25px; t=
+ext-align:left;">
+<div id=3D"evntTime" class=3D"mktoText"><span style=3D"color: #000; font-si=
+ze: 21px; line-height: 27px; font-weight: bold; font-family: 'Open Sans', '=
+Helvetica', sans-serif; padding: 0; text-decoration: none;">HashiCorp Partn=
+er Program</span>
+<br>
+Updates: IBM Partner Plus &amp; Flex Multiyear Model </div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td valign=3D"middle" class=3D"block text-center px-md-0 Res_Width_full pad=
+Reset" style=3D"width:25%; padding:0px 0px 0px 0px; vertical-align:middle;"=
+>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"40%" style=
+=3D"margin:0 auto; width:auto;" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"text-center" style=3D"font-size:15px; line-height: 19px; font-=
+family:'Open Sans', 'Helvetica', sans-serif;color:#fff;font-weight:600; bor=
+der-radius: 5px !important; padding: 10px 15px 10px 15px; text-align:center=
+;border:none;width: 100%; margin:auto;width:auto;background-color:#000;bord=
+er:none;" width=3D"auto">
+May<br>
+<span style=3D"font-size: 20px;">02</span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td><img style=3D"border-radius: 0 0 10px 10px; width: 100%; vertical-align=
+: bottom;" src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/2022_Partn=
+er_Newsletter_Hero_Banner_500px_v3.png">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class=3D"mktoModule" id=3D"GreyPopularBodyTextff12d6bd-9a4a-427d-a3b1-5=
+509ef1d75da">
+<td class=3D"px-md-2x" colspan=3D"2" align=3D"left" valign=3D"top" bgcolor=
+=3D"#ffffff" style=3D"margin: auto;padding: 20px 30px 0px 30px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"width:100%;margin:0 auto;" align=3D"center" class=3D"deviceWidth2">
+<tbody>
+<tr>
+<td bgcolor=3D"#f5f7f7" colspan=3D"2" valign=3D"middle" style=3D"background=
+-color: #f5f7f7; border-radius: 10px 10px 0px 0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"width:100%;margin:0 auto;" align=3D"center" class=3D"">
+<tbody>
+<tr>
+<td colspan=3D"2" valign=3D"middle" style=3D"color:#373942; font-size: 14px=
+; font-family:'Open Sans', 'Helvetica', sans-serif; vertical-align: bottom;=
+ text-align: left; padding: 40px 40px 20px; margin: auto; line-height: 23px=
+; font-weight: 400;">
+<div class=3D"mktoText" id=3D"GreyBodyTextPara461c54f8-fafd-4450-80c7-8c7bb=
+40cebe9"><span style=3D"font-size: 18px;"><strong>Take Action Now:<br>
+<span style=3D"font-size: 16px;">Join IBM Partner Plus by September 1st to =
+continue to sell HashiCorp.</span></strong></span>
+<br>
+<br>
+As you have heard from our previous communications and webinars, we want to=
+ remind you that starting September 1st, all HashiCorp partners will need t=
+o join the IBM Partner Plus program to continue transacting HashiCorp solut=
+ions. The
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYow3mInO0y8c9B=
+Br9rsjOHXpa0qMqecG2MXly7SxvwNk8Pe3A8TsC88mgKwSQ5nn0yeg=3D" target=3D"_blank=
+" id=3D"">
+IBM Partner Plus</a> program is designed to help businesses like yours acce=
+ss innovative technology that complements HashiCorp offerings, fostering gr=
+owth whether you are a start-up or an established company.
+<br>
+<br>
+<span style=3D"font-size: 16px;"><strong>Benefits of Becoming an IBM Busine=
+ss Partner:<br>
+</strong></span>
+<ul>
+<li>Leverage Cutting-Edge Technology: Transform your clients' businesses wi=
+th advanced solutions.</li><li>Demand Generation Programs: Drive growth and=
+ revenue through targeted initiatives.</li><li>Leading Tools and Skill-Buil=
+ding Opportunities: Enhance your offerings with top-tier resources.</li></u=
+l>
+<span style=3D"font-size: 16px;"><strong>Action Required:<br>
+</strong></span>Ensure you can continue serving our clients after September=
+ 1 by registering for IBM Partner Plus today. Don=E2=80=99t wait=E2=80=94st=
+art the process now!
+<br>
+<br>
+<span style=3D"font-size: 16px;"><strong>Helpful Resources:<br>
+</strong></span>
+<ul>
+<li><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYo8VMY1XVu=
+QZUBVJ35CogSywAdGirMddoC6ous6bXxct8Kewh6oFLgpDp5RItVFkklFQ=3D" target=3D"_b=
+lank" id=3D"">Partner Plus Welcome Video</a></li><li><a href=3D"https://vie=
+w.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYo5EmtHQPmi3R7mtwquDsyGlPSW8Hx--im6V=
+G035sKocF2WYfsk2-H29xrUIpQhtLMxY=3D" target=3D"_blank" id=3D"">Registration=
+ Walkthrough</a></li><li><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0x=
+OTEAAAGaMPfYozamamlJAfqykOqSCS_I2iSzuISzusbl0ZfmJ-z3TQW3FQyep3yz71YO5VaJdke=
+VrO0=3D" target=3D"_blank" id=3D"">April=E2=80=99s Welcome Webinar</a></li>=
+</ul>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class=3D"mktoModule" id=3D"GreySmallImageModBottom90a6d0db-cc28-4650-a5=
+d3-968c18a42685">
+<td class=3D"px-md-2x" colspan=3D"2" align=3D"left" valign=3D"top" bgcolor=
+=3D"#ffffff" style=3D"margin: auto;padding: 0px 30px 20px 30px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"width:100%;margin:0 auto;" align=3D"center" class=3D"deviceWidth2">
+<tbody>
+<tr>
+<td bgcolor=3D"#f5f7f7" colspan=3D"2" valign=3D"middle" style=3D"background=
+-color: #f5f7f7; border-radius: 0px 0px 10px 10px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"width:100%;margin:0 auto;" align=3D"center" class=3D"">
+<tbody>
+<tr>
+<td style=3D"padding: 20px 40px 40px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"mobCenter =
+M_mob" style=3D"width:100%;" width=3D"100%">
+<tbody>
+<tr>
+<td colspan=3D"2" class=3D"Step1Heading" valign=3D"middle" style=3D"font-si=
+ze: 14px;color:#808080;vertical-align: top;font-weight:600;text-align: left=
+;line-height: 1.2;padding:0px;font-family:'Open Sans', 'Helvetica', sans-se=
+rif;margin: auto;text-align:center;" align=3D"center">
+<img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/2022_Partner_New=
+sletter_Section_Video_01_40px.png" style=3D"vertical-align: top;width:32x; =
+height:32px ;" width=3D"32" height=3D"32" valign=3D"top" alt=3D""></td>
+<td colspan=3D"2" class=3D"mobCenter mpl-0" valign=3D"middle" style=3D"colo=
+r:#373942;font-size: 14px;font-family:'Open Sans', 'Helvetica', sans-serif;=
+ text-align: left;margin: auto;line-height: 1.7;font-weight: 400;vertical-a=
+lign: top; padding-left:24px;">
+<div class=3D"mktoText" id=3D"SmallImageContentBottomd612280b-4b97-46e2-b2f=
+3-cc9ac5af2b26">
+<p style=3D"display: block; margin-top: 0; margin-bottom: 0px; width: 100%;=
+ font-size: 14px; line-height: 23px; font-weight: normal;">
+<strong>Upcoming Live Session</strong><br>
+<br>
+Join our next live session for an in-depth look at the Partner Plus program=
+, including registration details, on May 8th at either 10AM EDT or 5PM PDT =
+/ 8PM EDT.<br>
+<br>
+<strong>Date/Time:&nbsp;<br>
+</strong>May 8th 10AM EDT:&nbsp;<a href=3D"https://view.hashicorp.com/ODQ1L=
+VpMRi0xOTEAAAGaMPfYo6jdHbgsQHnvXFKCGM-sQYM813vUCR6qKQH7_bM7TX6MT6kmuH31EcDP=
+FCODe4Mo6-A=3D">Add to calendar</a><br>
+May 8th 5PM PDT / May 9th 8AM SGT:&nbsp;<a href=3D"https://view.hashicorp.c=
+om/ODQ1LVpMRi0xOTEAAAGaMPfYowVZDObqd2GFP0w-79ocSsyn_jg5zdPfR71tt3NriCKdcajB=
+WUuFKAng9USgUfJGs3w=3D">Add to calendar</a><br>
+<br>
+Registration is not required. Access this <a href=3D"https://view.hashicorp=
+.com/ODQ1LVpMRi0xOTEAAAGaMPfYo3hPw9GQdPPJdXMokWHi-tN1YRv_pVfGAhKxM_07K1Vrb9=
+Hh5yqldcVsyUUOiPfwX8A=3D" target=3D"_blank" id=3D"">
+link</a> to join each session.&nbsp;<br>
+<br>
+Thank you for your continued partnership. We look forward to growing togeth=
+er with IBM Partner Plus.<br>
+</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class=3D"mktoModule" id=3D"GreyBodyTextEventStand06093e34-0bd2-4207-bc2=
+c-e62cc8a9f100">
+<td class=3D"px-md-2x" colspan=3D"2" align=3D"left" valign=3D"top" bgcolor=
+=3D"#ffffff" style=3D"margin: auto; padding: 20px 30px 20px 30px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"width:100%;margin:0 auto;" align=3D"center" class=3D"deviceWidth2">
+<tbody>
+<tr>
+<td bgcolor=3D"#f5f7f7" colspan=3D"2" valign=3D"middle" style=3D"background=
+-color: #f5f7f7; border-radius: 10px 10px 10px 10px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"width:100%;margin:0 auto;" align=3D"center" class=3D"">
+<tbody>
+<tr>
+<td colspan=3D"2" valign=3D"middle" style=3D"color:#373942; font-size: 14px=
+; font-family:'Open Sans', 'Helvetica', sans-serif; vertical-align: bottom;=
+ text-align: left; padding: 40px 40px 40px; margin: auto; line-height: 23px=
+; font-weight: 400;">
+<div class=3D"mktoText" id=3D"GreyBodyEventTextStand6775aa4e-4cea-471c-acd9=
+-b906ef7ddb1e">
+<span style=3D"font-size: 18px;"><strong>Important Update: Delay in Launchi=
+ng Flex Multiyear for Partner Resell</strong></span>
+<br>
+<br>
+We previously announced a launch of partners reselling Flex Multiyear, with=
+ a new partner incentive program. Originally we had targeted a May launch, =
+however, we regret to inform you that there has been a delay in launching t=
+his program.
+<br>
+<br>
+We take the stability of your business with HashiCorp very seriously. Intro=
+ducing a program at the time of a larger adjustment into IBM Partner Plus P=
+rogram, is not the stability we seek to have with our valued business partn=
+ers. We are working diligently to
+ deliver Flex Multiyear as a resell motion under the IBM Partner Plus Progr=
+am. <br>
+<br>
+<strong>What this means for you:<br>
+</strong><br>
+<strong>IBM Partner Plus Program:</strong> We encourage you to register for=
+ the <a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYoxCqgFQs=
+lt_doCj3VPlw8FXoILnEBdllYkcvWq6q3_ykqXJwMCz6BEO5PeZCpztxXFM=3D" target=3D"_=
+blank" id=3D"">
+IBM Partner Plus Program</a>, where you can currently transact HCP entitlem=
+ents. This will ensure you can still serve your clients needs today!
+<br>
+<strong>Partners Reselling Flex Multiyear:</strong> We are working closely =
+with our IBM team to build Flex product parts under the IBM umbrella and ar=
+e aligning the incentive program through the larger Partner Plus Program.
+<br>
+<strong>Current Transactions:</strong> Until the Flex Multiyear is availabl=
+e as an IBM part, partners will not be able to transact Flex Multiyear deal=
+s, nor will any incentives be awarded under this model. Please continue wit=
+h the standard process for non Flex
+ Multiyear transactions until further details are provided. <br>
+<br>
+We apologize for any inconvenience this delay may have caused and appreciat=
+e your understanding. Stay tuned for further updates, and thank you for you=
+r continued partnership.
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class=3D"mktoModule" id=3D"Footer">
+<td align=3D"center" valign=3D"top" bgcolor=3D"#FFFFFF" style=3D"background=
+-color: #FFFFFF;">
+<div class=3D"mktoText" id=3D"FooterCopyright">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"width: 100%; margin: 0 auto;" align=3D"center" class=3D"deviceWidth2">
+<tbody>
+<tr>
+<td class=3D"px-md-2x" colspan=3D"2" align=3D"left" valign=3D"top" bgcolor=
+=3D"#ffffff" style=3D"margin: auto; padding: 20px 30px 20px 30px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"width: 100%; margin: 0 auto;" align=3D"center" class=3D"deviceWidth2">
+<tbody>
+<tr>
+<td></td>
+<td bgcolor=3D"#f5f7f7" colspan=3D"2" valign=3D"middle" style=3D"background=
+-color: #f5f7f7; border-radius: 10px 10px 10px 10px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"width: 100%; margin: 0 auto;" align=3D"center">
+<tbody>
+<tr>
+<td height=3D"25" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"block centerText noSidePad" align=3D"left" style=3D"font-famil=
+y: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; font-weight: norm=
+al; line-height: 150%; text-decoration: none; color: #656a70; padding: 0 0 =
+0 20px;">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYo9VpySJf=
+E8nXc2VBaVhJQNPMDV9THuZJVNnifMRz8P7Rcak41p4Lq86bWwOSq-7IO28=3D" target=3D"_=
+blank" title=3D"HashiCorp"><img src=3D"https://go.hashicorp.com/rs/845-ZLF-=
+191/images/HashiCorp-logo-330x74px.png" alt=3D"HashiCorp logo" width=3D"150=
+" constrain=3D"true" imagepreview=3D"false"></a>
+</div>
+</td>
+<td class=3D"block centerText noSidePad" align=3D"right" style=3D"font-fami=
+ly: 'Open Sans', 'Helvetica', sans-serif; font-weight: normal; line-height:=
+ 100%; text-decoration: none; color: #656a70; padding: 0 20px 0 0px;">
+<p><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYoxtgj8SCyg=
+2SiLJEnAM80sxWFG2NhTom7n76SH8U4g9tX3XBMh4eVDnhUOgupep7ImI=3D" target=3D"_bl=
+ank"><img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/Octocat Cop=
+y 3.png" width=3D"21" height=3D"20" constrain=3D"true" imagepreview=3D"fals=
+e"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYowJZNO1xTupM8=
+YFmi_VRV5heZ_4GEWfEQ5q-vwtw28O7qxwc4z9mmv5vMpkGDqZILAo=3D">
+<img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/X-logo-black.png=
+" width=3D"20" height=3D"20" constrain=3D"true" imagepreview=3D"false"></a>=
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYoxCr-YMHQ2YVR=
+PCGnraBrNoQBb4mFamGv2VKT0qghew2zyNvf-OjA53qW3EAboPpknU=3D">
+<img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/Path Copy 9.png"=
+ width=3D"20" height=3D"20" constrain=3D"true" imagepreview=3D"false"></a><=
+/p>
+</td>
+</tr>
+<tr>
+<td height=3D"35" style=3D"line-height: 35px; font-size: 35px;">&nbsp;</td>
+</tr>
+<tr>
+<td height=3D"20" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"block centerText noSidePad" colspan=3D"2" align=3D"left" valig=
+n=3D"top" style=3D"font-family: 'Open Sans', 'Helvetica', sans-serif; font-=
+size: 14px; font-weight: normal; line-height: 17px; padding: 0 0 0 20px;">
+<div>
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYoyM3x4p0=
+UmccL396O-cHn50iU5gwcGgQ76A_dBlIz21SFzwNSd6PUMXzWpXDdKWoFKE=3D" style=3D"co=
+lor: #000; text-decoration: none;">Manage Preferences
+</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.com/ODQ1LVpM=
+Ri0xOTEAAAGaMPfYo5DZI1b3y-mWJc77x25qjxhcIqXbWUgM07rvSH7eQsjND8YFzMesGLbWvbP=
+N_CioYj4=3D" target=3D"_blank" style=3D"color: #000001; text-decoration: no=
+ne;">
+Unsubscribe</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.=
+com/ODQ1LVpMRi0xOTEAAAGaMPfYo5JZeavp8uW2HKKMlSZnF00j5TfbkzeHFNEtxRoLDzmb2mR=
+PJ3Q7yR-Sk39mZ1iDTV4=3D" style=3D"color: #000001; text-decoration: none;">
+Contact Us</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.c=
+om/ODQ1LVpMRi0xOTEAAAGaMPfYo66Klj0-LR1A9Vf-KDSit-R6MOQhpSK9e03bYKk5EB3y4dpV=
+S3RkBT8NvIzxItAunoQ=3D" style=3D"color: #000001; text-decoration: none;">
+Privacy Policy </a></div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"25" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"block centerText noSidePad" colspan=3D"2" align=3D"left" style=
+=3D"font-family: 'Open Sans', 'Helvetica', sans-serif; font-size: 12px; fon=
+t-weight: normal; line-height: 17px; text-decoration: none; color: #656a70;=
+ padding: 0 0 0 20px;">
+<div>Copyright =C2=A9 2025 HashiCorp. All rights reserved. 101 2nd St.#700,=
+ San Francisco, CA 94105
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"25" style=3D"line-height: 1px; font-size: 1px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGaMPfYo-mSAZ503_dVh=
+QHWinjPOfK5UNLZ4jHnLPQ4FYe7n6yqtfc0FPtQVsYoTGaiLKKQfqQ=3D"></a><img src=3D"=
+https://view.hashicorp.com/trk?t=3D1&amp;mid=3DODQ1LVpMRi0xOTEAAAGaMPfYo6Wr=
+BYtjjA_169SPOs2-F29hVHCqIoxVUidi6iq-GvGhvAfm35I2mPFboz7wQxDpdfy-86VKWX_9_fH=
+emcwIMMB7wR3zbcqZFoFr6FnN0lxbYwYEvnr1rVDGAkTlqlOXQAOEDWLFYzP_dg" width=3D"1=
+" height=3D"1" style=3D"display:none !important;" alt=3D"">
+<center>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"width: 100%;" bgcolor=3D"#ffffff" style=3D"background: #ffffff;">
+<tbody>
+<tr>
+<td>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"600" align=
+=3D"center" bgcolor=3D"#ffffff" style=3D"background: #ffffff;">
+<tbody>
+<tr>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+------=_Part_114557910_253783976.1746206140585--

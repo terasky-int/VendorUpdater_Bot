@@ -1,6 +1,7 @@
 import os
 import logging
 import json
+import time
 
 import yaml
 from src import llm_utils, harvest, normalize, enrich, classify, chunker, embedder, indexer, manifest, evaluate
@@ -75,105 +76,121 @@ def clean_data_folders():
 
 # Main pipeline function
 def run_pipeline():
-    config = load_config()
+    start_time = time.time()
+    processed_count = 0
+    
+    try:
+        config = load_config()
 
-    setup_logging(config["debug"]["enabled"])
-    logging.info("Starting LLM data digestion pipeline")
+        setup_logging(config["debug"]["enabled"])
+        logging.info("Starting LLM data digestion pipeline")
 
-    if args.emptydatafolders:
-        clean_data_folders()
+        if args.emptydatafolders:
+            clean_data_folders()
 
-    # Connect to ChromaDB collection once
-    collection = llm_utils.get_chroma_collection()
+        # Connect to ChromaDB collection once
+        collection = llm_utils.get_chroma_collection()
 
-    # Harvest emails
-    if args.local:
-        if not args.folder:
-            raise ValueError("--folder is required when using --local mode")
-        from src.local_loader import load_local_emails
-        emails = load_local_emails(args.folder)
-        logging.info(f"Fetched {len(emails)} new emails from local files")
-    else:
-        emails = harvest.fetch_unread_emails(config)
-        logging.info(f"Fetched {len(emails)} new emails from server")
+        # Harvest emails
+        if args.local:
+            if not args.folder:
+                raise ValueError("--folder is required when using --local mode")
+            from src.local_loader import load_local_emails
+            emails = load_local_emails(args.folder)
+            logging.info(f"Fetched {len(emails)} new emails from local files")
+        else:
+            emails = harvest.fetch_unread_emails(config)
+            logging.info(f"Fetched {len(emails)} new emails from server")
 
-    for eid, email_obj in emails:
-        try:
-            email_id, raw_path = harvest.save_raw_email(email_obj, config)
-            clean_text = normalize.clean_email(raw_path, config, do_medium_clean=True)
-            enriched_data = enrich.extract_metadata(clean_text, email_obj, config)
-            classified_data = classify.label_content(enriched_data, config)
-            chunks = chunker.chunk_text(classified_data["text"], config)
-            embeddings = embedder.embed_chunks(chunks, config)
+        for eid, email_obj in emails:
+            try:
+                email_id, raw_path = harvest.save_raw_email(email_obj, config)
+                clean_text = normalize.clean_email(raw_path, config, do_medium_clean=True)
+                enriched_data = enrich.extract_metadata(clean_text, email_obj, config)
+                classified_data = classify.label_content(enriched_data, config)
+                chunks = chunker.chunk_text(classified_data["text"], config)
+                embeddings = embedder.embed_chunks(chunks, config)
 
-            ### WORK ON INDEXER - BUGGY !!!!!
-            metadatas = [
-                {
-                    "vendor": ensure_primitive(classified_data.get("vendor", "unknown")),
-                    "product": ensure_primitive(classified_data.get("product", "unknown")),
-                    "type": ensure_primitive(classified_data.get("type", "unknown")),
-                    "date": ensure_primitive(classified_data.get("date", "1970-01-01")),
-                    "chunk_index": chunk["position"],
-                    "email_id": email_id 
-                }
-                for chunk in chunks
-            ]
-
-            indexer.index(
-                chunks,
-                embeddings,
-                metadatas,
-                config   #TypeError('list indices must be integers or slices, not str')
-            )
-
-            manifest.record_entry(email_id, chunks, classified_data, config)
-
-            if config["debug"]["evaluation"]["enabled"]:
-                evaluate.run_rag_test(email_id, chunks, config)
-
-            # Merge embeddings into chunks
-            for i, chunk in enumerate(chunks):
-                chunk["embedding"] = embeddings[i]
-
-                # ✅ Always ensure metadata is set
-                if "metadata" not in chunk:
-                    chunk["metadata"] = {
+                metadatas = [
+                    {
                         "vendor": ensure_primitive(classified_data.get("vendor", "unknown")),
                         "product": ensure_primitive(classified_data.get("product", "unknown")),
                         "type": ensure_primitive(classified_data.get("type", "unknown")),
-                        "date": ensure_primitive(classified_data.get("date", "1970-01-01"))
+                        "date": ensure_primitive(classified_data.get("date", "1970-01-01")),
+                        "chunk_index": chunk["position"],
+                        "email_id": email_id 
                     }
+                    for chunk in chunks
+                ]
 
-            valid_chunks = [
-                c for c in chunks
-                if c.get("embedding") and isinstance(c.get("metadata"), dict)
-            ]
-
-            # Index into ChromaDB
-            if valid_chunks:
-                collection.add(
-                    documents=[c["text"] for c in valid_chunks],
-                    metadatas=[c["metadata"] for c in valid_chunks],
-                    ids=[c["chunk_id"] for c in valid_chunks],
-                    embeddings=[c["embedding"] for c in valid_chunks]
+                indexer.index(
+                    chunks,
+                    embeddings,
+                    metadatas,
+                    config
                 )
-                logging.info(f"✅ Embedded and stored {len(valid_chunks)} chunks for email ID {email_id}")
-                for i, chunk in enumerate(valid_chunks):
-                    try:
-                        json.dumps(chunk["metadata"])
-                    except Exception as e:
-                        logging.error(f"Invalid metadata in chunk {i}: {chunk['metadata']}, error: {str(e)}")
-            else:
-                logging.warning(f"⚠️ No valid chunks for email ID {email_id}")
-                
-            # if not args.local:
-            #     harvest.mark_email_as_read(eid, config)
-            doc_count = collection.count()
-            logging.info(f"ChromaDB now contains {doc_count} total documents.")
 
-        except Exception as e:
-            logging.error(f"Error processing email: {str(e)}")
-            continue
+                manifest.record_entry(email_id, chunks, classified_data, config)
+
+                if config["debug"]["evaluation"]["enabled"]:
+                    evaluate.run_rag_test(email_id, chunks, config)
+
+                # Merge embeddings into chunks
+                for i, chunk in enumerate(chunks):
+                    chunk["embedding"] = embeddings[i]
+
+                    # ✅ Always ensure metadata is set
+                    if "metadata" not in chunk:
+                        chunk["metadata"] = {
+                            "vendor": ensure_primitive(classified_data.get("vendor", "unknown")),
+                            "product": ensure_primitive(classified_data.get("product", "unknown")),
+                            "type": ensure_primitive(classified_data.get("type", "unknown")),
+                            "date": ensure_primitive(classified_data.get("date", "1970-01-01"))
+                        }
+
+                valid_chunks = [
+                    c for c in chunks
+                    if c.get("embedding") and isinstance(c.get("metadata"), dict)
+                ]
+
+                # Index into ChromaDB
+                if valid_chunks:
+                    collection.add(
+                        documents=[c["text"] for c in valid_chunks],
+                        metadatas=[c["metadata"] for c in valid_chunks],
+                        ids=[c["chunk_id"] for c in valid_chunks],
+                        embeddings=[c["embedding"] for c in valid_chunks]
+                    )
+                    logging.info(f"✅ Embedded and stored {len(valid_chunks)} chunks for email ID {email_id}")
+                    for i, chunk in enumerate(valid_chunks):
+                        try:
+                            json.dumps(chunk["metadata"])
+                        except Exception as e:
+                            logging.error(f"Invalid metadata in chunk {i}: {chunk['metadata']}, error: {str(e)}")
+                else:
+                    logging.warning(f"⚠️ No valid chunks for email ID {email_id}")
+                    
+                if not args.local:
+                    harvest.mark_email_as_read(eid, config)
+                    
+                doc_count = collection.count()
+                logging.info(f"ChromaDB now contains {doc_count} total documents.")
+                
+                processed_count += 1
+
+            except Exception as e:
+                logging.error(f"Error processing email: {str(e)}")
+                continue
+                
+        # Log successful completion
+        from monitor import log_metrics
+        log_metrics(True, start_time, processed_count=processed_count)
+        
+    except Exception as e:
+        logging.error(f"Pipeline failed: {str(e)}")
+        from monitor import log_metrics
+        log_metrics(False, start_time, error=str(e), processed_count=processed_count)
+        raise
 
 if __name__ == "__main__":
     run_pipeline()
