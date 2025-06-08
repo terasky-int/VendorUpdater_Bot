@@ -65,8 +65,17 @@ def add_email_to_graph(graph, email_id, metadata):
         from_rel = Relationship(email_node, "FROM", vendor_node)
         graph.merge(from_rel)
         
-        # Handle multiple products (comma-separated)
-        products = [p.strip() for p in product_str.split(",")]
+        # Handle multiple products
+        if isinstance(product_str, list):
+            # If product is already a list
+            products = product_str
+        elif isinstance(product_str, str):
+            # If product is a comma-separated string
+            products = [p.strip() for p in product_str.split(",")]
+        else:
+            # Fallback
+            products = [str(product_str)]
+            
         for product in products:
             if product:
                 # Create product node

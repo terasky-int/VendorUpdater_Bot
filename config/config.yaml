@@ -143,7 +143,7 @@ neo4j:
 
 debug:
   enabled: True
-  verbose_logging: False
+  verbose_logging: True
   save_all_artifacts: False
   evaluation:
     enabled: True

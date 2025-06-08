@@ -1,1 +1,2 @@
-{"timestamp": "2025-06-03T14:32:16.446456", "success": true, "duration_seconds": 192.96, "emails_processed": 36, "error": null}
+{"timestamp": "2025-06-08T17:27:23.383692", "pipeline": "pipeline_run", "success": true, "duration_seconds": 202.28, "emails_processed": 39, "error": null, "system": {"cpu_percent": 22.6, "memory_percent": 88.1, "disk_percent": 99.5}}
+{"timestamp": "2025-06-08T18:23:56.321156", "pipeline": "pipeline_run", "success": true, "duration_seconds": 201.29, "emails_processed": 39, "error": null, "system": {"cpu_percent": 20.7, "memory_percent": 89.1, "disk_percent": 99.4}}

@@ -11,9 +11,27 @@ This application:
 4. Classifies emails by vendor, product, and type using AWS Bedrock
 5. Chunks text for embedding
 6. Generates embeddings using AWS Bedrock
-7. Stores in ChromaDB for vector search
+7. Stores in ChromaDB for vector search and Neo4j for graph relationships
 8. Provides evaluation tools for RAG performance
-9. Offers graph database integration for relationship queries
+
+## Project Structure
+
+```
+VendorUpdater_Bot/
+├── src/                  # Core application code
+├── config/               # Configuration files
+├── data/                 # Data storage
+├── logs/                 # Log files
+├── Tests/                # Test scripts and utilities
+│   ├── unit/             # Unit tests
+│   ├── integration/      # Integration tests
+│   └── tools/            # Test utilities
+├── ui/                   # UI components
+│   └── streamlit/        # Streamlit UI
+├── docs/                 # Documentation
+└── misc/                 # Miscellaneous files
+    └── tst_emls/         # Test email files
+```
 
 ## Setup
 
@@ -21,8 +39,8 @@ This application:
 
 - Python 3.10+
 - AWS account with Bedrock access
-- Docker (optional, for containerized deployment)
 - Neo4j (optional, for graph database features)
+- Docker (optional, for containerized deployment)
 
 ### Configuration
 
@@ -48,103 +66,110 @@ pip install -r requirements.txt
 python main.py
 
 # Run with local .eml files
-python main.py --local --folder ./path/to/emails
+python main.py --local --folder ./misc/tst_emls
 ```
 
-## Running as a Container
+## Application Flow
 
+1. **Email Harvesting**
+   - Fetch unread emails from IMAP server or local .eml files
+   - Save raw emails to data/raw_emails/ with UUID filenames
+
+2. **Normalization**
+   - Parse raw emails and extract text content
+   - Clean HTML, remove signatures, boilerplates, etc.
+   - Extract text from attachments when possible
+   - Save cleaned text to data/clean_text/
+
+3. **Enrichment**
+   - Extract metadata (sender, date, language)
+   - Infer vendor from email domain
+
+4. **Classification**
+   - Use AWS Bedrock (Claude) to classify email type (marketing, security, technical)
+   - Identify products mentioned in the email
+   - Associate with vendor products from configuration
+
+5. **Chunking**
+   - Split text into manageable chunks using RecursiveCharacterTextSplitter
+   - Assign chunk IDs and positions for traceability
+
+6. **Embedding**
+   - Generate embeddings for each chunk using AWS Bedrock Titan
+   - Prepare metadata for each chunk
+
+7. **Indexing**
+   - Store chunks, embeddings, and metadata in ChromaDB
+   - Record entries in manifest.jsonl for tracking
+   - Store relationship data in Neo4j graph database
+
+8. **Evaluation** (optional)
+   - Run RAG tests on processed emails
+   - Generate evaluation metrics
+
+## Search and Query Capabilities
+
+### Vector Search (ChromaDB)
+1. User submits a query text and optional metadata filters
+2. Query text is embedded using AWS Bedrock Titan
+3. ChromaDB performs similarity search with metadata filtering
+4. Results are ranked by vector similarity
+5. Top-k results are returned with their metadata
+
+### Graph Search (Neo4j)
+1. User submits a Cypher query or uses predefined analytical queries
+2. Neo4j executes the query against the graph database
+3. Results show relationships between vendors, products, and emails
+4. Analytical queries provide counts, timelines, and relationship insights
+
+### Hybrid Search
+1. Combine vector search for semantic understanding with graph search for relationships
+2. Use vector search to find relevant content
+3. Use graph search to explore connections and metadata
+4. Natural language interface translates user queries to appropriate search strategy
+
+## Tools and Utilities
+
+### Testing Tools
 ```bash
-# Build and run with Docker Compose
-docker-compose up -d
+# Run unit tests
+python Tests/run_unit_tests.py
 
-# Or build and run manually
-docker build -t vendor-updater .
-docker run -v ./data:/app/data -v ./logs:/app/logs -v ./config:/app/config --env-file .env vendor-updater
+# Run comprehensive tests
+python Tests/tools/run_tests.py --all
+
+# Test search quality
+python Tests/tools/test_search_quality.py
+
+# Test analytical queries
+python Tests/tools/test_analytics.py
 ```
 
-## Running as a Cron Job
-
-1. Make the script executable:
-   ```bash
-   chmod +x cron-job.sh
-   ```
-
-2. Add to crontab (runs every 2 hours):
-   ```
-   0 */2 * * * /path/to/cron-job.sh
-   ```
-
-## APIs
-
-### RAG API
-
-Start the RAG API server:
+### UI Tools
 ```bash
-python rag_api.py
+# Run Streamlit UI
+streamlit run ui/streamlit/inspect_db_ui.py
 ```
 
-Endpoints:
-- `GET /health`: Check API health
-- `GET /metadata`: Get unique metadata values
-- `POST /query`: Query the RAG system
-
-### Graph API
-
-Start the Graph API server:
+### Graph Database Tools
 ```bash
-python graph_api.py
+# Interactive Cypher query tool
+python Tests/tools/cypher_query.py
+
+# Natural language query interface
+python Tests/tools/nl_query.py
 ```
 
-Endpoints:
-- `GET /vendors`: List all vendors
-- `GET /products/{vendor}`: Get products for a vendor
-- `GET /vendors/{product}`: Get vendors for a product
-- `GET /timeline`: Get email timeline
-- `POST /query`: Run custom Cypher query
-
-## Testing
-
-Run all tests:
+### Monitoring
 ```bash
-python run_tests.py --all
+# Check system health
+python src/monitoring.py
 ```
 
-Or run specific tests:
-```bash
-python run_tests.py --debug  # Run debug search
-python run_tests.py --search  # Test search quality
-python run_tests.py --api  # Test RAG API
-```
+## Documentation
 
-## Project Structure
+- [Graph Database Integration](docs/graph_database.md)
 
-- `src/`: Core modules for the processing pipeline
-- `config/`: Configuration files
-- `data/`: Data storage (raw emails, clean text, vector DB)
-- `logs/`: Application logs
-- `misc/`: Miscellaneous files and test data
+## License
 
-## Graph Database Integration
-
-The application can integrate with Neo4j to model relationships between vendors, products, and emails:
-
-```bash
-# Import all emails to Neo4j
-python graph_db.py
-```
-
-Example Cypher queries:
-```cypher
-// Find all security updates for Hashicorp products
-MATCH (e:Email)-[:FROM]->(v:Vendor {name: "hashicorp"}),
-      (e)-[:ABOUT]->(p:Product)
-WHERE e.type CONTAINS "security"
-RETURN e.id, e.date, p.name
-ORDER BY e.date DESC
-
-// Find related products mentioned in the same emails
-MATCH (p1:Product)<-[:ABOUT]-(e:Email)-[:ABOUT]->(p2:Product)
-WHERE p1.name < p2.name  // Avoid duplicates
-RETURN p1.name, p2.name, COUNT(e) AS email_count
-ORDER BY email_count DESC
-```
+[Your License]

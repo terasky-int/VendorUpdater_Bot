@@ -5,6 +5,8 @@ import time
 
 import yaml
 from src import llm_utils, harvest, normalize, enrich, classify, chunker, embedder, indexer, manifest, evaluate
+from src.monitoring import log_metrics, check_health
+from graph_db import connect_to_graph, add_email_to_graph, create_schema
 import argparse
 from dotenv import load_dotenv
 
@@ -13,6 +15,7 @@ parser.add_argument("--local", action="store_true", help="Run using local .eml f
 parser.add_argument("--folder", type=str, help="Path to folder containing .eml files (required with --local)")
 parser.add_argument("--deletelog", action="store_true", help="delete log file before running the pipeline")
 parser.add_argument("--emptydatafolders", action="store_true", help="delete all files in data folders before running the pipeline")
+parser.add_argument("--noevaluation", action="store_true", help="skip evaluation step")
 args = parser.parse_args()
 load_dotenv()  # loads from .env in current working dir
 
@@ -22,13 +25,35 @@ def load_config(path="config/config.yaml"):
 
 # Setup logging
 def setup_logging(debug_mode):
-    logging.basicConfig(
+    # Ensure logs directory exists
+    os.makedirs("logs", exist_ok=True)
+    
+    # Configure file handler
+    file_handler = logging.FileHandler(
         filename="logs/pipeline.log",
-        level=logging.DEBUG if debug_mode else logging.INFO,
-        format="%(asctime)s - %(levelname)s - %(message)s",
-        filemode="w" if args.deletelog else "a",
+        mode="w" if args.deletelog else "a",
         encoding="utf-8"
     )
+    file_handler.setLevel(logging.DEBUG if debug_mode else logging.INFO)
+    file_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
+    
+    # Configure console handler
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(message)s"))
+    
+    # Configure root logger
+    root_logger = logging.getLogger()
+    root_logger.setLevel(logging.DEBUG if debug_mode else logging.INFO)
+    
+    # Remove existing handlers
+    for handler in root_logger.handlers[:]:
+        root_logger.removeHandler(handler)
+    
+    # Add handlers
+    root_logger.addHandler(file_handler)
+    root_logger.addHandler(console_handler)
+    
     if args.deletelog:
         logging.info("Log file deleted before running the pipeline")
 
@@ -77,7 +102,7 @@ def clean_data_folders():
 # Main pipeline function
 def run_pipeline():
     start_time = time.time()
-    processed_count = 0
+    emails_processed = 0
     
     try:
         config = load_config()
@@ -90,6 +115,14 @@ def run_pipeline():
 
         # Connect to ChromaDB collection once
         collection = llm_utils.get_chroma_collection()
+        
+        # Connect to Neo4j and create schema
+        graph = connect_to_graph()
+        if graph:
+            create_schema(graph)
+            logging.info("Connected to Neo4j and created schema")
+        else:
+            logging.warning("Failed to connect to Neo4j, graph database features will be disabled")
 
         # Harvest emails
         if args.local:
@@ -132,8 +165,12 @@ def run_pipeline():
 
                 manifest.record_entry(email_id, chunks, classified_data, config)
 
-                if config["debug"]["evaluation"]["enabled"]:
-                    evaluate.run_rag_test(email_id, chunks, config)
+                # Skip evaluation if requested or if debug evaluation is disabled
+                if not args.noevaluation and config["debug"]["evaluation"]["enabled"]:
+                    try:
+                        evaluate.run_rag_test(email_id, chunks, config)
+                    except Exception as eval_error:
+                        logging.error(f"Evaluation failed for email {email_id}: {str(eval_error)}")
 
                 # Merge embeddings into chunks
                 for i, chunk in enumerate(chunks):
@@ -169,27 +206,32 @@ def run_pipeline():
                             logging.error(f"Invalid metadata in chunk {i}: {chunk['metadata']}, error: {str(e)}")
                 else:
                     logging.warning(f"⚠️ No valid chunks for email ID {email_id}")
-                    
+                
+                # Store in Neo4j
+                if graph:
+                    if add_email_to_graph(graph, email_id, classified_data):
+                        logging.info(f"✅ Added email {email_id} to Neo4j graph database")
+                    else:
+                        logging.warning(f"⚠️ Failed to add email {email_id} to Neo4j")
+                
                 if not args.local:
                     harvest.mark_email_as_read(eid, config)
                     
                 doc_count = collection.count()
                 logging.info(f"ChromaDB now contains {doc_count} total documents.")
                 
-                processed_count += 1
+                emails_processed += 1
 
             except Exception as e:
                 logging.error(f"Error processing email: {str(e)}")
                 continue
                 
         # Log successful completion
-        from monitor import log_metrics
-        log_metrics(True, start_time, processed_count=processed_count)
+        log_metrics("pipeline_run", start_time, emails_processed=emails_processed)
         
     except Exception as e:
         logging.error(f"Pipeline failed: {str(e)}")
-        from monitor import log_metrics
-        log_metrics(False, start_time, error=str(e), processed_count=processed_count)
+        log_metrics("pipeline_run", start_time, emails_processed=emails_processed, error=e)
         raise
 
 if __name__ == "__main__":
