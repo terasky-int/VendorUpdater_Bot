@@ -173,19 +173,198 @@ def get_email_timeline(vendor_name=None, product_name=None, days=30):
     """
     return run_graph_query(query, params)
 
+def count_vendor_emails(vendor_name):
+    """Count emails from a specific vendor"""
+    query = """
+    MATCH (e:Email)-[:FROM]->(v:Vendor {name: $vendor})
+    RETURN count(e) AS email_count
+    """
+    result = run_graph_query(query, {"vendor": vendor_name})
+    return result[0]["email_count"] if result else 0
+
+def count_recent_emails(vendor_name=None, days=7):
+    """Count emails received in the past X days from a vendor"""
+    params = {"days": days}
+    
+    if vendor_name:
+        query = """
+        MATCH (e:Email)-[:FROM]->(v:Vendor)
+        WHERE v.name = $vendor
+        AND e.date > datetime() - duration({days: $days})
+        RETURN count(e) AS email_count
+        """
+        params["vendor"] = vendor_name
+    else:
+        query = """
+        MATCH (e:Email)-[:FROM]->(v:Vendor)
+        WHERE e.date > datetime() - duration({days: $days})
+        RETURN count(e) AS email_count
+        """
+    
+    result = run_graph_query(query, params)
+    return result[0]["email_count"] if result else 0
+
+def find_security_emails(days=30):
+    """Find security/vulnerability emails from the past X days"""
+    query = """
+    MATCH (e:Email)-[:FROM]->(v:Vendor), (e)-[:ABOUT]->(p:Product)
+    WHERE (e.type CONTAINS 'security' OR e.type CONTAINS 'vulnerability') 
+      AND e.date > datetime() - duration({days: $days})
+    RETURN DISTINCT e.id AS email_id, e.date AS date, v.name AS vendor, 
+           p.name AS product, e.type AS type
+    ORDER BY e.date DESC
+    """
+    return run_graph_query(query, {"days": days})
+
+def get_all_graph_data():
+    """Get all data from the Neo4j database"""
+    graph = connect_to_graph()
+    if not graph:
+        return None
+    
+    try:
+        # Get all vendors with email counts
+        vendors = run_graph_query("""
+        MATCH (v:Vendor)
+        OPTIONAL MATCH (v)<-[:FROM]-(e:Email)
+        WITH v, count(e) AS email_count
+        RETURN v.name AS name, email_count
+        ORDER BY v.name
+        """)
+        
+        # Get all products with vendor counts
+        products = run_graph_query("""
+        MATCH (p:Product)
+        OPTIONAL MATCH (p)<-[:OFFERS]-(v:Vendor)
+        WITH p, count(v) AS vendor_count
+        RETURN p.name AS name, vendor_count
+        ORDER BY p.name
+        """)
+        
+        # Get all emails
+        emails = run_graph_query("""
+        MATCH (e:Email)-[:FROM]->(v:Vendor)
+        RETURN e.id AS id, e.date AS date, e.type AS type, v.name AS vendor
+        ORDER BY e.date DESC
+        LIMIT 100
+        """)
+        
+        # Get all relationships
+        relationships = run_graph_query("""
+        MATCH (v:Vendor)-[:OFFERS]->(p:Product)
+        WITH v, collect(p.name) AS products
+        RETURN v.name AS vendor, products
+        ORDER BY v.name
+        """)
+        
+        return {
+            "vendors": vendors,
+            "products": products,
+            "emails": emails,
+            "relationships": relationships
+        }
+    except Exception as e:
+        logging.error(f"Failed to get all graph data: {e}")
+        return None
+
+def get_graph_summary():
+    """Get a summary of the Neo4j database"""
+    graph = connect_to_graph()
+    if not graph:
+        return None
+    
+    try:
+        summary = run_graph_query("""
+        MATCH (n)
+        WITH labels(n) AS label, count(n) AS count
+        RETURN label, count
+        ORDER BY count DESC
+        """)
+        
+        relationships = run_graph_query("""
+        MATCH ()-[r]->()
+        WITH type(r) AS relationship_type, count(r) AS count
+        RETURN relationship_type, count
+        ORDER BY count DESC
+        """)
+        
+        return {
+            "node_counts": summary,
+            "relationship_counts": relationships
+        }
+    except Exception as e:
+        logging.error(f"Failed to get graph summary: {e}")
+        return None
+
+def mock_graph_data():
+    """Create mock graph data for testing without Neo4j"""
+    logging.info("Creating mock graph data for testing")
+    
+    # Mock vendor products
+    vendor_products = [
+        {"product": "vault"},
+        {"product": "terraform"},
+        {"product": "consul"}
+    ]
+    
+    # Mock related vendors
+    related_vendors = [
+        {"vendor": "hashicorp"}
+    ]
+    
+    # Mock email timeline
+    email_timeline = [
+        {
+            "email_id": "f822d769-2d8f-4a20-bf86-35c650a367c9",
+            "date": "2025-04-16T07:35:07",
+            "type": "announcement, event, webinar, product update",
+            "vendor": "hashicorp",
+            "product": "vault"
+        },
+        {
+            "email_id": "f822d769-2d8f-4a20-bf86-35c650a367c9",
+            "date": "2025-04-16T07:35:07",
+            "type": "announcement, event, webinar, product update",
+            "vendor": "hashicorp",
+            "product": "terraform"
+        }
+    ]
+    
+    return {
+        "vendor_products": vendor_products,
+        "related_vendors": related_vendors,
+        "email_timeline": email_timeline
+    }
+
 if __name__ == "__main__":
-    # Test the graph database integration
-    import_all_emails()
+    # Try to import emails to Neo4j
+    success = import_all_emails()
     
-    # Run some test queries
-    print("\nVendor products:")
-    products = get_vendor_products("hashicorp")
-    print(products)
+    # Get summary of the database
+    summary = get_graph_summary()
+    if summary:
+        print("\nGraph Database Summary:")
+        print("Node counts:")
+        for item in summary["node_counts"]:
+            print(f"- {item['label']}: {item['count']}")
+        
+        print("\nRelationship counts:")
+        for item in summary["relationship_counts"]:
+            print(f"- {item['relationship_type']}: {item['count']}")
     
-    print("\nRelated vendors:")
-    vendors = get_related_vendors("vault")
-    print(vendors)
-    
-    print("\nEmail timeline:")
-    timeline = get_email_timeline(vendor_name="hashicorp")
-    print(timeline)
+    # Get all data
+    all_data = get_all_graph_data()
+    if all_data:
+        print("\nVendors:")
+        for vendor in all_data["vendors"]:
+            print(f"- {vendor['name']}: {vendor['email_count']} emails")
+        
+        print("\nProducts:")
+        for product in all_data["products"][:5]:  # Show only first 5
+            print(f"- {product['name']}")
+        if len(all_data["products"]) > 5:
+            print(f"  ... and {len(all_data['products']) - 5} more")
+        
+        print("\nRelationships:")
+        for rel in all_data["relationships"]:
+            print(f"- {rel['vendor']} offers: {', '.join(rel['products'])}")

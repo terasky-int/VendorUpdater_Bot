@@ -1,0 +1,616 @@
+Received: from DB9P194MB1369.EURP194.PROD.OUTLOOK.COM (2603:10a6:10:296::14)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Thu, 5 Jun 2025
+ 16:09:27 +0000
+Received: from DU7PR01CA0017.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:50f::19) by DB9P194MB1369.EURP194.PROD.OUTLOOK.COM
+ (2603:10a6:10:296::14) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8792.34; Thu, 5 Jun
+ 2025 16:09:25 +0000
+Received: from DU2PEPF00028CFD.eurprd03.prod.outlook.com
+ (2603:10a6:10:50f:cafe::d4) by DU7PR01CA0017.outlook.office365.com
+ (2603:10a6:10:50f::19) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8792.24 via Frontend Transport; Thu,
+ 5 Jun 2025 16:09:24 +0000
+Authentication-Results: spf=pass (sender IP is 192.28.144.154)
+ smtp.mailfrom=bounce.hashicorp.com; dkim=pass (signature was verified)
+ header.d=reply.hashicorp.com;dkim=pass (signature was verified)
+ header.d=mktdns.com;dmarc=pass action=none
+ header.from=reply.hashicorp.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of bounce.hashicorp.com
+ designates 192.28.144.154 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.28.144.154;
+ helo=bounce.hashicorp.com; pr=C
+Received: from bounce.hashicorp.com (192.28.144.154) by
+ DU2PEPF00028CFD.mail.protection.outlook.com (10.167.242.181) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8792.29 via Frontend Transport; Thu, 5 Jun 2025 16:09:25 +0000
+X-MSFBL: a/Rd7jv03Y7aF/26j5YGl2yEq8XedN9CyYc/D5VeE9c=|eyJiIjoiZHZwLTE5Mi0
+	yOC0xNDQtMTU0IiwiZyI6ImJnLWFiZC0zMjciLCJyIjoiZGF2aWRnQHRlcmFza3k
+	uY29tIiwidSI6Ijg0NS1aTEYtMTkxOjA6NDQxNjY6MjM1MDA1OjEwNTUyODI6OTM
+	2MDc6OToxODk3ODA6MjU2MDU0OTgifQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749139762;
+	s=m2; d=reply.hashicorp.com; i=@reply.hashicorp.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=vRq6R1OGgM/axanFa2725VLIjpFLBua42+ZmIBSHfgU=;
+	b=SneZJg/acOdHNPQEWypb0T0g7Rk47E+rGneQSMqHppp1VId/+NFxYABHrGZbsrK/
+	g+ELE5cJJjXPtg9p10Yfd7fBcoNsuhu1vWI7o/E00ff6W6OhNIbLrP6k51BTrX6F7q2
+	RYMunQyarNMKxbCJzn82jPizq9UntY7RUlpRRsSYFUnt4w5YaWmHyXi2DgonJi61I2d
+	j3+xwvii6G+tPQU+JxyjrynZERKKSeZgogd2BTwnFCH4h4tZGfmir/BM0p6hHwImacz
+	UWt1dwl4ZL9NmTNHB/2tIVsGc76nMMeXApJqYA+Ji74NiJzK62V+B1bBM/yvgKHPy/O
+	hq5WbN79ug==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1749139762;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=vRq6R1OGgM/axanFa2725VLIjpFLBua42+ZmIBSHfgU=;
+	b=UxNOfx4rGBZPZyi+fW+dF+ZTA1LTIIGEyJcbc+n7Gwvw+7Zk7DgL2vRVrUCDRkiZ
+	aATlLdfyLBju+SNRzPnp08ZjDRTF0J+CJ2NU2qpZ63Z5IVzSsE1evKocJMCvR+UiwqF
+	OiJLrj34MLdMCMKdgmVkpjIdTsHmmghSs5qAsJv4=
+Date: Thu, 5 Jun 2025 11:09:22 -0500 (CDT)
+From: HashiCorp <hello@reply.hashicorp.com>
+Reply-To: hello@reply.hashicorp.com
+To: davidg@terasky.com
+Message-ID: <1131507342.183003997.1749139762150@abmktmail-batch1b.marketo.org>
+Subject: [Read] Catch up on HashiDays London updates
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_183003996_283543955.1749139762150"
+X-Binding: bg-abd-327
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://view.hashicorp.com/u/ODQ1LVpMRi0xOTEAAAGa39Nb4nJxaDqMIXq78m7Os3OB6iLVIrldnKXLpT0_koP685OhrawkxeHs9N5LwcN79vpClVA=?emailAddress=ODQ1LVpMRi0xOTEAAAGa39Nb4ZzwiTsOk4caZz9-iTI_L0TRrYry_uC81OKG7qYCmKPiOn1DXoQYhaVIjP7rGXM>, <mailto:KNXEGTLYK4ZUG6RZOMZTOVTPMEWUY3LTLF2UERLFMVLUONCSM5TFOV2YKNUEG4LHONKUKPI=.189780.93607.9@unsub-ab.mktomail.com>
+X-MarketoID: 845-ZLF-191:0:44166:235005:1055282:93607:9:189780:25605498
+X-PVIQ: mkto-845ZLF191-000001-000000-189780
+X-Mailfrom: 845-ZLF-191.0.189780.0.0.93607.9.25605498@bounce.hashicorp.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+Return-Path: 845-ZLF-191.0.189780.0.0.93607.9.25605498@bounce.hashicorp.com
+X-MS-Exchange-Organization-ExpirationStartTime: 05 Jun 2025 16:09:25.3522
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: b533af24-ebe5-4c0d-e6b2-08dda44b5778
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU2PEPF00028CFD:EE_|DB9P194MB1369:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: DU2PEPF00028CFD.eurprd03.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: b533af24-ebe5-4c0d-e6b2-08dda44b5778
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:3;ARA:13230040|4022899009|27102699006|31052699007|39142699007|1032899013|3072899012|69100299015|2092899012|12012899012|13003099007|8096899003|2066899003;
+X-Forefront-Antispam-Report: CIP:192.28.144.154;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:bounce.hashicorp.com;PTR:bounce.hashicorp.com;CAT:NONE;SFS:(13230040)(4022899009)(27102699006)(31052699007)(39142699007)(1032899013)(3072899012)(69100299015)(2092899012)(12012899012)(13003099007)(8096899003)(2066899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jun 2025 16:09:25.0691
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b533af24-ebe5-4c0d-e6b2-08dda44b5778
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: DU2PEPF00028CFD.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9P194MB1369
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:02.7408146
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8792.033
+X-Microsoft-Antispam-Mailbox-Delivery:
+	wl:1;pcwl:1;ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(811242)(255002)(410001)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?Vk4wVlcxK3dSOUNVanEyY1JUd1JzQVczZGJIWnlPeGRQclJsQzdVZjg4SG1F?=
+ =?utf-8?B?MGlVQ2gyNG9aeDQvNmJaU2FVTmZhNGpwWmNsb1JaaHkvdCt2RHFMbUdCeTRS?=
+ =?utf-8?B?SGVZTk1Xd3FBeGxnTnFUbWlHOTJUVG00UGpTemZtOWZiaU1DSGY3UkphM3Jh?=
+ =?utf-8?B?SGFWK0hucjRIS2FubkRsUEhHbFc1L0R5UXpTdVlldGRNTTBLNEo5VkVLRi9o?=
+ =?utf-8?B?MTRXRmZoTnJJWGNsNVBrOFpUWWN0NTB1WCszMlpQQ0VZM2FVSmNKTmtWa04x?=
+ =?utf-8?B?TnpGZGFRUzl2NmtrWEhFY25ZMXRmbmY3OCs3OGJzMFNReFBaTk1MZU1FTWl0?=
+ =?utf-8?B?ckdLUnRCTVF0NHA4c0xJQ0VhdkFwVnRHcVV1TWpXRitvUENZWHlFUHhnOE4w?=
+ =?utf-8?B?dHE3enV2dXpkc1FMMFNxcUh2d3lSemFtcVZUOTM3aFIwaVliNktsYkZ3aEI5?=
+ =?utf-8?B?MTZ5SWRyTWRXVGZNcWNxVnVJbkJWRWkvN1FkQmtBNnhJQWJCMjJ6SGswKzJW?=
+ =?utf-8?B?clk3OEI4MEp3SnBKRVhhZVJnWnVZSWh1VVBLN0lIcDc3azVFMVBuN1hJWkNt?=
+ =?utf-8?B?SFBtQ2tDV3grMGdmV0l2eHJtY1czbVdNUjRuc1pUaWdWb01EWDBZQzFCeGZU?=
+ =?utf-8?B?U2FpTjB6WEhnQitodGc2bzY5YnNBM1BKditzUHMzZHVqUmxQb3g2RUZiSnBh?=
+ =?utf-8?B?VFN6dHQzMjJibUo3MDRhZTgvTDBHV05oYU9YMklVZ0toc3NyckF0NVVlaTNE?=
+ =?utf-8?B?YTZPSHdndEtVaTRaZlcwL3FBbCsvM2RXRnZiZDJlOTNQcWc1cFRXMmc5N1Bi?=
+ =?utf-8?B?aGZhU0x3cFZrQlYvRDh5SVlrWVQ1azA5dDM0SGxaMjZUQjNxTXlYMEZTbEFP?=
+ =?utf-8?B?ZkF0L0xPaGdGTjBtaXBYS0tRTnVxMWphWTJ1MmIyS1BLalVkbytRTTVCRyt4?=
+ =?utf-8?B?YVhzdWNNMExGdjlXL3ZwQkhaSEpaSWdnQWt6VzBZQXFtVWVKRDJ1em9JU1N6?=
+ =?utf-8?B?S0k2OXdvc21lcjhZbENEZmsxaVNCRGI2UnRMY1d4WjNrcDhuWnQ3Wnc5QzBr?=
+ =?utf-8?B?MVNFb21hcVdGMkdKYTFFTjIrVHZrNVZXWUo2aGxnKzhScktMUS9VU1hkKzlo?=
+ =?utf-8?B?QTRYSlB1YVJRTTJTODdPZCtzRUs1eFUwMDVVVFpYdDRjM21kME9MYy9Jc3o1?=
+ =?utf-8?B?bW1UeXAzSk5kemtSZUJQTEc5d1ZOL3JCZFQxcmN3ckJiWG9TTVFaNmFKQmdq?=
+ =?utf-8?B?cmdrZzI1aDJwcTJHUERFWlMvYUdHYzVqNG5ueVRUSUxuWkxoS1NtTDlmYkZr?=
+ =?utf-8?B?Yy9lcEdCOE9kenZmRFJKbkdaWjg3OGx5eXQ5R2EzMElXaTJQTUhGV1ptT2hO?=
+ =?utf-8?B?aGFvUWYvWTNaWmc3VTYzTlFvNDA3V21wVmQ5U05EUGRkbkZWTzBaYXRXc3Nv?=
+ =?utf-8?B?cEJmZWZpQ0RGT3ZiWWx4SWhrOFE5Q0lHdmd1L3dZc1VObENDeXQ0TGI2TUE3?=
+ =?utf-8?B?ejdkZkkvWWxvbjJDSzdIMmVPRTlOMlkzSzZaN2gxY0UxaGo3TEJLNGswYzdq?=
+ =?utf-8?B?V0VyVUp0T0kyM1N5eEVQQWxHWVJCQjgxMjVBOCtvS09TWUs3OFFxV3lRN1Zp?=
+ =?utf-8?B?MFQ2TEMvMHA1b3QrV09YdU0xMlk4d2JYMUtUN3k4YndYK05ORVQ3ekNXQUpC?=
+ =?utf-8?B?Y0ZUc2pEci9HWWMrRmlnOFlDLzZCV3dQMU1TRHlXV1JOT1I4TkFSS3FjNnFs?=
+ =?utf-8?B?T0c4bzdsSm1KZ3RVVmpvdlh2dHU5N1grWExZeFlMOVFQUHNYa2ZHZjYzeXVM?=
+ =?utf-8?B?elBTY1FlaUJQZllwVlZUaUpSRHU1QnpVNzRZQUY3Qk13NGtVeGphMGcwMnd2?=
+ =?utf-8?B?NjR4WS9ydWJkRC9DQnB1OXZ6eEQ2dGJtUWZYNmltYWhCVnpDUlNTTU8vVzlm?=
+ =?utf-8?B?SE9GcUNSekJ3WFhtR3lmdkpBcTlVWmRlSklvYkFUZG5RaVFzMDVjZFVTTFVY?=
+ =?utf-8?B?cWltY0VOZlJ3ek9icHFWTmdFbkNKMHAyblRLVWd1a1FOeW9FWG9tcnh3NUdp?=
+ =?utf-8?B?VzUySTY0aTJPemxjekJPaW5QU1Vzc0RMek8yRWhEYkNTTE1SYjBuZnNwcVN3?=
+ =?utf-8?B?K0NNUGxLb1R6OVdsN1JqSE00RnhSUHRvOUdEZSs3MUljdCtyLzY5Vm1tcHRq?=
+ =?utf-8?B?cWJxOG5BbGtWS2tNMWVWYzFERlduVzlDdmFpMVZKVExCenpQZEVsNGJnUTBU?=
+ =?utf-8?B?eGgyWDBTdnNCdGlJNEdpU0NkaWhaNWNsNDBTdGkwcytzN01CS0locFY3cFdH?=
+ =?utf-8?B?THpteTZJSW13R3Q2cEF2SkxSeFBXUUdjUHByUmdYVnUreHJmdzdhT0VRd0g0?=
+ =?utf-8?B?QjcwK0FvM2kxMnBya3NWZlpFMkFIRHpNNGpCM09YUTJUOGUxQk82NmZzL3VZ?=
+ =?utf-8?B?RXgzd3NMVERsTVQvNXNPVXVOSGYwOG12RDM0N0Vxa3BTb0NwZlhiYVZqWERK?=
+ =?utf-8?B?YklDU21mVmo3Y0pxSGNuTUVoYmdBTkZXVmV3azNJOXBIMzdXVDA2U0RIaXVi?=
+ =?utf-8?B?b1JZell2MnVIam8vYkljVXpYdExkQmJqbjVBUDVPbWdlZVN1ckJxbWdkbHB1?=
+ =?utf-8?B?L1pQNUY3MVgvTW9Pa3BhSkRRRWdBSEltU0tZUTMybTBSNEF4UkNhWkNtcUQy?=
+ =?utf-8?B?RnNOUWVtWVVzUUFkbkVnSE5TVWU2ZmRSMjdPR2dBeU12WnlaRzIxSzZMOFk1?=
+ =?utf-8?B?Y25DTm5kTlQ2QWZYdmNNTHV0WHRyaFJJOFpmdXhoUDJTOUdaMmMybFdBZVhu?=
+ =?utf-8?B?aWo1a0tQamZkaTRVZFRESE5GMWVsRXUxSWFFaXA4bXV1dFZMTjZ4SkpNdjJR?=
+ =?utf-8?B?SnpvdFIvMnhrZXFpdC9CMUQzSEM2WDllNU90ZXlUUUxwRjNZYkZpT2k3Tmk3?=
+ =?utf-8?B?TVpaR0dUR0h1WHpPUkY3VnNKQXd1VmFqUWJyQ0krZVdhS09IZXNFaUkwQW9w?=
+ =?utf-8?B?Y2lsVWhYVGhpbjlJZlA3OTRnazdZWHVwSVBycnFVMmUzYWwzWEZFNlVoSTB0?=
+ =?utf-8?B?YW9xTEFzbEFJYVE2MTNaV0F1bSt2UjNZU1VIK2dMTk9ydk5NZ0Z1eldMU1RL?=
+ =?utf-8?Q?G8t4A9EGU?=
+MIME-Version: 1.0
+
+------=_Part_183003996_283543955.1749139762150
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Here=E2=80=99s all the news we announced at HashiDays.
+View in browser<https://view.hashicorp.com/v/ODQ1LVpMRi0xOTEAAAGa39Nb4ScCzW=
+_SU5SfLjIovxL70o7_HmbdChXZ3kmlPxn_5Q-mSQCcOm7Q4WzCFOAb72iEe1k=3D>  |  Updat=
+e your preferences<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4jMM5=
+HiN6zQD9Z43sjvINnjjvwxkJ8L38HM22rSRYsxSoxZnvZjxzj9urOz8WOfW8og=3D>
+[Hashicorp Logo] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4g3ZLi=
+HPEoAVfhQB4cSqa91iQSMtG82LKOlUfWvBKpCtw5qLk2a6TDDNaZ-gXEzptjE=3D>
+[||text_3513177||]<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4iqNh=
+LzGqVpH0GZtNGLZhrFiA_W8ty4bsqXyx_L3kdqvtLp-OjBqOg4x1qlzxvJHyNA=3D>
+Hi David,
+
+At HashiDays London, we unveiled new capabilities across Vault, Boundary, T=
+erraform, Waypoint, and more to help developers and platform teams accelera=
+te delivery while maintaining a strong security posture across the infrastr=
+ucture and application lifecycle.
+
+Head to our two new blogs to learn how you can:
+
+=F0=9F=9A=80 Standardize and automate from Day 0 with pre-written Sentinel =
+policies, module revocation in HCP Terraform, and bring your own DNS for HC=
+P Vault Dedicated.
+
+=F0=9F=94=84 Deploy and connect seamlessly on Day 1 using HCP Waypoint acti=
+ons (GA) for automated app delivery pipelines, enhanced private VCS support=
+ in HCP Terraform, and Boundary transparent sessions, which give developers=
+ just-in-time access to privileged targets =E2=80=94 no manual tunneling or=
+ config needed.
+
+=F0=9F=9B=A1 Manage and protect at Day 2+ with Terraform ephemeral resource=
+s to reduce drift and improve cleanup, detect and remediate exposed secrets=
+ with Vault Radar (GA), use Vault 1.19 with post-quantum readiness and root=
+ secret rotation, and simplify service monitoring with Consul 1.21.
+
+
+=F0=9F=91=89 Check out the full Infrastructure<https://view.hashicorp.com/O=
+DQ1LVpMRi0xOTEAAAGa39Nb4iqNhLzGqVpH0GZtNGLZhrFiA_W8ty4bsqXyx_L3kdqvtLp-OjBq=
+Og4x1qlzxvJHyNA=3D> and Security<https://view.hashicorp.com/ODQ1LVpMRi0xOTE=
+AAAGa39Nb4saYCQpynn9pDVIwKrHSGCAWupNA70zf2wr-mcJawC0_o4T0MSM1dMn53KExq16cAr=
+s=3D> Lifecycle Management blog posts to explore how HashiCorp is helping y=
+ou move faster, stay secure, and scale smarter.
+
+[HashiCorp logo]<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4kusqjY=
+d7bWZfVz_Bs08xXj9WJCePcPgc0DNTpqUd-f9QO1hTutGcsJKjJ6laOh1q0s=3D>
+[https://go.hashicorp.com/rs/845-ZLF-191/images/Octocat%20Copy%203.png]<htt=
+ps://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4rjBigfPQbx_AoRF1T22GCqzbpc=
+3P9PzbDrwRpwujndxsDsUxyn4Pz-dzihjQVeO4Xo=3D>     [https://go.hashicorp.com/=
+rs/845-ZLF-191/images/X-logo-black.png] <https://view.hashicorp.com/ODQ1LVp=
+MRi0xOTEAAAGa39Nb4sCR0z9zZmnjgVVZgVGebDf2Mi8ALrI71CYAW3Yyqdx0SLe43CIcqJtVxC=
+e936Xw6ac=3D>      [https://go.hashicorp.com/rs/845-ZLF-191/images/Path%20C=
+opy%209.png] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4RCPMhqc4m=
+Ns9GzIsqYdOvYMlZ7OQSDBA-GNyy7a3tNuH_S_ZD27aiMmfydJQm_1A1g=3D>
+Manage Preferences <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4jMM=
+5HiN6zQD9Z43sjvINnjjvwxkJ8L38HM22rSRYsxSoxZnvZjxzj9urOz8WOfW8og=3D>      Un=
+subscribe<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4kJu2NzADctImd=
+ijtKAq2qR1vOXHWEsWzkwFss6uQwYW2MkNaRCOoUAANfR0dV-det0=3D>      Contact Us<h=
+ttps://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4VA7ZSoDn25AZo0mv3DOqRrrd=
+Zv4JBBY_MpO_IzC867ANHBbUsXGCuIAqnZnBrZjja8=3D>      Privacy Policy <https:/=
+/view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4qq_OV-XItpVzPAcnnWzYplQbmVJ6qX=
+7-R8MfzvMnIvDEfvGd7fsc8R3YSS86Aj1rCU=3D>
+Copyright =C2=A9 2025 HashiCorp. All rights reserved. 101 2nd St.#700, San =
+Francisco, CA 94105
+<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4hiKaHM7QCw3A8KGLTlB6-p=
+9JsyfsdJcCEl2x9mKtv79Lr2cNJhdroGB7gfSZpq-Smg=3D>
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_183003996_283543955.1749139762150
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html lang=3D"en" xmlns=3D"ht=
+tp://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns=
+:o=3D"urn:schemas-microsoft-com:office:office"><!-- Copyright (C) 2024 MERG=
+E - All Rights Reserved. You may use and modify this code under the terms o=
+f the MERGE Template license available here: https://mergeworld.com/merge-t=
+emplates-terms-and-conditions --><head><!--[if gte mso 9]><xml>
+        <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+        </xml><![endif]-->
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1,=
+ minimum-scale=3D1, maximum-scale=3D1">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"format-detection" content=3D"telephone=3Dno, date=3Dno, addre=
+ss=3Dno, email=3Dno, url=3Dno">
+<meta name=3D"x-apple-disable-message-reformatting">
+<title>Hashicorp</title>
+<!-- Start of Marketo Variable Definitions --><!-- Language/Head --><!-- Sp=
+acers --><!-- BG Image Hero --><!-- BG Image Hero 2 --><!--BG Image Hero 3 =
+ --><!-- Vertical Align --><!-- Align --><!-- Images --><!-- Button General=
+ Styling --><!-- Black Button --><!-- White Button --><!-- Boder Radius -->=
+<!-- Colors --><!-- End of Marketo Variable Definitions --><style type=3D"t=
+ext/css">
+            body {-webkit-text-size-adjust:none; -ms-text-size-adjust:none;=
+ background-color:#f7f7f9; -webkit-font-smoothing:antialiased; -moz-osx-fon=
+t-smoothing:grayscale; margin:0!important; padding:0!important;}
+
+            table td {border-collapse:collapse;}
+            table {mso-table-lspace:0pt; mso-table-rspace:0pt; border-spaci=
+ng:0;}
+            p {margin:0; padding:0; margin-bottom:0;padding-bottom:10px;}
+            h1,h2,h3,h4,h5,h6 {margin:0; padding:0;}
+
+            body {background-color:#f7f7f9; width:100%; min-width:100%!impo=
+rtant;}
+
+            a[x-apple-data-detectors] {
+                color:inherit!important;
+                text-decoration:none!important;
+                font-size:inherit!important;
+                font-family:inherit!important;
+                font-weight:inherit!important;
+                line-height:inherit!important;
+            }
+
+            a,
+            a:link,
+            a:visited {color:#2e71e5; text-decoration:underline;}
+
+            @media only screen and (max-width:640px) {
+                body {min-width:100%!important;}
+                p {padding-left:0!important; padding-right:0!important;padd=
+ing-bottom:10px;}
+                table.tableCollapse {width:100%!important;}
+                table.mobLeft {float:left!important;}
+                td.mobLeft {text-align:left!important;}
+                td.mobCenter {text-align:center!important;}
+                table.mobCenter {float:none!important; margin-left:auto!imp=
+ortant; margin-right:auto!important;}
+                td.pad0 {padding-top:0px!important; padding-bottom:0px!impo=
+rtant;}
+                td.padBot0 {padding-bottom:0px!important;}
+                td.padBot24 {padding-bottom:24px!important;}
+                td.padTop18 {padding-top:18px!important;}
+                td.padTop20 {padding-top:20px!important;}
+                td.padTop24 {padding-top:24px!important;}
+                td.padTop36 {padding-top:36px!important;}
+                td.w0w {width:0px!important;}
+                td.w30w {width:30px!important;}
+                td.w0 {padding-left:0px!important; padding-right:0px!import=
+ant;}
+                td.w10 {padding-left:10px!important; padding-right:10px!imp=
+ortant;}
+                td.w20 {padding-left:20px!important; padding-right:20px!imp=
+ortant;}
+                img.w100 {width:100%!important; height:auto!important;}
+                div.w100 img {width:100%!important; height:auto!important;}
+                br.hideBr {display:none!important;}
+                td.hideTd {display:none!important;}
+                td.top {display:table-header-group!important; width:100%!im=
+portant;}
+                td.bottom {display:table-footer-group!important; width:100%=
+!important;}
+                tr.table {display:table!important; width:100%!important;}
+                td.mobHeight {height:auto!important;}
+                table.mobHeight {height:auto!important;}
+                td.transparent {background-color:transparent!important;}
+                img.mobRadius {border-radius:8px 8px 0px 0px!important;}
+                table.mobRadius {border-radius:0px 0px 8px 8px!important;}
+                td.mobRadius {border-radius:0px 0px 8px 8px!important;}
+            }
+        </style>
+</head>
+<body style=3D"background-color:#f7f7f9;">
+<style type=3D"text/css">div#emailPreHeader{ display: none !important; }</s=
+tyle>
+<div id=3D"emailPreHeader" style=3D"mso-hide:all; visibility:hidden; opacit=
+y:0; color:transparent; mso-line-height-rule:exactly; line-height:0; font-s=
+ize:0px; overflow:hidden; border-width:0; display:none !important;">
+Here=E2=80=99s all the news we announced at HashiDays.</div>
+<table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" align=3D"center" style=3D"background-color:#f7f7f9; mar=
+gin:0px auto; width:100%!important; min-width:100%!important;">
+<tbody>
+<tr>
+<td>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" border=3D"=
+0" width=3D"640" class=3D"tableCollapse" align=3D"center" style=3D"margin:0=
+px auto; width:640px;">
+<tbody>
+<tr>
+<td class=3D"mktoContainer pad0" id=3D"MainContainer" align=3D"center" vali=
+gn=3D"top" style=3D"padding-top:0px; padding-bottom:0px;">
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"mktoModule"=
+ id=3D"HeaderLinksModule01" style=3D"background-color:#ffffff; margin:0px a=
+uto; width:100%!important; min-width:100%!important;">
+<tbody>
+<tr>
+<td class=3D"mktEditable mobCenter w20" id=3D"FWBodyTxt03" style=3D"padding=
+-top:40px; padding-bottom:0px; padding-left:80px; padding-right:80px; font-=
+family:Helvetica,Arial,sans-serif; font-size:12px; line-height:16px; color:=
+#727274; text-align:center; font-weight:normal;">
+<div><a href=3D"https://view.hashicorp.com/v/ODQ1LVpMRi0xOTEAAAGa39Nb4ScCzW=
+_SU5SfLjIovxL70o7_HmbdChXZ3kmlPxn_5Q-mSQCcOm7Q4WzCFOAb72iEe1k=3D" target=3D=
+"_blank" style=3D"text-decoration:underline; color:#727274;"><span style=3D=
+"text-decoration:underline; color:#727274;">View
+ in browser</span></a> &nbsp;|&nbsp; <a href=3D"https://view.hashicorp.com/=
+ODQ1LVpMRi0xOTEAAAGa39Nb4jMM5HiN6zQD9Z43sjvINnjjvwxkJ8L38HM22rSRYsxSoxZnvZj=
+xzj9urOz8WOfW8og=3D" style=3D"text-decoration:underline; color:#727274;">
+<span style=3D"text-decoration:underline; color:#727274;">Update your prefe=
+rences</span></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"mktoModule"=
+ id=3D"LogoModule01" style=3D"background-color:#ffffff; margin:0px auto; wi=
+dth:100%!important; min-width:100%!important;">
+<tbody>
+<tr>
+<td class=3D"w10 mobLeft" style=3D"padding-top:24px; padding-bottom:24px; p=
+adding-left:60px; padding-right:60px; text-align:left">
+<div class=3D"mktoImg w100" id=3D"Logo01" style=3D"display:inline-block;" m=
+ktolockimgsize=3D"false" mktolockimgstyle=3D"false">
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4g3ZLiHPEoAVf=
+hQB4cSqa91iQSMtG82LKOlUfWvBKpCtw5qLk2a6TDDNaZ-gXEzptjE=3D" target=3D"_blank=
+"><img width=3D"170" border=3D"0" alt=3D"Hashicorp Logo" src=3D"https://go.=
+hashicorp.com/rs/845-ZLF-191/images/hashicorp-logo-170x55-do-2x.png" style=
+=3D"width:170px; height:auto; display:inline-block; border:none; outline:no=
+ne; text-decoration:none; vertical-align:middle;">
+</a></div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"mktoModule"=
+ id=3D"FWImgModule019b9e1833-5211-4a08-898f-46b6faf6597d" style=3D"backgrou=
+nd-color:#ffffff; margin:0px auto; width:100%!important; min-width:100%!imp=
+ortant;">
+<tbody>
+<tr>
+<td class=3D"mobCenter" style=3D"text-align:center; padding-top:0px; paddin=
+g-bottom:0px;">
+<div class=3D"mktoImg w100" id=3D"FWImage01aeef8894-18bb-4d82-9204-74a0771c=
+dad2" style=3D"display:inline-block;" mktolockimgsize=3D"false" mktolockimg=
+style=3D"false">
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4iqNhLzGqVpH0=
+GZtNGLZhrFiA_W8ty4bsqXyx_L3kdqvtLp-OjBqOg4x1qlzxvJHyNA=3D" target=3D"_blank=
+"><img src=3D"https://go.hashicorp.com/rs/hashicorp1/images/EmailBanner_130=
+0x4004-Jeto-5952-0-2025-06-03-13-55-48.png" alt=3D"||text_3513177||" style=
+=3D"width:640px; height:auto; display:inline-block; border:none; outline:no=
+ne; text-decoration:none; vertical-align:top; border-radius:0px;"></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"mktoModule"=
+ id=3D"BodyTxtModule01105f4c5c-7f98-47c6-a9b4-3149e1e2e186" style=3D"backgr=
+ound-color:#ffffff; margin:0px auto; width:100%!important; min-width:100%!i=
+mportant;">
+<tbody>
+<tr>
+<td class=3D"mktEditable mobLeft w20" id=3D"BodyTxt0123382297-6f5f-44d1-a88=
+3-f4bb4419e5d2" style=3D"padding-top:20px; padding-bottom:20px; padding-lef=
+t:70px; padding-right:70px; font-family:Helvetica,Arial,sans-serif; font-si=
+ze:14px; line-height:23px; color:#000001; text-align:left; font-weight:norm=
+al;">
+<div>Hi David, <br>
+<br>
+</div>
+<div>At HashiDays London, we unveiled new capabilities across Vault, Bounda=
+ry, Terraform, Waypoint, and more to help developers and platform teams acc=
+elerate delivery while maintaining a strong security posture across the inf=
+rastructure and application lifecycle.
+<br>
+<br>
+</div>
+<div>Head to our two new blogs to learn how you can: <br>
+<br>
+</div>
+<div>&#128640; <strong>Standardize and automate from Day 0</strong> with pr=
+e-written Sentinel policies, module revocation in HCP Terraform, and bring =
+your own DNS for HCP Vault Dedicated.
+<br>
+<br>
+</div>
+<div>&#128260; <strong>Deploy and connect seamlessly on Day 1</strong> usin=
+g HCP Waypoint actions (GA) for automated app delivery pipelines, enhanced =
+private VCS support in HCP Terraform, and Boundary transparent sessions, wh=
+ich give developers just-in-time access
+ to privileged targets =E2=80=94 no manual tunneling or config needed. <br>
+<br>
+</div>
+<div>&#128737; <strong>Manage and protect at Day 2+</strong> with Terraform=
+ ephemeral resources to reduce drift and improve cleanup, detect and remedi=
+ate exposed secrets with Vault Radar (GA), use Vault 1.19 with post-quantum=
+ readiness and root secret rotation, and
+ simplify service monitoring with Consul 1.21. <br>
+<br>
+<br>
+</div>
+<div>&#128073; Check out the full <a href=3D"https://view.hashicorp.com/ODQ=
+1LVpMRi0xOTEAAAGa39Nb4iqNhLzGqVpH0GZtNGLZhrFiA_W8ty4bsqXyx_L3kdqvtLp-OjBqOg=
+4x1qlzxvJHyNA=3D" target=3D"_blank">
+Infrastructure</a> and <a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOT=
+EAAAGa39Nb4saYCQpynn9pDVIwKrHSGCAWupNA70zf2wr-mcJawC0_o4T0MSM1dMn53KExq16cA=
+rs=3D" target=3D"_blank">
+Security</a> Lifecycle Management blog posts to explore how HashiCorp is he=
+lping you move faster, stay secure, and scale smarter.
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"mktoModule"=
+ id=3D"WhiteSpacerModule01" style=3D"background-color:#ffffff; margin:0px a=
+uto; width:100%!important; min-width:100%!important;">
+<tbody>
+<tr>
+<td class=3D"mktEditable" id=3D"CustomHtml01" height=3D"20" style=3D"height=
+:20px; font-size:1px; line-height:1px;">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" bgcolor=3D"#ffffff" width=3D"100%" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"mktoModule"=
+ id=3D"FooterModule01221a5ef6-ac17-4bdb-9d4d-0dcd4e5f0f5c" style=3D"backgro=
+und-color:#ffffff; margin:0px auto; width:100%!important; min-width:100%!im=
+portant;">
+<tbody>
+<tr>
+<td style=3D"padding-top:18px; padding-bottom:30px; padding-left:20px; padd=
+ing-right:20px;">
+<table role=3D"presentation" bgcolor=3D"#f5f7f7" width=3D"100%" align=3D"ce=
+nter" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"background-=
+color:#f5f7f7; margin:0px auto; width:100%!important; min-width:100%!import=
+ant; border-radius:8px;">
+<tbody>
+<tr>
+<td style=3D"padding:24px 30px 24px 30px;">
+<div class=3D"mktoSnippet" id=3D"Footer0181db3643-38b6-49f7-8af8-7a6d4f7889=
+ef">
+<table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"margin: 0px auto; width: 100%!important; min-w=
+idth: 100%!important;" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"text-align: left; padding-bottom: 35px;">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4kusqjYd=
+7bWZfVz_Bs08xXj9WJCePcPgc0DNTpqUd-f9QO1hTutGcsJKjJ6laOh1q0s=3D" target=3D"_=
+blank" title=3D"HashiCorp"><img src=3D"https://go.hashicorp.com/rs/845-ZLF-=
+191/images/HashiCorp-logo-330x74px.png" alt=3D"HashiCorp logo" width=3D"150=
+" constrain=3D"true" imagepreview=3D"false"></a>
+</div>
+</td>
+<td style=3D"text-align: right; padding-bottom: 35px;">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4rjBigfP=
+Qbx_AoRF1T22GCqzbpc3P9PzbDrwRpwujndxsDsUxyn4Pz-dzihjQVeO4Xo=3D" target=3D"_=
+blank"><img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/Octocat C=
+opy 3.png" width=3D"21" height=3D"20" constrain=3D"true" imagepreview=3D"fa=
+lse"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4sCR0z9zZmnjg=
+VVZgVGebDf2Mi8ALrI71CYAW3Yyqdx0SLe43CIcqJtVxCe936Xw6ac=3D">
+<img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/X-logo-black.png=
+" width=3D"20" height=3D"20" constrain=3D"true" imagepreview=3D"false"></a>=
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4RCPMhqc4mNs9=
+GzIsqYdOvYMlZ7OQSDBA-GNyy7a3tNuH_S_ZD27aiMmfydJQm_1A1g=3D">
+<img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/Path Copy 9.png"=
+ width=3D"20" height=3D"20" constrain=3D"true" imagepreview=3D"false"></a>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"2" style=3D"padding-bottom: 25px; font-family: Helvetica,Ari=
+al,sans-serif; font-size: 14px; line-height: 17px; font-weight: normal; tex=
+t-align: left;">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4jMM5HiN=
+6zQD9Z43sjvINnjjvwxkJ8L38HM22rSRYsxSoxZnvZjxzj9urOz8WOfW8og=3D" style=3D"co=
+lor: #000; text-decoration: none;">Manage Preferences
+</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.com/ODQ1LVpM=
+Ri0xOTEAAAGa39Nb4kJu2NzADctImdijtKAq2qR1vOXHWEsWzkwFss6uQwYW2MkNaRCOoUAANfR=
+0dV-det0=3D" target=3D"_blank" style=3D"color: #000001; text-decoration: no=
+ne;">
+Unsubscribe</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.=
+com/ODQ1LVpMRi0xOTEAAAGa39Nb4VA7ZSoDn25AZo0mv3DOqRrrdZv4JBBY_MpO_IzC867ANHB=
+bUsXGCuIAqnZnBrZjja8=3D" style=3D"color: #000001; text-decoration: none;">
+Contact Us</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.c=
+om/ODQ1LVpMRi0xOTEAAAGa39Nb4qq_OV-XItpVzPAcnnWzYplQbmVJ6qX7-R8MfzvMnIvDEfvG=
+d7fsc8R3YSS86Aj1rCU=3D" style=3D"color: #000001; text-decoration: none;">
+Privacy Policy </a></div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"2" style=3D"font-family: Helvetica,Arial,sans-serif; font-si=
+ze: 12px; line-height: 17px; font-weight: normal; text-decoration: none; co=
+lor: #656a70; text-align: left;">
+<div>Copyright =C2=A9 2025 HashiCorp. All rights reserved. 101 2nd St.#700,=
+ San Francisco, CA 94105
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGa39Nb4hiKaHM7QCw3A=
+8KGLTlB6-p9JsyfsdJcCEl2x9mKtv79Lr2cNJhdroGB7gfSZpq-Smg=3D"></a><img src=3D"=
+https://view.hashicorp.com/trk?t=3D1&amp;mid=3DODQ1LVpMRi0xOTEAAAGa39Nb4iRs=
+MAH9x8sG0yMmWoZxpXLBi8Vwv_-vnpgjESBEcSYTultAunQLX3i4r9uvFwOO2okzlqO96lLAO2T=
+N8l7YKhB2cVGz6NDxlv3x6QDnzFCnyi4M5WNsvrOBg-O3oLTIh85YU9KQq6Kyjg" width=3D"1=
+" height=3D"1" style=3D"display:none !important;" alt=3D"">
+<center>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"width: 100%;" bgcolor=3D"#ffffff" style=3D"background: #ffffff;">
+<tbody>
+<tr>
+<td>
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"600" align=
+=3D"center" bgcolor=3D"#ffffff" style=3D"background: #ffffff;">
+<tbody>
+<tr>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+------=_Part_183003996_283543955.1749139762150--

@@ -39,7 +39,7 @@ def inspect_chroma_collection():
     except Exception as e:
         print(f"Error analyzing metadata: {e}")
 
-def test_basic_search():
+def test_basic_search(num_results=3):
     """Test a basic search without filters"""
     collection = llm_utils.get_chroma_collection()
     
@@ -53,7 +53,7 @@ def test_basic_search():
         try:
             results = collection.query(
                 query_embeddings=[embedding],
-                n_results=3
+                n_results=num_results
             )
             
             if results["documents"] and results["documents"][0]:

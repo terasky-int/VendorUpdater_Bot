@@ -1,0 +1,642 @@
+Received: from AM7P194MB0852.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:17a::23)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Wed, 4 Jun 2025
+ 06:40:08 +0000
+Received: from DU2PR04CA0088.eurprd04.prod.outlook.com (2603:10a6:10:232::33)
+ by AM7P194MB0852.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:17a::23) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8792.34; Wed, 4 Jun
+ 2025 06:40:04 +0000
+Received: from DB5PEPF00014B96.eurprd02.prod.outlook.com
+ (2603:10a6:10:232:cafe::4) by DU2PR04CA0088.outlook.office365.com
+ (2603:10a6:10:232::33) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8792.22 via Frontend Transport; Wed,
+ 4 Jun 2025 06:40:04 +0000
+Authentication-Results: spf=pass (sender IP is 159.183.150.248)
+ smtp.mailfrom=em1546.xdr.paloaltonetworks.com; dkim=pass (signature was
+ verified) header.d=xdr.paloaltonetworks.com;dmarc=pass action=none
+ header.from=xdr.paloaltonetworks.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of
+ em1546.xdr.paloaltonetworks.com designates 159.183.150.248 as permitted
+ sender) receiver=protection.outlook.com; client-ip=159.183.150.248;
+ helo=wfbtwsfv.outbound-mail.sendgrid.net; pr=C
+Received: from wfbtwsfv.outbound-mail.sendgrid.net (159.183.150.248) by
+ DB5PEPF00014B96.mail.protection.outlook.com (10.167.8.234) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8792.29
+ via Frontend Transport; Wed, 4 Jun 2025 06:40:04 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=xdr.paloaltonetworks.com;
+	h=content-type:from:mime-version:subject:to:cc:content-type:from:
+	subject:to;
+	s=s1; bh=OgmfjRZiQciChTY77dztTKo39PrpiSZKSnSrRaTAXfA=;
+	b=t1Q58Co2Xb3CErMYBKLvLOTWAxPIt+/r/Gw6rr7MJYnfpboiBR6U9bkUeJ3Ei1izeBe/
+	8t2dxnMpGK0GzQA7KPJlRKCFU0AdeD6NPhjPCHiWCvzM2VahuzjwkQgR2LBivhv/dUkJhL
+	iRRFXm12KuwebAmjSJv/xKKgKUzDYyImcqaC+z7VlCWvIVmBkGmvmPKg3gL79b/czHVDFF
+	0ypcBvnVMQRrLScf7ens6Kz1NtGtIC9vr8EmQw8aKjJJ7EZrdfDMk6tyC5/c8KhuTG3C6v
+	XcQyQpF4sF8PGNAoFYtp+NDyQcy2f6MobnG6ZrFJyQaZv08nVTUQLQ7LBZ1q3KyA==
+Received: by recvd-7f756b4595-xbzmv with SMTP id recvd-7f756b4595-xbzmv-1-683FEA3F-20
+	2025-06-04 06:39:59.901592204 +0000 UTC m=+127424.708888336
+Received: from MjYyMTg3NjA (unknown)
+	by geopod-ismtpd-11 (SG) with HTTP
+	id iGR_KtLtT3-o7Lh6v-0GLw
+	Wed, 04 Jun 2025 06:39:59.816 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=848d1f85beca5e6303d137557aece19a6851adaaa676f4a9e6af797db4f2
+Date: Wed, 4 Jun 2025 06:40:02 +0000
+From: cortex@xdr.paloaltonetworks.com
+Message-ID: <iGR_KtLtT3-o7Lh6v-0GLw@geopod-ismtpd-11>
+Subject: Cortex XDR Agent 8.7.100-CE Minor Release
+X-SG-EID: =?us-ascii?Q?u001=2E7ur3BxxrhMFUDoMkTHeF6UGEHL6skgyU41Xh=2FfyLOOCnNSDWT8zcNRJwu?=
+ =?us-ascii?Q?2C1MOFGi50nnnjqVEE1d+zB21kifkKBwu6flvyg?=
+ =?us-ascii?Q?SuIau3T7od5wqblm7ZEl1ApbphpJA48vAPpUwXw?=
+ =?us-ascii?Q?TYdanbjwmBxgcxtNhRUrvNjOCx8COuX8lj69LXY?=
+ =?us-ascii?Q?29VJRwWRjy=2FYoRL7jj8qaoZNPwEEy62najVYAeQ?=
+ =?us-ascii?Q?X7CaOk6iT0KGq4eFir4vrg=3D?=
+X-SG-ID: =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprDsPyUTnMagHRCjb?=
+ =?us-ascii?Q?=2F65Gubl8urTPtJ8MnmlBTYBa6cMKjCPhIE+chg9?=
+ =?us-ascii?Q?4t0tK3wfEi3o=2FCUs3Zg5F5WbBBaHgl5H443qRFv?=
+ =?us-ascii?Q?YCTaZMYbANnWdH6ZyGfG19A554rrD7pSsgZmLvJ?=
+ =?us-ascii?Q?R2o99FFwhHxvVM26YlLXwLDI=2FrhYprLnKJiDZyP?=
+ =?us-ascii?Q?3=2FwidGGfib+m2Af5G3+xz0=3D?=
+To: davidg@terasky.com
+X-Entity-ID: u001.01dF43/J5kxq0DXrNPh03w==
+Return-Path: bounces+26218760-090d-davidg=terasky.com@em1546.xdr.paloaltonetworks.com
+X-MS-Exchange-Organization-ExpirationStartTime: 04 Jun 2025 06:40:04.6527
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 0883f2cb-7a2c-43cf-1409-08dda332a3b2
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB5PEPF00014B96:EE_|AM7P194MB0852:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: DB5PEPF00014B96.eurprd02.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 0883f2cb-7a2c-43cf-1409-08dda332a3b2
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:2;ARA:13230040|2092899012|3072899012|4092899012|3092899012|69100299015|1032899013|29132699027|12012899012|13012899012|13102899012|5062899012|4022899009|8096899003|13003099007|2066899003;
+X-Forefront-Antispam-Report: CIP:159.183.150.248;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:wfbtwsfv.outbound-mail.sendgrid.net;PTR:wfbtwsfv.outbound-mail.sendgrid.net;CAT:NONE;SFS:(13230040)(2092899012)(3072899012)(4092899012)(3092899012)(69100299015)(1032899013)(29132699027)(12012899012)(13012899012)(13102899012)(5062899012)(4022899009)(8096899003)(13003099007)(2066899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 04 Jun 2025 06:40:04.1391
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0883f2cb-7a2c-43cf-1409-08dda332a3b2
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: DB5PEPF00014B96.eurprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7P194MB0852
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:04.1833864
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8792.033
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?L25YZ0RpSWQvenZqV0RpTHFsZGtucFlna1MwTjdDUUxxN243Z2RUNUpCeUNR?=
+ =?utf-8?B?K1NtMTd2eXRqRnVJa3pGblAzWjlTOENsZzJGUmJHL0gvQjY3S3NBbnErdmRH?=
+ =?utf-8?B?WFZnV0lvOTNGOCtaQjNsUXVyMGxLd01hbUx3MmtpMUJhZ0x1N0RtSW5RK014?=
+ =?utf-8?B?Vis0OXRjSVFCWEx4ZUg4Nzl6OFYzQjkvTEtQUXZlU0FOejJVS2c3cGxoN05Q?=
+ =?utf-8?B?KysxOFoxUUwvcWszQlVpVjArK2xYRG9Ld242aTk1aXpNREJ2emUvT0hGcDNW?=
+ =?utf-8?B?LzZucU5hblFzdzZtbzlJcFU0Q2ZtMmc0UXhadHFDbjJhR3ZSVHVpc2h3aUls?=
+ =?utf-8?B?WUdFUmY5OFY2ZEZEbVB3N0o2UXQ5UHNYK0F3WEh1WTdoUUFNVHhKYnZFMHRk?=
+ =?utf-8?B?bXJSRU9yeGpHRDRxdDhkWUFBcDUxWEVVMktvMFBjMUh1ZGdHdjUyNmxoR3Nu?=
+ =?utf-8?B?YzJ1REhGZUo2Wm9uU0FKM0NGTzVpdkJOdFJKWkh5NGFtTXlxYUIzaHdvbDN0?=
+ =?utf-8?B?d0plQldBNDBhTWtodWZPRUhVQTFDTlZRaHNBcy9IODYrTmdNVTBCdyt5Yngv?=
+ =?utf-8?B?NWx4SC9uQkpST2xkbzYwYjl5aEtUUFVjQWU3QXZkTHo3VTl1b0ZOdCtsRFkr?=
+ =?utf-8?B?cERUZVBmNkY2eHVCaXZXU3ptUVVNT3Y5OFpaYXp5L1BRZys1SytGQkpjZjVk?=
+ =?utf-8?B?RUdnUkdrai80aDMzYjdYMmQxUldPeVlxNHFXU0cvdUR3eG5aSERuakNGeXds?=
+ =?utf-8?B?Lzc2QzVqZXEzb29qOFlzQVJudW5zSm9hTllTRXdiMVlMWXNySUhNdU9WREM0?=
+ =?utf-8?B?NVBLVzR1VWUzaUJ1NDhuSFJsc0wxWEtZY1BiM3c0VW1yMGNiazZ5RGZhVWM0?=
+ =?utf-8?B?aks3djJRK3Y3dmlHU0ZSYmNrN2tTZTdzMGJweTRsS29lNWowNlFhWjJ5MEUy?=
+ =?utf-8?B?Z2tDcXA1OTdwWnJtWjUxd2s3dFJBRmFqTFV6Y0p5US81TFQrak9TREpZUHlS?=
+ =?utf-8?B?bkl3ZUZKdFVYMjBZZlB1UEtOdXZhNUVKYXFxVXYvS1lGMGhvaTVXR1BDYXZq?=
+ =?utf-8?B?dGRIU1c2NzFIT2EwUzdYV1NQRkVmMm42Z25kRVA3SE5MUHEyNFpBd2h5eE5R?=
+ =?utf-8?B?T3RhS3FHWlh4WjV2eFZFVzJwU1ZNV25ub2c4Nzc4NDdxSVYxYmJrbHBGRXFt?=
+ =?utf-8?B?cUtsWFJxbHdqVWx1cWN3RnhvTTA0dGVpcDY3bWdOK3YxMmVJS2pnU0hmUmZZ?=
+ =?utf-8?B?WWNaQzhtaTZoQ1huZlAxbXBleTdxbk1qWmtjYUpzQkl0VGNSbzhpWEpaeE45?=
+ =?utf-8?B?blI2cURyK3Y2STVEdjN0Rnl6MWZUb1REbGJPdmNiS2lXT2N1ekRNb0I2OVZw?=
+ =?utf-8?B?T2hYaGEzK0dXR3o2dVpnWmJXY2tyQ2R0YjFEcUV5QS9kNERhQmJCRmZYMlRG?=
+ =?utf-8?B?aUJMWTlCNHVyNytYUURPMWNkMit4T3d3NUdqbGxaZmZpQXNYK2xuT015U1Vh?=
+ =?utf-8?B?WFJQZGRkSWFpbVFPTUd2R0Y5YjBFazNId3VnNlcwSkhoNW5IYkovNXZlR251?=
+ =?utf-8?B?VVR5RHVuZ2xvQjk3amkyMkduZC81SDJUSjk5d0VQS0JnTzl5SFpjQVpvMmxD?=
+ =?utf-8?B?U1Q0STBPd3g0eGx6NzhlQ2F3OWwzclA0c3R4NmRqVS9jcUFCOEtSV1Z6ZHg4?=
+ =?utf-8?B?L1A5dW8ybnVaQUZwNjFodXVZKzRxV0tEV091KzhUaFduQmUrTWhwZk5IM1Zh?=
+ =?utf-8?B?ZHJCMXlKeFRNOWJYcTRLUFhHYlBhYk04YVJ1T2RwYWlUZ1JXOGVSeHBDOGMy?=
+ =?utf-8?B?WnFsZnVJNTdidGpVYmpvYk1kemkycUlGcW9NODdRYjEvT1dhWUVJdFQ5aTZG?=
+ =?utf-8?B?VkM0NGdUWDBKYzhCeHpsRG5QTWlXUlBzV0pqemlrcVBBdFlnM3NSRkZOcUQr?=
+ =?utf-8?B?dFpZV1p2cFh2Vy9NUklHdHN5aThUOWtJQXJaZDFzRWVxZzdWSUVuVFdsMG1K?=
+ =?utf-8?B?YUZYMlM0OTRQSTNDVkJGaU4vdUFKQzF5RTVJSGJJQnZIRmVLbXFLT1l2VHpp?=
+ =?utf-8?B?SzNXcHZhMTdaOFVWR1ZXZDcwWXJ6QUZCRjNPR01JQTZJZUY3SmkzTTJ2UnVY?=
+ =?utf-8?B?S1pVei82eEd0cmprSEcwOVI3VHQ1ejRZQS9qQkxLL0ZPV05tRjB5enV2KzRs?=
+ =?utf-8?B?Vzl4L25YcVl2cE42MnE1N2pEZjFoT1lQU1JsWVpWMTRsN0h5WWp6ZEpVNkds?=
+ =?utf-8?B?UWFvQjRzVERCMjdZTVBGcG5TWGMzZ1JUYWlhbTZSVDJtbTV3TXJQSWxveGNB?=
+ =?utf-8?B?cWFoK1dLblgxWkppMnZQL0UyUDY1bDczdWFTZnQ3NWJPMEZLZlZHMnVKYTlD?=
+ =?utf-8?B?dzZmYk1keGY1RjZPNFF4eFhqUEJZTEZPM3RCRVlRbFRiSmxSMDJpazdxRnVk?=
+ =?utf-8?B?Um1Pa1NUN3h4R2JUQUVhc2FGcEVZbnIzQm16R0l2L2U0MWgxUnliL1laSzF3?=
+ =?utf-8?B?THRVRnUrTlpQSGZFdyswZys5S0xrV0s5OStudGlrWmlHbFFZdTJlcGhsdkFi?=
+ =?utf-8?B?NmVBOHhVZDZKS0VZRHhFeU52dHRlQSs1eVd6aDk4TzVZbHEyQ0YzUFczeUhB?=
+ =?utf-8?B?V2NJL2N6aUtQb2NCam1McVJzVnpZb3pxMmlZRTNQVGpJTGpNblp5ODV5VkhQ?=
+ =?utf-8?B?SGJ0eklzaTV0cS9aMWhxVkdWQi9LbStXM2hVQ3VDYzFPSlR6Qjl1QTRPQlR3?=
+ =?utf-8?B?bzJibllPNnFmN1pHT1lPd1Jsc3VVRDZEVURjSlpVRHJ3K1l5K3hHeVNDTzlR?=
+ =?utf-8?B?TlgrTXdKd0x4bVZHcnIwTkNMcWtTSEhhS2o0M2F0dExCcThodWhtVHVKdkZs?=
+ =?utf-8?B?Qm40V21DbUE1anZ5S0E1RVZ3eXIrUnozVDlwb0k1UXBYTE5nZWFoQlJDNkFN?=
+ =?utf-8?B?T3cvUGpSaWN5OG1iTVQwM2hWZFFJRmpRTzBQZDRQK0pDRGtQOWIzSmphTTkz?=
+ =?utf-8?Q?WJTvbUclMIekxgdB2fzbzyx+KGm93ZyxRFV?=
+MIME-Version: 1.0
+
+--848d1f85beca5e6303d137557aece19a6851adaaa676f4a9e6af797db4f2
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+[Palo Alto Networks | Corte]
+
+Dear Valued Customer,
+
+
+
+We are happy to inform you that the Cortex XDR Agent 8.7.100-CE minor relea=
+se is scheduled for General Availability (GA) on June 18, 2025. Our minor r=
+eleases resolve known issues and enhance performance, and we strongly recom=
+mend that you always upgrade to the newest release of the latest agent line=
+.
+
+
+
+The complete list of issues included in this minor release can be found in =
+the Cortex XDR Agent 8.7.100-CE release notes<https://docs-cortex.paloalton=
+etworks.com/r/75m3ZGZx2vPAmIGLhYAr4g/root>.
+
+
+
+If you have any questions, please reach out to our Customer Support team<ht=
+tps://support.paloaltonetworks.com/Support/Index>.
+
+
+
+Sincerely,
+
+Cortex Product Management
+
+
+
+*Note: The final GA date may be delayed by up to 4 business days, and the c=
+ontent for this release may undergo changes until the final GA. Should the =
+delay extend beyond this timeframe, an additional notification will be sent=
+.
+
+[E-Mail]<mailto:contact_sales@paloaltonetworks.com>     [LinkedIn] <https:/=
+/www.linkedin.com/company/palo-alto-networks>        [Facebook] <https://ww=
+w.facebook.com/PaloAltoNetworks>  [Twitter] <https://twitter.com/PaloAltoNt=
+wks>   [Instagram] <https://www.instagram.com/paloaltontwks>   [Phone] <tel=
+:866-320-4788>
+
+=C2=A9 2025 Palo Alto Networks, Inc. All rights reserved.
+3000 Tannery Way, Santa Clara, CA 95054
+
+Privacy Policy<https://www.paloaltonetworks.com/legal-notices/privacy> | Te=
+rms of Use<https://www.paloaltonetworks.com/legal-notices/terms-of-use> | E=
+mail Preferences & Unsubscribe<https://start.paloaltonetworks.com/preferenc=
+e-center.html>
+www.paloaltonetworks.com<https://www.paloaltonetworks.com/>
+
+
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+--848d1f85beca5e6303d137557aece19a6851adaaa676f4a9e6af797db4f2
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3=
+.org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:s=
+chemas-microsoft-com:office:office"><head><!--[if gte mso 9]><xml><o:Office=
+DocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:Offi=
+ceDocumentSettings></xml><![endif]-->
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width">
+<!--[if !mso]><!-->
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<!--<![endif]-->
+<title></title>
+<!--[if !mso]><!--><!--<![endif]--><style type=3D"text/css">
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		table,
+		td,
+		tr {
+			vertical-align: top;
+			border-collapse: collapse;
+		}
+
+		* {
+			line-height: inherit;
+		}
+
+		a[x-apple-data-detectors=3Dtrue] {
+			color: inherit !important;
+			text-decoration: none !important;
+		}
+	</style><style type=3D"text/css" id=3D"media-query">
+		@media (max-width: 620px) {
+
+			.block-grid,
+			.col {
+				min-width: 320px !important;
+				max-width: 100% !important;
+				display: block !important;
+			}
+
+			.block-grid {
+				width: 100% !important;
+			}
+
+			.col {
+				width: 100% !important;
+			}
+
+			.col>div {
+				margin: 0 auto;
+			}
+
+			img.fullwidth,
+			img.fullwidthOnMobile {
+				max-width: 100% !important;
+			}
+
+			.no-stack .col {
+				min-width: 0 !important;
+				display: table-cell !important;
+			}
+
+			.no-stack.two-up .col {
+				width: 50% !important;
+			}
+
+			.no-stack .col.num4 {
+				width: 33% !important;
+			}
+
+			.no-stack .col.num8 {
+				width: 66% !important;
+			}
+
+			.no-stack .col.num4 {
+				width: 33% !important;
+			}
+
+			.no-stack .col.num3 {
+				width: 25% !important;
+			}
+
+			.no-stack .col.num6 {
+				width: 50% !important;
+			}
+
+			.no-stack .col.num9 {
+				width: 75% !important;
+			}
+
+			.video-block {
+				max-width: none !important;
+			}
+
+			.mobile_hide {
+				min-height: 0px;
+				max-height: 0px;
+				max-width: 0px;
+				display: none;
+				overflow: hidden;
+				font-size: 0px;
+			}
+
+			.desktop_hide {
+				display: block !important;
+				max-height: none !important;
+			}
+		}
+	</style>
+</head>
+<body class=3D"clean-body" style=3D"margin: 0; padding: 0; -webkit-text-siz=
+e-adjust: 100%; background-color: #F1F1F2;">
+<!--[if IE]><div class=3D"ie-browser"><![endif]-->
+<table class=3D"nl-container" style=3D"table-layout: fixed; vertical-align:=
+ top; min-width: 320px; Margin: 0 auto; border-spacing: 0; border-collapse:=
+ collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: =
+#F1F1F2; width: 100%;" cellpadding=3D"0" cellspacing=3D"0" role=3D"presenta=
+tion" width=3D"100%" bgcolor=3D"#F1F1F2" valign=3D"top">
+<tbody>
+<tr style=3D"vertical-align: top;" valign=3D"top">
+<td style=3D"word-break: break-word; vertical-align: top;" valign=3D"top"><=
+!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0"><tr><td align=3D"center" style=3D"background-color:#F1F1F2">=
+<![endif]-->
+<div style=3D"background-color:#F1F1F2;">
+<div class=3D"block-grid " style=3D"Margin: 0 auto; min-width: 320px; max-w=
+idth: 600px; overflow-wrap: break-word; word-wrap: break-word; word-break: =
+break-word; background-color: #FFFFFF;">
+<div style=3D"border-collapse: collapse;display: table;width: 100%;backgrou=
+nd-color:#FFFFFF;">
+<!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" style=3D"background-color:#F1F1F2;"><tr><td align=3D"center=
+"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:60=
+0px"><tr class=3D"layout-full-width" style=3D"background-color:#FFFFFF"><![=
+endif]--><!--[if (mso)|(IE)]><td align=3D"center" width=3D"600" style=3D"ba=
+ckground-color:#FFFFFF;width:600px; border-top: 0px dotted transparent; bor=
+der-left: 0px dotted transparent; border-bottom: 0px dotted transparent; bo=
+rder-right: 0px dotted transparent;" valign=3D"top"><table width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-ri=
+ght: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif=
+]-->
+<div class=3D"col num12" style=3D"min-width: 320px; max-width: 600px; displ=
+ay: table-cell; vertical-align: top; width: 600px;">
+<div style=3D"width:100% !important;"><!--[if (!mso)&(!IE)]><!-->
+<div style=3D"border-top:0px dotted transparent; border-left:0px dotted tra=
+nsparent; border-bottom:0px dotted transparent; border-right:0px dotted tra=
+nsparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-=
+left: 0px;">
+<!--<![endif]-->
+<div class=3D"img-container center fixedwidth" align=3D"center" style=3D"pa=
+dding-right: 0px;padding-left: 0px;">
+<!--[if mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0"><tr style=3D"line-height:0px"><td style=3D"padding-right: 0px;padd=
+ing-left: 0px;" align=3D"center"><![endif]--><img class=3D"center fixedwidt=
+h" align=3D"center" border=3D"0" src=3D"https://storage.googleapis.com/panw=
+xdr-staticfiles/Email-HEADER_panw-cortex-1200x300.jpg" alt=3D"Palo Alto Net=
+works | Corte" title=3D"Palo Alto Networks | Corte" style=3D"text-decoratio=
+n: none; -ms-interpolation-mode: bicubic; border: 0; height: auto; width: 1=
+00%; max-width: 600px; display: block;" width=3D"600"><!--[if mso]></td></t=
+r></table><![endif]-->
+</div>
+<!--[if (!mso)&(!IE)]><!--></div>
+<!--<![endif]--></div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]--><!--[if (mso)|(IE)]></td>=
+</tr></table></td></tr></table><![endif]--></div>
+</div>
+</div>
+<div style=3D"background-color:#F1F1F2;">
+<div class=3D"block-grid " style=3D"Margin: 0 auto; min-width: 320px; max-w=
+idth: 600px; overflow-wrap: break-word; word-wrap: break-word; word-break: =
+break-word; background-color: #FFFFFF;">
+<div style=3D"border-collapse: collapse;display: table;width: 100%;backgrou=
+nd-color:#FFFFFF;">
+<!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" style=3D"background-color:#F1F1F2;"><tr><td align=3D"center=
+"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:60=
+0px"><tr class=3D"layout-full-width" style=3D"background-color:#FFFFFF"><![=
+endif]--><!--[if (mso)|(IE)]><td align=3D"center" width=3D"600" style=3D"ba=
+ckground-color:#FFFFFF;width:600px; border-top: 0px dotted transparent; bor=
+der-left: 0px dotted transparent; border-bottom: 0px dotted transparent; bo=
+rder-right: 0px dotted transparent;" valign=3D"top"><table width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-ri=
+ght: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px;"><![endif=
+]-->
+<div class=3D"col num12" style=3D"min-width: 320px; max-width: 600px; displ=
+ay: table-cell; vertical-align: top; width: 600px;">
+<div style=3D"width:100% !important;"><!--[if (!mso)&(!IE)]><!-->
+<div style=3D"border-top:0px dotted transparent; border-left:0px dotted tra=
+nsparent; border-bottom:0px dotted transparent; border-right:0px dotted tra=
+nsparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-=
+left: 0px;">
+<!--<![endif]--><!--[if mso]><table width=3D"100%" cellpadding=3D"0" cellsp=
+acing=3D"0" border=3D"0"><tr><td style=3D"padding-right: 20px; padding-left=
+: 20px; padding-top: 10px; padding-bottom: 10px; font-family: Tahoma, Verda=
+na, sans-serif"><![endif]-->
+<div style=3D"color:#141414;font-family:Tahoma, Verdana, Segoe, sans-serif;=
+line-height:1.5;padding-top:10px;padding-right:20px;padding-bottom:10px;pad=
+ding-left:20px;">
+<div style=3D"font-family: Tahoma, Verdana, Segoe, sans-serif; font-size: 1=
+2px; line-height: 1.5; color: #141414; mso-line-height-alt: 18px;">
+<p style=3D"font-size: 14px; line-height: 1.5; mso-line-height-alt: 21px; m=
+argin: 0;">
+<span style=3D"font-size: 14px;">Dear Valued Customer,</span></p>
+<p style=3D"font-size: 14px; line-height: 1.5; mso-line-height-alt: 21px; m=
+argin: 0;">
+<span style=3D"font-size: 14px;">&nbsp;</span></p>
+<p style=3D"font-size: 14px; line-height: 1.5; mso-line-height-alt: 21px; m=
+argin: 0;">
+<span style=3D"font-size: 14px;">We are happy to inform you that the Cortex=
+ XDR Agent 8.7.100-CE minor release is scheduled for General Availability (=
+GA) on June 18, 2025. Our minor releases resolve known issues and enhance p=
+erformance, and we strongly recommend
+ that you always upgrade to the newest release of the latest agent line.</s=
+pan></p>
+<p style=3D"font-size: 14px; line-height: 1.5; mso-line-height-alt: 21px; m=
+argin: 0;">
+<span style=3D"font-size: 14px;">&nbsp;</span></p>
+<p style=3D"font-size: 14px; line-height: 1.5; mso-line-height-alt: 21px; m=
+argin: 0;">
+<span style=3D"font-size: 14px;">The complete list of issues included in th=
+is minor release can be found in the Cortex XDR Agent 8.7.100-CE
+<a href=3D"https://docs-cortex.paloaltonetworks.com/r/75m3ZGZx2vPAmIGLhYAr4=
+g/root" target=3D"_blank" rel=3D"noopener">
+release notes</a>.</span></p>
+<p style=3D"font-size: 14px; line-height: 1.5; mso-line-height-alt: 21px; m=
+argin: 0;">
+<span style=3D"font-size: 14px;">&nbsp;</span></p>
+<p style=3D"font-size: 14px; line-height: 1.5; mso-line-height-alt: 21px; m=
+argin: 0;">
+<span style=3D"font-size: 14px;">If you have any questions, please reach ou=
+t to our
+<a href=3D"https://support.paloaltonetworks.com/Support/Index" target=3D"_b=
+lank" rel=3D"noopener">
+Customer Support team</a>.</span></p>
+<p style=3D"font-size: 14px; line-height: 1.5; mso-line-height-alt: 21px; m=
+argin: 0;">
+<span style=3D"font-size: 14px;">&nbsp;</span></p>
+<p style=3D"font-size: 14px; line-height: 1.5; mso-line-height-alt: 21px; m=
+argin: 0;">
+<span style=3D"font-size: 14px;">Sincerely,</span></p>
+<p style=3D"font-size: 14px; line-height: 1.5; mso-line-height-alt: 21px; m=
+argin: 0;">
+<span style=3D"font-size: 14px;">Cortex Product Management</span></p>
+<p style=3D"font-size: 14px; line-height: 1.5; mso-line-height-alt: 21px; m=
+argin: 0;">
+<span style=3D"font-size: 14px;">&nbsp;</span></p>
+<p style=3D"font-size: 14px; line-height: 1.5; mso-line-height-alt: 21px; m=
+argin: 0;">
+<span style=3D"font-size: 14px;">*Note: The final GA date may be delayed by=
+ up to 4 business days, and the content for this release may undergo change=
+s until the final GA. Should the delay extend beyond this timeframe, an add=
+itional notification will be sent.</span></p>
+</div>
+</div>
+<!--[if mso]></td></tr></table><![endif]--><!--[if (!mso)&(!IE)]><!--></div=
+>
+<!--<![endif]--></div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]--><!--[if (mso)|(IE)]></td>=
+</tr></table></td></tr></table><![endif]--></div>
+</div>
+</div>
+<div style=3D"background-color:#F1F1F2;">
+<div class=3D"block-grid " style=3D"Margin: 0 auto; min-width: 320px; max-w=
+idth: 600px; overflow-wrap: break-word; word-wrap: break-word; word-break: =
+break-word; background-color: transparent;">
+<div style=3D"border-collapse: collapse;display: table;width: 100%;backgrou=
+nd-color:transparent;">
+<!--[if (mso)|(IE)]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" style=3D"background-color:#F1F1F2;"><tr><td align=3D"center=
+"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:60=
+0px"><tr class=3D"layout-full-width" style=3D"background-color:transparent"=
+><![endif]--><!--[if (mso)|(IE)]><td align=3D"center" width=3D"600" style=
+=3D"background-color:transparent;width:600px; border-top: 0px dotted transp=
+arent; border-left: 0px dotted transparent; border-bottom: 0px dotted trans=
+parent; border-right: 0px dotted transparent;" valign=3D"top"><table width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D=
+"padding-right: 0px; padding-left: 0px; padding-top:5px; padding-bottom:5px=
+;"><![endif]-->
+<div class=3D"col num12" style=3D"min-width: 320px; max-width: 600px; displ=
+ay: table-cell; vertical-align: top; width: 600px;">
+<div style=3D"width:100% !important;"><!--[if (!mso)&(!IE)]><!-->
+<div style=3D"border-top:0px dotted transparent; border-left:0px dotted tra=
+nsparent; border-bottom:0px dotted transparent; border-right:0px dotted tra=
+nsparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-=
+left: 0px;">
+<!--<![endif]-->
+<table class=3D"social_icons" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%" role=3D"presentation" style=3D"table-layout: fixed; vertical-align: t=
+op; border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt;" valign=3D"top">
+<tbody>
+<tr style=3D"vertical-align: top;" valign=3D"top">
+<td style=3D"word-break: break-word; vertical-align: top; padding-top: 10px=
+; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;" valign=3D=
+"top">
+<table class=3D"social_table" align=3D"center" cellpadding=3D"0" cellspacin=
+g=3D"0" role=3D"presentation" style=3D"table-layout: fixed; vertical-align:=
+ top; border-spacing: 0; border-collapse: collapse; mso-table-tspace: 0; ms=
+o-table-rspace: 0; mso-table-bspace: 0; mso-table-lspace: 0;" valign=3D"top=
+">
+<tbody>
+<tr style=3D"vertical-align: top; display: inline-block; text-align: center=
+;" align=3D"center" valign=3D"top">
+<td style=3D"word-break: break-word; vertical-align: top; padding-bottom: 5=
+px; padding-right: 3px; padding-left: 3px;" valign=3D"top">
+<a href=3D"mailto:contact_sales@paloaltonetworks.com" target=3D"_blank"><im=
+g width=3D"32" height=3D"32" src=3D"https://s3.amazonaws.com/uploads.knak.i=
+o/builder_images/5b48af6ad70a4/dF9aY6YDWRzvWp1ZRqwcclqrH9SVaLoQIAWkILAb.png=
+" alt=3D"E-Mail" title=3D"E-Mail" style=3D"text-decoration: none; -ms-inter=
+polation-mode: bicubic; height: auto; border: none; display: block;"></a></=
+td>
+<td style=3D"word-break: break-word; vertical-align: top; padding-bottom: 5=
+px; padding-right: 3px; padding-left: 3px;" valign=3D"top">
+<a href=3D"https://www.linkedin.com/company/palo-alto-networks" target=3D"_=
+blank"><img width=3D"32" height=3D"32" src=3D"https://s3.amazonaws.com/uplo=
+ads.knak.io/builder_images/5b48af6ad70a4/jx5tZd14fiLuFWuVKqcBq7sq7j10O1nPW3=
+2FxUin.png" alt=3D"LinkedIn" title=3D"LinkedIn" style=3D"text-decoration: n=
+one; -ms-interpolation-mode: bicubic; height: auto; border: none; display: =
+block;"></a></td>
+<td style=3D"word-break: break-word; vertical-align: top; padding-bottom: 5=
+px; padding-right: 3px; padding-left: 3px;" valign=3D"top">
+<a href=3D"https://www.facebook.com/PaloAltoNetworks" target=3D"_blank"><im=
+g width=3D"32" height=3D"32" src=3D"https://s3.amazonaws.com/uploads.knak.i=
+o/builder_images/5b48af6ad70a4/D5RFgD1YDtWQUK8VbiB231hgxKNx5Pf84hIJDuPB.png=
+" alt=3D"Facebook" title=3D"Facebook" style=3D"text-decoration: none; -ms-i=
+nterpolation-mode: bicubic; height: auto; border: none; display: block;"></=
+a></td>
+<td style=3D"word-break: break-word; vertical-align: top; padding-bottom: 5=
+px; padding-right: 3px; padding-left: 3px;" valign=3D"top">
+<a href=3D"https://twitter.com/PaloAltoNtwks" target=3D"_blank"><img width=
+=3D"32" height=3D"32" src=3D"https://s3.amazonaws.com/uploads.knak.io/build=
+er_images/5b48af6ad70a4/34by7mFyGEWp375mickEC0fKjZFrT26N8Wo8eZkM.png" alt=
+=3D"Twitter" title=3D"Twitter" style=3D"text-decoration: none; -ms-interpol=
+ation-mode: bicubic; height: auto; border: none; display: block;"></a></td>
+<td style=3D"word-break: break-word; vertical-align: top; padding-bottom: 5=
+px; padding-right: 3px; padding-left: 3px;" valign=3D"top">
+<a href=3D"https://www.instagram.com/paloaltontwks" target=3D"_blank"><img =
+width=3D"32" height=3D"32" src=3D"https://s3.amazonaws.com/uploads.knak.io/=
+builder_images/5b48af6ad70a4/CebpcplKaahiZM2WEhDXRk1mADu3esG7TVNqQWEC.png" =
+alt=3D"Instagram" title=3D"Instagram" style=3D"text-decoration: none; -ms-i=
+nterpolation-mode: bicubic; height: auto; border: none; display: block;"></=
+a></td>
+<td style=3D"word-break: break-word; vertical-align: top; padding-bottom: 5=
+px; padding-right: 3px; padding-left: 3px;" valign=3D"top">
+<a href=3D"tel:866-320-4788" target=3D"_blank"><img width=3D"32" height=3D"=
+32" src=3D"https://s3.amazonaws.com/uploads.knak.io/builder_images/5b48af6a=
+d70a4/UIWsLvZ0YbIbtrPTQd4QmBs1TyP0fMIokGHsvgPu.png" alt=3D"Phone" title=3D"=
+Phone" style=3D"text-decoration: none; -ms-interpolation-mode: bicubic; hei=
+ght: auto; border: none; display: block;"></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0"><tr><td style=3D"padding-right: 10px; padding-left: 10px; padding-=
+top: 10px; padding-bottom: 10px; font-family: Tahoma, Verdana, sans-serif">=
+<![endif]-->
+<div style=3D"color:#807C7B;font-family:Tahoma, Verdana, Segoe, sans-serif;=
+line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;pad=
+ding-left:10px;">
+<div style=3D"font-size: 12px; line-height: 1.2; font-family: Tahoma, Verda=
+na, Segoe, sans-serif; color: #807C7B; mso-line-height-alt: 14px;">
+<p style=3D"font-size: 12px; line-height: 1.2; text-align: center; mso-line=
+-height-alt: 14px; margin: 0;">
+<span style=3D"font-size: 12px;">=C2=A9 2025 Palo Alto Networks, Inc. All r=
+ights reserved.</span><br>
+<span style=3D"font-size: 12px;">3000 Tannery Way, Santa Clara, CA 95054</s=
+pan></p>
+<p style=3D"font-size: 12px; line-height: 1.2; text-align: center; mso-line=
+-height-alt: 14px; margin: 0;">
+<br>
+<span style=3D"font-size: 12px;"><span style=3D"font-size: 12px;"><a style=
+=3D"text-decoration: none; color: #807C7B;" href=3D"https://www.paloaltonet=
+works.com/legal-notices/privacy" target=3D"_blank" rel=3D"noopener">Privacy=
+ Policy</a> |
+<a style=3D"text-decoration: none; color: #807C7B;" href=3D"https://www.pal=
+oaltonetworks.com/legal-notices/terms-of-use" target=3D"_blank" rel=3D"noop=
+ener">
+Terms of Use</a> | <a style=3D"text-decoration: none; color: #807C7B;" href=
+=3D"https://start.paloaltonetworks.com/preference-center.html" target=3D"_b=
+lank" rel=3D"noopener">
+Email Preferences &amp; Unsubscribe</a></span></span><br>
+<span style=3D"font-size: 12px;"><span style=3D"font-size: 12px;"><a style=
+=3D"text-decoration: none; color: #807C7B;" href=3D"https://www.paloaltonet=
+works.com/" target=3D"_blank" rel=3D"noopener">www.paloaltonetworks.com</a>=
+</span></span></p>
+</div>
+</div>
+<!--[if mso]></td></tr></table><![endif]--><!--[if (!mso)&(!IE)]><!--></div=
+>
+<!--<![endif]--></div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]--><!--[if (mso)|(IE)]></td>=
+</tr></table></td></tr></table><![endif]--></div>
+</div>
+</div>
+<!--[if (mso)|(IE)]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!--[if (IE)]></div><![endif]--><img src=3D"http://url7403.xdr.paloaltonetw=
+orks.com/wf/open?upn=3Du001.FDrvlN0lYNYpvw8-2FqWX2HXvWgB22OVixYiEvpHCJhhDgX=
+thRQOMopdvW6-2FXjwvDe1Gsbe5-2F8Mzeeq7nTI60Wy43zl8hIEg3rSny6cFE-2BVJIk00l-2F=
+Aaj-2Fhi5ZLBHC0W-2Bfz58mB4VVy-2FhUkctG-2BlClt6YTrV4m80Xa4-2Fd7VFFCBkeZdZEXb=
+tZy0XgYBHwKPE5GN09PITr8n5bHWjzEP0uhOB71-2BcX6zoui0TdSWzUzV8w-2FBCaSR-2BSMrH=
+m5XIn-2BLqKJ46xRbZTxeoG6aZtcjto4x5UATXpO-2Byl9vYMTcwusQ7-2FIuxORQfzfSTRfLIr=
+8UkyiUV13FJs9IInO9K1E-2FH7rN9E2al2KRpk-2B4fhJiXx1QRj0cVzlztatVSF5vDI994rlnl=
+tMgcx4ibniKkdl5uGF-2BQ-3D-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"0=
+" style=3D"height:1px !important;width:1px !important;border-width:0 !impor=
+tant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !imp=
+ortant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !=
+important;padding-right:0 !important;padding-left:0 !important;">
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+ </body>
+</html>
+
+--848d1f85beca5e6303d137557aece19a6851adaaa676f4a9e6af797db4f2--
