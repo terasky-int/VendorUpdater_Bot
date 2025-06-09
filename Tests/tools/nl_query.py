@@ -31,7 +31,8 @@ def extract_vendor(query):
         r"the\s+vendor\s+(\w+)",  # Added pattern
         r"does\s+(\w+)\s+offer",  # Added pattern
         r"does\s+the\s+vendor\s+(\w+)",  # Added pattern
-        r"does\s+(\w+)\s+have"  # Added pattern
+        r"does\s+(\w+)\s+have",  # Added pattern
+        r"emails\s+from\s+(\w+)"  # Added pattern for "emails from vendor"
     ]
     
     for pattern in vendor_patterns:
@@ -76,6 +77,29 @@ def process_query(query):
             return f"Available products ({len(products)}):\n- " + "\n- ".join(products[:20]) + (f"\n... and {len(products) - 20} more" if len(products) > 20 else "")
         else:
             return "No products found in the database."
+            
+    # List emails from vendor
+    elif re.search(r"list\s+(?:all\s+)?emails\s+from", query):
+        vendor = extract_vendor(query)
+        if vendor:
+            # Query to get emails from specific vendor
+            cypher_query = f"""
+            MATCH (v:Vendor {{name: '{vendor}'}})<-[:FROM]-(e:Email)
+            RETURN e.subject AS subject, e.date AS date
+            ORDER BY e.date DESC LIMIT 10
+            """
+            emails = run_graph_query(cypher_query)
+            
+            if emails:
+                response = f"Recent emails from {vendor} ({len(emails)}):\n"
+                for email in emails:
+                    date = email["date"].split("T")[0] if "T" in email["date"] else email["date"]
+                    response += f"- {date}: {email['subject']}\n"
+                return response
+            else:
+                return f"No emails found from {vendor}."
+        else:
+            return "Please specify a vendor name in your query."
     
     # Count emails from vendor
     elif re.search(r"how\s+many\s+emails|email\s+count", query):

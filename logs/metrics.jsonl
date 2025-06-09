@@ -1,2 +1,4 @@
 {"timestamp": "2025-06-08T17:27:23.383692", "pipeline": "pipeline_run", "success": true, "duration_seconds": 202.28, "emails_processed": 39, "error": null, "system": {"cpu_percent": 22.6, "memory_percent": 88.1, "disk_percent": 99.5}}
 {"timestamp": "2025-06-08T18:23:56.321156", "pipeline": "pipeline_run", "success": true, "duration_seconds": 201.29, "emails_processed": 39, "error": null, "system": {"cpu_percent": 20.7, "memory_percent": 89.1, "disk_percent": 99.4}}
+{"timestamp": "2025-06-09T09:47:52.256397", "pipeline": "pipeline_run", "success": true, "duration_seconds": 1.99, "emails_processed": 0, "error": null, "system": {"cpu_percent": 25.5, "memory_percent": 86.7, "disk_percent": 97.3}}
+{"timestamp": "2025-06-09T10:03:01.752372", "pipeline": "pipeline_run", "success": true, "duration_seconds": 213.22, "emails_processed": 40, "error": null, "system": {"cpu_percent": 26.1, "memory_percent": 87.1, "disk_percent": 97.3}}

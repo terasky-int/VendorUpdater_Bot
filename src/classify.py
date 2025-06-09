@@ -54,10 +54,29 @@ def classify_message_type(data,config):
             content = parsed['content'][0]["text"]
             logging.debug(f"LLM raw content: {repr(content)}")
             try:
-                labels = json.loads(content) if isinstance(content, str) else content
+                # Fix malformed JSON by removing trailing brackets and extra whitespace
+                if isinstance(content, str):
+                    # Clean up common LLM JSON formatting issues
+                    content = content.strip()
+                    # Remove any trailing brackets after the JSON array
+                    if content.endswith(']') and content.count('[') < content.count(']'):
+                        content = content[:content.rindex(']')+1]
+                    labels = json.loads(content)
+                else:
+                    labels = content
             except Exception as e:
                 logging.error(f"❌ Failed to decode fallback content: {e}")
-                labels = []
+                # Try more aggressive JSON repair if standard parsing fails
+                try:
+                    # Extract what looks like a JSON array using regex
+                    match = re.search(r'\[(.*?)\]', content)
+                    if match:
+                        array_content = match.group(0)
+                        labels = json.loads(array_content)
+                    else:
+                        labels = []
+                except:
+                    labels = []
 
         else:
             raise ValueError(f"Unsupported response format: {parsed}")
@@ -133,10 +152,29 @@ def classify_message_products(data,config):
             content = parsed['content'][0]["text"]
             logging.debug(f"LLM raw content: {repr(content)}")
             try:
-                labels = json.loads(content) if isinstance(content, str) else content
+                # Fix malformed JSON by removing trailing brackets and extra whitespace
+                if isinstance(content, str):
+                    # Clean up common LLM JSON formatting issues
+                    content = content.strip()
+                    # Remove any trailing brackets after the JSON array
+                    if content.endswith(']') and content.count('[') < content.count(']'):
+                        content = content[:content.rindex(']')+1]
+                    labels = json.loads(content)
+                else:
+                    labels = content
             except Exception as e:
                 logging.error(f"❌ Failed to decode fallback content: {e}")
-                labels = []
+                # Try more aggressive JSON repair if standard parsing fails
+                try:
+                    # Extract what looks like a JSON array using regex
+                    match = re.search(r'\[(.*?)\]', content)
+                    if match:
+                        array_content = match.group(0)
+                        labels = json.loads(array_content)
+                    else:
+                        labels = []
+                except:
+                    labels = []
 
         else:
             raise ValueError(f"Unsupported response format: {parsed}")
