@@ -6,7 +6,7 @@ import time
 import yaml
 from src import llm_utils, harvest, normalize, enrich, classify, chunker, embedder, indexer, manifest, evaluate
 from src.monitoring import log_metrics, check_health
-from graph_db import connect_to_graph, add_email_to_graph, create_schema
+from graph_db_enhanced  import *
 import argparse
 from dotenv import load_dotenv
 
@@ -209,7 +209,7 @@ def run_pipeline():
                 
                 # Store in Neo4j
                 if graph:
-                    if add_email_to_graph(graph, email_id, classified_data):
+                    if add_email_to_graph_enhanced(graph, email_id, classified_data, clean_text):
                         logging.info(f"✅ Added email {email_id} to Neo4j graph database")
                     else:
                         logging.warning(f"⚠️ Failed to add email {email_id} to Neo4j")
