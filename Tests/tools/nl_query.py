@@ -23,21 +23,29 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 
 def extract_vendor(query):
     """Extract vendor name from query"""
+    # First check for specific vendor names
+    vendors = ["hashicorp", "palo alto", "google", "aws", "amazon", "microsoft", "dell", "ibm"]
+    for vendor in vendors:
+        if vendor in query.lower():
+            return vendor
+    
+    # Then try pattern matching
     vendor_patterns = [
+        r"for\s+(\w+)\s+vendor",  # Added pattern for "for hashicorp vendor"
         r"from\s+(\w+)\s+vendor",
         r"from\s+vendor\s+(\w+)",
         r"from\s+(\w+)",
         r"vendor\s+(\w+)",
-        r"the\s+vendor\s+(\w+)",  # Added pattern
-        r"does\s+(\w+)\s+offer",  # Added pattern
-        r"does\s+the\s+vendor\s+(\w+)",  # Added pattern
-        r"does\s+(\w+)\s+have",  # Added pattern
-        r"emails\s+from\s+(\w+)"  # Added pattern for "emails from vendor"
+        r"the\s+vendor\s+(\w+)",
+        r"does\s+(\w+)\s+offer",
+        r"does\s+the\s+vendor\s+(\w+)",
+        r"does\s+(\w+)\s+have",
+        r"emails\s+from\s+(\w+)"
     ]
     
     for pattern in vendor_patterns:
         match = re.search(pattern, query, re.IGNORECASE)
-        if match:
+        if match and match.group(1).lower() not in ["the", "all", "any", "recent"]:
             return match.group(1).lower()
     
     return None
@@ -143,21 +151,50 @@ def process_query(query):
             return f"No security-related emails found in the past {days} days."
     
     # Products from vendor
-    elif re.search(r"products|offerings|offer", query):
+    elif re.search(r"products|offerings|offer|available", query):
         vendor = extract_vendor(query)
         if vendor:
-            # Direct query to get products
-            query = f"""
-            MATCH (v:Vendor {{name: '{vendor}'}})-[:OFFERS]->(p:Product)
-            RETURN p.name AS product
-            """
-            products = run_graph_query(query)
+            # Option to use config or graph database
+            use_config = "config" in query.lower() or "accurate" in query.lower()
             
-            if products:
-                product_names = [p["product"] for p in products]
-                return f"{vendor} offers the following products: {', '.join(product_names)}"
+            if use_config:
+                # Import the vendor products utility for config-based lookup
+                sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+                from vendor_products import get_vendor_products
+                
+                # Get products from config
+                matched_vendor, products = get_vendor_products(vendor)
+                
+                if matched_vendor and products:
+                    return f"{matched_vendor} offers the following products (from config): {', '.join(products)}"
+                else:
+                    return f"No products found for {vendor} in the configuration."
             else:
-                return f"No products found for {vendor}."
+                # Use graph database for dynamic lookup
+                query = f"""
+                MATCH (v:Vendor)-[:OFFERS]->(p:Product)
+                WHERE toLower(v.name) CONTAINS toLower('{vendor}')
+                RETURN v.name AS vendor_name, p.name AS product
+                """
+                products = run_graph_query(query)
+                
+                if products:
+                    # Group by actual vendor name
+                    vendor_products = {}
+                    for p in products:
+                        v_name = p["vendor_name"]
+                        if v_name not in vendor_products:
+                            vendor_products[v_name] = []
+                        vendor_products[v_name].append(p["product"])
+                    
+                    response = f"Products associated with '{vendor}' (from graph database):\n"
+                    for v_name, prods in vendor_products.items():
+                        response += f"\nVendor: {v_name}\n- " + "\n- ".join(prods)
+                    
+                    response += "\n\nNote: For accurate product list, use 'show config products for hashicorp'"
+                    return response
+                else:
+                    return f"No products found for {vendor} in the graph database."
         else:
             return "Please specify a vendor in your query."
     

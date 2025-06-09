@@ -21,7 +21,7 @@ The VendorUpdater_Bot is a comprehensive system for processing vendor emails, ex
 
 ### 1.3 Metadata Extraction & Enrichment
 - **Input**: Clean text and email metadata
-- **Process**: Extracts sender, date, language; infers vendor from domain
+- **Process**: Extracts sender, date, language; infers vendor from domain, and deep dives if sender is terasky.
 - **Output**: Enriched data structure with metadata
 
 ### 1.4 Content Classification
