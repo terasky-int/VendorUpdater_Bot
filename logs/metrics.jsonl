@@ -3,4 +3,3 @@
 {"timestamp": "2025-06-09T09:47:52.256397", "pipeline": "pipeline_run", "success": true, "duration_seconds": 1.99, "emails_processed": 0, "error": null, "system": {"cpu_percent": 25.5, "memory_percent": 86.7, "disk_percent": 97.3}}
 {"timestamp": "2025-06-09T10:03:01.752372", "pipeline": "pipeline_run", "success": true, "duration_seconds": 213.22, "emails_processed": 40, "error": null, "system": {"cpu_percent": 26.1, "memory_percent": 87.1, "disk_percent": 97.3}}
 {"timestamp": "2025-06-09T10:32:12.842920", "pipeline": "pipeline_run", "success": true, "duration_seconds": 209.92, "emails_processed": 40, "error": null, "system": {"cpu_percent": 16.9, "memory_percent": 82.9, "disk_percent": 97.4}}
-{"timestamp": "2025-06-09T16:52:13.739836", "pipeline": "pipeline_run", "success": true, "duration_seconds": 216.13, "emails_processed": 40, "error": null, "system": {"cpu_percent": 26.3, "memory_percent": 88.1, "disk_percent": 99.6}}
