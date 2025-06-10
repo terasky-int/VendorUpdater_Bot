@@ -1,3 +1,21 @@
-* send an email of any new email parsed and added to db with a sumaary of it metadata and contents
-* support microsoft email account
-* 
+* Email Notification System
+* Microsoft Email Support
+* Graph Database Relationship Validation
+	Implement the Enhanced Relationship Validation
+	Create the graph_db_enhanced.py module as described in the documentation
+	Add confidence levels to vendor-product relationships
+	Implement the validation tool
+* Error Handling in Unified Search
+* Configuration Management
+* Documentation Gaps
+* Optimize Folder Structure
+	Move graph_api.py and graph_db.py into a dedicated graph/ directory
+	Move rag_api.py into a dedicated api/ directory
+	Consolidate test data in a more organized structure
+* Clean Up Unused Files
+	The misc/Design/ folder contains planning documents that could be moved to docs/
+	Some test emails in misc/tst_emls/ might be redundant	
+* Create Comprehensive Documentation
+	Add setup guides for all components
+	Create user guides for different use cases
+	Document API endpoints and parameters

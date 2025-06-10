@@ -112,7 +112,7 @@ def analyze_text_for_relationships(text, vendor, product):
     
     return None  # No relationship found in text
 
-def add_email_to_graph(graph, email_id, metadata, email_text=None):
+def add_email_to_graph_enhanced(graph, email_id, metadata, email_text=None):
     """Add email data to the graph database with relationship validation"""
     try:
         # Extract metadata
@@ -181,10 +181,7 @@ def add_email_to_graph(graph, email_id, metadata, email_text=None):
         logging.error(f"Failed to add email {email_id} to graph: {e}")
         return False
 
-# Alias for backward compatibility
-add_email_to_graph_enhanced = add_email_to_graph
-
-def import_all_emails():
+def import_all_emails_enhanced():
     """Import all emails from ChromaDB to Neo4j with enhanced validation"""
     graph = connect_to_graph()
     if not graph:
@@ -210,14 +207,11 @@ def import_all_emails():
     # Add each email to the graph
     success_count = 0
     for email_id, data in email_groups.items():
-        if add_email_to_graph(graph, email_id, data["metadata"], data["text"]):
+        if add_email_to_graph_enhanced(graph, email_id, data["metadata"], data["text"]):
             success_count += 1
     
     logging.info(f"Imported {success_count}/{len(email_groups)} emails to graph database with enhanced validation")
     return True
-
-# Alias for backward compatibility
-import_all_emails_enhanced = import_all_emails
 
 def get_vendor_products_by_confidence(vendor_name, min_confidence=CONFIDENCE_LOW):
     """Get products offered by a vendor with specified minimum confidence"""
@@ -252,93 +246,6 @@ def run_graph_query(query, params=None):
     except Exception as e:
         logging.error(f"Failed to run graph query: {e}")
         return None
-
-def get_vendor_products(vendor_name):
-    """Get all products offered by a vendor"""
-    query = """
-    MATCH (v:Vendor {name: $vendor})-[:OFFERS]->(p:Product)
-    RETURN p.name AS product
-    """
-    return run_graph_query(query, {"vendor": vendor_name})
-
-def get_related_vendors(product_name):
-    """Get vendors related to a product"""
-    query = """
-    MATCH (p:Product {name: $product})<-[:OFFERS]-(v:Vendor)
-    RETURN v.name AS vendor
-    """
-    return run_graph_query(query, {"product": product_name})
-
-def get_email_timeline(vendor_name=None, product_name=None, days=30):
-    """Get timeline of emails for a vendor or product"""
-    params = {"days": days}
-    where_clause = ""
-    
-    if vendor_name:
-        where_clause += "v.name = $vendor"
-        params["vendor"] = vendor_name
-    
-    if product_name:
-        if where_clause:
-            where_clause += " AND "
-        where_clause += "p.name = $product"
-        params["product"] = product_name
-    
-    if where_clause:
-        where_clause = "WHERE " + where_clause
-    
-    query = f"""
-    MATCH (e:Email)-[:FROM]->(v:Vendor), (e)-[:ABOUT]->(p:Product)
-    {where_clause}
-    RETURN e.id AS email_id, e.date AS date, e.type AS type, 
-           v.name AS vendor, p.name AS product
-    ORDER BY e.date DESC
-    LIMIT 10
-    """
-    return run_graph_query(query, params)
-
-def count_vendor_emails(vendor_name):
-    """Count emails from a specific vendor"""
-    query = """
-    MATCH (e:Email)-[:FROM]->(v:Vendor {name: $vendor})
-    RETURN count(e) AS email_count
-    """
-    result = run_graph_query(query, {"vendor": vendor_name})
-    return result[0]["email_count"] if result else 0
-
-def count_recent_emails(vendor_name=None, days=7):
-    """Count emails received in the past X days from a vendor"""
-    params = {"days": days}
-    
-    if vendor_name:
-        query = """
-        MATCH (e:Email)-[:FROM]->(v:Vendor)
-        WHERE v.name = $vendor
-        AND e.date > datetime() - duration({days: $days})
-        RETURN count(e) AS email_count
-        """
-        params["vendor"] = vendor_name
-    else:
-        query = """
-        MATCH (e:Email)-[:FROM]->(v:Vendor)
-        WHERE e.date > datetime() - duration({days: $days})
-        RETURN count(e) AS email_count
-        """
-    
-    result = run_graph_query(query, params)
-    return result[0]["email_count"] if result else 0
-
-def find_security_emails(days=30):
-    """Find security/vulnerability emails from the past X days"""
-    query = """
-    MATCH (e:Email)-[:FROM]->(v:Vendor), (e)-[:ABOUT]->(p:Product)
-    WHERE (e.type CONTAINS 'security' OR e.type CONTAINS 'vulnerability') 
-      AND e.date > datetime() - duration({days: $days})
-    RETURN DISTINCT e.id AS email_id, e.date AS date, v.name AS vendor, 
-           p.name AS product, e.type AS type
-    ORDER BY e.date DESC
-    """
-    return run_graph_query(query, {"days": days})
 
 def cleanup_incorrect_relationships():
     """Clean up incorrect vendor-product relationships based on config validation"""
@@ -392,129 +299,9 @@ def cleanup_incorrect_relationships():
         logging.error(f"Failed to clean up relationships: {e}")
         return False
 
-def get_all_graph_data():
-    """Get all data from the Neo4j database"""
-    graph = connect_to_graph()
-    if not graph:
-        return None
-    
-    try:
-        # Get all vendors with email counts
-        vendors = run_graph_query("""
-        MATCH (v:Vendor)
-        OPTIONAL MATCH (v)<-[:FROM]-(e:Email)
-        WITH v, count(e) AS email_count
-        RETURN v.name AS name, email_count
-        ORDER BY v.name
-        """)
-        
-        # Get all products with vendor counts
-        products = run_graph_query("""
-        MATCH (p:Product)
-        OPTIONAL MATCH (p)<-[:OFFERS]-(v:Vendor)
-        WITH p, count(v) AS vendor_count
-        RETURN p.name AS name, vendor_count
-        ORDER BY p.name
-        """)
-        
-        # Get all emails
-        emails = run_graph_query("""
-        MATCH (e:Email)-[:FROM]->(v:Vendor)
-        RETURN e.id AS id, e.date AS date, e.type AS type, v.name AS vendor
-        ORDER BY e.date DESC
-        LIMIT 100
-        """)
-        
-        # Get all relationships
-        relationships = run_graph_query("""
-        MATCH (v:Vendor)-[:OFFERS]->(p:Product)
-        WITH v, collect(p.name) AS products
-        RETURN v.name AS vendor, products
-        ORDER BY v.name
-        """)
-        
-        return {
-            "vendors": vendors,
-            "products": products,
-            "emails": emails,
-            "relationships": relationships
-        }
-    except Exception as e:
-        logging.error(f"Failed to get all graph data: {e}")
-        return None
-
-def get_graph_summary():
-    """Get a summary of the Neo4j database"""
-    graph = connect_to_graph()
-    if not graph:
-        return None
-    
-    try:
-        summary = run_graph_query("""
-        MATCH (n)
-        WITH labels(n) AS label, count(n) AS count
-        RETURN label, count
-        ORDER BY count DESC
-        """)
-        
-        relationships = run_graph_query("""
-        MATCH ()-[r]->()
-        WITH type(r) AS relationship_type, count(r) AS count
-        RETURN relationship_type, count
-        ORDER BY count DESC
-        """)
-        
-        return {
-            "node_counts": summary,
-            "relationship_counts": relationships
-        }
-    except Exception as e:
-        logging.error(f"Failed to get graph summary: {e}")
-        return None
-
-def mock_graph_data():
-    """Create mock graph data for testing without Neo4j"""
-    logging.info("Creating mock graph data for testing")
-    
-    # Mock vendor products
-    vendor_products = [
-        {"product": "vault"},
-        {"product": "terraform"},
-        {"product": "consul"}
-    ]
-    
-    # Mock related vendors
-    related_vendors = [
-        {"vendor": "hashicorp"}
-    ]
-    
-    # Mock email timeline
-    email_timeline = [
-        {
-            "email_id": "f822d769-2d8f-4a20-bf86-35c650a367c9",
-            "date": "2025-04-16T07:35:07",
-            "type": "announcement, event, webinar, product update",
-            "vendor": "hashicorp",
-            "product": "vault"
-        },
-        {
-            "email_id": "f822d769-2d8f-4a20-bf86-35c650a367c9",
-            "date": "2025-04-16T07:35:07",
-            "type": "announcement, event, webinar, product update",
-            "vendor": "hashicorp",
-            "product": "terraform"
-        }
-    ]
-    
-    return {
-        "vendor_products": vendor_products,
-        "related_vendors": related_vendors,
-        "email_timeline": email_timeline
-    }
-
 if __name__ == "__main__":
     # Clean up incorrect relationships
     cleanup_incorrect_relationships()
     
     # Re-import emails with enhanced validation
-    import_all_emails()
+    import_all_emails_enhanced()

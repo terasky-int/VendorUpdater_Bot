@@ -90,3 +90,14 @@ def generate_claude_answer(context_docs: list, question: str, config: dict) -> s
         logging.error(f"❌ Failed to generate answer with Claude: {e}")
         return "❌ Claude generation failed"
     
+def send_email_notification(email_id, metadata, summary):
+    """Send notification email when new vendor email is processed"""
+    # Use SMTP to send notification with metadata and summary
+    # Include links to view full content
+
+def generate_health_report():
+    """Generate health report for all components"""
+    # Check ChromaDB health
+    # Check Neo4j connection
+    # Check AWS Bedrock access
+    # Return status of all components
