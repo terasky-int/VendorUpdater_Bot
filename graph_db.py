@@ -19,7 +19,7 @@ def connect_to_graph():
     """Connect to Neo4j database"""
     try:
         graph = Graph(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
-        logging.info("Connected to Neo4j database")
+        logging.info(f"Connected to Neo4j database at: {NEO4J_URI}")
         return graph
     except Exception as e:
         logging.error(f"Failed to connect to Neo4j: {e}")
