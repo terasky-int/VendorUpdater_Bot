@@ -13,7 +13,7 @@ from typing import Dict, List, Optional, Any
 
 from src.hybrid_search import hybrid_search
 from src import llm_utils
-from graph_db import run_graph_query
+from graph_db_consolidated import run_graph_query
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -337,7 +337,7 @@ def get_vendor_products_enhanced(vendor_name: str) -> List[Dict[str, Any]]:
         List of products with confidence levels
     """
     try:
-        from graph_db import get_vendor_products_by_confidence
+        from graph_db_consolidated import get_vendor_products_by_confidence
         
         # Try to get products with confidence levels
         products = get_vendor_products_by_confidence(vendor_name)
@@ -346,7 +346,7 @@ def get_vendor_products_enhanced(vendor_name: str) -> List[Dict[str, Any]]:
             return products
         
         # Fall back to regular product lookup
-        from graph_db import get_vendor_products
+        from graph_db_consolidated import get_vendor_products
         basic_products = get_vendor_products(vendor_name)
         
         if basic_products:

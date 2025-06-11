@@ -15,7 +15,7 @@ from src.unified_search import (
     get_vendor_products_enhanced
 )
 
-from graph_db import (
+from graph_db_consolidated import (
     get_vendor_products_by_confidence,
     get_email_timeline,
     count_recent_emails,
