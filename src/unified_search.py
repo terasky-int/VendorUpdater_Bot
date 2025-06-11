@@ -30,12 +30,14 @@ def process_search_query(query: str) -> Dict[str, Any]:
     """
     query_lower = query.lower()
     
-    # Extract time constraints
+    # Extract time constraints - IMPROVED VERSION
     time_filter = None
-    if "past week" in query_lower:
+    if "past week" in query_lower or "last week" in query_lower:
         time_filter = 7
-    elif "past month" in query_lower:
+    elif "past month" in query_lower or "last month" in query_lower:
         time_filter = 30
+    elif "past year" in query_lower or "last year" in query_lower:
+        time_filter = 365
     elif "recent" in query_lower:
         time_filter = 30  # Default "recent" to last 30 days
     
@@ -69,27 +71,33 @@ def process_search_query(query: str) -> Dict[str, Any]:
         if product_match:
             product_filter = product_match.group(1)
     
-    # Extract type constraints
+    # Extract type constraints - IMPROVED VERSION
     type_filter = None
-    if "security" in query_lower or "vulnerabilit" in query_lower:
-        type_filter = "security"
-    elif "webinar" in query_lower:
-        type_filter = "webinar"
-    elif "announcement" in query_lower:
-        type_filter = "announcement"
-    elif "update" in query_lower:
-        type_filter = "update"
+    type_keywords = {
+        "security": ["security", "vulnerability", "patch", "vulnerabilit"],
+        "webinar": ["webinar", "workshop", "session"],
+        "announcement": ["announcement", "news", "release"],
+        "update": ["update", "upgrade", "new version"],
+        "event": ["event", "conference", "meetup"]
+    }
+    
+    for type_name, keywords in type_keywords.items():
+        for keyword in keywords:
+            if keyword in query_lower:
+                type_filter = type_name
+                break
+        if type_filter:
+            break
     
     # Build filters
     filters = {}
     if vendor_filter:
         filters["vendor"] = vendor_filter
     if product_filter:
-        filters["product"] = product_filter
+        filters["product"] = {"$contains": product_filter}
     if type_filter:
-        # ChromaDB doesn't support $contains, so we'll use exact matching
-        # In production, you might want to use a more sophisticated approach
-        filters["type"] = type_filter
+        # Use contains operator for partial matching
+        filters["type"] = {"$contains": type_filter}
     
     # Build graph filters
     graph_filters = {}
@@ -248,7 +256,7 @@ def unified_search(query_text: str, filters: Optional[Dict[str, Any]] = None,
         if not email_ids and graph_filters:
             days = graph_filters.get("days", 30)
             vendor = filters.get("vendor") if filters else None
-            product = filters.get("product") if filters else None
+            product = filters.get("product", {}).get("$contains") if filters and isinstance(filters.get("product"), dict) else filters.get("product") if filters else None
             
             # Query for recent emails matching criteria
             graph_query = """
@@ -265,7 +273,7 @@ def unified_search(query_text: str, filters: Optional[Dict[str, Any]] = None,
             
             if product:
                 graph_query += "MATCH (e)-[:ABOUT]->(p:Product)\n"
-                where_clauses.append("p.name = $product")
+                where_clauses.append("p.name CONTAINS $product")
             
             if where_clauses:
                 graph_query += "WHERE " + " AND ".join(where_clauses) + "\n"

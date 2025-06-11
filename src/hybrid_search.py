@@ -1,103 +1,65 @@
+"""
+Hybrid search implementation for VendorUpdater_Bot
+
+This module combines vector search with metadata filtering.
+"""
+
 import logging
+from typing import Dict, List, Any, Optional
 from src import llm_utils
 
-def hybrid_search(query_text, metadata_filters=None, top_k=5):
+def hybrid_search(query_text: str, filters: Optional[Dict[str, Any]] = None, top_k: int = 5) -> Dict[str, Any]:
     """
-    Perform hybrid search with metadata filtering.
+    Perform hybrid search using vector similarity and metadata filtering
     
     Args:
         query_text: The search query text
-        metadata_filters: Dict of metadata filters like {"vendor": "hashicorp"}
+        filters: Dict of metadata filters
         top_k: Number of results to return
     
     Returns:
-        Dict with documents, metadatas, distances, and ids
+        Dict with search results
     """
     collection = llm_utils.get_chroma_collection()
+    logging.info(f"Collection has {collection.count()} documents")
     
-    # Debug info
-    count = collection.count()
-    logging.info(f"Collection has {count} documents")
-    
-    # Convert metadata filters to ChromaDB where clause
-    where_clause = None
-    if metadata_filters:
-        # Handle single filter
-        if len(metadata_filters) == 1:
-            where_clause = metadata_filters
-        # Handle multiple filters (AND condition)
-        else:
-            where_clause = {"$and": [
-                {k: v} for k, v in metadata_filters.items()
-            ]}
-        
-        logging.info(f"Using where clause: {where_clause}")
-    
+    # Generate embeddings using the correct model
     try:
-        # Get embedding for query
+        # Get embedding for the query
         query_embedding = llm_utils.embed_text_titan(query_text)
+        logging.info(f"Generated embedding with dimension: {len(query_embedding)}")
         
-        # Execute search with filters
+        # Process filters
+        where_clause = {}
+        if filters:
+            # Simple direct matching for now
+            where_clause = filters
+            logging.info(f"Using where clause: {where_clause}")
+        
+        # Perform vector search with metadata filtering
         results = collection.query(
             query_embeddings=[query_embedding],
             n_results=top_k,
-            where=where_clause
+            where=where_clause if where_clause else None,
+            include=["documents", "metadatas", "distances"]
         )
         
-        # Log results
-        doc_count = len(results["documents"][0]) if results["documents"] else 0
-        logging.info(f"Search returned {doc_count} results")
-        
-        return {
-            "documents": results["documents"][0] if results["documents"] else [],
-            "metadatas": results["metadatas"][0] if results["metadatas"] else [],
-            "distances": results["distances"][0] if results["distances"] else [],
-            "ids": results["ids"][0] if results["ids"] else []
+        # Format results
+        formatted_results = {
+            "documents": results["documents"][0] if results["documents"] and len(results["documents"]) > 0 else [],
+            "metadatas": results["metadatas"][0] if results["metadatas"] and len(results["metadatas"]) > 0 else [],
+            "distances": results["distances"][0] if results["distances"] and len(results["distances"]) > 0 else [],
+            "ids": results["ids"][0] if results["ids"] and len(results["ids"]) > 0 else []
         }
-    
+        
+        logging.info(f"Search returned {len(formatted_results['documents'])} results")
+        return formatted_results
     except Exception as e:
-        logging.error(f"Search error: {e}")
+        logging.error(f"Search failed: {e}")
+        # Return empty results on error
         return {
             "documents": [],
             "metadatas": [],
             "distances": [],
-            "ids": []
-        }
-
-def keyword_search(query_text, metadata_filters=None, top_k=5):
-    """
-    Perform keyword-based search without embeddings.
-    
-    Args:
-        query_text: The search query text
-        metadata_filters: Dict of metadata filters
-        top_k: Number of results to return
-    
-    Returns:
-        Dict with documents, metadatas, and ids
-    """
-    collection = llm_utils.get_chroma_collection()
-    
-    # We need to use embeddings for ChromaDB, so we'll use the same approach as hybrid_search
-    # but focus on the text content
-    try:
-        query_embedding = llm_utils.embed_text_titan(query_text)
-        
-        results = collection.query(
-            query_embeddings=[query_embedding],
-            n_results=top_k,
-            where=metadata_filters
-        )
-        
-        return {
-            "documents": results["documents"][0] if results["documents"] else [],
-            "metadatas": results["metadatas"][0] if results["metadatas"] else [],
-            "ids": results["ids"][0] if results["ids"] else []
-        }
-    except Exception as e:
-        logging.error(f"Keyword search error: {e}")
-        return {
-            "documents": [],
-            "metadatas": [],
             "ids": []
         }

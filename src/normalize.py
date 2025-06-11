@@ -12,7 +12,7 @@ FORWARD_RE = re.compile(r'(^|\n)__+ Forwarded message __+[\s\S]+', re.IGNORECASE
 CID_RE = re.compile(r'\[cid:[^\]]+\]')
 SIGNATURE_RE = re.compile(
     r'(^|\n)--+\s*\n'  # signature delimiter
-    r'(?:.+\n){1,6}$',  # up to 6 lines of signature
+    r'[\s\S]+$',       # everything after the delimiter
     re.MULTILINE
 )
 BOILERPLATE_RE = re.compile(

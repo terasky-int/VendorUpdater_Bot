@@ -88,6 +88,10 @@ def extract_vendor_from_content(email_data):
     return None
 
 def infer_vendor(sender_email, original_email=None):
+    # Handle invalid email addresses
+    if not isinstance(sender_email, str) or '@' not in sender_email:
+        return "unknown"
+        
     # Extract actual email from display string
     match = re.search(r"<(.+?)>", sender_email)
     if match:
@@ -123,7 +127,8 @@ if __name__ == "__main__":
         "updates@marketing.vmware.co.uk",          # ✅ vmware
         "alerts@security.microsoft.io",            # ✅ microsoft
         "noreply@info.google.net",                 # ✅ google
-        "random@email"                             # ❌ unknown
+        "random@email",                            # ❌ unknown
+        "Invalid email"                            # ❌ unknown
     ]
 
     for email in test_senders:

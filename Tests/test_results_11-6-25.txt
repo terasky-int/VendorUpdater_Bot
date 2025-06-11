@@ -1,0 +1,732 @@
+1. Unit Tests
+
+(venv) PS C:\tmp\VendorUpdater_Bot> python Tests/run_unit_tests.py
+test_extract_metadata_basic (test_enrich.TestEnrich)
+Test basic metadata extraction ... ok
+test_infer_vendor_from_email (test_enrich.TestEnrich)
+Test vendor inference from email addresses ... test_infer_vendor_with_display_name (test_enrich.TestEnrich)
+Test vendor inference from email with display name ... ok
+test_medium_clean_collapses_newlines (test_normalize.TestNormalize)
+Test that multiple newlines are collapsed ... ok
+test_medium_clean_removes_cids (test_normalize.TestNormalize)
+Test that CIDs are removed ... ok
+test_medium_clean_removes_forwarded (test_normalize.TestNormalize)
+Test that forwarded blocks are removed ... ok
+test_medium_clean_removes_html (test_normalize.TestNormalize)
+Test that HTML tags are removed ... ok
+test_medium_clean_removes_html_comments (test_normalize.TestNormalize)
+Test that HTML comments are removed ... ok
+test_medium_clean_removes_signatures (test_normalize.TestNormalize)
+Test that email signatures are removed ... FAIL
+test_medium_clean_removes_style_blocks (test_normalize.TestNormalize)
+Test that style blocks are removed ... ok
+test_medium_clean_replaces_entities (test_normalize.TestNormalize)
+Test that HTML entities are replaced ... ok
+
+======================================================================
+FAIL: test_infer_vendor_from_email (test_enrich.TestEnrich) (email='Invalid email')
+Test vendor inference from email addresses
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\tmp\VendorUpdater_Bot\Tests\unit\test_enrich.py", line 24, in test_infer_vendor_from_email
+    self.assertEqual(result, expected)
+AssertionError: 'invalid email' != 'unknown'
+- invalid email
++ unknown
+
+
+======================================================================
+FAIL: test_medium_clean_removes_signatures (test_normalize.TestNormalize)
+Test that email signatures are removed
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\tmp\VendorUpdater_Bot\Tests\unit\test_normalize.py", line 38, in test_medium_clean_removes_signatures   
+    self.assertEqual(cleaned, "Main content")
+AssertionError: 'Main content\n--\nJohn Doe\nCEO' != 'Main content'
+- Main content
+?             -
++ Main content- --
+- John Doe
+- CEO
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.304s
+
+FAILED (failures=2)
+(venv) PS C:\tmp\VendorUpdater_Bot> 
+
+2. Component Tests
+ChromaDB Testing:
+
+(venv) PS C:\tmp\VendorUpdater_Bot> python Tests/tools/debug_search.py
+=== ChromaDB Collection Inspection ===
+Total documents in collection: 20
+
+Sample documents:
+
+Document 1:
+ID: chunk-0
+Metadata: {
+  "vendor": "paloaltonetworks",
+  "product": "Palo Alto Networks Certification, Palo Alto Networks Accreditation",
+  "type": "support",
+  "date": "2025-03-21T12:15:07",
+  "email_id": "e7f0d7de-b7e9-42c5-a689-fca5612791c3",
+  "chunk_index": 0
+}
+Text snippet: Re: Automatic reply: Your Palo Alto Networks Certification/Accreditation Will Expire in Three (3) Mo...
+
+Document 2:
+ID: chunk-1
+Metadata: {
+  "date": "2025-03-21T12:15:07",
+  "type": "support",
+  "vendor": "paloaltonetworks",
+  "email_id": "e7f0d7de-b7e9-42c5-a689-fca5612791c3",
+  "chunk_index": 1,
+  "product": "Palo Alto Networks Certification, Palo Alto Networks Accreditation"
+}
+Text snippet: Regards,
+Your Education Services Support Team...
+
+Document 3:
+ID: chunk-2
+Metadata: {
+  "type": "support",
+  "vendor": "paloaltonetworks",
+  "date": "2025-03-21T12:15:07",
+  "email_id": "e7f0d7de-b7e9-42c5-a689-fca5612791c3",
+  "product": "Palo Alto Networks Certification, Palo Alto Networks Accreditation",
+  "chunk_index": 2
+}
+Text snippet: [...
+
+Document 4:
+ID: chunk-3
+Metadata: {
+  "type": "announcement, event, product update, webinar, whitepaper",
+  "vendor": "hashicorp",
+  "chunk_index": 3,
+  "email_id": "8feca686-9ad4-45c9-9a39-d5be45106311",
+  "date": "2025-04-16T07:35:07",
+  "product": "vault, terraform, boundary, consul, nomad, packer, waypoint, sentinel, terraform cloud"
+}
+Text snippet: .....
+Terraliths: Breaking up is hard to do – This interview with Matt Gowie of MasterPoint includes...
+
+Document 5:
+ID: chunk-4
+Metadata: {
+  "type": "announcement, event, product update, webinar, whitepaper",
+  "email_id": "8feca686-9ad4-45c9-9a39-d5be45106311",
+  "chunk_index": 4,
+  "product": "vault, terraform, boundary, consul, nomad, packer, waypoint, sentinel, terraform cloud",
+  "date": "2025-04-16T07:35:07",
+  "vendor": "hashicorp"
+}
+Text snippet: .....
+He’s worked at Netflix, Apple, Amazon, and now… – This episode of The Programming Podcast feat...
+
+Unique metadata values:
+Vendors: {'hashicorp', 'paloaltonetworks'}
+Products: {'vault, terraform, boundary, consul, nomad, packer, waypoint, sentinel, terraform cloud', 'Palo Alto Networks Certification, Palo Alto Networks Accreditation'}
+Types: {'support', 'announcement, event, product update, webinar, whitepaper'}
+
+=== Basic Search Test ===
+
+Testing basic search for 'palo alto certification'
+Found 3 results
+
+Result 1:
+Text: Re: Automatic reply: Your Palo Alto Networks Certification/Accreditation Will Expire in Three (3) Mo...      
+Metadata: {'type': 'support', 'product': 'Palo Alto Networks Certification, Palo Alto Networks Accreditation', 'vendor': 'paloaltonetworks', 'email_id': 'e7f0d7de-b7e9-42c5-a689-fca5612791c3', 'date': '2025-03-21T12:15:07', 'chunk_index': 0}
+
+Result 2:
+Text: .....
+Ace your Terraform Professional exam: 5 tips from certified pros – The Terraform Authoring and...
+Metadata: {'date': '2025-04-16T07:35:07', 'chunk_index': 12, 'email_id': '8feca686-9ad4-45c9-9a39-d5be45106311', 'product': 'vault, terraform, boundary, consul, nomad, packer, waypoint, sentinel, terraform cloud', 'vendor': 'hashicorp', 'type': 'announcement, event, product update, webinar, whitepaper'}
+
+Result 3:
+Text: We have positions to fill across many departments. HashiCorp is remote-friendly and hiring for many ...      
+Metadata: {'product': 'vault, terraform, boundary, consul, nomad, packer, waypoint, sentinel, terraform cloud', 'date': '2025-04-16T07:35:07', 'vendor': 'hashicorp', 'email_id': '8feca686-9ad4-45c9-9a39-d5be45106311', 'type': 'announcement, event, product update, webinar, whitepaper', 'chunk_index': 19}
+
+Testing basic search for 'google cloud'
+Found 3 results
+
+Result 1:
+Text: Case study | The great migration: How Helvetia moved 200 apps to the cloud in one year
+
+Find out how...
+Metadata: {'vendor': 'hashicorp', 'email_id': '8feca686-9ad4-45c9-9a39-d5be45106311', 'date': '2025-04-16T07:35:07', 'product': 'vault, terraform, boundary, consul, nomad, packer, waypoint, sentinel, terraform cloud', 'type': 'announcement, event, product update, webinar, whitepaper', 'chunk_index': 8}
+
+Result 2:
+Text: [...
+Metadata: {'type': 'support', 'date': '2025-03-21T12:15:07', 'chunk_index': 2, 'vendor': 'paloaltonetworks', 'product': 'Palo Alto Networks Certification, Palo Alto Networks Accreditation', 'email_id': 'e7f0d7de-b7e9-42c5-a689-fca5612791c3'}
+
+Result 3:
+Text: ATTEND A WEBINAR
+Vault quickstart virtual hands-on workshop
+Wednesday, May 7 — Sign up for this hand...
+Metadata: {'type': 'announcement, event, product update, webinar, whitepaper', 'chunk_index': 15, 'email_id': '8feca686-9ad4-45c9-9a39-d5be45106311', 'vendor': 'hashicorp', 'product': 'vault, terraform, boundary, consul, nomad, packer, waypoint, sentinel, terraform cloud', 'date': '2025-04-16T07:35:07'}
+
+Testing basic search for 'hashicorp vault'
+Found 3 results
+
+Result 1:
+Text: ATTEND A WEBINAR
+Vault quickstart virtual hands-on workshop
+Wednesday, May 7 — Sign up for this hand...
+Metadata: {'date': '2025-04-16T07:35:07', 'type': 'announcement, event, product update, webinar, whitepaper', 'product': 'vault, terraform, boundary, consul, nomad, packer, waypoint, sentinel, terraform cloud', 'email_id': '8feca686-9ad4-45c9-9a39-d5be45106311', 'chunk_index': 15, 'vendor': 'hashicorp'}
+
+Result 2:
+Text: We have positions to fill across many departments. HashiCorp is remote-friendly and hiring for many ...      
+Metadata: {'chunk_index': 19, 'product': 'vault, terraform, boundary, consul, nomad, packer, waypoint, sentinel, terraform cloud', 'date': '2025-04-16T07:35:07', 'vendor': 'hashicorp', 'email_id': '8feca686-9ad4-45c9-9a39-d5be45106311', 'type': 'announcement, event, product update, webinar, whitepaper'}
+
+Result 3:
+Text: FROM HASHICORP
+Protect data privacy in Amazon Bedrock with Vault – Learn how to create an Amazon Bed...
+Metadata: {'email_id': '8feca686-9ad4-45c9-9a39-d5be45106311', 'chunk_index': 9, 'vendor': 'hashicorp', 'product': 'vault, terraform, boundary, consul, nomad, packer, waypoint, sentinel, terraform cloud', 'type': 'announcement, event, product update, webinar, whitepaper', 'date': '2025-04-16T07:35:07'}
+
+Testing basic search for 'terraform cloud'
+Found 3 results
+
+Result 1:
+Text: .....
+Disaster recovery strategies with Terraform – Terraform is in a unique position to not only qu...
+Metadata: {'product': 'vault, terraform, boundary, consul, nomad, packer, waypoint, sentinel, terraform cloud', 'vendor': 'hashicorp', 'chunk_index': 10, 'date': '2025-04-16T07:35:07', 'email_id': '8feca686-9ad4-45c9-9a39-d5be45106311', 'type': 'announcement, event, product update, webinar, whitepaper'}
+
+Result 2:
+Text: .....
+Ace your Terraform Professional exam: 5 tips from certified pros – The Terraform Authoring and...
+Metadata: {'vendor': 'hashicorp', 'email_id': '8feca686-9ad4-45c9-9a39-d5be45106311', 'date': '2025-04-16T07:35:07', 'chunk_index': 12, 'product': 'vault, terraform, boundary, consul, nomad, packer, waypoint, sentinel, terraform cloud', 'type': 'announcement, event, product update, webinar, whitepaper'}
+
+Result 3:
+Text: .....
+Migrate Terraform state locking from DynamoDB to S3 – With DynamoDB-based locking now deprecat...
+Metadata: {'email_id': '8feca686-9ad4-45c9-9a39-d5be45106311', 'date': '2025-04-16T07:35:07', 'type': 'announcement, event, product update, webinar, whitepaper', 'chunk_index': 6, 'vendor': 'hashicorp', 'product': 'vault, terraform, boundary, consul, nomad, packer, waypoint, sentinel, terraform cloud'}
+(venv) PS C:\tmp\VendorUpdater_Bot> 
+
+Neo4j Testing:
+(venv) PS C:\tmp\VendorUpdater_Bot> python Tests/tools/simple_query.py
+2025-06-11 13:28:08,601 - INFO - Connecting to Neo4j at bolt://172.16.205.103:7687 with user neo4j
+2025-06-11 13:28:08,680 - INFO - Neo4j connection test successful: [{'test': 1}]
+2025-06-11 13:28:08,681 - INFO - Connected to Neo4j database
+
+=== VENDORS ===
+- terasky
+- dell
+- amazon
+- cellebrite
+- goteleport
+- prompt
+- exasol
+- kodekloud
+- lucidchart
+- luma-mail
+- redhat
+- htzone
+- pluralsightskills
+- paloaltonetworks
+- hashicorp
+- google
+
+=== PRODUCTS ===
+- Prisma Cloud
+- SASE
+- hcp
+- radar
+- Vault Enterprise
+- Terraform
+- DELL
+- Amazon Bedrock
+- Amazon SageMaker
+- Amazon Q
+- flex
+- Cellebrite
+- hcp vault radar
+- Teleport
+- AWS Summit Tel Aviv 2025
+- Prompt Security
+- Exasol
+- prisma cloud
+- checkov
+- AI Annual Plan
+- Pro Annual Plan
+- Standard Annual Plan
+- Lucidscale
+- Luma
+- Red Hat
+- Prisma Certified Cloud Security Engineer
+- Route 53
+- Carrefour
+- Story
+- GOLF&CO
+- PRO²
+- Pluralsight Skills
+- Palo Alto Networks Certification
+- Palo Alto Networks Accreditation
+- vault
+- terraform
+- boundary
+- consul
+- nomad
+- packer
+- waypoint
+- sentinel
+- terraform cloud
+- Gemini 2.5
+- Gemma 3
+- Cortex XDR Agent
+- Cortex
+
+=== EMAILS ===
+- b76fd3e8-343e-4b5d-8965-b2c8e15ca46a: 2025-05-01T12:12:35 (['webinar', 'product update'])
+- f27111aa-2cf8-40f4-9051-4e864d5fc458: 2025-03-12T12:59:31 (['product update'])
+- dd6f6f89-0176-4f01-8004-6e7c6fa9027f: 2025-06-08T10:21:31 (['promo'])
+- a7dc59a2-4991-435a-9354-7b3fc0aa746c: 2025-05-21T15:08:26 (['event', 'webinar', 'product update'])
+- 2cc5a07d-ac74-4784-b820-6da0c700e7bc: 2024-10-09T09:36:34 (['announcement', 'product update'])
+- 810890d2-d242-4905-95a4-f2e25f938ed1: 2025-05-02T12:15:40 (['announcement', 'product update'])
+- e73dd377-f371-4f72-99e9-4d89ca9ba18c: 2025-04-04T08:30:49 (['announcement', 'product update'])
+- 1f1e4793-f8d2-4f49-b9eb-c55ef749e7fb: 2025-04-23T09:58:29 (['announcement'])
+- ee75f063-34f2-4c57-a6f7-4f99a4ede245: 2025-04-30T12:40:37 (['announcement', 'product update'])
+- 51967622-0fef-4ccd-9c02-f9a9841fbfe7: 2025-05-27T01:45:12 (['announcement', 'product update'])
+- 0b7847ac-2c32-494d-bc4c-2d0cb9135d6c: 2025-02-27T13:15:51 (['announcement', 'product update'])
+- 66cee3ef-d693-4614-9d3c-3b5ff6a39808: 2025-06-03T00:30:46 (['announcement', 'webinar', 'product update'])        
+- 5666314a-ef32-47a2-ac39-696aed60c89a: 2025-05-27T05:01:37 (['event', 'announcement'])
+- d1348b2b-4f5e-4127-8f06-4ce21ad73bc3: 2024-12-10T07:33:23 (['announcement', 'product update', 'webinar'])        
+- a60c914f-8a9f-4b80-b8ea-0406e8ae8078: 2025-05-25T10:05:42 (['support'])
+- e4c36004-d02f-4c4c-a806-1e1ba1bfb7c7: 2025-05-28T08:12:47 (['product update', 'announcement'])
+- 4e1039fd-37da-4bac-a986-2be421d0645a: 2024-11-13T07:38:04 (['event', 'webinar', 'announcement', 'product update'])
+- 25be3644-f660-46e8-ada1-1ffaca6b7370: 2025-05-27T12:34:01 (['event', 'webinar'])
+- c3888944-87cb-433c-bdf1-4438184475f3: 2024-12-11T07:35:02 (['announcement', 'product update', 'webinar'])        
+- 3d1a12a3-1593-4753-abf3-553320e77fe2: 2025-05-27T16:08:10 (['promo', 'event'])
+- f6fe38b0-d2e0-4689-94e7-7c69678c6a23: 2025-03-12T07:34:34 (['announcement', 'product update', 'webinar'])        
+- 5020dfcb-9a57-4180-bfa4-80ed5e213281: 2025-03-12T02:50:46 (['support', 'product update'])
+- 521f5b94-96a8-47ff-8f5e-65a039215483: 2025-05-26T15:58:07 (['webinar', 'whitepaper'])
+- 68a82c1c-30e2-434e-a3a6-0c70a954b16c: 2025-05-25T13:31:24 (['event', 'announcement'])
+- 106e64aa-411b-4525-8631-990bfbc3221d: 2025-05-23T00:40:57 (['event'])
+- 91ada630-b6cf-48ac-96f1-6c2bdf666c5a: 2025-02-12T10:33:17 (['event', 'vulnerability', 'patch', 'maintenance'])   
+- 5eb72406-5f61-4bbd-847b-90962b8e381d: 2025-05-21T19:11:58 (['announcement', 'product update'])
+- d7fb19f3-caf0-4b71-b0c6-0b430863578e: 2025-03-21T19:12:52 (['announcement', 'product update'])
+- 50c4044a-6d8a-45cd-a92a-3656123b4d50: 2025-05-27T23:42:22 (['announcement', 'maintenance'])
+- 51f54e9a-0766-4962-9907-29f9992d83ae: 2025-06-05T11:09:22 (['announcement', 'product update'])
+- 62bf350f-7020-41d7-93ff-b7f667e10616: 2025-05-25T01:07:12 (['promo'])
+- d23f046a-37b1-4df5-a0f6-e2cf64a0cdbb: 2025-05-28T13:04:22 (['promo'])
+- b2d3deba-ae5f-4744-87c7-17e656bcd30b: 2025-05-22T10:36:40 (['event', 'promo'])
+- ba6eea97-3aa1-4c73-94a6-79ec61d275b6: 2025-05-14T07:34:56 (['promo', 'webinar', 'announcement', 'product update'])
+- e7f0d7de-b7e9-42c5-a689-fca5612791c3: 2025-03-21T12:15:07 (['support'])
+- 8feca686-9ad4-45c9-9a39-d5be45106311: 2025-04-16T07:35:07 (['announcement', 'event', 'product update', 'webinar', 'whitepaper'])
+- 44f56c04-b0b5-40e3-abbf-5bffad2a8252: 2025-05-19T09:28:16 (['event', 'webinar'])
+- 37e3d979-d248-4f01-91a0-c16e6cb3a877: 2025-05-28T05:32:10 (['product update', 'announcement'])
+- 81481bbf-fcd2-42e2-a3e8-3f3d5b2402c3: 2025-06-04T06:40:02 (['product update', 'announcement'])
+- 2a43f949-cf31-46fa-8848-c5f359f2668a: 2025-04-15T13:02:28 (['promo', 'product update'])
+
+=== VENDOR-PRODUCT RELATIONSHIPS ===
+- hashicorp: hcp, terraform cloud, sentinel, waypoint, packer, nomad, consul, boundary, terraform, vault
+
+=== EMAIL-VENDOR RELATIONSHIPS ===
+- f27111aa-2cf8-40f4-9051-4e864d5fc458 from terasky
+- dd6f6f89-0176-4f01-8004-6e7c6fa9027f from dell
+- 50c4044a-6d8a-45cd-a92a-3656123b4d50 from amazon
+- 5666314a-ef32-47a2-ac39-696aed60c89a from amazon
+- a7dc59a2-4991-435a-9354-7b3fc0aa746c from amazon
+- 1f1e4793-f8d2-4f49-b9eb-c55ef749e7fb from cellebrite
+- 66cee3ef-d693-4614-9d3c-3b5ff6a39808 from goteleport
+- 51967622-0fef-4ccd-9c02-f9a9841fbfe7 from goteleport
+- a60c914f-8a9f-4b80-b8ea-0406e8ae8078 from prompt
+- 521f5b94-96a8-47ff-8f5e-65a039215483 from exasol
+- e4c36004-d02f-4c4c-a806-1e1ba1bfb7c7 from exasol
+- 3d1a12a3-1593-4753-abf3-553320e77fe2 from kodekloud
+- 5020dfcb-9a57-4180-bfa4-80ed5e213281 from lucidchart
+- 68a82c1c-30e2-434e-a3a6-0c70a954b16c from luma-mail
+- 106e64aa-411b-4525-8631-990bfbc3221d from redhat
+- 62bf350f-7020-41d7-93ff-b7f667e10616 from htzone
+- d23f046a-37b1-4df5-a0f6-e2cf64a0cdbb from pluralsightskills
+- d7fb19f3-caf0-4b71-b0c6-0b430863578e from paloaltonetworks
+- 5eb72406-5f61-4bbd-847b-90962b8e381d from paloaltonetworks
+- 2a43f949-cf31-46fa-8848-c5f359f2668a from paloaltonetworks
+- 81481bbf-fcd2-42e2-a3e8-3f3d5b2402c3 from paloaltonetworks
+- 37e3d979-d248-4f01-91a0-c16e6cb3a877 from paloaltonetworks
+- e7f0d7de-b7e9-42c5-a689-fca5612791c3 from paloaltonetworks
+- ba6eea97-3aa1-4c73-94a6-79ec61d275b6 from hashicorp
+- b2d3deba-ae5f-4744-87c7-17e656bcd30b from hashicorp
+- 51f54e9a-0766-4962-9907-29f9992d83ae from hashicorp
+- 91ada630-b6cf-48ac-96f1-6c2bdf666c5a from hashicorp
+- f6fe38b0-d2e0-4689-94e7-7c69678c6a23 from hashicorp
+- c3888944-87cb-433c-bdf1-4438184475f3 from hashicorp
+- 25be3644-f660-46e8-ada1-1ffaca6b7370 from hashicorp
+- 4e1039fd-37da-4bac-a986-2be421d0645a from hashicorp
+- d1348b2b-4f5e-4127-8f06-4ce21ad73bc3 from hashicorp
+- 0b7847ac-2c32-494d-bc4c-2d0cb9135d6c from hashicorp
+- ee75f063-34f2-4c57-a6f7-4f99a4ede245 from hashicorp
+- e73dd377-f371-4f72-99e9-4d89ca9ba18c from hashicorp
+- 810890d2-d242-4905-95a4-f2e25f938ed1 from hashicorp
+- 2cc5a07d-ac74-4784-b820-6da0c700e7bc from hashicorp
+- b76fd3e8-343e-4b5d-8965-b2c8e15ca46a from hashicorp
+- 8feca686-9ad4-45c9-9a39-d5be45106311 from hashicorp
+- 44f56c04-b0b5-40e3-abbf-5bffad2a8252 from google
+
+
+Cypher Query Testing:
+(venv) PS C:\tmp\VendorUpdater_Bot> python Tests/tools/cypher_query.py
+Neo4j Cypher Query Tool
+Type 'exit' to quit
+Enter complete queries in a single line
+
+Example queries:
+  MATCH (e:Email)-[:FROM]->(v:Vendor) RETURN v.name AS vendor, count(e) AS email_count ORDER BY email_count DESC
+  MATCH (v:Vendor)-[:OFFERS]->(p:Product) RETURN v.name AS vendor, count(p) AS product_count ORDER BY product_count DESC
+
+cypher> MATCH (e:Email)-[:FROM]->(v:Vendor) RETURN v.name AS vendor, count(e) AS email_count ORDER BY email_count DESC
+
+Running query: MATCH (e:Email)-[:FROM]->(v:Vendor) RETURN v.name AS vendor, count(e) AS email_count ORDER BY email_count DESC
+2025-06-11 13:28:38,566 - INFO - Connecting to Neo4j at bolt://172.16.205.103:7687 with user neo4j
+2025-06-11 13:28:38,646 - INFO - Neo4j connection test successful: [{'test': 1}]
+2025-06-11 13:28:38,646 - INFO - Connected to Neo4j database
+
+Found 16 results:
+
+vendor | email_count
+--------------------
+hashicorp | 16
+paloaltonetworks | 6
+amazon | 3
+goteleport | 2
+exasol | 2
+terasky | 1
+dell | 1
+cellebrite | 1
+prompt | 1
+kodekloud | 1
+lucidchart | 1
+luma-mail | 1
+redhat | 1
+htzone | 1
+pluralsightskills | 1
+google | 1
+
+
+Enhanced Integration Tests:
+(venv) PS C:\tmp\VendorUpdater_Bot> python Tests/tools/test_enhanced_integration.py
+🔍 Testing Enhanced Integration
+==================================================
+
+🧪 Testing enhanced graph database functions
+Confidence levels: HIGH=high, MEDIUM=medium, LOW=low
+
+Testing get_vendor_products_by_confidence for vendor 'hashicorp'
+2025-06-11 13:29:07,842 - INFO - Connecting to Neo4j at bolt://172.16.205.103:7687 with user neo4j
+2025-06-11 13:29:07,920 - INFO - Neo4j connection test successful: [{'test': 1}]
+2025-06-11 13:29:07,920 - INFO - Connected to Neo4j database
+High confidence products: [{'vendor': 'hashicorp', 'product': 'hcp', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'vault', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'terraform', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'boundary', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'consul', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'nomad', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'packer', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'waypoint', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'sentinel', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'terraform cloud', 'confidence': 'high'}]
+2025-06-11 13:29:07,924 - INFO - Connecting to Neo4j at bolt://172.16.205.103:7687 with user neo4j
+2025-06-11 13:29:07,934 - INFO - Neo4j connection test successful: [{'test': 1}]
+2025-06-11 13:29:07,934 - INFO - Connected to Neo4j database
+Medium+ confidence products: [{'vendor': 'hashicorp', 'product': 'hcp', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'vault', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'terraform', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'boundary', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'consul', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'nomad', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'packer', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'waypoint', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'sentinel', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'terraform cloud', 'confidence': 'high'}]
+2025-06-11 13:29:07,938 - INFO - Connecting to Neo4j at bolt://172.16.205.103:7687 with user neo4j
+2025-06-11 13:29:07,949 - INFO - Neo4j connection test successful: [{'test': 1}]
+2025-06-11 13:29:07,949 - INFO - Connected to Neo4j database
+All confidence products: [{'vendor': 'hashicorp', 'product': 'hcp', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'vault', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'terraform', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'boundary', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'consul', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'nomad', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'packer', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'waypoint', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'sentinel', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'terraform cloud', 'confidence': 'high'}]
+
+Cleanup function available: cleanup_incorrect_relationships()
+
+🧪 Testing unified search functions
+
+Processing query: 'Show me recent security updates from hashicorp about vault'
+Processed query: {'query_text': 'Show me recent security updates from hashicorp about vault', 'filters': {'vendor': 'hashicorp', 'product': 'vault', 'type': 'security'}, 'graph_filters': {'days': 30}}
+
+Testing get_vendor_products_enhanced for vendor 'hashicorp'
+2025-06-11 13:29:07,953 - INFO - Connecting to Neo4j at bolt://172.16.205.103:7687 with user neo4j
+2025-06-11 13:29:07,964 - INFO - Neo4j connection test successful: [{'test': 1}]
+2025-06-11 13:29:07,964 - INFO - Connected to Neo4j database
+Enhanced products: [{'vendor': 'hashicorp', 'product': 'hcp', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'vault', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'terraform', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'boundary', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'consul', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'nomad', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'packer', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'waypoint', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'sentinel', 'confidence': 'high'}, {'vendor': 'hashicorp', 'product': 'terraform cloud', 'confidence': 'high'}]
+
+Unified search function available: unified_search()
+Graph enhanced ranking function available: graph_enhanced_ranking()
+Format search results function available: format_search_results()
+
+✅ All enhanced functions are available and ready to use!
+(venv) PS C:\tmp\VendorUpdater_Bot> 
+
+Search Quality Tests:
+(venv) PS C:\tmp\VendorUpdater_Bot> python Tests/tools/test_search_quality.py
+2025-06-11 13:29:29,696 - INFO - Testing basic search without filters
+2025-06-11 13:29:29,766 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-11 13:29:29,938 - INFO - Collection has 20 documents
+2025-06-11 13:29:29,954 - INFO - Found credentials in environment variables.
+2025-06-11 13:29:30,652 - INFO - Search returned 5 results
+2025-06-11 13:29:30,684 - INFO - Collection has 20 documents
+2025-06-11 13:29:31,096 - INFO - Search returned 5 results
+2025-06-11 13:29:31,132 - INFO - Collection has 20 documents
+2025-06-11 13:29:31,570 - INFO - Search returned 5 results
+2025-06-11 13:29:31,604 - INFO - Collection has 20 documents
+2025-06-11 13:29:32,032 - INFO - Search returned 5 results
+2025-06-11 13:29:32,066 - INFO - Collection has 20 documents
+2025-06-11 13:29:32,498 - INFO - Search returned 5 results
+2025-06-11 13:29:32,536 - INFO - Collection has 20 documents
+2025-06-11 13:29:32,969 - INFO - Search returned 5 results
+2025-06-11 13:29:32,969 - INFO - Testing search with filters
+2025-06-11 13:29:33,001 - INFO - Collection has 20 documents
+2025-06-11 13:29:33,001 - INFO - Using where clause: {'vendor': 'paloaltonetworks'}
+2025-06-11 13:29:33,438 - INFO - Search returned 3 results
+2025-06-11 13:29:33,475 - INFO - Collection has 20 documents
+2025-06-11 13:29:33,475 - INFO - Using where clause: {'vendor': 'google'}
+2025-06-11 13:29:33,910 - INFO - Search returned 0 results
+2025-06-11 13:29:33,944 - INFO - Collection has 20 documents
+2025-06-11 13:29:33,944 - INFO - Using where clause: {'product': 'Cortex, Prisma Cloud, SASE'}
+2025-06-11 13:29:34,386 - INFO - Search returned 0 results
+2025-06-11 13:29:34,420 - INFO - Collection has 20 documents
+2025-06-11 13:29:34,420 - INFO - Using where clause: {'vendor': 'hashicorp'}
+2025-06-11 13:29:34,873 - INFO - Search returned 5 results
+2025-06-11 13:29:34,904 - INFO - Collection has 20 documents
+2025-06-11 13:29:34,904 - INFO - Using where clause: {'product': 'vault, terraform, boundary, consul, nomad, packer, waypoint, sentinel, terraform cloud'}
+2025-06-11 13:29:35,344 - INFO - Search returned 5 results
+2025-06-11 13:29:35,380 - INFO - Collection has 20 documents
+2025-06-11 13:29:35,380 - INFO - Using where clause: {'type': 'announcement, event, webinar, product update'}
+2025-06-11 13:29:35,806 - INFO - Search returned 0 results
+
+BASIC SEARCH RESULTS (no filters):
+{
+  "palo alto certification": {
+    "vector_count": 5,
+    "vector_first_doc": "Re: Automatic reply: Your Palo Alto Networks Certification/Accreditation Will Expire in Three (3) Mo"
+  },
+  "google cloud event": {
+    "vector_count": 5,
+    "vector_first_doc": "HashiDays\nJune 3 ( London ) July 22 ( Singapore )  \u2014 Registration for HashiDays Singapore is now ope"
+  },
+  "cortex prisma security": {
+    "vector_count": 5,
+    "vector_first_doc": "FROM HASHICORP\nProtect data privacy in Amazon Bedrock with Vault \u2013 Learn how to create an Amazon Bed"
+  },
+  "hashicorp vault workshop": {
+    "vector_count": 5,
+    "vector_first_doc": "ATTEND A WEBINAR\nVault quickstart virtual hands-on workshop\nWednesday, May 7 \u2014 Sign up for this hand"
+  },
+  "terraform cloud migration": {
+    "vector_count": 5,
+    "vector_first_doc": ".....\nMigrate Terraform state locking from DynamoDB to S3 \u2013 With DynamoDB-based locking now deprecat"
+  },
+  "webinar event": {
+    "vector_count": 5,
+    "vector_first_doc": "ATTEND A WEBINAR\nVault quickstart virtual hands-on workshop\nWednesday, May 7 \u2014 Sign up for this hand"
+  }
+}
+
+FILTERED SEARCH RESULTS:
+{
+  "palo alto certification": {
+    "coverage": 1.0,
+    "matched_keywords": [
+      "accreditation",
+      "alto",
+      "certification",
+      "palo"
+    ],
+    "missing_keywords": [],
+    "result_count": 3,
+    "first_result": "Re: Automatic reply: Your Palo Alto Networks Certification/Accreditation Will Expire in Three (3) Mo"
+  },
+  "google cloud event": {
+    "coverage": 0.0,
+    "matched_keywords": [],
+    "missing_keywords": [
+      "google",
+      "cloud",
+      "event",
+      "webinar"
+    ],
+    "result_count": 0,
+    "first_result": "No results"
+  },
+  "cortex prisma security": {
+    "coverage": 0.0,
+    "matched_keywords": [],
+    "missing_keywords": [
+      "cortex",
+      "prisma",
+      "security"
+    ],
+    "result_count": 0,
+    "first_result": "No results"
+  },
+  "hashicorp vault workshop": {
+    "coverage": 1.0,
+    "matched_keywords": [
+      "webinar",
+      "vault",
+      "workshop"
+    ],
+    "missing_keywords": [],
+    "result_count": 5,
+    "first_result": "ATTEND A WEBINAR\nVault quickstart virtual hands-on workshop\nWednesday, May 7 \u2014 Sign up for this hand"
+  },
+  "terraform cloud migration": {
+    "coverage": 1.0,
+    "matched_keywords": [
+      "migration",
+      "terraform",
+      "cloud"
+    ],
+    "missing_keywords": [],
+    "result_count": 5,
+    "first_result": ".....\nMigrate Terraform state locking from DynamoDB to S3 \u2013 With DynamoDB-based locking now deprecat"
+  },
+  "webinar event": {
+    "coverage": 0.0,
+    "matched_keywords": [],
+    "missing_keywords": [
+      "webinar",
+      "event"
+    ],
+    "result_count": 0,
+    "first_result": "No results"
+  }
+}
+(venv) PS C:\tmp\VendorUpdater_Bot> 
+
+5. Natural Language Interface Tests
+***PROBLEM
+(venv) PS C:\tmp\VendorUpdater_Bot> python Tests/tools/nl_query_enhanced.py
+Enhanced Natural Language Query Interface
+Type 'exit' to quit
+
+Example queries:
+- How many emails from hashicorp vendor?
+- Show me recent security updates
+- What's new from hashicorp about terraform
+- Show me webinars from the past week
+- List all products from hashicorp
+- List all vendors
+
+Query: How many emails from hashicorp vendor?
+2025-06-11 13:30:03,238 - INFO - Connecting to Neo4j at bolt://172.16.205.103:7687 with user neo4j
+2025-06-11 13:30:03,313 - INFO - Neo4j connection test successful: [{'test': 1}]
+2025-06-11 13:30:03,313 - INFO - Connected to Neo4j database
+
+There are 16 emails from hashicorp.
+
+Query: list all vendors
+2025-06-11 13:30:08,953 - INFO - Connecting to Neo4j at bolt://172.16.205.103:7687 with user neo4j
+2025-06-11 13:30:08,965 - INFO - Neo4j connection test successful: [{'test': 1}]
+2025-06-11 13:30:08,966 - INFO - Connected to Neo4j database
+
+Available vendors (16):
+- amazon
+- cellebrite
+- dell
+- exasol
+- google
+- goteleport
+- hashicorp
+- htzone
+- kodekloud
+- lucidchart
+- luma-mail
+- paloaltonetworks
+- pluralsightskills
+- prompt
+- redhat
+- terasky
+
+Query: list all products from amazon
+2025-06-11 13:30:18,584 - INFO - Connecting to Neo4j at bolt://172.16.205.103:7687 with user neo4j
+2025-06-11 13:30:18,597 - INFO - Neo4j connection test successful: [{'test': 1}]
+2025-06-11 13:30:18,597 - INFO - Connected to Neo4j database
+
+Available products (47):
+- AI Annual Plan
+- AWS Summit Tel Aviv 2025
+- Amazon Bedrock
+- Amazon Q
+- Amazon SageMaker
+- Carrefour
+- Cellebrite
+- Cortex
+- Cortex XDR Agent
+- DELL
+- Exasol
+- GOLF&CO
+- Gemini 2.5
+- Gemma 3
+- Lucidscale
+- Luma
+- PRO²
+- Palo Alto Networks Accreditation
+- Palo Alto Networks Certification
+- Pluralsight Skills
+... and 27 more
+
+Query: list all products from hashicorp
+2025-06-11 13:30:22,977 - INFO - Connecting to Neo4j at bolt://172.16.205.103:7687 with user neo4j
+2025-06-11 13:30:22,979 - INFO - Neo4j connection test successful: [{'test': 1}]
+2025-06-11 13:30:22,979 - INFO - Connected to Neo4j database
+
+Available products (47):
+- AI Annual Plan
+- AWS Summit Tel Aviv 2025
+- Amazon Bedrock
+- Amazon Q
+- Amazon SageMaker
+- Carrefour
+- Cellebrite
+- Cortex
+- Cortex XDR Agent
+- DELL
+- Exasol
+- GOLF&CO
+- Gemini 2.5
+- Gemma 3
+- Lucidscale
+- Luma
+- PRO²
+- Palo Alto Networks Accreditation
+- Palo Alto Networks Certification
+- Pluralsight Skills
+... and 27 more
+
+Query: exit
+(venv) PS C:\tmp\VendorUpdater_Bot> 
+
+
+natural language interface to test:
+**PROBLEM
+(venv) PS C:\tmp\VendorUpdater_Bot> python Tests/tools/nl_query_enhanced.py
+Enhanced Natural Language Query Interface
+Type 'exit' to quit
+
+Example queries:
+- How many emails from hashicorp vendor?
+- Show me recent security updates
+- What's new from hashicorp about terraform
+- Show me webinars from the past week
+- List all products from hashicorp
+- List all vendors
+
+Query: Show me recent security updates
+2025-06-11 13:31:45,211 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-06-11 13:31:45,822 - INFO - Collection has 20 documents
+2025-06-11 13:31:45,822 - INFO - Using where clause: {'type': 'security'}
+2025-06-11 13:31:45,856 - INFO - Found credentials in environment variables.
+2025-06-11 13:31:46,629 - INFO - Search returned 0 results
+2025-06-11 13:31:46,637 - INFO - Connecting to Neo4j at bolt://172.16.205.103:7687 with user neo4j
+2025-06-11 13:31:46,811 - INFO - Neo4j connection test successful: [{'test': 1}]
+2025-06-11 13:31:46,812 - INFO - Connected to Neo4j database
+
+I couldn't find any relevant information for your query. Try refining your search or asking about email counts, recent emails, security updates, or vendor products.
+
+Query: Show me webinars from the past week
+2025-06-11 13:31:53,627 - INFO - Collection has 20 documents
+2025-06-11 13:31:53,627 - INFO - Using where clause: {'type': 'webinar'}
+2025-06-11 13:31:54,103 - INFO - Search returned 0 results
+2025-06-11 13:31:54,103 - INFO - Connecting to Neo4j at bolt://172.16.205.103:7687 with user neo4j
+2025-06-11 13:31:54,112 - INFO - Neo4j connection test successful: [{'test': 1}]
+2025-06-11 13:31:54,112 - INFO - Connected to Neo4j database
+
+I couldn't find any relevant information for your query. Try refining your search or asking about email counts, recent emails, security updates, or vendor products.
+
+Query:
+
+
+
+
