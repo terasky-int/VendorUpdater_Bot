@@ -1,7 +1,10 @@
 """
-Unified Search Module
+Unified Search Implementation for VendorUpdater_Bot
 
-This module provides unified search functionality combining vector search and graph relationships.
+This module implements a hybrid search approach that combines:
+1. Vector search with metadata filtering
+2. Graph database relationships
+3. Natural language query processing
 """
 
 import re
@@ -84,7 +87,8 @@ def process_search_query(query: str) -> Dict[str, Any]:
     if product_filter:
         filters["product"] = product_filter
     if type_filter:
-        # Use exact matching for type
+        # ChromaDB doesn't support $contains, so we'll use exact matching
+        # In production, you might want to use a more sophisticated approach
         filters["type"] = type_filter
     
     # Build graph filters
@@ -97,6 +101,88 @@ def process_search_query(query: str) -> Dict[str, Any]:
         "filters": filters,
         "graph_filters": graph_filters
     }
+
+def graph_enhanced_ranking(results: Dict[str, Any], query_text: str) -> Dict[str, Any]:
+    """
+    Enhance search ranking using graph relationships
+    
+    Args:
+        results: Results from vector search
+        query_text: Original query text
+    
+    Returns:
+        Reranked results
+    """
+    # If no results, return as is
+    if not results["documents"]:
+        return results
+        
+    # Extract email IDs and document scores
+    email_scores = {}
+    for i, meta in enumerate(results["metadatas"]):
+        email_id = meta.get("email_id")
+        if email_id:
+            if email_id not in email_scores:
+                email_scores[email_id] = results["distances"][i]
+            else:
+                # Keep the highest score for each email
+                email_scores[email_id] = max(email_scores[email_id], results["distances"][i])
+    
+    # Get graph importance scores
+    graph_scores = {}
+    if email_scores:
+        query = """
+        MATCH (e:Email)
+        WHERE e.id IN $email_ids
+        OPTIONAL MATCH (e)-[:ABOUT]->(p:Product)
+        OPTIONAL MATCH (e)-[:FROM]->(v:Vendor)
+        WITH e, count(p) AS product_count, v
+        RETURN e.id AS email_id, product_count, v.name AS vendor
+        """
+        graph_results = run_graph_query(query, {"email_ids": list(email_scores.keys())})
+        
+        if graph_results:
+            for result in graph_results:
+                email_id = result["email_id"]
+                # Simple graph score based on product mentions
+                graph_scores[email_id] = result["product_count"] * 0.1
+                
+                # Boost score for recent emails
+                if "date" in result and result["date"]:
+                    # This is simplified - in production you'd parse the date and calculate recency
+                    graph_scores[email_id] += 0.05
+    
+    # Combine vector and graph scores
+    combined_scores = {}
+    for email_id, score in email_scores.items():
+        graph_score = graph_scores.get(email_id, 0)
+        combined_scores[email_id] = score + graph_score
+    
+    # Rerank results
+    reranked_results = {
+        "documents": [],
+        "metadatas": [],
+        "distances": [],
+        "ids": []
+    }
+    
+    # Sort by combined score
+    sorted_emails = sorted(combined_scores.items(), key=lambda x: x[1], reverse=True)
+    
+    # Rebuild results in new order
+    for email_id, _ in sorted_emails:
+        for i, meta in enumerate(results["metadatas"]):
+            if meta.get("email_id") == email_id:
+                reranked_results["documents"].append(results["documents"][i])
+                reranked_results["metadatas"].append(results["metadatas"][i])
+                reranked_results["distances"].append(results["distances"][i])
+                reranked_results["ids"].append(results["ids"][i])
+    
+    # If no reranked results (could happen if email_ids don't match), return original
+    if not reranked_results["documents"]:
+        return results
+        
+    return reranked_results
 
 def unified_search(query_text: str, filters: Optional[Dict[str, Any]] = None, 
                   graph_filters: Optional[Dict[str, Any]] = None, top_k: int = 5) -> Dict[str, Any]:
@@ -234,52 +320,60 @@ def unified_search(query_text: str, filters: Optional[Dict[str, Any]] = None,
 
 def get_vendor_products_enhanced(vendor_name: str) -> List[Dict[str, Any]]:
     """
-    Get products offered by a vendor using graph database
+    Get products offered by a vendor with confidence levels
     
     Args:
         vendor_name: Name of the vendor
     
     Returns:
-        List of products with their details
+        List of products with confidence levels
     """
-    # First try direct graph query
-    query = """
-    MATCH (v:Vendor {name: $vendor})-[:OFFERS]->(p:Product)
-    RETURN p.name AS product
-    """
-    products = run_graph_query(query, {"vendor": vendor_name})
-    
-    if not products:
-        # Try with case-insensitive match
-        query = """
-        MATCH (v:Vendor)-[:OFFERS]->(p:Product)
-        WHERE toLower(v.name) CONTAINS toLower($vendor)
-        RETURN p.name AS product, v.name AS vendor
-        """
-        products = run_graph_query(query, {"vendor": vendor_name})
-    
-    return products or []
+    try:
+        from graph_db import get_vendor_products_by_confidence
+        
+        # Try to get products with confidence levels
+        products = get_vendor_products_by_confidence(vendor_name)
+        
+        if products:
+            return products
+        
+        # Fall back to regular product lookup
+        from graph_db import get_vendor_products
+        basic_products = get_vendor_products(vendor_name)
+        
+        if basic_products:
+            # Convert to enhanced format
+            return [
+                {"vendor": vendor_name, "product": p["product"], "confidence": "unknown"}
+                for p in basic_products
+            ]
+        
+        return []
+    except Exception as e:
+        logging.error(f"Error getting vendor products: {e}")
+        return []
 
-def search_by_nl_query(query: str, top_k: int = 5) -> Dict[str, Any]:
+def format_search_results(results: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Perform a search using natural language query
+    Format search results for API response
     
     Args:
-        query: Natural language query
-        top_k: Number of results to return
+        results: Raw search results
     
     Returns:
-        Dict with search results and related entities
+        Formatted results for API response
     """
-    # Process the query to extract filters
-    processed = process_search_query(query)
+    formatted_results = []
     
-    # Run unified search
-    results = unified_search(
-        processed["query_text"],
-        processed["filters"],
-        processed["graph_filters"],
-        top_k
-    )
+    for i, (doc, meta) in enumerate(zip(results["documents"], results["metadatas"])):
+        formatted_results.append({
+            "document": doc,
+            "metadata": meta,
+            "score": results["distances"][i] if i < len(results["distances"]) else 0.0
+        })
     
-    return results
+    return {
+        "results": formatted_results,
+        "related_entities": results["related_entities"],
+        "total_results": len(formatted_results)
+    }

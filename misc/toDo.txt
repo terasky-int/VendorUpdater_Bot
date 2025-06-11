@@ -5,6 +5,8 @@
 	Create the graph_db_enhanced.py module as described in the documentation
 	Add confidence levels to vendor-product relationships
 	Implement the validation tool
+* test the api endpoint of the app.
+* test docker deployment.
 * Error Handling in Unified Search
 * Configuration Management
 * Documentation Gaps
