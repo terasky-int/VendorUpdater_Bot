@@ -111,6 +111,10 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 - [ ] Create automated reports
 - [ ] Implement alerting for important updates
 
+### 6.5 Phase 5: Cleanup 📅
+- [ ] get rid of unused files and temporary created tools, that are no longer used.
+- [ ] Refresh and consolidate all docs
+
 ## 7. Success Metrics
 
 - [ ] **Data Accuracy**: >95% correct vendor-product relationships
