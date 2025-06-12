@@ -7,7 +7,7 @@ This module provides API endpoints that combine vector search and graph database
 import logging
 from typing import Dict, Any, List, Optional
 
-from src.unified_search import (
+from src.optimized_search import (
     process_search_query,
     unified_search,
     graph_enhanced_ranking,

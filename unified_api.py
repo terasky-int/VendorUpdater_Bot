@@ -13,7 +13,7 @@ import json
 
 # Import from src modules
 from src import llm_utils
-from src.unified_search import (
+from src.optimized_search import (
     process_search_query,
     unified_search,
     graph_enhanced_ranking,
