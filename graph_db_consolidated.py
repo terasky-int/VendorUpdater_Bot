@@ -74,10 +74,11 @@ def load_vendor_products():
         return {}
 
 def validate_vendor_product(vendor, product):
-    """Validate if a vendor-product relationship is known in the config"""
+    """Validate if a vendor-product relationship is known in the config or through common patterns"""
+    # First check config-based mappings
     vendor_products = load_vendor_products()
     
-    # Case-insensitive vendor matching
+    # Case-insensitive vendor matching from config
     for known_vendor, products in vendor_products.items():
         if vendor.lower() in known_vendor.lower() or known_vendor.lower() in vendor.lower():
             # Case-insensitive product matching
@@ -85,6 +86,36 @@ def validate_vendor_product(vendor, product):
                 if product.lower() == known_product.lower():
                     return CONFIDENCE_HIGH
     
+    # If not found in config, check for well-known vendor-product associations
+    known_associations = {
+        "hashicorp": ["radar", "vault enterprise", "hcp vault radar", "flex", "terraform"],
+        "dell": ["dell"],
+        "amazon": ["amazon bedrock", "amazon sagemaker", "amazon q", "aws summit", "route 53"],
+        "paloaltonetworks": ["prisma cloud", "prisma certified cloud security engineer", 
+                            "palo alto networks certification", "palo alto networks accreditation",
+                            "cortex xdr agent", "cortex"],
+        "broadcom": ["vmware cloud foundation"],
+        "cellebrite": ["cellebrite"],
+        "goteleport": ["teleport"],
+        "prompt": ["prompt security"]
+    }
+    
+    # Check if there's a match in known associations
+    vendor_lower = vendor.lower()
+    product_lower = product.lower()
+    
+    for known_vendor, products in known_associations.items():
+        # Check if this is the right vendor
+        if vendor_lower == known_vendor or vendor_lower in known_vendor or known_vendor in vendor_lower:
+            # Check if product matches any in the list
+            for known_product in products:
+                if product_lower == known_product or product_lower in known_product or known_product in product_lower:
+                    return CONFIDENCE_MEDIUM
+    
+    # Check for product name containing vendor name (e.g., "AWS Summit" contains "AWS")
+    if vendor_lower in product_lower:
+        return CONFIDENCE_MEDIUM
+        
     return CONFIDENCE_LOW
 
 def analyze_text_for_relationships(text, vendor, product):
@@ -167,13 +198,11 @@ def add_email_to_graph(graph, email_id, metadata, email_text=None):
                 about_rel = Relationship(email_node, "ABOUT", product_node)
                 graph.merge(about_rel)
                 
-                # Only create OFFERS relationship if confidence is medium or high
-                if confidence in [CONFIDENCE_HIGH, CONFIDENCE_MEDIUM]:
-                    offers_rel = Relationship(vendor_node, "OFFERS", product_node, confidence=confidence)
-                    graph.merge(offers_rel)
-                    logging.info(f"Created OFFERS relationship between {vendor} and {product} with {confidence} confidence")
-                else:
-                    logging.info(f"Skipped low-confidence OFFERS relationship between {vendor} and {product}")
+                # Always create OFFERS relationship but with appropriate confidence level
+                # This ensures all products have a vendor relationship
+                offers_rel = Relationship(vendor_node, "OFFERS", product_node, confidence=confidence)
+                graph.merge(offers_rel)
+                logging.info(f"Created OFFERS relationship between {vendor} and {product} with {confidence} confidence")
         
         logging.info(f"Added email {email_id} to graph database with enhanced validation")
         return True
