@@ -30,17 +30,24 @@ def hybrid_search(query_text: str, filters: Optional[Dict[str, Any]] = None, top
         logging.info(f"Generated embedding with dimension: {len(query_embedding)}")
         
         # Process filters
-        where_clause = {}
+        where_clause = None
         if filters:
-            # Simple direct matching for now
-            where_clause = filters
+            # ChromaDB expects filters in a specific format
+            # For multiple conditions, we need to use $and operator
+            if len(filters) > 1:
+                where_clause = {"$and": []}
+                for key, value in filters.items():
+                    where_clause["$and"].append({key: value})
+            else:
+                # For a single condition, we can use it directly
+                where_clause = filters
             logging.info(f"Using where clause: {where_clause}")
         
         # Perform vector search with metadata filtering
         results = collection.query(
             query_embeddings=[query_embedding],
             n_results=top_k,
-            where=where_clause if where_clause else None,
+            where=where_clause,
             include=["documents", "metadatas", "distances"]
         )
         

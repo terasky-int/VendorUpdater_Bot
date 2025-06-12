@@ -1,0 +1,157 @@
+Received: from PR3P194MB0569.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:3f::12)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Fri, 21 Mar 2025
+ 19:15:12 +0000
+Received: from PR3P191CA0035.EURP191.PROD.OUTLOOK.COM (2603:10a6:102:55::10)
+ by PR3P194MB0569.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:3f::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8534.36; Fri, 21 Mar
+ 2025 19:15:10 +0000
+Received: from AMS1EPF0000004A.eurprd04.prod.outlook.com
+ (2603:10a6:102:55:cafe::5f) by PR3P191CA0035.outlook.office365.com
+ (2603:10a6:102:55::10) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8534.36 via Frontend Transport; Fri,
+ 21 Mar 2025 19:15:10 +0000
+Authentication-Results: spf=temperror (sender IP is 149.96.5.3)
+ smtp.mailfrom=paloaltonetworks.com; dkim=none (message not signed)
+ header.d=none;dmarc=temperror action=none
+ header.from=paloaltonetworks.com;compauth=softpass reason=202
+Received-SPF: TempError (protection.outlook.com: error in processing during
+ lookup of paloaltonetworks.com: DNS Timeout)
+Received: from outbound26.service-now.com (149.96.5.3) by
+ AMS1EPF0000004A.mail.protection.outlook.com (10.167.16.134) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8534.20
+ via Frontend Transport; Fri, 21 Mar 2025 19:15:09 +0000
+Received: from app130158.ytz201.service-now.com (unknown [10.248.2.236])
+	by outbound26.service-now.com (Postfix) with ESMTP id B27C56000098
+	for <davidg@terasky.com>; Fri, 21 Mar 2025 12:15:07 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 outbound26.service-now.com B27C56000098
+Date: Fri, 21 Mar 2025 12:15:07 -0700
+From: Certification Support <certification@paloaltonetworks.com>
+Reply-To: Certification Support <certification@paloaltonetworks.com>
+To: <davidg@terasky.com>
+Message-ID: <1482230430.38380.1742584507724@app130158.ytz201.service-now.com>
+Subject: Re: Automatic reply: Your Palo Alto Networks
+ Certification/Accreditation Will Expire in Three (3) Months - Case
+ TCKT0072381
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-ServiceNow-Source: Notification-d374c3db1b25c4d06b7d0e1dcd4bcb0d
+List-Unsubscribe: <mailto:ithelpdesk@paloaltonetworks.com?subject=Unsubscribe+from+%22Notify+new+Tech+Edu+User%22&body=Sending+this+email+with+the+predefined+content+in+the+subject+and+body+will+unsubscribe+you+from+the+notification+%22Notify+new+Tech+Edu+User%22.+%0D%0A%0D%0AUnsubscribe%3A%7B%22id%22%3A%22d374c3db1b25c4d06b7d0e1dcd4bcb0d%22%2C%22token%22%3A%22c797e62132%22%7D>
+X-ServiceNow-SysEmail-Version: 2
+Precedence: bulk
+Auto-Submitted: auto-generated
+X-ServiceNow-Generated: true
+Return-Path: certification@paloaltonetworks.com
+X-MS-Exchange-Organization-ExpirationStartTime: 21 Mar 2025 19:15:09.4318
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 751c8ae2-7c46-40b4-8160-08dd68acb277
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AMS1EPF0000004A:EE_|PR3P194MB0569:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AMS1EPF0000004A.eurprd04.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 751c8ae2-7c46-40b4-8160-08dd68acb277
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|2092899012|12012899012|4022899009|8096899003;
+X-Forefront-Antispam-Report: CIP:149.96.5.3;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:outbound26.service-now.com;PTR:outbound26.service-now.com;CAT:NONE;SFS:(13230040)(2092899012)(12012899012)(4022899009)(8096899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 Mar 2025 19:15:09.2130
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 751c8ae2-7c46-40b4-8160-08dd68acb277
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AMS1EPF0000004A.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PR3P194MB0569
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.5984188
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8534.033
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(4710137)(4713040)(4999020)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?Mm1sdmRIRDN3cVZ1bktWNHAvY1YvdFlneVBPYU9oMXBFaWg4VUp1UEFyZW5T?=
+ =?utf-8?B?VW01S1dLdERFMTZEOFhtMEJDcE1ETEYvNFIzVmExYTh5NndxQkVzdjlicjg3?=
+ =?utf-8?B?WWJkMDJaL1Z6NkhTZW53akp5YklTUWIzU2pjODg2T2JjcTl2a3k2YjRUYWdG?=
+ =?utf-8?B?Q0xhZDg3ajg2a1h4T1JPNjhJKzdkenRkR0hiTTlJTUt4RCtxb0VYSjNKa2NG?=
+ =?utf-8?B?U2xXb3pKS1pNUnROU3h1U2lEcXhBZHFrZEpFbDMvMkRNQ00rNTE1YUkvTXlC?=
+ =?utf-8?B?K0NMVDhwbjVuRS9neERJMXRKeUFlM0VjOFB2RUdnejlEMStseVVTeDVicFc2?=
+ =?utf-8?B?cDdPQUN4ZC9WTjA3WTRZVmIwcmdqTVh0K2VwUVIxOWcrTjdyUU5Ta2toMVJW?=
+ =?utf-8?B?ekowRTh6M1Z3Q1JRTnJ6dG1CenFKSVh1ZUpPVk45VWEvOExkMDJqV3dUNVVO?=
+ =?utf-8?B?eE9aMnViRXJBcTRzejJEMHJUdDFpc1dVVWNSSEdKRG9HY2ZkeGZIQmpLOHIr?=
+ =?utf-8?B?MFhOYVh5aWRwb2ROWjdZQ2pyakpCTlhzM0ordklyaEhtTnRrRFlrNjBLT2Rk?=
+ =?utf-8?B?K1FVU3QrT2lWYm96cDZZZWsveEJhVXMxRlNwRm9qMmZSc0UrdzZmNWZwTldj?=
+ =?utf-8?B?dldjUUxOWks1VjlJRXNpYzFwL2xFZFZONVZDeHl6R3FMRy96KzNwVWZCdUpV?=
+ =?utf-8?B?VXQ2ZVluc0N4MzkyVmx5cGdpWlBQUnRXR01GUnJGenREYnhiMHlvbnIxKy9H?=
+ =?utf-8?B?ZmNZOVIya1M2NmdqRjd0d2luZ2NXRUZaOEhaK09Pa3pWUHU4cWtTa0pBODVN?=
+ =?utf-8?B?NyttTUlqYkVEcEttbmtaQVJWZk1KWjlSU3BpVnZPalZvbDRCSGszQnpTci9H?=
+ =?utf-8?B?UStzWkgzaEFUSlBkOVIrTFcxdmkxc0VnUHJnNWVkNFViWk8yakQ3MEsxMEZa?=
+ =?utf-8?B?WVVHc2w3TUtuTWVoYms4OEJ4aXF5SVF1bWxoZkN1NlBPQnUyOElLMGp0Z3pi?=
+ =?utf-8?B?TjhlQzlKRTVIRy84NFZMU21seXAwTG9qNHBQUHNFbThOaTAxU3lWdFpVc2x1?=
+ =?utf-8?B?d3NxanBpQzhmTWg2T1NKa1B4M0xpeUpmVncxZ0Y2UkhzcVBlUTQrUy91bmlD?=
+ =?utf-8?B?ZHo4ZjNpVzNEVURYanBya2JyUWpPRWdUSjlCQ3FOcS81OXYyTjhBU2RBc3FI?=
+ =?utf-8?B?YkpWcFZrRC81R3o1ak1SZzJqUWJPVlFpNkNRcFFIeXA5akYyS1EvU0dzcGlt?=
+ =?utf-8?B?bzhoZFNyaURzTy8vSjJjS2VvcnFFemxmSEdoSGQvYjM4OHBFM0xpTUNKNDJR?=
+ =?utf-8?B?VmtDam9hcmpzeEJwd2FSZ2RqMThvdTlJVkhTYTlqcVJ2Q3VuOC9hbGpGUkxC?=
+ =?utf-8?B?enBTcDdPMUdHY1NzaSsxQW1OeDdOa3ZTYlBSUXdmNWVDNTQ2dFluOHBubzFr?=
+ =?utf-8?B?K2dFYlJWQ053dlpDd0VBT2dYNmY3K0dJZU03aHM2UTlPQ3NlZ0pHZ1BiTDZl?=
+ =?utf-8?B?WVgzcmhPc21CRFR3MzVHckVoN01wamhFZWNUN2ludXJlSEVXNlpEM3Z1dVdn?=
+ =?utf-8?B?bjhtVGwwTFIybkdhK3VIdUd3VFBrVmhsWmx0ZDhUQ3lqUWlQTWtXc1BKZm10?=
+ =?utf-8?B?VnMwS1hEQ0pMRmVCVFlJY1ZTNW9MSittR2wxd3kxQi9ET2ptVUNWOTArd1Bp?=
+ =?utf-8?B?UGhqNnlGR2ZodjRKaXlHSWI5cTRja0xhM3JaaXZDYVlMUFpRaHljdHMwMFQr?=
+ =?utf-8?B?dVU5cytZZG9tQmxGVGdVaEhPZXBKSEVUczFpeDFMM3FMN21kQmRVcFVoQmhJ?=
+ =?utf-8?B?cmJTczdNRlpRWVdJZUJaQk1nYVlBRVFIZzIwUk8vUlJEOVFXV0llNDlTdU5m?=
+ =?utf-8?B?VjFNdUQvb000cDRDaFlGOEs5dUFCQ3NXS1lCWHpFK3RFaGxPQmdPTjVHS0hO?=
+ =?utf-8?B?QVVBS01ySE5aQVVpb3NxWlFQbTJCZWZSRlY5NEVkM2NoWFpJTXk3N2JZK0k4?=
+ =?utf-8?B?QVJYVisvbXIyU1E2WkJ4cHdvaE1zVUJ5cXJaNWthQXMvUm5FZUE0QmEzZ2Vp?=
+ =?utf-8?B?cjR3NEQyMGQ2RkNmSWJXb3RSOWg1VGRseEVzZzgxZmJIRk1ESEJRa0RzQ3dq?=
+ =?utf-8?B?ajhWZ3RIOEpGd3ZMSU9PWlRteWRzL2hpWXY0KzdzMGZGaE5lRi9RNEJJN1Zr?=
+ =?utf-8?B?YXR6N2tVSDgzNGdTNjhuZjRDZFErNWpLOW5UNU04ZXVJRE53WjRJUmFrOHli?=
+ =?utf-8?B?aUd6Smk2UnlLUExQVGRleUx4MTJRczc5Q0FCeDhvOXQyVUwrcjhoTEZkUWkz?=
+ =?utf-8?B?UzlUZGFORWluWERJYndNSTNZcHhxZ256S1paUlYyN25yak1EK2tmbDdBSzF3?=
+ =?utf-8?B?ZWlCcEZwbHJnSitFKzZJSjFWcHVCOEI1NXpkRHpoWkl3L2dZZkt3SjFMNERh?=
+ =?utf-8?B?dFFRbGFuMy9Bckl4d1BxOVVKRWhLeG1MM0xVTnJLeTUrejhVZTE4TzdSbVVR?=
+ =?utf-8?B?dnBPY0drUWIvSVFyTzdRY0pSdk1CaHA0bUNJaE8rZGErR1FBOHVYRXgyc1NN?=
+ =?utf-8?B?QXdXZXJrZzNTTjZ3ZDloNmNNcVFHeVhwQlBuQ0EvVGVnekhzc3I3WUxBbkhL?=
+ =?utf-8?B?OTRqajljQitiMjJNTjR1Y0h5S1gyQ1hLWnBoeUJsNnJWaFVLT084ZFlhTXpV?=
+ =?utf-8?B?TlNJcTN1cm13OHJ4d0RMMzliZkFBbStPYnF1VGRuWWgyUlprQndGYkNYTmlB?=
+ =?utf-8?B?Z2NiRmRsOEZwWjZEazFnVjlTbEl2TXN5em0xT1dFQUZPeVFBWCt0SFU0R1hX?=
+ =?utf-8?Q?t2f2ElN48pl5VfnAYUAUI=3D?=
+MIME-Version: 1.0
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+</head>
+<body>
+<p>Thank you for contacting the Education Services Support Team.&nbsp; We h=
+ave received your inquiry and will respond within 2 business days.&nbsp;</p=
+>
+<p><strong>Your reference case :</strong> TCKT0072381</p>
+<p><strong>Short description:</strong> Re: Automatic reply: Your Palo Alto =
+Networks Certification/Accreditation Will Expire in Three (3) Months</p>
+<p><strong>Additional comments:</strong> </p>
+<p dir=3D"ltr">&nbsp;</p>
+<p dir=3D"ltr">Please note, your answer may be located in the&nbsp;<a title=
+=3D"Education Help Center" href=3D"https://live.paloaltonetworks.com/t5/edu=
+cation-services-help-center/ct-p/Education_Services_Help_Center">Education =
+Help Center</a>.&nbsp;</p>
+<p dir=3D"ltr">&nbsp;</p>
+<p dir=3D"ltr">Regards,</p>
+<p dir=3D"ltr">Your Education Services Support Team</p>
+<p dir=3D"ltr">&nbsp;</p>
+<p dir=3D"ltr"></p>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,1031 @@
+Received: from PA4P194MB1070.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:ba::13)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Fri, 5 Jan 2024
+ 13:36:06 +0000
+Received: from AM6P192CA0034.EURP192.PROD.OUTLOOK.COM (2603:10a6:209:83::47)
+ by PA4P194MB1070.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:ba::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7181.9; Fri, 5 Jan
+ 2024 13:36:02 +0000
+Received: from AMS1EPF00000041.eurprd04.prod.outlook.com
+ (2603:10a6:209:83:cafe::26) by AM6P192CA0034.outlook.office365.com
+ (2603:10a6:209:83::47) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7159.14 via Frontend
+ Transport; Fri, 5 Jan 2024 13:36:02 +0000
+Authentication-Results: spf=pass (sender IP is 192.28.155.92)
+ smtp.mailfrom=undelivered1.vmware.com; dkim=pass (signature was verified)
+ header.d=connect.vmware.com;dmarc=pass action=none
+ header.from=connect.vmware.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of undelivered1.vmware.com
+ designates 192.28.155.92 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.28.155.92;
+ helo=undelivered1.vmware.com; pr=C
+Received: from undelivered1.vmware.com (192.28.155.92) by
+ AMS1EPF00000041.mail.protection.outlook.com (10.167.16.38) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7159.9 via Frontend Transport; Fri, 5 Jan 2024 13:36:01 +0000
+X-MSFBL: UmIZGuV2xl24pXl0yqEoBIIwx6Ww0eA8O61TcGpz6Fk=|eyJnIjoiYmctYWJkLTk
+	zNyIsInUiOiIwNDgtU1pXLTA0NTowOjY4OTYyOjg1NDcyNjozODcyODY5OjExNDU
+	1NTo5OjUyNjc1OToxODgxMDEyNDAiLCJyIjoiZGF2aWRnQHRlcmFza3kuY29tIiw
+	iYiI6ImR2cC0xOTItMjgtMTU1LTkzIn0=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1704461733;
+	s=m1; d=connect.vmware.com; i=@connect.vmware.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=/LrDTXmPPH+HYp9nErXUkCjzQqO1q/kaEpNTu+tGQ24=;
+	b=gJsfK1aKK8jgXkH0rBb0QfkneIHACsyUTEnprZfmnL2SCQD65aGXpX5dUSuTAyju
+	75cXuGCn8ukyRio/rbhzSCIQbnZQjENxZE4g8mqed4h/ZLT12QE37qYAffN5E8O4NQ9
+	Mi/ykyuOU+vw/hX/A91DiSmO3Cz2RlmtE1RvqYyM=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1704461733;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=/LrDTXmPPH+HYp9nErXUkCjzQqO1q/kaEpNTu+tGQ24=;
+	b=cUuGSGWcXI2wS3dSJSsECy2sjF80h7AnZ1ctpEwP1oXK+laZY23z09IIWOoZOfUw
+	/yORUkjYJABz+MgkPExdDh06dTfvbYXWrAI9Kbgph8mjS4O9+bAa7nzRJU7IeGT0TIL
+	rxNwvsqHmprw9kG9DR7ILnBo1AZviqejKI5Iqeng=
+Date: Fri, 5 Jan 2024 07:35:33 -0600 (CST)
+From: VMware by Broadcom <vmwareteam@connect.vmware.com>
+Reply-To: reply@vmware.com
+To: davidg@terasky.com
+Message-ID: <556820906.251758850.1704461733246@abmktmail-batch1k.marketo.org>
+Subject: =?UTF-8?Q?You=E2=80=99re_Invited_to_our_EUC_Executive_S?=
+ =?UTF-8?Q?trategy_Roadmap_event_on_30th_January?=
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_251758848_360266812.1704461733246"
+X-Binding: bg-abd-937
+X-MarketoID: 048-SZW-045:0:68962:854726:3872869:114555:9:526759:188101240
+X-Mailfrom: 048-SZW-045.0.526759.0.0.114555.9.188101240@undelivered1.vmware.com
+List-Unsubscribe: <mailto:NJPS2TDRJA4HK42WPBETQ2BNI5ME6S3WLJKHAMDWPA2XA6CTIZDU2M2THBCDCWKFN54HOPI=.526759.114555.9@unsub-ab.mktomail.com>
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+Return-Path: 048-SZW-045.0.526759.0.0.114555.9.188101240@undelivered1.vmware.com
+X-MS-Exchange-Organization-ExpirationStartTime: 05 Jan 2024 13:36:02.2245
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: edc64e2b-e840-4ba5-4e9e-08dc0df3426a
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AMS1EPF00000041:EE_|PA4P194MB1070:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AMS1EPF00000041.eurprd04.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: edc64e2b-e840-4ba5-4e9e-08dc0df3426a
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:3;
+X-Forefront-Antispam-Report: CIP:192.28.155.92;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:undelivered1.vmware.com;PTR:undelivered1.vmware.com;CAT:NONE;SFS:(13230031)(4636009)(286005)(230173577357003)(230273577357003)(1690799017)(451199024)(83380400001)(6512007)(9686003)(336012)(42882007)(26005)(956004)(22186003)(1096003)(7036003)(118246002)(58800400005)(6666004)(36736006)(6486002)(33964004)(6506007)(6916009)(166002)(7636003)(83170400001)(76236004)(9316004)(40140700001)(7596003)(356005)(66899024)(19627405001)(76899018)(1406899027);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jan 2024 13:36:01.8651
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: edc64e2b-e840-4ba5-4e9e-08dc0df3426a
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AMS1EPF00000041.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA4P194MB1070
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:04.5110221
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.7181.004
+X-Message-Flag: Follow up
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?bnJjOW9LVURCRWRiN0lNNk9EOGRWenk2d3I3UmplQjUzMlhSQXBtcDM0OHJs?=
+ =?utf-8?B?WWxwOW9ycnplNVFlUXNMbi84MFpJNTJBcVM1ZU5jNDkydXE4ZkNtZTNsUUJP?=
+ =?utf-8?B?R2tjNDE5NFB3WVBEeE5yVFh6RjZZSXQzWE82WXh6bFNIM2dKaVYwWHNnVXIy?=
+ =?utf-8?B?QzFaNnhkazNpeTN1OG11M1E0QXV0b0ZkdDluYXhCZGIzNXFEWlMvWkppQlBH?=
+ =?utf-8?B?c1YzOU8wOXJiZ3JlaXZ0MmJUWXlMLzgrbzNpbVN3djFaNUdVeFNlSTJTS2lR?=
+ =?utf-8?B?cCsyRlNxU2RQK09yTFQySWVGWlMwbjJWMW1kWndnUzJJYnIrMmRpZkVzdVdG?=
+ =?utf-8?B?RmdPaW9ibU5PUkcyM2JtTkhXc1VOc21QZ1JWTWlOZXU3dDB1b0taWDlNaTN6?=
+ =?utf-8?B?dk90RnpQL01HSUl6UzhnYVBVc3ZQZ1h3ZHg0SFF4a3FQQXR1WGZ4cGNHS1o2?=
+ =?utf-8?B?WmozZGNHWHZpYWlCdUZpTzhKMm12aUd6YURMMldWTWtqSTh4YnBMcElkTDJK?=
+ =?utf-8?B?RFl1Rmd4MmswcHc5UEdndnNqcXRzcWY1cFZMek9SMkZQVExuVGFORUhNOTVD?=
+ =?utf-8?B?UTZyR29xNHg3eWhkWGk1Um1WQ3JhcXF4R0tUMEdnL09wVHIzN04ySndmQkdL?=
+ =?utf-8?B?ZmU2eFVjQlVSWnhZNjRFbFMvK0t1d0xoQWg1RnRRNTkvWWdQWW9QQnVHdERQ?=
+ =?utf-8?B?UDdZRlV5YzN0a2ZnanN2bktvb1BWNS9qUCtldUJqbmM1emM0YWd2Smd3dnpy?=
+ =?utf-8?B?N2FYOGN0ek9JZnJnMkY1OWd0Ti9YUTRZc3dIZ0FGUXdiZEpJYkhqWHF5NUE3?=
+ =?utf-8?B?SnkrRG9hb3l5eTFUTTUxQkllQkZOSElUOTBmTmpNRmN2ZkZ4NjN6Ykg2QVBu?=
+ =?utf-8?B?bE9FMlNtSHExbHVWZDc5VDRueHlCcXV6NHJOMUtWM0kwR2N1MUtjM0QwaW82?=
+ =?utf-8?B?Zy8ybEswQjkyOEJUaEs4ZjAvZnh3amhCaXpTcXNNQnVTYlJwMzJHRjRSZkpF?=
+ =?utf-8?B?RjZ3dDJieWlLVHFOYTlsUGdIVlcyWW9PSlRnTXJmazlzSzRDZXh3RlJRZkdG?=
+ =?utf-8?B?MHdtQmx2NUpvY2Zib01mTS92Uk4vVlBKTFQ2T0l2TEVIdzhSWk43SmdVc3FC?=
+ =?utf-8?B?ekRIWkVMVWwzYzE5VHdYMTY1Rm16azhFc3FJL1NOakNUeDFhZHZsQlpXY2g1?=
+ =?utf-8?B?ODl5U0dFc09oMnBwNmlXRGh4MERxT0FBNU9TNDQ5VW5INktHdFpKZ2E4RzF1?=
+ =?utf-8?B?NU4zOUthWlFITTBDNERYRXVkNjk0T3dpT3c5d1lxSy9mRER5WUZCNnl4RE5V?=
+ =?utf-8?B?YklVRTI1cWVKd0l0STlpaElKZ2JrTm9qam9LZ0oxUzVTa0tySmJGRklKTUdm?=
+ =?utf-8?B?WVg4ZDJJL3g5aXdHS1htNEIrRmhUUjNsUjFSM2ovSEVHRG5QbW9ZT0xZa2pn?=
+ =?utf-8?B?WG51SHMzZ01MT3MxUFZtcE5KYnZ2ZEUvOUE1V0FyNDNZM0MyZmxLTjY0aGsr?=
+ =?utf-8?B?MVEvSjB2ZjN1VkFnaXQ3cU81RU5rci9UNzV3M0FQaE5MSE1IOVJtQS94UDd1?=
+ =?utf-8?B?UWpyS2l2eWpJV2R2cWJYL3B6L0hwVlNBZHl3UTkxZi9DWXRIZk04cHNubll2?=
+ =?utf-8?B?bWJ0YkJSS1JDRWxvdEtzZTYyalEwVXJQdTJiOW1XQ1kxRWNQamhZTzFTdnk4?=
+ =?utf-8?B?Y3NZUmJYeWEycHR0M2IzcXdIOE9UczFRd3dtWEEvcElJR2xKcTlqRGMxcmRC?=
+ =?utf-8?B?QlA5VWpsZlhldW03YjB4UUZtZ1RFb1J1VHU4M1hSM2E5U0NBcHdWbng2NWMz?=
+ =?utf-8?B?b2xYMXh0WFF6a3k0T0lIT1JheGJieEVnQWRyaDA4UlNONEhxUVJaYzgxeG5H?=
+ =?utf-8?B?eDFGQXUzVXBHQTZFZXJ6QVBkMTJmL1pNaUx4Y0VLbmdjVERZNUttb0hNTDdB?=
+ =?utf-8?B?LzFPQWxGeUszZENOMXIrNDRBWFNrR3NpYWtYUWZBTitpelVIbGpSeG5vNzc2?=
+ =?utf-8?B?N0tqUzVCenI5cTZFdVlmYTU0M0k2bGZET3dVSHhQaFdlS0NhSFZzYTV3RWNB?=
+ =?utf-8?B?amJNQWc3Q0gxdVA0eVdkYTF6d1VmZzkveUlrZWxNZ2ZaRlpuZmd1cHRTUnlr?=
+ =?utf-8?B?azNQSGExNHl6OVdyS0VvcjJLdXliQUpDcmxCWFlWUlVYQ2IvR0tiazNuN3V6?=
+ =?utf-8?B?UDk1TWtZclE4R1ZyczFjVUtDcXR2TWp0T3pzSHhGYzdNRkdEUTZEMVR2RTJE?=
+ =?utf-8?B?Q0dYU0t2ckR0cThFZ3BDSzdkYmY4WE1iRTBaaDJOSGcxUDU0N0o2S3NmeCsx?=
+ =?utf-8?B?OWtHQWZrbzg4WFZIS0hhOFpTTlViL3VLOXhIMkRIUHkxM0hXam5KSHZXZXVB?=
+ =?utf-8?B?SkxPRy9OMzd1bFVMck9WbnRheHBFR1pRZkFpU0NSVnREQWtCSTQ0SVhteWdm?=
+ =?utf-8?B?bmlvM21EZDVLVVl2MEpMMDhpaG1qOUVUNXEwK3h2ZE54dkx3K0RWWFRIR0di?=
+ =?utf-8?B?OFdGZVJMamkxTU80b0tqZy9KbGV1Y2p6Ui83SUR2b0wwaUtUNjgvaWptZC8x?=
+ =?utf-8?B?K1ZxbVBJeFJ5TEhMT2FadVRQdjVCUU43TjVDbVFCRllyMnFuVitkUVVJWXp6?=
+ =?utf-8?B?L2dvc3pvdnlEalp6OFJrVzlMbEMxUjBWNnFtTE9GYXFUTHg3YVNWamNseDhx?=
+ =?utf-8?B?cGlOY2E1eDEySkprb3ZQYkpkMlFuTzgxd1FubVVYdzdIazYwcXRXVXU3dTRq?=
+ =?utf-8?B?a3hTS1hFOE5BcGZ1U1UzbkxreXBNSXZpK05ha296YkZ3bFBDZFpSUGhoNk9B?=
+ =?utf-8?B?PT0=?=
+MIME-Version: 1.0
+
+------=_Part_251758848_360266812.1704461733246
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+If you are having trouble reading this email, read the online version.<http=
+s://marketing.vmware.com/v/MDQ4LVNaVy0wNDUAAAGQeM69elKOqrsk2YlEgEMkG_OHqa-D=
+_6sp8xtbPKCrYE7V10iiT87OlBUVxz4zkGRHtOzti_4=3D>
+
+
+[VMware]<https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69eieQ9EOKbg8oT=
+4pvyElDfRba0xVwutLGK392J07v40F9Crtwvv8ZcJ3iXfW9iIa9aKQ=3D>
+
+<https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69elwrfb3YSKONSxOv-XEbO=
+aEgs8Lgr_YLErrhfJyGgH8zCYLQ49KWB6O9BxLcI9x5sxc=3D>
+
+
+Join leaders across the End User Computing industry for insights into the f=
+uture of work.
+
+Date: Tuesday 30th January
+Time: 14:30 =E2=80=93 17:00 GMT / 15:30 =E2=80=93 18:00 CET
+Location: Zoom
+
+REGISTER NOW<https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69ej5ns_Jbz=
+q3OxB6WCzbgr2q4unSMQuhS_TcrrNA4uuFgwDHTzn8LTu21o2BSOpG5xio=3D>
+
+
+
+
+Dear David,
+
+During this exclusive invite-only event on Tuesday 30th January, Bharath Ra=
+ngarajan, GM of VDI/DaaS and VP of Products and UX Group, will share the ev=
+olution of our autonomous workspace vision and the progress we have made wi=
+th current AI integrations.
+
+Event Host, Ralf Gegg, Vice President, EMEA End-User Computing Sales will d=
+iscuss updates regarding our three key investment areas with industry leade=
+rs:
+
+  *   Unified Endpoint Management and Security
+Jared Cook, Sr. Director, Product Management, Windows Management
+  *   Virtual Desktops and Apps
+Arindam Nag, VP Product Management, Horizon
+  *   Digital Employee Experience
+Scott Kelley, Sr. Director, Product Management
+
+Register today<https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69ej5ns_J=
+bzq3OxB6WCzbgr2q4unSMQuhS_TcrrNA4uuFgwDHTzn8LTu21o2BSOpG5xio=3D> to be part=
+ of this exclusive session of sharing and collaboration.
+
+Get excited for the event by listening to our latest episode of the Future =
+of Work podcast<https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69euCA-0=
+yY6Gj0RuD6pYeYlavaFuXgpj8J8iknqHCBR6LABEyort6RHGtbxTKx_LtAE1E=3D>.
+
+We look forward to seeing you there!
+
+
+
+
+REGISTER NOW<https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69ej5ns_Jbz=
+q3OxB6WCzbgr2q4unSMQuhS_TcrrNA4uuFgwDHTzn8LTu21o2BSOpG5xio=3D>
+
+
+
+
+Invitation is intended for recipient only and is non-transferable. We recom=
+mend opening or pasting the registration link in Google Chrome for the best=
+ experience.
+
+
+
+<https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69elwrfb3YSKONSxOv-XEbO=
+aEgs8Lgr_YLErrhfJyGgH8zCYLQ49KWB6O9BxLcI9x5sxc=3D>
+
+
+[VMware]<https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69eieQ9EOKbg8oT=
+4pvyElDfRba0xVwutLGK392J07v40F9Crtwvv8ZcJ3iXfW9iIa9aKQ=3D>
+
+
+[Twitter]<https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69et6TGsH94sff=
+KO_wsy9JohOU-Tpad-KynDw-0R_0n0GeUrPBByAx1SyYm__mqn4Fpsk=3D>            [Fac=
+ebook] <https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69eqeTC9hle4JaPM=
+aS93arEDYnHnfClhfUAZN_w765dkwOnUxDdpAqtAWlPGEF0APRu28=3D>          [Youtube=
+] <https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69es1QIH4-ZTlY7Ym5HTb=
+GeBgDgKxDaePB622Qq1-OToSPcmTxG25gDgEaM_3KbXpET58=3D>           [LinkedIn] <=
+https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69ekFbGkoXhBIn7oEoRuBD9_=
+p6U83e27viys6f_es6lhIjyYtKB8pwlkBBQUGkeFLUXq0=3D>
+
+2358250_EM1
+VMware LLC. 3401 Hillview Ave. Palo Alto CA 94304 USA Tel 1-877-486-9273
+
+Copyright =C2=A9 2005-2023 Broadcom. All Rights Reserved. The term =E2=80=
+=9CBroadcom=E2=80=9D refers to Broadcom Inc. and/or its subsidiaries. VMwar=
+e is a registered trademark of VMware LLC. The content and links in this em=
+ail contain information intended solely for its named recipients and are no=
+t to be shared with third parties unless otherwise specified.
+
+You are receiving this email because of your previous interactions with VMw=
+are. If you don=E2=80=99t want to receive marketing communications from VMw=
+are you can opt-out at any time by using the VMware Preference Center<https=
+://privacyportal.onetrust.com/ui/#/preferences/multipage/token/9e8618d1-88f=
+d-4258-92d7-f9bf47cf3417/bo99j0KNnmyzIQRzZKamsX1AJSezQ84p%2FUepv73LLQI%3D>.
+
+Alternatively, to manage your profile, subscription preferences, and to uns=
+ubscribe from VMware marketing communications, please go to Customer Connec=
+t<https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69epv-eLv0seV4z0a50Lnf=
+srxAB3dz1LOIpm3Xn_uDWzdicMz97YJoibFZoypMRRTVFsc=3D>. For more information o=
+n how VMware processes your personal data please see the VMware Global Priv=
+acy Policy<https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69ejr1LVnIR1b=
+vdsgj9DnSFIJ3I0hrXi_oV3ssW0xUqDz-RGPrNpIADyCHXs2lcjBzgjo=3D>.
+
+Please do not reply to this message. Replies to this message are routed to =
+an unmonitored mailbox. If you have questions, please contact<https://marke=
+ting.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69eqKxeVOcXemrLTg9FEnswbbyScjveZk-_zt=
+UNUSF3s_XJf0wahmkZbVJXyi3A7BRUUE=3D> us. This email was sent to davidg@tera=
+sky.com.
+
+Was this email forwarded to you by someone else? Please subscribe here<http=
+s://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69egktNQ1p9jsSo7S-BVBYl2E2HQ=
+yvbMimVX1Bv4H4-xuEMeeoTFyAdQPbxhE06JRdFZM=3D> to receive direct marketing c=
+ommunications from VMware.
+<https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69euXMmwXNmHUaI_ckUmnXI=
+SgKEwctFNxhkQz23Ca99U670Rg_M2BbQGZh4qdNn8vvEl4=3D>
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_251758848_360266812.1704461733246
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><!-- saved from url=3D(0086)h=
+ttp://campaign.vmware.com/imgs/email-templates/vmware-selfserve-simple-with=
+image.html --><html xmlns=3D"http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta content=3D"telephone=3Dno" name=3D"format-detection">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<title>VMware</title>
+<style type=3D"text/css">
+body {
+font-family: "Metropolis Light", Metropolis, Helvetica, Arial, sans-serif;
+margin: 0px !important;
+padding: 0px !important;
+-webkit-text-size-adjust: 100% !important;
+-ms-text-size-adjust: 100% !important;
+-webkit-font-smoothing: antialiased !important;
+}
+
+img {
+border: 0 !important;
+outline: none !important;
+display: block !important;
+}
+table {
+border-collapse: collapse;
+mso-table-lspace: 0px;
+mso-table-rspace: 0px;
+}
+td {
+border-collapse: collapse;
+mso-line-height-rule: exactly;
+}
+a, span {
+mso-line-height-rule: exactly;
+}
+.ExternalClass * {
+line-height: 100%;
+}
+.white a {
+color: #ffffff;
+text-decoration: none;
+}
+.black3 a {
+font-family: "Metropolis Light", Metropolis, Helvetica, Arial, sans-serif;
+color: #333333;
+text-decoration: none;
+}
+.black2 a {
+font-family: "Metropolis Light", Metropolis, Helvetica, Arial, sans-serif;
+color: #282828;
+text-decoration: none;
+}
+.blue a {
+font-family: "Metropolis Light", Metropolis, Helvetica, Arial, sans-serif;
+color: #006990;
+text-decoration: none;
+}
+.grey1 a {
+color: #757575;
+text-decoration: none;
+}
+/**.applewhiltelink a {
+color: inherit !important;
+text-decoration: none !important;
+}**/
+.fullwidthimage img {
+width: 100%;
+height: auto;
+}
+@media only screen and (min-width:481px) and (max-width:599px) {
+table[class=3Dwrapper] {
+width: 100% !important;
+}
+table[class=3Dmain_table] {
+width: 100% !important;
+}
+td[class=3Dpad_side] {
+padding-left: 14px !important;
+padding-right: 14px !important;
+}
+td[class=3Dhide], br[class=3Dhide] {
+display: none !important;
+}
+img[class=3Dfull_img] {
+width: 100% !important;
+height: auto !important;
+}
+td[class=3Dtext], td[class=3Dblack2], td[class=3Dwhite], td[class=3Dwhite1]=
+, td[class=3Dwhite2], td[class=3Dgrey] {
+text-align: center !important;
+}
+td[class=3Dpad_bottom] {
+padding-bottom: 20px !important;
+}
+td[class=3Dpad_top] {
+padding-top: 20px !important;
+}
+td[class=3Dfix_height] {
+height: 20px !important;
+}
+td[class=3Dfullwidthimage] img {
+width: 100% !important;
+height: auto !important;
+}
+}
+@media only screen and (max-width:480px) {
+table[class=3Dwrapper] {
+width: 100% !important;
+}
+table[class=3Dmain_table] {
+width: 100% !important;
+}
+td[class=3Dpad_side] {
+padding-left: 14px !important;
+padding-right: 14px !important;
+}
+td[class=3Dhide], br[class=3Dhide] {
+display: none !important;
+}
+img[class=3Dfull_img] {
+width: 100% !important;
+height: auto !important;
+}
+td[class=3Dtext], td[class=3Dblack2], td[class=3Dwhite], td[class=3Dwhite1]=
+, td[class=3Dwhite2], td[class=3Dgrey] {
+text-align: center !important;
+}
+td[class=3Dpad_bottom] {
+padding-bottom: 20px !important;
+}
+td[class=3Dpad_top] {
+padding-top: 20px !important;
+}
+td[class=3Dfix_height] {
+height: 20px !important;
+}
+td[class=3Dfullwidthimage] img {
+width: 100% !important;
+height: auto !important;
+}
+td[class=3Dhighlight] img {
+width: 70% !important;
+height: auto !important;
+}
+}
+.button1 {      /*@editable*/ background-color: #6db33f !important;
+/*@editable*/ border-radius:3px !important;
+/*@editable*/ color: #ffffff !important;
+}
+.button2 {      /*@editable*/ background-color: #0095d3 !important;
+/*@editable*/ border-radius:3px !important;
+/*@editable*/ color: #ffffff !important;
+}
+</style>
+</head>
+<body marginwidth=3D"0" marginheight=3D"0" offset=3D"0" topmargin=3D"0" lef=
+tmargin=3D"0" bgcolor=3D"#ffffff">
+<div class=3D"mktoSnippet" id=3D"pre-headertext948337f0-f1ac-4265-9318-b3fb=
+38ca84cb" style=3D"margin-bottom:20px">
+<p>&nbsp;</p>
+<table class=3D"emailheader" width=3D"100%" align=3D"center">
+<tbody>
+<tr>
+<td align=3D"center"><span size=3D"1" face=3D"Arial" style=3D"font-family: =
+Arial; font-size: xx-small;">If you are having trouble reading this email,
+<a data-targettype=3D"sysaction" href=3D"https://marketing.vmware.com/v/MDQ=
+4LVNaVy0wNDUAAAGQeM69elKOqrsk2YlEgEMkG_OHqa-D_6sp8xtbPKCrYE7V10iiT87OlBUVxz=
+4zkGRHtOzti_4=3D" style=3D"color: #0095d3;" target=3D"_blank">
+read the online version.</a>&nbsp;</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<table width=3D"100%" border=3D"0" align=3D"center" cellspacing=3D"0" cellp=
+adding=3D"0" bgcolor=3D"#ffffff">
+<tbody>
+<tr>
+<td align=3D"center">
+<table style=3D"table-layout:fixed;" width=3D"650" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" align=3D"center" class=3D"wrapper">
+<tbody>
+<tr>
+<td class=3D"hide" height=3D"1" style=3D"line-height:0px; font-size:0px;"><=
+img src=3D"http://campaign.vmware.com/imgs/new-brand/spacer.gif" height=3D"=
+1" width=3D"650" style=3D"display:block; width:650px; min-width:650px;" bor=
+der=3D"0" alt=3D""></td>
+</tr>
+<tr>
+<td valign=3D"top">
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" class=3D"wrapper" style=3D"table-layout:auto;">
+<tbody>
+<tr>
+<td>
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" class=3D"wrapper">
+<tbody>
+<tr>
+<td>
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" class=3D"wrapper">
+<tbody>
+<tr>
+<td height=3D"28" class=3D"fix_height">&nbsp;</td>
+</tr>
+<tr>
+<td valign=3D"top">
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" class=3D"wrapper">
+<tbody>
+<tr>
+<td width=3D"18" class=3D"hide"></td>
+<td valign=3D"top">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center">
+<tbody>
+<tr>
+<td valign=3D"top">
+<table width=3D"138px" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" ali=
+gn=3D"left" class=3D"wrapper">
+<tbody>
+<tr>
+<td align=3D"center"><a href=3D"https://marketing.vmware.com/MDQ4LVNaVy0wND=
+UAAAGQeM69eieQ9EOKbg8oT4pvyElDfRba0xVwutLGK392J07v40F9Crtwvv8ZcJ3iXfW9iIa9a=
+KQ=3D" target=3D"_blank"><img src=3D"https://web.vmware.com/rs/048-SZW-045/=
+images/VMware_by_Broadcom_Gray-Black-2.png" width=3D"138px" alt=3D"VMware" =
+style=3D"display:block; max-width:138px; padding-bottom: " border=3D"0"></a=
+></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width=3D"18" class=3D"hide"></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width=3D"30" class=3D"hide"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"20" class=3D"fix_height">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- END HEADER --><!-- IMAGE - FULLWIDTH --><!-- END  IMAGE - FULLWIDTH --=
+><!-- TEXT - FULLWIDTH LEFT ALIGN -->
+<table width=3D"650" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"wrapper" style=3D"table-layout:fixed;">
+<tbody>
+<tr>
+<td class=3D"pad_side">
+<table width=3D"616" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"wrapper" style=3D"table-layout:fixed;">
+<tbody>
+<tr>
+<td align=3D"center"><a href=3D"#" target=3D"_blank"><img src=3D"http://cam=
+paign.vmware.com/imgs/email-templates/graident-email-bar.jpg" width=3D"616"=
+ height=3D"3" class=3D"full_img" alt=3D"" style=3D"display:block;" border=
+=3D"0" align=3D"center"></a><a href=3D"https://marketing.vmware.com/MDQ4LVN=
+aVy0wNDUAAAGQeM69elwrfb3YSKONSxOv-XEbOaEgs8Lgr_YLErrhfJyGgH8zCYLQ49KWB6O9Bx=
+LcI9x5sxc=3D" target=3D"_blank"></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- END TEXT - FULLWIDTH LEFT --><!-- TEXT - FULLWIDTH LEFT ALIGN -->
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" class=3D"wrapper" style=3D"table-layout:fixed;">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center" bgcolor=3D"">
+<tbody>
+<tr>
+<td width=3D"18" class=3D"hide">&nbsp;</td>
+<td align=3D"center" valign=3D"top" class=3D"pad_side">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center">
+<tbody>
+<tr>
+<td height=3D"20">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"text" align=3D"center" valign=3D"top" style=3D"font-size:21px;=
+line-height:32px; color:#282828;background-color:;">
+<span style=3D"font-size:21px;">Join leaders across the End User Computing =
+industry for insights into the future of work.</span></td>
+</tr>
+<tr>
+<td height=3D"15" style=3D"line-height:1px;font-size:1px;">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"text" align=3D"center" valign=3D"top" style=3D"font-size:15px;=
+ letter-spacing:1px; line-height:25px;color:#282828;background-color:;  pad=
+ding: 0px; margin: 0px">
+<span style=3D"line-height: 25px;"><strong>Date:</strong> Tuesday 30th Janu=
+ary <br>
+<strong>Time:</strong> 14:30 =E2=80=93 17:00 GMT / 15:30 =E2=80=93 18:00 CE=
+T <br>
+<strong>Location:</strong> Zoom</span></td>
+</tr>
+<tr>
+<td height=3D"10" class=3D"fix_height">&nbsp;</td>
+</tr>
+<tr>
+<td align=3D"center">
+<table border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td class=3D"black2"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" bgcolor=3D"#1a428a">&nbsp;&nbsp;&nbsp;<![endif]--><a href=3D=
+"https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69ej5ns_Jbzq3OxB6WCzbgr=
+2q4unSMQuhS_TcrrNA4uuFgwDHTzn8LTu21o2BSOpG5xio=3D" style=3D"background-colo=
+r:#1a428a; font-size: 14px; font-family: 'Metropolis', Arial, sans-serif; c=
+olor: #ffffff; font-weight: 400; text-decoration: none; text-decoration: no=
+ne;border-radius: 5px; padding:10px 18px; border: 2px solid #1a428a; displa=
+y: inline-block;">REGISTER
+ NOW</a><!--[if mso]>&nbsp&nbsp;&nbsp;</table><![endif]--> <br>
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width=3D"18" class=3D"hide">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"650" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"wrapper" style=3D"table-layout:fixed;">
+<tbody>
+<tr>
+<td class=3D"pad_side">
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrapper">
+<tbody>
+<tr>
+<td width=3D"18" class=3D"hide">&nbsp;</td>
+<td>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td class=3D"black2" style=3D"font-size:15px; line-height:25px; color:#3333=
+33;">
+<p>Dear David, <br>
+<br>
+During this exclusive invite-only event on Tuesday 30th January, Bharath Ra=
+ngarajan, GM of VDI/DaaS and VP of Products and UX Group, will share the ev=
+olution of our autonomous workspace vision and the progress we have made wi=
+th current AI integrations.
+<br>
+<br>
+Event Host, Ralf Gegg, Vice President, EMEA End-User Computing Sales will d=
+iscuss updates regarding our three key investment areas with industry leade=
+rs:<br>
+</p>
+<ul>
+<li><strong>Unified Endpoint Management and Security</strong><br>
+Jared Cook, Sr. Director, Product Management, Windows Management</li><li><s=
+trong>Virtual Desktops and Apps</strong><br>
+Arindam Nag, VP Product Management, Horizon </li><li><strong>Digital Employ=
+ee Experience</strong><br>
+Scott Kelley, Sr. Director, Product Management </li></ul>
+<a href=3D"https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69ej5ns_Jbzq3=
+OxB6WCzbgr2q4unSMQuhS_TcrrNA4uuFgwDHTzn8LTu21o2BSOpG5xio=3D" style=3D"text-=
+decoration: underline; color: #1a428a"><strong>Register today</strong></a> =
+to be part of this exclusive session of
+ sharing and collaboration. <br>
+<br>
+Get excited for the event by listening to our latest episode of the <a href=
+=3D"https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69euCA-0yY6Gj0RuD6pY=
+eYlavaFuXgpj8J8iknqHCBR6LABEyort6RHGtbxTKx_LtAE1E=3D" style=3D"text-decorat=
+ion: underline; color: #1a428a">
+Future of Work podcast</a>. <br>
+<br>
+We look forward to seeing you there!
+<p></p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width=3D"18" class=3D"hide">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"650" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"wrapper" style=3D"table-layout:fixed;">
+<tbody>
+<tr>
+<td class=3D"pad_side">
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrapper">
+<tbody>
+<tr>
+<td width=3D"18" class=3D"hide">&nbsp;</td>
+<td>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:0px; font-size:0px;">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"black2"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" bgcolor=3D"#1a428a">&nbsp;&nbsp;&nbsp;<![endif]--><a href=3D=
+"https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69ej5ns_Jbzq3OxB6WCzbgr=
+2q4unSMQuhS_TcrrNA4uuFgwDHTzn8LTu21o2BSOpG5xio=3D" style=3D"background-colo=
+r:#1a428a; font-size: 14px; font-family: 'Metropolis', Arial, sans-serif; c=
+olor: #ffffff; font-weight: 400; text-decoration: none; text-decoration: no=
+ne;border-radius: 5px; padding:10px 18px; border: 2px solid #1a428a; displa=
+y: inline-block;">REGISTER
+ NOW</a><!--[if mso]>&nbsp&nbsp;&nbsp;</table><![endif]--> <br>
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width=3D"18" class=3D"hide">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"650" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"wrapper" style=3D"table-layout:fixed;">
+<tbody>
+<tr>
+<td class=3D"pad_side">
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrapper">
+<tbody>
+<tr>
+<td width=3D"18" class=3D"hide">&nbsp;</td>
+<td>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+<tbody>
+<tr>
+<td class=3D"black2" style=3D"font-size:13px; line-height:25px; color:#3333=
+33;">
+<p><em>Invitation is intended for recipient only and is non-transferable. W=
+e recommend opening or pasting the registration link in Google Chrome for t=
+he best experience.</em>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width=3D"18" class=3D"hide">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- END TEXT - FULLWIDTH LEFT --><!-- END IMAGE - FULL WIDTH 100% --><!-- =
+TEXT - FULLWIDTH LEFT ALIGN --><!-- END TEXT - FULLWIDTH LEFT --><!-- FOOTE=
+R - GRADIENT BAR --><!-- END FOOTER - GRADIENT BAR  --><!-- FOOTER - LOGO -=
+->
+<table width=3D"650" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"wrapper" style=3D"table-layout:fixed;">
+<tbody>
+<tr>
+<td class=3D"pad_side">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"pad_side">
+<table width=3D"616" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"wrapper" style=3D"table-layout:fixed;">
+<tbody>
+<tr>
+<td align=3D"center"><a href=3D"#" target=3D"_blank"><img src=3D"http://cam=
+paign.vmware.com/imgs/email-templates/graident-email-bar.jpg" width=3D"616"=
+ height=3D"3" class=3D"full_img" alt=3D"" style=3D"display:block;" border=
+=3D"0" align=3D"center"></a><a href=3D"https://marketing.vmware.com/MDQ4LVN=
+aVy0wNDUAAAGQeM69elwrfb3YSKONSxOv-XEbOaEgs8Lgr_YLErrhfJyGgH8zCYLQ49KWB6O9Bx=
+LcI9x5sxc=3D" target=3D"_blank"></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table style=3D"table-layout:fixed;" width=3D"650" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" align=3D"center" class=3D"wrapper">
+<tbody>
+<tr>
+<td class=3D"hide" height=3D"1" style=3D"line-height:0px; font-size:0px;"><=
+img src=3D"http://campaign.vmware.com/imgs/new-brand/spacer.gif" height=3D"=
+1" width=3D"650" style=3D"display:block; width:650px; min-width:650px;" bor=
+der=3D"0" alt=3D""></td>
+</tr>
+<tr>
+<td valign=3D"top">
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" class=3D"wrapper" style=3D"table-layout:auto;">
+<tbody>
+<tr>
+<td>
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" class=3D"wrapper">
+<tbody>
+<tr>
+<td>
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" class=3D"wrapper">
+<tbody>
+<tr>
+<td height=3D"28" class=3D"fix_height">&nbsp;</td>
+</tr>
+<tr>
+<td valign=3D"top">
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=
+=3D"center" class=3D"wrapper">
+<tbody>
+<tr>
+<td width=3D"18" class=3D"hide"></td>
+<td valign=3D"top">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center">
+<tbody>
+<tr>
+<td valign=3D"top">
+<table width=3D"138px" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" ali=
+gn=3D"left" class=3D"wrapper">
+<tbody>
+<tr>
+<td align=3D"center"><a href=3D"https://marketing.vmware.com/MDQ4LVNaVy0wND=
+UAAAGQeM69eieQ9EOKbg8oT4pvyElDfRba0xVwutLGK392J07v40F9Crtwvv8ZcJ3iXfW9iIa9a=
+KQ=3D" target=3D"_blank"><img src=3D"https://web.vmware.com/rs/048-SZW-045/=
+images/VMware_by_Broadcom_Gray-Black-2.png" width=3D"138px" alt=3D"VMware" =
+style=3D"display:block; max-width:138px; padding-bottom: " border=3D"0"></a=
+></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width=3D"18" class=3D"hide"></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width=3D"30" class=3D"hide"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"20" class=3D"fix_height">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- END FOOTER - LOGO  --><!-- FOOTER - SOCIAL -->
+<table width=3D"650" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"wrapper" style=3D"table-layout:fixed;">
+<tbody>
+<tr>
+<td class=3D"pad_side">
+<table width=3D"650" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"wrapper">
+<tbody>
+<tr>
+<td width=3D"18" class=3D"hide">&nbsp;</td>
+<td bgcolor=3D"#EFEFEF" style=3D"padding: 30px 0px 30px 0px">
+<table align=3D"center" border=3D"0" width=3D"237" cellpadding=3D"0" cellsp=
+acing=3D"0" style=3D"width:237px; border-collapse:collapse; mso-table-lspac=
+e:0pt; mso-table-rspace:0pt">
+<tbody>
+<tr>
+<td width=3D"36" bgcolor=3D"#EFEFEF"><a href=3D"https://marketing.vmware.co=
+m/MDQ4LVNaVy0wNDUAAAGQeM69et6TGsH94sffKO_wsy9JohOU-Tpad-KynDw-0R_0n0GeUrPBB=
+yAx1SyYm__mqn4Fpsk=3D" target=3D"_blank"><img src=3D"http://campaign.vmware=
+.com/imgs/new-brand/icon-footer-twitter-gray.png" style=3D"display:block" w=
+idth=3D"36" height=3D"29" border=3D"0" alt=3D"Twitter"></a></td>
+<td width=3D"20" bgcolor=3D"#EFEFEF"></td>
+<td width=3D"30" bgcolor=3D"#EFEFEF"><a href=3D"https://marketing.vmware.co=
+m/MDQ4LVNaVy0wNDUAAAGQeM69eqeTC9hle4JaPMaS93arEDYnHnfClhfUAZN_w765dkwOnUxDd=
+pAqtAWlPGEF0APRu28=3D" target=3D"_blank"><img src=3D"http://campaign.vmware=
+.com/imgs/new-brand/icon-footer-facebook-gray.png" style=3D"display:block" =
+width=3D"30" height=3D"29" border=3D"0" alt=3D"Facebook"></a></td>
+<td width=3D"20" bgcolor=3D"#EFEFEF"></td>
+<td width=3D"41" bgcolor=3D"#EFEFEF"><a href=3D"https://marketing.vmware.co=
+m/MDQ4LVNaVy0wNDUAAAGQeM69es1QIH4-ZTlY7Ym5HTbGeBgDgKxDaePB622Qq1-OToSPcmTxG=
+25gDgEaM_3KbXpET58=3D" target=3D"_blank"><img src=3D"http://campaign.vmware=
+.com/imgs/new-brand/icon-footer-youtube-gray.png" style=3D"display:block" w=
+idth=3D"41" height=3D"29" border=3D"0" alt=3D"Youtube"></a></td>
+<td width=3D"20" bgcolor=3D"#EFEFEF"></td>
+<td width=3D"29" bgcolor=3D"#EFEFEF"><a href=3D"https://marketing.vmware.co=
+m/MDQ4LVNaVy0wNDUAAAGQeM69ekFbGkoXhBIn7oEoRuBD9_p6U83e27viys6f_es6lhIjyYtKB=
+8pwlkBBQUGkeFLUXq0=3D" target=3D"_blank"><img src=3D"http://campaign.vmware=
+.com/imgs/new-brand/icon-footer-linkedin-gray.png" style=3D"width=3D&quot;2=
+9&quot;" height=3D"29" border=3D"0" alt=3D"LinkedIn"></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td width=3D"18" class=3D"hide">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- END FOOTER - SOCIAL  --><!-- BOTTOM EMAIL CONTENT PADDING! -->
+<table width=3D"650" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"wrapper" style=3D"table-layout:fixed;">
+<tbody>
+<tr>
+<td height=3D"35" class=3D"Estilo1" align=3D"center" style=3D"font-size:8px=
+; color:#999999;">
+2358250_EM1</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"650" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"wrapper" style=3D"table-layout:fixed;">
+<tbody>
+</tbody>
+</table>
+<!--FOOTER BEGINS--><!-- Emailer Ends Here //-->
+<div class=3D"mktoSnippet" id=3D"footersnippetdba097dd-0a26-42f9-920c-006ec=
+37fab55" style=3D"margin-top:20px ">
+<center>
+<table style=3D"font-size: 10px; line-height;20px; color: #000;" width=3D"6=
+00" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td style=3D"padding-left: 10px; padding-top: 15px;"><strong>VMware&nbsp;LL=
+C. 3401 Hillview Ave. Palo Alto CA 94304 USA Tel 1-877-486-9273
+</strong><br>
+<br>
+Copyright =C2=A9 2005-2023 Broadcom. All Rights Reserved. The term =E2=80=
+=9CBroadcom=E2=80=9D refers to Broadcom Inc. and/or its subsidiaries. VMwar=
+e is a registered trademark of VMware&nbsp;LLC. The content and links in th=
+is email contain information intended solely for its named recipients
+ and are not to be shared with third parties unless otherwise specified. <b=
+r>
+<br>
+You are receiving this email because of your previous interactions with VMw=
+are. If you don=E2=80=99t want to receive marketing communications from VMw=
+are you can opt-out at any time by using the
+<a style=3D"color: #1a428a; text-decoration: none;" href=3D"https://privacy=
+portal.onetrust.com/ui/#/preferences/multipage/token/9e8618d1-88fd-4258-92d=
+7-f9bf47cf3417/bo99j0KNnmyzIQRzZKamsX1AJSezQ84p%2FUepv73LLQI%3D">
+VMware Preference Center</a>. <br>
+<br>
+Alternatively, to manage your profile, subscription preferences, and to uns=
+ubscribe from VMware marketing communications, please go to
+<a href=3D"https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69epv-eLv0seV=
+4z0a50LnfsrxAB3dz1LOIpm3Xn_uDWzdicMz97YJoibFZoypMRRTVFsc=3D" style=3D"color=
+: #0091da; text-decoration: none;">
+Customer Connect</a>. For more information on how VMware processes your per=
+sonal data please see the
+<a href=3D"https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69ejr1LVnIR1b=
+vdsgj9DnSFIJ3I0hrXi_oV3ssW0xUqDz-RGPrNpIADyCHXs2lcjBzgjo=3D" style=3D"color=
+: #0091da; text-decoration: none;">
+VMware Global Privacy Policy</a>. <br>
+<br>
+Please do not reply to this message. Replies to this message are routed to =
+an unmonitored mailbox. If you have questions, please
+<a href=3D"https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69eqKxeVOcXem=
+rLTg9FEnswbbyScjveZk-_ztUNUSF3s_XJf0wahmkZbVJXyi3A7BRUUE=3D" style=3D"color=
+: #0091da; text-decoration: none;">
+contact</a> us. This email was sent to <span style=3D"color: #0091da;">davi=
+dg@terasky.com</span>.
+<br>
+<br>
+Was this email forwarded to you by someone else? Please subscribe <a href=
+=3D"https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69egktNQ1p9jsSo7S-BV=
+BYl2E2HQyvbMimVX1Bv4H4-xuEMeeoTFyAdQPbxhE06JRdFZM=3D" style=3D"color: #0091=
+da; text-decoration: none;">
+here</a> to receive direct marketing communications from VMware.</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+<a href=3D"https://marketing.vmware.com/MDQ4LVNaVy0wNDUAAAGQeM69euXMmwXNmHU=
+aI_ckUmnXISgKEwctFNxhkQz23Ca99U670Rg_M2BbQGZh4qdNn8vvEl4=3D"></a><img src=
+=3D"https://marketing.vmware.com/trk?t=3D1&amp;mid=3DMDQ4LVNaVy0wNDUAAAGQeM=
+69erVIT2aIxeJI8Lc6NG_iHKwAYa4dg8P0fPp_HO_KrZIO33n-mE13UpUvFQmw1dhcSTiK25RGl=
+tHO0xS_Grj-ou9Dgg8o5m8LPbyR2bMxPkOtrGJhuHXM6N2daAmtHiLYgQ-qbdvzvcbxGLCb" wi=
+dth=3D"1" height=3D"1" style=3D"display:none !important;" alt=3D""><!-- Con=
+trolled by template -->
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+ </body>
+</html>
+
+------=_Part_251758848_360266812.1704461733246--

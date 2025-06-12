@@ -1,0 +1,1095 @@
+Received: from VE1P194MB0832.EURP194.PROD.OUTLOOK.COM (2603:10a6:800:162::7)
+ by GVXP194MB1757.EURP194.PROD.OUTLOOK.COM with HTTPS; Tue, 12 Dec 2023
+ 08:07:43 +0000
+Received: from DUZPR01CA0014.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:3c3::7) by VE1P194MB0832.EURP194.PROD.OUTLOOK.COM
+ (2603:10a6:800:162::7) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7091.21; Tue, 12 Dec
+ 2023 08:03:22 +0000
+Received: from DB5EUR01FT046.eop-EUR01.prod.protection.outlook.com
+ (2603:10a6:10:3c3:cafe::94) by DUZPR01CA0014.outlook.office365.com
+ (2603:10a6:10:3c3::7) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7068.33 via Frontend
+ Transport; Tue, 12 Dec 2023 08:03:22 +0000
+Authentication-Results: spf=pass (sender IP is 212.150.192.239)
+ smtp.mailfrom=publicators.com; dkim=fail (signature did not verify)
+ header.d=publicators.com;dmarc=pass action=none
+ header.from=publicators.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of publicators.com
+ designates 212.150.192.239 as permitted sender)
+ receiver=protection.outlook.com; client-ip=212.150.192.239;
+ helo=mail27.publicators.com; pr=C
+Received: from mail27.publicators.com (212.150.192.239) by
+ DB5EUR01FT046.mail.protection.outlook.com (10.152.5.231) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7091.21 via Frontend Transport; Tue, 12 Dec 2023 08:03:21 +0000
+Received: from dealer1 (unknown [10.0.0.211])
+	by mail27.publicators.com (Postfix) with ESMTPA id EE66623EBD
+	for <davidg@terasky.com>; Tue, 12 Dec 2023 10:00:28 +0200 (IST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=publicators.com;
+	s=mail27; t=1702368028;
+	bh=UF7heiWBdpFPpNG8XBiZ5XgVZWDeWpPvCY14pFmmPpo=;
+	h=Reply-To:X-Publicators-ID:Precedence:Feedback-ID:List-Unsubscribe:
+	 From:To:Subject:Date:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding:X-Mailer:Content-Class:Importance:
+	 Priority:X-MimeOLE:From;
+	b=guSaZ7Jp3KqDRSq8X4V1PQhuMiSMrzlRy38BKqxhvhEpgR7Jyb5GzvQBobVzXCpW2
+	 BtAmkoO/ILdNNBozTOAXWTdbY0tosSFGDle/k80I2Pp12j36rMBjK4OV4uV8I4PH5r
+	 xXPSVbLp7C8VtgEOFlLLwIoS/W6ovP1fdbox7hY0=
+Reply-To: "Dell Technologies Israel" <Dana.Cohen@dell.comþ>
+X-Publicators-ID: 7614181783_550923706
+Precedence: bulk
+Feedback-ID: 798747:1552:1:pubfbl
+List-Unsubscribe: <mailto:removefromheader@publicators.com?subject=unsubscribe X-Publicators-ID:7614181783_550923706>
+From: "Dell Technologies Israel" <DellEmc@publicators.com>
+To: <davidg@terasky.com>
+Subject: =?utf-8?B?157Xkdem16LXmSDXodeV16Mg16nXoNeUINeRLURlbGwgVGVjaG5vbG9naWU=?=
+	=?utf-8?B?cy0g15TXmNeR15XXqiDXl9eh16jXldeqINeq16fXk9eZ150g16LXnCDXnteS?=
+	=?utf-8?B?15XXldefINek16rXqNeV16DXldeq?=
+Date: Tue, 12 Dec 2023 09:56:35 +0200
+Message-ID: <BBB675DC991842699944AA894C46850F@dealer1>
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-Mailer: Microsoft CDO for Windows 2000
+Content-Class: urn:content-classes:message
+X-MimeOLE: Produced By Microsoft MimeOLE V6.2.9200.16384
+Return-Path: DellEmc@publicators.com
+X-MS-Exchange-Organization-ExpirationStartTime: 12 Dec 2023 08:03:21.7094
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 4100efdd-b702-44c5-6cea-08dbfae8cf1b
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB5EUR01FT046:EE_|VE1P194MB0832:EE_|GVXP194MB1757:EE_
+X-MS-Exchange-Organization-AuthSource: DB5EUR01FT046.eop-EUR01.prod.protection.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 4100efdd-b702-44c5-6cea-08dbfae8cf1b
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-Forefront-Antispam-Report: CIP:212.150.192.239;CTRY:IL;LANG:he;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail27.publicators.com;PTR:mail27.publicators.com;CAT:NONE;SFS:(13230031)(4636009)(230273577357003)(230173577357003)(1690799017)(451199024)(26005)(9686003)(58800400005)(6666004)(6266002)(33716001)(83380400001)(44726023)(120186005)(4744005)(5660300002)(22186003)(76236004)(336012)(426003)(6916009)(6966003)(37786003)(1096003)(8426002)(9576002)(166002)(356005)(86362001)(7596003)(33656002)(224303003)(7636003)(66899024)(19627405001)(55016003)(44706002)(76899018)(1406899027)(96376001)(19626705004)(19627415002);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Dec 2023 08:03:21.5063
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4100efdd-b702-44c5-6cea-08dbfae8cf1b
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: DB5EUR01FT046.eop-EUR01.prod.protection.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1P194MB0832
+X-MS-Exchange-Transport-EndToEndLatency: 00:04:21.5087748
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.7091.020
+X-Message-Flag: Follow up
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?WHNJRWhuckd1U0t2ZFU3eEdIM2xhSHV3OFY5SnBzblg3RVdsN0Qwa05mTENi?=
+ =?utf-8?B?ck9GSXVxM2JrSUxkWndCUkpCSDA0Y2NzRVloa3E2b2tVUmJJU1RWTnhYL2Q5?=
+ =?utf-8?B?dFMrSmxubWR0Tmp4a2ZIMkUrenY0WXlzYldDQ2ZSTktmRG1jQ3lBWlhFakdX?=
+ =?utf-8?B?ZHB1ZmNmRXU3R1pTMncrWDh0b0ZmWkxHRTBmcFNKVHkwRzFRT0hHbjJ5cnlk?=
+ =?utf-8?B?SWl1dUlUV0ZSTXBGT1pDR0JmVGRSTG15K1lGTEJ2aUdKbnBXSUxONUk5T0VP?=
+ =?utf-8?B?NWRoaUdsUk5NaHUzS2FPVnY0NGxPTEJOVm1rdTB3OFI2L0JZd094eE56UlM1?=
+ =?utf-8?B?TVJLNUZ6L3lncWtPQlpjTWROTElTemtzUFJPb1VmNkF6WDNBTUZLS0hjVU0r?=
+ =?utf-8?B?R0dNeVhLdThCcDFsRXQ1K1FLTkUvQzNlMFlvd0ZYM1RpdGVEaXliYk8zMUsz?=
+ =?utf-8?B?THZjUzNpYVJZQU96ZUZPQTRIN0pSTm93NXUvRmh5UVNkdExMN21UTWs3cVNa?=
+ =?utf-8?B?d1BEbGdKVUZ3UGNEb0JoTlBVdlZNWktOZDd3cVpnNGhOYXNldjRXbXF1Um0y?=
+ =?utf-8?B?YkVIU2xBRW51cVUxcFVadC9qSmdsM0ZJYkMwMHo3SDZRdUNybVlzWk1uSGEr?=
+ =?utf-8?B?OU1iMzZScUxRZlN6ZWRWejl6U1FORllpV0xwUXZMeFM2RkpZaHJPR2dTTmM2?=
+ =?utf-8?B?SHExV0UvM3FSVXBOVUZ1MlVKK28vQ2dFRStmQWQyeTNwOTN0Vk5mSTMrQ2ds?=
+ =?utf-8?B?TVJZeDR5Q3l3Sjc4b1FoK0cvWDZEUWFnY1YybkJnNUhBb2tRZ0pxYkpzYzAz?=
+ =?utf-8?B?TThZWmQvK1NGTUo2d2U4QndMUVhtdGovMmt2Um1VN1lUUlZ6eXlBZWRnWHBP?=
+ =?utf-8?B?NDZSeVV0eU5PVWNYMkYzQ0RMa1g3bmtjSzF2b2F5YTJ1dVkrQm05L093bTJ1?=
+ =?utf-8?B?eGVaR010YkZrRW42ajFlalQ1bjRaUEVWWk9aTFJvSW9aME5USmt5V2pMdElo?=
+ =?utf-8?B?ZEpUdkpSS3V1OEVCRktHdlB4UTdYbjdZM0wyYWdkMlBTWTBsMHRrSEIxd0hu?=
+ =?utf-8?B?OCs1UlBsUGVzUS90czduMVU0cDR0b3FwdlQ5STR5RUdIY0x5YVNocXR0cjRS?=
+ =?utf-8?B?Tmtsci9ROGpUSjhNQVRvZXpSV3JqczBkQ08wU2NjeGJFQzNERDh2NjBob3c0?=
+ =?utf-8?B?MUlsd051c2tvOHEySzhXUFh4RzAzTjZFdXBINlA5aENRTUZEVmx0UkpRU2dJ?=
+ =?utf-8?B?UTZsWjhId0xSL3p2ZnF2ZUwzL3F0MzcvNVliNXhCNlRoMU1Hc0NWdjVFZ0hp?=
+ =?utf-8?B?Sjd0ODVhYjM4dGZDNmk0QUlJZ3QxZ2E4QzZoK3kra2twVHgwaHNKdXpXL1BI?=
+ =?utf-8?B?UXd5YU5qUFNkMC9QaUpTc1pkOGMyOS9HU1AwZHp0VnVwb0VYUDhVZ2Y2OXBI?=
+ =?utf-8?B?azMzdzUyK25lYWFMUE1ZVHFzTnR0SGxXOWZyVS9WUXIrb1B6U0hOM3dvVzBO?=
+ =?utf-8?B?Rk9wcE5NSE5UcHp5eW81SG9sVnBmdHBaR2JKM1VucnJ5eCtkVThjTEhoYkRn?=
+ =?utf-8?B?bTNNc1NzWCtrQmlNWFoxS3J0MzFIamhVVE9Ka2M2d2NQa3dickpXdTVNdDFJ?=
+ =?utf-8?B?QnNJT1RUREhVN3ZGcXhRV1FHOHVtVHN1NDk2dGFhTi9DOHFjUkNIRlBteW9I?=
+ =?utf-8?B?cmQvTlZrdWdjc2psc0J4RW03aG1mMElITEFleld4akd6L3JnUUp3YXAyNURk?=
+ =?utf-8?B?Z3gyMDZ6TGYyUG1RR2ZXblVYU1R6UFU0OGlzSHhQT29Wb0MzUER4S2txa3dK?=
+ =?utf-8?B?cHVCR2FrQUhtOEJGN3QrRXJycWdvMHc5ZlUyOVFOV0NGSG5zRUNQUHMycU1X?=
+ =?utf-8?B?cTZPYnYxdi90aXJSSFQzTkFmMlY2OUJ1NC8rR0puS1lOZHJ4b1J4T0pYaHVD?=
+ =?utf-8?B?Z2ZuOW5iTnhjVDRmY0l1VzNJWFQwR2hOYXNxcStaeU9tM0lQSHIwVEhXTFVM?=
+ =?utf-8?B?ZlZLRUUxQ1VhK1BHSmd2NWxxRVFPL0RzcTdHV0pRcCtubGk0V2gvN2FYbVFE?=
+ =?utf-8?B?amExbjJxeVBXZVg4ejI0VkhHaVVwK0p5MDl0ZXZUZWtuNUo5dDJtcUs0cGJu?=
+ =?utf-8?B?SGMyblZ6cDVuK2FmUVN4bUNwVEdRNjJQMy8wOVRJdXBtNFVIYTN1Tlc0ZjQv?=
+ =?utf-8?B?WmVuNFFpSi9mZ011VW1hNy9xbnJQaEt1RDZVVVRpUWhPTWtIZDV1MjRmNTd2?=
+ =?utf-8?B?RGxXb1JxMko1RGRCaU1MczlrR2Zoc1ZMSXJrbDM3bEpFU3ZmcVFkZFRQdmov?=
+ =?utf-8?B?a3poK2ZyUlM0akhnYThqZW1ZRnQ3V1hjRFVUcmFkTkljcE1leHBtUEZaY3JS?=
+ =?utf-8?B?MG41Vlc3aVNudjJZdkMyNTRINkdzRWNWelViNDljWHF4eHIyRlBjK0o4ZXhU?=
+ =?utf-8?B?THpiZjk4enZpWnZTNkt3d3hmNmVRM3A2OFlvWHdubUJnelpjR09CSzJFdW5E?=
+ =?utf-8?B?elJ3eXVyTHo5S1g2RWs5ZGRnTlk0aTFkd3NhaUtITVRnb3IycDh1OFFMT3Fo?=
+ =?utf-8?B?K2RVcGxoSVNpdkZvQUozZGR1bEZsZUpqa1VZNzFjWFNFYlZCQjA1aDZ6T0lB?=
+ =?utf-8?B?MWJkVkhvcUJvWG1XU2VkS1FzU0Y3d1Q3UzBaekV5cXcycE14cWZkeVg1cWRQ?=
+ =?utf-8?B?NXpVV2xJOGdJdTRzbG04QjRrNEI1OVBFaFd4eUoxckxSQU5Ecll2MWRhV1Nh?=
+ =?utf-8?B?dUdKQkhYK1QzUHNodnUzSFQxVnFjanIzK1FOZEFGTFJLVEE2ekFDc2NueGFU?=
+ =?utf-8?Q?khSSywu8+9pE4pLUs1sfg5gcpw+AuffALdN+IIXXfY?=
+MIME-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta http-equiv=3D"Content-Language" content=3D"he">
+<base target=3D"_blank">
+<title>=D7=9E=D7=91=D7=A6=D7=A2=D7=99 =D7=A1=D7=95=D7=A3 =D7=A9=D7=A0=D7=94=
+ =D7=91-Dell Technologies- =D7=94=D7=98=D7=91=D7=95=D7=AA =D7=97=D7=A1=D7=
+=A8=D7=95=D7=AA =D7=AA=D7=A7=D7=93=D7=99=D7=9D =D7=A2=D7=9C =D7=9E=D7=92=D7=
+=95=D7=95=D7=9F =D7=A4=D7=AA=D7=A8=D7=95=D7=A0=D7=95=D7=AA</title>
+</head>
+<body>
+<p dir=3D"rtl"><font face=3D"arial,helvetica,sans-serif" size=3D"2" style=
+=3D"font-size: 11px; font-family: Arial;"><style type=3D"text/css">
+
+</style><!-- offline:start //--></p>
+<center>
+<p dir=3D"rtl" lang=3D"he"><font face=3D"Arial" size=3D"2" color=3D"#6D6D6D=
+" style=3D"font-size: 11px;">&nbsp;=D7=90=D7=9D =D7=90=D7=99=D7=A0=D7=9A =
+=D7=A8=D7=95=D7=90=D7=94 =D7=94=D7=95=D7=93=D7=A2=D7=94 =D7=96=D7=95 =D7=91=
+=D7=A6=D7=95=D7=A8=D7=94 =D7=AA=D7=A7=D7=99=D7=A0=D7=94, =D7=90=D7=A0=D7=90=
+ =D7=9C=D7=97=D7=A5/=D7=99
+<a href=3D"https://www.publicators.com/app/drd.asp?p=3D7614181783_550923706=
+_10490151">
+<font size=3D"2" face=3D"Arial" color=3D"#6D6D6D" style=3D"font-size: 11px;=
+"><strong>=D7=9B=D7=90=D7=9F</strong></font></a></font></p>
+</center>
+<!-- offline:end //--><img src=3D"http://www.publicators.com/app/do.asp?id=
+=3D7614181783_550923706" width=3D"1" height=3D"1" border=3D"0" alt=3D"">
+<div align=3D"center" class=3D"bl-template bl-content-removable" id=3D"temp=
+late-body" style=3D"width: 100%;">
+<!-- BEGIN TEMPLATE OUTER -->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" clas=
+s=3D"bl-template-main-wrapper" style=3D"width: 100%; background-color: #f9f=
+9f9; border-collapse: collapse; border-collapse: collapse !important; mso-t=
+able-lspace: 0pt !important; mso-table-rspace: 0pt !important;" align=3D"ce=
+nter" valign=3D"top" is-new-template=3D"0">
+<tbody>
+<tr>
+<!-- BEGIN TEMPLATE MARGIN (Outside Margin - Padding) -->
+<td class=3D"bl-template-margin" width=3D"100%" align=3D"center" style=3D"m=
+argin: 0px; padding: 18px 0; border-collapse: collapse !important; mso-tabl=
+e-lspace: 0pt !important; mso-table-rspace: 0pt !important;" valign=3D"top"=
+>
+<!-- BEGIN TEMPLATE WRAPPER (Background) -->
+<table class=3D"template-main-table bl-template-background" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"width: 600px; background-color: =
+rgb(255, 255, 255); direction: rtl; text-align: right; border-collapse: col=
+lapse !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !=
+important;" valign=3D"top" width=3D"600">
+<tbody>
+<tr>
+<!-- BEGIN TEMPLATE CONTAINER (Border, Inner Padding) -->
+<td class=3D"bl-template-border" style=3D"width: 600px; padding: 0px; borde=
+r: 1px solid rgb(96, 96, 96); border-collapse: collapse !important; mso-tab=
+le-lspace: 0pt !important; mso-table-rspace: 0pt !important;" valign=3D"top=
+" width=3D"600">
+<!-- BEGIN ZONES CONTAINER -->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 600=
+px; border-collapse: collapse !important; mso-table-lspace: 0pt !important;=
+ mso-table-rspace: 0pt !important;" valign=3D"top" width=3D"600">
+<tbody>
+<tr>
+<!-- BEGIN Blocks Zone -->
+<td class=3D"bl-zone bl-zone-dropable ui-droppable ui-sortable" name=3D"Fra=
+meworkZone" style=3D"width: 600px; height: auto; border-collapse: collapse =
+!important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !import=
+ant;" width=3D"600" valign=3D"top">
+<div class=3D"bl-block bl-block-image" data-layout=3D"1" data-blocktype=3D"=
+image" name=3D"image" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0" data-block-order=3D"1" style=3D"z-index: 0;">
+<div class=3D"bl-block-content">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D" border-collapse: collapse !important; mso-table-lspace: 0pt !importan=
+t; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td class=3D"bl-block-content-table bl-block-dir-rtl" style=3D"direction: r=
+tl; border-collapse: collapse !important; mso-table-lspace: 0pt !important;=
+ mso-table-rspace: 0pt !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" clas=
+s=3D"bl-block-content-row bl-block-content-first-row bl-block-content-last-=
+row" style=3D" border-collapse: collapse !important; mso-table-lspace: 0pt =
+!important; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bl-block-content-row-inner" style=3D"padding-to=
+p: 0px; padding-bottom: 0px; border-collapse: collapse !important; mso-tabl=
+e-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"bl-block-c=
+ontent-column bl-block-content-new-column bl-1-column" align=3D"center" wid=
+th=3D"600" style=3D"width: 600px; border-collapse: collapse !important; mso=
+-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bl-padding-1-column bl-content-wrapper no-side-=
+padding" width=3D"600" style=3D"width: 600px; direction: ltr; padding: 0px;=
+ border-collapse: collapse !important;">
+<div class=3D"bl-block-content-item bl-block-content-item-image bl-in-edit-=
+mode-single" style=3D"text-align: center; height: auto;">
+<img border=3D"0" width=3D"600" style=3D"width: 600px; max-width: 600px; ma=
+x-height: 58px; display: block; margin: 0px auto; height: auto !important;"=
+ height=3D"58" src=3D"https://www.publicators.com/app/images/1552/buyme-q4-=
+2023/DELL-Q4-EXTRAS-MAILER-BANNER-LOGO_1.jpg" alt=3D"DELL-Q4-EXTRAS-MAILER-=
+BANNER-LOGO_1" data-expandible=3D"yes"></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class=3D"bl-block bl-block-image" data-layout=3D"1" data-blocktype=3D"=
+image" name=3D"image" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0" data-block-order=3D"2" style=3D"z-index: 0;">
+<div class=3D"bl-block-content">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D" border-collapse: collapse !important; mso-table-lspace: 0pt !importan=
+t; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td class=3D"bl-block-content-table bl-block-dir-rtl" style=3D"direction: r=
+tl; border-collapse: collapse !important; mso-table-lspace: 0pt !important;=
+ mso-table-rspace: 0pt !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" clas=
+s=3D"bl-block-content-row bl-block-content-first-row bl-block-content-last-=
+row" style=3D" border-collapse: collapse !important; mso-table-lspace: 0pt =
+!important; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bl-block-content-row-inner" style=3D"padding-to=
+p: 0px; padding-bottom: 0px; border-collapse: collapse !important; mso-tabl=
+e-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"bl-block-c=
+ontent-column bl-block-content-new-column bl-1-column" align=3D"center" wid=
+th=3D"600" style=3D"width: 600px; border-collapse: collapse !important; mso=
+-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bl-padding-1-column bl-content-wrapper no-side-=
+padding" width=3D"600" style=3D"width: 600px; direction: ltr; padding: 0px;=
+ border-collapse: collapse !important;">
+<div class=3D"bl-block-content-item bl-block-content-item-image bl-in-edit-=
+mode-single" style=3D"height: auto; text-align: center;">
+<a href=3D"https://www.publicators.com/app/drd.asp?p=3D7614181783_550923706=
+_10490152" title=3D"" target=3D"_blank" style=3D"text-decoration: none;"><i=
+mg border=3D"0" width=3D"599" style=3D"width: 599px; max-width: 599px; max-=
+height: 299.5px; display: block; margin: 0px auto; height: auto !important;=
+" height=3D"299.5" src=3D"https://www.publicators.com/app/images/1552/buyme=
+-q4-2023/DELL-Q4-EXTRAS-MAILER-BANNER-BANNER-01.jpg" alt=3D"DELL-Q4-EXTRAS-=
+MAILER-BANNER-BANNER-01" data-expandible=3D"yes"></a></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class=3D"bl-block bl-block-image" data-layout=3D"1" data-blocktype=3D"=
+image" name=3D"image" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0" data-block-order=3D"3" style=3D"z-index: 0;">
+<div class=3D"bl-block-content">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D" border-collapse: collapse !important; mso-table-lspace: 0pt !importan=
+t; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td class=3D"bl-block-content-table bl-block-dir-rtl" style=3D"direction: r=
+tl; border-collapse: collapse !important; mso-table-lspace: 0pt !important;=
+ mso-table-rspace: 0pt !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" clas=
+s=3D"bl-block-content-row bl-block-content-first-row bl-block-content-last-=
+row" style=3D" border-collapse: collapse !important; mso-table-lspace: 0pt =
+!important; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bl-block-content-row-inner" style=3D"padding-to=
+p: 0px; padding-bottom: 0px; border-collapse: collapse !important; mso-tabl=
+e-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"bl-block-c=
+ontent-column bl-block-content-new-column bl-1-column" align=3D"center" wid=
+th=3D"600" style=3D"width: 600px; border-collapse: collapse !important; mso=
+-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bl-padding-1-column bl-content-wrapper no-side-=
+padding" width=3D"600" style=3D"width: 600px; direction: ltr; padding: 0px;=
+ border-collapse: collapse !important;">
+<div class=3D"bl-block-content-item bl-block-content-item-image bl-in-edit-=
+mode-single" style=3D"height: auto; text-align: center;">
+<a href=3D"https://www.publicators.com/app/drd.asp?p=3D7614181783_550923706=
+_10490153" title=3D"" target=3D"_blank" style=3D"text-decoration: none;"><i=
+mg border=3D"0" width=3D"599" style=3D"width: 599px; max-width: 599px; max-=
+height: 299.5px; display: block; margin: 0px auto; height: auto !important;=
+" height=3D"299.5" src=3D"https://www.publicators.com/app/images/1552/buyme=
+-q4-2023/DELL-Q4-EXTRAS-MAILER-BANNER-BANNER-02_1.jpg" alt=3D"DELL-Q4-EXTRA=
+S-MAILER-BANNER-BANNER-02_1" data-expandible=3D"yes"></a></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class=3D"bl-block bl-block-image" data-layout=3D"1" data-blocktype=3D"=
+image" name=3D"image" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0" data-block-order=3D"4" style=3D"z-index: 0;">
+<div class=3D"bl-block-content">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D" border-collapse: collapse !important; mso-table-lspace: 0pt !importan=
+t; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td class=3D"bl-block-content-table bl-block-dir-rtl" style=3D"direction: r=
+tl; border-collapse: collapse !important; mso-table-lspace: 0pt !important;=
+ mso-table-rspace: 0pt !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" clas=
+s=3D"bl-block-content-row bl-block-content-first-row bl-block-content-last-=
+row" style=3D" border-collapse: collapse !important; mso-table-lspace: 0pt =
+!important; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bl-block-content-row-inner" style=3D"padding-to=
+p: 0px; padding-bottom: 0px; border-collapse: collapse !important; mso-tabl=
+e-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"bl-block-c=
+ontent-column bl-block-content-new-column bl-1-column" align=3D"center" wid=
+th=3D"600" style=3D"width: 600px; border-collapse: collapse !important; mso=
+-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bl-padding-1-column bl-content-wrapper no-side-=
+padding" width=3D"600" style=3D"width: 600px; direction: ltr; padding: 0px;=
+ border-collapse: collapse !important;">
+<div class=3D"bl-block-content-item bl-block-content-item-image bl-in-edit-=
+mode-single" style=3D"height: auto; text-align: center;">
+<a href=3D"https://www.publicators.com/app/drd.asp?p=3D7614181783_550923706=
+_10490154" title=3D"" target=3D"_blank" style=3D"text-decoration: none;"><i=
+mg border=3D"0" width=3D"599" style=3D"width: 599px; max-width: 599px; max-=
+height: 299.5px; display: block; margin: 0px auto; height: auto !important;=
+" height=3D"299.5" src=3D"https://www.publicators.com/app/images/1552/buyme=
+-q4-2023/DELL-Q4-EXTRAS-MAILER-BANNER-BANNER-03.jpg" alt=3D"DELL-Q4-EXTRAS-=
+MAILER-BANNER-BANNER-03" data-expandible=3D"yes"></a></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- END ZONES CONTAINER --></td>
+<!-- END TEMPLATE CONTAINER -->
+</tr>
+</tbody>
+</table>
+<!-- END TEMPLATE WRAPPER --></td>
+<!-- END TEMPLATE MARGIN -->
+</tr>
+</tbody>
+</table>
+<!-- END TEMPLATE OUTER --><style id=3D"t-st-1" type=3D"text/css">=0A=
+    .bl-template {=0A=
+        FONT-SIZE: 15px;=0A=
+        /*FONT-FAMILY: arial, sans-serif;=0A=
+        FONT-WEIGHT: normal;=0A=
+        COLOR: #606060;=0A=
+        FONT-STYLE: normal;=0A=
+    }=0A=
+=0A=
+        .bl-template .bl-block-content-item {=0A=
+            FONT-SIZE: 15px;=0A=
+           /* FONT-FAMILY: arial, sans-serif;*/=0A=
+            COLOR: #606060;=0A=
+            FONT-STYLE: normal;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-text {=0A=
+            DIRECTION: rtl;=0A=
+            TEXT-ALIGN: right;=0A=
+            MIN-HEIGHT: 8px;=0A=
+            LINE-HEIGHT: 1.2;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-text {=0A=
+            FONT-SIZE: 15px;=0A=
+            /*FONT-FAMILY: arial, sans-serif;*/=0A=
+            COLOR: #606060;=0A=
+            FONT-STYLE: normal;=0A=
+        }=0A=
+=0A=
+        .bl-template A {=0A=
+            WORD-WRAP: break-word !important;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            COLOR: #00008c;=0A=
+            OUTLINE-WIDTH: medium;=0A=
+            OUTLINE-STYLE: none;=0A=
+            BORDER-LEFT: 0px;=0A=
+            OUTLINE-COLOR: invert;=0A=
+        }=0A=
+=0A=
+        .bl-template IMG {=0A=
+            BORDER-TOP: 0px;=0A=
+            HEIGHT: auto !important;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            VERTICAL-ALIGN: top;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            OUTLINE-WIDTH: medium;=0A=
+            OUTLINE-STYLE: none;=0A=
+            TEXT-DECORATION: none;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: inline-block !important;=0A=
+            OUTLINE-COLOR: invert;=0A=
+        }=0A=
+=0A=
+        .bl-template A IMG {=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            OUTLINE-WIDTH: medium;=0A=
+            OUTLINE-STYLE: none;=0A=
+            TEXT-DECORATION: none;=0A=
+            BORDER-LEFT: 0px;=0A=
+            OUTLINE-COLOR: invert;=0A=
+        }=0A=
+=0A=
+        .bl-template TABLE {=0A=
+            BORDER-COLLAPSE: collapse !important;=0A=
+            mso-table-lspace: 0pt;=0A=
+            mso-table-rspace: 0pt;=0A=
+        }=0A=
+=0A=
+        .bl-template TD {=0A=
+            BORDER-COLLAPSE: collapse !important;=0A=
+            mso-table-lspace: 0pt;=0A=
+            mso-table-rspace: 0pt;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-template-border {=0A=
+            BORDER-COLLAPSE: collapse !important;=0A=
+            mso-table-lspace: 0pt;=0A=
+            mso-table-rspace: 0pt;=0A=
+        }=0A=
+=0A=
+        .bl-template P {=0A=
+            MARGIN: 1em 0px;=0A=
+        }=0A=
+=0A=
+        .bl-template H1 {=0A=
+            FONT-SIZE: 40px;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #606060 !important;=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            MARGIN: 0px;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: block;=0A=
+            LETTER-SPACING: normal !important;=0A=
+            LINE-HEIGHT: 1.15;=0A=
+            PADDING-RIGHT: 0px;=0A=
+            BACKGROUND-COLOR: transparent;=0A=
+        }=0A=
+=0A=
+        .bl-template H2 {=0A=
+            FONT-SIZE: 26px;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #606060 !important;=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            MARGIN: 0px;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: block;=0A=
+            LETTER-SPACING: normal !important;=0A=
+            LINE-HEIGHT: normal;=0A=
+            PADDING-RIGHT: 0px;=0A=
+            BACKGROUND-COLOR: transparent;=0A=
+        }=0A=
+=0A=
+        .bl-template H3 {=0A=
+            FONT-SIZE: 18px;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            FONT-WEIGHT: bold;=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            MARGIN: 0px;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: block;=0A=
+            LETTER-SPACING: normal;=0A=
+            LINE-HEIGHT: 1.1;=0A=
+            PADDING-RIGHT: 0px;=0A=
+            BACKGROUND-COLOR: transparent;=0A=
+        }=0A=
+=0A=
+        .bl-template H4 {=0A=
+            FONT-SIZE: 16px;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            FONT-WEIGHT: bold;=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            MARGIN: 0px;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: block;=0A=
+            LETTER-SPACING: normal;=0A=
+            LINE-HEIGHT: 1.1;=0A=
+            PADDING-RIGHT: 0px;=0A=
+            BACKGROUND-COLOR: transparent;=0A=
+        }=0A=
+=0A=
+        .bl-template H1 A {=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #6dc6dd;=0A=
+        }=0A=
+=0A=
+        .bl-template H2 A {=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #6dc6dd;=0A=
+        }=0A=
+=0A=
+        .bl-template H3 A {=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #6dc6dd;=0A=
+        }=0A=
+=0A=
+        .bl-template H4 A {=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #6dc6dd;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-padding-1-column {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 18px;=0A=
+            PADDING-RIGHT: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-padding-2-columns-left {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 18px;=0A=
+            PADDING-RIGHT: 0px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-padding-2-columns-right {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            PADDING-RIGHT: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-padding-3-columns {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 18px;=0A=
+            PADDING-RIGHT: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .no-side-padding {=0A=
+            PADDING-BOTTOM: 0px !important;=0A=
+            PADDING-TOP: 0px !important;=0A=
+            PADDING-LEFT: 0px !important;=0A=
+            PADDING-RIGHT: 0px !important;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-product .bl-column-first .bl-padding-3-colum=
+ns {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 18px;=0A=
+            PADDING-RIGHT: 0px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-product .bl-column-middle .bl-padding-3-colu=
+mns {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 9px;=0A=
+            PADDING-RIGHT: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-product .bl-column-last .bl-padding-3-column=
+s {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            PADDING-RIGHT: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-first-row .bl-block-content-row-inne=
+r {=0A=
+            PADDING-TOP: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-last-row .bl-block-content-row-inner=
+ {=0A=
+            PADDING-BOTTOM: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .social-items-container {=0A=
+            TEXT-ALIGN: center;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-logo {=0A=
+            TEXT-ALIGN: right;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-viewweb {=0A=
+            TEXT-ALIGN: center;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-column .bl-block-content-item-contai=
+ner + .bl-block-content-item-container .bl-block-content-item-container-inn=
+er {=0A=
+            PADDING-TOP: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-articleleft .bl-block-content-column .bl-blo=
+ck-content-item-container + .bl-block-content-item-container .bl-block-cont=
+ent-item-container-inner {=0A=
+            PADDING-TOP: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-articleright .bl-block-content-column .bl-bl=
+ock-content-item-container + .bl-block-content-item-container .bl-block-con=
+tent-item-container-inner {=0A=
+            PADDING-TOP: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-textunderimage .bl-block-content-column .bl-=
+block-content-item + .bl-block-content-item-container .bl-block-content-ite=
+m-container-inner {=0A=
+            PADDING-TOP: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-product .bl-block-content-item-title H2 {=0A=
+            FONT-SIZE: 24px;=0A=
+            LINE-HEIGHT: 75% !important;=0A=
+        }=0A=
+=0A=
+=0A=
+        .bl-template .non-editable-content.bl-block-content-item-image {=0A=
+            FONT-SIZE: 15px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-footer .bl-block-content-row {=0A=
+            BACKGROUND-COLOR: #f9f9f9;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-footer .bl-block-content-layout-1 .social-it=
+ems-container {=0A=
+            TEXT-ALIGN: left;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-footer .bl-block-content-layout-3 .bl-block-=
+content-item-headerlinks > DIV {=0A=
+            TEXT-ALIGN: left;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-button bl-block-dir-rtl A {=0A=
+            DIRECTION: rtl;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-button bl-block-dir-rtl {=0A=
+            DIRECTION: rtl;=0A=
+        }=0A=
+=0A=
+        .bl-template .social-items-container IMG {=0A=
+            PADDING-BOTTOM: 2px;=0A=
+            PADDING-TOP: 2px;=0A=
+            PADDING-LEFT: 2px;=0A=
+            PADDING-RIGHT: 2px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-divider .bl-block-content-item-container-inn=
+er {=0A=
+            PADDING-BOTTOM: 3px;=0A=
+            PADDING-TOP: 3px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-row-inner {=0A=
+            DIRECTION: ltr;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-content-wrapper {=0A=
+            DIRECTION: ltr;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-dir-rtl .bl-block-columns-container {=0A=
+            DIRECTION: rtl;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-dir-rtl .bl-block-content-item-container-inn=
+er {=0A=
+            DIRECTION: rtl;=0A=
+        }=0A=
+=0A=
+        .bl-template .ui-sortable.bl-zone-dropable {=0A=
+            MIN-HEIGHT: 0px !important;=0A=
+        }=0A=
+=0A=
+    .bl-footer-adv-sep {=0A=
+        BORDER-TOP: 1px inset;=0A=
+        BORDER-RIGHT: 1px inset;=0A=
+        BORDER-BOTTOM: 1px inset;=0A=
+        MARGIN: 0px 0px 20px;=0A=
+        BORDER-LEFT: 1px inset;=0A=
+    }=0A=
+=0A=
+    .bl-template UL {=0A=
+        MARGIN-BOTTOM: 0px;=0A=
+        PADDING-BOTTOM: 0px;=0A=
+        PADDING-TOP: 0px;=0A=
+        MARGIN-TOP: 0px;=0A=
+    }=0A=
+=0A=
+    .bl-template OL {=0A=
+        MARGIN-BOTTOM: 0px;=0A=
+        PADDING-BOTTOM: 0px;=0A=
+        PADDING-TOP: 0px;=0A=
+        MARGIN-TOP: 0px;=0A=
+    }=0A=
+=0A=
+    .bl-template .bl-block-dir-ltr .left.bl-block-4-cloumns-wrapper {=0A=
+        PADDING-RIGHT: 6px;=0A=
+    }=0A=
+=0A=
+    .bl-template .bl-block-dir-ltr .right.bl-block-4-cloumns-wrapper {=0A=
+        PADDING-LEFT: 6px;=0A=
+    }=0A=
+=0A=
+    .bl-template .bl-block-dir-rtl .left.bl-block-4-cloumns-wrapper {=0A=
+        PADDING-LEFT: 6px;=0A=
+    }=0A=
+=0A=
+    .bl-template .bl-block-dir-rtl .right.bl-block-4-cloumns-wrapper {=0A=
+        PADDING-RIGHT: 6px;=0A=
+    }=0A=
+    =0A=
+    =0A=
+</style><style id=3D"t-st-2" title=3D"resp" popo=3D"1" type=3D"text/css">=
+=0A=
+=0A=
+        @media only screen =0A=
+    and (max-device-width: 640px), =0A=
+    only screen and (max-device-width: 730px), =0A=
+    only screen and (max-width: 480px)=0A=
+        { =0A=
+            .hide-in-mobile { display: none; }=0A=
+        }=0A=
+=0A=
+      @media screen and (max-width: 480px) {=0A=
+      =0A=
+        .hide-in-mobile { display: none; }=0A=
+      =0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-template-margin"] {=0A=
+            padding: 0 0 !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] table[class*=3D"template-main-table"] {=
+=0A=
+            margin-right: 0px !important;=0A=
+            margin-left: 0px !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] table[class*=3D"template-main-table"],=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-template-border"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-template-border"] > tab=
+le,=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-1-column"],=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-2-columns"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-3-columns"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-zone"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-zone"] > table,=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] {=0A=
+            display: block !important; /* 20-6-2016 */=0A=
+            width: 320px !important;=0A=
+        }=0A=
+=0A=
+            div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-i=
+nner"] table[class*=3D"bl-block-content-column"] {=0A=
+                width: 100% !important;=0A=
+            }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-template-border"] {=0A=
+            border-width: 0px !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-2-columns"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-3-columns"] {=0A=
+            width: 100% !important;=0A=
+            max-width: 600px !important;=0A=
+        }=0A=
+        =0A=
+        /* 20-6-2016 */=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-4-columns"], =0A=
+        {=0A=
+            display: block !important;=0A=
+            max-width: 600px !important;=0A=
+            width: 100% !important;=0A=
+        }=0A=
+        =0A=
+        div[class*=3D"bl-template"] div[class*=3D"bl-block-content-item-ima=
+ge"] img {=0A=
+            width: 100% !important;=0A=
+            height: auto !important;=0A=
+        }=0A=
+        =0A=
+        div[class*=3D"bl-template"] .bl-content-wrapper {=0A=
+            width: 100% !important;=0A=
+        }=0A=
+        =0A=
+        /* 14-5-2017 */=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-2-columns"] .bl-cont=
+ent-wrapper {=0A=
+            width: 282px !important;=0A=
+        }=0A=
+        =0A=
+        /* 14-5-2017 */=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-1-column"] .bl-conte=
+nt-wrapper.bl-padding-1-column {=0A=
+            width: 480px !important;=0A=
+        }=0A=
+        =0A=
+        div[class*=3D"bl-template"] td[class*=3D"no-side-padding"] img {=0A=
+            /*max-width: 320px !important;*/=0A=
+            max-width: 320px !important;=0A=
+        }=0A=
+        =0A=
+        /* 4/4/2017 */=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-1-column"] img =
+{=0A=
+            =0A=
+            /* 14-5-2017 */=0A=
+            /* width: 100% !important; */=0A=
+            width: auto !important;=0A=
+            =0A=
+            max-width: 100% !important;=0A=
+        }=0A=
+        =0A=
+        .bl-2-columns .bl-block-content-item-td-textContent,.bl-2-columns .=
+bl-block-content-item-td-imageContent,.bl-2-columns .bl-block-content-item-=
+td-titleContent, =0A=
+        .bl-3-columns .bl-block-content-item-td-textContent,.bl-3-columns .=
+bl-block-content-item-td-imageContent,.bl-3-columns .bl-block-content-item-=
+td-titleContent {  =0A=
+            height: auto !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-1-column"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-2-columns-left"=
+],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-2-columns-right=
+"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-3-columns"] {=
+=0A=
+            padding: 0px 18px 18px 18px !important;=0A=
+        }=0A=
+        =0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table:last-child td[class*=3D"bl-padding-1-column"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table:last-child td[class*=3D"bl-padding-2-columns-left"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table:last-child td[class*=3D"bl-padding-2-columns-right"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table:last-child td[class*=3D"bl-padding-3-columns"] {=0A=
+            padding: 0px 18px 0px 18px !important;=0A=
+        }=0A=
+=0A=
+        /*strech in Iphone*/=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table td[class*=3D"bl-padding-1-column"].no-side-padding {=0A=
+                padding: 0px 0px 0px 0px !important;=0A=
+            }=0A=
+=0A=
+        div[class*=3D"bl-template"] div[class*=3D"bl-block-share"] table:la=
+st-child td[class*=3D"bl-content-wrapper"] {=0A=
+            padding: 0px !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-column"] =
+{=0A=
+            display: block !important;=0A=
+            max-width: 600px !important;=0A=
+            width: 100% !important;=0A=
+        }=0A=
+=0A=
+            div[class*=3D"bl-template"] table[class*=3D"bl-block-columns-co=
+ntainer"],=0A=
+            div[class*=3D"bl-template"] td[class*=3D"bl-block-content-colum=
+n"] > table {=0A=
+                max-width: 600px !important;=0A=
+                width: 100% !important;=0A=
+            }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-column-first"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-column-middle"] {=0A=
+            padding-bottom: 18px !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-2-columns-last"] {=0A=
+        }=0A=
+=0A=
+=0A=
+        div[class*=3D"bl-template"] span[class*=3D"bl-menu-break-row"] {=0A=
+            display: block !important;=0A=
+        }=0A=
+    }=0A=
+=0A=
+    /*Keep these styles here so they will be included in all campaigns (inl=
+iner will not remove them)*/=0A=
+    body {=0A=
+        width: 100% !important;=0A=
+        -webkit-text-size-adjust: none;=0A=
+        -ms-text-size-adjust: none;=0A=
+        margin: 0;=0A=
+        padding: 0;=0A=
+    }=0A=
+=0A=
+    #outlook a {=0A=
+        padding: 0;=0A=
+    }=0A=
+=0A=
+    .ReadMsgBody {=0A=
+        width: 100%;=0A=
+    }=0A=
+=0A=
+    .ExternalClass {=0A=
+        width: 100% !important;=0A=
+        line-height: 100% !important;=0A=
+    }=0A=
+=0A=
+    .yshortcuts {=0A=
+        color: #5187bd;=0A=
+    }=0A=
+=0A=
+        .yshortcuts a span {=0A=
+            color: #5187bd;=0A=
+            border-bottom: none !important;=0A=
+            background: none !important;=0A=
+        }=0A=
+=0A=
+</style></div>
+<table bgcolor=3D"#FFFFFF" align=3D"center" cellpadding=3D"3" cellspacing=
+=3D"0" border=3D"0" dir=3D"rtl" lang=3D"he" style=3D"border: 1px groove #66=
+6666;">
+<tbody>
+<tr>
+<td align=3D"center"><font face=3D"Arial" size=3D"2" color=3D"#333333" styl=
+e=3D"font-size: 11px;"><b>=D7=A4=D7=A8=D7=A1=D7=95=D7=9E=D7=AA</b></font></=
+td>
+</tr>
+<tr>
+<td><font face=3D"Arial" size=3D"2" color=3D"#666666" style=3D"font-size: 1=
+1px;">=D7=94=D7=95=D7=93=D7=A2=D7=94 =D7=96=D7=95 =D7=A0=D7=A9=D7=9C=D7=97=
+=D7=94 =D7=A2&quot;=D7=99 Dell Technologies Israel, =D7=94=D7=9E=D7=93=D7=
+=A2 7, =D7=94=D7=A8=D7=A6=D7=9C=D7=99=D7=94, Dana.Cohen@dell.com=E2=80=8F<b=
+r>
+=D7=94=D7=A0=D7=9A =D7=A8=D7=A9=D7=90=D7=99, =D7=91=D7=9B=D7=9C =D7=A2=D7=
+=AA, =D7=9C=D7=94=D7=95=D7=93=D7=99=D7=A2 =D7=A2=D7=9C =D7=A1=D7=99=D7=A8=
+=D7=95=D7=91=D7=9A =D7=9C=D7=A7=D7=91=D7=9C =D7=93=D7=91=D7=A8=D7=99 =D7=A4=
+=D7=A8=D7=A1=D7=95=D7=9E=D7=AA, =D7=9C=D7=9C=D7=90 =D7=AA=D7=A9=D7=9C=D7=95=
+=D7=9D, =D7=A2&quot;=D7=99 =D7=A9=D7=9C=D7=99=D7=97=D7=AA =D7=94=D7=95=D7=
+=93=D7=A2=D7=AA =D7=A1=D7=99=D7=A8=D7=95=D7=91 =D7=9C=D7=9B=D7=AA=D7=95=D7=
+=91=D7=AA Dana.Cohen@dell.com=E2=80=8F<br>
+=D7=90=D7=95 =D7=A2&quot;=D7=99 =D7=9C=D7=97=D7=99=D7=A6=D7=94 =D7=A2=D7=9C=
+ =D7=94=D7=A7=D7=99=D7=A9=D7=95=D7=A8 =D7=9C=D7=94=D7=A1=D7=A8=D7=94 =D7=94=
+=D7=9E=D7=95=D7=A4=D7=99=D7=A2 =D7=91=D7=AA=D7=97=D7=AA=D7=99=D7=AA =D7=94=
+=D7=94=D7=95=D7=93=D7=A2=D7=94. </font></td>
+</tr>
+</tbody>
+</table>
+<br>
+<center>
+<p dir=3D"rtl" lang=3D"he"><font face=3D"Arial" size=3D"2" color=3D"#6D6D6D=
+" style=3D"font-size: 11px;">=D7=9C=D7=94=D7=A1=D7=A8=D7=94 =D7=9E=D7=A8=D7=
+=A9=D7=99=D7=9E=D7=AA =D7=94=D7=AA=D7=A4=D7=95=D7=A6=D7=94 =D7=90=D7=A0=D7=
+=90 =D7=9C=D7=97=D7=A5/=D7=99&nbsp;<a href=3D"https://www.publicators.com/a=
+pp/drd.asp?p=3D7614181783_550923706_10490155"><font size=3D"2" face=3D"Aria=
+l" color=3D"#6D6D6D" style=3D"font-size: 11px;"><strong>=D7=9B=D7=90=D7=9F<=
+/strong></font></a></font></p>
+</center>
+<center>
+<p dir=3D"ltr"><font face=3D"Arial" size=3D"2" color=3D"#6D6D6D" style=3D"f=
+ont-size: 11px;">To unsubscribe
+<a href=3D"https://www.publicators.com/app/drd.asp?p=3D7614181783_550923706=
+_10490156">
+<font size=3D"2" face=3D"Arial" color=3D"#6D6D6D" style=3D"font-size: 11px;=
+"><strong>click here</strong></font></a></font></p>
+</center>
+</font>
+<p></p>
+<p align=3D"left" lang=3D"he" dir=3D"ltr" style=3D"font-family: tahoma; col=
+or: gray; margin-left: 20px; font-size: 10px">
+Powered by <a target=3D"_blank" href=3D"https://www.publicators.com/app/drd=
+.asp?p=3D7614181783_550923706_10490157">
+<font size=3D"1" style=3D"font-family: tahome; color: blue; font-size: 10px=
+; text-decoration: none">Publicators</font></a></p>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>

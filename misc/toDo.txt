@@ -21,11 +21,19 @@
 	Add setup guides for all components
 	Create user guides for different use cases
 	Document API endpoints and parameters
+* search functionality improvements:
+	Fuzzy Matching: Implement fuzzy text matching for product and vendor names to handle typos and variations.
+	Query Expansion: Add synonyms for common terms to improve recall (e.g., "security" → "vulnerability", "protection").
+	Relevance Tuning: Adjust the weighting between vector similarity and graph importance scores to optimize result ranking.
+	Caching Search Results: Cache frequent search queries with short TTL (30-60 seconds) to improve response time for repeated queries.
+	Pagination Support: Add offset/limit parameters to support paginated results for large result sets.
+	Faceted Search: Return facets (counts by vendor, product, type) to help users refine their searches.
+	Hybrid Filtering: Use a combination of exact and partial matching based on field type (exact for vendors, partial for content).
+	Semantic Chunking: Improve document chunking to create more semantically meaningful segments for better retrieval.
+	Query Understanding: Add a preprocessing step to better extract search intent from natural language queries.
+	Performance Metrics: Add instrumentation to track search latency and result quality for continuous improvement.
 
-
-
-
-	Additional Tests Needed
+* additional Tests Needed
 Confidence Level Validation
 Test that relationship confidence levels are correctly assigned
 Verify that high/medium/low confidence relationships are properly distinguished

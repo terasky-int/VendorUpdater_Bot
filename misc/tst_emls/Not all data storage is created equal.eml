@@ -1,0 +1,2352 @@
+Received: from VI2P194MB2255.EURP194.PROD.OUTLOOK.COM (2603:10a6:800:22d::20)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Mon, 3 Jun 2024
+ 13:18:25 +0000
+Received: from AM0PR03CA0033.eurprd03.prod.outlook.com (2603:10a6:208:14::46)
+ by VI2P194MB2255.EURP194.PROD.OUTLOOK.COM (2603:10a6:800:22d::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7633.25; Mon, 3 Jun
+ 2024 13:17:15 +0000
+Received: from AM3PEPF0000A79A.eurprd04.prod.outlook.com
+ (2603:10a6:208:14:cafe::6b) by AM0PR03CA0033.outlook.office365.com
+ (2603:10a6:208:14::46) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7633.28 via Frontend
+ Transport; Mon, 3 Jun 2024 13:17:15 +0000
+Authentication-Results: spf=pass (sender IP is 192.28.151.193)
+ smtp.mailfrom=email.purestorage.com; dkim=pass (signature was verified)
+ header.d=purestorage.com;dmarc=pass action=none
+ header.from=purestorage.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of email.purestorage.com
+ designates 192.28.151.193 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.28.151.193;
+ helo=email.purestorage.com; pr=C
+Received: from email.purestorage.com (192.28.151.193) by
+ AM3PEPF0000A79A.mail.protection.outlook.com (10.167.16.105) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7633.15 via Frontend Transport; Mon, 3 Jun 2024 13:17:14 +0000
+X-MSFBL: CHZnd6AtTIXeaSGkUYs9cVUbrySiQtq3r+n+4frJaJY=|eyJiIjoiZHZwLTE5Mi0
+	yOC0xNTEtMTkzIiwidSI6IjIyNS1VU00tMjkyOjA6NDY2NDEzOjE4Mzk2ODE6Mzc
+	yMTU4MjoyNzkyOTU6OToxNTYzNzc5OjUzODU5MjAxIiwiciI6ImRhdmlkZ0B0ZXJ
+	hc2t5LmNvbSIsImciOiJiZy1hYmQtNTUzIn0=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1717420633;
+	s=m1; d=purestorage.com; i=@purestorage.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=o22xKZlNX9EyJWfLW+bGyAiSCIQ0BhBrxYYUnv4TjWA=;
+	b=WnHcPUYY5WCz7WdVUayJFfO/2MuR0BRwVPNi0vywNAGZDOOCJ87F4/4BBJpbsl9+
+	RiyMFc0xg/6RNLveFSdpFL2RC2B5cjAMH9NQEAAH+jMIL0x5tdSctt1VBUhpyRqp9Td
+	mAzd8umjzuj/siH0n7NGSVvTqtuIlgNEfVVnCOC0=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1717420633;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=o22xKZlNX9EyJWfLW+bGyAiSCIQ0BhBrxYYUnv4TjWA=;
+	b=Ll+L3R7r1ow4bUqeNKq8YnBOg9rDyyVwBFhOKKg2oXboi4MvrZ6RTBcxKgVcKdNX
+	zVy1QAzfOiO6zVApn90E1vmNiCuSIcaPXPVR3j4ntcic5ArPmRp7iai3wqcw+tSXT43
+	tX6GrrXk0jGQtExu7Vad0T0Yg4aU8VDlcwE5aU9M=
+Date: Mon, 3 Jun 2024 08:17:13 -0500 (CDT)
+From: Pure Storage <purestorage@purestorage.com>
+Reply-To: purestorage@purestorage.com
+To: davidg@terasky.com
+Message-ID: <350607951.605522865.1717420633513@abmktmail-batch1c.marketo.org>
+Subject: Not all data storage is created equal
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_605522864_1399265265.1717420633512"
+X-Binding: bg-abd-553
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://pages.purestorage.com/u/MjI1LVVTTS0yOTIAAAGTfTfdmnqDhi43xapfFMtEGSf0w7W5zaC1WXLjWDO4fDuWFdLLoCXYtXTuNu4pZ1h6gaXOy1Y=?emailAddress=MjI1LVVTTS0yOTIAAAGTfTfdmpi7UYcqTqxW5Oz0buAVkCL4Mv2_fGyVRw-w-ilWrw8EQDCHlRO_OXGJOeRuNsk>, <mailto:G5EGESDEJVYFCNJVI5DXKLJWKBKGWQLMHBVE6VC7OZRXG3ZUMJDVEV3KLBUUUYLFKFXGOPI=.1563779.279295.9@unsub-ab.mktomail.com>
+X-MarketoID: 225-USM-292:0:466413:1839681:3721582:279295:9:1563779:53859201
+X-Mailfrom: 225-USM-292.0.1563779.0.0.279295.9.53859201@email.purestorage.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+Return-Path: 225-USM-292.0.1563779.0.0.279295.9.53859201@email.purestorage.com
+X-MS-Exchange-Organization-ExpirationStartTime: 03 Jun 2024 13:17:14.7165
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 437ab0ae-3cd6-415e-c0b0-08dc83cf7c54
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM3PEPF0000A79A:EE_|VI2P194MB2255:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AM3PEPF0000A79A.eurprd04.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 437ab0ae-3cd6-415e-c0b0-08dc83cf7c54
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230031|5073199003|69100299006;
+X-Forefront-Antispam-Report: CIP:192.28.151.193;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:email.purestorage.com;PTR:email.purestorage.com;CAT:NONE;SFS:(13230031)(5073199003)(69100299006);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Jun 2024 13:17:14.2634
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 437ab0ae-3cd6-415e-c0b0-08dc83cf7c54
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AM3PEPF0000A79A.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI2P194MB2255
+X-MS-Exchange-Transport-EndToEndLatency: 00:01:10.8224311
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.7633.017
+X-Message-Flag: Follow up
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?YVpVVkJjNjdmcVBLTEp6bW41RGZ2RzVVNzVXNXJmVUlMVUlabWl1SHIwaEJH?=
+ =?utf-8?B?WVk5OWNMMG4xZmtSTVdhVzRtSTg2bVRNU251UXNTcTRTNWFSOXJrTVI0VTE1?=
+ =?utf-8?B?SHhJSzRNaUpzWXRVZDB0dms2Y3h0eWJtdUtad2xaWlM5eXZzQUZ6bXU5dVoy?=
+ =?utf-8?B?elZmS1pYNnlFL1pESEhSeHZaZTJJMUFlQzdmcWNua3h1SDZMaUkyL3JyQ3pj?=
+ =?utf-8?B?ZWFRZWppNE5xSUxyeDFGc3ZkUCtiVHpTbk5ZVXphM0g2QWl0YkFlM3hoWUpQ?=
+ =?utf-8?B?cWR1d1VVR0lTMStPOWQ0c1VWSVNIRkRiOWFZdGc2OGx2NExWSVF6OXkwR0dr?=
+ =?utf-8?B?ZG9qSnJ5ZTJFc3RJZ042eTZLQjc1VDg0OHBybldRbWRvZlhPSlIwSVg4ZXIy?=
+ =?utf-8?B?UTJsaU1LSUM4RjREakRnVTl0bno5cm9mMVNidzNyQXplTC9vcjNxR1c1ZVJD?=
+ =?utf-8?B?MWpCcmFxbEpQUmwrSnRUbXpzT1pvVWtLWGZ6QmZlMUpDcW5wZ2lMQ2h3TXdx?=
+ =?utf-8?B?Q3QzRDJkYnBqY3dDK2hBOHJCaDhpMmVBcmZHTjhPZ29TVExTT1BuR211Uzg0?=
+ =?utf-8?B?dUc5aXRmaDdKWUFQcmZyQlZqT09PdkhxODMrQkVkWStEOGFzZm5VWmd6YW9u?=
+ =?utf-8?B?Q0ppaUN4M2RRT1RZN3V6WFVSMVBmNFZaZjNOVFNKb2lsVmFMOFBWc3BRQ2ZN?=
+ =?utf-8?B?RmJmY3ZrMUdOVlZMTE1JUHU2VjIxQ0J4bjVDS2JwaGdlU0lhY0lOSTZiYS9z?=
+ =?utf-8?B?M2VnWExSM245eW14cmY2c3FQK0l4RDNWUjhmVlBjdjY1VUpmU0M3Z3o0WWpX?=
+ =?utf-8?B?RjVta2RONWFIWUkvWHFCbVl2RnI2VTAzT016NDBCd2Zib3FOQ015RlkvWldO?=
+ =?utf-8?B?emNnVG85RTVBeGxuek92QXlwZWR1Mzd2enBrVUZvNjgzM21tWkpGRGs0aWNO?=
+ =?utf-8?B?c0xBSXIyRWQzQVByWDg5NWFXTDFEVjUrZzFJcFI4SlEydGQzM0VBUUc4L1hV?=
+ =?utf-8?B?dU9ZRlAydUtQM0xNMjZreU5NMmdFU0hrdSs5aG81Y0hQS2NSOHBPV2p0UzVP?=
+ =?utf-8?B?WXBRSXhVUnZ4Q2tzWTVtcG5lbDI3Y3FCc2ZmV1AvZWNFbjQwUWlGYU94Vk05?=
+ =?utf-8?B?MkVacmQrVndBWHBvOWk1c3JUVk9vWXIwK2VadkVxMFJ3MUJNdUlkMmpZdGZV?=
+ =?utf-8?B?eE1CaEE1MFUwcFQ5cFYzNDhUZ2loaU1rWGZwc2YvTnVqTTdENlc0WlA4c0VD?=
+ =?utf-8?B?cmZlTEJWRkNlcEFjMERla2NJUDJTalVUckhxTDZDQ0NOb2tJU1RtWUpmMzZ4?=
+ =?utf-8?B?bnJXV2dQUXZwQ2pUR05HNVZVbzlrZ1QxUzNiNGVmMExxWENuV1czTDdWUmJM?=
+ =?utf-8?B?M2NCeEg0Wi9tZmltMUxla1J5eFdtQStrYVFtNExINEtBQTJCQVJwaW53dkU4?=
+ =?utf-8?B?VXd0N0F1UC9JakRobG1KZ0N6VEVDQmJXdGpqRDUrV3FKV1p6dy9yWWJROG14?=
+ =?utf-8?B?ZTExSEN2UmVYekdIbTd4WXhxdXprVXBiQWNPY3JORlF3RkZQNng2MXBZcFor?=
+ =?utf-8?B?WFRGSW1RcW40dTY5RnRqZDlSR0JweWNiTmFYZ1ZON0piWklnUXRkQStYVE9F?=
+ =?utf-8?B?Nys3WHVDYlZOWUtLS2hOUGhpbC9Rb09LV211a1czcTQvN2hHWmZPRHdvSEVm?=
+ =?utf-8?B?MXp2eFpFNitVM25hTmxhRTZUclVZdEdGNkpuQ2Jxano4Yi9abnlHYisvU3FQ?=
+ =?utf-8?B?bjJnanYwcHVyY01wMUpaL1pXVUcyZzBvZXRCZlJ0R0g4WEtlQm5qT0VoWmU2?=
+ =?utf-8?B?UFQrUGdZdHdwelBDaVVJVmhMWFV0MWhVRm9JdndqdTJrbHdPd3RJVEdiSXlv?=
+ =?utf-8?B?bXkvdmdZWVQyU3drMUQxb3JmREpIUkRrdVJ3WEVjb0o1OTF3ZHd4VTdBSjln?=
+ =?utf-8?B?d1NqTnlreDhzTCtLM1Vqa3Y4OHJHdDFrck8vcDllNHdBMkwwWTdyYnJURlBo?=
+ =?utf-8?B?Yi93OExvdk1vMkYycUhVRW5YZ2UrSlRaR0lNWTl3MzF0OGYzQmZuOTd5cVhZ?=
+ =?utf-8?B?NC9reHprVm1sZ2FOdkZBT0hpRHBQUng5UjJpR0RpL096d2xGbjdndWZ4UGxL?=
+ =?utf-8?B?eHdxUHVPZ3ppenZRcFhpOGNERHlJSjM3c25pWklxUVM1N2VtbVdPNEhwMis2?=
+ =?utf-8?B?eExKQUhFS050UnBQdXJPRnpRdGlVUDF0anV0RjFGdDNGN1I4WG5lQU01Mkpl?=
+ =?utf-8?B?R3FSRVZRaE5GZmVqcHJKN3hEM3FFUEkzMjRrMGQ3NEZtZTBYR1F2WGdPZ09i?=
+ =?utf-8?B?QXo4MTY2QXhZWnZZNG1GQVlMWHNrTzF5U1Jybzl0bkY2QUdYU1I1RkFod21B?=
+ =?utf-8?B?TThEQTZGWW5WNlRBQmFhS3hzVVNCeHkwUGFod0FkUXZIeXcrTmdGdWtNT244?=
+ =?utf-8?B?QzlmK1NjejR3M3RTNk9ZU09oWW1rdEw3RWRqU1lYQjQxVnVoZW9UYlJQSHBj?=
+ =?utf-8?B?dXVLR0RaalJzSmJGM3hQUVUreFFXdmpzMm5xSHl3cjR4ZEh0MDQ1ZlNqUVBE?=
+ =?utf-8?B?emdkZHBaS0ZPWmEvSkp1NGovWjB2QURZbVJoVC9hRHY2RlVBNnVaREZ5NjRy?=
+ =?utf-8?B?anBSb0FScENlSGM2SkIreHFHOGwwcGUwN0VHWFBCK1ZWdURaeC9Sdngwd2NH?=
+ =?utf-8?B?bkdrODBTQWN5RW5FMFlwcUlJSHhjVlVQTS9nNFp5c3JnSmJQTVg1bzBFMHNu?=
+ =?utf-8?B?UlRKVVlpMmRvSHdPYitlZVgwSkJ2R0tqTWJYUWxEeWVRdFBDdVQ0SWl5b3RR?=
+ =?utf-8?B?PT0=?=
+MIME-Version: 1.0
+
+------=_Part_605522864_1399265265.1717420633512
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Why Pure Storage in 30 seconds
+=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=
+=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=
+=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=
+=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=
+=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=
+=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=
+ =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F=
+ =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=
+=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F=
+ =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F=
+ =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=
+=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F=
+ =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F=
+ =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=
+=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F=
+ =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F=
+ =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=
+=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F=
+ =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F=
+ =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=
+=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F=
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD
+[https://client-data.knak.io/production/email_assets/59b17719284c1/JBoXHk3X=
+M2HNeJ4p6fyUgoxDXw8gKdJjZOAWwoDJ.png]
+[ Image ]
+
+Got Questions? Contact Us!<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAA=
+GTfTfdmrrrWP3vnaAj01dOJ2bSxmAgIsjnHkY7KD_OPp6q5vvzl2T0MFCcV7Y_fLjH6YgtxWo=
+=3D>  ><https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmrrrWP3vnaAj0=
+1dOJ2bSxmAgIsjnHkY7KD_OPp6q5vvzl2T0MFCcV7Y_fLjH6YgtxWo=3D>
+
+[Downtime, delays, data loss - eliminated.]<https://pages.purestorage.com/M=
+jI1LVVTTS0yOTIAAAGTfTfdmkVOwf8IQB_8t5WKDJ2OYvak9HmGSXrlShbCQ1A-52e5IBIVgDVP=
+0_EB4jJ5HwW2bqE=3D>
+[ Downtime, delays, data loss - eliminated. ] [[https://www.purestorage.com=
+/simple.html?utm_medium=3Demail&utm_source=3Dmarketo&utm_campaign=3Dglbl-ds=
+d-nurture&utm_region=3Dglobal&utm_content=3Ddsd-nurture&utm_creative=3Dknak=
+&utm_term=3D7014W000001a8K2&utm_keyword=3Ddefault#simply-modern]]
+[Downtime, delays, data loss - eliminated.]<https://pages.purestorage.com/M=
+jI1LVVTTS0yOTIAAAGTfTfdmkVOwf8IQB_8t5WKDJ2OYvak9HmGSXrlShbCQ1A-52e5IBIVgDVP=
+0_EB4jJ5HwW2bqE=3D>
+[ Downtime, delays, data loss - eliminated. ] [[https://www.purestorage.com=
+/simple.html?utm_medium=3Demail&utm_source=3Dmarketo&utm_campaign=3Dglbl-ds=
+d-nurture&utm_region=3Dglobal&utm_content=3Ddsd-nurture&utm_creative=3Dknak=
+&utm_term=3D7014W000001a8K2&utm_keyword=3Ddefault#simply-modern]]
+
+In today's fast-paced world, data is the lifeblood of businesses everywhere=
+. But with complexity and inefficiency plaguing traditional storage solutio=
+ns, it's time for a change.
+
+
+
+Simplify, save money, time and headaches along the way.
+
+
+
+Watch Now <https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmkVOwf8IQB=
+_8t5WKDJ2OYvak9HmGSXrlShbCQ1A-52e5IBIVgDVP0_EB4jJ5HwW2bqE=3D>
+Watch Now [[https://www.purestorage.com/simple.html?utm_medium=3Demail&utm_=
+source=3Dmarketo&utm_campaign=3Dglbl-dsd-nurture&utm_region=3Dglobal&utm_co=
+ntent=3Ddsd-nurture&utm_creative=3Dknak&utm_term=3D7014W000001a8K2&utm_keyw=
+ord=3Ddefault#simply-modern]]
+
+You=E2=80=99ll Retire Before Your Storage
+
+With Evergreen=C2=AE, experience true storage agility that=E2=80=99s never =
+obsolete.
+
+[https://client-data.knak.io/production/email_assets/59b17719284c1/EbG9ZwD8=
+GugNf86iH52AUW5CKfmx9v6pLyxNqg3m.png]
+[ Image ]
+
+Zero Downtime
+
+Uninterrupted access to critical applications and workloads.
+
+[https://client-data.knak.io/production/email_assets/59b17719284c1/TNs74V4w=
+97xvtdtkHcxNQkAjqKSrnVJg1KLZt7Cv.png]
+[ Image ]
+
+Controller Upgrades
+
+Completed in minutes with no impact to critical enterprise workloads/applic=
+ations.
+
+[https://client-data.knak.io/production/email_assets/59b17719284c1/fBl93bV5=
+dM9zqVKixVHjIrAgThwA4hBWppvj5CGr.png]
+[ Image ]
+
+Always-Evolving
+
+Always-evolving infrastructure. Gives staff the agility to respond and stay=
+ focused.
+
+View the Infographic
+<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmiq9Xmw0MCXmfQnwXGkB=
+Kzps8_gzjXuIGUu8cgzmYzB-W8cfOIzwt_Qw2gh1Bh1jHKA=3D>
+View the Infographic [[https://www.purestorage.com/docs.html?utm_medium=3De=
+mail&utm_source=3Dmarketo&utm_campaign=3Dglbl-dsd-nurture&utm_region=3Dglob=
+al&utm_content=3Ddsd-nurture&utm_creative=3Dknak&utm_term=3D7014W000001a8K2=
+&utm_keyword=3Ddefault&item=3D/type/pdf/subtype/doc/path/content/dam/pdf/en=
+/infographics/ig-evergreen-architecture-buy-it-once-storage-forever.pdf]]
+
+Say goodbye to:
+
+[https://client-data.knak.io/production/email_assets/59b17719284c1/iYFz5oam=
+QEMlD0ZRGMo7K2EcLpObGYKK0STr0IhX.png]
+[ Image ]
+
+Complexity
+
+[https://client-data.knak.io/production/email_assets/59b17719284c1/iYFz5oam=
+QEMlD0ZRGMo7K2EcLpObGYKK0STr0IhX.png]
+[ Image ]
+
+Migrations
+
+[https://client-data.knak.io/production/email_assets/59b17719284c1/iYFz5oam=
+QEMlD0ZRGMo7K2EcLpObGYKK0STr0IhX.png]
+[ Image ]
+
+Disruptive upgrades
+
+[https://client-data.knak.io/production/email_assets/59b17719284c1/iYFz5oam=
+QEMlD0ZRGMo7K2EcLpObGYKK0STr0IhX.png]
+[ Image ]
+[https://client-data.knak.io/production/email_assets/59b17719284c1/iYFz5oam=
+QEMlD0ZRGMo7K2EcLpObGYKK0STr0IhX.png]
+[ Image ]
+[https://client-data.knak.io/production/email_assets/59b17719284c1/iYFz5oam=
+QEMlD0ZRGMo7K2EcLpObGYKK0STr0IhX.png]
+[ Image ]
+
+Complexity
+
+Migration
+
+Disruptive upgrades
+
+Upcoming Webinars<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdm4I=
+lES0nvIjUPLKeY3AIqbCXD1VXJA5KobKfvz1tPGtOOCJupNACv6_hGlCQenE0nn0=3D>
+
+Test Drive<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmuAo7Lj2TA=
+K53OAT9ozNc4SK6gqKgUkLv7vOKRyAjNWdx-4nwhcJkBSlZ-DRuP94zgQ=3D>
+
+Calculators<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmlzo3SJ-i=
+akoQ5-vPJaQVCzZ8NsCHF4y_nqH2rYJ5uEbhQZw5ErS8kSywxSaKOpTb5k=3D>
+
+Our Blog<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmk-ewTAYc-vz=
+X6EpiTkunXD5Pzx0gsXHRLTslnR5HFQInhOgc2xywNMTfS3kDyu3LcE=3D>
+
+View in Browser<https://pages.purestorage.com/v/MjI1LVVTTS0yOTIAAAGTfTfdmjw=
+cO90-wUbigYPDkbRrcaceVp8pv3Gt6Gnz5Gaq79PgNzr5gW-1FYcYRuidA6yrh2w=3D>
+
+Contact Us<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmrWYHpnd7H=
+mJzw92Ysa3c6_S-tvIkjlrwmW_g5yl588QlFD-_T9IMUo1-ZShbI8HJgU=3D> | Privacy Pol=
+icy<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmsebbY-zNnY1-6KXT=
+fDgNG0uk6jW82JCuxJqZ8p6Pvqtuag2sNouF3Ml5_jM8F5zixw=3D> | Forward to Friend<=
+https://pages.purestorage.com/v/MjI1LVVTTS0yOTIAAAGTfTfdm_eqfAIl8W2uUr0G9Lu=
+p3tt9MOc41H_4ih8VZIn7J4S2nk2mdzdus5vbvNucUtxduO8=3D?utm_medium=3Demail&utm_=
+source=3Dmarketo&utm_campaign=3Dglbl-dsd-nurture&utm_region=3Dglobal&utm_co=
+ntent=3Ddsd-nurture&utm_creative=3Dknak&utm_term=3D7014W000001a8K2&utm_keyw=
+ord=3Ddefault>
+
+
+
+This email was sent to davidg@terasky.com.
+
+Manage email preferences<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGT=
+fTfdmoRtnk4WICC1n3_ruoUYrEfZC7WN7nycwcHZ1V0gL9KYNx9RxjMJrl5NSQZJbRCWyRw=3D>=
+ or unsubscribe<https://info.purestorage.com/UnsubscribePage.html?mkt_unsub=
+scribe=3D1&mkt_tok=3DMjI1LVVTTS0yOTIAAAGTfTfdmyYYB0yqIMlnXlWadKvjPhmKcH-79w=
+Gn-CJ8E2rGwoaSSClUu5adPvDswZ3_ZYQI_0cCQqRHEiOwAB0iQ-WIvwdZKT0FgG0acEpn3JqNW=
+5Uyv20?utm_medium=3Demail&utm_source=3Dmarketo&utm_campaign=3Dglbl-dsd-nurt=
+ure&utm_region=3Dglobal&utm_content=3Ddsd-nurture&utm_creative=3Dknak&utm_t=
+erm=3D7014W000001a8K2&utm_keyword=3Ddefault>.
+
+
+
+2555 Augustine Dr. Santa Clara, CA 95054, United States
+
+=C2=A9 2024 Pure Storage, Inc.
+
+[Twitter]<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdm8XM4c09kwm=
+KcGOhh79Vg4nsCb3oHb6qF4qcozetkIpvrjFVnbEuy9F4xTG85SD4lEk=3D>
+[Linkedin]<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmggs0bxLFX=
+nI8VfSaoXCBSNAErNKsg2ZhqC7JbefmzA03KS8krePFS_v2KXK7q8o628=3D>
+[Facebook]<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmlvJDMn9tQ=
+dLGN32LCdQwuvzxFtP9gTbUzHdH_RnPzrQSBFO1XQKnh-H1eJQczCSSik=3D>
+[YouTube]<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmjh1uoceGRp=
+9QqR_NINatCVVKrNTJMB0pZys5XK45suN5S__H6ss5vtsXmeOXJofBQk=3D>
+[Instagram]<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmmlzMDMzh=
+PY4wS-SSXKa466Ik1wtv4lYrmIUDEmrp5SMcjj3x6X5D1owhADgWgeG7d0=3D>
+[Pure Storage]
+[ Pure Storage ]
+<https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdm1Hp5a_7xYRoEBEorBl0=
+bssxI4aRrffTZ_fGCSwqahTV2Eo_y1vKrBxgfw7g0-EVz7A=3D>
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_605522864_1399265265.1717420633512
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html><html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xml=
+ns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com=
+:office:office"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<title>Not all data storage is created equal</title>
+<!--[if !mso]><!-- -->
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<!--<![endif]-->
+<meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1">
+<style type=3D"text/css">#outlook a { padding:0; }           body, .body { =
+margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;=
+ }           table { border-spacing:0;}           img { border:0;height:aut=
+o;line-height:100%; outline:none;text-decoration:none;-ms-interpolation-mod=
+e:bicubic; }           p { display:block;margin:13px 0; }</style><!--[if ms=
+o]>                    <xml>                      <o:OfficeDocumentSettings=
+>                          <o:AllowPNG/>                          <o:Pixels=
+PerInch>96</o:PixelsPerInch>                      </o:OfficeDocumentSetting=
+s>                    </xml>                        <style type=3D"text/css=
+">             table { border-collapse:collapse;mso-table-lspace:0pt;mso-ta=
+ble-rspace:0pt; }             .mj-outlook-group-fix { width:100% !important=
+; }             .mso-button-dark-mode a {background: transparent !important=
+;}           </style>                  <![endif]--><!--[if !mso]><!--><link=
+ href=3D"https://s3.amazonaws.com/assets.knak.io/custom-fonts/PureStorage/f=
+onts.css" rel=3D"stylesheet" type=3D"text/css"><link href=3D"https://s3.ama=
+zonaws.com/assets.knak.io/custom-fonts/PureStorage/fonts.css" rel=3D"styles=
+heet" type=3D"text/css"><link href=3D"https://s3.amazonaws.com/assets.knak.=
+io/custom-fonts/PureStorage/fonts.css" rel=3D"stylesheet" type=3D"text/css"=
+><link href=3D"https://assets.knak.io/custom-fonts/Helvetica/Helvetica.css"=
+ rel=3D"stylesheet" type=3D"text/css"><style type=3D"text/css">@import url(=
+https://s3.amazonaws.com/assets.knak.io/custom-fonts/PureStorage/fonts.css)=
+; @import url(https://s3.amazonaws.com/assets.knak.io/custom-fonts/PureStor=
+age/fonts.css); @import url(https://s3.amazonaws.com/assets.knak.io/custom-=
+fonts/PureStorage/fonts.css);  @import url(https://assets.knak.io/custom-fo=
+nts/Helvetica/Helvetica.css);</style><!--<![endif]--><style type=3D"text/cs=
+s">@media only screen and (min-width:620px) {         .mj-column-per-100 { =
+width:100% !important; max-width: 100%; } .mj-column-per-50 { width:50% !im=
+portant; max-width: 50%; } .mj-column-per-33-333333333333336 { width:33.333=
+333333333336% !important; max-width: 33.333333333333336%; } .mj-column-per-=
+16 { width:16% !important; max-width: 16%; } .mj-column-per-84 { width:84% =
+!important; max-width: 84%; } .mj-column-per-30 { width:30% !important; max=
+-width: 30%; } .mj-column-per-70 { width:70% !important; max-width: 70%; } =
+.mj-column-per-36 { width:36% !important; max-width: 36%; } .mj-column-per-=
+20 { width:20% !important; max-width: 20%; } .mj-column-per-23 { width:23% =
+!important; max-width: 23%; } .mj-column-per-21 { width:21% !important; max=
+-width: 21%; } .mj-column-per-56 { width:56% !important; max-width: 56%; } =
+.mj-column-per-44 { width:44% !important; max-width: 44%; }       }</style>=
+<style type=3D"text/css">u ~ div .img-container img + div { display: none }=
+ .links-FE5000 a { color: #FE5000; text-decoration: none; } #body #main [x-=
+apple-data-detectors-type] {            color: inherit !important;         =
+   -webkit-text-decoration-color: inherit !important;            text-decor=
+ation: inherit !important;           font-weight: inherit !important;      =
+    } .links-FE5000-underline a { color: #FE5000; text-decoration: underlin=
+e; } .links-1C1C1C a { color: #1C1C1C; text-decoration: none; }            =
+                             @media only screen and (min-width:620px) {    =
+                     .padding-30px { padding: 30px !important} .padding-0px=
+-0px-0px-0px { padding: 0px 0px 0px 0px !important} .max-width-237px { max-=
+width: 237px !important} .font-size-14px { font-size: 14px !important} .pad=
+ding-10px-0px-10px-0px { padding: 10px 0px 10px 0px !important} .padding-0p=
+x-30px-30px-30px { padding: 0px 30px 30px 30px !important} .padding-0-0-0-0=
+ { padding: 0 0 0 0 !important} .padding-16px-30px-16px-30px { padding: 16p=
+x 30px 16px 30px !important} .border-bottom-0-solid-FFFFFF { border-bottom:=
+ 0 solid #FFFFFF !important} .border-left-0-solid-FFFFFF { border-left: 0 s=
+olid #FFFFFF !important} .border-right-0-solid-FFFFFF { border-right: 0 sol=
+id #FFFFFF !important} .border-top-0-solid-FFFFFF { border-top: 0 solid #FF=
+FFFF !important} .text-align-right { text-align: right !important} .margin-=
+0-0-0-auto { margin: 0 0 0 auto !important}             }</style><style typ=
+e=3D"text/css">p{margin: 0 0;}ul{display: block;}sup, sub{line-height:0;}bo=
+dy a{text-decoration: none; color: #FE5000;}.image-highlight{transition: 0.=
+3s;}.image-highlight:hover{filter: brightness(1.2);}.button-highlight{trans=
+ition: 0.3s;}.button-highlight:hover{filter: brightness(1.5);}@media only s=
+creen and (min-width: 620px) { .hide-on-mobile{display:block !important;}.h=
+ide-on-desktop{display:none !important;} }.hide-on-desktop{display:block;}.=
+hide-on-mobile{display:none;}</style><!--[if mso]>             <style>     =
+            .hide-on-mobile {display:block !important}             </style>=
+         <![endif]--><!--[if mso]>                 <style>                 =
+             .mso-font-size-14px { font-size: 14px !important; }           =
+      </style>             <![endif]--><!--[if gte mso 16]>                =
+ <style>                     .mso-text-white a { mso-style-textfill-type: g=
+radient; mso-style-textfill-fill-gradientfill-stoplist: "0 \#FFFFFF 0 10000=
+0\,100000 \#FFFFFF 0 100000"; color: #000000 !important; }                 =
+ </style>             <![endif]--><style>[class~=3D"x_body"] { width: 99.9%=
+ }</style>
+</head>
+<body style=3D"word-spacing:normal;background-color:#FFFFFF;" class=3D"body=
+" id=3D"body">
+<!--[if !mso 9]><!-->
+<div id=3D"emailPreHeader" class=3D"mktEditable" style=3D"display: none;">W=
+hy Pure Storage in 30 seconds
+</div>
+<div style=3D"display: none;">=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=
+=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=
+=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=
+=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=
+=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=
+=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=87=E2=80=
+=87=E2=80=87=E2=80=87=E2=80=87 =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=
+=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=
+=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=
+=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=
+=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=
+=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=
+=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F
+ =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=
+=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F=
+ =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F=
+ =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=
+=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=
+=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F=
+ =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=
+=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F=
+ =E2=80=87=CD=8F =E2=80=87=E2=80=8D=CD=8F =E2=80=87=CD=8F =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD
+ =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =
+=C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=
+=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD =C2=AD &nbsp;
+</div>
+<!--<![endif]-->
+<div style=3D"background-color:#FFFFFF;background-position:center center;ba=
+ckground-size:auto;background-repeat:repeat;" id=3D"main">
+<!--[if mso]><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%"><![endif]--><!--[if mso]><tr><td><![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#EDEDED;width:100%;" class=3D=
+"section">
+<tbody>
+<tr>
+<td align=3D"center"><!--[if mso | IE]><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"block-grid-outlook" style=3D"=
+width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px=
+;mso-line-height-rule:exactly;"><![endif]-->
+<div style=3D"background:#FFFFFF;background-color:#FFFFFF;Margin:0px auto;m=
+ax-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#FFFFFF;width:100%;">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:30px 30px 30px 30px;text-align:center;ve=
+rtical-align:top;mso-padding-alt:30px;" class=3D"block-grid padding-30px">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:540px;" ><![=
+endif]-->
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0;=
+line-height:0;text-align:left;display:inline-block;width:100%;direction:ltr=
+;vertical-align:top;">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:middle;width:270px;" >=
+<![endif]-->
+<div class=3D"mj-column-per-50 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;w=
+idth:50%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:middle;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"padding-0px-0px-0px-0px img-container" style=3D"font-size:0px;=
+padding:0px;word-break:break-word;mso-padding-alt:0px 0px 0px 0px;text-alig=
+n:left;">
+<div style=3D"margin:0 auto 0 0;max-width:98%;" class=3D"max-width-237px">
+<div class=3D"mktoImg" id=3D"kimage-0n76ka1wr"><img height=3D"auto" width=
+=3D"237" src=3D"https://client-data.knak.io/production/email_assets/59b1771=
+9284c1/JBoXHk3XM2HNeJ4p6fyUgoxDXw8gKdJjZOAWwoDJ.png" style=3D"border:none;o=
+utline:none;text-decoration:none;height:auto;width:100%;font-size:13px;disp=
+lay:block;">
+</div>
+<!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"image-plain-text-un65xajxk" style=3D"mso-h=
+ide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-r=
+ule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0;=
+ display:none !important;">
+[ Image ] </div>
+<!--<![endif]--></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td style=3D"vertical-align:middle;width:270px;" ><!=
+[endif]-->
+<div class=3D"mj-column-per-50 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;w=
+idth:50%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:middle;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"padding-10px-0px-10px-0px text-container" style=3D"font-size:0=
+px;padding:0px 0px 0px 0px;word-break:break-word;mso-padding-alt:10px 0px 1=
+0px 0px;text-align:right;">
+<div class=3D"mktEditable" id=3D"ktext-kmb35z6dg" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:12px;letter-spacing:none;line-heigh=
+t:1.2;text-align:right;mso-line-height-alt:1.063em;color:#000000;">
+<div class=3D"links-FE5000">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:12px;=
+letter-spacing:none;line-height:1.2;text-align:right;mso-line-height-alt:1.=
+063em;color:#000000;" class=3D"mso-font-size-14px font-size-14px">
+<p style=3D"margin: 0 0;"><span style=3D"font-size: 14px;"><a href=3D"https=
+://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmrrrWP3vnaAj01dOJ2bSxmAgIs=
+jnHkY7KD_OPp6q5vvzl2T0MFCcV7Y_fLjH6YgtxWo=3D" target=3D"_blank" rel=3D"noop=
+ener" style=3D"color: rgb(254, 80, 0); text-decoration: none;"><span style=
+=3D"font-family: 'Inter', Arial, sans-serif;">Got
+ Questions? Contact<span class=3D"mce-nbsp-wrap" contenteditable=3D"false">=
+&nbsp;</span>Us!</span></a><span class=3D"mce-nbsp-wrap" contenteditable=3D=
+"false">&nbsp;</span><span class=3D"mce-nbsp-wrap" contenteditable=3D"false=
+">&nbsp;</span><span style=3D"font-family: 'Inter Bold', Arial, sans-serif;=
+ color: rgb(254, 80, 0);"><a href=3D"https://pages.purestorage.com/MjI1LVVT=
+TS0yOTIAAAGTfTfdmrrrWP3vnaAj01dOJ2bSxmAgIsjnHkY7KD_OPp6q5vvzl2T0MFCcV7Y_fLj=
+H6YgtxWo=3D" target=3D"_blank" rel=3D"noopener" style=3D"color: rgb(254, 80=
+, 0); text-decoration: none;">&gt;</a><br>
+</span></span></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr><![endif]--><!--[if mso]><tr><td><![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#EDEDED;width:100%;" class=3D=
+"section">
+<tbody>
+<tr>
+<td align=3D"center"><!--[if mso | IE]><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"block-grid-outlook" style=3D"=
+width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px=
+;mso-line-height-rule:exactly;"><![endif]-->
+<div style=3D"background:#FFFFFF;background-color:#FFFFFF;Margin:0px auto;m=
+ax-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#FFFFFF;width:100%;">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:0;text-align:center;vertical-align:top;"=
+ class=3D"block-grid">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:600px;" ><![=
+endif]-->
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0p=
+x;text-align:left;direction:ltr;display:inline-block;vertical-align:top;wid=
+th:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"background-color:transparent;border-radius:0px;vertical-align:=
+top;padding:5px 0px 5px 0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"hide-on-mobile img-container" style=3D"display: none; font-siz=
+e: 0px; padding: 0px 0px 0px 0px; word-break: break-word; text-align: cente=
+r;" align=3D"center">
+<div style=3D"margin:0 auto;">
+<div class=3D"mktoImg" id=3D"kimage-jix9nyn2d"><a href=3D"https://pages.pur=
+estorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmkVOwf8IQB_8t5WKDJ2OYvak9HmGSXrlShbCQ1=
+A-52e5IBIVgDVP0_EB4jJ5HwW2bqE=3D" target=3D"_blank" style=3D"text-decoratio=
+n: none; color: #FE5000;"><img alt=3D"Downtime, delays, data loss - elimina=
+ted." height=3D"auto" width=3D"600" src=3D"https://info.purestorage.com/rs/=
+225-USM-292/images/tfs-email-1-banner.png?version=3D0" style=3D"border:none=
+;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;di=
+splay:block;"></a>
+</div>
+<!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"image-plain-text-zdfbuabzf" style=3D"mso-h=
+ide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-r=
+ule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0;=
+ display:none !important;">
+[ Downtime, delays, data loss - eliminated. ] [[https://www.purestorage.com=
+/simple.html?utm_medium=3Demail&amp;utm_source=3Dmarketo&amp;utm_campaign=
+=3Dglbl-dsd-nurture&amp;utm_region=3Dglobal&amp;utm_content=3Ddsd-nurture&a=
+mp;utm_creative=3Dknak&amp;utm_term=3D7014W000001a8K2&amp;utm_keyword=3Ddef=
+ault#simply-modern]]
+</div>
+<!--<![endif]--></div>
+</td>
+</tr>
+<!--[if !mso]><!-->
+<tr>
+<td class=3D"hide-on-desktop img-container" style=3D"display: block; font-s=
+ize: 0px; padding: 0px 0px 0px 0px; word-break: break-word; text-align: cen=
+ter;" align=3D"center">
+<div style=3D"margin:0 auto;">
+<div class=3D"mktoImg" id=3D"kimage-hmqnz220q"><a href=3D"https://pages.pur=
+estorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmkVOwf8IQB_8t5WKDJ2OYvak9HmGSXrlShbCQ1=
+A-52e5IBIVgDVP0_EB4jJ5HwW2bqE=3D" target=3D"_blank" style=3D"text-decoratio=
+n: none; color: #FE5000;"><img alt=3D"Downtime, delays, data loss - elimina=
+ted." height=3D"auto" width=3D"600" src=3D"https://info.purestorage.com/rs/=
+225-USM-292/images/tfs-email-1-banner.png?version=3D0" style=3D"border:none=
+;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;di=
+splay:block;"></a>
+</div>
+<!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"image-plain-text-lnbzcv0s2" style=3D"mso-h=
+ide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-r=
+ule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0;=
+ display:none !important;">
+[ Downtime, delays, data loss - eliminated. ] [[https://www.purestorage.com=
+/simple.html?utm_medium=3Demail&amp;utm_source=3Dmarketo&amp;utm_campaign=
+=3Dglbl-dsd-nurture&amp;utm_region=3Dglobal&amp;utm_content=3Ddsd-nurture&a=
+mp;utm_creative=3Dknak&amp;utm_term=3D7014W000001a8K2&amp;utm_keyword=3Ddef=
+ault#simply-modern]]
+</div>
+<!--<![endif]--></div>
+</td>
+</tr>
+<!--<![endif]-->
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr><![endif]--><!--[if mso]><tr><td><![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#EDEDED;width:100%;" class=3D=
+"section">
+<tbody>
+<tr>
+<td align=3D"center"><!--[if mso | IE]><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"block-grid-outlook" style=3D"=
+width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px=
+;mso-line-height-rule:exactly;"><![endif]-->
+<div style=3D"background:#FFFFFF;background-color:#FFFFFF;Margin:0px auto;m=
+ax-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#FFFFFF;width:100%;">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:0px 0px 0px 0px;text-align:center;vertic=
+al-align:top;mso-padding-alt:0px 0px 0px 0px;" class=3D"block-grid">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"background-color:#FFFFFF;line-height:0;font-size:0;direction:l=
+tr;"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:600px;"=
+ ><![endif]-->
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0p=
+x;text-align:left;direction:ltr;display:inline-block;vertical-align:top;wid=
+th:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:30px 30px 0px 3=
+0px;word-break:break-word;mso-padding-alt:30px 30px 0px 30px;text-align:lef=
+t;">
+<div class=3D"mktEditable" id=3D"ktext-dqasiwlyx" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:16px;letter-spacing:none;line-heigh=
+t:1.4;text-align:left;mso-line-height-alt:1.375em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:16px;=
+letter-spacing:none;line-height:1.4;text-align:left;mso-line-height-alt:1.3=
+75em;color:#000000;">
+<p style=3D"margin: 0 0;"><span style=3D"white-space: pre-wrap;">In today's=
+ fast-paced world, data is the lifeblood of businesses everywhere.
+</span><span style=3D"white-space: pre-wrap;">But with complexity and ineff=
+iciency plaguing traditional storage solutions, it's time for a change.</sp=
+an></p>
+<p style=3D"margin: 0 0;">&nbsp;</p>
+<p style=3D"margin: 0 0;">Simplify, save money, time and headaches along th=
+e way.</p>
+<p style=3D"margin: 0 0;">&nbsp;</p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td valign=3D"middle" class=3D"padding-0px-30px-30px-30px button-highlight =
+button-container" style=3D"transition: 0.3s; font-size: 0px; padding: 0px 3=
+0px 40px 30px; word-break: break-word; mso-padding-alt: 0px 30px 30px 30px;=
+ text-align: left;" align=3D"left">
+<div><!--[if mso]><table width=3D"100%" align=3D"center" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0;border-collapse:co=
+llapse;mso-table-lspace:0pt;mso-table-rspace:0pt;"><tr><td align=3D"left" c=
+lass=3D"mso-button-dark-mode" dir=3D"ltr"><a:roundrect xmlns:a=3D"urn:schem=
+as-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" hre=
+f=3D
+"https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmkVOwf8IQB_8t5WKDJ2O=
+Yvak9HmGSXrlShbCQ1A-52e5IBIVgDVP0_EB4jJ5HwW2bqE=3D" fillcolor=3D"#FF5000" a=
+rcsize=3D"4%" style=3D"v-text-anchor:middle;width:104.25pt;height:36.75pt;"=
+ stroke=3D"f"=20
+><w:anchorlock/><a:textbox inset=3D"25px,0,25px,0"><span style=3D"color:#ff=
+ffff; font-family:sans-serif, Arial; font-size:16px" class=3D"mso-text-whit=
+e"><![endif]--><a href=3D"https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAG=
+TfTfdmkVOwf8IQB_8t5WKDJ2OYvak9HmGSXrlShbCQ1A-52e5IBIVgDVP0_EB4jJ5HwW2bqE=3D=
+" style=3D"display: inline-block; background: #FF5000; color: #ffffff; font=
+-family: 'Inter Bold', Arial, sans-serif; font-size: 16px; font-weight: nor=
+mal; line-height: 1.2; margin: 0; text-align: left; text-decoration: none; =
+text-transform: none; padding: 15px 25px 15px 25px; mso-padding-alt: 0px; b=
+order-radius: 2px; mso-border-alt: none; box-sizing: border-box; direction:=
+ ltr;" target=3D"_blank" width=3D"139">Watch
+ Now </a><!--[if mso]></span></a:textbox></a:roundrect></td></tr></table><!=
+[endif]--><!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"button-plain-text-28lmcdtli" style=3D"mso-=
+hide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-=
+rule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0=
+; display:none !important;">
+Watch Now [[https://www.purestorage.com/simple.html?utm_medium=3Demail&amp;=
+utm_source=3Dmarketo&amp;utm_campaign=3Dglbl-dsd-nurture&amp;utm_region=3Dg=
+lobal&amp;utm_content=3Ddsd-nurture&amp;utm_creative=3Dknak&amp;utm_term=3D=
+7014W000001a8K2&amp;utm_keyword=3Ddefault#simply-modern]]
+</div>
+<!--<![endif]--></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr><![endif]--><!--[if mso]><tr><td><![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#EDEDED;width:100%;" class=3D=
+"section">
+<tbody>
+<tr>
+<td align=3D"center"><!--[if mso | IE]><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"block-grid-outlook" style=3D"=
+width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px=
+;mso-line-height-rule:exactly;"><![endif]-->
+<div style=3D"background:#FFFFFF;background-color:#FFFFFF;Margin:0px auto;m=
+ax-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#FFFFFF;width:100%;">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:0px;text-align:center;vertical-align:top=
+;" class=3D"block-grid">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:600px;" ><![=
+endif]-->
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0p=
+x;text-align:left;direction:ltr;display:inline-block;vertical-align:top;wid=
+th:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:30px 30px 30px =
+30px;word-break:break-word;text-align:center;">
+<div class=3D"mktEditable" id=3D"ktext-bb8j48ibk" style=3D"font-family:'Int=
+er Bold', Arial, sans-serif;font-size:20px;letter-spacing:none;line-height:=
+1.2;text-align:center;mso-line-height-alt:1.5em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:'Inter Bold', Arial, sans-serif;font-size:20px;le=
+tter-spacing:none;line-height:1.2;text-align:center;mso-line-height-alt:1.5=
+em;color:#000000;">
+<p style=3D"margin: 0 0;">You=E2=80=99ll Retire Before Your Storage</p>
+<p style=3D"margin: 0 0;"><span style=3D"font-family: 'Inter Medium', Arial=
+, sans-serif; font-size: 16px;">With Evergreen=C2=AE, experience true stora=
+ge agility that=E2=80=99s never obsolete.</span></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr><![endif]--><!--[if mso]><tr><td><![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#EDEDED;width:100%;" class=3D=
+"section">
+<tbody>
+<tr>
+<td align=3D"center"><!--[if mso | IE]><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"block-grid-outlook" style=3D"=
+width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px=
+;mso-line-height-rule:exactly;"><![endif]-->
+<div style=3D"background:#FFFFFF;background-color:#FFFFFF;Margin:0px auto;m=
+ax-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#FFFFFF;width:100%;">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:0px 30px 0px 30px;text-align:center;vert=
+ical-align:top;" class=3D"block-grid">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:180px;" ><![=
+endif]-->
+<div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"img-container" style=3D"font-size:0px;padding:0px 0px 0px 0px;=
+word-break:break-word;text-align:center;">
+<div style=3D"margin:0 auto;max-width:57px;">
+<div class=3D"mktoImg" id=3D"kimage-bh7d26kv3"><img height=3D"auto" width=
+=3D"57" src=3D"https://client-data.knak.io/production/email_assets/59b17719=
+284c1/EbG9ZwD8GugNf86iH52AUW5CKfmx9v6pLyxNqg3m.png" style=3D"border:none;ou=
+tline:none;text-decoration:none;height:auto;width:100%;font-size:13px;displ=
+ay:block;">
+</div>
+<!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"image-plain-text-hgxd2686p" style=3D"mso-h=
+ide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-r=
+ule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0;=
+ display:none !important;">
+[ Image ] </div>
+<!--<![endif]--></div>
+</td>
+</tr>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:10px 4px 10px 4=
+px;word-break:break-word;text-align:center;">
+<div class=3D"mktEditable" id=3D"ktext-jwkpix5jb" style=3D"font-family:Aria=
+l, sans-serif;font-size:16px;letter-spacing:none;line-height:1.2;text-align=
+:center;mso-line-height-alt:1.188em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:Arial, sans-serif;font-size:16px;letter-spacing:n=
+one;line-height:1.2;text-align:center;mso-line-height-alt:1.188em;color:#00=
+0000;">
+<p style=3D"margin: 0 0;"><strong><span style=3D"font-family: 'Inter Bold',=
+ Arial, sans-serif;">Zero Downtime</span></strong></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:0px 0px 0px 0px=
+;word-break:break-word;text-align:center;">
+<div class=3D"mktEditable" id=3D"ktext-q0ugtl4kp" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:14px;letter-spacing:none;line-heigh=
+t:1.2;text-align:center;mso-line-height-alt:1.063em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:14px;=
+letter-spacing:none;line-height:1.2;text-align:center;mso-line-height-alt:1=
+.063em;color:#000000;">
+<p style=3D"margin: 0 0;"><span style=3D"font-family: 'Inter', Arial, sans-=
+serif; font-size: 14px;">Uninterrupted access to critical applications and =
+workloads.</span></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td style=3D"vertical-align:top;width:180px;" ><![en=
+dif]-->
+<div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"border-radius:0px;vertical-align:top;padding:30px;mso-padding-=
+alt:0 0 0 0;" class=3D"padding-0-0-0-0">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"img-container" style=3D"font-size:0px;padding:0px 0px 0px 0px;=
+word-break:break-word;text-align:center;">
+<div style=3D"margin:0 auto;max-width:57px;">
+<div class=3D"mktoImg" id=3D"kimage-ng2v3oqz2"><img height=3D"auto" width=
+=3D"57" src=3D"https://client-data.knak.io/production/email_assets/59b17719=
+284c1/TNs74V4w97xvtdtkHcxNQkAjqKSrnVJg1KLZt7Cv.png" style=3D"border:none;ou=
+tline:none;text-decoration:none;height:auto;width:100%;font-size:13px;displ=
+ay:block;">
+</div>
+<!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"image-plain-text-2sle6l3al" style=3D"mso-h=
+ide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-r=
+ule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0;=
+ display:none !important;">
+[ Image ] </div>
+<!--<![endif]--></div>
+</td>
+</tr>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:10px 4px 10px 4=
+px;word-break:break-word;text-align:center;">
+<div class=3D"mktEditable" id=3D"ktext-0c04cy2ve" style=3D"font-family:Aria=
+l, sans-serif;font-size:16px;letter-spacing:none;line-height:1.2;text-align=
+:center;mso-line-height-alt:1.188em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:Arial, sans-serif;font-size:16px;letter-spacing:n=
+one;line-height:1.2;text-align:center;mso-line-height-alt:1.188em;color:#00=
+0000;">
+<p style=3D"margin: 0 0;"><span style=3D"font-family: 'Inter Bold', Arial, =
+sans-serif;"><strong>Controller Upgrades</strong><br>
+</span></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:0px 10px 0px 10=
+px;word-break:break-word;text-align:center;">
+<div class=3D"mktEditable" id=3D"ktext-zeh2pn27d" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:14px;letter-spacing:none;line-heigh=
+t:1.2;text-align:center;mso-line-height-alt:1.063em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:14px;=
+letter-spacing:none;line-height:1.2;text-align:center;mso-line-height-alt:1=
+.063em;color:#000000;">
+<p style=3D"margin: 0 0;"><span style=3D"font-family: 'Inter', Arial, sans-=
+serif; font-size: 14px;">Completed in minutes with no impact to critical en=
+terprise workloads/applications.</span></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td style=3D"vertical-align:top;width:180px;" ><![en=
+dif]-->
+<div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:top;width:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"img-container" style=3D"font-size:0px;padding:0px 0px 0px 0px;=
+word-break:break-word;text-align:center;">
+<div style=3D"margin:0 auto;max-width:57px;">
+<div class=3D"mktoImg" id=3D"kimage-btxpd141p"><img height=3D"auto" width=
+=3D"57" src=3D"https://client-data.knak.io/production/email_assets/59b17719=
+284c1/fBl93bV5dM9zqVKixVHjIrAgThwA4hBWppvj5CGr.png" style=3D"border:none;ou=
+tline:none;text-decoration:none;height:auto;width:100%;font-size:13px;displ=
+ay:block;">
+</div>
+<!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"image-plain-text-c2mex4qzw" style=3D"mso-h=
+ide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-r=
+ule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0;=
+ display:none !important;">
+[ Image ] </div>
+<!--<![endif]--></div>
+</td>
+</tr>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:10px 4px 10px 4=
+px;word-break:break-word;text-align:center;">
+<div class=3D"mktEditable" id=3D"ktext-jeefmj8cx" style=3D"font-family:Aria=
+l, sans-serif;font-size:16px;letter-spacing:none;line-height:1.2;text-align=
+:center;mso-line-height-alt:1.188em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:Arial, sans-serif;font-size:16px;letter-spacing:n=
+one;line-height:1.2;text-align:center;mso-line-height-alt:1.188em;color:#00=
+0000;">
+<p style=3D"margin: 0 0;"><span style=3D"font-family: 'Inter Bold', Arial, =
+sans-serif;"><strong>Always-Evolving</strong><br>
+</span></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:0px 0px 0px 0px=
+;word-break:break-word;text-align:center;">
+<div class=3D"mktEditable" id=3D"ktext-mvvjwin72" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:14px;letter-spacing:none;line-heigh=
+t:1.2;text-align:center;mso-line-height-alt:1.063em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:14px;=
+letter-spacing:none;line-height:1.2;text-align:center;mso-line-height-alt:1=
+.063em;color:#000000;">
+<p style=3D"margin: 0 0;"><span style=3D"font-family: 'Inter', Arial, sans-=
+serif; font-size: 14px;">Always-evolving infrastructure. Gives staff the ag=
+ility to respond and stay focused.</span></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr><![endif]--><!--[if mso]><tr><td><![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#EDEDED;width:100%;" class=3D=
+"section">
+<tbody>
+<tr>
+<td align=3D"center"><!--[if mso | IE]><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"block-grid-outlook" style=3D"=
+width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px=
+;mso-line-height-rule:exactly;"><![endif]-->
+<div style=3D"background:#FFFFFF;background-color:#FFFFFF;Margin:0px auto;m=
+ax-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#FFFFFF;width:100%;">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:0;text-align:center;vertical-align:top;"=
+ class=3D"block-grid">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:600px;" ><![=
+endif]-->
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0p=
+x;text-align:left;direction:ltr;display:inline-block;vertical-align:top;wid=
+th:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"background-color:transparent;border-radius:0px;vertical-align:=
+top;padding:5px 0px 5px 0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td valign=3D"middle" class=3D"button-highlight button-container" style=3D"=
+transition: 0.3s; font-size: 0px; padding: 30px 30px 30px 30px; word-break:=
+ break-word; mso-padding-alt: 30px 30px 30px 30px; text-align: center;" ali=
+gn=3D"center">
+<div><!--[if mso]><table width=3D"100%" align=3D"center" border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0;border-collapse:co=
+llapse;mso-table-lspace:0pt;mso-table-rspace:0pt;"><tr><td align=3D"center"=
+ class=3D"mso-button-dark-mode"><a:roundrect xmlns:a=3D"urn:schemas-microso=
+ft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D
+"https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmiq9Xmw0MCXmfQnwXGkB=
+Kzps8_gzjXuIGUu8cgzmYzB-W8cfOIzwt_Qw2gh1Bh1jHKA=3D" fillcolor=3D"none" arcs=
+ize=3D"4%" style=3D"v-text-anchor:middle;width:160.5pt;height:39.75pt;" str=
+okecolor=3D"#000000" strokeweight=3D"1.5pt"=20
+><w:anchorlock/><a:textbox inset=3D"0,0,0,0"><center style=3D"color:#ffffff=
+; font-family:sans-serif, Arial; font-size:16px"><![endif]--><a href=3D"htt=
+ps://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmiq9Xmw0MCXmfQnwXGkBKzps=
+8_gzjXuIGUu8cgzmYzB-W8cfOIzwt_Qw2gh1Bh1jHKA=3D" style=3D"display: inline-bl=
+ock; background: transparent; color: #000000; font-family: Arial, sans-seri=
+f; font-size: 16px; font-weight: normal; line-height: 1.2; margin: 0; text-=
+align: center; text-decoration: none; text-transform: none; padding: 15px 2=
+4px 15px 24px; mso-padding-alt: 0px; border-radius: 2px; border-left: 2px s=
+olid #000000; border-right: 2px solid #000000; border-top: 2px solid #00000=
+0; border-bottom: 2px solid #000000; mso-border-alt: none; box-sizing: bord=
+er-box;" target=3D"_blank" width=3D"214"><span style=3D"font-family: 'Inter=
+ Bold', Arial, sans-serif;"><strong>View
+ the Infographic</strong><br>
+</span></a><!--[if mso]></center></a:textbox></a:roundrect></td></tr></tabl=
+e><![endif]--><!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"button-plain-text-p5mpm3p28" style=3D"mso-=
+hide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-=
+rule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0=
+; display:none !important;">
+View the Infographic [[https://www.purestorage.com/docs.html?utm_medium=3De=
+mail&amp;utm_source=3Dmarketo&amp;utm_campaign=3Dglbl-dsd-nurture&amp;utm_r=
+egion=3Dglobal&amp;utm_content=3Ddsd-nurture&amp;utm_creative=3Dknak&amp;ut=
+m_term=3D7014W000001a8K2&amp;utm_keyword=3Ddefault&amp;item=3D/type/pdf/sub=
+type/doc/path/content/dam/pdf/en/infographics/ig-evergreen-architecture-buy=
+-it-once-storage-forever.pdf]]
+</div>
+<!--<![endif]--></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr><![endif]--><!--[if mso]><tr><td><![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#EDEDED;width:100%;" class=3D=
+"section">
+<tbody>
+<tr>
+<td align=3D"center"><!--[if mso | IE]><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"block-grid-outlook" style=3D"=
+width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px=
+;mso-line-height-rule:exactly;"><![endif]-->
+<div style=3D"background:#FAF7F1;background-color:#FAF7F1;Margin:0px auto;m=
+ax-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#FAF7F1;width:100%;">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:0px;text-align:center;vertical-align:top=
+;" class=3D"block-grid">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:600px;" ><![=
+endif]-->
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0p=
+x;text-align:left;direction:ltr;display:inline-block;vertical-align:top;wid=
+th:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:30px 30px 30px =
+30px;word-break:break-word;text-align:center;">
+<div class=3D"mktEditable" id=3D"ktext-pac9f3048" style=3D"font-family:'Int=
+er Bold', Arial, sans-serif;font-size:20px;letter-spacing:none;line-height:=
+1.2;text-align:center;mso-line-height-alt:1.5em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:'Inter Bold', Arial, sans-serif;font-size:20px;le=
+tter-spacing:none;line-height:1.2;text-align:center;mso-line-height-alt:1.5=
+em;color:#000000;">
+<p style=3D"margin: 0 0;"><strong>Say goodbye to:</strong></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr><![endif]--><!--[if mso]><tr><td><![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#EDEDED;width:100%;" class=3D=
+"section">
+<tbody>
+<tr>
+<td align=3D"center"><!--[if mso | IE]><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"hide-on-mobile-outlook block-=
+grid-outlook" style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-h=
+eight:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+<div style=3D"background:#FAF7F1;background-color:#FAF7F1;Margin:0px auto;m=
+ax-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#FAF7F1;width:100%;">
+<tbody>
+<tr>
+<td style=3D"display: none; font-size: 0px; padding: 0px 30px 30px 30px; te=
+xt-align: center; vertical-align: top;" class=3D"hide-on-mobile block-grid"=
+ align=3D"center" valign=3D"top">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:middle;width:180px;" >=
+<![endif]-->
+<div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:middle;width:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:middle;" width=3D"100%">
+<tbody>
+<tr>
+<td>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"width:100%;" class=3D"section">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"font-size:0px;text-align:center;vertical-alig=
+n:top;padding:0px;word-break:break-word;">
+<!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0"><tr><td><table role=3D"presentation" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:180px;=
+" ><![endif]-->
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0;=
+line-height:0;text-align:left;display:inline-block;width:100%;direction:ltr=
+;vertical-align:top;">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:28px;" ><![e=
+ndif]-->
+<div class=3D"mj-column-per-16 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:16%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"img-container" style=3D"font-size:0px;padding:0px 0px 0px 0px;=
+word-break:break-word;text-align:center;">
+<div style=3D"margin:0 auto;max-width:15px;">
+<div class=3D"mktoImg" id=3D"kimage-mdsw3s2s5"><img height=3D"auto" width=
+=3D"15" src=3D"https://client-data.knak.io/production/email_assets/59b17719=
+284c1/iYFz5oamQEMlD0ZRGMo7K2EcLpObGYKK0STr0IhX.png" style=3D"border:none;ou=
+tline:none;text-decoration:none;height:auto;width:100%;font-size:13px;displ=
+ay:block;">
+</div>
+<!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"image-plain-text-mbiofset1" style=3D"mso-h=
+ide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-r=
+ule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0;=
+ display:none !important;">
+[ Image ] </div>
+<!--<![endif]--></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td style=3D"vertical-align:top;width:151px;" ><![en=
+dif]-->
+<div class=3D"mj-column-per-84 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:84%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:0px 5px 0px 5px=
+;word-break:break-word;text-align:left;">
+<div class=3D"mktEditable" id=3D"ktext-h6o6tai87" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:14px;letter-spacing:none;line-heigh=
+t:1.2;text-align:left;mso-line-height-alt:1.063em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:14px;=
+letter-spacing:none;line-height:1.2;text-align:left;mso-line-height-alt:1.0=
+63em;color:#000000;">
+<p style=3D"margin: 0 0;">Complexity</p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></div>
+<!--[if mso | IE]></td></tr></table></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td style=3D"vertical-align:middle;width:180px;" ><!=
+[endif]-->
+<div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:middle;width:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"border-radius:0px;vertical-align:middle;padding:30px;mso-paddi=
+ng-alt:0 0 0 0;" class=3D"padding-0-0-0-0">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"width:100%;" class=3D"section">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"font-size:0px;text-align:center;vertical-alig=
+n:top;padding:0px;word-break:break-word;">
+<!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0"><tr><td><table role=3D"presentation" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:180px;=
+" ><![endif]-->
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0;=
+line-height:0;text-align:left;display:inline-block;width:100%;direction:ltr=
+;vertical-align:top;">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:28px;" ><![e=
+ndif]-->
+<div class=3D"mj-column-per-16 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:16%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"img-container" style=3D"font-size:0px;padding:0px 0px 0px 0px;=
+word-break:break-word;text-align:center;">
+<div style=3D"margin:0 auto;max-width:15px;">
+<div class=3D"mktoImg" id=3D"kimage-jx5xn1ejh"><img height=3D"auto" width=
+=3D"15" src=3D"https://client-data.knak.io/production/email_assets/59b17719=
+284c1/iYFz5oamQEMlD0ZRGMo7K2EcLpObGYKK0STr0IhX.png" style=3D"border:none;ou=
+tline:none;text-decoration:none;height:auto;width:100%;font-size:13px;displ=
+ay:block;">
+</div>
+<!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"image-plain-text-ehzm9l36f" style=3D"mso-h=
+ide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-r=
+ule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0;=
+ display:none !important;">
+[ Image ] </div>
+<!--<![endif]--></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td style=3D"vertical-align:top;width:151px;" ><![en=
+dif]-->
+<div class=3D"mj-column-per-84 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:84%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:0px 5px 0px 5px=
+;word-break:break-word;text-align:left;">
+<div class=3D"mktEditable" id=3D"ktext-grekk1bgj" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:14px;letter-spacing:none;line-heigh=
+t:1.2;text-align:left;mso-line-height-alt:1.063em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:14px;=
+letter-spacing:none;line-height:1.2;text-align:left;mso-line-height-alt:1.0=
+63em;color:#000000;">
+<p style=3D"margin: 0 0;">Migrations</p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></div>
+<!--[if mso | IE]></td></tr></table></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td style=3D"vertical-align:middle;width:180px;" ><!=
+[endif]-->
+<div class=3D"mj-column-per-33-333333333333336 mj-outlook-group-fix" style=
+=3D"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertic=
+al-align:middle;width:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:middle;" width=3D"100%">
+<tbody>
+<tr>
+<td>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"width:100%;" class=3D"section">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"font-size:0px;text-align:center;vertical-alig=
+n:top;padding:0px;word-break:break-word;">
+<!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0"><tr><td><table role=3D"presentation" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:180px;=
+" ><![endif]-->
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0;=
+line-height:0;text-align:left;display:inline-block;width:100%;direction:ltr=
+;vertical-align:top;">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:28px;" ><![e=
+ndif]-->
+<div class=3D"mj-column-per-16 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:16%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"img-container" style=3D"font-size:0px;padding:0px 0px 0px 0px;=
+word-break:break-word;text-align:center;">
+<div style=3D"margin:0 auto;max-width:15px;">
+<div class=3D"mktoImg" id=3D"kimage-q6ewoqdb1"><img height=3D"auto" width=
+=3D"15" src=3D"https://client-data.knak.io/production/email_assets/59b17719=
+284c1/iYFz5oamQEMlD0ZRGMo7K2EcLpObGYKK0STr0IhX.png" style=3D"border:none;ou=
+tline:none;text-decoration:none;height:auto;width:100%;font-size:13px;displ=
+ay:block;">
+</div>
+<!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"image-plain-text-4d3ttupjf" style=3D"mso-h=
+ide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-r=
+ule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0;=
+ display:none !important;">
+[ Image ] </div>
+<!--<![endif]--></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td style=3D"vertical-align:top;width:151px;" ><![en=
+dif]-->
+<div class=3D"mj-column-per-84 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:84%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:0px 5px 0px 5px=
+;word-break:break-word;text-align:left;">
+<div class=3D"mktEditable" id=3D"ktext-xhcrul2pf" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:14px;letter-spacing:none;line-heigh=
+t:1.2;text-align:left;mso-line-height-alt:1.063em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:14px;=
+letter-spacing:none;line-height:1.2;text-align:left;mso-line-height-alt:1.0=
+63em;color:#000000;">
+<p style=3D"margin: 0 0;">Disruptive upgrades</p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></div>
+<!--[if mso | IE]></td></tr></table></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr><![endif]--><!--[if !mso]><!-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#EDEDED;width:100%;" class=3D=
+"section">
+<tbody>
+<tr>
+<td align=3D"center"><!--[if mso | IE]><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"hide-on-desktop-outlook block=
+-grid-outlook" style=3D"width:600px;" width=3D"600" ><tr><td style=3D"line-=
+height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->
+<div style=3D"background:#FAF7F1;background-color:#FAF7F1;Margin:0px auto;m=
+ax-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#FAF7F1;width:100%;">
+<tbody>
+<tr>
+<td style=3D"display: block; font-size: 0px; padding: 0px 30px 30px 30px; t=
+ext-align: center; vertical-align: top;" class=3D"hide-on-desktop block-gri=
+d" align=3D"center" valign=3D"top">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:540px;" ><![=
+endif]-->
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0p=
+x;text-align:left;direction:ltr;display:inline-block;vertical-align:top;wid=
+th:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"width:100%;" class=3D"section">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"font-size:0px;text-align:center;vertical-alig=
+n:top;padding:0px;word-break:break-word;">
+<!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0"><tr><td><table role=3D"presentation" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:540px;=
+" ><![endif]-->
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0;=
+line-height:0;text-align:left;display:inline-block;width:100%;direction:ltr=
+;vertical-align:top;">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:162px;" ><![=
+endif]-->
+<div class=3D"mj-column-per-30 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:30%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"img-container" style=3D"font-size:0px;padding:2px 0px 0px 0px;=
+word-break:break-word;text-align:right;">
+<div style=3D"margin:0 0 0 auto;max-width:12px;">
+<div class=3D"mktoImg" id=3D"kimage-utrz5y2p8"><img height=3D"auto" width=
+=3D"12" src=3D"https://client-data.knak.io/production/email_assets/59b17719=
+284c1/iYFz5oamQEMlD0ZRGMo7K2EcLpObGYKK0STr0IhX.png" style=3D"border:none;ou=
+tline:none;text-decoration:none;height:auto;width:100%;font-size:13px;displ=
+ay:block;">
+</div>
+<!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"image-plain-text-jg9vu7mhk" style=3D"mso-h=
+ide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-r=
+ule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0;=
+ display:none !important;">
+[ Image ] </div>
+<!--<![endif]--></div>
+</td>
+</tr>
+<tr>
+<td class=3D"img-container" style=3D"font-size:0px;padding:16px 0px 13px 0p=
+x;word-break:break-word;text-align:right;">
+<div style=3D"margin:0 0 0 auto;max-width:12px;">
+<div class=3D"mktoImg" id=3D"kimage-90i6ol1vf"><img height=3D"auto" width=
+=3D"12" src=3D"https://client-data.knak.io/production/email_assets/59b17719=
+284c1/iYFz5oamQEMlD0ZRGMo7K2EcLpObGYKK0STr0IhX.png" style=3D"border:none;ou=
+tline:none;text-decoration:none;height:auto;width:100%;font-size:13px;displ=
+ay:block;">
+</div>
+<!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"image-plain-text-6dpr8nu8n" style=3D"mso-h=
+ide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-r=
+ule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0;=
+ display:none !important;">
+[ Image ] </div>
+<!--<![endif]--></div>
+</td>
+</tr>
+<tr>
+<td class=3D"img-container" style=3D"font-size:0px;padding:3px 0px 0px 0px;=
+word-break:break-word;text-align:right;">
+<div style=3D"margin:0 0 0 auto;max-width:12px;">
+<div class=3D"mktoImg" id=3D"kimage-9zyea851s"><img height=3D"auto" width=
+=3D"12" src=3D"https://client-data.knak.io/production/email_assets/59b17719=
+284c1/iYFz5oamQEMlD0ZRGMo7K2EcLpObGYKK0STr0IhX.png" style=3D"border:none;ou=
+tline:none;text-decoration:none;height:auto;width:100%;font-size:13px;displ=
+ay:block;">
+</div>
+<!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"image-plain-text-b1ztgsg87" style=3D"mso-h=
+ide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-r=
+ule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0;=
+ display:none !important;">
+[ Image ] </div>
+<!--<![endif]--></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td style=3D"vertical-align:top;width:378px;" ><![en=
+dif]-->
+<div class=3D"mj-column-per-70 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:70%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:2px 5px 0px 10p=
+x;word-break:break-word;text-align:left;">
+<div class=3D"mktEditable" id=3D"ktext-w7wbhgajp" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:14px;letter-spacing:none;line-heigh=
+t:1.2;text-align:left;mso-line-height-alt:1.063em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:14px;=
+letter-spacing:none;line-height:1.2;text-align:left;mso-line-height-alt:1.0=
+63em;color:#000000;">
+<p style=3D"margin: 0 0;">Complexity</p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:11px 5px 10px 1=
+0px;word-break:break-word;text-align:left;">
+<div class=3D"mktEditable" id=3D"ktext-rdlk2uk5h" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:14px;letter-spacing:none;line-heigh=
+t:1.2;text-align:left;mso-line-height-alt:1.063em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:14px;=
+letter-spacing:none;line-height:1.2;text-align:left;mso-line-height-alt:1.0=
+63em;color:#000000;">
+<p style=3D"margin: 0 0;">Migration</p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:0px 5px 0px 10p=
+x;word-break:break-word;text-align:left;">
+<div class=3D"mktEditable" id=3D"ktext-ufszzggzl" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:14px;letter-spacing:none;line-heigh=
+t:1.2;text-align:left;mso-line-height-alt:1.063em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:14px;=
+letter-spacing:none;line-height:1.2;text-align:left;mso-line-height-alt:1.0=
+63em;color:#000000;">
+<p style=3D"margin: 0 0;">Disruptive upgrades</p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></div>
+<!--[if mso | IE]></td></tr></table></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!--<![endif]--><!--[if mso]><tr><td><![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#EDEDED;width:100%;" class=3D=
+"section">
+<tbody>
+<tr>
+<td align=3D"center"><!--[if mso | IE]><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"block-grid-outlook" style=3D"=
+width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px=
+;mso-line-height-rule:exactly;"><![endif]-->
+<div style=3D"background:#F3EAD8;background-color:#F3EAD8;Margin:0px auto;m=
+ax-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#F3EAD8;width:100%;">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:0px 0px 0px 0px;text-align:center;vertic=
+al-align:top;mso-padding-alt:16px 30px 16px 30px;" class=3D"block-grid padd=
+ing-16px-30px-16px-30px">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:194.4px;" ><=
+![endif]-->
+<div class=3D"mj-column-per-36 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-bottom:2px solid #FFFFFF;border-radius:0px;vertical-alig=
+n:top;mso-border-top-alt:none;mso-border-right-alt:none;mso-border-bottom-a=
+lt:none;mso-border-left-alt:none;" width=3D"100%" class=3D"border-bottom-0-=
+solid-FFFFFF border-left-0-solid-FFFFFF border-right-0-solid-FFFFFF border-=
+top-0-solid-FFFFFF">
+<tbody>
+<tr>
+<td class=3D"padding-0px-0px-0px-0px text-container" style=3D"font-size:0px=
+;padding:16px 0px 16px 0px;word-break:break-word;mso-padding-alt:0px 0px 0p=
+x 0px;text-align:center;">
+<div class=3D"mktEditable" id=3D"ktext-zw3daf1dd" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:14px;letter-spacing:none;line-heigh=
+t:1.2;text-align:center;mso-line-height-alt:1.063em;color:#000000;">
+<div class=3D"links-1C1C1C">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:14px;=
+letter-spacing:none;line-height:1.2;text-align:center;mso-line-height-alt:1=
+.063em;color:#000000;">
+<p style=3D"margin: 0 0;"><strong><a href=3D"https://pages.purestorage.com/=
+MjI1LVVTTS0yOTIAAAGTfTfdm4IlES0nvIjUPLKeY3AIqbCXD1VXJA5KobKfvz1tPGtOOCJupNA=
+Cv6_hGlCQenE0nn0=3D" target=3D"_blank" rel=3D"noopener" style=3D"color: rgb=
+(28, 28, 28); text-decoration: none;">Upcoming
+ Webinars</a></strong></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td style=3D"vertical-align:top;width:108px;" ><![en=
+dif]-->
+<div class=3D"mj-column-per-20 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-bottom:2px solid #FFFFFF;border-radius:0px;vertical-alig=
+n:top;mso-border-bottom-alt:none;" width=3D"100%" class=3D"border-bottom-0-=
+solid-FFFFFF">
+<tbody>
+<tr>
+<td class=3D"padding-0px-0px-0px-0px text-container" style=3D"font-size:0px=
+;padding:16px 0px 16px 0px;word-break:break-word;mso-padding-alt:0px 0px 0p=
+x 0px;text-align:center;">
+<div class=3D"mktEditable" id=3D"ktext-13a3hqmwx" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:14px;letter-spacing:none;line-heigh=
+t:1.2;text-align:center;mso-line-height-alt:1.063em;color:#000000;">
+<div class=3D"links-1C1C1C">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:14px;=
+letter-spacing:none;line-height:1.2;text-align:center;mso-line-height-alt:1=
+.063em;color:#000000;">
+<p style=3D"margin: 0 0;"><strong><a href=3D"https://pages.purestorage.com/=
+MjI1LVVTTS0yOTIAAAGTfTfdmuAo7Lj2TAK53OAT9ozNc4SK6gqKgUkLv7vOKRyAjNWdx-4nwhc=
+JkBSlZ-DRuP94zgQ=3D" target=3D"_blank" rel=3D"noopener" style=3D"color: rgb=
+(28, 28, 28); text-decoration: none;">Test Drive</a></strong></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td style=3D"vertical-align:top;width:124.2px;" ><![=
+endif]-->
+<div class=3D"mj-column-per-23 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-bottom:2px solid #FFFFFF;border-radius:0px;vertical-alig=
+n:top;mso-border-bottom-alt:none;" width=3D"100%" class=3D"border-bottom-0-=
+solid-FFFFFF">
+<tbody>
+<tr>
+<td class=3D"padding-0px-0px-0px-0px text-container" style=3D"font-size:0px=
+;padding:16px 0px 16px 0px;word-break:break-word;mso-padding-alt:0px 0px 0p=
+x 0px;text-align:center;">
+<div class=3D"mktEditable" id=3D"ktext-2ooypzhgx" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:14px;letter-spacing:none;line-heigh=
+t:1.2;text-align:center;mso-line-height-alt:1.063em;color:#000000;">
+<div class=3D"links-1C1C1C">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:14px;=
+letter-spacing:none;line-height:1.2;text-align:center;mso-line-height-alt:1=
+.063em;color:#000000;">
+<p style=3D"margin: 0 0;"><strong><a href=3D"https://pages.purestorage.com/=
+MjI1LVVTTS0yOTIAAAGTfTfdmlzo3SJ-iakoQ5-vPJaQVCzZ8NsCHF4y_nqH2rYJ5uEbhQZw5Er=
+S8kSywxSaKOpTb5k=3D" target=3D"_blank" rel=3D"noopener" style=3D"color: rgb=
+(28, 28, 28); text-decoration: none;">Calculators</a></strong></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td style=3D"vertical-align:top;width:113.4px;" ><![=
+endif]-->
+<div class=3D"mj-column-per-21 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-bottom:2px solid #FFFFFF;border-radius:0px;vertical-alig=
+n:top;mso-border-bottom-alt:none;" width=3D"100%" class=3D"border-bottom-0-=
+solid-FFFFFF">
+<tbody>
+<tr>
+<td class=3D"padding-0px-0px-0px-0px text-container" style=3D"font-size:0px=
+;padding:16px 0px 16px 0px;word-break:break-word;mso-padding-alt:0px 0px 0p=
+x 0px;text-align:center;">
+<div class=3D"mktEditable" id=3D"ktext-zlmqq43b1" style=3D"font-family:'Int=
+er Medium', Arial, sans-serif;font-size:14px;letter-spacing:none;line-heigh=
+t:1.2;text-align:center;mso-line-height-alt:1.063em;color:#000000;">
+<div class=3D"links-1C1C1C">
+<div style=3D"font-family:'Inter Medium', Arial, sans-serif;font-size:14px;=
+letter-spacing:none;line-height:1.2;text-align:center;mso-line-height-alt:1=
+.063em;color:#000000;">
+<p style=3D"margin: 0 0;"><strong><a href=3D"https://pages.purestorage.com/=
+MjI1LVVTTS0yOTIAAAGTfTfdmk-ewTAYc-vzX6EpiTkunXD5Pzx0gsXHRLTslnR5HFQInhOgc2x=
+ywNMTfS3kDyu3LcE=3D" target=3D"_blank" rel=3D"noopener" style=3D"color: rgb=
+(28, 28, 28); text-decoration: none;">Our Blog</a></strong></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr><![endif]--><!--[if mso]><tr><td><![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#EDEDED;width:100%;" class=3D=
+"section">
+<tbody>
+<tr>
+<td align=3D"center"><!--[if mso | IE]><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"block-grid-outlook" style=3D"=
+width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px=
+;mso-line-height-rule:exactly;"><![endif]-->
+<div style=3D"background:#FAF7F1;background-color:#FAF7F1;Margin:0px auto;m=
+ax-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#FAF7F1;width:100%;">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:0;text-align:center;vertical-align:top;"=
+ class=3D"block-grid">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:600px;" ><![=
+endif]-->
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0p=
+x;text-align:left;direction:ltr;display:inline-block;vertical-align:top;wid=
+th:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"background-color:transparent;border-radius:0px;vertical-align:=
+top;padding:5px 0px 5px 0px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:24px 30px 20px =
+30px;word-break:break-word;text-align:left;">
+<div class=3D"mktEditable" id=3D"ktext-ht8arsewy" style=3D"font-family:Aria=
+l, sans-serif;font-size:16px;letter-spacing:none;line-height:1.2;text-align=
+:left;mso-line-height-alt:1.188em;color:#000000;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:Arial, sans-serif;font-size:16px;letter-spacing:n=
+one;line-height:1.2;text-align:left;mso-line-height-alt:1.188em;color:#0000=
+00;">
+<p style=3D"margin: 0 0;"><span style=3D"text-decoration: underline; font-f=
+amily: 'Inter Bold', Arial, sans-serif;"><strong><a href=3D"https://pages.p=
+urestorage.com/v/MjI1LVVTTS0yOTIAAAGTfTfdmjwcO90-wUbigYPDkbRrcaceVp8pv3Gt6G=
+nz5Gaq79PgNzr5gW-1FYcYRuidA6yrh2w=3D" target=3D"_blank" rel=3D"noopener" st=
+yle=3D"color: rgb(254, 80, 0); text-decoration: underline;">View
+ in Browser</a></strong><br>
+</span></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr><![endif]--><!--[if mso]><tr><td><![endif]-->
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#EDEDED;width:100%;" class=3D=
+"section">
+<tbody>
+<tr>
+<td align=3D"center"><!--[if mso | IE]><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" class=3D"block-grid-outlook" style=3D"=
+width:600px;" width=3D"600" ><tr><td style=3D"line-height:0px;font-size:0px=
+;mso-line-height-rule:exactly;"><![endif]-->
+<div style=3D"background:#FAF7F1;background-color:#FAF7F1;Margin:0px auto;m=
+ax-width:600px;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"background-color:#FAF7F1;width:100%;">
+<tbody>
+<tr>
+<td style=3D"font-size:0px;padding:0px 25px 20px 25px;text-align:center;ver=
+tical-align:top;" class=3D"block-grid">
+<!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0"><tr><td style=3D"vertical-align:top;width:308px;" ><![=
+endif]-->
+<div class=3D"mj-column-per-56 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:10px 0px 10px 0=
+px;word-break:break-word;text-align:left;">
+<div class=3D"mktEditable" id=3D"ktext-1q67shqz4" style=3D"font-family:Helv=
+etica, Arial, sans-serif;font-size:13px;letter-spacing:0px;line-height:1.2;=
+text-align:left;mso-line-height-alt:1em;color:#333333;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:Helvetica, Arial, sans-serif;font-size:13px;lette=
+r-spacing:0px;line-height:1.2;text-align:left;mso-line-height-alt:1em;color=
+:#333333;">
+<p style=3D"margin: 0 0;"><span style=3D"font-family: Inter, Arial, sans-se=
+rif;"><a title=3D"Contact Us" href=3D"https://pages.purestorage.com/MjI1LVV=
+TTS0yOTIAAAGTfTfdmrWYHpnd7HmJzw92Ysa3c6_S-tvIkjlrwmW_g5yl588QlFD-_T9IMUo1-Z=
+ShbI8HJgU=3D" target=3D"_blank" rel=3D"noopener" style=3D"color: rgb(254, 8=
+0, 0); text-decoration: underline;">Contact
+ Us</a> | <a title=3D"Privacy Policy" href=3D"https://pages.purestorage.com=
+/MjI1LVVTTS0yOTIAAAGTfTfdmsebbY-zNnY1-6KXTfDgNG0uk6jW82JCuxJqZ8p6Pvqtuag2sN=
+ouF3Ml5_jM8F5zixw=3D" target=3D"_blank" rel=3D"noopener" style=3D"color: rg=
+b(254, 80, 0); text-decoration: underline;">
+Privacy Policy</a> | <a href=3D"https://pages.purestorage.com/v/MjI1LVVTTS0=
+yOTIAAAGTfTfdm_eqfAIl8W2uUr0G9Lup3tt9MOc41H_4ih8VZIn7J4S2nk2mdzdus5vbvNucUt=
+xduO8=3D?utm_medium=3Demail&amp;utm_source=3Dmarketo&amp;utm_campaign=3Dglb=
+l-dsd-nurture&amp;utm_region=3Dglobal&amp;utm_content=3Ddsd-nurture&amp;utm=
+_creative=3Dknak&amp;utm_term=3D7014W000001a8K2&amp;utm_keyword=3Ddefault" =
+target=3D"_blank" rel=3D"noopener" style=3D"color: rgb(254, 80, 0); text-de=
+coration: underline;">
+Forward to Friend</a></span></p>
+<p style=3D"margin: 0 0;">&nbsp;</p>
+<p style=3D"margin: 0 0;"><span style=3D"font-family: Inter, Arial, sans-se=
+rif;">This email was sent to davidg@terasky.com.</span></p>
+<p style=3D"margin: 0 0;"><span style=3D"font-family: Inter, Arial, sans-se=
+rif;"><a title=3D"Manage email preferences" href=3D"https://pages.purestora=
+ge.com/MjI1LVVTTS0yOTIAAAGTfTfdmoRtnk4WICC1n3_ruoUYrEfZC7WN7nycwcHZ1V0gL9KY=
+Nx9RxjMJrl5NSQZJbRCWyRw=3D" target=3D"_blank" rel=3D"noopener" style=3D"col=
+or: rgb(254, 80, 0); text-decoration: underline;">Manage
+ email preferences</a> or <a href=3D"https://info.purestorage.com/Unsubscri=
+bePage.html?mkt_unsubscribe=3D1&amp;mkt_tok=3DMjI1LVVTTS0yOTIAAAGTfTfdmyYYB=
+0yqIMlnXlWadKvjPhmKcH-79wGn-CJ8E2rGwoaSSClUu5adPvDswZ3_ZYQI_0cCQqRHEiOwAB0i=
+Q-WIvwdZKT0FgG0acEpn3JqNW5Uyv20?utm_medium=3Demail&amp;utm_source=3Dmarketo=
+&amp;utm_campaign=3Dglbl-dsd-nurture&amp;utm_region=3Dglobal&amp;utm_conten=
+t=3Ddsd-nurture&amp;utm_creative=3Dknak&amp;utm_term=3D7014W000001a8K2&amp;=
+utm_keyword=3Ddefault" target=3D"_blank" rel=3D"noopener" style=3D"color: r=
+gb(254, 80, 0); text-decoration: underline;">
+unsubscribe</a>.</span></p>
+<p style=3D"margin: 0 0;">&nbsp;</p>
+<p style=3D"margin: 0 0;"><span style=3D"font-family: Inter, Arial, sans-se=
+rif;">2555 Augustine Dr. Santa Clara, CA 95054, United States</span></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td class=3D"text-container" style=3D"font-size:0px;padding:10px 0px 10px 0=
+px;word-break:break-word;text-align:left;">
+<div class=3D"mktEditable" id=3D"ktext-4c8gy8oud" style=3D"font-family:Helv=
+etica, Arial, sans-serif;font-size:13px;letter-spacing:0px;line-height:1.2;=
+text-align:left;mso-line-height-alt:1em;color:#333333;">
+<div class=3D"links-FE5000-underline">
+<div style=3D"font-family:Helvetica, Arial, sans-serif;font-size:13px;lette=
+r-spacing:0px;line-height:1.2;text-align:left;mso-line-height-alt:1em;color=
+:#333333;">
+<p style=3D"margin: 0 0;"><span style=3D"font-family: Inter, Arial, sans-se=
+rif;">=C2=A9 2024 Pure Storage, Inc.</span></p>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td style=3D"vertical-align:top;width:242px;" ><![en=
+dif]-->
+<div class=3D"mj-column-per-44 mj-outlook-group-fix" style=3D"font-size:0px=
+;text-align:left;direction:ltr;display:inline-block;vertical-align:top;widt=
+h:100%;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"border-radius:0px;vertical-align:top;" width=3D"100%">
+<tbody>
+<tr>
+<td class=3D"text-align-right social-container" style=3D"font-size:0px;padd=
+ing:10px 0px 10px 0px;word-break:break-word;text-align:left;">
+<!--[if mso | IE]><table align=3D"right" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" role=3D"presentation" ><tr><td><![endif]-->
+<div style=3D"display:inline-block;">
+<table align=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"float:none;display:inline-table;">
+<tbody>
+<tr>
+<td style=3D"padding:4px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:#000000;border-radius:50px;width:30px;">
+<tbody>
+<tr>
+<td style=3D"padding:0px;font-size:0;height:30px;vertical-align:middle;widt=
+h:30px;">
+<div class=3D"mktEditable" id=3D"ksocial-g9qz1jcoo"><a href=3D"https://page=
+s.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdm8XM4c09kwmKcGOhh79Vg4nsCb3oHb6qF=
+4qcozetkIpvrjFVnbEuy9F4xTG85SD4lEk=3D" target=3D"_blank" style=3D"text-deco=
+ration: none; color: #FE5000;"><img alt=3D"Twitter" height=3D"30" src=3D"ht=
+tps://client-data.knak.io/production/email_assets/59b17719284c1/NszPpA0pf7h=
+b16SjMIe0H1wURWAL2lcAsHkl9deW.png" style=3D"border-radius:50px;display:bloc=
+k;" width=3D"30"></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td><![endif]-->
+<div style=3D"display:inline-block;">
+<table align=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"float:none;display:inline-table;">
+<tbody>
+<tr>
+<td style=3D"padding:4px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:#000000;border-radius:50px;width:30px;">
+<tbody>
+<tr>
+<td style=3D"padding:0px;font-size:0;height:30px;vertical-align:middle;widt=
+h:30px;">
+<div class=3D"mktEditable" id=3D"ksocial-oknshj7qj"><a href=3D"https://page=
+s.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmggs0bxLFXnI8VfSaoXCBSNAErNKsg2Zh=
+qC7JbefmzA03KS8krePFS_v2KXK7q8o628=3D" target=3D"_blank" style=3D"text-deco=
+ration: none; color: #FE5000;"><img alt=3D"Linkedin" height=3D"30" src=3D"h=
+ttps://s3.amazonaws.com/assets.knak.io/img/icons/builder-social/linkedin.pn=
+g" style=3D"border-radius:50px;display:block;" width=3D"30"></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td><![endif]-->
+<div style=3D"display:inline-block;">
+<table align=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"float:none;display:inline-table;">
+<tbody>
+<tr>
+<td style=3D"padding:4px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:#000000;border-radius:50px;width:30px;">
+<tbody>
+<tr>
+<td style=3D"padding:0px;font-size:0;height:30px;vertical-align:middle;widt=
+h:30px;">
+<div class=3D"mktEditable" id=3D"ksocial-kiccgpdvw"><a href=3D"https://page=
+s.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmlvJDMn9tQdLGN32LCdQwuvzxFtP9gTbU=
+zHdH_RnPzrQSBFO1XQKnh-H1eJQczCSSik=3D" target=3D"_blank" style=3D"text-deco=
+ration: none; color: #FE5000;"><img alt=3D"Facebook" height=3D"30" src=3D"h=
+ttps://s3.amazonaws.com/assets.knak.io/img/icons/builder-social/facebook.pn=
+g" style=3D"border-radius:50px;display:block;" width=3D"30"></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td><![endif]-->
+<div style=3D"display:inline-block;">
+<table align=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"float:none;display:inline-table;">
+<tbody>
+<tr>
+<td style=3D"padding:4px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:#000000;border-radius:50px;width:30px;">
+<tbody>
+<tr>
+<td style=3D"padding:0px;font-size:0;height:30px;vertical-align:middle;widt=
+h:30px;">
+<div class=3D"mktEditable" id=3D"ksocial-cao0nxhxo"><a href=3D"https://page=
+s.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmjh1uoceGRp9QqR_NINatCVVKrNTJMB0p=
+Zys5XK45suN5S__H6ss5vtsXmeOXJofBQk=3D" target=3D"_blank" style=3D"text-deco=
+ration: none; color: #FE5000;"><img alt=3D"YouTube" height=3D"30" src=3D"ht=
+tps://s3.amazonaws.com/assets.knak.io/img/icons/builder-social/youtube.png"=
+ style=3D"border-radius:50px;display:block;" width=3D"30"></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td><td><![endif]-->
+<div style=3D"display:inline-block;">
+<table align=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"float:none;display:inline-table;">
+<tbody>
+<tr>
+<td style=3D"padding:4px;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentatio=
+n" style=3D"background:#3f729b;border-radius:50px;width:30px;">
+<tbody>
+<tr>
+<td style=3D"padding:0px;font-size:0;height:30px;vertical-align:middle;widt=
+h:30px;">
+<div class=3D"mktEditable" id=3D"ksocial-p27qlhzlq"><a href=3D"https://page=
+s.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdmmlzMDMzhPY4wS-SSXKa466Ik1wtv4lYr=
+mIUDEmrp5SMcjj3x6X5D1owhADgWgeG7d0=3D" target=3D"_blank" style=3D"text-deco=
+ration: none; color: #FE5000;"><img alt=3D"Instagram" height=3D"30" src=3D"=
+https://client-data.knak.io/production/email_assets/59b17719284c1/XBQScG7Ga=
+AKAZE5nehqkodB9jVpuD2rw9CWboyh5.png" style=3D"border-radius:50px;display:bl=
+ock;" width=3D"30"></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+<tr>
+<td class=3D"img-container" style=3D"font-size:0px;padding:0px 0px 0px 0px;=
+word-break:break-word;text-align:right;">
+<div style=3D"margin:0 auto 0 0;max-width:193px;" class=3D"margin-0-0-0-aut=
+o">
+<div class=3D"mktoImg" id=3D"kimage-22ijbfzan"><img alt=3D"Pure Storage" he=
+ight=3D"auto" width=3D"193" src=3D"https://client-data.knak.io/production/e=
+mail_assets/59b17719284c1/WOyHyagCyQooNeUHdqpKCnsXusqaFmPg6S2vmipt.png" sty=
+le=3D"border:none;outline:none;text-decoration:none;height:auto;width:100%;=
+font-size:13px;display:block;">
+</div>
+<!--[if !mso 9]><!-->
+<div class=3D"mktEditable" id=3D"image-plain-text-vt97qxq3q" style=3D"mso-h=
+ide:all; visibility:hidden; opacity:0; color:transparent; mso-line-height-r=
+ule:exactly; line-height:0; font-size:0px; overflow:hidden; border-width:0;=
+ display:none !important;">
+[ Pure Storage ] </div>
+<!--<![endif]--></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]></td></tr></table><![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]></td></tr><![endif]--><!--[if mso]></table><![endif]--></div>
+<a href=3D"https://pages.purestorage.com/MjI1LVVTTS0yOTIAAAGTfTfdm1Hp5a_7xY=
+RoEBEorBl0bssxI4aRrffTZ_fGCSwqahTV2Eo_y1vKrBxgfw7g0-EVz7A=3D"></a><img src=
+=3D"https://pages.purestorage.com/trk?t=3D1&amp;mid=3DMjI1LVVTTS0yOTIAAAGTf=
+TfdmxmIaCXL-hDSWpuTUZ5AlfxUjcNKs8o0-Jw0OT_NM2y4v8AlKu__IyI1ofcL1hhSvraFBQky=
+PbtS4fSB8AKGEW70Eh2rFijeR2in5rSaG0uxjISouma1_jy0r2H_kAdtssWKJCJZhvwJdixTS8E=
+" width=3D"1" height=3D"1" style=3D"display:none !important;" alt=3D"">
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+ </body>
+</html>
+
+------=_Part_605522864_1399265265.1717420633512--

@@ -1,0 +1,940 @@
+Received: from DB5P194MB2134.EURP194.PROD.OUTLOOK.COM (2603:10a6:10:48b::16)
+ by DU0P194MB1770.EURP194.PROD.OUTLOOK.COM with HTTPS; Thu, 14 Dec 2023
+ 08:03:21 +0000
+Received: from DB8PR06CA0023.eurprd06.prod.outlook.com (2603:10a6:10:100::36)
+ by DB5P194MB2134.EURP194.PROD.OUTLOOK.COM (2603:10a6:10:48b::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7091.28; Thu, 14 Dec
+ 2023 08:03:19 +0000
+Received: from DB5PEPF00014B8E.eurprd02.prod.outlook.com
+ (2603:10a6:10:100:cafe::90) by DB8PR06CA0023.outlook.office365.com
+ (2603:10a6:10:100::36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7091.28 via Frontend
+ Transport; Thu, 14 Dec 2023 08:03:19 +0000
+Authentication-Results: spf=pass (sender IP is 212.150.225.158)
+ smtp.mailfrom=publicators.com; dkim=fail (signature did not verify)
+ header.d=publicators.com;dmarc=pass action=none
+ header.from=publicators.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of publicators.com
+ designates 212.150.225.158 as permitted sender)
+ receiver=protection.outlook.com; client-ip=212.150.225.158;
+ helo=mail154.publicators.com; pr=C
+Received: from mail154.publicators.com (212.150.225.158) by
+ DB5PEPF00014B8E.mail.protection.outlook.com (10.167.8.202) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7091.26 via Frontend Transport; Thu, 14 Dec 2023 08:03:18 +0000
+Received: from dealer6 (unknown [10.0.0.216])
+	by mail154.publicators.com (Postfix) with ESMTPA id 2C0B223F18
+	for <davidg@terasky.com>; Thu, 14 Dec 2023 09:56:31 +0200 (IST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=publicators.com;
+	s=mail154; t=1702540591;
+	bh=QMKofhJF5UA/4qj4BLtnWWiM7Ss8PzKUKO5rey29alk=;
+	h=Reply-To:X-Publicators-ID:Precedence:Feedback-ID:List-Unsubscribe:
+	 From:To:Subject:Date:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding:X-Mailer:Content-Class:Importance:
+	 Priority:X-MimeOLE:From;
+	b=xum8IlAt7OlwLO3fRaoiefQaRBf8SgO8JngUw6BFVxKcAHGsfQXD15pny71zHFw5k
+	 bCjkn3o5r+OAcMQIdsthIUcgV6TxDmvtLHbiWbpFphQvDH7pCu+K90aFYX0qlI45KU
+	 1zBIzO0hIcVGXfVf/6eUQ0hlkQHbKKkMAhIOtZAg=
+Reply-To: "Dell Technologies Israel" <Dana.Cohen@dell.comþ>
+X-Publicators-ID: 7618811506_550923706
+Precedence: bulk
+Feedback-ID: 799257:1552:1:pubfbl
+List-Unsubscribe: <mailto:removefromheader@publicators.com?subject=unsubscribe X-Publicators-ID:7618811506_550923706>
+From: "Dell Technologies Israel" <DellEmc@publicators.com>
+To: <davidg@terasky.com>
+Subject: =?utf-8?B?15TXmdeo16nXnteVINei15vXqdeZ15Ug15zXkNeZ16jXldeiINeU15fXmdeT15U=?=
+	=?utf-8?B?16nXmdedINeR16rXl9eV157XmSDXlNep16jXqteZ150g15XXlNeQ15fXodeV158g?=
+	=?utf-8?B?fCAyINeR15nXoNeV15DXqCwg15nXp9eV150=?=
+Date: Thu, 14 Dec 2023 10:03:56 +0200
+Message-ID: <B14CA80E2EC544B98B3277579E5344A5@dealer6>
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-Mailer: Microsoft CDO for Windows 2000
+Content-Class: urn:content-classes:message
+X-MimeOLE: Produced By Microsoft MimeOLE V6.2.9200.16384
+Return-Path: DellEmc@publicators.com
+X-MS-Exchange-Organization-ExpirationStartTime: 14 Dec 2023 08:03:19.2090
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: d4fc71fa-dfc2-417e-62d7-08dbfc7b2271
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB5PEPF00014B8E:EE_|DB5P194MB2134:EE_|DU0P194MB1770:EE_
+X-MS-Exchange-Organization-AuthSource: DB5PEPF00014B8E.eurprd02.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: d4fc71fa-dfc2-417e-62d7-08dbfc7b2271
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-Forefront-Antispam-Report: CIP:212.150.225.158;CTRY:IL;LANG:he;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail154.publicators.com;PTR:mail154.publicators.com;CAT:NONE;SFS:(13230031)(4636009)(230273577357003)(230173577357003)(451199024)(1690799017)(58800400005)(33716001)(4744005)(9686003)(6666004)(224303003)(76236004)(8426002)(5660300002)(66899024)(22186003)(37786003)(44726023)(9576002)(1096003)(6916009)(6966003)(19627405001)(83380400001)(33656002)(7636003)(7596003)(55016003)(166002)(356005)(6266002)(26005)(120186005)(426003)(336012)(44706002)(86362001)(1406899027)(76899018)(96376001)(19626705004)(19627415002);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 Dec 2023 08:03:18.8965
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: d4fc71fa-dfc2-417e-62d7-08dbfc7b2271
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: DB5PEPF00014B8E.eurprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB5P194MB2134
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:02.6648920
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.7091.028
+X-Message-Flag: Follow up
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?QTRYNVBoeWFseGoyS1E3SG1qVEY5dE1vSjFqMlQyeTlQVC9qQXpsdGcrREpC?=
+ =?utf-8?B?T1JXS0JhNXgrZE9BbUo5b3hyRHNnUXZoRzVkNU96TmdzNDRRVTFBVFFlbC9m?=
+ =?utf-8?B?Mk8xQTBMeS9qcEkva0JQcVJKMUdJS2YvbTd6eDI1b2tZbUtFSVR2QlpWVWFW?=
+ =?utf-8?B?TEtkVzdtaDBnVFpWRm1sMDlTdVEzQWl3dVB3cm9meDNpaldKZWxOd2xtaGht?=
+ =?utf-8?B?R1hteWY3ZDdjTEZrVWJ5a2w3VVhoeThONEYxR3pvQmYvSWVuZkFjR3ZaNWFp?=
+ =?utf-8?B?TjZraXZQVzh3SHUydlRzR3hnSFVYZXNPOEN3T1U1UC9RQUtMOWJvb21Qejh4?=
+ =?utf-8?B?UU03SmRGMitWQmRQeWg4RzBmWDN0UUVzMURWSHBEOEtnZGhMQVczQ3ZibFdx?=
+ =?utf-8?B?cVY1b2ltM29LdUd4djU2SytadFZhcGoveHNRcTRuQzhLa3NrL0tqK01vYll4?=
+ =?utf-8?B?L3BFK0U0cy94ZXFHcVg5M1VDeGhVZlhSSFBPamx3eUFYK0p0cDhqVDY2WWds?=
+ =?utf-8?B?ZXdWaEkrNVp3R3pEZ2Z6eXczUU1VYXh4Y0FoTGN5NUhiWXU4LzFaamFIbzhB?=
+ =?utf-8?B?enRFYWF0WmtPY3dMZngrZ3NNNW10UmdVMXpNVEs5b24wVStUSFluNWthb1Z0?=
+ =?utf-8?B?clBWK1hwblpGeFJNeU04M0M0VGJwUkJRVko3c01IZFVjNW51Tnd3ZzdPL2FH?=
+ =?utf-8?B?SGtqdWRyc080dmh0bHgxQzhFYmR4NkgvRHk5M2NGSzh0ekFaTHFXQzZUQkpE?=
+ =?utf-8?B?bkdOQXg4OTh2RzlsRjVJY2NURklzWUFXREZTcjNqeHRUR2RiR3ljY1BpK2Vi?=
+ =?utf-8?B?MGFQSVE0YjJ5MHl4QkxUUG1CZ1hGL09xWFI4M3M1LzZsbWg3dXBSK2xrR29Y?=
+ =?utf-8?B?bDFIM2xMYWxMeGlDL0J2K0U3d0JaZTZ0aVhiSjNFMGk4OFVZdmpETDJhRnQ1?=
+ =?utf-8?B?UVZyRVRwU1d1bWFnbS9RVGRpUlhtN2QwMTJ1di9sbnkyNTkvUDlUMGR4L3Nk?=
+ =?utf-8?B?UHN4Uisza2o4aVgyTG11Ym90TmF1cy9oOCtvM2JKQ3lPenhmVmQ4eExpOUNy?=
+ =?utf-8?B?eXJjVVZra3RyVVIybGQzaEs3dlJrbnY1MDNub0w4Z2dBd0J6SGMyVXNLMmY4?=
+ =?utf-8?B?eStiN2svK1gxRjZoa3R2TWhvRnVuNjlIbGF1bTI2OGtoeEFESVF4eG1kMDVF?=
+ =?utf-8?B?dm1BQXNwV0s0bjhJaVNZMm5pOEluOUpkc21VbUpkdlFuWmFzVHF5b2E1Mm5F?=
+ =?utf-8?B?TWptbUd6V3RQQjJ5SHRCUnRwbmpWQ1BOVWVBN0FMaUk3Sjd0clR4L0RrbThk?=
+ =?utf-8?B?MG41QlpQRzFGUTJUenpWOWxSQlZramtWbGEwVkhZdHg2N1c0ZS9EZVFIQ1hT?=
+ =?utf-8?B?V09RQlI2amt1empMRW90LzhlelpQK20xbG9tRzk0QTJsZW5jbFY4enVXRFRE?=
+ =?utf-8?B?QmRQNm1YbUxJMUVEbWRxZTEwd0ZwMFZQR0FJbWp0Nml3aE1DTHQ2WThCNC94?=
+ =?utf-8?B?Rmd1WFVPWG96ZzZobU03dlZUcmVDelpPa3l1SnhOYXN1SElYd3VveTlTeVdl?=
+ =?utf-8?B?a013emt4dmFKNlRLWHRVQjIxaTRrZUp5VHB4dy9iS1o3WlZYREJWdjhlUXBJ?=
+ =?utf-8?B?RXU2NEZ6YTV4ZHlLREZVUTQ3czdQZnZ2U0Y4b0sxcmZYMmxLRXFXbnNJUTFI?=
+ =?utf-8?B?WUZTS2FGV0xqZUNhUVI1S3hBNFpxRDZFSW9nemNuT3czcEJJWXErYUE1TStu?=
+ =?utf-8?B?SVBpRWFzdVJENHFPZDZxaUdXSnk4RTBURnBneWFiU0JNcDRsNjVLU3ZsUEJS?=
+ =?utf-8?B?a2RFL2FqZnZOVzFjYlRITVN1bWVWK1hZZTlVQ2NTOENURzBKT0VZZ2xGd2lS?=
+ =?utf-8?B?MkhOVzg5cDVjQzA2eWMwWERrZnhPeUg1WXJpK1Q1QUlCYWE2TmpiRzA0aG9N?=
+ =?utf-8?B?UTFKYkFvNXRGaDNERjRZcklBMjNDRVVCYlBGVGU2b1h5OHE2TnVUUFlLbmQx?=
+ =?utf-8?B?VWNpdEc0SEp4VWt2WUZiSnpTMXcrR0pTcXcrRzFOTjF6aWdORHg2RENIWlZn?=
+ =?utf-8?B?c1FOdHZCWHBuNFlEbVFzOHBJV3l1L2xpcjIwcGdabHQzR1JrZ0FWd0plcEpL?=
+ =?utf-8?B?UFVVWkFwaWZqWlc5dElpY01ZVjNMenBSMWRGTGlqZ0N3ZzNZYVdNdUJ1ajVW?=
+ =?utf-8?B?c1ZSYmE3MkdXT1hpQi9NRFdrM0VHaEl1a3Q4azlFKy9yRTNaM1QxQ3RnY2Nz?=
+ =?utf-8?B?dldlV0ZodHQreXlxL1dFcjFZUTVINTBJeWdEN0t3Wm8wWCt1RE4vdm1mQUFh?=
+ =?utf-8?B?bTkwVXdBdWVCR0o5RTQwT2hUM0FsQXM5dW5Ua01PV1k2eVJESTcyck1KaDhQ?=
+ =?utf-8?B?S0t1WE1QTTJPaHBPK2ZPSHhZb2p2NHNJSFV3SFlJY3hYeVg1QWpWU0VGWVR6?=
+ =?utf-8?B?ckVrMzVCcFRxcmxMVUMxYzhvZzlpdCtzQlk2VG5leU5SZE9GZmIvL0hLUVJv?=
+ =?utf-8?B?TkEvdDlDenV1VmptdDNYa2R3WkNSUGRwSXRWeEJncjhlVGNrQ1kzRUtvWFZq?=
+ =?utf-8?B?S0xtQTVNOE9JUVVoeTNEMHkwZ2F6T2NteVUzUDE0NnVjVm1tcFhSZ0lsUmNB?=
+ =?utf-8?B?Z2ZPaTNIRW1YMXBDWFJLTG5MSmlwdUFuRWxuaEpQdnAyK0ttWlZJQ0tmRTlo?=
+ =?utf-8?B?RUplWmZXeEhZYXR5UENZdnpITkkzMlBNb3VtWG5oRzczV3JmTzU4dmtLN0x0?=
+ =?utf-8?B?NFVYdlVwaVRtSDJiaHRJRlBrQ1BibGh2SGMwUktpeEszWTNSNnc5NzVkSFZB?=
+ =?utf-8?B?PT0=?=
+MIME-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta http-equiv=3D"Content-Language" content=3D"he">
+<base target=3D"_blank">
+<title>=D7=94=D7=99=D7=A8=D7=A9=D7=9E=D7=95 =D7=A2=D7=9B=D7=A9=D7=99=D7=95 =
+=D7=9C=D7=90=D7=99=D7=A8=D7=95=D7=A2 =D7=94=D7=97=D7=99=D7=93=D7=95=D7=A9=
+=D7=99=D7=9D =D7=91=D7=AA=D7=97=D7=95=D7=9E=D7=99 =D7=94=D7=A9=D7=A8=D7=AA=
+=D7=99=D7=9D =D7=95=D7=94=D7=90=D7=97=D7=A1=D7=95=D7=9F | 2 =D7=91=D7=99=D7=
+=A0=D7=95=D7=90=D7=A8, =D7=99=D7=A7=D7=95=D7=9D</title>
+</head>
+<body>
+<p dir=3D"rtl"><font face=3D"arial,helvetica,sans-serif" size=3D"2" style=
+=3D"font-size: 11px; font-family: Arial;"><style type=3D"text/css">
+
+</style><!-- offline:start //--></p>
+<center>
+<p dir=3D"rtl" lang=3D"he"><font face=3D"Arial" size=3D"2" color=3D"#6D6D6D=
+" style=3D"font-size: 11px;">&nbsp;=D7=90=D7=9D =D7=90=D7=99=D7=A0=D7=9A =
+=D7=A8=D7=95=D7=90=D7=94 =D7=94=D7=95=D7=93=D7=A2=D7=94 =D7=96=D7=95 =D7=91=
+=D7=A6=D7=95=D7=A8=D7=94 =D7=AA=D7=A7=D7=99=D7=A0=D7=94, =D7=90=D7=A0=D7=90=
+ =D7=9C=D7=97=D7=A5/=D7=99
+<a href=3D"https://www.publicators.com/app/drd.asp?p=3D7618811506_550923706=
+_10492633">
+<font size=3D"2" face=3D"Arial" color=3D"#6D6D6D" style=3D"font-size: 11px;=
+"><strong>=D7=9B=D7=90=D7=9F</strong></font></a></font></p>
+</center>
+<!-- offline:end //--><img src=3D"http://www.publicators.com/app/do.asp?id=
+=3D7618811506_550923706" width=3D"1" height=3D"1" border=3D"0" alt=3D"">
+<div align=3D"center" class=3D"bl-template bl-content-removable" id=3D"temp=
+late-body" style=3D"width: 100%;">
+<!-- BEGIN TEMPLATE OUTER -->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" clas=
+s=3D"bl-template-main-wrapper" style=3D"width: 100%; background-color: #f9f=
+9f9; border-collapse: collapse; border-collapse: collapse !important; mso-t=
+able-lspace: 0pt !important; mso-table-rspace: 0pt !important;" align=3D"ce=
+nter" valign=3D"top" is-new-template=3D"0">
+<tbody>
+<tr>
+<!-- BEGIN TEMPLATE MARGIN (Outside Margin - Padding) -->
+<td class=3D"bl-template-margin" width=3D"100%" align=3D"center" style=3D"m=
+argin: 0px; padding: 18px 0; border-collapse: collapse !important; mso-tabl=
+e-lspace: 0pt !important; mso-table-rspace: 0pt !important;" valign=3D"top"=
+>
+<!-- BEGIN TEMPLATE WRAPPER (Background) -->
+<table class=3D"template-main-table bl-template-background" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"width: 600px; background-color: =
+rgb(255, 255, 255); direction: rtl; text-align: right; border-collapse: col=
+lapse !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !=
+important;" valign=3D"top" width=3D"600">
+<tbody>
+<tr>
+<!-- BEGIN TEMPLATE CONTAINER (Border, Inner Padding) -->
+<td class=3D"bl-template-border" style=3D"width: 600px; padding: 0px; borde=
+r: 1px solid rgb(96, 96, 96); border-collapse: collapse !important; mso-tab=
+le-lspace: 0pt !important; mso-table-rspace: 0pt !important;" valign=3D"top=
+" width=3D"600">
+<!-- BEGIN ZONES CONTAINER -->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 600=
+px; border-collapse: collapse !important; mso-table-lspace: 0pt !important;=
+ mso-table-rspace: 0pt !important;" valign=3D"top" width=3D"600">
+<tbody>
+<tr>
+<!-- BEGIN Blocks Zone -->
+<td class=3D"bl-zone bl-zone-dropable ui-droppable ui-sortable" name=3D"Fra=
+meworkZone" style=3D"width: 600px; height: auto; border-collapse: collapse =
+!important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !import=
+ant;" width=3D"600" valign=3D"top">
+<div class=3D"bl-block bl-block-image" data-layout=3D"1" data-blocktype=3D"=
+image" name=3D"image" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0" data-block-order=3D"1" style=3D"z-index: 0;">
+<div class=3D"bl-block-content">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D" border-collapse: collapse !important; mso-table-lspace: 0pt !importan=
+t; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td class=3D"bl-block-content-table bl-block-dir-rtl" style=3D"direction: r=
+tl; border-collapse: collapse !important; mso-table-lspace: 0pt !important;=
+ mso-table-rspace: 0pt !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" clas=
+s=3D"bl-block-content-row bl-block-content-first-row bl-block-content-last-=
+row" style=3D" border-collapse: collapse !important; mso-table-lspace: 0pt =
+!important; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bl-block-content-row-inner" style=3D"border-col=
+lapse: collapse !important; padding-bottom: 9px; padding-top: 9px; border-c=
+ollapse: collapse !important; mso-table-lspace: 0pt !important; mso-table-r=
+space: 0pt !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"bl-block-c=
+ontent-column bl-block-content-new-column bl-1-column" align=3D"center" wid=
+th=3D"600" style=3D"width: 600px; border-collapse: collapse !important; mso=
+-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bl-padding-1-column bl-content-wrapper no-side-=
+padding" width=3D"600" style=3D"width: 600px; direction: ltr; padding: 0px;=
+ border-collapse: collapse !important;">
+<div class=3D"bl-block-content-item bl-block-content-item-image bl-in-edit-=
+mode-single" style=3D"text-align: center; height: auto;">
+<a href=3D"https://www.publicators.com/app/drd.asp?p=3D7618811506_550923706=
+_10492634" title=3D"" target=3D"_blank" style=3D"text-decoration: none;"><i=
+mg border=3D"0" width=3D"599" style=3D"width: 599px; max-width: 599px; max-=
+height: 1028.57px; display: block; margin: 0px auto; height: auto !importan=
+t;" height=3D"1028.5707133917397" src=3D"https://www.publicators.com/app/im=
+ages/1552/2023/7/dellwiseman.jpg" alt=3D"dellwiseman" data-expandible=3D"ye=
+s"></a></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- END ZONES CONTAINER --></td>
+<!-- END TEMPLATE CONTAINER -->
+</tr>
+</tbody>
+</table>
+<!-- END TEMPLATE WRAPPER --></td>
+<!-- END TEMPLATE MARGIN -->
+</tr>
+</tbody>
+</table>
+<!-- END TEMPLATE OUTER --><style id=3D"t-st-1" type=3D"text/css">=0A=
+    .bl-template {=0A=
+        FONT-SIZE: 15px;=0A=
+        /*FONT-FAMILY: arial, sans-serif;=0A=
+        FONT-WEIGHT: normal;=0A=
+        COLOR: #606060;=0A=
+        FONT-STYLE: normal;=0A=
+    }=0A=
+=0A=
+        .bl-template .bl-block-content-item {=0A=
+            FONT-SIZE: 15px;=0A=
+           /* FONT-FAMILY: arial, sans-serif;*/=0A=
+            COLOR: #606060;=0A=
+            FONT-STYLE: normal;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-text {=0A=
+            DIRECTION: rtl;=0A=
+            TEXT-ALIGN: right;=0A=
+            MIN-HEIGHT: 8px;=0A=
+            LINE-HEIGHT: 1.2;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-text {=0A=
+            FONT-SIZE: 15px;=0A=
+            /*FONT-FAMILY: arial, sans-serif;*/=0A=
+            COLOR: #606060;=0A=
+            FONT-STYLE: normal;=0A=
+        }=0A=
+=0A=
+        .bl-template A {=0A=
+            WORD-WRAP: break-word !important;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            COLOR: #00008c;=0A=
+            OUTLINE-WIDTH: medium;=0A=
+            OUTLINE-STYLE: none;=0A=
+            BORDER-LEFT: 0px;=0A=
+            OUTLINE-COLOR: invert;=0A=
+        }=0A=
+=0A=
+        .bl-template IMG {=0A=
+            BORDER-TOP: 0px;=0A=
+            HEIGHT: auto !important;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            VERTICAL-ALIGN: top;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            OUTLINE-WIDTH: medium;=0A=
+            OUTLINE-STYLE: none;=0A=
+            TEXT-DECORATION: none;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: inline-block !important;=0A=
+            OUTLINE-COLOR: invert;=0A=
+        }=0A=
+=0A=
+        .bl-template A IMG {=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            OUTLINE-WIDTH: medium;=0A=
+            OUTLINE-STYLE: none;=0A=
+            TEXT-DECORATION: none;=0A=
+            BORDER-LEFT: 0px;=0A=
+            OUTLINE-COLOR: invert;=0A=
+        }=0A=
+=0A=
+        .bl-template TABLE {=0A=
+            BORDER-COLLAPSE: collapse !important;=0A=
+            mso-table-lspace: 0pt;=0A=
+            mso-table-rspace: 0pt;=0A=
+        }=0A=
+=0A=
+        .bl-template TD {=0A=
+            BORDER-COLLAPSE: collapse !important;=0A=
+            mso-table-lspace: 0pt;=0A=
+            mso-table-rspace: 0pt;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-template-border {=0A=
+            BORDER-COLLAPSE: collapse !important;=0A=
+            mso-table-lspace: 0pt;=0A=
+            mso-table-rspace: 0pt;=0A=
+        }=0A=
+=0A=
+        .bl-template P {=0A=
+            MARGIN: 1em 0px;=0A=
+        }=0A=
+=0A=
+        .bl-template H1 {=0A=
+            FONT-SIZE: 40px;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #606060 !important;=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            MARGIN: 0px;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: block;=0A=
+            LETTER-SPACING: normal !important;=0A=
+            LINE-HEIGHT: 1.15;=0A=
+            PADDING-RIGHT: 0px;=0A=
+            BACKGROUND-COLOR: transparent;=0A=
+        }=0A=
+=0A=
+        .bl-template H2 {=0A=
+            FONT-SIZE: 26px;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #606060 !important;=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            MARGIN: 0px;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: block;=0A=
+            LETTER-SPACING: normal !important;=0A=
+            LINE-HEIGHT: normal;=0A=
+            PADDING-RIGHT: 0px;=0A=
+            BACKGROUND-COLOR: transparent;=0A=
+        }=0A=
+=0A=
+        .bl-template H3 {=0A=
+            FONT-SIZE: 18px;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            FONT-WEIGHT: bold;=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            MARGIN: 0px;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: block;=0A=
+            LETTER-SPACING: normal;=0A=
+            LINE-HEIGHT: 1.1;=0A=
+            PADDING-RIGHT: 0px;=0A=
+            BACKGROUND-COLOR: transparent;=0A=
+        }=0A=
+=0A=
+        .bl-template H4 {=0A=
+            FONT-SIZE: 16px;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            FONT-WEIGHT: bold;=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            MARGIN: 0px;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: block;=0A=
+            LETTER-SPACING: normal;=0A=
+            LINE-HEIGHT: 1.1;=0A=
+            PADDING-RIGHT: 0px;=0A=
+            BACKGROUND-COLOR: transparent;=0A=
+        }=0A=
+=0A=
+        .bl-template H1 A {=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #6dc6dd;=0A=
+        }=0A=
+=0A=
+        .bl-template H2 A {=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #6dc6dd;=0A=
+        }=0A=
+=0A=
+        .bl-template H3 A {=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #6dc6dd;=0A=
+        }=0A=
+=0A=
+        .bl-template H4 A {=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #6dc6dd;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-padding-1-column {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 18px;=0A=
+            PADDING-RIGHT: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-padding-2-columns-left {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 18px;=0A=
+            PADDING-RIGHT: 0px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-padding-2-columns-right {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            PADDING-RIGHT: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-padding-3-columns {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 18px;=0A=
+            PADDING-RIGHT: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .no-side-padding {=0A=
+            PADDING-BOTTOM: 0px !important;=0A=
+            PADDING-TOP: 0px !important;=0A=
+            PADDING-LEFT: 0px !important;=0A=
+            PADDING-RIGHT: 0px !important;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-product .bl-column-first .bl-padding-3-colum=
+ns {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 18px;=0A=
+            PADDING-RIGHT: 0px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-product .bl-column-middle .bl-padding-3-colu=
+mns {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 9px;=0A=
+            PADDING-RIGHT: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-product .bl-column-last .bl-padding-3-column=
+s {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            PADDING-RIGHT: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-first-row .bl-block-content-row-inne=
+r {=0A=
+            PADDING-TOP: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-last-row .bl-block-content-row-inner=
+ {=0A=
+            PADDING-BOTTOM: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .social-items-container {=0A=
+            TEXT-ALIGN: center;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-logo {=0A=
+            TEXT-ALIGN: right;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-viewweb {=0A=
+            TEXT-ALIGN: center;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-column .bl-block-content-item-contai=
+ner + .bl-block-content-item-container .bl-block-content-item-container-inn=
+er {=0A=
+            PADDING-TOP: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-articleleft .bl-block-content-column .bl-blo=
+ck-content-item-container + .bl-block-content-item-container .bl-block-cont=
+ent-item-container-inner {=0A=
+            PADDING-TOP: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-articleright .bl-block-content-column .bl-bl=
+ock-content-item-container + .bl-block-content-item-container .bl-block-con=
+tent-item-container-inner {=0A=
+            PADDING-TOP: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-textunderimage .bl-block-content-column .bl-=
+block-content-item + .bl-block-content-item-container .bl-block-content-ite=
+m-container-inner {=0A=
+            PADDING-TOP: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-product .bl-block-content-item-title H2 {=0A=
+            FONT-SIZE: 24px;=0A=
+            LINE-HEIGHT: 75% !important;=0A=
+        }=0A=
+=0A=
+=0A=
+        .bl-template .non-editable-content.bl-block-content-item-image {=0A=
+            FONT-SIZE: 15px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-footer .bl-block-content-row {=0A=
+            BACKGROUND-COLOR: #f9f9f9;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-footer .bl-block-content-layout-1 .social-it=
+ems-container {=0A=
+            TEXT-ALIGN: left;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-footer .bl-block-content-layout-3 .bl-block-=
+content-item-headerlinks > DIV {=0A=
+            TEXT-ALIGN: left;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-button bl-block-dir-rtl A {=0A=
+            DIRECTION: rtl;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-button bl-block-dir-rtl {=0A=
+            DIRECTION: rtl;=0A=
+        }=0A=
+=0A=
+        .bl-template .social-items-container IMG {=0A=
+            PADDING-BOTTOM: 2px;=0A=
+            PADDING-TOP: 2px;=0A=
+            PADDING-LEFT: 2px;=0A=
+            PADDING-RIGHT: 2px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-divider .bl-block-content-item-container-inn=
+er {=0A=
+            PADDING-BOTTOM: 3px;=0A=
+            PADDING-TOP: 3px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-row-inner {=0A=
+            DIRECTION: ltr;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-content-wrapper {=0A=
+            DIRECTION: ltr;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-dir-rtl .bl-block-columns-container {=0A=
+            DIRECTION: rtl;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-dir-rtl .bl-block-content-item-container-inn=
+er {=0A=
+            DIRECTION: rtl;=0A=
+        }=0A=
+=0A=
+        .bl-template .ui-sortable.bl-zone-dropable {=0A=
+            MIN-HEIGHT: 0px !important;=0A=
+        }=0A=
+=0A=
+    .bl-footer-adv-sep {=0A=
+        BORDER-TOP: 1px inset;=0A=
+        BORDER-RIGHT: 1px inset;=0A=
+        BORDER-BOTTOM: 1px inset;=0A=
+        MARGIN: 0px 0px 20px;=0A=
+        BORDER-LEFT: 1px inset;=0A=
+    }=0A=
+=0A=
+    .bl-template UL {=0A=
+        MARGIN-BOTTOM: 0px;=0A=
+        PADDING-BOTTOM: 0px;=0A=
+        PADDING-TOP: 0px;=0A=
+        MARGIN-TOP: 0px;=0A=
+    }=0A=
+=0A=
+    .bl-template OL {=0A=
+        MARGIN-BOTTOM: 0px;=0A=
+        PADDING-BOTTOM: 0px;=0A=
+        PADDING-TOP: 0px;=0A=
+        MARGIN-TOP: 0px;=0A=
+    }=0A=
+=0A=
+    .bl-template .bl-block-dir-ltr .left.bl-block-4-cloumns-wrapper {=0A=
+        PADDING-RIGHT: 6px;=0A=
+    }=0A=
+=0A=
+    .bl-template .bl-block-dir-ltr .right.bl-block-4-cloumns-wrapper {=0A=
+        PADDING-LEFT: 6px;=0A=
+    }=0A=
+=0A=
+    .bl-template .bl-block-dir-rtl .left.bl-block-4-cloumns-wrapper {=0A=
+        PADDING-LEFT: 6px;=0A=
+    }=0A=
+=0A=
+    .bl-template .bl-block-dir-rtl .right.bl-block-4-cloumns-wrapper {=0A=
+        PADDING-RIGHT: 6px;=0A=
+    }=0A=
+    =0A=
+    =0A=
+</style><style id=3D"t-st-2" title=3D"resp" popo=3D"1" type=3D"text/css">=
+=0A=
+=0A=
+        @media only screen =0A=
+    and (max-device-width: 640px), =0A=
+    only screen and (max-device-width: 730px), =0A=
+    only screen and (max-width: 480px)=0A=
+        { =0A=
+            .hide-in-mobile { display: none; }=0A=
+        }=0A=
+=0A=
+      @media screen and (max-width: 480px) {=0A=
+      =0A=
+        .hide-in-mobile { display: none; }=0A=
+      =0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-template-margin"] {=0A=
+            padding: 0 0 !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] table[class*=3D"template-main-table"] {=
+=0A=
+            margin-right: 0px !important;=0A=
+            margin-left: 0px !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] table[class*=3D"template-main-table"],=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-template-border"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-template-border"] > tab=
+le,=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-1-column"],=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-2-columns"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-3-columns"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-zone"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-zone"] > table,=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] {=0A=
+            display: block !important; /* 20-6-2016 */=0A=
+            width: 320px !important;=0A=
+        }=0A=
+=0A=
+            div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-i=
+nner"] table[class*=3D"bl-block-content-column"] {=0A=
+                width: 100% !important;=0A=
+            }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-template-border"] {=0A=
+            border-width: 0px !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-2-columns"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-3-columns"] {=0A=
+            width: 100% !important;=0A=
+            max-width: 600px !important;=0A=
+        }=0A=
+        =0A=
+        /* 20-6-2016 */=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-4-columns"], =0A=
+        {=0A=
+            display: block !important;=0A=
+            max-width: 600px !important;=0A=
+            width: 100% !important;=0A=
+        }=0A=
+        =0A=
+        div[class*=3D"bl-template"] div[class*=3D"bl-block-content-item-ima=
+ge"] img {=0A=
+            width: 100% !important;=0A=
+            height: auto !important;=0A=
+        }=0A=
+        =0A=
+        div[class*=3D"bl-template"] .bl-content-wrapper {=0A=
+            width: 100% !important;=0A=
+        }=0A=
+        =0A=
+        /* 14-5-2017 */=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-2-columns"] .bl-cont=
+ent-wrapper {=0A=
+            width: 282px !important;=0A=
+        }=0A=
+        =0A=
+        /* 14-5-2017 */=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-1-column"] .bl-conte=
+nt-wrapper.bl-padding-1-column {=0A=
+            width: 480px !important;=0A=
+        }=0A=
+        =0A=
+        div[class*=3D"bl-template"] td[class*=3D"no-side-padding"] img {=0A=
+            /*max-width: 320px !important;*/=0A=
+            max-width: 320px !important;=0A=
+        }=0A=
+        =0A=
+        /* 4/4/2017 */=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-1-column"] img =
+{=0A=
+            =0A=
+            /* 14-5-2017 */=0A=
+            /* width: 100% !important; */=0A=
+            width: auto !important;=0A=
+            =0A=
+            max-width: 100% !important;=0A=
+        }=0A=
+        =0A=
+        .bl-2-columns .bl-block-content-item-td-textContent,.bl-2-columns .=
+bl-block-content-item-td-imageContent,.bl-2-columns .bl-block-content-item-=
+td-titleContent, =0A=
+        .bl-3-columns .bl-block-content-item-td-textContent,.bl-3-columns .=
+bl-block-content-item-td-imageContent,.bl-3-columns .bl-block-content-item-=
+td-titleContent {  =0A=
+            height: auto !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-1-column"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-2-columns-left"=
+],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-2-columns-right=
+"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-3-columns"] {=
+=0A=
+            padding: 0px 18px 18px 18px !important;=0A=
+        }=0A=
+        =0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table:last-child td[class*=3D"bl-padding-1-column"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table:last-child td[class*=3D"bl-padding-2-columns-left"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table:last-child td[class*=3D"bl-padding-2-columns-right"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table:last-child td[class*=3D"bl-padding-3-columns"] {=0A=
+            padding: 0px 18px 0px 18px !important;=0A=
+        }=0A=
+=0A=
+        /*strech in Iphone*/=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table td[class*=3D"bl-padding-1-column"].no-side-padding {=0A=
+                padding: 0px 0px 0px 0px !important;=0A=
+            }=0A=
+=0A=
+        div[class*=3D"bl-template"] div[class*=3D"bl-block-share"] table:la=
+st-child td[class*=3D"bl-content-wrapper"] {=0A=
+            padding: 0px !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-column"] =
+{=0A=
+            display: block !important;=0A=
+            max-width: 600px !important;=0A=
+            width: 100% !important;=0A=
+        }=0A=
+=0A=
+            div[class*=3D"bl-template"] table[class*=3D"bl-block-columns-co=
+ntainer"],=0A=
+            div[class*=3D"bl-template"] td[class*=3D"bl-block-content-colum=
+n"] > table {=0A=
+                max-width: 600px !important;=0A=
+                width: 100% !important;=0A=
+            }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-column-first"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-column-middle"] {=0A=
+            padding-bottom: 18px !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-2-columns-last"] {=0A=
+        }=0A=
+=0A=
+=0A=
+        div[class*=3D"bl-template"] span[class*=3D"bl-menu-break-row"] {=0A=
+            display: block !important;=0A=
+        }=0A=
+    }=0A=
+=0A=
+    /*Keep these styles here so they will be included in all campaigns (inl=
+iner will not remove them)*/=0A=
+    body {=0A=
+        width: 100% !important;=0A=
+        -webkit-text-size-adjust: none;=0A=
+        -ms-text-size-adjust: none;=0A=
+        margin: 0;=0A=
+        padding: 0;=0A=
+    }=0A=
+=0A=
+    #outlook a {=0A=
+        padding: 0;=0A=
+    }=0A=
+=0A=
+    .ReadMsgBody {=0A=
+        width: 100%;=0A=
+    }=0A=
+=0A=
+    .ExternalClass {=0A=
+        width: 100% !important;=0A=
+        line-height: 100% !important;=0A=
+    }=0A=
+=0A=
+    .yshortcuts {=0A=
+        color: #5187bd;=0A=
+    }=0A=
+=0A=
+        .yshortcuts a span {=0A=
+            color: #5187bd;=0A=
+            border-bottom: none !important;=0A=
+            background: none !important;=0A=
+        }=0A=
+=0A=
+</style></div>
+<table bgcolor=3D"#FFFFFF" align=3D"center" cellpadding=3D"3" cellspacing=
+=3D"0" border=3D"0" dir=3D"rtl" lang=3D"he" style=3D"border: 1px groove #66=
+6666;">
+<tbody>
+<tr>
+<td align=3D"center"><font face=3D"Arial" size=3D"2" color=3D"#333333" styl=
+e=3D"font-size: 11px;"><b>=D7=A4=D7=A8=D7=A1=D7=95=D7=9E=D7=AA</b></font></=
+td>
+</tr>
+<tr>
+<td><font face=3D"Arial" size=3D"2" color=3D"#666666" style=3D"font-size: 1=
+1px;">=D7=94=D7=95=D7=93=D7=A2=D7=94 =D7=96=D7=95 =D7=A0=D7=A9=D7=9C=D7=97=
+=D7=94 =D7=A2&quot;=D7=99 Dell Technologies Israel, =D7=94=D7=9E=D7=93=D7=
+=A2 7, =D7=94=D7=A8=D7=A6=D7=9C=D7=99=D7=94, Dana.Cohen@dell.com=E2=80=8F<b=
+r>
+=D7=94=D7=A0=D7=9A =D7=A8=D7=A9=D7=90=D7=99, =D7=91=D7=9B=D7=9C =D7=A2=D7=
+=AA, =D7=9C=D7=94=D7=95=D7=93=D7=99=D7=A2 =D7=A2=D7=9C =D7=A1=D7=99=D7=A8=
+=D7=95=D7=91=D7=9A =D7=9C=D7=A7=D7=91=D7=9C =D7=93=D7=91=D7=A8=D7=99 =D7=A4=
+=D7=A8=D7=A1=D7=95=D7=9E=D7=AA, =D7=9C=D7=9C=D7=90 =D7=AA=D7=A9=D7=9C=D7=95=
+=D7=9D, =D7=A2&quot;=D7=99 =D7=A9=D7=9C=D7=99=D7=97=D7=AA =D7=94=D7=95=D7=
+=93=D7=A2=D7=AA =D7=A1=D7=99=D7=A8=D7=95=D7=91 =D7=9C=D7=9B=D7=AA=D7=95=D7=
+=91=D7=AA Dana.Cohen@dell.com=E2=80=8F<br>
+=D7=90=D7=95 =D7=A2&quot;=D7=99 =D7=9C=D7=97=D7=99=D7=A6=D7=94 =D7=A2=D7=9C=
+ =D7=94=D7=A7=D7=99=D7=A9=D7=95=D7=A8 =D7=9C=D7=94=D7=A1=D7=A8=D7=94 =D7=94=
+=D7=9E=D7=95=D7=A4=D7=99=D7=A2 =D7=91=D7=AA=D7=97=D7=AA=D7=99=D7=AA =D7=94=
+=D7=94=D7=95=D7=93=D7=A2=D7=94. </font></td>
+</tr>
+</tbody>
+</table>
+<br>
+<center>
+<p dir=3D"rtl" lang=3D"he"><font face=3D"Arial" size=3D"2" color=3D"#6D6D6D=
+" style=3D"font-size: 11px;">=D7=9C=D7=94=D7=A1=D7=A8=D7=94 =D7=9E=D7=A8=D7=
+=A9=D7=99=D7=9E=D7=AA =D7=94=D7=AA=D7=A4=D7=95=D7=A6=D7=94 =D7=90=D7=A0=D7=
+=90 =D7=9C=D7=97=D7=A5/=D7=99&nbsp;<a href=3D"https://www.publicators.com/a=
+pp/drd.asp?p=3D7618811506_550923706_10492635"><font size=3D"2" face=3D"Aria=
+l" color=3D"#6D6D6D" style=3D"font-size: 11px;"><strong>=D7=9B=D7=90=D7=9F<=
+/strong></font></a></font></p>
+</center>
+<center>
+<p dir=3D"ltr"><font face=3D"Arial" size=3D"2" color=3D"#6D6D6D" style=3D"f=
+ont-size: 11px;">To unsubscribe
+<a href=3D"https://www.publicators.com/app/drd.asp?p=3D7618811506_550923706=
+_10492636">
+<font size=3D"2" face=3D"Arial" color=3D"#6D6D6D" style=3D"font-size: 11px;=
+"><strong>click here</strong></font></a></font></p>
+</center>
+</font>
+<p></p>
+<p align=3D"left" lang=3D"he" dir=3D"ltr" style=3D"font-family: tahoma; col=
+or: gray; margin-left: 20px; font-size: 10px">
+Powered by <a target=3D"_blank" href=3D"https://www.publicators.com/app/drd=
+.asp?p=3D7618811506_550923706_10492637">
+<font size=3D"1" style=3D"font-family: tahome; color: blue; font-size: 10px=
+; text-decoration: none">Publicators</font></a></p>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>

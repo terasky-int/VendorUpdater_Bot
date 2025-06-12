@@ -1,0 +1,932 @@
+Received: from DB8P194MB0934.EURP194.PROD.OUTLOOK.COM (2603:10a6:10:14a::13)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Sun, 25 May 2025
+ 07:07:15 +0000
+Received: from DB8P191CA0023.EURP191.PROD.OUTLOOK.COM (2603:10a6:10:130::33)
+ by DB8P194MB0934.EURP194.PROD.OUTLOOK.COM (2603:10a6:10:14a::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8769.22; Sun, 25 May
+ 2025 07:07:13 +0000
+Received: from DB5PEPF00014B9E.eurprd02.prod.outlook.com
+ (2603:10a6:10:130:cafe::5f) by DB8P191CA0023.outlook.office365.com
+ (2603:10a6:10:130::33) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8746.29 via Frontend Transport; Sun,
+ 25 May 2025 07:07:13 +0000
+Authentication-Results: spf=pass (sender IP is 161.71.70.197)
+ smtp.mailfrom=bounce.news.htzone.co.il; dkim=pass (signature was verified)
+ header.d=news.htzone.co.il;dkim=pass (signature was verified)
+ header.d=s50.y.mc.salesforce.com;dmarc=pass action=none
+ header.from=news.htzone.co.il;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of bounce.news.htzone.co.il
+ designates 161.71.70.197 as permitted sender)
+ receiver=protection.outlook.com; client-ip=161.71.70.197;
+ helo=mta.news.htzone.co.il; pr=C
+Received: from mta.news.htzone.co.il (161.71.70.197) by
+ DB5PEPF00014B9E.mail.protection.outlook.com (10.167.8.171) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8769.18 via Frontend Transport; Sun, 25 May 2025 07:07:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=50dkim1; d=news.htzone.co.il;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:Message-ID:Content-Type; i=no-reply@news.htzone.co.il;
+ bh=DiLnVKD2ilByny4Q8kmTvU79WeY6xDm5jLk+SWwGY+o=;
+ b=VnkKMTSqX0TFpnI+C0YR7a7NeU10oV/1pIJ5nITzwp47Y4Og+gU/qOziUUN518Jr3jJ/YJkgbRCd
+   h1jwQ17Rz6Y9c43Ou32f9wI46O7ukzzLPbIBL8191+DRZi95Xe8fuX+sH3aQZrbhUgE7ccwsXCdA
+   eUq+QHN0BM4/OTiPQtkFG8datGU/IfxLIpsrZCqdYAGdGT2e1rx8VwiF5w6Ut6bcb3A6O9wvSjN8
+   As+whLrlzA3mveGDfMtQd3SCxdNS6lgrpvlm276sBTvHAZ1oIN2/iu07RJTHN7ytIpbjF0yYmKXp
+   4EHbItj2Zi8Z1QoC3cgni0emBuP5kR9v2k0gJw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=fbldkim50; d=s50.y.mc.salesforce.com;
+ h=From:To:Subject:Date:List-Unsubscribe:MIME-Version:Reply-To:Message-ID:
+ Content-Type;
+ bh=DiLnVKD2ilByny4Q8kmTvU79WeY6xDm5jLk+SWwGY+o=;
+ b=jZkTUOs9NMVui2T97UwnbPawtJoV58kmEJByq8KiCk+9qEOtpEnmww8GvLcBNTSfwLgTak9nbUrH
+   tUL50ZAdbGxl8PjUYJIJ/8uBacqn48GSbneWWKHTQCbrUDMCVZZ/ydmLz2OF1uJoOJ63lvL6Yeea
+   79yePgfIzFtw3mB3FI5+rrys6BCKrjAgrV7V3/fj4q9I98jspkQOa/cIshNyc3ucwrvsqvmY1Df1
+   bhux7d9cZNJD2+nnYtzNnzraL1+/Q31QA7UI7ELN9982KDHYPVsCzxX7gdImCrv8TjxtPlHcRZtx
+   g704XGZlvmrk23iAmb3jCJfb5hA7nc++fKhUAw==
+Received: by mta.news.htzone.co.il id h6b0q22fmd4m for <davidg@terasky.com>; Sun, 25 May 2025 07:07:12 +0000 (envelope-from <bounce-279_HTML-101433834-908344-510004526-4005@bounce.news.htzone.co.il>)
+From: =?UTF-8?B?15TXmdeZ15jXp9eW15XXnw==?=
+ <no-reply@news.htzone.co.il>
+To: <davidg@terasky.com>
+Subject: =?UTF-8?B?15HXnteZ15XXl9eSINeR16nXkdeZ15zXmiDwn4y+INep15XXkdeo?=
+ =?UTF-8?B?15nXnSDXnCBDYXJyZWZvdXIgfCDXnteQ16TXmdeZ16og15zXl9ee15nXnSB8?=
+ =?UTF-8?B?IFN0b3J5IHwgR09MRiZDTyDXldei15XXkyEgW9ek16jXodeV157Xql0=?=
+Date: Sun, 25 May 2025 01:07:12 -0600
+List-Unsubscribe: <https://click.news.htzone.co.il/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI1MTAwMDQ1MjYiLCJzIjoiMTAxNDMzODM0IiwibGlkIjoiMjc5IiwiaiI6IjkwODM0NCIsImpiIjoiNDAwNSIsImQiOiI1MDAwMTkifQ.9Qfn5OvlDYUhnn1uZLYk11XEZs3wwjpvTtEv5cm5398>, <mailto:leave-fd4916777c0b5c392848-fe3415707460077e7d1774-fec31d707d670079-fe38117175640479701676-ff3610707561@leave.news.htzone.co.il>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Reply-To: "Hitech Zone" <reply-fec31d707d670079-279_HTML-101433834-510004526-4005@news.htzone.co.il>
+X-SFMC-Stack: 50
+x-job: 510004526_908344
+Message-ID: <9357d492-8142-4a81-802a-6fd7d440f820@fra3s50mta368.xt.local>
+Content-Type: multipart/alternative;
+	boundary="4OaLRFcaZoVO=_?:"
+Return-Path: bounce-279_HTML-101433834-908344-510004526-4005@bounce.news.htzone.co.il
+X-MS-Exchange-Organization-ExpirationStartTime: 25 May 2025 07:07:13.2645
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 7aa03653-2f27-4f45-064a-08dd9b5ac64b
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB5PEPF00014B9E:EE_|DB8P194MB0934:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: DB5PEPF00014B9E.eurprd02.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 7aa03653-2f27-4f45-064a-08dd9b5ac64b
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: -1
+X-Microsoft-Antispam: BCL:2;ARA:13230040|69100299015|2092899012|3072899012|3092899012|13102899012|1032899013|5062899012|4092899012|12012899012|4022899009|13012899012|13003099007|8096899003|2066899003;
+X-Forefront-Antispam-Report: CIP:161.71.70.197;CTRY:GB;LANG:he;SCL:-1;SRV:;IPV:NLI;SFV:SKN;H:mta.news.htzone.co.il;PTR:mta.news.htzone.co.il;CAT:NONE;SFS:(13230040)(69100299015)(2092899012)(3072899012)(3092899012)(13102899012)(1032899013)(5062899012)(4092899012)(12012899012)(4022899009)(13012899012)(13003099007)(8096899003)(2066899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 May 2025 07:07:13.1512
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7aa03653-2f27-4f45-064a-08dd9b5ac64b
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: DB5PEPF00014B9E.eurprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8P194MB0934
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:02.0074751
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8769.014
+X-Microsoft-Antispam-Mailbox-Delivery:
+	wl:1;pcwl:1;ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(811242)(255002)(410001)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?d29ZcW52Z01PU2FFWnRUZWxsWEErMk5YU09xa2tSYTVPZE9OcFlqNWR1Vjll?=
+ =?utf-8?B?SVFSRVpzM0h1MG5OL21zRnFKeDZSRGFPSE5hM00vYU9vc2M0RTlET3hpVDls?=
+ =?utf-8?B?a0ZaSHhadE9HcXBiL0xFOCtLWXFkQjQvWUtDMUJQeVNEbU1NQ3B1K3E1cmtZ?=
+ =?utf-8?B?RTBCNFhLM3NSOVRZTncwWlNibm5pR3ZwYkk2Y3IvY3NFUlNJOXZvdjhwQnA0?=
+ =?utf-8?B?WFd3YVV3UEZmYWx5WjZHMkdxSUJ3ZlYwR1pTOVB4c09QNHJteUZGaTdSZ1g1?=
+ =?utf-8?B?N3UrRGc0MUdxcVJ3aXFueWc5WWl4TStOeVdPUmdOMmlFMi9YUVU4VExLRFgx?=
+ =?utf-8?B?OW9TaHZtTFJRaFlFSHdaYjVlRUQ2UUFsUGIwVCtYeHo5VlB3QUxjMzIxVC9a?=
+ =?utf-8?B?aGFDU0JzRHNJV2RmaWVRWXgvUmhpUVBEOUppS3RjL1cycUhqWWF0cnc2M0RF?=
+ =?utf-8?B?am0zd3JkY055YmgreDJHdmk0UnlYdlhoenRrdlB2NmVnYTBDdnpVU2NNNnp3?=
+ =?utf-8?B?SlpYTWZpMExJTkI0cXFrTE1qMTlKeko4MjJsbjZ1VTl6Q1RnYWlnNnBUby9m?=
+ =?utf-8?B?ZUl4VUF4RWNTS0JGczd3ZUVjY3V0VXVzdFhpY3NjbTJCYVozbU9xbElGNjdR?=
+ =?utf-8?B?QXhabDhxL1BIYjk4T2RlL1UvVzVSWHZ6amcxSndNbkU2WEFZTFZnOGFjUVdV?=
+ =?utf-8?B?dC9sa3NDRFdUUWRmMDdCWUdwSzVNRm95TkxxN25KRlo2c1RvNEY2TUFtbHd1?=
+ =?utf-8?B?eEJ1NU5NWWpyTWpaZ080UXFnWFJoWGExV2gvdjhUMGVjUlNFVDdkNDhOaDlp?=
+ =?utf-8?B?WjMzZFA5UVdyZmlwU0o4RTRiM3ZXaHE5RzNYWjhxcWZ2WUVkZ1plZHFua2cy?=
+ =?utf-8?B?Q1FQemNQbThWdU1laDJLc1Y0aXVxZ081bzNLR2taclFPWGRRd0czZHQrQjFP?=
+ =?utf-8?B?dWNoSGo0TWxURzR1enY5TEVSWTJWdW9xc243M3VFSkY0ZGx1MldWbmErRXFh?=
+ =?utf-8?B?bkNpV25LdWJlZEFWWEZoZWR0bWw0dUVxYUdJSHhXYXd6YWxMY1ZOMjA5Q1lF?=
+ =?utf-8?B?bVRKTXVNUlRCUllOWXNoS1owd1N1ZDNMZ05yb1UzMi9xb2FlTlordnN2N2V2?=
+ =?utf-8?B?R3dtcVk0Qi92MEsrZE43cGFQbG8wbk9wdVpBdTNqSDZoN0VSeC8vTlp4TzFS?=
+ =?utf-8?B?L3hxWmprMVpnVzN6dEZkd2ZvVVVUR1pHcFVyenltV3pSVVo0RFVkYnVyb2JW?=
+ =?utf-8?B?NjR2MUhHWHRzWjZnNFhGd1VjWXVJWWh0R25RcE5yVGZ6ZHBDOURlZ1lKV3RO?=
+ =?utf-8?B?eU1SZlJqZkJRVzNhc1N2NlhCOFU0VHZpWXBzaiszeE13SytPRkZrVERJSlZ6?=
+ =?utf-8?B?OU1rK253UXlwK01YZ1ArazdHV29mdGluOVUvSE5CckhFZ0RjbWs4eFBVdXZP?=
+ =?utf-8?B?QWxCRC8rS2tIZC80TUVjZk5STmtzRHZnV0lzdzIzRklXZ3R5Z3h3ZHF3U1ky?=
+ =?utf-8?B?UkVHRnFhckU1YUtZeDc4VEZXMkZyYnpuc0xjS0tVVHJCbHkrNjQrNGJ2bCt5?=
+ =?utf-8?B?MFkvekhtL3ozTXZYTDMvSGttald5aitBNGhyYVFtWlRTZFhhYVEzRjF5SXJh?=
+ =?utf-8?B?MjRBUmh2TUZ6VkJQbXIvUWZjRk03UURyd2ZsRW1Lb1I3bktBN001QVVuQlFV?=
+ =?utf-8?B?cVF1WlNMY2N0RURwOFJUcTE4SGo2WlRjOWdHQW1Yd2xnMzZGVGcxWXJ2TlA1?=
+ =?utf-8?B?VzNiQWFkWllUbGR2MS9US09COHlxakZOWnpvKy9uWHJWQ1dWbmVveGtESEZ2?=
+ =?utf-8?B?SjNGTng0aHpuNWxZWE1sMUZnZ1pCNkx2emcwR05TUGNWQVJ2WVl1NTQ4TWRS?=
+ =?utf-8?B?eko1L3FSb2Rjb3ZDSU41NFJWKzZPcXI4bFJuVk1ML3ZXcHJUQ2VqZGpjWW5R?=
+ =?utf-8?B?ajNLUGY1RTV3M05FcTJmY0xNZmdhcEJEQnJkMlhuSTFubWFrcms2THZJTHVJ?=
+ =?utf-8?B?TUNNWXpyVE9XNmpRRzdVR3lXaUF6UXMzUTh6WEpvV05TOHlyMUVhV3ZKSFNu?=
+ =?utf-8?B?S1k4Qld6djVTWWtNOFNaanF6cytHY1VVRzNNWmpnUHVGTTNONDlYalZwaHhp?=
+ =?utf-8?B?Nkk1WGl4VWc2a1NjS0RtYVpVUDE1QUVGb0tENm5raWptZWlRcFRzWjNJaHFW?=
+ =?utf-8?B?UUlPcjUwdlpneEk0SzRsSFJkY2xmQ0ptL1MxUm85WTRlc1Y5UlpzNWo3MndV?=
+ =?utf-8?B?WG11MGpBRzlPajVnVUNqakxmcGJQV2diZHg3OHlnN1VrbHlpekRkekdVOExO?=
+ =?utf-8?B?S2Y4OFhHN3NCMEN2L25BZ2orSFJiZUo2TUpOWk10ZlYzM1VoR3dWdHFOZVJo?=
+ =?utf-8?B?ekhSZVN5UjN4Nk1OTDJtUitrcTMrL0o0bzU0MXRsTXdLdW1BMUVEdUE5VFFm?=
+ =?utf-8?B?TXMrWHVTbmVyYzUwQXg3UTNyR29YNVkxMFJUWVNRc3hTRWFCVmtTSTMrY2N2?=
+ =?utf-8?B?T3pTQWE0UnhrQk5aL29QWU9xMUNielk0RHZPcktPUkhiK3NRWGJ6U21TbnZF?=
+ =?utf-8?B?VUxKK0FNUlBWdytqRDJpTXRZMVZreXlhMGNERkZpSytPa0ZmK1pEczdvWCsx?=
+ =?utf-8?B?RmJKdi9PU2Z3UVdaTG5TU1c4aGdkaU15cE5SRFdBVHZOajA3U2Zkb2FMdEpw?=
+ =?utf-8?B?NEJBR25JVHlQRDFOZDAwV3N6NDBSeHF3bGE2Y3ZBSGJLcXJKbnprbUhVUnRt?=
+ =?utf-8?B?c2FyOTJTMUh5dGFxTzRpcDNVbmZUdlNuMUQvcEp5T0ZBOTRoZ1JQN3paV0Y0?=
+ =?utf-8?B?OGZjMFJZYUc3OWZrTHgrOXNmTk9xVHVBVXcyOExwMkRyTWpIR0ViODMzVWJ4?=
+ =?utf-8?B?WnFsV1FUQit4SEs2b1owVDQ4Rk1pRWhsNlBteWJ5UEtJR1h1OUJiZGhrWmV3?=
+ =?utf-8?B?eld6QXlCQTExK255M25ScW9sWVZHaC9GZnhlK2hib21lNHBSZC9mT1p3QUF0?=
+ =?utf-8?B?c2JwUHdDR3ZFZitqbkMxdFRtZHlhZFRGbGVQai92ZnQ4Q2hrVUVsTCtzUDRN?=
+ =?utf-8?B?Sk8yZ202TFpXcGttaS9qWklNdjRqSG0zR0xVR1U5azVySDFIYjNVTFVXWGlt?=
+ =?utf-8?B?U2xzNGdVSzIyWTFGN21TMTFCd3NyRFN1SWlmL0dnb2Fyb3JNbXprbVpoNzlQ?=
+ =?utf-8?Q?6GjKyfE=3D?=
+MIME-Version: 1.0
+
+--4OaLRFcaZoVO=_?:
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+=D7=A2=D7=93 20% =D7=94=D7=A0=D7=97=D7=94 =D7=91=D7=9C=D7=A2=D7=93=D7=99 =
+=D7=9C=D7=9C=D7=A7=D7=95=D7=97=D7=95=D7=AA PRO=C2=B2 >
+=D7=90=D7=9D =D7=90=D7=99=D7=A0=D7=9A =D7=A8=D7=95=D7=90=D7=94 =D7=AA=D7=9E=
+=D7=95=D7=A0=D7=95=D7=AA =D7=9C=D7=97=D7=A5 =D7=9B=D7=90=D7=9F<https://view=
+.news.htzone.co.il/?qs=3D6bc27b195adf9ffaee4bb3d20295c9b45f063cc5313b1fe66f=
+d86db4fe826ea74d7451d81978a6f3817ea4b334b9688e94fa54e877ca6098954fca6b29a3e=
+d24491868cac233a5970204f6b81ef146e5>
+[https://image.news.htzone.co.il/lib/fe38117175640479701676/m/1/e5814e85-19=
+e3-42d5-a1f5-663b428ac43c.gif]<https://click.news.htzone.co.il/?qs=3D81b35d=
+4dd8d01479eaed17a6d386597eb919333db6be510cd4519a3d445002a614a582224e5cc5826=
+85b4ed655f74a155c4bb299d5b1acf98aa405d39dffb174>
+[https://image.news.htzone.co.il/lib/fe38117175640479701676/m/1/5ba6533a-ad=
+62-445f-9502-654e4f09806c.jpg]<https://click.news.htzone.co.il/?qs=3D81b35d=
+4dd8d01479eaed17a6d386597eb919333db6be510cd4519a3d445002a614a582224e5cc5826=
+85b4ed655f74a155c4bb299d5b1acf98aa405d39dffb174>
+[https://image.news.htzone.co.il/lib/fe38117175640479701676/m/1/110ededb-ca=
+3e-4ca0-b5e4-79907a80effd.gif]
+[https://image.news.htzone.co.il/lib/fe38117175640479701676/m/1/a27f4138-f7=
+1a-4a3b-832c-67229a7acf2d.jpg]<https://click.news.htzone.co.il/?qs=3D81b35d=
+4dd8d01479eaed17a6d386597eb919333db6be510cd4519a3d445002a614a582224e5cc5826=
+85b4ed655f74a155c4bb299d5b1acf98aa405d39dffb174>
+[https://image.news.htzone.co.il/lib/fe38117175640479701676/m/1/60795665-78=
+9e-4009-97b9-31dfa484390e.jpg]
+[https://image.news.htzone.co.il/lib/fe38117175640479701676/m/1/a55889b0-d8=
+d5-4bb0-bcb2-58c073b5c4dc.png]<https://click.news.htzone.co.il/?qs=3D4aff4e=
+a3158db65d6c8aa1569987d46ed697bf74ab8f4b1f9a5f21db886bb3bc7f5916f6e557c611f=
+d9b5d710fdd9d0dc6bb54aed650404139ee9470447ef4b0>
+[https://image.news.htzone.co.il/lib/fe38117175640479701676/m/1/d38888f5-74=
+53-49dd-a13f-830ef3c2baee.jpg]
+        [website]  <https://click.news.htzone.co.il/?qs=3D4aff4ea3158db65de=
+95092ebb17cb4c0fc638462893f76641f6d3890c41e78229629237b0bfc100e8db7cb5d78fd=
+649f12ef051e164d54ac21e3015ebf3c7b92>       [whatsapp]  <https://click.news=
+.htzone.co.il/?qs=3D4aff4ea3158db65db244b986bf8661e81992f2181fb8be9612d787c=
+4e97f1722ccfb8cafa5f12fe39528508f961750899fc049b7a9fc8b55dd2c4b1d7aa446e3> =
+     [customer_service]  <https://click.news.htzone.co.il/?qs=3D4aff4ea3158=
+db65dc0687a928ee9548fab5c9023d9940479083e600175084a548d84cb0ef90c0177d28ce3=
+60978fbb578ac89d42dc825db380ae7e3a661d12fb>              [app]  <https://cl=
+ick.news.htzone.co.il/?qs=3D4aff4ea3158db65d0a984b3d952477e5d5460991eb448cc=
+6b39a183b3c0bc147abfd6b9b0cc001ea088abba1d82c6194594b9038a36920bfbb92a8743e=
+cd8007>           [FB]  <https://click.news.htzone.co.il/?qs=3D4aff4ea3158d=
+b65de2607f205198fa64c4ecb46d4eb19b5463f39e18bc4317c8ccc9e62e19a9d901ded7820=
+f9ee42bb64c48eadc8d8d21ea037c4dc785bdb135>    [instagram]  <https://click.n=
+ews.htzone.co.il/?qs=3D4aff4ea3158db65dd47fed044ad8f66f393ab5c812ef5b4cef7d=
+a210113431377c590c6b3064effc918e7b4ea6068fe418dc91930aea81d2fca343e519d6215=
+c>     [telegram]  <https://click.news.htzone.co.il/?qs=3D4aff4ea3158db65d2=
+b58133257fcb1e5839df674a80cfe7b2a96b281e6b0a5ff4c8595e9d2d14a2069d306ba7df0=
+03b8ce32bdc786e66efa0ffe0c58a6b24e09>
+
+=D7=94=D7=9E=D7=90=D7=92=D7=A8 =D7=9E=D7=A0=D7=95=D7=94=D7=9C =D7=A2"=D7=99=
+ =D7=97=D7=91=D7=A8=D7=AA =D7=94=D7=99=D7=99 =D7=91=D7=99=D7=96 =D7=91=D7=
+=A2"=D7=9E, =D7=A8=D7=97=E2=80=99 =D7=A8=D7=A4=D7=A4=D7=95=D7=A8=D7=98 3 =
+=D7=9B=D7=A4=D7=A8 =D7=A1=D7=91=D7=90, =D7=95=D7=94=D7=A4=D7=A0=D7=99=D7=94=
+ =D7=90=D7=9C=D7=99=D7=9A =D7=A0=D7=A2=D7=A9=D7=99=D7=AA =D7=91=D7=93=D7=99=
+=D7=95=D7=95=D7=A8 =D7=99=D7=A9=D7=99=D7=A8 =D7=A2=D7=9C =D7=91=D7=A1=D7=99=
+=D7=A1 =D7=9E=D7=90=D7=92=D7=A8 =D7=9E=D7=99=D7=93=D7=A2 =D7=A8=D7=A9=D7=95=
+=D7=9D =D7=A9=D7=9C =D7=9E=D7=95=D7=A2=D7=93=D7=95=D7=9F =D7=94=D7=99=D7=99=
+=D7=98=D7=A7=D7=96=D7=95=D7=9F =D7=A9=D7=9E=D7=A1=D7=A4=D7=A8=D7=95 7000289=
+97. =D7=91=D7=91=D7=A7=D7=A9=D7=94 =D7=9C=D7=90 =D7=9C=D7=A2=D7=A0=D7=95=D7=
+=AA =D7=9C=D7=9E=D7=99=D7=99=D7=9C =D7=96=D7=94 - =D7=94=D7=95=D7=93=D7=A2=
+=D7=AA =D7=93=D7=95=D7=90=D7=A8 =D7=96=D7=95 =D7=A0=D7=A9=D7=9C=D7=97=D7=94=
+ =D7=9E=D7=9B=D7=AA=D7=95=D7=91=D7=AA =D7=93=D7=95=D7=90=D7=A8 =D7=90=D7=9C=
+=D7=A7=D7=98=D7=A8=D7=95=D7=A0=D7=99 =D7=A9=D7=90=D7=99=D7=A0=D7=94 =D7=A0=
+=D7=91=D7=93=D7=A7=D7=AA. =D7=A4=D7=A8=D7=98=D7=99=D7=9A =D7=94=D7=AA=D7=A7=
+=D7=91=D7=9C=D7=95 =D7=9E=D7=9E=D7=9A =D7=91=D7=9E=D7=A1=D7=92=D7=A8=D7=AA =
+=D7=94=D7=A6=D7=98=D7=A8=D7=A4=D7=95=D7=AA=D7=9A =D7=9C=D7=9E=D7=95=D7=A2=
+=D7=93=D7=95=D7=9F. =D7=90=D7=9D =D7=91=D7=A8=D7=A6=D7=95=D7=A0=D7=9A =D7=
+=9C=D7=94=D7=A1=D7=99=D7=A8 =D7=90=D7=AA =D7=A2=D7=A6=D7=9E=D7=9A =D7=9E=D7=
+=A8=D7=A9=D7=99=D7=9E=D7=94 =D7=96=D7=95 - =D7=9C=D7=A8=D7=A9=D7=95=D7=AA=
+=D7=9A =D7=9C=D7=99=D7=A0=D7=A7 =D7=94=D7=A1=D7=A8=D7=94 =D7=91=D7=AA=D7=97=
+=D7=AA=D7=99=D7=AA =D7=94=D7=9E=D7=99=D7=99=D7=9C =D7=90=D7=95 =D7=91=D7=90=
+=D7=9E=D7=A6=D7=A2=D7=95=D7=AA =D7=A9=D7=9C=D7=99=D7=97=D7=AA =D7=93=D7=95=
+=D7=90=D7=A8 =D7=90=D7=9C=D7=A7=D7=98=D7=A8=D7=95=D7=A0=D7=99 =D7=9C=D7=9B=
+=D7=AA=D7=95=D7=91=D7=AA =D7=94=D7=9E=D7=99=D7=99=D7=9C: unsubscribe@htzone=
+.co.il<mailto:unsubscribe@htzone.co.il>. =D7=98.=D7=9C.=D7=97 =D7=94=D7=AA=
+=D7=9E=D7=95=D7=A0=D7=95=D7=AA =D7=9C=D7=94=D7=9E=D7=97=D7=A9=D7=94 =D7=91=
+=D7=9C=D7=91=D7=93. =D7=97=D7=91=D7=A8=D7=AA =D7=94=D7=99=D7=99-=D7=91=D7=
+=99=D7=96 =D7=91=D7=A2"=D7=9E =D7=90=D7=95 =D7=A1=D7=A4=D7=A7=D7=99=D7=94 =
+=D7=9C=D7=90 =D7=99=D7=97=D7=95=D7=99=D7=99=D7=91=D7=95 =D7=91=D7=92=D7=99=
+=D7=9F =D7=98=D7=A2=D7=95=D7=99=D7=95=D7=AA =D7=95/=D7=90=D7=95 =D7=94=D7=
+=A9=D7=9E=D7=98=D7=95=D7=AA =D7=A9=D7=A0=D7=A4=D7=9C=D7=95, =D7=91=D7=AA=D7=
+=95=D7=9D =D7=9C=D7=91, =D7=91=D7=9E=D7=A1=D7=9E=D7=9A =D7=96=D7=94, =D7=95=
+/=D7=90=D7=95 =D7=91=D7=A4=D7=A8=D7=98=D7=99=D7=95.
+=D7=91=D7=94=D7=AA=D7=90=D7=9D =D7=9C=D7=AA=D7=A0=D7=90=D7=99=D7=9D =D7=94=
+=D7=9E=D7=9C=D7=90=D7=99=D7=9D =D7=91=D7=90=D7=AA=D7=A8 =D7=94=D7=99=D7=99=
+=D7=98=D7=A7=D7=96=D7=95=D7=9F.
+* =D7=91=D7=9B=D7=A4=D7=95=D7=A3 =D7=9C=D7=AA=D7=A7=D7=A0=D7=95=D7=9F  PRO=
+=C2=B2 ><https://click.news.htzone.co.il/?qs=3D3765193ec3b9f467803165df5cd3=
+35c8dc1aa8456cb65bfe8faf9b032d305d538569b04a30ef709492e08f9a03bdaed702207cd=
+7b10b3fb35a0d079a1a56f992>
+
+=D7=94=D7=A1=D7=A8<https://click.news.htzone.co.il/?qs=3D3765193ec3b9f467bc=
+6c22fed26035f652a0ab0973ce735aa021bc06fcf4580e7544e2d5591c1b56a7e6cef3e0e00=
+bf51e9900d67ba4c11a8680f28a0189df62>
+
+High Biz | =D7=A8=D7=A4=D7=A4=D7=95=D7=A8=D7=98 3 | =D7=9B=D7=A4=D7=A8 =D7=
+=A1=D7=91=D7=90 | 4465141 | =D7=99=D7=A9=D7=A8=D7=90=D7=9C | 072-2200989
+
+
+
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+--4OaLRFcaZoVO=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3.=
+org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:sc=
+hemas-microsoft-com:office:office"><head><!--[if gte mso 9]><xml> <o:Office=
+DocumentSettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:PixelsPerInch> </o:O=
+fficeDocumentSettings> </xml><![endif]-->
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<title>=D7=94=D7=99=D7=99=D7=98=D7=A7=D7=96=D7=95=D7=9F</title>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0 ">
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<!--[if !mso]><!--><link href=3D"https://fonts.googleapis.com/css?family=3D=
+Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel=3D"stylesheet" =
+type=3D"text/css"><link rel=3D"preconnect" href=3D"https://fonts.googleapis=
+.com"><link rel=3D"preconnect" href=3D"https://fonts.gstatic.com" crossorig=
+in=3D""><link href=3D"https://fonts.googleapis.com/css2?family=3DAssistant:=
+wght@200&amp;display=3Dswap" rel=3D"stylesheet"><style>
+@import url('https://fonts.googleapis.com/css2?family=3DHeebo:wght@900&disp=
+lay=3Dswap');
+</style><!--<![endif]--><style type=3D"text/css">
+
+body { margin: 0 auto !important; padding: 0 !important; -webkit-text-size-=
+adjust: 100% !important; -ms-text-size-adjust: 100% !important; -webkit-fon=
+t-smoothing: antialiased !important; text-align: center !important;  }
+img { border: 0 !important; outline: none !important; }
+p { Margin: 0px !important; Padding: 0px !important; }
+table { border-collapse: collapse; mso-table-lspace: 0px; mso-table-rspace:=
+ 0px; }
+td, a, span { border-collapse: collapse; mso-line-height-rule: exactly; }
+.ExternalClass * { line-height: 100%; }
+.em_defaultlink a { color: inherit !important; text-decoration: none !impor=
+tant; }
+span.MsoHyperlink { mso-style-priority: 99; color: inherit; }
+span.MsoHyperlinkFollowed { mso-style-priority: 99; color: inherit; }
+.tpl-content { padding: 0px !important;}
+.em_white a { color: #ffffff; text-decoration: none;  }
+.em_black a { color: #000000; text-decoration: none; }
+.em_gray a { color: #969696; text-decoration: none; padding-left: 50px;  pa=
+dding-right: 50px; }
+
+ =20
+@media only screen and (min-width:481px) and (max-width:619px) {
+.em_main_table { width: 480px !important; }
+.em_wrapper { width: 100% !important; }
+.em_spacer { width: 0px !important; }
+.em_hide { display: none !important; }
+.em_full_img { width: 100% !important; height: auto !important; max-width: =
+none !important; }
+.em_justify { text-align: justify !important; }
+.em_center { text-align: center !important; }
+.em_height { height: 10px !important; }
+.em_pad_top { padding-top: 20px !important; }
+.em_aside { padding: 0 !important; }
+  u + .em_body .em_full_wrap { width: 100% !important; width: 100% !importa=
+nt; }
+.em_br { display: block !important; }
+.em_auto { height: auto !important; }
+.em_bg { background-color: #434343 !important; background-image: none !impo=
+rtant; }
+.em_bg1 { background-color: #ffffff !important; }
+body .responsive-td {width:100% !important; float:center !important; paddin=
+g:0 !important; }
+}
+
+@media only screen and (min-width:375px) and (max-width:480px) {
+.em_main_table { width: 375px !important; }
+.em_wrapper { width: 100% !important; }
+.em_spacer { width: 0px !important; }
+.em_hide { display: none !important; }
+.em_full_img { width: 100% !important; height: auto !important; max-width: =
+none !important; }
+.em_justify { text-align: justify !important; }
+.em_center { text-align: center !important; }
+.em_height { height: 10px !important; }
+.em_pad_top { padding-top: 20px !important; }
+.em_aside { padding: 0 0px !important; }
+u + .em_body .em_full_wrap { width: 100% !important; width: 100% !important=
+; }
+.em_br { display: block !important; }
+.em_auto { height: auto !important; }
+.em_bg { background-color: #434343 !important; background-image: none !impo=
+rtant; }
+.em_bg1 { background-color: #ffffff !important; }
+body .responsive-td {width:100% !important; float:center !important; paddin=
+g:0 !important; }
+}
+
+@media screen and (max-width:374px) {
+.em_main_table { width: 350px !important; }
+.em_wrapper { width : 100% !important; }
+.em_spacer { width: 0px !important; }
+.em_hide { display: none !important; }
+.em_full_img { width: 100% !important; height: auto !important; max-width: =
+none !important; }
+.em_justify { text-align: justify !important; }
+.em_center { text-align: center !important; }
+.em_height { height: 10px !important; }
+.em_pad_top { padding-top: 20px !important; }
+.em_aside { padding: 0 0px !important; }
+u + .em_body .em_full_wrap { width: 100% !important; width: 100% !important=
+; }
+.em_br { display: block !important; }
+.em_auto { height: auto !important; }
+.em_bg { background-color: #3d3d3d !important; background-image: none !impo=
+rtant; }
+.em_bg1 { background-color: #ffffff !important; }
+.em_line { background-image: url(images/dot_image.jpg) !important; height: =
+3px !important; }
+body .responsive-td {width:100% !important; float:center !important; paddin=
+g:0 !important; }
+}
+</style>
+</head>
+<body class=3D"em_body" style=3D"margin:0px; padding:0px; text-align: cente=
+r" bgcolor=3D"#ffffff">
+<style type=3D"text/css">
+div.preheader=20
+{ display: none !important; }=20
+</style>
+<div class=3D"preheader" style=3D"font-size: 1px; display: none !important;=
+">=D7=A2=D7=93 20% =D7=94=D7=A0=D7=97=D7=94 =D7=91=D7=9C=D7=A2=D7=93=D7=99 =
+=D7=9C=D7=9C=D7=A7=D7=95=D7=97=D7=95=D7=AA PRO=C2=B2 &gt;</div>
+<table dir=3D"rtl" width=3D"100%" border=3D"0" cellspacing=3D"0" cellpaddin=
+g=3D"0" class=3D"em_full_wrap" bgcolor=3D"#ffffff">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top">
+<table align=3D"center" width=3D"640" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" class=3D"em_main_table" style=3D"width:640px;">
+<!--Pre_Header-->
+<tbody>
+<tr>
+<td valign=3D"top" align=3D"center">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center">
+</table>
+<table cellpadding=3D"3" cellspacing=3D"0">
+<tbody>
+<tr>
+<td width=3D"180"></td>
+<td align=3D"center" colspan=3D"3" height=3D"20"><a href=3D"https://view.ne=
+ws.htzone.co.il/?qs=3D6bc27b195adf9ffaee4bb3d20295c9b45f063cc5313b1fe66fd86=
+db4fe826ea74d7451d81978a6f3817ea4b334b9688e94fa54e877ca6098954fca6b29a3ed24=
+491868cac233a5970204f6b81ef146e5" style=3D"font-family:arial;direction:rtl;=
+text-decoration:none;padding:8px 24px;font-size:15px;font-weight:bold;backg=
+round:#000000;color:#fff;border-radius:3px;letter-spacing:1px;font-family: =
+'Assistant', sans-serif; margin:10px auto;display:block;width:220px" target=
+=3D"_blank">=D7=90=D7=9D
+ =D7=90=D7=99=D7=A0=D7=9A =D7=A8=D7=95=D7=90=D7=94 =D7=AA=D7=9E=D7=95=D7=A0=
+=D7=95=D7=AA =D7=9C=D7=97=D7=A5 =D7=9B=D7=90=D7=9F</a> </td>
+<td width=3D"180"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]></td><td valign=3D"top"><![endif]--></td>
+</tr>
+<!--//Pre_Header-->
+<tr>
+<td align=3D"center" valign=3D"top">
+<table align=3D"center" width=3D"640" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" class=3D"em_main_table" style=3D"width:640px; ">
+<!--block 3-->
+<tbody>
+<tr>
+<td valign=3D"top" align=3D"center" class=3D"em_aside" style=3D"font-family=
+: 'Heebo-Regular', sans-serif; font-size:29px; line-height:36px; font-weigh=
+t: 100; color:#3d3d3d; margin:0px; padding:0px;">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center">
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion" style=3D"min-width: 100%; " class=3D"stylingblock-content-wrapper">
+<tbody>
+<tr>
+<td class=3D"stylingblock-content-wrapper camarker-inner">
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" role=3D"presentat=
+ion">
+<tbody>
+<tr>
+<td align=3D"center"><a href=3D"https://click.news.htzone.co.il/?qs=3D81b35=
+d4dd8d01479eaed17a6d386597eb919333db6be510cd4519a3d445002a614a582224e5cc582=
+685b4ed655f74a155c4bb299d5b1acf98aa405d39dffb174" title=3D"Header" data-lin=
+kto=3D"https://"><img data-assetid=3D"574931" src=3D"https://image.news.htz=
+one.co.il/lib/fe38117175640479701676/m/1/e5814e85-19e3-42d5-a1f5-663b428ac4=
+3c.gif" alt=3D"" width=3D"640" style=3D"display: block; padding: 0px; text-=
+align: center; height: auto; width: 100%; border: 0px;"></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion" style=3D"min-width: 100%; " class=3D"stylingblock-content-wrapper">
+<tbody>
+<tr>
+<td class=3D"stylingblock-content-wrapper camarker-inner">
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" role=3D"presentat=
+ion">
+<tbody>
+<tr>
+<td align=3D"center"><a href=3D"https://click.news.htzone.co.il/?qs=3D81b35=
+d4dd8d01479eaed17a6d386597eb919333db6be510cd4519a3d445002a614a582224e5cc582=
+685b4ed655f74a155c4bb299d5b1acf98aa405d39dffb174" title=3D"Header" data-lin=
+kto=3D"https://"><img data-assetid=3D"575124" src=3D"https://image.news.htz=
+one.co.il/lib/fe38117175640479701676/m/1/5ba6533a-ad62-445f-9502-654e4f0980=
+6c.jpg" alt=3D"" width=3D"640" style=3D"display: block; padding: 0px; text-=
+align: center; height: auto; width: 100%; border: 0px;"></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion" style=3D"min-width: 100%; " class=3D"stylingblock-content-wrapper">
+<tbody>
+<tr>
+<td class=3D"stylingblock-content-wrapper camarker-inner">
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" role=3D"presentat=
+ion">
+<tbody>
+<tr>
+<td align=3D"center"><img data-assetid=3D"574930" src=3D"https://image.news=
+.htzone.co.il/lib/fe38117175640479701676/m/1/110ededb-ca3e-4ca0-b5e4-79907a=
+80effd.gif" alt=3D"" width=3D"640" style=3D"display: block; padding: 0px; t=
+ext-align: center; height: auto; width: 100%; border: 0px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion" style=3D"min-width: 100%; " class=3D"stylingblock-content-wrapper">
+<tbody>
+<tr>
+<td class=3D"stylingblock-content-wrapper camarker-inner">
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" role=3D"presentat=
+ion">
+<tbody>
+<tr>
+<td align=3D"center"><a href=3D"https://click.news.htzone.co.il/?qs=3D81b35=
+d4dd8d01479eaed17a6d386597eb919333db6be510cd4519a3d445002a614a582224e5cc582=
+685b4ed655f74a155c4bb299d5b1acf98aa405d39dffb174" title=3D"Header" data-lin=
+kto=3D"https://"><img data-assetid=3D"575797" src=3D"https://image.news.htz=
+one.co.il/lib/fe38117175640479701676/m/1/a27f4138-f71a-4a3b-832c-67229a7acf=
+2d.jpg" alt=3D"" width=3D"640" style=3D"display: block; padding: 0px; text-=
+align: center; height: auto; width: 100%; border: 0px;"></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion" style=3D"min-width: 100%; " class=3D"stylingblock-content-wrapper">
+<tbody>
+<tr>
+<td class=3D"stylingblock-content-wrapper camarker-inner">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion" style=3D"background-color: transparent; min-width: 100%; " class=3D"st=
+ylingblock-content-wrapper">
+<tbody>
+<tr>
+<td style=3D"padding: 0px 0px 5px; " class=3D"stylingblock-content-wrapper =
+camarker-inner">
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" role=3D"presentat=
+ion">
+<tbody>
+<tr>
+<td align=3D"center"><img data-assetid=3D"575122" src=3D"https://image.news=
+.htzone.co.il/lib/fe38117175640479701676/m/1/60795665-789e-4009-97b9-31dfa4=
+84390e.jpg" alt=3D"" width=3D"640" style=3D"display: block; padding: 0px; t=
+ext-align: center; height: auto; width: 100%; border: 0px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion" style=3D"min-width: 100%; " class=3D"stylingblock-content-wrapper">
+<tbody>
+<tr>
+<td class=3D"stylingblock-content-wrapper camarker-inner">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion" style=3D"background-color: transparent; min-width: 100%; " class=3D"st=
+ylingblock-content-wrapper">
+<tbody>
+<tr>
+<td style=3D"padding: 0px 0px 5px; " class=3D"stylingblock-content-wrapper =
+camarker-inner">
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" role=3D"presentat=
+ion">
+<tbody>
+<tr>
+<td align=3D"center"><a href=3D"https://click.news.htzone.co.il/?qs=3D4aff4=
+ea3158db65d6c8aa1569987d46ed697bf74ab8f4b1f9a5f21db886bb3bc7f5916f6e557c611=
+fd9b5d710fdd9d0dc6bb54aed650404139ee9470447ef4b0" title=3D"birthday16" data=
+-linkto=3D"https://"><img data-assetid=3D"565706" src=3D"https://image.news=
+.htzone.co.il/lib/fe38117175640479701676/m/1/a55889b0-d8d5-4bb0-bcb2-58c073=
+b5c4dc.png" alt=3D"" width=3D"640" style=3D"display: block; padding: 0px; t=
+ext-align: center; height: auto; width: 100%; border: 0px;"></a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion" style=3D"min-width: 100%; " class=3D"stylingblock-content-wrapper">
+<tbody>
+<tr>
+<td class=3D"stylingblock-content-wrapper camarker-inner">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion" style=3D"background-color: #3D3D3D; min-width: 100%; " class=3D"stylin=
+gblock-content-wrapper">
+<tbody>
+<tr>
+<td style=3D"padding: 0px; " class=3D"stylingblock-content-wrapper camarker=
+-inner">
+<table cellspacing=3D"0" cellpadding=3D"0" role=3D"presentation" style=3D"w=
+idth: 100%;">
+<tbody>
+<tr>
+<td>
+<table cellspacing=3D"0" cellpadding=3D"0" role=3D"presentation" style=3D"w=
+idth: 100%;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"responsive-td" style=3D"width: 100%; padding-bo=
+ttom: 3px;">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion" style=3D"min-width: 100%; " class=3D"stylingblock-content-wrapper">
+<tbody>
+<tr>
+<td class=3D"stylingblock-content-wrapper camarker-inner">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top"><img mc:edit=3D"header" class=3D"em_ful=
+l_img" src=3D"https://image.news.htzone.co.il/lib/fe38117175640479701676/m/=
+1/d38888f5-7453-49dd-a13f-830ef3c2baee.jpg" width=3D"640" alt=3D"" border=
+=3D"0" style=3D"display:block;font-family:Arial, sans-serif; font-size:20px=
+; line-height:25px; color:#424242; max-width:640px;">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table cellspacing=3D"0" cellpadding=3D"0" role=3D"presentation" style=3D"w=
+idth: 100%;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"responsive-td" style=3D"width: 100%; padding-to=
+p: 3px;">
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion" style=3D"min-width: 100%; " class=3D"stylingblock-content-wrapper">
+<tbody>
+<tr>
+<td class=3D"stylingblock-content-wrapper camarker-inner">
+<table class=3D"em_wrapper" align=3D"center" width=3D"640" border=3D"0" cel=
+lspacing=3D"0" cellpadding=3D"0" style=3D"width:640px;">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" height=3D"100%" style=3D"background-pos=
+ition:center top; background-color:#3d3d3d;">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center">
+<tbody>
+<tr>
+<td align=3D"center" dir=3D"rtl" valign=3D"top">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center">
+<!--[if (gte mso 9)|(IE)]><table dir=3D"rtl" width=3D"100%" align=3D"center=
+" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td dir=3D"ltr"><![e=
+ndif]-->
+<tbody>
+<tr>
+<td width=3D"85" style=3D"width:8Spx;" class=3D"em_spacer">&nbsp;</td>
+<td align=3D"center" valign=3D"middle"><a href=3D"https://click.news.htzone=
+.co.il/?qs=3D4aff4ea3158db65de95092ebb17cb4c0fc638462893f76641f6d3890c41e78=
+229629237b0bfc100e8db7cb5d78fd649f12ef051e164d54ac21e3015ebf3c7b92" target=
+=3D"_blank" style=3D"text-decoration:none;"><img mc:edit=3D"website" class=
+=3D"em_full_img" src=3D"https://image.news.htzone.co.il/lib/fe3811717564047=
+9701676/m/1/26ad3e32-5801-4557-93b6-bfeeec7d1617.png" width=3D"100%" height=
+=3D"100%" alt=3D"website" style=3D"display:block; font-family:Arial, sans-s=
+erif; font-size:12px;line-height:16px;color:#000000;font-weight:bold; max-w=
+idth:100%;" border=3D"0">
+</a></td>
+<td align=3D"center" valign=3D"middle"><a href=3D"https://click.news.htzone=
+.co.il/?qs=3D4aff4ea3158db65db244b986bf8661e81992f2181fb8be9612d787c4e97f17=
+22ccfb8cafa5f12fe39528508f961750899fc049b7a9fc8b55dd2c4b1d7aa446e3" target=
+=3D"_blank" style=3D"text-decoration:none;"><img mc:edit=3D"telegram" class=
+=3D"em_full_img" src=3D"https://image.news.htzone.co.il/lib/fe3811717564047=
+9701676/m/1/6c6510d7-ac72-4d41-b5cb-b6df41bede7e.png" width=3D"100%" height=
+=3D"100%" alt=3D"whatsapp" style=3D"display:block; font-family:Arial, sans-=
+serif; font-size:12px;line-height:16px;color:#000000;font-weight:bold;max-w=
+idth:100%;" border=3D"0">
+</a></td>
+<td align=3D"center" valign=3D"middle"><a href=3D"https://click.news.htzone=
+.co.il/?qs=3D4aff4ea3158db65dc0687a928ee9548fab5c9023d9940479083e600175084a=
+548d84cb0ef90c0177d28ce360978fbb578ac89d42dc825db380ae7e3a661d12fb" target=
+=3D"_blank" style=3D"text-decoration:none;"><img mc:edit=3D"customer_servic=
+e" class=3D"em_full_img" src=3D"https://image.news.htzone.co.il/lib/fe38117=
+175640479701676/m/1/4f55d152-e1ba-4082-8bc7-1442ac4c6994.png" width=3D"100%=
+" height=3D"100%" alt=3D"customer_service" style=3D"display:block; font-fam=
+ily:Arial, sans-serif; font-size:12px;line-height:16px;color:#000000;font-w=
+eight:bold;max-width:100%;" border=3D"0">
+</a></td>
+<td width=3D"25">&nbsp;</td>
+<td align=3D"center" valign=3D"middle"><a href=3D"https://click.news.htzone=
+.co.il/?qs=3D4aff4ea3158db65d0a984b3d952477e5d5460991eb448cc6b39a183b3c0bc1=
+47abfd6b9b0cc001ea088abba1d82c6194594b9038a36920bfbb92a8743ecd8007" target=
+=3D"_blank" style=3D"text-decoration:none;"><img mc:edit=3D"app" class=3D"e=
+m_full_img" src=3D"https://image.news.htzone.co.il/lib/fe381171756404797016=
+76/m/1/98ec5340-f2a0-45d4-8d86-9aadc97125d7.png" width=3D"100%" height=3D"1=
+00%" alt=3D"app" style=3D"display:block; font-family:Arial, sans-serif; fon=
+t-size:12px;line-height:16px;color:#000000;font-weight:bold; max-width:100%=
+;" border=3D"0">
+</a></td>
+<td width=3D"25">&nbsp;</td>
+<td align=3D"center" valign=3D"middle"><a href=3D"https://click.news.htzone=
+.co.il/?qs=3D4aff4ea3158db65de2607f205198fa64c4ecb46d4eb19b5463f39e18bc4317=
+c8ccc9e62e19a9d901ded7820f9ee42bb64c48eadc8d8d21ea037c4dc785bdb135" target=
+=3D"_blank" style=3D"text-decoration:none;"><img mc:edit=3D"fb" class=3D"em=
+_full_img" src=3D"https://image.news.htzone.co.il/lib/fe3811717564047970167=
+6/m/1/59de275d-a1bc-4ca1-a1d5-1102eef587d8.png" width=3D"100%" height=3D"10=
+0%" alt=3D"FB" style=3D"display:block; font-family:Arial, sans-serif; font-=
+size:12px;line-height:16px;color:#000000;font-weight:bold;max-width:100%;" =
+border=3D"0">
+</a></td>
+<td align=3D"center" valign=3D"middle"><a href=3D"https://click.news.htzone=
+.co.il/?qs=3D4aff4ea3158db65dd47fed044ad8f66f393ab5c812ef5b4cef7da210113431=
+377c590c6b3064effc918e7b4ea6068fe418dc91930aea81d2fca343e519d6215c" target=
+=3D"_blank" style=3D"text-decoration:none;"><img mc:edit=3D"instagram" clas=
+s=3D"em_full_img" src=3D"https://image.news.htzone.co.il/lib/fe381171756404=
+79701676/m/1/5e78ca51-bd2d-40c1-9374-b0d72e2eecd8.png" width=3D"100%" heigh=
+t=3D"100%" alt=3D"instagram" style=3D"display:block; font-family:Arial, san=
+s-serif; font-size:12px;line-height:16px;color:#000000;font-weight:bold;max=
+-width:100%;" border=3D"0">
+</a></td>
+<td align=3D"center" valign=3D"middle"><a href=3D"https://click.news.htzone=
+.co.il/?qs=3D4aff4ea3158db65d2b58133257fcb1e5839df674a80cfe7b2a96b281e6b0a5=
+ff4c8595e9d2d14a2069d306ba7df003b8ce32bdc786e66efa0ffe0c58a6b24e09" style=
+=3D"text-decoration:none;"><img mc:edit=3D"linkdin" class=3D"em_full_img" s=
+rc=3D"https://image.news.htzone.co.il/lib/fe38117175640479701676/m/5/ac73ae=
+54-3b4c-42f1-bd9a-4b7ce7d03ff5.png" width=3D"100%" height=3D"100%" alt=3D"t=
+elegram" style=3D"display:block; font-family:Arial, sans-serif; font-size:1=
+2px;line-height:16px;color:#000000;font-weight:bold;max-width:100%;" border=
+=3D"0">
+</a></td>
+<td width=3D"85" style=3D"width:8Spx;" class=3D"em_spacer">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]>     </v:textbox>   </v:rect> <![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" role=3D"presentat=
+ion" style=3D"min-width: 100%; " class=3D"stylingblock-content-wrapper">
+<tbody>
+<tr>
+<td class=3D"stylingblock-content-wrapper camarker-inner">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"em_main_table" style=3D"width:620px;" width=3D"620">
+<!--Footer-->
+<tbody>
+<tr>
+<td align=3D"center" bgcolor=3D"#ffffff" class=3D"em_aside" style=3D"paddin=
+g:0 3px;" valign=3D"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"em_wrapper" style=3D"width:600px;" width=3D"600">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top">
+<table align=3D"right" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cla=
+ss=3D"em_wrapper" style=3D"width:600px;" width=3D"600">
+<tbody>
+<tr>
+<td class=3D"em_height" height=3D"30">&nbsp;</td>
+</tr>
+<tr>
+<td align=3D"center" class=3D"em_justify" dir=3D"rtl" mc:edit=3D"footer1" s=
+tyle=3D"font-family: 'Assistant', sans-serif; font-size:13px; line-height:1=
+5px; color:#000000; text-align: justify; " valign=3D"top">
+=D7=94=D7=9E=D7=90=D7=92=D7=A8 =D7=9E=D7=A0=D7=95=D7=94=D7=9C =D7=A2&quot;=
+=D7=99 =D7=97=D7=91=D7=A8=D7=AA =D7=94=D7=99=D7=99 =D7=91=D7=99=D7=96 =D7=
+=91=D7=A2&quot;=D7=9E, =D7=A8=D7=97=E2=80=99 =D7=A8=D7=A4=D7=A4=D7=95=D7=A8=
+=D7=98 3 =D7=9B=D7=A4=D7=A8 =D7=A1=D7=91=D7=90, =D7=95=D7=94=D7=A4=D7=A0=D7=
+=99=D7=94 =D7=90=D7=9C=D7=99=D7=9A =D7=A0=D7=A2=D7=A9=D7=99=D7=AA =D7=91=D7=
+=93=D7=99=D7=95=D7=95=D7=A8 =D7=99=D7=A9=D7=99=D7=A8 =D7=A2=D7=9C =D7=91=D7=
+=A1=D7=99=D7=A1 =D7=9E=D7=90=D7=92=D7=A8 =D7=9E=D7=99=D7=93=D7=A2 =D7=A8=D7=
+=A9=D7=95=D7=9D =D7=A9=D7=9C =D7=9E=D7=95=D7=A2=D7=93=D7=95=D7=9F =D7=94=D7=
+=99=D7=99=D7=98=D7=A7=D7=96=D7=95=D7=9F =D7=A9=D7=9E=D7=A1=D7=A4=D7=A8=D7=
+=95 700028997. =D7=91=D7=91=D7=A7=D7=A9=D7=94 =D7=9C=D7=90 =D7=9C=D7=A2=D7=
+=A0=D7=95=D7=AA =D7=9C=D7=9E=D7=99=D7=99=D7=9C =D7=96=D7=94 - =D7=94=D7=95=
+=D7=93=D7=A2=D7=AA =D7=93=D7=95=D7=90=D7=A8 =D7=96=D7=95 =D7=A0=D7=A9=D7=9C=
+=D7=97=D7=94 =D7=9E=D7=9B=D7=AA=D7=95=D7=91=D7=AA =D7=93=D7=95=D7=90=D7=A8 =
+=D7=90=D7=9C=D7=A7=D7=98=D7=A8=D7=95=D7=A0=D7=99 =D7=A9=D7=90=D7=99=D7=A0=
+=D7=94 =D7=A0=D7=91=D7=93=D7=A7=D7=AA. =D7=A4=D7=A8=D7=98=D7=99=D7=9A =D7=
+=94=D7=AA=D7=A7=D7=91=D7=9C=D7=95 =D7=9E=D7=9E=D7=9A =D7=91=D7=9E=D7=A1=D7=
+=92=D7=A8=D7=AA =D7=94=D7=A6=D7=98=D7=A8=D7=A4=D7=95=D7=AA=D7=9A
+ =D7=9C=D7=9E=D7=95=D7=A2=D7=93=D7=95=D7=9F. =D7=90=D7=9D =D7=91=D7=A8=D7=
+=A6=D7=95=D7=A0=D7=9A =D7=9C=D7=94=D7=A1=D7=99=D7=A8 =D7=90=D7=AA =D7=A2=D7=
+=A6=D7=9E=D7=9A =D7=9E=D7=A8=D7=A9=D7=99=D7=9E=D7=94 =D7=96=D7=95 - =D7=9C=
+=D7=A8=D7=A9=D7=95=D7=AA=D7=9A =D7=9C=D7=99=D7=A0=D7=A7 =D7=94=D7=A1=D7=A8=
+=D7=94 =D7=91=D7=AA=D7=97=D7=AA=D7=99=D7=AA =D7=94=D7=9E=D7=99=D7=99=D7=9C =
+=D7=90=D7=95 =D7=91=D7=90=D7=9E=D7=A6=D7=A2=D7=95=D7=AA =D7=A9=D7=9C=D7=99=
+=D7=97=D7=AA =D7=93=D7=95=D7=90=D7=A8 =D7=90=D7=9C=D7=A7=D7=98=D7=A8=D7=95=
+=D7=A0=D7=99 =D7=9C=D7=9B=D7=AA=D7=95=D7=91=D7=AA =D7=94=D7=9E=D7=99=D7=99=
+=D7=9C:
+<a href=3D"mailto:unsubscribe@htzone.co.il" style=3D"text-decoration:none; =
+color:#000000;" target=3D"_blank">
+unsubscribe@htzone.co.il</a>. =D7=98.=D7=9C.=D7=97 =D7=94=D7=AA=D7=9E=D7=95=
+=D7=A0=D7=95=D7=AA =D7=9C=D7=94=D7=9E=D7=97=D7=A9=D7=94 =D7=91=D7=9C=D7=91=
+=D7=93. =D7=97=D7=91=D7=A8=D7=AA =D7=94=D7=99=D7=99-=D7=91=D7=99=D7=96 =D7=
+=91=D7=A2&quot;=D7=9E =D7=90=D7=95 =D7=A1=D7=A4=D7=A7=D7=99=D7=94 =D7=9C=D7=
+=90 =D7=99=D7=97=D7=95=D7=99=D7=99=D7=91=D7=95 =D7=91=D7=92=D7=99=D7=9F =D7=
+=98=D7=A2=D7=95=D7=99=D7=95=D7=AA =D7=95/=D7=90=D7=95 =D7=94=D7=A9=D7=9E=D7=
+=98=D7=95=D7=AA =D7=A9=D7=A0=D7=A4=D7=9C=D7=95, =D7=91=D7=AA=D7=95=D7=9D =
+=D7=9C=D7=91, =D7=91=D7=9E=D7=A1=D7=9E=D7=9A =D7=96=D7=94, =D7=95/=D7=90=D7=
+=95 =D7=91=D7=A4=D7=A8=D7=98=D7=99=D7=95.<br>
+<b>=D7=91=D7=94=D7=AA=D7=90=D7=9D =D7=9C=D7=AA=D7=A0=D7=90=D7=99=D7=9D =D7=
+=94=D7=9E=D7=9C=D7=90=D7=99=D7=9D =D7=91=D7=90=D7=AA=D7=A8 =D7=94=D7=99=D7=
+=99=D7=98=D7=A7=D7=96=D7=95=D7=9F.</b><br>
+<a data-linkto=3D"https://" href=3D"https://click.news.htzone.co.il/?qs=3D3=
+765193ec3b9f467803165df5cd335c8dc1aa8456cb65bfe8faf9b032d305d538569b04a30ef=
+709492e08f9a03bdaed702207cd7b10b3fb35a0d079a1a56f992" style=3D"text-decorat=
+ion:underline;" title=3D"* =D7=91=D7=9B=D7=A4=D7=95=D7=A3 =D7=9C=D7=AA=D7=
+=A7=D7=A0=D7=95=D7=9F &nbsp;PRO=C2=B2 &gt;">*
+ =D7=91=D7=9B=D7=A4=D7=95=D7=A3 =D7=9C=D7=AA=D7=A7=D7=A0=D7=95=D7=9F &nbsp;=
+PRO=C2=B2 &gt;</a></td>
+</tr>
+<tr>
+<td class=3D"em_height" height=3D"20">&nbsp;</td>
+</tr>
+<tr>
+<td align=3D"center" class=3D"em_center" dir=3D"rtl" mc:edit=3D"foter3" sty=
+le=3D"font-family: 'Assistant', sans-serif; font-size:14px; line-height:15p=
+x; color:#000000; padding-bottom:20px;" valign=3D"top">
+<span align=3D"center"><a href=3D"https://click.news.htzone.co.il/?qs=3D376=
+5193ec3b9f467bc6c22fed26035f652a0ab0973ce735aa021bc06fcf4580e7544e2d5591c1b=
+56a7e6cef3e0e00bf51e9900d67ba4c11a8680f28a0189df62" style=3D"text-decoratio=
+n:underline; color:#000000;" target=3D"_blank">=D7=94=D7=A1=D7=A8</a></span=
+></td>
+</tr>
+<tr>
+<td class=3D"em_height" height=3D"20">&nbsp;</td>
+</tr>
+<tr>
+<td align=3D"center" class=3D"em_center" mc:edit=3D"footer2" style=3D"font-=
+family: 'Assistant', sans-serif; font-size:14px; line-height:15px; color:#0=
+00000; padding-bottom:20px;" valign=3D"top">
+<!--[if (gte mso 9)|(IE)]><table dir=3D"rtl" width=3D"100%" align=3D"center=
+" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td dir=3D"ltr"><![e=
+ndif]--><a href=3D"#" style=3D"text-decoration:none; color:#000000;" target=
+=3D"_blank">High Biz | =D7=A8=D7=A4=D7=A4=D7=95=D7=A8=D7=98 3 | =D7=9B=D7=
+=A4=D7=A8 =D7=A1=D7=91=D7=90 | 4465141
+ | =D7=99=D7=A9=D7=A8=D7=90=D7=9C | 072-2200989</a></td>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]></td><td valign=3D"top"><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!--//Footer-->
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"em_hide" style=3D"line-height:1px;min-widt=
+h:620px;background-color:#ffffff;">
+<img alt=3D"" border=3D"0" height=3D"1" src=3D"images/spacer.gif" style=3D"=
+max-height:1px; min-height:1px; display:block; width:620px; min-width:620px=
+;" width=3D"620"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]></td><td valign=3D"top"><![endif]--></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<!--//block 3-->
+</tbody>
+</table>
+<!--//Footer--><!--//Footer-->
+<div class=3D"em_hide" style=3D"white-space: nowrap; display: none; font-si=
+ze:0px; line-height:0px;">
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp=
+; &nbsp; &nbsp; &nbsp;</div>
+<img src=3D"https://click.news.htzone.co.il/open.aspx?ffcb10-fec31d707d6700=
+79-fe5e12727560027b7d15-fe38117175640479701676-ff5d16777c-fe3415707460077e7=
+d1774-ff3610707561&amp;d=3D500019&amp;bmt=3D0" width=3D"1" height=3D"1" alt=
+=3D"">
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+ </body>
+</html>
+
+--4OaLRFcaZoVO=_?:--

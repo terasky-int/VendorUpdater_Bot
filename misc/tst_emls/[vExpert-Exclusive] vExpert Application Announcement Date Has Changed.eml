@@ -1,0 +1,758 @@
+Received: from DU2P194MB2198.EURP194.PROD.OUTLOOK.COM (2603:10a6:10:49c::20)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Fri, 16 Feb 2024
+ 02:53:48 +0000
+Received: from DU2PR04CA0261.eurprd04.prod.outlook.com (2603:10a6:10:28e::26)
+ by DU2P194MB2198.EURP194.PROD.OUTLOOK.COM (2603:10a6:10:49c::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7292.26; Fri, 16 Feb
+ 2024 02:53:45 +0000
+Received: from DU2PEPF00028D00.eurprd03.prod.outlook.com
+ (2603:10a6:10:28e:cafe::d5) by DU2PR04CA0261.outlook.office365.com
+ (2603:10a6:10:28e::26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7270.39 via Frontend
+ Transport; Fri, 16 Feb 2024 02:53:45 +0000
+Authentication-Results: spf=permerror (sender IP is 172.246.34.160)
+ smtp.mailfrom=vmwebapp.com; dkim=pass (signature was verified)
+ header.d=vmwebapp.com;dmarc=bestguesspass action=none
+ header.from=vmwebapp.com;compauth=pass reason=109
+Received-SPF: PermError (protection.outlook.com: domain of vmwebapp.com used
+ an invalid SPF mechanism)
+Received: from vmwebapp.com (172.246.34.160) by
+ DU2PEPF00028D00.mail.protection.outlook.com (10.167.242.184) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7292.25 via Frontend Transport; Fri, 16 Feb 2024 02:53:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vmwebapp.com;
+ q=dns/txt; s=mail; bh=yP1IzHBNWtJjU6WnHH+lE9YCFmficKJyyAdXohu1UNo=;
+ h=from:reply-to:subject:date:to:mime-version:content-type:list-id:list-help:list-unsubscribe:list-subscribe:list-post:list-owner:list-archive:x-csa-complaints:list-unsubscribe-post;
+        b=jGTkrmfh5xHeUZREyo7BWvum7QLv5ufWEBx7NvGK60cQGyMQLadbf4oRbB3CqsT2sRRRH4Bj5mzu
+        WWpt5qpL+khimIlmiTnsts95AB7ZhgWuY1HayYZ5fJH5SSdsMiUHM21UNy/2vL5sYESO+/WMmlr9
+        MXGDODrO+7ZiIefmAcY=
+Received: by smtp-relay.sendinblue.com with ESMTP id 0c5702d7-e2ab-4d9a-8ff1-b9719612134c; Fri, 16 February 2024 02:53:44 +0000 (UTC)
+X-Mailin-EID: MjAzMTQyODI2fmRhdmlkZ0B0ZXJhc2t5LmNvbX48MTcwODA1MjAxMTcwLjM0LjE1ODYzNTkwMTgzNTQ4MDM5MjE4QG1haWxtYW4tY29yZT5%2Bdm13ZWJhcHAuY29t
+Date: Fri, 16 Feb 2024 02:52:47 +0000
+Subject: [vExpert-Exclusive] vExpert Application Announcement Date Has Changed
+Received: from [172.19.199.3] (ip-172-19-199-3.ec2.internal [172.19.199.3]) by ip-172-31-30-41.ec2.internal (Postfix) with ESMTP id 6A1A1862119; Fri, 16 Feb 2024 02:53:32 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google; t=1708051971; x=1708656771; darn=vmwebapp.com; h=content-language:mime-version:accept-language:message-id:date :thread-index:thread-topic:subject:to:from:from:to:cc:subject:date :message-id:reply-to; bh=yKCHmFjfUM/tU8leBZcczQlHe8n4d5S3mELdY6OTaRk=; b=HFKCf+Wt8XjsnLsFv0x81gAeeARR6xj86pDgMl+uH1t4EVI+FI5iVCJEsVuSwANdpF Tt+YBNdsFgLSM1DmJuIk2PosTSm5Em2mdDr8AbWs5TeVa3g9tGG/rgW5bIN2SAHFSVR9 LnA5iZ8NiA4d2yzhbyJq5wzrzoBcLpvWdpk1g=
+Thread-Topic: vExpert Application Announcement Date Has Changed
+Thread-Index: AQHaYIM4lq+SVD69a0CZ7vHsRM1DXA==
+Accept-Language: en-US
+Content-Language: en-US
+X-Mailman-Rule-Hits: member-moderation
+X-Mailman-Rule-Misses: dmarc-mitigation; no-senders; approved; emergency; loop; banned-address
+Message-ID-Hash: 2JMRPS5SA2A5G2MFCVVQGIIC7D53MKZ3
+X-Mailman-Approved-At: Fri, 16 Feb 2024 02:53:23 +0000
+X-Mailman-Version: 3.3.8
+Precedence: list
+Reply-To: vexpert-exclusive@vmwebapp.com
+List-Id: vExpert Exclusive <vexpert-exclusive.vmwebapp.com>
+Archived-At: <https://mailman.vmwebapp.com/hyperkitty/list/vexpert-exclusive@vmwebapp.com/message/7NVA2UF2F7BOZP72JYMZGCVBJG2CAIY2/>
+List-Archive: <https://mailman.vmwebapp.com/hyperkitty/list/vexpert-exclusive@vmwebapp.com/>
+List-Help: <mailto:vexpert-exclusive-request@vmwebapp.com?subject=help>
+List-Owner: <mailto:vexpert-exclusive-owner@vmwebapp.com>
+List-Post: NO
+List-Subscribe: <mailto:vexpert-exclusive-join@vmwebapp.com>
+Content-Type: multipart/mixed; boundary="===============1749117367776315804=="
+BCC: <davidg@terasky.com>
+Message-Id: <0c5702d7-e2ab-4d9a-8ff1-b9719612134c@smtp-relay.sendinblue.com>
+Origin-messageId: <170805201170.34.15863590183548039218@mailman-core>
+To: <vexpert-exclusive@vmwebapp.com>
+X-sib-id: sf3aD08IEJBxX-kXHx7koAJ2Qr6zmitgax8hlqtp_BLAI7Es8QJFFXOCdbgzjTaK_mFuFLyFbcc2sxwJn5TXQHDUlGkQ3ervX8FMJyd2cef9troicV3ZONkgjBuxLMOx2OpgWLUFTTbG1HTkM_C0eYp4Vuoonxt4rc1tcnqzemk
+X-CSA-Complaints: csa-complaints@eco.de
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Feedback-ID: 172.246.34.160:5804760_-1:5804760:Sendinblue
+From: "vExpert Exclusive" <vexpert-exclusive@vmwebapp.com>
+List-Unsubscribe: <https://r.vmwebapp.com/tr/un/li/5a7ZHw7Bg17SXnbE5CGEhGWL4I6q6XoPfFrw_-NFJrxFxMH6jD_5vg5LOy741k7Oprgo1VDp0rt_HnWdzzti7t0fY9LyT0lSjtc_0_x1_2wWU92nMUYk5bYhyXb-MF72olzLQC13riIVWEUT3hS_99LOldh4wXd2ZDffLqo91s9PsUsx15jJSSDOxVs6Ib7n4xRP3SHwGKNy4rDR50Iud0ToBDRjXcExngO3mfCcV_pjWflgd72oe37au-7nD2i0DYbl>
+Return-Path: bounces-203142826-vexpert-exclusive=vmwebapp.com@vmwebapp.com
+X-MS-Exchange-Organization-ExpirationStartTime: 16 Feb 2024 02:53:44.9829
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: d94ebf5b-d977-4531-69c4-08dc2e9a7dc7
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU2PEPF00028D00:EE_|DU2P194MB2198:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: DU2PEPF00028D00.eurprd03.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: d94ebf5b-d977-4531-69c4-08dc2e9a7dc7
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-Forefront-Antispam-Report: CIP:172.246.34.160;CTRY:FR;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:vmwebapp.com;PTR:vmwebapp.com;CAT:NONE;SFS:(13230031)(4636009)(230273577357003)(451199024)(31686004)(6200100001)(58800400005)(166002)(356005)(3450700001)(30864003)(5660300002)(76236004)(1096003)(7596003)(6862004)(7636003)(8676002)(66899024)(83380400001)(31696002)(22186003)(26005)(336012)(6266002)(33964004)(6666004)(44144004)(19810500001)(9686003)(76899018)(1406899027);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Feb 2024 02:53:44.8423
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: d94ebf5b-d977-4531-69c4-08dc2e9a7dc7
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: DU2PEPF00028D00.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DU2P194MB2198
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.2520023
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.7292.027
+X-Message-Flag: Follow up
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?SXlHUWY2RVhDWkpyb2VTSTFoalFIcUFJZXFBSnFmOVJGUUVzc2prN2RKdzJZ?=
+ =?utf-8?B?ZUxRV1VhZ3J1Yy9MQ0dVUys1NFJXbzNaTFhRWTYwRGJBczBsTmtGcTA1THdz?=
+ =?utf-8?B?RTErTmVuYzRNdGpiTlRPN2lwcVB0UHhNUTlGWHEzYU5IYlVsTFNOWDR6OHVH?=
+ =?utf-8?B?eUl4Y1ZuczBnNkFSZnIyOU0ySUhmWFE1d1MyWGRtMlZjMHppVnFoU2lYZkxQ?=
+ =?utf-8?B?UktNUE91MEphZ0kzU3JIUW9vQUY3bjNRZjFCc21NeFFWSVVzSHNtekNJRU1F?=
+ =?utf-8?B?c2xQbzBIMGp5SnhTSWtBYk9HSXlGTDJhUkF1OG5jWFZFZlBwbGFUK1VETFQ5?=
+ =?utf-8?B?MVZKRm1CRkR4aDhHSXl6cmJ4NURXOGtRRW9aSVRnc1pxbnN0UTJPNEpIY0hL?=
+ =?utf-8?B?ZFk5TExZN0h4SUN6SVlNLzZPUXJCZ1RRY3k2WUcyb0FiQ2ZDQkdYOGVMN0ZI?=
+ =?utf-8?B?RlgycjdYOFMxRU1CTGt3TVUzUzMwWEx3ZDIvcmxidmFxL2ZXTlBvaWE2c3Zk?=
+ =?utf-8?B?SlgwUVFqYWUyaFBrNjBubm9Yb25MK2Jmd2xya0tSdHc2dm52dUpiSncySFZw?=
+ =?utf-8?B?NzRwTHVPVVBTQjVYa21RRGRYY1N6OEV0TXBZenRoZHRqeVQ0dGJtRXNialBx?=
+ =?utf-8?B?MFZyVW5acXVDQWxKNlNQQ2lFdzlaOHRiTXdqUGNkYURjWGVtTXo1UjllN2N3?=
+ =?utf-8?B?VTFKbXowb0dIMUxVeXVZTTFrcG1iQ3gxVWxMN25Cd0ozaldMRWFTNVRwem93?=
+ =?utf-8?B?Nkh3a1VhdFFOR1ptSnBQak1lMDA0ZXhxdno4Um03TExWUGJyYnhYNEFaYlMw?=
+ =?utf-8?B?Z2FGR2x4Mm54N005V29wblEwbFhFUGlHa3lid0JjT0JuTGtJemVoZW1Hc0RM?=
+ =?utf-8?B?MVJhWldIRVJBQVdRVkVCalBEQzZrY3hSNnRsOVNYdGFOOWVhaktIRWxXcGhH?=
+ =?utf-8?B?WGtoYTdqZ2h4d0VTSmZCaVFEamt4QjJKSHVTTTF1N2RlcjdHYVlvMU93NWFR?=
+ =?utf-8?B?dk1Rb0l2cUhJQ3cvUU04N0t2L1lLdFJnUmliOHRnbkN0VTg4Q0QzeTRyb2Z5?=
+ =?utf-8?B?UUczR2xmZm9UaWwvOFhGbzE5TWE5SmV0ZktIbjVDdWs4ODZzY25CekNtVnJO?=
+ =?utf-8?B?TTBQbTFtREljL3puY3U2Tzd0YnB1dXlpK1I2L3NvcFF2S0FPd0lmc2Ftak9Z?=
+ =?utf-8?B?ditmZXdIRGtKUVNMdkpzN1VMbnVnd0ZmY25LbWljcVFlcTQzay8rMHllUGFv?=
+ =?utf-8?B?cWQ3QVdZK01vd1hBK3hxQ3laMkZ3cUdjOTJPeUd4SWx3VlROZk1zMnBJTnJT?=
+ =?utf-8?B?aUpyY3JYUkh4ejVhUmFnb2RnTEh5T3hoMzNYeGVhdUFSRjlSUWVoK1Q0L2NT?=
+ =?utf-8?B?bkRFcTFKMnZzVS9ETGIwbkF3bEpyeEZ2eFZTSC9rRlRVblArMFZBMUc2WGdZ?=
+ =?utf-8?B?MndmTWc3dmFwU2JSTXloNVRLQldXc010TTNNOFRuSjBZb3N3TE1rZUZYbmtM?=
+ =?utf-8?B?dEZkY1o3bGhIVld2S1pYOFZYZ3R2dTdVL0dqVHFMeUFyOXlmTG1YVm5aNUh1?=
+ =?utf-8?B?Y0dCYWF0Sk1UZXBiVVlQbFdTZ29YTGNmSHpzRmUyRUdISFI4Y1VPWmRZYXpR?=
+ =?utf-8?B?MTJYYktib2RsdEFIQmVZUnZZdE1HMjUzUlZXeWVDUXJ6YXVuVkgwVkFGNWJs?=
+ =?utf-8?B?Z0lmTmZwR29QUkxaOVQwUVo4Tm1obmZpQXIyWEFGQnVoemZscHJyOEtoK05E?=
+ =?utf-8?B?MmpHcjFvSWFpQXpsSnFoajJ3bjU0Ny85NTFKWTRTTlVaTzVJSWp0MzUrdnla?=
+ =?utf-8?B?cys2ZTh5VzREdisvZXlTSzNlWkdMdVl6WGQ0TEYzSXgwUFMvRzdCY1dvckZ5?=
+ =?utf-8?B?TlFkbDBubTg4Q3RPejhjQ21UQ1NodXBpN1oxRitTMTFKTkJSV3lTOGRXK2Ri?=
+ =?utf-8?B?R05ici9GWnFrTFhTbXB2KzZVZGpmbVVscGdJUkVpQlo2cHFjcW9sWFVTT3ZG?=
+ =?utf-8?B?VmNIc2tOd2M3MEpoajdPYlQwS2szU2s5TjFLckE2eVJRL29OVWxVQmtxK2ZT?=
+ =?utf-8?B?OEVlb0QwVnR6VFQ5aENDcCtOMEF1a01Cc1VxY1hXbzh3TG5ZclpzTStDcUZY?=
+ =?utf-8?B?Rmx3WVpTUnV4U2tySTlqR3lkaVhEMlBCVFA4L3dwZEx3bGxJdWlCaEdITkVt?=
+ =?utf-8?B?YzkwZ1VpUENZWXdXek8xclY2Q0F1Uno3TUFaYXRoNVQ1dk54V2ZkVkZDeDY0?=
+ =?utf-8?B?Z0loWEQxdmdMT05DK0RBcWxWdXJOYUErbXhiaytGdFJYUUtYQU50M3F6TEx5?=
+ =?utf-8?B?OGI5ZnhkRk43bUt4NmtzUkpIL2xrQlRseEgwTkhGaktNS09pdWVEREV4dG5n?=
+ =?utf-8?B?ZCtEdHZ6ZFNCMFpEaUNscDJQd201ZC82RFRKNlV2V2ZaY1U5dEQwbnFlMXo1?=
+ =?utf-8?B?eSsvT2VFVE5URUwxNmdmdEU0citnV3l5SFNTZUFaVnA3eWFLenBIang4cEpR?=
+ =?utf-8?B?eWJDZzA5cWswVTFnTnVzTXJucVdrZk5KQTV6dVlEQjFMejJCNGRFQmJURFF0?=
+ =?utf-8?Q?K4zGo0USo=3D?=
+MIME-Version: 1.0
+
+--===============1749117367776315804==
+Content-Language: en-US
+Content-Type: multipart/alternative;
+	boundary="_000_DM8P221MB04716FC5E25DD9681D325F0EF24C2DM8P221MB0471NAMP_"
+
+--_000_DM8P221MB04716FC5E25DD9681D325F0EF24C2DM8P221MB0471NAMP_
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+
+Hello vExpert applicants, for those who don=E2=80=99t know me, my name is C=
+orey Romero and I manage the VMware by Broadcom vExpert program. I=E2=80=99=
+ve had to push dates around in the past but haven=E2=80=99t had to delay th=
+e award announcements until today. Without going into a lot of detail, my f=
+amily and I and have had to deal with an unexpected medical issue with my w=
+ife which has impacted my ability to complete all the tasks necessary to an=
+nounce the vExpert awards. Please see the information below to help underst=
+and where we are in the process, vExpert application pending status, and th=
+e new award announcement date.
+
+
+Where Are We in The Application Process?
+The step we are on right now is the final step and it=E2=80=99s reviewing a=
+ll the Not Ready applications. This step is usually completed by myself and=
+ since I=E2=80=99ve had a setback, I have asked the vExpert PROs to step in=
+ to help. This final step is important, this is where we catch any overlook=
+ed data, or move the application to Pending and ask you any questions to he=
+lp us make a better-informed decision. The Pending status allows us to anno=
+unce awards, and it places the Pending apps on hold for up to 14 days post =
+award announcement. This gives everyone enough time to clarify any question=
+s we have and use the time to make better-informed decisions about your app=
+lication.
+
+Here are two examples when we would place an application in Pending:
+
+  1.  Application has a lot of information but its lacking details. Example=
+: =E2=80=9CI spoke at VMware Explore on 4 times=E2=80=9D. =E2=80=93 We can=
+=E2=80=99t make a good decision here because we need to know the subject,  =
+location, date, audience size, url (if applicable).
+  2.  Applicant works for VMware and has only listed session speaking at VM=
+ware Explore. This makes it very difficult for us to know if this is work r=
+elated or driven by passion to share information to the community. I person=
+ally held two sessions last year and I did them on my own time but if you w=
+atched my sessions, it would appear it=E2=80=99s what I get paid to do.
+
+When an application is marked Pending, we send all questions to you through=
+ the vExpert messaging system<https://r.vmwebapp.com/tr/cl/Lju6sbrLf7x_N3Hh=
+WegJQRbmfDelZsNgwBu9v4TQUZJjeM4X73myoG758KRHy0pIsErrO6ygqxW8ufe2G-yaHsnjZjg=
+FyMZVOI0nZn21u9wHtdVpE7PqZhPhveULXAeQxvW_AWcDEb0WxjYLPwyWbpoJ05ChNQpBFMj18X=
+r-DjNuE4u9647TbS_ohMXvF2Ti_H8kYw0SDkTs2NzGiSvKSR8m-rzY38bxopStA-9ajVCaGd5Nk=
+e7O7PjIG1zQFz0opqa5V4r7AqriQL814LOmHhs> which will alert you via an email. =
+The message should clearly state what information we are seeking. If there =
+is no response within 14 days, the application will default to, Not Ready. =
+When you respond, we add the information into your application, and we make=
+ a better-informed decision or follow up with additional questions.
+
+
+What=E2=80=99s The New Date?
+The new date is on or before February 23rd. I do not expect it to take unti=
+l the 23rd; I anticipate announcing the results by mid-next week. The 23rd =
+is the absolute latest.
+
+
+How To Know if You=E2=80=99ve Been Awarded vExpert?
+Email is the only way we communicate your award to you. Please don=E2=80=99=
+t rely on the vExpert portal directory, certificates, or badges while the s=
+ite is being rebuilt. The rebuild process takes a little while to update an=
+d cache may cause confusion during this time. This is why we rely on email =
+only for award announcements.
+
+
+Questions
+For questions, please follow these processes so I can spend my time on appl=
+ications.
+1. vExpert Slack (current vExperts).
+2. Reach out to your local vExpert PRO<https://r.vmwebapp.com/tr/cl/a4YQhiQ=
+b7cTg5JvhiUudNKoGwPQi7EjKctZgbLVb0iE7B1uG5mjpb9_Zqf1flzt2PHrLnc9jJTvJkHJBhb=
+w5scDoDAqyI383VaaVYg28XEioO3hGaPaqyGR1kjMAtXqxEZhXgpjZa6AtXUpbVMHlKQBeQSLe-=
+nSO38JGz_5Zs5H7efyDTBxDtQ_CAmOwVyTt7IbTyhF63p2-zTbyn3uUkwW5ulzPLtJfvTNMLhel=
+RZPU74qSrLu6QrxrleFdMa2l-AvffjPBJaWY>.
+3. Ask on Twitter using the #vExpert<https://r.vmwebapp.com/tr/cl/SuPWMQ5Qp=
+lDlKCThwjrzg6DtCDzh7oyohc7yqT9Vbpztchk1l3Rf0umZ6pfQqZCjYZyWt1Y-Dnqb0lI0GZT3=
+B3HQU_MZcDWXygVGxj9I9GKaZ1v5phpb-_1rhPK0-Q7acGlU6LAxXHC7a-XF0wfxEPs9RP7P2B9=
+fcUrvyRQXXm4ERLpS4ZqLKYVp1CMeIajs3A_vz5_bh16S0s7-LCfPUlCSMfRUBsgHL-f8wGOMZM=
+j1sGBCTXDpSzstNciz0wPlqSQLsg1KjQzMdfg1> hashtag.
+4. See if your questions can be answered via the vExpert Best Practice Guid=
+e<https://r.vmwebapp.com/tr/cl/nPhTR_6FE-zJQ34UAWp6O0jDEHQeTFq3IjMFxxLofxc2=
+qK1wfoDO20qvnRoPCnRZ6Y8Vr1SKqWGoYDTg79zZXDFnabxg9dueC_hTx1ANMB08wraK3J5X2SX=
+87JKLOKkgPZH-4EdLWV3v6NNphwmLny_hIlBl03zTHsJHgUghVekzmNfapvI97Ktxi4HRPr87jk=
+8Ew4a2-DEQ4oVRZepyKD6mxlhfFJjal5IzneLz01gBOLTJxFKvqImypyvMWHTUyfjoqBnbNeUhG=
+tM>.
+
+
+The vExpert PROs handle most of the voting, and then I review all Not Ready=
+ applications. I reached out to the PROs at the beginning of the week to as=
+k for assistance which they are helping me process the last remaining appli=
+cations. THANK YOU to the vExpert PROs, they have been a huge help as alway=
+s.
+
+
+Thanks,
+
+Corey Romero, Senior Community (vExpert) Manager
+Corporate Marketing, Broadcom
+3401 Hillview Ave, Palo Alto, CA 94304
+Let=E2=80=99s Connect: @vExpert<https://r.vmwebapp.com/tr/cl/wiKS5TLJrek1mm=
+4VPeHu74Q8dhubIrT-027dLnh2IPiHeReBppCIls1F1fszvG56_00oufO9x-IUylG-QtLQf0f3-=
+YwTKGzsQa2acBpSgtioktNYg7H9f_Tti2oOtrN0am1BWsCgXjeDphiDMJSU68RVKPrinzgg3LzR=
+ulLGxWK2hmSGaGrAU6bmTdr33qB7IPQEnGPhK6B2NlkrKUacWKg3CnmtAWCZG14OB5xxUyEEJCL=
+tGriCsDvo>, @vCommunityGuy<https://r.vmwebapp.com/tr/cl/oobox0sDdni4OlDHs2e=
+UWvb4vS_namyowY7sZ8vQRgNp0PqfJx55ViLoBSsfWAHM9hAnm7zM6DyPTmR7bp2Y-nrV5SeGIo=
+kTZ439O4chhduyjq4ToKxQcupsLJiVf218-jb-zCBE-ny7bGPl_2o1xrBLVG_dna-HdPEYZ3vS_=
+Q8YtgCFQV1WZi2zMDVaPGsosuMeBWwNXRMD83e8js_BYgvtuXMiQYTiTQwqwI_oL5VIgSclZWMC=
+1d2-8t-wXqmA> & LinkedIn<https://r.vmwebapp.com/tr/cl/zP69vB12ivy2-l1Yix4er=
+O6-Yym7GERVAq_dl-WI2HAvlUbvPKoAbk2ijpVaFDL2DetJk9x8Uk9pwmTzsQYchi7LmEJqdGr7=
+EPVCZPqgNCgzvgdunYk1vU6O_qj8qEuny6J0F18Gza9cnTM5gMoRdUi3axJM_Q5yscKbzX2KzwH=
+oF3QUEPqh6WzsBOvZxN_VXv26aTF0HR8AH8suZjMafVCRmYmKqfmIyCLAIP-XUjE_Q3rrfyhhYc=
+lI98aHMwSp1r8LFruhKdRFb5Q8>
+
+This electronic communication and the information and any files transmitted=
+ with it, or attached to it, are confidential and are intended solely for t=
+he use of the individual or entity to whom it is addressed and may contain =
+information that is confidential, legally privileged, protected by privacy =
+laws, or otherwise restricted from disclosure to anyone else. If you are no=
+t the intended recipient or the person responsible for delivering the e-mai=
+l to the intended recipient, you are hereby notified that any use, copying,=
+ distributing, dissemination, forwarding, printing, or copying of this e-ma=
+il is strictly prohibited. If you received this e-mail in error, please ret=
+urn the e-mail to the sender, delete it from your computer, and destroy any=
+ printed copy of it.
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+--_000_DM8P221MB04716FC5E25DD9681D325F0EF24C2DM8P221MB0471NAMP_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:w=3D"urn:sc=
+hemas-microsoft-com:office:word" xmlns:m=3D"http://schemas.microsoft.com/of=
+fice/2004/12/omml" xmlns=3D"http://www.w3.org/TR/REC-html40"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Aptos;
+	panose-1:2 11 0 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:"Times New Roman \(Body CS\)";
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:11.0pt;
+	font-family:"Aptos",sans-serif;
+	mso-ligatures:standardcontextual;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:#467886;
+	text-decoration:underline;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	font-size:11.0pt;
+	font-family:"Aptos",sans-serif;
+	mso-ligatures:standardcontextual;}
+span.EmailStyle17
+	{mso-style-type:personal-compose;
+	font-family:"Aptos",sans-serif;
+	color:#262626;
+	font-weight:normal;
+	font-style:normal;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:11.0pt;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+/* List Definitions */
+@list l0
+	{mso-list-id:488979616;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2039335614 67698703 67698713 67698715 67698703 6769=
+8713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l1
+	{mso-list-id:1534616236;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2060931504 -1382913970 67698691 67698693 67698689 6=
+7698691 67698693 67698689 67698691 67698693;}
+@list l1:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	mso-ascii-font-family:Aptos;
+	mso-fareast-font-family:Aptos;
+	mso-hansi-font-family:Aptos;
+	mso-bidi-font-family:"Times New Roman \(Body CS\)";}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2
+	{mso-list-id:2108843967;
+	mso-list-type:hybrid;
+	mso-list-template-ids:299421698 -1008722540 67698691 67698693 67698689 676=
+98691 67698693 67698689 67698691 67698693;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:-;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Aptos",sans-serif;
+	mso-fareast-font-family:Aptos;
+	mso-bidi-font-family:"Times New Roman \(Body CS\)";}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7 ;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+--></style>
+</head>
+<body lang=3D"EN-US" link=3D"#467886" vlink=3D"#96607D" style=3D"word-wrap:=
+break-word">
+<img width=3D"1" height=3D"1" src=3D"https://r.vmwebapp.com/tr/op/psOsWalX-=
+QRGctla8EQq1s6BOtRNwcZQChNZuhnnLeoUrINzNTKL-BdW4SeQCEuhWPhiYq8ZmFApFI69tv6J=
+ML56Ny-EqtuddI8O5VY1HzbHGgldH3IDuJkZcu_iikmn3d_nh28mPtlxutsKf756AK5QrLxEC-b=
+_KnJz_7Wm2iwXsj_spIvI8jRYI3sJTBE">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626">Hello=
+ vExpert applicants, for those who don=E2=80=99t know me, my name is Corey =
+Romero and I manage the VMware by Broadcom vExpert program. I=E2=80=99ve ha=
+d to push dates around in the past but haven=E2=80=99t had to
+ delay the award announcements until today. Without going into a lot of det=
+ail, my family and I and have had to deal with an unexpected medical issue =
+with my wife which has impacted my ability to complete all the tasks necess=
+ary to announce the vExpert awards.
+ Please see the information below to help understand where we are in the pr=
+ocess, vExpert application pending status, and the new award announcement d=
+ate.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;color:#262626">Wh=
+ere Are We in The Application Process?
+<o:p></o:p></span></b></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626">The s=
+tep we are on right now is the final step and it=E2=80=99s reviewing all th=
+e Not Ready applications. This step is usually completed by myself and sinc=
+e I=E2=80=99ve had a setback, I have asked the vExpert
+ PROs to step in to help. This final step is important, this is where we ca=
+tch any overlooked data, or move the application to Pending and ask you any=
+ questions to help us make a better-informed decision. The Pending status a=
+llows us to announce awards, and
+ it places the Pending apps on hold for up to 14 days post award announceme=
+nt. This gives everyone enough time to clarify any questions we have and us=
+e the time to make better-informed decisions about your application.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626">Here =
+are two examples when we would place an application in Pending:
+<o:p></o:p></span></p>
+<ol style=3D"margin-top:0in" start=3D"1" type=3D"1">
+<li class=3D"MsoListParagraph" style=3D"color:#262626;margin-left:0in;mso-l=
+ist:l0 level1 lfo2">
+<span style=3D"font-size:12.0pt">Application has a lot of information but i=
+ts lacking details. Example: =E2=80=9CI spoke at VMware Explore on 4 times=
+=E2=80=9D. =E2=80=93 We can=E2=80=99t make a good decision here because we =
+need to know the subject, &nbsp;location, date, audience size, url (if appl=
+icable).<o:p></o:p></span></li><li class=3D"MsoListParagraph" style=3D"colo=
+r:#262626;margin-left:0in;mso-list:l0 level1 lfo2">
+<span style=3D"font-size:12.0pt">Applicant works for VMware and has only li=
+sted session speaking at VMware Explore. This makes it very difficult for u=
+s to know if this is work related or driven by passion to share information=
+ to the community. I personally held
+ two sessions last year and I did them on my own time but if you watched my=
+ sessions, it would appear it=E2=80=99s what I get paid to do.<o:p></o:p></=
+span></li></ol>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626">When =
+an application is marked Pending, we send all questions to you through the
+<a href=3D"https://r.vmwebapp.com/tr/cl/Lju6sbrLf7x_N3HhWegJQRbmfDelZsNgwBu=
+9v4TQUZJjeM4X73myoG758KRHy0pIsErrO6ygqxW8ufe2G-yaHsnjZjgFyMZVOI0nZn21u9wHtd=
+VpE7PqZhPhveULXAeQxvW_AWcDEb0WxjYLPwyWbpoJ05ChNQpBFMj18Xr-DjNuE4u9647TbS_oh=
+MXvF2Ti_H8kYw0SDkTs2NzGiSvKSR8m-rzY38bxopStA-9ajVCaGd5Nke7O7PjIG1zQFz0opqa5=
+V4r7AqriQL814LOmHhs">
+vExpert messaging system</a> which will alert you via an email. The message=
+ should clearly state what information we are seeking. If there is no respo=
+nse within 14 days, the application will default to, Not Ready. When you re=
+spond, we add the information into
+ your application, and we make a better-informed decision or follow up with=
+ additional questions.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;color:#262626">Wh=
+at=E2=80=99s The New Date?<o:p></o:p></span></b></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626">The n=
+ew date is on or before February 23<sup>rd</sup>. I do not expect it to tak=
+e until the 23rd; I anticipate announcing the results by mid-next week. The=
+ 23rd is the absolute latest.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;color:#262626">Ho=
+w To Know if You=E2=80=99ve Been Awarded vExpert?<o:p></o:p></span></b></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626">Email=
+ is the only way we communicate your award to you. Please don=E2=80=99t rel=
+y on the vExpert portal directory, certificates, or badges while the site i=
+s being rebuilt. The rebuild process takes a
+ little while to update and cache may cause confusion during this time. Thi=
+s is why we rely on email only for award announcements.
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;color:#262626">Qu=
+estions<o:p></o:p></span></b></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626">For q=
+uestions, please follow these processes so I can spend my time on applicati=
+ons.<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"text-indent:.5in"><span style=3D"font-size:=
+12.0pt;color:#262626">1. vExpert Slack (current vExperts).
+<o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"text-indent:.5in"><span style=3D"font-size:=
+12.0pt;color:#262626">2. Reach out to your
+<a href=3D"https://r.vmwebapp.com/tr/cl/a4YQhiQb7cTg5JvhiUudNKoGwPQi7EjKctZ=
+gbLVb0iE7B1uG5mjpb9_Zqf1flzt2PHrLnc9jJTvJkHJBhbw5scDoDAqyI383VaaVYg28XEioO3=
+hGaPaqyGR1kjMAtXqxEZhXgpjZa6AtXUpbVMHlKQBeQSLe-nSO38JGz_5Zs5H7efyDTBxDtQ_CA=
+mOwVyTt7IbTyhF63p2-zTbyn3uUkwW5ulzPLtJfvTNMLhelRZPU74qSrLu6QrxrleFdMa2l-Avf=
+fjPBJaWY">
+local vExpert PRO</a>. <o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"text-indent:.5in"><span style=3D"font-size:=
+12.0pt;color:#262626">3. Ask on Twitter using the
+<a href=3D"https://r.vmwebapp.com/tr/cl/SuPWMQ5QplDlKCThwjrzg6DtCDzh7oyohc7=
+yqT9Vbpztchk1l3Rf0umZ6pfQqZCjYZyWt1Y-Dnqb0lI0GZT3B3HQU_MZcDWXygVGxj9I9GKaZ1=
+v5phpb-_1rhPK0-Q7acGlU6LAxXHC7a-XF0wfxEPs9RP7P2B9fcUrvyRQXXm4ERLpS4ZqLKYVp1=
+CMeIajs3A_vz5_bh16S0s7-LCfPUlCSMfRUBsgHL-f8wGOMZMj1sGBCTXDpSzstNciz0wPlqSQL=
+sg1KjQzMdfg1">
+#vExpert</a> hashtag. <o:p></o:p></span></p>
+<p class=3D"MsoNormal" style=3D"text-indent:.5in"><span style=3D"font-size:=
+12.0pt;color:#262626">4. See if your questions can be answered via
+<a href=3D"https://r.vmwebapp.com/tr/cl/nPhTR_6FE-zJQ34UAWp6O0jDEHQeTFq3IjM=
+FxxLofxc2qK1wfoDO20qvnRoPCnRZ6Y8Vr1SKqWGoYDTg79zZXDFnabxg9dueC_hTx1ANMB08wr=
+aK3J5X2SX87JKLOKkgPZH-4EdLWV3v6NNphwmLny_hIlBl03zTHsJHgUghVekzmNfapvI97Ktxi=
+4HRPr87jk8Ew4a2-DEQ4oVRZepyKD6mxlhfFJjal5IzneLz01gBOLTJxFKvqImypyvMWHTUyfjo=
+qBnbNeUhGtM">
+the vExpert Best Practice Guide</a>. <o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626">The v=
+Expert PROs handle most of the voting, and then I review all Not Ready appl=
+ications. I reached out to the PROs at the beginning of the week to ask for=
+ assistance which they are helping me
+ process the last remaining applications. THANK YOU to the vExpert PROs, th=
+ey have been a huge help as always.<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626"><o:p>=
+&nbsp;</o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;color:#262626"><o:p>=
+&nbsp;</o:p></span></p>
+<div>
+<div>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#262626;mso-ligatures:none">Thanks,<o:p></o:p>=
+</span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:#262626;mso-ligatures:none"><o:p>&nbsp;</o:p><=
+/span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:black;mso-ligatures:none">Corey Romero, Senior=
+ Community (vExpert) Manager<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:black;mso-ligatures:none">Corporate Marketing,=
+ Broadcom<o:p></o:p></span></p>
+<p class=3D"MsoNormal"><span style=3D"font-size:12.0pt;font-family:&quot;Ca=
+libri&quot;,sans-serif;color:black;mso-ligatures:none">3401 Hillview Ave, P=
+alo Alto, CA 94304<o:p></o:p></span></p>
+</div>
+</div>
+<p class=3D"MsoNormal"><b><span style=3D"font-size:12.0pt;font-family:&quot=
+;Calibri&quot;,sans-serif;color:red;mso-ligatures:none">Let=E2=80=99s Conne=
+ct:</span></b><span style=3D"font-size:12.0pt;font-family:&quot;Calibri&quo=
+t;,sans-serif;color:red;mso-ligatures:none">&nbsp;</span><span style=3D"fon=
+t-size:12.0pt;font-family:&quot;Calibri&quot;,sans-serif;color:black;mso-li=
+gatures:none"><a href=3D"https://r.vmwebapp.com/tr/cl/wiKS5TLJrek1mm4VPeHu7=
+4Q8dhubIrT-027dLnh2IPiHeReBppCIls1F1fszvG56_00oufO9x-IUylG-QtLQf0f3-YwTKGzs=
+Qa2acBpSgtioktNYg7H9f_Tti2oOtrN0am1BWsCgXjeDphiDMJSU68RVKPrinzgg3LzRulLGxWK=
+2hmSGaGrAU6bmTdr33qB7IPQEnGPhK6B2NlkrKUacWKg3CnmtAWCZG14OB5xxUyEEJCLtGriCsD=
+vo" title=3D"https://twitter.com/vExpert"><span style=3D"color:#0563C1">@vE=
+xpert</span></a>,&nbsp;<a href=3D"https://r.vmwebapp.com/tr/cl/oobox0sDdni4=
+OlDHs2eUWvb4vS_namyowY7sZ8vQRgNp0PqfJx55ViLoBSsfWAHM9hAnm7zM6DyPTmR7bp2Y-nr=
+V5SeGIokTZ439O4chhduyjq4ToKxQcupsLJiVf218-jb-zCBE-ny7bGPl_2o1xrBLVG_dna-HdP=
+EYZ3vS_Q8YtgCFQV1WZi2zMDVaPGsosuMeBWwNXRMD83e8js_BYgvtuXMiQYTiTQwqwI_oL5VIg=
+SclZWMC1d2-8t-wXqmA" title=3D"https://twitter.com/vcommunityguy"><span styl=
+e=3D"color:#0563C1">@vCommunityGuy</span></a>&nbsp;&amp;&nbsp;<a href=3D"ht=
+tps://r.vmwebapp.com/tr/cl/zP69vB12ivy2-l1Yix4erO6-Yym7GERVAq_dl-WI2HAvlUbv=
+PKoAbk2ijpVaFDL2DetJk9x8Uk9pwmTzsQYchi7LmEJqdGr7EPVCZPqgNCgzvgdunYk1vU6O_qj=
+8qEuny6J0F18Gza9cnTM5gMoRdUi3axJM_Q5yscKbzX2KzwHoF3QUEPqh6WzsBOvZxN_VXv26aT=
+F0HR8AH8suZjMafVCRmYmKqfmIyCLAIP-XUjE_Q3rrfyhhYclI98aHMwSp1r8LFruhKdRFb5Q8"=
+ title=3D"https://www.linkedin.com/in/coreysromero/"><span style=3D"color:#=
+0563C1">LinkedIn</span></a></span><o:p></o:p></p>
+</div>
+<br>
+<span style=3D"background-color:rgb(255,255,255)"><font size=3D"2">This ele=
+ctronic communication and the information and any files transmitted with it=
+, or attached to it, are confidential and are intended solely for the use o=
+f the individual or entity to whom it
+ is addressed and may contain information that is confidential, legally pri=
+vileged, protected by privacy laws, or otherwise restricted from disclosure=
+ to anyone else. If you are not the intended recipient or the person respon=
+sible for delivering the e-mail
+ to the intended recipient, you are hereby notified that any use, copying, =
+distributing, dissemination, forwarding, printing, or copying of this e-mai=
+l is strictly prohibited. If you received this e-mail in error, please retu=
+rn the e-mail to the sender, delete
+ it from your computer, and destroy any printed copy of it.</font></span>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+ </body>
+</html>
+
+--_000_DM8P221MB04716FC5E25DD9681D325F0EF24C2DM8P221MB0471NAMP_--
+
+--===============1749117367776315804==
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+_______________________________________________
+vExpert-Exclusive mailing list -- vexpert-exclusive@vmwebapp.com
+To unsubscribe send an email to vexpert-exclusive-leave@vmwebapp.com
+
+
+--===============1749117367776315804==--

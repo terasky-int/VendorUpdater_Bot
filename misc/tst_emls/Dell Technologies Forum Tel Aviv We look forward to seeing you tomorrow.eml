@@ -1,0 +1,1054 @@
+Received: from VI1P194MB0591.EURP194.PROD.OUTLOOK.COM (2603:10a6:800:15a::11)
+ by GVXP194MB1757.EURP194.PROD.OUTLOOK.COM with HTTPS; Mon, 11 Sep 2023
+ 07:01:01 +0000
+Received: from AS4P195CA0021.EURP195.PROD.OUTLOOK.COM (2603:10a6:20b:5d6::9)
+ by VI1P194MB0591.EURP194.PROD.OUTLOOK.COM (2603:10a6:800:15a::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6768.34; Mon, 11 Sep
+ 2023 07:00:55 +0000
+Received: from AM4PEPF00025F97.EURPRD83.prod.outlook.com
+ (2603:10a6:20b:5d6:cafe::1e) by AS4P195CA0021.outlook.office365.com
+ (2603:10a6:20b:5d6::9) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6768.35 via Frontend
+ Transport; Mon, 11 Sep 2023 07:00:55 +0000
+Authentication-Results: spf=pass (sender IP is 198.207.147.240)
+ smtp.mailfrom=cvent-planner.com; dkim=pass (signature was verified)
+ header.d=cventmail.com;dmarc=pass action=none
+ header.from=cventmail.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of cvent-planner.com
+ designates 198.207.147.240 as permitted sender)
+ receiver=protection.outlook.com; client-ip=198.207.147.240;
+ helo=m16b.cvtsv.com; pr=C
+Received: from m16b.cvtsv.com (198.207.147.240) by
+ AM4PEPF00025F97.mail.protection.outlook.com (10.167.16.6) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6792.7 via Frontend Transport; Mon, 11 Sep 2023 07:00:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=cv-usprod-1; d=cventmail.com;
+ h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:
+ List-Unsubscribe; i=delleventsupport@cventmail.com;
+ bh=XZI+MGxbe5IjnVbCCXsDW7Sc18jfLaTn8Xv+D8nJVsQ=;
+ b=ampYfKzEy9z1beOpw/5UhRIUNXUwogEUEEvfWs/EQ7vz2u5Uy0TPAnoberhleOtrpcLFMUP36sr6
+   1G27KeLJxujophqEFVVh3CKVAO2EM3fuUUGUPNfXDyo73W59AqW5KhupeggTAlBlzAlZWXhJEf9j
+   E3yYnmvQiBsffezuX9Q=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=cv-usprod-1; d=cvent-planner.com;
+ h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:
+ List-Unsubscribe;
+ bh=XZI+MGxbe5IjnVbCCXsDW7Sc18jfLaTn8Xv+D8nJVsQ=;
+ b=UObj54wwyOsgUFG1w/dfLcLH1IbVDT5/BegkuIH7ZuYCc4Ab++wd6U/r5xnxvcTAmM5HP661AMes
+   rclgSdq9Es1+kZzyYclYRK5xGoWaGS4bdDYzVL+XkweQdTN0DK7m9d3Kz172ktggYvPRaZ7PXEdu
+   4zlsJI//Jb4J3HKRc34=
+Date: Mon, 11 Sep 2023 07:00:51 +0000
+From: "Dell Event Team"<delleventsupport@cventmail.com>
+Reply-To: delleventsupport@cventmail.com
+To: "=?UTF-8?Q?David_Gidony=E2=80=AC=E2=80=8F?="<davidg@terasky.com>
+Message-ID: <p2-l5zy6ngbnvsy49-d4qvn85n-a01-7dz7-00100000000r0odAAA@cvent-planner.com>
+Subject: Dell Technologies Forum Tel Aviv: We look forward to seeing you
+ tomorrow
+Content-Type: multipart/alternative; 
+	boundary="--==1694415651219_L5ZY6NGBNVSY49_D4QVN85N=="
+X-ASID: a01-7dz7-00100000000r0odAAA-cvp2
+X-VMTA: a01-12129141002cv
+X-Job: a01-7dz7-00100000000r0odAAA;;p2-l5zy6ngbnvsy49
+List-Unsubscribe: <mailto:unsubscribe-p2-l5zy6ngbnvsy49-d4qvn85n-a01-7dz7-00100000000r0odAAA@cvent-planner.com?subject=unsubscribe>
+X-CMID: p2-l5zy6ngbnvsy49-d4qvn85n-a01-7dz7-00100000000r0odAAA
+Return-Path: bounce-p2-l5zy6ngbnvsy49-d4qvn85n-a01-7dz7-00100000000r0odAAA@cvent-planner.com
+X-MS-Exchange-Organization-ExpirationStartTime: 11 Sep 2023 07:00:55.7146
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: c070bf64-d6b3-4c50-f975-08dbb294d850
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM4PEPF00025F97:EE_|VI1P194MB0591:EE_|GVXP194MB1757:EE_
+X-MS-Exchange-Organization-AuthSource: AM4PEPF00025F97.EURPRD83.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: c070bf64-d6b3-4c50-f975-08dbb294d850
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:3;
+X-Forefront-Antispam-Report: CIP:198.207.147.240;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:m16b.cvtsv.com;PTR:m16b.cvtsv.com;CAT:NONE;SFS:(13230031)(4636009)(286005)(451199024)(1690799017)(7636003)(7596003)(66899024)(6666004)(6506007)(33964004)(6486002)(356005)(36756003)(15974865002)(83170400001)(166002)(956004)(26005)(336012)(3450700001)(42882007)(5426002)(9686003)(6512007)(83380400001)(1096003)(8676002)(9316004)(36736006)(6916009)(118246002)(1406899027)(71983005)(14431395005)(579004);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 Sep 2023 07:00:55.0115
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: c070bf64-d6b3-4c50-f975-08dbb294d850
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AM4PEPF00025F97.EURPRD83.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1P194MB0591
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:06.5659620
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.6768.024
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?VVdjajJ4NUNDck94bVdjVndxVjYrZUxmdnVDSWprZzNYanpVK2VzN0hKNlpB?=
+ =?utf-8?B?KzdPVXRaVXk3dENhM3YwUXl1WTNiU25ScUh2TWJTcFZmSEEveWxXQkZRV1Jk?=
+ =?utf-8?B?eExUSjc5cTJtNnJ3T3ZCa292cU8xQWRNSFVKWE02UzNwanlnM2UrQ0hQVVBR?=
+ =?utf-8?B?eUhrT3FabDVINStpUU1oVWVWMkNlMWV0Sko4UUVOQmNMNUVPN0lDRkxuR1FR?=
+ =?utf-8?B?ZXI5RU14Z0xDb1ZSSXVUcVJocnhQV2wybEtEZkt0YUFINXI5d3dQMTFNQ1Js?=
+ =?utf-8?B?Yk9IWnNBQTAyNnI0QjNTWG1hbGlRaGNxZW1PeDZraXliQjdCNEM3WFlXS2Mw?=
+ =?utf-8?B?R3NMWmFxM0FLT25HNmRkMTV0ZFFyOEt2TGZIWkFrR29EVkpyUW5xRWhta0lV?=
+ =?utf-8?B?aGtCckVVZHJETW9PemRyNWJIYW9FU2lBeG5mL3RYY2s2V1pxSXN2RDVrUzhZ?=
+ =?utf-8?B?UHpUQ0dzRThEQ3RBNWFqRWZrQjNJYmx0UzlaMWpPZDJlLzloYUlaK0RFSHJB?=
+ =?utf-8?B?dEE2WHB0R2pxYmtna0dGQjh2VzV5S0tzQ3ZuZHMzTFdFMDdOL2xuRVRmelRT?=
+ =?utf-8?B?WFpNcGRCM1hGT2hsVElPNklDN05VS0NWVjM4bzhFR2FDRlJqOVBiR3UrcSsr?=
+ =?utf-8?B?S0R2dllZd0RIOGsyT3VCR2ZRdEcvQU1SL2JOVzFoQ0gzZHowcW5lR0R0SzBR?=
+ =?utf-8?B?NWJGcGZ4MVlwbXdyVmNCajUzczA5TUVmY05xdnFqYzRWMjhhMHFpcTVJbDMy?=
+ =?utf-8?B?UzNZQWtiZFZEbVlkTERzalpLU2VIWDgvV2lFNGpVSklBQWhxMzF5ak53djBN?=
+ =?utf-8?B?STU4R3FpeVRGaERsYzNqVk9aay9POVZJT1BhL3hRSFp0bGY0czVSaG9LaG02?=
+ =?utf-8?B?QkZ0b1Z2Y3U2U0MxdlQxaG9xa1JyWDdWanloVU1qY0JlK1owZUdYajcvNmhP?=
+ =?utf-8?B?aWJKdXBIczQ4Q0lQVWNYM21Hd04yYXRqUlZCY29pNnlNWmg1Ym45WkE4eDcv?=
+ =?utf-8?B?UEtudlpYRVk0a3I4R3hNaEM4QmtDQnlhNmtZR0k4dnhvQWtwTUFnZ3B2VGNE?=
+ =?utf-8?B?NDdrUG5waTdINzR4aGlLT01KbndCTWF5OFRZRGxVYWVjYjVDWk1tWHluYStq?=
+ =?utf-8?B?TjMwMmlHeitLRFJwM0dXbEZ0TTlCWnY0L08rd3Q3bkNhU1V4am9pdURvLzlI?=
+ =?utf-8?B?T21kNExBbFZBcGlTZFQrUm93bEtQckg0N25mbWErMDVSUFVJTld0MlUrd2dN?=
+ =?utf-8?B?S1lvRXByYnJUN0psWHpZUFpJTWJNN2UzS1VQR3FnNUwrL1JNYndPZFNCVHFD?=
+ =?utf-8?B?amdOb3YyQTlnVlpNMjBTMXMzL0FiRm1oWDYzVG5PSEQrNHRwWHIxY2JrMjhl?=
+ =?utf-8?B?Wk9CSzN0WUEyVy9SbUMvWGl1Q0VILzIyVkNyQ3NzblZsam96aS9qVDlQRWUr?=
+ =?utf-8?B?U002Ym9jNzNIZTlURzV1d3REN0VadUdhS252bi80blBNY2x1YlZqd3JnMStR?=
+ =?utf-8?B?Mk5pT1EyTnlEZDB5TGo1czVxVGFPRS9QZFZ3Smd5NXlIU0tIYisxMitkM3cz?=
+ =?utf-8?B?MGR5NUt1bVdhazQ0dDd3Y3hYclZxaFRERVZkQ1BDMDNabTcxUWJMNHc4ck1y?=
+ =?utf-8?B?Uk9lUEFQWEVHY24ybVYwQkg3OXFkZGFZRHRmd3dSVnJBZGdRVm5RRTBWbXho?=
+ =?utf-8?B?R2lzWDEvY1BLQllZV3c5b3lYOXYySE41R0VMcDlTTlZXUVhxU1RybGJ0K1hp?=
+ =?utf-8?B?TVRNRU8vdm9VcDN0REJDcXlmdFRLSzludGxseTkvNkJISThPdnhCRjFaYjV0?=
+ =?utf-8?B?SW5LL3JFVFVnK1BLZEJnYVB3aHlQdTVNOC9VNTFMcUlNc3h5L3pXK3JKOXhK?=
+ =?utf-8?B?MCtYMGVWVGZFaTJYT2ZEbHNld3JVdWFkYXNYYlEzUXlCMkdtOTVEbTdlS25R?=
+ =?utf-8?B?Uitld1dNTzEwNjhwV0VMSGo4MGpLYUNjYmthR0RFUVU1eHBXNVFJVmVwaHJa?=
+ =?utf-8?B?Wm01T2JaUW1OV0JCQW5KUGs1RVJqQ2Ura1Z3dkxRSUVhQWVYTURYRzNrTWV3?=
+ =?utf-8?B?SElNcWk3dlQ4Tk9KVXMxZkFQY2NrVkNrOWNBdDVKV2NUa3NuSVFDVjR6Ym93?=
+ =?utf-8?B?MldCaENleWRSZm9UVWtjVHowMkdmcVhENCtpWE1pSC82eVVPRmVqTnBJRG4r?=
+ =?utf-8?B?K1UxRzFjV2FJbldlWkI4cUw3dXZ6RXJmUlNWNmlqUDFiNVQyMEE3bFZEcGJW?=
+ =?utf-8?B?SlFZMDhTcXduSHFhUDBBM2x4T0pKQWRIaStScDVHUzBpMWtQZUNXSGJiTVBu?=
+ =?utf-8?B?V0JLV0IrNmNzYnA5ZlZJcEVjZ0d2VUZBNjhJZXFOWmtFZzJhQ2FlemZhQWdY?=
+ =?utf-8?B?Q1AxWVRKY1J5UW5reGt1Q0hZYndRNGVYY01vQUdZWmd1U1Nna3l5TkJEQ2RB?=
+ =?utf-8?B?TFZUNVZEa2lhUytxdGJjWm1sTmVPV3BLQ3l3cUtYNUFaMkwyVUFWTWFqMXdl?=
+ =?utf-8?B?M2s2VHNaOWRXSVowVU1aSEh4QXBFd1M0RTB3cXYxN3JlTUdGQzJmR3hsMlN0?=
+ =?utf-8?B?c3VHWFYvdEVhWThQUTlwVjRHbXZLUEhwSGNZaEtvbm42RUJjUWFGNEVLY2xt?=
+ =?utf-8?B?VThwTVdTZz09?=
+MIME-Version: 1.0
+
+----==1694415651219_L5ZY6NGBNVSY49_D4QVN85N==
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+See you tomorrow at=20
+
+#DellTechForum #TelAviv
+
+Dear David,
+
+We can't wait to see you tomorrow! From visionary keynotes and tech deep di=
+ves to interactive activations and networking, get ready to learn, connect =
+and advance.
+
+Date: 12 September 2023
+
+Time: 08:30 - 16:00
+
+Location: Expo Tel Aviv, Pavilion 2-101 Rokach Blvd, Tel Aviv, Israel
+
+Attending: DavidGidony=E2=80=AC=E2=80=8F
+
+Confirmation Number: LBN5BGDDF9H
+
+Take a look at the Agenda > (https://events.dell.com/04ovwR)
+
+Upon arrival at the venue
+
+* ID card presentation is required to enter the conference.=20
+
+* According to the law of Israel, if you are carrying a gun, it must be con=
+cealed.
+
+Please find below your unique QR code. Upon arrival at the venue please ens=
+ure you have this ready to allow for a quicker registration process.
+
+For more information on the Dell Technologies Forum in Israel, please visit=
+:  www.dell.com/dt/forum-il (https://www.dell.com/dt/forum-il)
+
+Join the #DellTechForum Conversation
+
+<img src=3D'https://custom.cvent.com/112B6A45EDDD46AEB6BFB53ADF2BC8E2/pix/b=
+55bc30ef9dd4805a793f552e9848291.png' border=3D0 /> (https://www.instagram.c=
+om/delltech/)   <img src=3D'https://custom.cvent.com/112B6A45EDDD46AEB6BFB5=
+3ADF2BC8E2/pix/436a99442d6749c1876861dd85c8c30b.png' border=3D0 /> (https:/=
+/www.linkedin.com/company/delltechnologies)   <img src=3D'https://custom.cv=
+ent.com/112B6A45EDDD46AEB6BFB53ADF2BC8E2/pix/9fb6a9b2cf1247d1a95225c6e6bb22=
+c9.png' border=3D0 /> (https://twitter.com/DellTech)
+
+Unsubscribe (https://www.dell.com/preferences/listremoval/?s=3Dpd%20&%20c=
+=3Dus&l=3Den) | Privacy statement (https://www.dell.com/learn/us/en/uscorp1=
+/policies-privacy-country-specific-privacy-policy)
+
+You are subscribed as davidg@terasky.com
+
+Dell Technologies Global Headquarters is located at One Dell Way, Round Roc=
+k, TX 78682
+
+Copyright =C2=A9 2023 Dell Inc. or its subsidiaries.  All Rights Reserved. =
+ Dell Technologies, Dell and other trademarks are trademarks of Dell Inc. o=
+r its subsidiaries.  Other trademarks may be trademarks of their respective=
+ owners.
+----==1694415651219_L5ZY6NGBNVSY49_D4QVN85N==
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns:v=3D"urn:schemas-microsoft-co=
+m:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><t=
+itle></title>
+ =20
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <meta name=3D"format-detection" content=3D"telephone=3Dno">
+  <style type=3D"text/css">/* CLIENT-SPECIFIC STYLES ------------------- */=
+#outlook a {  padding: 0; /* Force Outlook to provide a "view in browser" m=
+essage */}.ReadMsgBody {  width: 100%; /* Force Hotmail to display emails a=
+t full width */}.ExternalClass {  width:100%; /* Force Hotmail to display e=
+mails at full width */}.ExternalClass, .ExternalClass p, .ExternalClass spa=
+n, .ExternalClass font, .ExternalClass td, .ExternalClass div {  line-heigh=
+t: 100%; /* Force Hotmail to display normal line spacing */}body, table, td=
+, a { /* Prevent WebKit and Windows mobile changing default text sizes */  =
+-webkit-text-size-adjust: 100%;  -ms-text-size-adjust: 100%;}table, td, li =
+{ /* Remove spacing between tables in Outlook 2007 and up */  mso-table-lsp=
+ace: 0pt;  mso-table-rspace: 0pt;  mso-line-height-rule: at-least;  border-=
+spacing: 0;  mso-margin-bottom-alt: 0;  mso-margin-top-alt: 0;}img { /* All=
+ow smoother rendering of resized image in Internet Explorer */  -ms-interpo=
+lation-mode: bicubic;}/* RESET STYLES --------------------------- */body { =
+ height: 100% !important;  margin: 0;  padding: 0;  width: 100% !important;=
+}img {  border: 0;  height: auto;  line-height: 100%;  outline: none;  text=
+-decoration: none;}table {  border-collapse: collapse !important;}a {  colo=
+r: #0099E0;}h1, h2, h3, h4, h5, h6 { /* Override user agent styles for thes=
+e elements */  margin-block-start: 0px;  margin-block-end: 0px;  margin-top=
+: 0px;  margin-bottom: 0px;}/* Override Gmail Blue Links */u + #body a {  c=
+olor: #0099E0;}/* iOS BLUE LINKS */.apple-links a {  color: #999999;  text-=
+decoration: none;}/* MOBILE STYLES ------------------------ *//* Media Quer=
+ies  480px matches @small(20em) in nucleus-core/less/MediaQuery.less*/@medi=
+a screen and (max-width: 480px) {  .responsive-table,  .wrapper,  .column, =
+ .img-max {    width: 100% !important;  }  .mobile-button {    width: 100% =
+!important;    box-sizing: border-box;  }}</style><!--[if gte mso 9]>      =
+          <xml>                  <o:OfficeDocumentSettings>                =
+    <o:AllowPNG/>                    <o:PixelsPerInch>96</o:PixelsPerInch> =
+                 </o:OfficeDocumentSettings>                </xml>         =
+     <![endif]-->
+  <style type=3D"text/css"> @media screen { @font-face { font-display: swap=
+; font-family: Roboto; font-style: normal; font-weight: 400; src: url('http=
+s://www.cvent-assets.com/event-email-editor/assets/https://www.cvent-assets=
+.com/event-email-editor/assets/fonts/roboto-v20-latin-ext_latin-regular_5cb=
+5c8f08bb4e6cb64c3.woff2') format('woff2'), url('https://www.cvent-assets.co=
+m/event-email-editor/assets/https://www.cvent-assets.com/event-email-editor=
+/assets/fonts/roboto-v20-latin-ext_latin-regular_ae804dc012b1b5255474.woff'=
+) format('woff'); }}</style>
+ </head>
+ <body style=3D"margin:0;padding:0" id=3D"body">
+  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" st=
+yle=3D"table-layout:fixed">
+   <tbody>
+    <tr>
+     <td align=3D"center" bgcolor=3D"#F5F6F7"><!--[if gte mso 9]>          =
+  <table align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+             width=3D"600" style=3D"width:600px;">              <tr>       =
+         <td align=3D"center" valign=3D"top" width=3D"600" style=3D"width:6=
+00px;">          <![endif]-->
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+" style=3D"width:600px" class=3D"wrapper">
+       <tbody>
+        <tr>
+         <td align=3D"center"><!--[if gte mso 9]>            <table align=
+=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"              w=
+idth=3D"600" style=3D"width:600px;">              <tr>                <td a=
+lign=3D"center" valign=3D"top" width=3D"600" style=3D"width:600px;">       =
+   <![endif]-->
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%" style=3D"border-color:#FFFFFF;border-style:none;border-width:0;backgr=
+ound-color:#232946;width:600px" class=3D"wrapper">
+           <tbody>
+            <tr>
+             <td style=3D"padding-top:0;padding-bottom:0;padding-left:0;pad=
+ding-right:0">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"float:left" align=3D"center" class=3D"column">
+               <tbody>
+                <tr>
+                 <td valign=3D"top">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"float:left" align=3D"left" class=3D"column">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-color:#FFFFFF;border-style:none;border-wi=
+dth:0;table-layout:fixed" data-cvent-id=3D"widget-NucleusImage-widget:b7c79=
+990-9852-42fa-b074-1b96b098e93c">
+                       <tbody>
+                        <tr>
+                         <td bgcolor=3D"transparent" style=3D"padding-top:0=
+;padding-bottom:0;padding-left:0;padding-right:0;text-align:center">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                           <tbody>
+                            <tr>
+                             <td>
+                              <center>
+                              <img src=3D"https://custom.cvent.com/112B6A45=
+EDDD46AEB6BFB53ADF2BC8E2/pix/83449accc78a4732b4de99acf0d8d64d.png?d=3D600" =
+alt=3D"" title=3D"" border=3D"0" width=3D"600" align=3D"center" style=3D"wi=
+dth:600px;display:block" class=3D"img-max">
+                              </center></td>
+                            </tr>
+                           </tbody>
+                          </table>
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                           <tbody></tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+               </tbody>
+              </table></td>
+            </tr>
+           </tbody>
+          </table><!--[if gte mso 9]>                </td>              </t=
+r>            </table>            <![endif]--></td>
+        </tr>
+        <tr>
+         <td align=3D"center"><!--[if gte mso 9]>            <table align=
+=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"              w=
+idth=3D"600" style=3D"width:600px;">              <tr>                <td a=
+lign=3D"center" valign=3D"top" width=3D"600" style=3D"width:600px;">       =
+   <![endif]-->
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%" style=3D"border-color:#FFFFFF;border-style:none;border-width:0;backgr=
+ound-color:#F2F2F2;width:600px" class=3D"wrapper">
+           <tbody>
+            <tr>
+             <td style=3D"padding-top:0;padding-bottom:0;padding-left:0;pad=
+ding-right:0">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"float:left" align=3D"center" class=3D"column">
+               <tbody>
+                <tr>
+                 <td valign=3D"top">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"float:left" align=3D"left" class=3D"column">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-color:#FFFFFF;border-style:none;border-wi=
+dth:0;table-layout:fixed" data-cvent-id=3D"widget-NucleusHeadline-widget:9e=
+653d08-28ce-43c1-9177-ba3ebf3640d4">
+                       <tbody>
+                        <tr>
+                         <td bgcolor=3D"transparent" style=3D"padding-top:1=
+5px;padding-bottom:15px;padding-left:15px;padding-right:15px">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                           <tbody>
+                            <tr>
+                             <td bgcolor=3D"transparent" style=3D"font-fami=
+ly:Roboto, sans-serif;font-weight:400;font-size:30px;color:#000000;line-hei=
+ght:39px;font-style:normal;text-align:center;border-width:0;border-color:#F=
+FFFFF;border-style:none;padding-top:0;padding-bottom:0;padding-left:0;paddi=
+ng-right:0">
+                              <div class=3D"css-vsf5of"></div>
+                              <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%">
+                              <tbody>
+                              <tr>
+                              <td><h2 style=3D"font-family:Roboto, sans-ser=
+if;font-weight:400;font-size:30px;color:#000000;line-height:39px;font-style=
+:normal;text-align:center; word-break: break-word; padding: 11px 0;"><span =
+style=3D"color: rgb(26,32,38);">See you tomorrow at <br>#DellTechForum #Tel=
+Aviv</span></h2></td>
+                              </tr>
+                              </tbody>
+                              </table></td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+                <tr>
+                 <td valign=3D"top">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"float:left" align=3D"left" class=3D"column">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-color:#FFFFFF;border-style:none;border-wi=
+dth:0;table-layout:fixed" data-cvent-id=3D"widget-NucleusText-widget:9d1d1c=
+01-68fb-4476-843d-4854a4cdb723">
+                       <tbody>
+                        <tr>
+                         <td bgcolor=3D"transparent" style=3D"padding-top:1=
+5px;padding-bottom:5px;padding-left:15px;padding-right:15px">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                           <tbody>
+                            <tr>
+                             <td bgcolor=3D"transparent" style=3D"font-fami=
+ly:Roboto, sans-serif;font-weight:400;font-size:16px;color:#000000;line-hei=
+ght:20px;font-style:normal;text-align:left;border-width:0;border-color:#FFF=
+FFF;border-style:none;padding-top:0;padding-bottom:0;padding-left:0;padding=
+-right:0">
+                              <div class=3D"css-vsf5of"></div>
+                              <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%">
+                              <tbody>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:16px;color:#000000;line-height:20px;font-style:nor=
+mal;text-align:left; word-break: break-word; padding: 6px 0;text-align:left=
+;">Dear <span style=3D"color: rgb(26,32,38);">David,</span></td>
+                              </tr>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:16px;color:#000000;line-height:20px;font-style:nor=
+mal;text-align:left; word-break: break-word; padding: 6px 0;text-align:left=
+;"><span style=3D"color: rgb(26,32,38);">We can't wait to see you tomorrow!=
+ From visionary keynotes and tech deep dives to interactive activations and=
+ networking, get ready to learn, connect and advance.</span></td>
+                              </tr>
+                              </tbody>
+                              </table></td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+                <tr>
+                 <td valign=3D"top">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"float:left" align=3D"left" class=3D"column">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-color:#FFFFFF;border-style:none;border-wi=
+dth:0;table-layout:fixed" data-cvent-id=3D"widget-NucleusText-widget:3bafa0=
+90-ef1e-45d4-bd0b-c8d667a55211">
+                       <tbody>
+                        <tr>
+                         <td bgcolor=3D"transparent" style=3D"padding-top:5=
+px;padding-bottom:10px;padding-left:15px;padding-right:15px">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                           <tbody>
+                            <tr>
+                             <td bgcolor=3D"transparent" style=3D"font-fami=
+ly:Roboto, sans-serif;font-weight:400;font-size:16px;color:#000000;line-hei=
+ght:20px;font-style:normal;text-align:left;border-width:0;border-color:#FFF=
+FFF;border-style:none;padding-top:0;padding-bottom:0;padding-left:0;padding=
+-right:0">
+                              <div class=3D"css-vsf5of"></div>
+                              <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%">
+                              <tbody>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:16px;color:#000000;line-height:20px;font-style:nor=
+mal;text-align:left; word-break: break-word; padding: 6px 0;"><span style=
+=3D"color: rgb(26,32,38);"><span style=3D"font-weight: bold;">Date: </span>=
+12 September 2023</span></td>
+                              </tr>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:16px;color:#000000;line-height:20px;font-style:nor=
+mal;text-align:left; word-break: break-word; padding: 6px 0;"><span style=
+=3D"color: rgb(26,32,38);"><span style=3D"font-weight: bold;">Time: </span>=
+08:30 - 16:00</span></td>
+                              </tr>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:16px;color:#000000;line-height:20px;font-style:nor=
+mal;text-align:left; word-break: break-word; padding: 6px 0;"><span style=
+=3D"color: rgb(26,32,38);"><span style=3D"font-weight: bold;">Location:</sp=
+an></span> <span style=3D"color: rgb(26,32,38);">Expo Tel Aviv, Pavilion 2-=
+101 Rokach Blvd, Tel Aviv, Israel</span></td>
+                              </tr>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:16px;color:#000000;line-height:20px;font-style:nor=
+mal;text-align:left; word-break: break-word; padding: 6px 0;text-align:left=
+;"><span style=3D"color: rgb(0,0,0);"><span style=3D"font-weight: bold;">At=
+tending: </span></span><span style=3D"color: rgb(26,32,38);">DavidGidony=E2=
+=80=AC=E2=80=8F</span></td>
+                              </tr>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:16px;color:#000000;line-height:20px;font-style:nor=
+mal;text-align:left; word-break: break-word; padding: 6px 0;"><span style=
+=3D"color: rgb(26,32,38);"><span style=3D"font-weight: bold;">Confirmation =
+Number:</span></span> <span style=3D"color: rgb(26,32,38);">LBN5BGDDF9H</sp=
+an></td>
+                              </tr>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:16px;color:#000000;line-height:20px;font-style:nor=
+mal;text-align:left; word-break: break-word; padding: 6px 0;"><a href=3D"ht=
+tps://events.dell.com/04ovwR" target=3D"_blank" rel=3D"noreferrer"><span st=
+yle=3D"color: rgb(0,118,206);">Take a look at the Agenda &gt;</span></a></t=
+d>
+                              </tr>
+                              </tbody>
+                              </table></td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+                <tr>
+                 <td valign=3D"top">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"float:left" align=3D"left" class=3D"column">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-color:#FFFFFF;border-style:none;border-wi=
+dth:0;table-layout:fixed" data-cvent-id=3D"widget-NucleusEmptyCell-widget:b=
+b5671eb-5849-4558-83bc-338240a4d9f2">
+                       <tbody>
+                        <tr>
+                         <td bgcolor=3D"#F5F6F7" style=3D"padding-top:5px;p=
+adding-bottom:5px;padding-left:15px;padding-right:15px"></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+                <tr>
+                 <td valign=3D"top">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"float:left" align=3D"left" class=3D"column">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-color:#FFFFFF;border-style:none;border-wi=
+dth:0;table-layout:fixed" data-cvent-id=3D"widget-NucleusText-widget:4725cb=
+fd-f878-4760-b04f-fca070f4fd4b">
+                       <tbody>
+                        <tr>
+                         <td bgcolor=3D"#FFFFFF" style=3D"padding-top:15px;=
+padding-bottom:15px;padding-left:15px;padding-right:15px">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                           <tbody>
+                            <tr>
+                             <td bgcolor=3D"transparent" style=3D"font-fami=
+ly:Roboto, sans-serif;font-weight:400;font-size:16px;color:#000000;line-hei=
+ght:20px;font-style:normal;text-align:left;border-width:0;border-color:#FFF=
+FFF;border-style:none;padding-top:0;padding-bottom:0;padding-left:0;padding=
+-right:0">
+                              <div class=3D"css-vsf5of"></div>
+                              <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%">
+                              <tbody>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:16px;color:#000000;line-height:20px;font-style:nor=
+mal;text-align:left; word-break: break-word; padding: 6px 0;"><span style=
+=3D"font-weight: bold;">Upon arrival at the venue</span></td>
+                              </tr>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:16px;color:#000000;line-height:20px;font-style:nor=
+mal;text-align:left; word-break: break-word; padding: 6px 0;text-align:left=
+;"><span style=3D"color: rgb(26,32,38);">* ID card presentation is required=
+ to enter the conference. </span></td>
+                              </tr>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:16px;color:#000000;line-height:20px;font-style:nor=
+mal;text-align:left; word-break: break-word; padding: 6px 0;text-align:left=
+;"><span style=3D"color: rgb(26,32,38);">* According to the law of Israel, =
+if you are carrying a gun, it must be concealed.</span></td>
+                              </tr>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:16px;color:#000000;line-height:20px;font-style:nor=
+mal;text-align:left; word-break: break-word; padding: 6px 0;text-align:left=
+;">Please find below your unique QR code. Upon arrival at the venue please =
+ensure you have this ready to allow for a quicker registration process.</td=
+>
+                              </tr>
+                              </tbody>
+                              </table></td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+                <tr>
+                 <td valign=3D"top">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"float:left" align=3D"left" class=3D"column">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-color:#FFFFFF;border-style:none;border-wi=
+dth:0;table-layout:fixed" data-cvent-id=3D"widget-QRCode-widget:c1b6948a-94=
+41-4d0a-8dfa-1171be4fc7a1">
+                       <tbody>
+                        <tr>
+                         <td bgcolor=3D"#FFFFFF" style=3D"padding-top:15px;=
+padding-bottom:25px;padding-left:15px;padding-right:15px;text-align:center"=
+>
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                           <tbody>
+                            <tr>
+                             <td>
+                              <center>
+                              <img src=3D"https://www.cvent.com/events/barc=
+ode/barcode.aspx?i=3D31beb836-f51e-4e64-9e45-c8676d2fa91d&amp;bctype=3D7&am=
+p;tas=3D7dz7" alt=3D"QR Code" title=3D"QR Code" border=3D"0" width=3D"200" =
+align=3D"center" style=3D"width:200px;display:block">
+                              </center></td>
+                            </tr>
+                           </tbody>
+                          </table>
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                           <tbody></tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+                <tr>
+                 <td valign=3D"top">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"float:left" align=3D"left" class=3D"column">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-color:#FFFFFF;border-style:none;border-wi=
+dth:0;table-layout:fixed" data-cvent-id=3D"widget-NucleusEmptyCell-widget:4=
+9d4582b-0cba-4d10-a510-cec867a2105a">
+                       <tbody>
+                        <tr>
+                         <td bgcolor=3D"#F5F6F7" style=3D"padding-top:5px;p=
+adding-bottom:5px;padding-left:15px;padding-right:15px"></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+               </tbody>
+              </table></td>
+            </tr>
+           </tbody>
+          </table><!--[if gte mso 9]>                </td>              </t=
+r>            </table>            <![endif]--></td>
+        </tr>
+        <tr>
+         <td align=3D"center"><!--[if gte mso 9]>            <table align=
+=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"              w=
+idth=3D"600" style=3D"width:600px;">              <tr>                <td a=
+lign=3D"center" valign=3D"top" width=3D"600" style=3D"width:600px;">       =
+   <![endif]-->
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%" style=3D"border-color:#FFFFFF;border-style:none;border-width:0;backgr=
+ound-color:#F2F2F2;width:600px" class=3D"wrapper">
+           <tbody>
+            <tr>
+             <td style=3D"padding-top:0;padding-bottom:0;padding-left:0;pad=
+ding-right:0">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"float:left" align=3D"center" class=3D"column">
+               <tbody>
+                <tr>
+                 <td valign=3D"top">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"float:left" align=3D"left" class=3D"column">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-color:#FFFFFF;border-style:none;border-wi=
+dth:0;table-layout:fixed" data-cvent-id=3D"widget-NucleusText-widget:678ff8=
+e2-655f-486d-80b3-2234bc6f4e83">
+                       <tbody>
+                        <tr>
+                         <td bgcolor=3D"#FFFFFF" style=3D"padding-top:15px;=
+padding-bottom:15px;padding-left:15px;padding-right:15px">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                           <tbody>
+                            <tr>
+                             <td bgcolor=3D"transparent" style=3D"font-fami=
+ly:Roboto, sans-serif;font-weight:400;font-size:16px;color:#000000;line-hei=
+ght:20px;font-style:normal;text-align:left;border-width:0;border-color:#FFF=
+FFF;border-style:none;padding-top:0;padding-bottom:0;padding-left:0;padding=
+-right:0">
+                              <div class=3D"css-vsf5of"></div>
+                              <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%">
+                              <tbody>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:16px;color:#000000;line-height:20px;font-style:nor=
+mal;text-align:left; word-break: break-word; padding: 6px 0;text-align:left=
+;">For more information on the Dell Technologies Forum in Israel, please vi=
+sit:&nbsp; <a href=3D"https://www.dell.com/dt/forum-il" target=3D"_blank" r=
+el=3D"noreferrer">www.dell.com/dt/forum-il</a></td>
+                              </tr>
+                              </tbody>
+                              </table></td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+                <tr>
+                 <td valign=3D"top">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"float:left" align=3D"left" class=3D"column">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-color:#FFFFFF;border-style:none;border-wi=
+dth:0;table-layout:fixed" data-cvent-id=3D"widget-NucleusEmptyCell-widget:0=
+03abdea-bdd1-4bc0-a81a-2635b32b006a">
+                       <tbody>
+                        <tr>
+                         <td bgcolor=3D"#F5F6F7" style=3D"padding-top:5px;p=
+adding-bottom:5px;padding-left:15px;padding-right:15px"></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+               </tbody>
+              </table></td>
+            </tr>
+           </tbody>
+          </table><!--[if gte mso 9]>                </td>              </t=
+r>            </table>            <![endif]--></td>
+        </tr>
+        <tr>
+         <td align=3D"center"><!--[if gte mso 9]>            <table align=
+=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"              w=
+idth=3D"600" style=3D"width:600px;">              <tr>                <td a=
+lign=3D"center" valign=3D"top" width=3D"600" style=3D"width:600px;">       =
+   <![endif]-->
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%" style=3D"border-color:#FFFFFF;border-style:none;border-width:0;backgr=
+ound-color:#F2F2F2;width:600px" class=3D"wrapper">
+           <tbody>
+            <tr>
+             <td style=3D"padding-top:0;padding-bottom:0;padding-left:0;pad=
+ding-right:0">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"float:left" align=3D"center" class=3D"column">
+               <tbody>
+                <tr>
+                 <td valign=3D"top"><!--[if gte mso 9]>            <table a=
+lign=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0">          =
+    <tr>                <td align=3D"center" valign=3D"top">          <![en=
+dif]-->
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"300" style=3D"float:left" align=3D"left" class=3D"column">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-color:#FFFFFF;border-style:none;border-wi=
+dth:0;table-layout:fixed" data-cvent-id=3D"widget-NucleusText-widget:109bca=
+8c-225c-41cb-87c6-fc00c33ea6ff">
+                       <tbody>
+                        <tr>
+                         <td bgcolor=3D"transparent" style=3D"padding-top:2=
+3px;padding-bottom:15px;padding-left:15px;padding-right:15px">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                           <tbody>
+                            <tr>
+                             <td bgcolor=3D"transparent" style=3D"font-fami=
+ly:Roboto, sans-serif;font-weight:400;font-size:14px;color:#000000;line-hei=
+ght:18px;font-style:normal;text-align:left;border-width:0;border-color:#FFF=
+FFF;border-style:none;padding-top:0;padding-bottom:0;padding-left:0;padding=
+-right:0">
+                              <div class=3D"css-vsf5of"></div>
+                              <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%">
+                              <tbody>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:14px;color:#000000;line-height:18px;font-style:nor=
+mal;text-align:left; word-break: break-word; padding: 5px 0;">Join the <spa=
+n style=3D"color: rgb(0,118,206);">#DellTechForum</span> Conversation</td>
+                              </tr>
+                              </tbody>
+                              </table></td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table><!--[if gte mso 9]>            </td>            <=
+td align=3D"center" valign=3D"top">          <![endif]-->
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"300" style=3D"float:left" align=3D"left" class=3D"column">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-color:#FFFFFF;border-style:none;border-wi=
+dth:0;table-layout:fixed" data-cvent-id=3D"widget-NucleusText-widget:14b24b=
+04-81f8-4a18-8962-1c27dc06ee4b">
+                       <tbody>
+                        <tr>
+                         <td bgcolor=3D"transparent" style=3D"padding-top:1=
+5px;padding-bottom:15px;padding-left:15px;padding-right:15px">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                           <tbody>
+                            <tr>
+                             <td bgcolor=3D"transparent" style=3D"font-fami=
+ly:Roboto, sans-serif;font-weight:400;font-size:14px;color:#000000;line-hei=
+ght:18px;font-style:normal;text-align:right;border-width:0;border-color:#FF=
+FFFF;border-style:none;padding-top:0;padding-bottom:0;padding-left:0;paddin=
+g-right:15px">
+                              <div class=3D"css-vsf5of"></div>
+                              <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%">
+                              <tbody>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:14px;color:#000000;line-height:18px;font-style:nor=
+mal;text-align:right; word-break: break-word; padding: 5px 0;"><a href=3D"h=
+ttps://www.instagram.com/delltech/" target=3D"_blank" rel=3D"noreferrer"><s=
+pan style=3D"color: rgb(0,106,225);"><img src=3D"https://custom.cvent.com/1=
+12B6A45EDDD46AEB6BFB53ADF2BC8E2/pix/b55bc30ef9dd4805a793f552e9848291.png" b=
+order=3D"0"></span></a><span style=3D"color: rgb(0,106,225);"> &nbsp; </spa=
+n><a href=3D"https://www.linkedin.com/company/delltechnologies" target=3D"_=
+blank" rel=3D"noreferrer"><span style=3D"color: rgb(0,106,225);"><img src=
+=3D"https://custom.cvent.com/112B6A45EDDD46AEB6BFB53ADF2BC8E2/pix/436a99442=
+d6749c1876861dd85c8c30b.png" border=3D"0"></span></a><span style=3D"color: =
+rgb(0,106,225);"> &nbsp; </span><a href=3D"https://twitter.com/DellTech" ta=
+rget=3D"_blank" rel=3D"noreferrer"><span style=3D"color: rgb(0,106,225);"><=
+img src=3D"https://custom.cvent.com/112B6A45EDDD46AEB6BFB53ADF2BC8E2/pix/9f=
+b6a9b2cf1247d1a95225c6e6bb22c9.png" border=3D"0"></span></a></td>
+                              </tr>
+                              </tbody>
+                              </table></td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table><!--[if gte mso 9]>                </td>         =
+     </tr>            </table>          <![endif]--></td>
+                </tr>
+               </tbody>
+              </table></td>
+            </tr>
+           </tbody>
+          </table><!--[if gte mso 9]>                </td>              </t=
+r>            </table>            <![endif]--></td>
+        </tr>
+        <tr>
+         <td align=3D"center"><!--[if gte mso 9]>            <table align=
+=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"              w=
+idth=3D"600" style=3D"width:600px;">              <tr>                <td a=
+lign=3D"center" valign=3D"top" width=3D"600" style=3D"width:600px;">       =
+   <![endif]-->
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%" style=3D"border-color:#FFFFFF;border-style:none;border-width:0;backgr=
+ound-color:#232946;width:600px" class=3D"wrapper">
+           <tbody>
+            <tr>
+             <td style=3D"padding-top:0;padding-bottom:0;padding-left:0;pad=
+ding-right:0">
+              <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"float:left" align=3D"center" class=3D"column">
+               <tbody>
+                <tr>
+                 <td valign=3D"top">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"float:left" align=3D"left" class=3D"column">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-color:#FFFFFF;border-style:none;border-wi=
+dth:0;table-layout:fixed" data-cvent-id=3D"widget-NucleusText-widget:c43f0e=
+70-0032-4850-af55-88111e9101ec">
+                       <tbody>
+                        <tr>
+                         <td bgcolor=3D"transparent" style=3D"padding-top:1=
+5px;padding-bottom:15px;padding-left:15px;padding-right:15px">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                           <tbody>
+                            <tr>
+                             <td bgcolor=3D"transparent" style=3D"font-fami=
+ly:Roboto, sans-serif;font-weight:400;font-size:16px;color:#000000;line-hei=
+ght:20px;font-style:normal;text-align:center;border-width:0;border-color:#F=
+FFFFF;border-style:none;padding-top:0;padding-bottom:0;padding-left:0;paddi=
+ng-right:0">
+                              <div class=3D"css-vsf5of"></div>
+                              <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%">
+                              <tbody>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:16px;color:#000000;line-height:20px;font-style:nor=
+mal;text-align:center; word-break: break-word; padding: 6px 0;text-align:ce=
+nter;"><a href=3D"https://www.dell.com/preferences/listremoval/?s=3Dpd%20&a=
+mp;%20c=3Dus&amp;l=3Den" target=3D"_self" rel=3D"noreferrer"><span style=3D=
+"color: rgb(255,255,255);"><span style=3D"text-decoration: underline;">Unsu=
+bscribe</span></span></a><span style=3D"color: rgb(255,255,255);"> | </span=
+><a href=3D"https://www.dell.com/learn/us/en/uscorp1/policies-privacy-count=
+ry-specific-privacy-policy" target=3D"_self" rel=3D"noreferrer"><span style=
+=3D"color: rgb(255,255,255);"><span style=3D"text-decoration: underline;">P=
+rivacy statement</span></span></a></td>
+                              </tr>
+                              </tbody>
+                              </table></td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+                <tr>
+                 <td valign=3D"top">
+                  <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" w=
+idth=3D"100%" style=3D"float:left" align=3D"left" class=3D"column">
+                   <tbody>
+                    <tr>
+                     <td>
+                      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%" style=3D"border-color:#FFFFFF;border-style:none;border-wi=
+dth:0;table-layout:fixed" data-cvent-id=3D"widget-NucleusText-widget:8c5fac=
+97-20a8-4ee3-bd76-d051abda7595">
+                       <tbody>
+                        <tr>
+                         <td bgcolor=3D"#232946" style=3D"padding-top:0;pad=
+ding-bottom:15px;padding-left:15px;padding-right:15px">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                           <tbody>
+                            <tr>
+                             <td bgcolor=3D"transparent" style=3D"font-fami=
+ly:Roboto, sans-serif;font-weight:400;font-size:14px;color:#FFFFFF;line-hei=
+ght:18px;font-style:normal;text-align:center;border-width:0;border-color:#F=
+FFFFF;border-style:none;padding-top:0;padding-bottom:0;padding-left:0;paddi=
+ng-right:0">
+                              <div class=3D"css-vsf5of"></div>
+                              <table border=3D"0" cellpadding=3D"0" cellspa=
+cing=3D"0" width=3D"100%">
+                              <tbody>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:14px;color:#FFFFFF;line-height:18px;font-style:nor=
+mal;text-align:center; word-break: break-word; padding: 5px 0;text-align:le=
+ft;">You are subscribed as davidg@terasky.com</td>
+                              </tr>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:14px;color:#FFFFFF;line-height:18px;font-style:nor=
+mal;text-align:center; word-break: break-word; padding: 5px 0;text-align:le=
+ft;">Dell Technologies Global Headquarters is located at One Dell Way, Roun=
+d Rock, TX 78682</td>
+                              </tr>
+                              <tr>
+                              <td style=3D"font-family:Roboto, sans-serif;f=
+ont-weight:400;font-size:14px;color:#FFFFFF;line-height:18px;font-style:nor=
+mal;text-align:center; word-break: break-word; padding: 5px 0;text-align:le=
+ft;">Copyright =C2=A9 2023 Dell Inc. or its subsidiaries. All Rights Reserv=
+ed. Dell Technologies, Dell and other trademarks are trademarks of Dell Inc=
+. or its subsidiaries. Other trademarks may be trademarks of their respecti=
+ve owners.</td>
+                              </tr>
+                              </tbody>
+                              </table></td>
+                            </tr>
+                           </tbody>
+                          </table></td>
+                        </tr>
+                       </tbody>
+                      </table></td>
+                    </tr>
+                   </tbody>
+                  </table></td>
+                </tr>
+               </tbody>
+              </table></td>
+            </tr>
+           </tbody>
+          </table><!--[if gte mso 9]>                </td>              </t=
+r>            </table>            <![endif]--></td>
+        </tr>
+       </tbody>
+      </table><!--[if gte mso 9]>                </td>              </tr>  =
+          </table>            <![endif]--></td>
+    </tr>
+   </tbody>
+  </table>
+ </body>
+</html><img src=3D"https://www.cvent.com/api/email/dispatch/v1/open/l5zy6ng=
+bnvsy49/d4qvn85n/transparent.gif" alt=3D"">=
+
+----==1694415651219_L5ZY6NGBNVSY49_D4QVN85N==--

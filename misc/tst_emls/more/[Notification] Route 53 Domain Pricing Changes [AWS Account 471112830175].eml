@@ -1,0 +1,207 @@
+Received: from PR3P194MB1667.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:176::7)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Tue, 27 May 2025
+ 23:42:26 +0000
+Received: from PR0P264CA0242.FRAP264.PROD.OUTLOOK.COM (2603:10a6:100::14) by
+ PR3P194MB1667.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:176::7) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8769.25; Tue, 27 May 2025 23:42:23 +0000
+Received: from AMS1EPF0000003F.eurprd04.prod.outlook.com
+ (2603:10a6:100:0:cafe::a5) by PR0P264CA0242.outlook.office365.com
+ (2603:10a6:100::14) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8769.26 via Frontend Transport; Tue,
+ 27 May 2025 23:42:23 +0000
+Authentication-Results: spf=pass (sender IP is 54.240.127.103)
+ smtp.mailfrom=amazonses.com; dkim=pass (signature was verified)
+ header.d=amazon.com;dkim=pass (signature was verified)
+ header.d=amazonses.com;dmarc=pass action=none
+ header.from=amazon.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of amazonses.com designates
+ 54.240.127.103 as permitted sender) receiver=protection.outlook.com;
+ client-ip=54.240.127.103; helo=a127-103.smtp-out.amazonses.com; pr=C
+Received: from a127-103.smtp-out.amazonses.com (54.240.127.103) by
+ AMS1EPF0000003F.mail.protection.outlook.com (10.167.16.36) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8769.18
+ via Frontend Transport; Tue, 27 May 2025 23:42:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=benmzc5omgrgqjsu3tg2d2m7nez6lzho; d=amazon.com; t=1748389342;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding;
+	bh=M94N5KXeXaAFQYj9dXsKDk3gjekEgsWkAn905opGA/0=;
+	b=ToJVL2smauPVHhfyxejHxuCFI9JDm7TpBeCp3okinO319793izCQUnm6Za97/wDY
+	+7pdWntloyStjfs8kZG4fXh5F4CZk3KCjtthTd6Nk8WjOLgs0yZXx+UcxpqZraXiz6Z
+	0Y5ofcWyg8elUc2U7JMMfvTRVkaOlUMdA8vPvZ8U=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw; d=amazonses.com; t=1748389342;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+	bh=M94N5KXeXaAFQYj9dXsKDk3gjekEgsWkAn905opGA/0=;
+	b=ZaeKC3EtA7DJpR22MXKk3p9Y6FuV/wBBCPoMe8lf7KBItQj50cwZbNcGMep9KtZP
+	MYQRgQLFavnUtuVPpeouCqEwh08fL3ut2ZDwuKyRPp0R4aDkt2BVGifXItu9rlQafQs
+	ll6Ks2Mego2zmUBo1FcJfFWvo6WK6ez1gaqMAJd0=
+Date: Tue, 27 May 2025 23:42:22 +0000
+From: "Amazon Web Services, Inc." <no-reply-aws@amazon.com>
+To: davidg+aws-playground@terasky.com
+Message-ID: <0100019714202be6-d2f4e63d-b548-44e7-a2f3-15985a296684-000000@email.amazonses.com>
+Subject: [Notification] Route 53 Domain Pricing Changes [AWS Account:
+ 471112830175]
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-SM-COMMUNICATION: true
+X-SM-COMMUNICATION-ARN: arn:aws:silverwire:us-east-1:silvermine:AWS_BILLING_NOTIFICATION/AWS_BILLING_NOTIFICATION_366ccffaa8b942ef04afdc9d3825f9a3386ae984bbdba7c7530b171a69822d5f/a6adbe5e20d3c9f928f2b7663786b305c76bfb8039e8820e3716c499880005d3
+X-SM-MESSAGE-ARN: arn:aws:silverwire:us-east-1:silvermine:AWS_BILLING_NOTIFICATION/AWS_BILLING_NOTIFICATION_366ccffaa8b942ef04afdc9d3825f9a3386ae984bbdba7c7530b171a69822d5f/a6adbe5e20d3c9f928f2b7663786b305c76bfb8039e8820e3716c499880005d3/EMAIL-231918d1f68a21e98950625012ab99e7
+Feedback-ID: ::1.us-east-1.xvKJ2gIiw98/SnInpbS9SQT1XBoAzwrySbDsqgMkBQI=:AmazonSES
+X-SES-Outgoing: 2025.05.27-54.240.127.103
+Return-Path: 0100019714202be6-d2f4e63d-b548-44e7-a2f3-15985a296684-000000@amazonses.com
+X-MS-Exchange-Organization-ExpirationStartTime: 27 May 2025 23:42:23.5348
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: c75757a2-bc6a-42c1-b758-08dd9d782136
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AMS1EPF0000003F:EE_|PR3P194MB1667:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AMS1EPF0000003F.eurprd04.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: c75757a2-bc6a-42c1-b758-08dd9d782136
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:3;ARA:13230040|6062899009|5082899009|5062899012|12012899012|13102899012|32142699015|13012899012|3072899012|3092899012|2092899012|4092899012|13003099007;
+X-Forefront-Antispam-Report: CIP:54.240.127.103;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:a127-103.smtp-out.amazonses.com;PTR:a127-103.smtp-out.amazonses.com;CAT:NONE;SFS:(13230040)(6062899009)(5082899009)(5062899012)(12012899012)(13102899012)(32142699015)(13012899012)(3072899012)(3092899012)(2092899012)(4092899012)(13003099007);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 27 May 2025 23:42:23.2299
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: c75757a2-bc6a-42c1-b758-08dd9d782136
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AMS1EPF0000003F.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PR3P194MB1667
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.4327779
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8769.014
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?VXZQUDlCQ0k4S2EvbW5Rd00va3R6Zm1vSEIza0cwT1Y4NElpKzM5UGorSnlo?=
+ =?utf-8?B?MlJ2b0dQQmlEeXhqR3lEYlNDeGhxYzNsVkFPWDdvZWszSW8yMEh1YnJYQ1Rt?=
+ =?utf-8?B?Q2ppOEo0WGEyK1R3M0kwbE1mZHR5Wk95RzdHOG1XWjF1SmZvNEMrV09WVlBl?=
+ =?utf-8?B?WVJ1SjNpaC9ZaUpLRDJ0OEVBVVY1aXhSdmd0YWdZZE1VY1ZtbjlVcGw0clA0?=
+ =?utf-8?B?dzdBbDRQZlJLZmZrN2lQMGI1REpvbHgwVG5GNWVCV1NyY2x0N2Juc1RYbmhE?=
+ =?utf-8?B?LzB2aFRYS3pKVjAvYU8rb05naGk2WERNREVCMVUvdTh6aWo4Ukt0cHVsd25Y?=
+ =?utf-8?B?VDQyd2N0blNWNzhGdEpNK1BDMjhzSERmNzEyWTRab3lEV0tXb1BHcWFMUTJj?=
+ =?utf-8?B?TW14SitqV0FoQXFQSjhwd0duL1RiUTAzT1ZyMDlxZlhDelpTVkMrZEtjZUNZ?=
+ =?utf-8?B?TzhaNFgyMFVCb3M4VDlBYTR3OWxzZHZ0Wk5sckIyMmhGNFpnVHVEVFZBY3Jh?=
+ =?utf-8?B?dzVqMFp6T0VsTmpZYnYrSU4vN0dmSnlIUHZvNHhXS0N5M2I0V0RzVmQrYkF1?=
+ =?utf-8?B?NmJ5NkFpbUptTXlLV3kxT3RvdWJkckNBVi91MU03OERtOStpMElQcEJIdEFH?=
+ =?utf-8?B?VXJMdlJpdDVZWVBhOHRaTDNvOXgwUE5ldjQxOU5oeFgxRjdPWUZxQUVNa3Er?=
+ =?utf-8?B?Smd0ZWxOT2xvVnpjS2xNTTlUMTJDMFM0c3NqbmdJVjBKRWp2bjliakVSMDBM?=
+ =?utf-8?B?K21NeGtSamhOUmtobGdCZnBRNk9lMWljMGZiY04wcGwyejByZndXUmhldldm?=
+ =?utf-8?B?ckdLNXZNcEZzK05XajloeVJJdFE3SXNOcERtY3B1L25VVnpUZGl4K1hWNEty?=
+ =?utf-8?B?aXdyN050RFVZM3lqdGgva0ZpN2M1d0k2K3pYbWgvZHFVS1d0TVdrZkZRVkU5?=
+ =?utf-8?B?c3pqcWlybW1UNmJoZmlZcTBpQzg3aHpiMHRWWEVSYVhRaXA3cFoyS3hteGNu?=
+ =?utf-8?B?VzE3UXFyeDN4VWQ3cmRXZFhFZ1hEZ2R2MUNnSHNKekpTQ0Y0YkMxNHhYckVi?=
+ =?utf-8?B?NzRQUnF6TXo0Sm1HcDMzQ0NwcXBVL0VsVlF2ZlhWQmlnL1VjU3dveGpOSEQv?=
+ =?utf-8?B?aVVSYmJQRXFzSGFkWmhqZDFrMHcxSlkzRElFZ3N1S0lrNm16REN0cWttSjZr?=
+ =?utf-8?B?WjhyanBiN0x0dU1HUml6V1A2RzYzUHZ2T1AzWERrSFdMV2lHeStid2Z5a1Vv?=
+ =?utf-8?B?czU0UXdZZS9JRlRESlZuMDlNek9IdUdMd1hJbVNFY2d2ejBSZmlxNG1sMmg5?=
+ =?utf-8?B?amFmRFJ6WUppZVhTS1YyTnpPZHN5ZjBjU2UrQjBkRk1kZjBvL1ZmZVNvY3k4?=
+ =?utf-8?B?OXFTb3ErelhLOWNyUFZpamNaNDliamtMUG14dkVzVzZLMUJMNkZHQk9zdysw?=
+ =?utf-8?B?WXhMRCtyNURYaStPWmgvSFozb1ZmS24xZS80RVlQWVUxRUV0N25QRzMzN0g1?=
+ =?utf-8?B?SHJMZldxUzI4NExPZzlTaXZSdFdqaGJjTGxKV1F5Mk5XcXJYZDRicWQ2Sit4?=
+ =?utf-8?B?RFVMYlBOK2UvRDY1dHlGM2VCWlJZNThCcHlGRU9JM1lCdXorUkRzUGMxMDFC?=
+ =?utf-8?B?aGhQcUdMWTRDdmtPdEpGRWtCZWtETXcvSXUxL0JBZkZxTUcrWVh6Um5YbjEz?=
+ =?utf-8?B?VkE0Wmk0R2xlQk4xUVo0YWI0Qm52S2IySXg5ZFZQWDlycE9RUHBseGhsa2Jz?=
+ =?utf-8?B?UUlBek5YZFVRY3IvQXMxcjlmdXN6bVRSdWpDWjJnT0FxMU1EZU1DWS9tUVha?=
+ =?utf-8?B?V0ZRaTNuN2Ivb2R3cGV2UmtlZEc4aHpFdnVaKzhhWCtmTkxaZFVIcVphU3pX?=
+ =?utf-8?B?ZTh4YWlSeUdRb2xRMjM0SWxkN3NoditOKzdZK2s1aktzMDUwaytuTSs5TFpC?=
+ =?utf-8?B?SHhkY29GTzQ0eGhibU5lYWZsVlAraTJoRlh4L1hpNHZOY1JYSmhKNUtQSktM?=
+ =?utf-8?B?VnlHNy9ianBVckNWcTV1QmtpOHM4L0xQSDJFU3ZZeVVRT2RYUG0zMDJ6emNQ?=
+ =?utf-8?B?WDE2SlBUZ3A4Ui9ORklSV0RJNEdpMGFJeDZJMVlNYk1xSDlqWGVXUDErTGRX?=
+ =?utf-8?B?cjVvQXA3aVVyWnQ2U1dLN3QwZC9nLzJiUytLZUN4dnE2UTBrZGdHY3E5L283?=
+ =?utf-8?B?Smtjb09tazFVcnh6U2ZIOTM1Z2NFenJudHhjY0d2Tmx2emZ6M29VZkhldW1l?=
+ =?utf-8?B?WExJVWJRR2VIejhLVzV1M3ErZmtGNXMxK1c1QVVaWE9Dc21uNHlvK0gwK3A5?=
+ =?utf-8?B?ckRYeWp2S2pHbm1FdHNUOWdac0J3Z1lweGNmUTNJK2o5MEd6TXhKazNQbWUz?=
+ =?utf-8?B?bXJ5WGFLbVRORm5TWTErQVl6Rk9zZ1ZZMHpQR25BdkhmS0luTDJiTlFrSDdU?=
+ =?utf-8?B?NVlDK0lENTVxR2tuRmM0TGZxZnBndHpFWXJMMVc5MWc5ZVM4OFFwOWt4RUg5?=
+ =?utf-8?B?UFV3bzJZa3FEQTZwb3VMSGU5cmJneG80M25tYzU3c2xMaDREa0Vyd0VLVmd6?=
+ =?utf-8?B?blNoaXFraEtRZFFrRFFrYzNIclJNVFJFQnQwdGppVG9UNWFnWml4MVV1RnhL?=
+ =?utf-8?B?TDRqVFBsMCtZeVkwU2RUZ2hFWFhZY0xwSW1YUzE1elFmQ21lRGg2ejhHWVpJ?=
+ =?utf-8?B?TURNZTZrTUh6S1htaWl3TE9SQ3lieWFLNWJnditvRU83NXZBbld2SkFqZ0c3?=
+ =?utf-8?B?cnBFeElsR00wc1A3YXMwSUdmU3diRG1xOUZpQ0ZWSkgrcGpReUxGcjdqbTZN?=
+ =?utf-8?B?OU1mcVZyc0cwS3EvaHVSQVg1R2NucUkwSTVaOHF1SGNPNVJWZjN4TkpqUmg4?=
+ =?utf-8?B?VUNMbjZMU09jY1hwZVNESjV6K2psQU5Eajk0YlRlcVEreVF2T01PR25YZ0N3?=
+ =?utf-8?B?NmdWMEtwc2hMcXRTaW0xeFVDdnZNTUJnd0VWcmNGcFduYmd3OWRDc1VxNCtj?=
+ =?utf-8?Q?DLHJWjCp6ql4E8EQA1SloHtuxBoROitN2MX?=
+MIME-Version: 1.0
+
+[Starting September 15, 2025, emails about AWS Health events will be delive=
+red via the AWS User Notifications service. You can opt-in to this enhanced=
+ experience today. See footer for details.]
+
+Hello,
+
+We are providing advance notice regarding upcoming adjustments to domain re=
+gistration pricing. This notification is intended to help you make informed=
+ decisions about any upcoming domain renewals.
+
+Effective July 1, 2025, we will implement pricing adjustments for select To=
+p-Level Domains (TLDs). For detailed information regarding affected TLD pri=
+cing, please visit the 'Domains' tab on the Amazon Route 53 Pricing page [1=
+].
+
+A list of your affected domains can be found in the 'Affected resources' ta=
+b of your AWS Health Dashboard.
+
+FAQs:
+
+Q: Why are the prices being adjusted?
+A: The registries managing these TLDs have changed the wholesale prices the=
+y charge to registrars such as Route 53. Route 53 is adjusting its retail p=
+ricing to account for the cost increases.
+
+Q: How can I keep my current prices?
+A: To keep your current pricing, you can choose to renew your domain for a =
+period of up to 10 years (the maximum allowable renewal period for the list=
+ed TLDs). Refer to Route 53 Developer guide [2] for instructions on extendi=
+ng the registration period for a domain. Any renewals after July 1, 2025, a=
+re subject to the price increases listed on the Amazon Route 53 Pricing pag=
+e [1].
+
+Q: Will there be further price adjustments in the future?
+A: We cannot exclude this possibility. Prices for domain operations may be =
+subject to increases based on their corresponding registry costs. Route 53 =
+periodically reviews TLD pricing to make necessary adjustments when such ad=
+justments cannot be avoided.
+
+If you have any questions or concerns, please reach out to AWS Support [3].
+
+[1] https://aws.amazon.com/route53/pricing/
+[2] https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-extend=
+.html
+[3] https://aws.amazon.com/support
+
+Sincerely,
+Amazon Web Services
+
+Amazon Web Services, Inc. is a subsidiary of Amazon.com, Inc. Amazon.com is=
+ a registered trademark of Amazon.com, Inc. This message was produced and d=
+istributed by Amazon Web Services Inc., 410 Terry Ave. North, Seattle, WA 9=
+8109-5210
+
+---
+Reference: https://health.aws.amazon.com/health/home?region=3Dus-east-1#/ev=
+ent-log?eventID=3Darn:aws:health:global::event/BILLING/AWS_BILLING_NOTIFICA=
+TION/AWS_BILLING_NOTIFICATION_366ccffaa8b942ef04afdc9d3825f9a3386ae984bbdba=
+7c7530b171a69822d5f&amp;eventTab=3Ddetails
+
+[Beginning September 15, 2025, emails about AWS Health events will be deliv=
+ered via AWS User Notifications. AWS User Notifications provides de-duplica=
+tion of emails within AWS organizations and a configuration interface to ma=
+nage subscriptions. Emails about AWS Health events will be sent from a new =
+sender address: health@aws.com and in HTML format, rather than plain text. =
+Recipients may need to validate that email rules continue to work with the =
+changes. To switch to the new experience early, please visit https://consol=
+e.aws.amazon.com/notifications/home?region=3Dus-east-1#/managed-notificatio=
+ns]
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]

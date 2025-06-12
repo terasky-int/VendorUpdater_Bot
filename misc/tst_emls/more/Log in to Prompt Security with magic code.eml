@@ -1,0 +1,295 @@
+Received: from AM8P194MB1514.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:3d9::20)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Sun, 25 May 2025
+ 10:05:47 +0000
+Received: from DU7P251CA0003.EURP251.PROD.OUTLOOK.COM (2603:10a6:10:551::33)
+ by AM8P194MB1514.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:3d9::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8769.21; Sun, 25 May
+ 2025 10:05:44 +0000
+Received: from DU2PEPF00028CFF.eurprd03.prod.outlook.com
+ (2603:10a6:10:551:cafe::7c) by DU7P251CA0003.outlook.office365.com
+ (2603:10a6:10:551::33) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8769.25 via Frontend Transport; Sun,
+ 25 May 2025 10:05:44 +0000
+Authentication-Results: spf=pass (sender IP is 159.183.0.86)
+ smtp.mailfrom=em1020.prompt.security; dkim=fail (no key for signature)
+ header.d=prompt.security;dmarc=pass action=none
+ header.from=prompt.security;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of em1020.prompt.security
+ designates 159.183.0.86 as permitted sender) receiver=protection.outlook.com;
+ client-ip=159.183.0.86; helo=wfbthhrs.outbound-mail.sendgrid.net; pr=C
+Received: from wfbthhrs.outbound-mail.sendgrid.net (159.183.0.86) by
+ DU2PEPF00028CFF.mail.protection.outlook.com (10.167.242.183) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8769.18
+ via Frontend Transport; Sun, 25 May 2025 10:05:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=prompt.security;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:to:
+	cc:content-type:from:subject:to;
+	s=s1; bh=3kg/Ip7w01tmdh7uNoYq56WuOyxvhinlAjF00viOE+Q=;
+	b=FfsqdRGNnDbiTaoi2H/1H/bIBdPx8f3cmTyDSEaah0aCkPF+e88BE7c6Sn8lWzq/N7DA
+	5OhUYkJdGUMq7R07cONzKU172sqYYVEEBEOm5JSq/q/FD+t5UegrGt3c27ixzXqZ6+8TUU
+	Ku/HHogFBdD1NIiJMse3S3VUwVQEwWOBOcxRXp7Pde6/4SVQwtCa/lTUYpk3WWF9KIav4W
+	tBVsh0qyxlwpQ7ebwN+dvVXzvqO6JhuiqDo22+oMJ5MJugZpR/gret1sd6s2CB/vwxL74U
+	jdNXDs7nhMtS1Sv8ywYU/eFa3qIF72KaxdJU+NhOCkVC/z76VpBEYTXKehj1I2+Q==
+Received: by recvd-64576489d9-mr886 with SMTP id recvd-64576489d9-mr886-1-6832EB76-2E
+	2025-05-25 10:05:42.513477115 +0000 UTC m=+4017472.224775624
+Received: from MTE4NDY5NTc (unknown)
+	by geopod-ismtpd-11 (SG) with HTTP
+	id uh9uGWZ3TByWqKBcLVOteQ
+	Sun, 25 May 2025 10:05:42.458 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Sun, 25 May 2025 10:05:42 +0000
+From: Prompt Security <support@prompt.security>
+Message-ID: <uh9uGWZ3TByWqKBcLVOteQ@geopod-ismtpd-11>
+Subject: Log in to Prompt Security with magic code
+X-SG-EID: =?us-ascii?Q?u001=2Es0p0lRhuyIfvZq8FoxN9=2FfY4L+4pYeM=2FEPPwbl=2FnVrMJC7GVbZatKWAu5?=
+ =?us-ascii?Q?Yux7spSwIwqFrjB1Xugmnfxmd07dfSXTDo1MEme?=
+ =?us-ascii?Q?qy80FeztuupPnbYxrldDAwjlJAATpKIn2YIKl4j?=
+ =?us-ascii?Q?74wjkAcc35Lezd=2Fu0CZaiNZJXDy5lxd6Nx2lCSB?=
+ =?us-ascii?Q?PngEx6s4yZhtyECh8l7kLfXUWwlfR=2FsKju7dUQI?=
+ =?us-ascii?Q?82qPsHiE3tLnz=2FOagt8KzixCGmQt68xoZxoQV8r?= =?us-ascii?Q?BVfp?=
+X-SG-ID: =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3Bqbv=2FXoWxoGMhF3embHuULiKC5b9rT9qvaN2k?=
+ =?us-ascii?Q?HKkHWDy8Mt=2Fv2yt2Nrz02om0sbOaRpZ38T2hP3G?=
+ =?us-ascii?Q?JqDFkdKscXTASd=2F8wf2XaMCcFSOwEf=2FQr0NKsoQ?=
+ =?us-ascii?Q?anW7BZ6zaFaMl4GH7kQ8uTo9ixk3+lUERnwzI8P?=
+ =?us-ascii?Q?TFZTSVTIgQ+BMrzTo=2FUOqNd=2FRvTs6iTd8uP=2Fnxa?=
+ =?us-ascii?Q?t9yNA1xA96tg7wOypG=2FrQw=3D?=
+To: davidg@terasky.com
+X-Entity-ID: u001.JlIce8J/rZ1RpmTdhWvQ2Q==
+Return-Path: bounces+11846957-ce3b-davidg=terasky.com@em1020.prompt.security
+X-MS-Exchange-Organization-ExpirationStartTime: 25 May 2025 10:05:43.8936
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 414acadb-7d97-4d08-51c9-08dd9b73b653
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU2PEPF00028CFF:EE_|AM8P194MB1514:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: DU2PEPF00028CFF.eurprd03.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 414acadb-7d97-4d08-51c9-08dd9b73b653
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|31052699007|69100299015|29132699027|4076899003|8096899003;
+X-Forefront-Antispam-Report: CIP:159.183.0.86;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:wfbthhrs.outbound-mail.sendgrid.net;PTR:wfbthhrs.outbound-mail.sendgrid.net;CAT:NONE;SFS:(13230040)(31052699007)(69100299015)(29132699027)(4076899003)(8096899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 May 2025 10:05:43.4676
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 414acadb-7d97-4d08-51c9-08dd9b73b653
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: DU2PEPF00028CFF.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM8P194MB1514
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.9475480
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8769.014
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?bjcyN2VvdlNpdjhTYi91QTQvb256cXZoRjIwcmRrSk5nWEhJcFd6NWFtMHZ6?=
+ =?utf-8?B?bXkwL1dCWkRYV2NaYVJnZkNKZ1pYVEdaV0I5YUdBTm5XTXVWWlhyOEJaMFF0?=
+ =?utf-8?B?c1lDbHkvc3pqWS84UkxEbXpxSlNMZ0VjMWl2VG0zb3d5ZXhyWWdYOVNDZHU4?=
+ =?utf-8?B?UUFPcS90ejhPTFBrOEtYSXRBcFZ2MVovQk9ENGtJY3ovWFNjeUY0Y0tqUGcz?=
+ =?utf-8?B?U0ltR2EyZVJreVdhNitzVzIwQ212WTVzQzNISXVKcDNxUlZSL1NwSlIwN2Rh?=
+ =?utf-8?B?Rklmc0ZsNm5odjA2L2tZNXY3dnp0em5NbWN3d3lFQjJRdU9LY3V6bW9lWi95?=
+ =?utf-8?B?S1VuTitnRWtqeGpvUGs1bC9zOSt0T3BlV1c4eDRxaDlDKzEyeUR5cFRwMlFO?=
+ =?utf-8?B?ZG41RFhZOCtFQ2FuOG51eDRxOU9XcG1qTVkwQnlpN2o3b1VTM0ZYdzFzeVRo?=
+ =?utf-8?B?YXpkSnJaN1ZKNWU3ZUU2V2d1SHpTa29JS0xxZnRNZ3NZM1UvQ0c0cUNlMWxD?=
+ =?utf-8?B?LzhCeVI4d3VYMFZWRnNrdUExSC9xVlZ4WnZ1UjMxT2NrdXF5MVpuOGFRSFZS?=
+ =?utf-8?B?eE41dGN2dGxWNm1Ea0ZUdmtjYzhHaC9aZXhYZTl3aUJWcFE0RkRDWms3Qlh6?=
+ =?utf-8?B?WFY3eUtGck04SmxQa0FsNmRQU1NHUjlyK1BpZ21JWWlRaWdJa0dxdkxWVFUw?=
+ =?utf-8?B?VjRQOXA4M1BGQ3U2QUkyWjVmT21xVWE2RUkrRk1QODA4WEgrNVcxMmg2bjVt?=
+ =?utf-8?B?NVNrTnI3S1VXaXNJNGUrSVFOQjZNSVB5T0lHcUNFcUszK09GTDR6RUQrc1lN?=
+ =?utf-8?B?MExoRkFnMkZaeFpPOWpDY0tPNDlzcG9iYTFTWEc0Q0IwZnJwYkNxZzJ2Sk12?=
+ =?utf-8?B?ZmhJWTBkajdIdnYrTmdhaklRZEV4ejJGOE5VRDhHSnNVRUxaMHh5UnJvMGt6?=
+ =?utf-8?B?VUdrZVZBS2wybkV6VmdWL2pwNG9MRXJJQjVWNHFaTkpQcC81TXFPTE9MOHdh?=
+ =?utf-8?B?RnlKTTQzWU55VnFTM3dBdVR0dFU2cGM5ZTR1dVdQdkhGeDB3Z1RDb1JIejhZ?=
+ =?utf-8?B?SWtqL0ovbHgvaGFSVjBPdHJDTnBjM1NiT3REUDdPcDdSMlFSR2NieURSMFhq?=
+ =?utf-8?B?SXR1NDZuUUhxcUw1VGphTUprNG9sRjNuQU1CVGtMeThQUFFJV0Yzc01uNzYv?=
+ =?utf-8?B?V1BKcWdDS0VMMWY4RzVRZHBpWmw2ZE5YVGhuMmVTQ1NhU1JrRHMzcmtxOU1F?=
+ =?utf-8?B?b25QZ0ZOckZ5N29aWlBQWmFSZUpYSG14eGh6S25tSjFsVWZUblp1NXBqWk01?=
+ =?utf-8?B?VzVyMmo5VlZ4MFVqMWg5cTkrWVhvTk9jODZvd0oxV2NNVEE4Z1gxT0s5NzM3?=
+ =?utf-8?B?RlEwMndnMzFVYVpTODY2dExGbi8wcjNDZ3YxMTA5eUp6a1YzUE0weVErQXBs?=
+ =?utf-8?B?UVB3TlZHSjZtSnBCK0FvRERWbGVCdnhMVko4VG9sWVU3am84RERyblFuanpL?=
+ =?utf-8?B?Uis4V0krcmpPd01lb3RHb2Q0VjZOdmdrT1YwQzF3bERYSEhpQ2VrTHcvV1F4?=
+ =?utf-8?B?WmxLL3NXUENOR2g4eUY4cEcxdU1NTFhXQld5VzRRQzY1bS9jb1lURk9XUmxL?=
+ =?utf-8?B?M0dzMGEwWW45ckFhT3ZPWFR4ZVVaS3d1YlR2c2N0YWpvMVowREM2N1ZmVytK?=
+ =?utf-8?B?Ulo5bFc3am5nWFBnWWhMWGJzZUJPdkdKNUtydVNjYTNPNzlNanVHVWVoa2JM?=
+ =?utf-8?B?NFFRV0ZReGZJdy9CZzZaclB2V1owQTVsUCt2T1o4ekdWRDNidnc4YWxEN3dE?=
+ =?utf-8?B?U3hzV3BrRzhsTkxMZEtzWnRZQkxWck1QUmtHemh2cW9zTkphNDlaWDBPMEI1?=
+ =?utf-8?B?RitWbC9MYTJMOTMzV1grTU5MSFBqS2J6YUxNQUg4Y2tVcjhsU0l3eUV6cUp0?=
+ =?utf-8?B?ckcyZ0pCa3VGWGJOTUJjQUVjZFI5TWFvWU42bjdnNjRvdzZGUmZxang1NVJE?=
+ =?utf-8?B?SitaOEgvVnFhNUhhMXh0Rm91RkxlVm85SStlM1h3ZnZyZ3pPZW1DM1ZVcFEx?=
+ =?utf-8?B?dHRMNGp3WXZrM0hNejNveUdJaTNSTjZvVXZIZEhMdjN2bkRHQmNnL2R6ODZF?=
+ =?utf-8?B?cnpOSHNmTGRRemd0RC8vcUZJWkl0S3RXTHpuUTQzaU1LbGRxdnBDbW9QSVJP?=
+ =?utf-8?B?T09DUjlnZXpibHdSSDhaSkx4NGZ2R2kxeFZUM1VOQ0V1VUVhTEkrdW0zTCs1?=
+ =?utf-8?B?ZmJ5eUJRa3RZMXRyYVFwUjJYdSsrbGRXdzN3VlZKSCs2U3ZGRmQ4NGlPbmx5?=
+ =?utf-8?B?ZXp5YnpLejlpSFFQS1R3bUxVcHRuUFpsazhHcTFEZVB6dks4enRCNDhqeUsx?=
+ =?utf-8?B?L08zSWZpdnlXdEpmelExUWN3aysxOFFxNS9ndGVsRzAxU25zS1FEbU1OL0tn?=
+ =?utf-8?B?LythOUV1N3dDME8vWnZuYXFoUDRDaEVwanozM0FlRmhrWExWdFR4K3hKNnpI?=
+ =?utf-8?B?S1ZaM2wzTjZFZEJ2d0hXMVBjcjFRM2JWbFRTeTZsZEo5V25oeFBEaWlTQ3VP?=
+ =?utf-8?B?UXUwc3F5QTJzNktmeVZ5T0lJN2RpbWMrVm5hcytVV1NNeElMUVNQZko2QkNC?=
+ =?utf-8?B?MGVwNkpucUxNSkpOTzNjb0Q0TFU3b3lkWVBHNHJNTEljR0wyVjZqd1Fnb1E5?=
+ =?utf-8?B?dGRMYW43UkNlK2wyZ2w1aDg5RzU2VkNzTkN0d1hOM1NSQVE1dzY2ZkVsK1ZY?=
+ =?utf-8?Q?ZJArxPgiEmqhDd5sdS3i7PJ?=
+MIME-Version: 1.0
+
+<!DOCTYPE html><html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta name=3D"format-detection" content=3D"telephone=3Dno, date=3Dno, addre=
+ss=3Dno, email=3Dno, url=3Dno">
+<style>
+        body, table, td, p {margin: 0; padding: 0;}
+        img {-ms-interpolation-mode: bicubic; border: 0;}
+        table {border-collapse: separate !important;}
+       =20
+        .ExternalClass {width: 100%;}
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass td {line-height: 100%;}
+       =20
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+    </style>
+</head>
+<body style=3D"margin:0;padding:0;width:100%">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"display:no=
+ne;mso-hide:all">
+<tbody>
+<tr>
+<td style=3D"display:none;overflow:hidden;float:left;font-size:0px;max-heig=
+ht:0px;line-height:0px">
+Log in to Prompt Security with your magic code &nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C </td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"background-color:#ffffff">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"padding:20px">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" styl=
+e=3D"max-width:550px">
+<tbody>
+<tr>
+<td style=3D"background-color:#ffffff;border:1px solid #dddee3;-webkit-bord=
+er-radius:20px;-moz-border-radius:20px;border-radius:20px;mso-padding-alt:0=
+px">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"background-color:#fafafb;padding:40px 30px;border-bottom:2px s=
+olid #e4c7fd;text-align:center;-webkit-border-top-left-radius:20px;-webkit-=
+border-top-right-radius:20px;-moz-border-radius-topleft:20px;-moz-border-ra=
+dius-topright:20px;border-top-left-radius:20px;border-top-right-radius:20px=
+">
+<img alt=3D"Prompt Security Logo" width=3D"97" style=3D"max-width:200px;hei=
+ght:auto;margin:0 auto 20px" src=3D"https://i.imgur.com/kitJJjD.png">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"font-family:'DM Sans-Bold', Helvetica, Arial, sans-serif;font-=
+weight:700;color:#000000;font-size:20px;text-align:center">
+Log in to Prompt Security </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"padding:40px 30px">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"font-family:'DM Sans-Regular', Helvetica, Arial, sans-serif;co=
+lor:#000000;font-size:15px;line-height:24px;padding-bottom:30px">
+Log in with magic code:<br>
+Copy and paste the following code to log in.<br>
+The code is available for the next 5 minutes. </td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"margin:0 a=
+uto">
+<tbody>
+<tr>
+<td style=3D"font-family:'DM Sans-Regular', Helvetica, Arial, sans-serif;co=
+lor:#6947cf;padding-bottom:50px;font-size:30px;line-height:35px;font-weight=
+:700">
+768208 </td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"font-family:'DM Sans-Regular', Helvetica, Arial, sans-serif;co=
+lor:#000000;font-size:15px;line-height:24px;padding-bottom:40px">
+Best regards,<br>
+The Prompt Security Team </td>
+</tr>
+</tbody>
+</table>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"font-family:'DM Sans-Regular', Helvetica, Arial, sans-serif;co=
+lor:#9238d9;font-size:15px;line-height:24px;text-align:center">
+Any questions? contact us at support@prompt.security </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<img src=3D"https://u11846957.ct.sendgrid.net/wf/open?upn=3Du001.FDrvlN0lYN=
+Ypvw8-2FqWX2HXvWgB22OVixYiEvpHCJhhAYkeIRmXcz0ZqVXsjaFPJWWPmfpsY-2FsQXE4qAfa=
+HlKw-2BOpNavTEVP-2FfBir-2FFOM0Uiu6WRwYamFvuH-2BEzmCNKpT7KAKULNaCcC5AudGHjXR=
+gA1eqw0yeReQpakdN64ypIMevSsQVHgotCSxVXWUYtmvELyNfNMoXTdQ96hOv7mjnriDDvj6urq=
+6v4lzcCbagj3ZpCDnwPDEB3ZUbtmIs4b9us9JIBtwvF3qyUe-2Fmm61TKbSoDHXAHdCsaXlYImo=
+3JTiQ-2BZLUZAq2nK4AZrGsjI94IN0VmF3oq5VWVCu3PNPFzt-2FE0tCFUtWKgzvV4AIcQ5XUKM=
+w5ku-2F1DU491DGHFiolrAX22gkdRHOzOY7qI0FOaSSAyrztYd1sM1PzLu2FUA-3D" alt=3D""=
+ width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;width=
+:1px !important;border-width:0 !important;margin-top:0 !important;margin-bo=
+ttom:0 !important;margin-right:0 !important;margin-left:0 !important;paddin=
+g-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;p=
+adding-left:0 !important;">
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+ </body>
+</html>

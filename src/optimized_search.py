@@ -18,7 +18,7 @@ from datetime import datetime, timedelta
 
 from src.hybrid_search import hybrid_search
 from src import llm_utils
-from graph_db_consolidated import run_graph_query
+# from graph_db_consolidated import run_graph_query
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -27,6 +27,31 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 _CACHE = {}
 _CACHE_TTL = {}
 DEFAULT_CACHE_TTL = 300  # 5 minutes
+_NEO4J_CONNECTION = None
+
+def run_graph_query_cached(query, params=None):
+    """Run a graph query using the cached connection"""
+    from graph_db_consolidated import run_graph_query as original_run_graph_query
+    
+    # Get cached connection
+    graph = get_neo4j_connection()
+    if not graph:
+        return None
+    
+    try:
+        result = graph.run(query, parameters=params or {}).data()
+        return result
+    except Exception as e:
+        logging.error(f"Failed to run graph query: {e}")
+        return None
+
+def get_neo4j_connection():
+    """Get a reusable Neo4j connection"""
+    global _NEO4J_CONNECTION
+    if _NEO4J_CONNECTION is None:
+        from graph_db_consolidated import connect_to_graph
+        _NEO4J_CONNECTION = connect_to_graph()
+    return _NEO4J_CONNECTION
 
 def cache_with_ttl(ttl_seconds=DEFAULT_CACHE_TTL):
     """Decorator to cache function results with a TTL"""
@@ -176,7 +201,18 @@ def process_search_query(query: str) -> Dict[str, Any]:
 def _perform_vector_search(query_text: str, filters: Optional[Dict[str, Any]], top_k: int) -> Dict[str, Any]:
     """Helper function to perform vector search for parallel execution"""
     try:
-        return hybrid_search(query_text, filters, top_k)
+        # Fix filters format for ChromaDB compatibility
+        processed_filters = {}
+        if filters:
+            for key, value in filters.items():
+                if isinstance(value, dict) and "$contains" in value:
+                    # ChromaDB doesn't support $contains, use $eq for exact match instead
+                    processed_filters[key] = {"$eq": value["$contains"]}
+                else:
+                    # For direct equality
+                    processed_filters[key] = {"$eq": value}
+        
+        return hybrid_search(query_text, processed_filters, top_k)
     except Exception as e:
         logging.error(f"Vector search failed: {e}")
         return {
@@ -201,7 +237,7 @@ def _perform_graph_search(email_ids: List[str]) -> Dict[str, List]:
         RETURN p.name AS product, count(e) AS count
         ORDER BY count DESC
         """
-        products_result = run_graph_query(products_query, {"email_ids": email_ids})
+        products_result = run_graph_query_cached(products_query, {"email_ids": email_ids})
         if products_result:
             related_entities["products"] = products_result
         
@@ -212,7 +248,7 @@ def _perform_graph_search(email_ids: List[str]) -> Dict[str, List]:
         RETURN v.name AS vendor, count(e) AS count
         ORDER BY count DESC
         """
-        vendors_result = run_graph_query(vendors_query, {"email_ids": email_ids})
+        vendors_result = run_graph_query_cached(vendors_query, {"email_ids": email_ids})
         if vendors_result:
             related_entities["vendors"] = vendors_result
     except Exception as e:
@@ -235,7 +271,7 @@ def _perform_graph_importance_query(email_ids: List[str]) -> Dict[str, float]:
         WITH e, count(p) AS product_count, v, e.date AS date
         RETURN e.id AS email_id, product_count, v.name AS vendor, date
         """
-        graph_results = run_graph_query(query, {"email_ids": email_ids})
+        graph_results = run_graph_query_cached(query, {"email_ids": email_ids})
         
         if graph_results:
             for result in graph_results:
@@ -266,8 +302,26 @@ def _perform_fallback_graph_search(graph_filters: Dict[str, Any], filters: Dict[
     """Helper function to perform fallback graph search when vector search returns no results"""
     try:
         days = graph_filters.get("days", 30)
-        vendor = filters.get("vendor") if filters else None
-        product = filters.get("product", {}).get("$contains") if filters and isinstance(filters.get("product"), dict) else filters.get("product") if filters else None
+        
+        # Extract vendor and product from filters, handling both direct values and operators
+        vendor = None
+        product = None
+        
+        if filters:
+            if "vendor" in filters:
+                if isinstance(filters["vendor"], dict) and "$eq" in filters["vendor"]:
+                    vendor = filters["vendor"]["$eq"]
+                else:
+                    vendor = filters["vendor"]
+                    
+            if "product" in filters:
+                if isinstance(filters["product"], dict):
+                    if "$contains" in filters["product"]:
+                        product = filters["product"]["$contains"]
+                    elif "$eq" in filters["product"]:
+                        product = filters["product"]["$eq"]
+                else:
+                    product = filters["product"]
         
         # Query for recent emails matching criteria
         graph_query = """
@@ -303,7 +357,7 @@ def _perform_fallback_graph_search(graph_filters: Dict[str, Any], filters: Dict[
         if product:
             params["product"] = product
             
-        graph_results = run_graph_query(graph_query, params)
+        graph_results = run_graph_query_cached(graph_query, params)
         
         if graph_results:
             # Get these emails from ChromaDB

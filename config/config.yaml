@@ -13,13 +13,14 @@ type_classification:
       - event
       - webinar
       - announcement
+      - invite
     security:
       - vulnerability
       - patch
       - maintenance
     technical:
       - support
-      - product update
+      - update
       - whitepaper
   multi_label: True
 
@@ -94,6 +95,12 @@ product_classification:
       - cloud functions
       - kubernetes engine
       - bigquery
+    broadcom:
+      - VMWare
+      - vSphere
+      - NSX
+      - vSAN
+      - vRealize
   multi_label: True
 
 data_processing:
@@ -149,8 +156,9 @@ debug:
     top_k: 15
     show_confidence_score: True
     queries:
-      - "anything about price updates or changes ?"
-      - "anythong about Webinar invites"
-      - "anythong containing Hashicorp updates"
-      - "All events and webinar announcements received in the last 2 weeks"
-      - "any terraform related emails ?"
+      - "look for anything about price updates or changes"
+      - "look for anything about Webinar invites"
+      - "look for anything about Hashicorp product updates"
+      - "look for any campaigns or sales related deals"
+      - "fetch All event and webinar announcements received in the last 3 weeks"
+      - "look for any terraform related emails"

@@ -1,0 +1,314 @@
+Received: from PR3P194MB0508.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:35::8) by
+ AS8P194MB1270.EURP194.PROD.OUTLOOK.COM with HTTPS; Wed, 29 May 2024 20:06:42
+ +0000
+Received: from AM0PR04CA0136.eurprd04.prod.outlook.com (2603:10a6:208:55::41)
+ by PR3P194MB0508.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:35::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7611.30; Wed, 29 May
+ 2024 20:06:39 +0000
+Received: from AMS0EPF000001A7.eurprd05.prod.outlook.com
+ (2603:10a6:208:55:cafe::81) by AM0PR04CA0136.outlook.office365.com
+ (2603:10a6:208:55::41) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7633.21 via Frontend
+ Transport; Wed, 29 May 2024 20:06:38 +0000
+Authentication-Results: spf=pass (sender IP is 209.85.160.53)
+ smtp.mailfrom=purestorage.com; dkim=pass (signature was verified)
+ header.d=portworx.com;dmarc=pass action=none
+ header.from=portworx.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of purestorage.com
+ designates 209.85.160.53 as permitted sender)
+ receiver=protection.outlook.com; client-ip=209.85.160.53;
+ helo=mail-oa1-f53.google.com; pr=C
+Received: from mail-oa1-f53.google.com (209.85.160.53) by
+ AMS0EPF000001A7.mail.protection.outlook.com (10.167.16.234) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.7633.15
+ via Frontend Transport; Wed, 29 May 2024 20:06:37 +0000
+Received: by mail-oa1-f53.google.com with SMTP id 586e51a60fabf-24c91c46d00so75039fac.2
+        for <davidg@terasky.com>; Wed, 29 May 2024 13:06:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=portworx.com; s=portworx; t=1717013195; x=1717617995; darn=terasky.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=EfQ/qc5JZ1iv+1Q5mxOFddRcYhkuIj0O3DiQyPT8Ep0=;
+        b=sp6Eg6g6k5ozh+tSGUd/A+8ekhisPRCUuuBWCLa72unXYhWJY4nUQyyCfi+BWNTzIm
+         mEK/KxKMC/9C9+x8oLLaZfhjzDpD5aM6iigGiWgLVGZrDO4E9kRb+3lR8Ius7Mac9M21
+         t+jn1/9oXaW0wsUxgu6IbG0Rc3QaaQ/BlFpKvocZz/6hC6R3XaUJ5Z64Gr30d6MGsuCo
+         rvIvE8ZCdTgILpV58kcowrZZQYgtQS0EmXaCVlvYLBWoib0XZjpZIHRFQjXbFVl08fdw
+         R3QCrZEhxZbHjDgNY4TnlP3EKlioDTNqBX8EwpkJcfdMMTkv7Uyluldo9cDyNi/3xxbT
+         EaHw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1717013195; x=1717617995;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=EfQ/qc5JZ1iv+1Q5mxOFddRcYhkuIj0O3DiQyPT8Ep0=;
+        b=ax07i3E3R78gIdK69doIJmbj56nBkGzflETQWVdBtQEfVfC8dBQ19u3kop4crYt1rs
+         CCfoMFHdT0wrbBRsUGcUXbLBUVQ+uDadK7TZtiFDo6KBuyS7REhrPDJoJahTV8cu2P+O
+         z1taxDtNMxdjE8zUckH23g7XY9O9JzQqnBqAVKLcQh5OS+AdI+VvXm5xRB2rKYWj2xhm
+         J0lx2/gQSiC9eauyeEEG512DYF28c0MmWKfnk+IFHvn3nKoI9B+BaS8Oy08bIc8lkHPv
+         IsLQfn8IRIHvqcbKhPPhDrfHl6fm6yNouUxDgixn5mIvFGs3o2PrGofo/T+2MQjXGAXE
+         TXNw==
+X-Forwarded-Encrypted: i=1; AJvYcCX5N0joHNo3rXPlNd2oQ/3/FXUeSWsiRvPCGKN3KuRyyrvlxhahUrGtfP0w9zG5XJCrZZHRKESeUai2Crlg5SHnM9w=
+X-Gm-Message-State: AOJu0YzdlmKxWg8s661uwQYIdtqQGdFtx7VBnAB8A7a3FPXUDbdcjElZ
+	91OraSHVjYDJakIRo4KFAVbLRo0ysAiJ5dxFpZpZ6hp5qjAc/poqxu+Kv3AGGT/gpFfMPWOwO1d
+	nQohOcQpxvF5u4Au/TXoffCIGwEHn6QaASh3+QA==
+X-Google-Smtp-Source: AGHT+IFhi1cVKGQJa+xFE65HGgiXTK4ho/HA7nC/lIuCYr/H9Bmbz+s36JAAlIWZFktBviUjRm0xhO9lu1PfNaa5Zvw=
+X-Received: by 2002:a05:6870:a920:b0:24f:f8c2:453c with SMTP id
+ 586e51a60fabf-25060b57172mr324819fac.22.1717013195120; Wed, 29 May 2024
+ 13:06:35 -0700 (PDT)
+From: Chris Crow <ccrow@portworx.com>
+Date: Wed, 29 May 2024 13:06:24 -0700
+Message-ID: <CAJknP4jtcTOmKyiKS=R2zdke4A2RH8HfDx2AkiTdJY50b=o6NQ@mail.gmail.com>
+Subject: Another Portworx 101: Hands-on Labs is coming right up!
+To: "Autumn Marhefka (she/her)" <amarhefka@purestorage.com>
+Content-Type: multipart/alternative; boundary="00000000000091ff7a06199d4990"
+BCC: <davidg@terasky.com>
+Return-Path: ccrow@purestorage.com
+X-MS-Exchange-Organization-ExpirationStartTime: 29 May 2024 20:06:37.9399
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 47b52763-2fc2-4bbe-717a-08dc801ad916
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AMS0EPF000001A7:EE_|PR3P194MB0508:EE_|AS8P194MB1270:EE_
+X-MS-Exchange-Organization-AuthSource: AMS0EPF000001A7.eurprd05.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 47b52763-2fc2-4bbe-717a-08dc801ad916
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230031|43022699006;
+X-Forefront-Antispam-Report: CIP:209.85.160.53;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail-oa1-f53.google.com;PTR:mail-oa1-f53.google.com;CAT:NONE;SFS:(13230031)(43022699006);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 May 2024 20:06:37.8930
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 47b52763-2fc2-4bbe-717a-08dc801ad916
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AMS0EPF000001A7.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PR3P194MB0508
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:04.8198698
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.7633.017
+X-Message-Flag: Follow up
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?QXFxRUszRkU5Um5lWnRSaUdHckxyazFlSjd0SXZLMVRIMUVBR1Q4Q2hsU0Qx?=
+ =?utf-8?B?YjFYNEpjckdTYXBxUm4rR3hubnB1OXRUU1h6ZUZRN1U4bXJZQ3lLVDRlZmFq?=
+ =?utf-8?B?ZzBFMzBqNDBleE1tR3Zob0hBdlJRMDNjdkIxS2svRDM5a0FPK1ViUWc0RVZZ?=
+ =?utf-8?B?UVlUTGhNZVR5ekFTZmh5anBEU1o2Y0xxaDhvOXROMllNR1F5WEpzOXlsdVJQ?=
+ =?utf-8?B?RTRheUNCbXVBdEdJSGVjSjFRRUJKRVBUK0RUb1JuNE9ZRmFDMmgveTEvYWxO?=
+ =?utf-8?B?YldZaU9PL29EaStVSG1vZ2MzK29sTWJCUkpWeEowYm1lU1Nab2cyL1pBN1NS?=
+ =?utf-8?B?cXVaSVZKSml1QXRNSm9ZN1dOWVJIaXNaYzlHS0EwUmV5VDdlU1R5UXd3TGtQ?=
+ =?utf-8?B?R3VxV2xQRDVYUi9pY3ZUSjBibEdnUW9PbUZHS0JmdnZaTDZlQjkvKzhIam03?=
+ =?utf-8?B?YmVqZDZVWEx4cTIvYXB1cTlrSTZjVzVuNkppWFh2UExidENlQ2QvZ1JYVkFC?=
+ =?utf-8?B?SXBlemJjOWZ2eTRTZ3JjUERhazNTb0FiZXQydktudHdlWm5jMkVOTFViRGhL?=
+ =?utf-8?B?ZE1hT2Z6OTZwZmdhcUJQZmNxeGRmM0dMaEkwZmlQSFhXMGVYVFh4Y3ZsN1NZ?=
+ =?utf-8?B?dWkveTBPRXFvNEJIZXFTOE9BTlRJSlk5WlZGODBTRnhyMzZod3BRZGk2NkRS?=
+ =?utf-8?B?L0NvbzFva3ZXUmlmWHVIUWI3ck5MVUV2Skd0OUlXQmxobnVpRXo0TE55SFl4?=
+ =?utf-8?B?eFJ0aXVDRElXcDBDT3FNbHBBc2x0MHJsK1ZGSEt6Q1YxR2ZxNno5VkhwN3Q4?=
+ =?utf-8?B?eXV1VzRtUkpTVkdLZVV0cHhVVS91WnVLdTBkN01rN1RhdE9GSzhkY000Tld0?=
+ =?utf-8?B?b2krNlY1RkJud2svNTU4ajFScmllR2o4cnVzTkZYK2xIRmRyTVQ0M1VvWnRE?=
+ =?utf-8?B?VE14QXJWdUFCY2x3Sit6UFdYZVlJV2FnVDgyaE5VRFZLam5XZkhhRU84ak1H?=
+ =?utf-8?B?QzQxTDRZbVdVVGRqeHBGQm1pc3NGUjQyVTlsRDhxNmcyTHNnVXNGSitxZEFs?=
+ =?utf-8?B?aXE2Rm9RdUNQeEJmWWZTcFZsdWlkRDMxdlJJbmEwQXgxWVBkbzNZRHNFamor?=
+ =?utf-8?B?dS90MmwxeGgvd2gvRGpRUmQxUHNWZnRNazBSRDFGL2lWNnFwYnE5R2hLNkEy?=
+ =?utf-8?B?MUkrRUpHZUpxMzdqUzY3ZkxYUkZ5T1N2OCtxZE1ScXVUV3NqeGl4ZWd6T3JJ?=
+ =?utf-8?B?RmM5QXgyMjBxRStzODVGSFkvbXIza0NLZTdoTUwzSkZEd0tUM0ZEbFJ4L3dI?=
+ =?utf-8?B?WWJhSENOVy9FZHdGV1lyWDlaK0t2dGx4ekhFMzRURjBoSGpqSS80dU52Vm9X?=
+ =?utf-8?B?TUg1UG5UQzFvWFNWYlJiMDNzMnJUbjBqQXdpRXVMaVkyL1JBbTlCeENmRG1j?=
+ =?utf-8?B?eUVnMXJPcHpYTmFQUW1STUtrdWF4QVJoMzJZUWE2c21rZ29JVmpHZUtPOHVB?=
+ =?utf-8?B?eVlHdUFKVzd4bzJwdEtuTkhWMlgwbXJiUTZwYzJFNVFFdm5qVTVnalBmWlUw?=
+ =?utf-8?B?Ni9aMHQyeXpuUU5zVlZack1COFcyMS9lVlNGckRYeE5kUi9BSkdJWmNkd3c3?=
+ =?utf-8?B?TVB5TVNqNXdOd1NQODh0VUl1K0VHU1dFLy8raFgrdlNmKzRjRFFGdWpJR1ht?=
+ =?utf-8?B?UUNwYzZMaTR2T1FrbWNmbGlOVDlDTkxiTmZOM2hTZGs2NXlLR1FSZXVQdGNo?=
+ =?utf-8?B?aEV6OE9TY0srMkppSkZ4eXYvc3pRNUlQMTl2cW5sRStEWURZTWUwZkRjSnBS?=
+ =?utf-8?B?bEYzQytwTTE5VVlkUE1qSW1tR0l4aXZ3Rk1ORVZhK2dJTFBBUGlCTDF3SnQy?=
+ =?utf-8?B?TnlFSXN4Zmw0RVlSckdGUllIajBlL3NFTTg0Vy9Kc2R2Vy9GbWJkZDdKSXRK?=
+ =?utf-8?B?dUFQb3J1bzNxNHZOaXNUL2VZSUZHbGhQVFdoaWFUcGNhbW9HVE9BdnZwaVlv?=
+ =?utf-8?B?a3hKMFQxRGJUMWprMEY3amhLTExydWI0elljdlpSSHAyZDJwTjl2Si9MUTFV?=
+ =?utf-8?B?UXZTTjJ3YWdwWC9xTmdTYm90MTE4SnhMWU9LN0NWQXJ2SUtzaGhuNk5jaVVT?=
+ =?utf-8?B?VVRNS1NJYXRVb0hoK2UzaU5SZmQ0eUpqdGFUQjU2cE5DeXFiNmlORk1RbVRm?=
+ =?utf-8?B?cEJqSkIxQzdMNXg4cTFFdVNmUndmOS9WcXlxNkM4bGdCTFhxdkMya2pmcG5z?=
+ =?utf-8?B?WWhteTlEeEhZZjBWN1Q5bG1PL0pkVEovNllHamtQS2pTbnpyMjk1L3pBdlRz?=
+ =?utf-8?B?MUVibEpxTTdzbzNrR0xXY0hpcmRZVkRqbTRPRzdhZWJ2ZWk2UVI0VFBzN2xE?=
+ =?utf-8?B?bUdVKzF4Y3lMbkdBUmtpWnNNWmdTTmFBWmRod0Iya21JTzNTMHcwYytrM2FM?=
+ =?utf-8?B?NEZJYU90Nnd3TVFkdnB2bFhIQ1FXTEdrZlA2YzBKU05mMUo0TCtTeUNKOWRl?=
+ =?utf-8?B?dUtxcTV4cVFNQzU4aSs4Wjd1VXJlUVdHclptMlZBNG1yK3hCdjdwdkpjUVR0?=
+ =?utf-8?B?cXNMeWxjaE8xUG1QMjNscU9RM1NLM2txem5aZzI2bEZRQVF4bkE2bHA5Ti9z?=
+ =?utf-8?Q?Fs38mpUTKz2n6zSWJKfkC/Jx37pI=3D?=
+MIME-Version: 1.0
+
+--00000000000091ff7a06199d4990
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi there,
+
+We missed having you at our last Portworx 101: Hands-on Labs session! I wan=
+ted to make sure you knew about our upcoming session on June 12, 2024<https=
+://portworx.com/webinar/portworx-101-hands-on-labs-june/?utm_medium=3Demail=
+&utm_source=3Dae&utm_campaign=3Dpwx-brand&utm_region=3Dams&utm_content=3Dch=
+ris&utm_creative=3Ddefault&utm_term=3Ddefault&utm_keyword=3Ddefault> which =
+I'll be co-hosting with my team.
+
+This is a fantastic opportunity to explore the powerful features of Portwor=
+x Enterprise for your Kubernetes environment. During the lab, you'll gain p=
+ractical experience with key functionalities, including:
+
+  *   Self-service persistent volume provisioning
+
+  *   Scalability comparisons of cloud-native storage and CSI drivers
+
+  *   Strategies to prevent "noisy neighbor" issues
+
+  *   Automated capacity management
+
+
+
+I hope to see you there!
+
+
+Best regards,
+
+Chris
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+--00000000000091ff7a06199d4990
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+</head>
+<body>
+<div dir=3D"ltr">
+<p dir=3D"ltr" style=3D"line-height:1.44;margin-top:0pt;margin-bottom:0pt" =
+id=3D"m_3327992158934365059gmail-docs-internal-guid-0173bc4a-7fff-bc72-e72c=
+-b85f127c0809">
+<span style=3D"font-size:10pt;font-family:Inter,sans-serif;color:rgb(72,91,=
+111);background-color:transparent;font-weight:400;font-style:normal;font-va=
+riant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-w=
+rap">Hi there,</span></p>
+<p dir=3D"ltr" style=3D"line-height:1.44;background-color:rgb(255,255,255);=
+margin-top:15pt;margin-bottom:0pt;padding:0pt 0pt 15pt">
+<span style=3D"font-size:10pt;font-family:Inter,sans-serif;color:rgb(72,91,=
+111);background-color:transparent;font-weight:400;font-style:normal;font-va=
+riant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-w=
+rap">We missed having you at our last
+ Portworx 101: Hands-on Labs session! I wanted to make sure you knew about =
+our upcoming session on
+</span><a href=3D"https://portworx.com/webinar/portworx-101-hands-on-labs-j=
+une/?utm_medium=3Demail&amp;utm_source=3Dae&amp;utm_campaign=3Dpwx-brand&am=
+p;utm_region=3Dams&amp;utm_content=3Dchris&amp;utm_creative=3Ddefault&amp;u=
+tm_term=3Ddefault&amp;utm_keyword=3Ddefault" style=3D"text-decoration:none"=
+ target=3D"_blank"><span style=3D"font-size:10pt;font-family:Inter,sans-ser=
+if;color:rgb(17,85,204);background-color:transparent;font-weight:400;font-s=
+tyle:normal;font-variant:normal;text-decoration:underline;vertical-align:ba=
+seline;white-space:pre-wrap">June
+ 12, 2024</span></a><span style=3D"font-size:10pt;font-family:Inter,sans-se=
+rif;color:rgb(72,91,111);background-color:transparent;font-weight:400;font-=
+style:normal;font-variant:normal;text-decoration:none;vertical-align:baseli=
+ne;white-space:pre-wrap"> which I'll
+ be co-hosting with my team.</span></p>
+<p dir=3D"ltr" style=3D"line-height:1.44;background-color:rgb(255,255,255);=
+margin-top:0pt;margin-bottom:15pt">
+<span style=3D"font-size:10pt;font-family:Inter,sans-serif;color:rgb(72,91,=
+111);background-color:transparent;font-weight:400;font-style:normal;font-va=
+riant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-w=
+rap">This is a fantastic opportunity
+ to explore the powerful features of Portworx Enterprise for your Kubernete=
+s environment. During the lab, you'll gain practical experience with key fu=
+nctionalities, including:</span></p>
+<ul style=3D"margin-top:0px;margin-bottom:0px">
+<li dir=3D"ltr" style=3D"list-style-type:disc;font-size:12pt;font-family:Ro=
+boto,sans-serif;color:rgb(13,13,13);background-color:transparent;font-weigh=
+t:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-a=
+lign:baseline;white-space:pre-wrap">
+<p dir=3D"ltr" style=3D"line-height:1.44;background-color:rgb(255,255,255);=
+margin-top:0pt;margin-bottom:0pt" role=3D"presentation">
+<span style=3D"font-size:10pt;font-family:Inter,sans-serif;color:rgb(72,91,=
+111);background-color:transparent;font-weight:400;font-style:normal;font-va=
+riant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-w=
+rap">Self-service persistent volume
+ provisioning</span></p>
+</li><li dir=3D"ltr" style=3D"list-style-type:disc;font-size:12pt;font-fami=
+ly:Roboto,sans-serif;color:rgb(13,13,13);background-color:transparent;font-=
+weight:400;font-style:normal;font-variant:normal;text-decoration:none;verti=
+cal-align:baseline;white-space:pre-wrap">
+<p dir=3D"ltr" style=3D"line-height:1.44;background-color:rgb(255,255,255);=
+margin-top:0pt;margin-bottom:0pt" role=3D"presentation">
+<span style=3D"font-size:10pt;font-family:Inter,sans-serif;color:rgb(72,91,=
+111);background-color:transparent;font-weight:400;font-style:normal;font-va=
+riant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-w=
+rap">Scalability comparisons of cloud-native
+ storage and CSI drivers</span></p>
+</li><li dir=3D"ltr" style=3D"list-style-type:disc;font-size:12pt;font-fami=
+ly:Roboto,sans-serif;color:rgb(13,13,13);background-color:transparent;font-=
+weight:400;font-style:normal;font-variant:normal;text-decoration:none;verti=
+cal-align:baseline;white-space:pre-wrap">
+<p dir=3D"ltr" style=3D"line-height:1.44;background-color:rgb(255,255,255);=
+margin-top:0pt;margin-bottom:0pt" role=3D"presentation">
+<span style=3D"font-size:10pt;font-family:Inter,sans-serif;color:rgb(72,91,=
+111);background-color:transparent;font-weight:400;font-style:normal;font-va=
+riant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-w=
+rap">Strategies to prevent &quot;noisy
+ neighbor&quot; issues</span></p>
+</li><li dir=3D"ltr" style=3D"list-style-type:disc;font-size:12pt;font-fami=
+ly:Roboto,sans-serif;color:rgb(13,13,13);background-color:transparent;font-=
+weight:400;font-style:normal;font-variant:normal;text-decoration:none;verti=
+cal-align:baseline;white-space:pre-wrap">
+<p dir=3D"ltr" style=3D"line-height:1.44;background-color:rgb(255,255,255);=
+margin-top:0pt;margin-bottom:12pt" role=3D"presentation">
+<span style=3D"font-size:10pt;font-family:Inter,sans-serif;color:rgb(72,91,=
+111);background-color:transparent;font-weight:400;font-style:normal;font-va=
+riant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-w=
+rap">Automated capacity management</span></p>
+</li></ul>
+<br>
+<br>
+<p dir=3D"ltr" style=3D"line-height:1.44;margin-top:0pt;margin-bottom:0pt">=
+<span style=3D"font-size:10pt;font-family:Inter,sans-serif;color:rgb(72,91,=
+111);background-color:transparent;font-weight:400;font-style:normal;font-va=
+riant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-w=
+rap">I
+ hope to see you there!&nbsp;</span></p>
+<br>
+<p dir=3D"ltr" style=3D"line-height:1.44;margin-top:0pt;margin-bottom:0pt">=
+<span style=3D"font-size:10pt;font-family:Inter,sans-serif;color:rgb(72,91,=
+111);background-color:transparent;font-weight:400;font-style:normal;font-va=
+riant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-w=
+rap">Best
+ regards,&nbsp;</span></p>
+<p style=3D"line-height:1.44;margin-top:0pt;margin-bottom:0pt"><span style=
+=3D"font-size:10pt;font-family:Inter,sans-serif;color:rgb(255,0,0);font-wei=
+ght:400;font-style:normal;font-variant:normal;text-decoration:none;vertical=
+-align:baseline;white-space:pre-wrap;background-color:rgb(0,0,0)"><span></s=
+pan></span><span style=3D"font-size:10pt;font-family:Inter,sans-serif;color=
+:rgb(255,0,0);font-weight:400;font-style:normal;font-variant:normal;text-de=
+coration:none;vertical-align:baseline;white-space:pre-wrap;background-color=
+:rgb(255,255,255)"><span></span></span><font color=3D"#000000"><span style=
+=3D"font-size:10pt;font-family:Inter,sans-serif;font-weight:400;font-style:=
+normal;font-variant:normal;text-decoration:none;vertical-align:baseline;whi=
+te-space:pre-wrap;background-color:rgb(255,255,255)">Chris<br>
+</span></font></p>
+</div>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+--00000000000091ff7a06199d4990--
