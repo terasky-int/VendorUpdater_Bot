@@ -34,19 +34,19 @@
 	Performance Metrics: Add instrumentation to track search latency and result quality for continuous improvement.
 
 * additional Tests Needed
-Confidence Level Validation
-Test that relationship confidence levels are correctly assigned
-Verify that high/medium/low confidence relationships are properly distinguished
-Graph-Enhanced Ranking
-Test that search results are properly re-ranked based on graph relationships
-Compare ranking with and without graph enhancement
-Fallback Mechanism
-Test the fallback to graph search when vector search returns no results
-Verify that the system gracefully handles empty results
-Error Handling
-Test with malformed queries
-Test with non-existent vendors/products
-Test with empty database
-Performance Testing
-Measure search response time with different query complexities
-Test with larger datasets to ensure scalability
+	Confidence Level Validation
+	Test that relationship confidence levels are correctly assigned
+	Verify that high/medium/low confidence relationships are properly distinguished
+	Graph-Enhanced Ranking
+	Test that search results are properly re-ranked based on graph relationships
+	Compare ranking with and without graph enhancement
+	Fallback Mechanism
+	Test the fallback to graph search when vector search returns no results
+	Verify that the system gracefully handles empty results
+	Error Handling
+	Test with malformed queries
+	Test with non-existent vendors/products
+	Test with empty database
+	Performance Testing
+	Measure search response time with different query complexities
+	Test with larger datasets to ensure scalability

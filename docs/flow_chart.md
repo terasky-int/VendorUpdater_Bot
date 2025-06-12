@@ -45,17 +45,6 @@ graph TD
     M -.->|Response| T
     N -.->|Response| T
     O -.->|Response| T
-    
-    %% Styling
-    classDef pipeline fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef storage fill:#bbf,stroke:#333,stroke-width:2px;
-    classDef api fill:#bfb,stroke:#333,stroke-width:2px;
-    classDef agent fill:#fbb,stroke:#333,stroke-width:2px;
-    
-    class A,B,C,D,E,F,G,H,K pipeline;
-    class I,J,L storage;
-    class M,N,O,P api;
-    class Q,R,S,T,U,V agent;
 ```
 
 ## Flow Description
