@@ -129,6 +129,11 @@ indexing:
 vector_store:
   persist_directory: data/chroma
   collection_name: vendor_emails
+  use_remote: false
+  # Remote ChromaDB configuration (uncomment and update to use remote instance)
+  # use_remote: true
+  # remote_host: "172.16.205.103"  # Replace with your remote server IP
+  # remote_port: 8000
 
 ocr:
   tesseract_path: "C:\\Users\\DavidGidony\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe"

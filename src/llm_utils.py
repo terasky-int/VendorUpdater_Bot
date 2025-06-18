@@ -23,10 +23,26 @@ def load_config(path: str = CONFIG_PATH) -> dict:
 # ----------------------------------------------------------------------
 def get_chroma_collection() -> Collection:
     config = load_config()
-    chroma_path = config["vector_store"].get("persist_directory", "data/chroma")
     collection_name = config["vector_store"].get("collection_name", "vendor_emails")
-    client = PersistentClient(path=chroma_path)
-    return client.get_or_create_collection(name=collection_name)
+    
+    # Check if we should use remote ChromaDB
+    use_remote = config["vector_store"].get("use_remote", False)
+    
+    if use_remote:
+        # Connect to remote ChromaDB
+        from chromadb import HttpClient
+        
+        chroma_host = config["vector_store"].get("remote_host")
+        chroma_port = config["vector_store"].get("remote_port", 8000)
+        
+        client = HttpClient(host=chroma_host, port=chroma_port)
+        return client.get_or_create_collection(name=collection_name)
+    else:
+        # Use local persistent ChromaDB
+        chroma_path = config["vector_store"].get("persist_directory", "data/chroma")
+        client = PersistentClient(path=chroma_path)
+        return client.get_or_create_collection(name=collection_name)
+
 
 # ----------------------------------------------------------------------
 # ✅ Titan Embedding Function
