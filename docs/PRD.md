@@ -121,3 +121,8 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 - [ ] **Search Relevance**: >80% relevant results in top 5 responses
 - [x] **Processing Efficiency**: <30 seconds per email
 - [ ] **User Satisfaction**: Positive feedback on search quality and result relevance
+
+
+
+*** need to be updated:
+1. added feature to use a remote chromadb, configured via the config file.
