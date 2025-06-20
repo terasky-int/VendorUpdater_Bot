@@ -125,4 +125,5 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 
 
 *** need to be updated:
-1. added feature to use a remote chromadb, configured via the config file.
+1. added feature to use a remote chromadb, configured via the config file. - done. add to the prd items and mark as complete.***
+2. add humaninthemiddle flag to enable step by step debuggin of all the ingestion and databasing. with each step input and output. to validate data is actually being catagorized correctly. this will base trust for the later query tweaks.
