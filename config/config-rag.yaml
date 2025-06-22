@@ -1,0 +1,18 @@
+chromadb:
+  host: "${CHROMA_HOST}"
+  port: ${CHROMA_PORT}
+  collection_name: "vendor_emails"
+
+neo4j:
+  uri: "${NEO4J_URI}"
+  user: "${NEO4J_USER}"
+  password: "${NEO4J_PASSWORD}"
+
+bedrock:
+  region: "${AWS_DEFAULT_REGION}"
+  embedding_model: "amazon.titan-embed-text-v1"
+  classification_model: "anthropic.claude-3-haiku-20240307-v1:0"
+
+debug:
+  enabled: false
+  human_in_the_middle: false
