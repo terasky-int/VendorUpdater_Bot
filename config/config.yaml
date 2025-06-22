@@ -155,6 +155,7 @@ debug:
   enabled: True
   verbose_logging: True
   save_all_artifacts: False
+  human_in_the_middle: True
   evaluation:
     enabled: True
     top_k: 15

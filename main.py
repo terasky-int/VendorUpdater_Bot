@@ -213,30 +213,60 @@ def run_pipeline():
         # Process each email sequentially
         for eid, email_obj in emails:
             try:
+                # Import human debugging
+                from src.human_debug import wait_for_user_input
+                human_debug_enabled = config.get("debug", {}).get("human_in_the_middle", False)
+                
                 # Step 1: Save raw email
                 from src.harvest import save_raw_email
                 email_id, raw_path = save_raw_email(email_obj, config)
                 logging.info(f"Processing email {email_id}")
                 
+                if human_debug_enabled:
+                    if not wait_for_user_input("1_save_raw_email", {"email_obj": "Email object"}, {"email_id": email_id, "raw_path": raw_path}, email_id):
+                        continue
+                
                 # Step 2: Normalize email
                 clean_text = normalize.clean_email(raw_path, config, do_medium_clean=True)
                 logging.info(f"Normalized email {email_id}")
+                
+                if human_debug_enabled:
+                    if not wait_for_user_input("2_normalize_email", {"raw_path": raw_path}, {"clean_text": clean_text[:500] + "..." if len(clean_text) > 500 else clean_text}, email_id):
+                        continue
                 
                 # Step 3: Enrich with metadata
                 enriched_data = enrich.extract_metadata(clean_text, email_obj, config)
                 logging.info(f"Enriched email {email_id} with metadata")
                 
+                if human_debug_enabled:
+                    if not wait_for_user_input("3_extract_metadata", {"clean_text": clean_text[:200] + "..."}, enriched_data, email_id):
+                        continue
+                
                 # Step 4: Classify content
                 classified_data = classify.label_content(enriched_data, config)
                 logging.info(f"Classified email {email_id} as {classified_data.get('type', 'unknown')}")
+                
+                if human_debug_enabled:
+                    if not wait_for_user_input("4_classify_content", enriched_data, classified_data, email_id):
+                        continue
                 
                 # Step 5: Chunk text
                 chunks = chunker.chunk_text(classified_data["text"], config)
                 logging.info(f"Split email {email_id} into {len(chunks)} chunks")
                 
+                if human_debug_enabled:
+                    chunk_summary = {"chunk_count": len(chunks), "chunks": [{"id": c["id"], "text": c["text"][:100] + "..."} for c in chunks[:3]]}
+                    if not wait_for_user_input("5_chunk_text", {"text_length": len(classified_data["text"])}, chunk_summary, email_id):
+                        continue
+                
                 # Step 6: Generate embeddings
                 embeddings = embedder.embed_chunks(chunks, config)
                 logging.info(f"Generated embeddings for email {email_id}")
+                
+                if human_debug_enabled:
+                    embedding_summary = {"embedding_count": len(embeddings), "embedding_dimensions": len(embeddings[0]) if embeddings else 0}
+                    if not wait_for_user_input("6_generate_embeddings", {"chunk_count": len(chunks)}, embedding_summary, email_id):
+                        continue
 
                 # Prepare metadata for indexing
                 metadatas = [
@@ -259,6 +289,11 @@ def run_pipeline():
                     config
                 )
                 logging.info(f"Indexed email {email_id} in local storage")
+                
+                if human_debug_enabled:
+                    index_summary = {"chunks_indexed": len(chunks), "metadata_sample": metadatas[0] if metadatas else {}}
+                    if not wait_for_user_input("7_index_local", {"chunks": len(chunks), "embeddings": len(embeddings)}, index_summary, email_id):
+                        continue
 
                 # Record in manifest
                 manifest.record_entry(email_id, chunks, classified_data, config)
@@ -312,6 +347,11 @@ def run_pipeline():
                 if graph:
                     if add_email_to_graph(graph, email_id, classified_data, clean_text):
                         logging.info(f"✅ Added email {email_id} to Neo4j graph database with enhanced validation")
+                        
+                        if human_debug_enabled:
+                            graph_summary = {"email_id": email_id, "vendor": classified_data.get("vendor"), "products": classified_data.get("product")}
+                            if not wait_for_user_input("8_store_neo4j", classified_data, graph_summary, email_id):
+                                continue
                     else:
                         logging.warning(f"⚠️ Failed to add email {email_id} to Neo4j")
                 
