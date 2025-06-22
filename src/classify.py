@@ -96,6 +96,7 @@ def classify_message_type(data,config):
     
 
 def extract_dates(data, config):
+    import re
     try:
         client = boto3.client("bedrock-runtime", region_name=config["bedrock"]["region"])
         model_id = config["bedrock"]["classification_model"]
@@ -138,13 +139,19 @@ def extract_dates(data, config):
                 content = content.strip()
                 if content.startswith('```json'):
                     content = content.replace('```json', '').replace('```', '').strip()
-                dates = json.loads(content)
+                
+                # Extract JSON from content that might have extra text
+                json_match = re.search(r'\{[^{}]*\}', content)
+                if json_match:
+                    json_str = json_match.group(0)
+                    dates = json.loads(json_str)
+                else:
+                    dates = json.loads(content)
                 logging.info(f"✅ Extracted dates: {dates}")
                 return dates
             except Exception as e:
                 logging.error(f"❌ Failed to parse dates JSON: {content}, error: {e}")
                 # Try to extract dates with regex as fallback
-                import re
                 date_pattern = r'\b(\d{4}-\d{2}-\d{2})\b'
                 found_dates = re.findall(date_pattern, content)
                 if found_dates:

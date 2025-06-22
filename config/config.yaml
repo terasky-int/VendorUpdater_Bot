@@ -147,9 +147,9 @@ rag:
 
 
 neo4j:
-  neo4j_uri = bolt://aipg.dudelabz.com:7687
-  neo4j_user = neo4j
-  neo4j_password = ${NEO4J_PASSWORD}
+  uri: bolt://aipg.dudelabz.com:7687
+  user: neo4j
+  password: ${NEO4J_PASSWORD}
   
 debug:
   enabled: True
