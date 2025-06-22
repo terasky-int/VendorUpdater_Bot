@@ -54,6 +54,7 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 
 ### 4.1 Data Storage
 - [x] **ChromaDB**: Store text chunks, embeddings, and metadata
+- [x] **Remote ChromaDB**: Support for remote ChromaDB instances via configuration
 - [x] **Neo4j**: Store graph relationships between entities
 - [x] **File System**: Store raw emails and processed text
 
@@ -80,6 +81,7 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 - [ ] **Search Quality Testing**: Evaluate retrieval performance
 - [ ] **Confidence Level Testing**: Add tests for relationship confidence level validation
 - [ ] **Pipeline Integration**: Integrate validation as a final step in the processing pipeline
+- [ ] **Human-in-the-Middle Debugging**: Step-by-step validation of ingestion and categorization with input/output inspection
 
 ### 5.3 User Experience
 - [ ] **Query Interface**: Improve natural language query processing
@@ -98,6 +100,7 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 - [x] Fix vendor-product relationships
 - [ ] Improve data synchronization
 - [x] Enhance validation tools
+- [ ] **Human-in-the-Middle Debugging**: Implement step-by-step debugging with manual validation of each processing stage
 
 ### 6.3 Phase 3: Enhanced Search 🔄
 - [ ] Implement unified search API
@@ -124,6 +127,3 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 
 
 
-*** need to be updated:
-1. added feature to use a remote chromadb, configured via the config file. - done. add to the prd items and mark as complete.***
-2. add humaninthemiddle flag to enable step by step debuggin of all the ingestion and databasing. with each step input and output. to validate data is actually being catagorized correctly. this will base trust for the later query tweaks.

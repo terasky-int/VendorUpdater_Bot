@@ -130,7 +130,7 @@ vector_store:
   persist_directory: data/chroma
   collection_name: vendor_emails
   # Remote ChromaDB configuration (uncomment and update to use remote instance)
-  use_remote: false
+  use_remote: true
   remote_host: "aipg.dudelabz.com"  # Replace with your remote server IP
   remote_port: 8000
 
