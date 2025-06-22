@@ -1,471 +1,231 @@
-# VendorUpdater_Bot API Reference
+# RAG API Reference - Docker Deployment
 
-This document provides a comprehensive reference for all API endpoints available in the VendorUpdater_Bot system.
+This document provides the API reference for the Docker-deployed RAG API for QA testing.
 
 ## Overview
 
-The VendorUpdater_Bot provides several API endpoints for querying and interacting with processed vendor emails. The API is divided into three main components:
+The RAG API provides vector-based search capabilities using ChromaDB with AWS Bedrock for answer generation. It includes expiration date filtering to prevent outdated content from appearing in search results.
 
-1. **RAG API**: Vector-based search using ChromaDB
-2. **Graph API**: Relationship-based queries using Neo4j
-3. **Unified API**: Combined approach leveraging both vector and graph capabilities
+## Docker Deployment
 
-## Base URL
+**Base URL**: `http://localhost:8001`
 
-All API endpoints are relative to the base URL of your deployment:
+**Container**: `rag_api:v0.1` running on port 8001
 
-```
-http://<host>:<port>/api/v1
-```
+**No Authentication Required** (for QA testing)
 
-## Authentication
+## Key Features
 
-API requests require authentication using an API key. Include the API key in the request header:
+- ✅ Vector search with ChromaDB
+- ✅ AWS Bedrock answer generation  
+- ✅ Expiration date filtering
+- ✅ Metadata filtering (vendor, product, type)
+- ✅ Remote database connections
 
-```
-Authorization: Bearer <api_key>
-```
+## API Endpoints
 
-## RAG API Endpoints
+### 1. Query Emails with RAG
 
-### Search Emails
+Performs vector search with LLM-generated answers and expiration filtering.
 
-Performs a vector-based search on email content with optional metadata filtering.
-
-**Endpoint**: `/query`
-
-**Method**: POST
+**Endpoint**: `POST /query`
 
 **Request Body**:
 ```json
 {
-  "query": "security vulnerability in vault",
+  "query": "What are the latest updates from hashicorp?",
   "metadata_filters": {
     "vendor": "hashicorp",
     "type": "security"
   },
-  "top_k": 5
+  "top_k": 5,
+  "include_expired": false
 }
 ```
 
 **Parameters**:
 - `query` (string, required): The search query text
-- `metadata_filters` (object, optional): Filters to apply to the search
-  - `vendor` (string or array): Filter by vendor name(s)
-  - `product` (string or array): Filter by product name(s)
-  - `type` (string or array): Filter by email type(s)
-  - `date` (object): Filter by date range with `start` and `end` properties
-- `top_k` (integer, optional): Number of results to return (default: 5)
+- `metadata_filters` (object, optional): Filters to apply
+  - `vendor` (string): Filter by vendor name
+  - `product` (string): Filter by product name  
+  - `type` (string): Filter by email type
+- `top_k` (integer, optional): Number of results (default: 5)
+- `include_expired` (boolean, optional): Include expired events (default: false)
 
 **Response**:
 ```json
 {
-  "results": [
+  "answer": "According to the email, HashiCorp is making the following changes to their product offerings and purchasing models starting March 8, 2025...",
+  "sources": [
     {
-      "document": "HashiCorp has released a security update for Vault addressing CVE-2023-1234...",
+      "text": "What's Changing? Starting March 8, 2025, all HCP customers will purchase through one of the following models...",
       "metadata": {
         "vendor": "hashicorp",
-        "product": "vault",
-        "type": "security",
-        "date": "2023-06-15",
-        "email_id": "email_123"
-      },
-      "score": 0.92
-    },
-    {
-      "document": "Critical security patch available for HashiCorp Vault...",
-      "metadata": {
-        "vendor": "hashicorp",
-        "product": "vault",
-        "type": "security",
-        "date": "2023-05-22",
-        "email_id": "email_456"
-      },
-      "score": 0.87
+        "product": "hcp, vault, terraform, boundary, packer",
+        "type": "announcement, update",
+        "date": "2025-04-04T08:30:49",
+        "email_id": "e604ff31-9038-4c5b-b383-caf80a91e142",
+        "chunk_index": 6
+      }
     }
-  ],
-  "total_results": 2
+  ]
 }
 ```
 
-### Get Email by ID
+### 2. Get Available Metadata
 
-Retrieves a specific email by its ID.
+Returns all available metadata values for filtering.
 
-**Endpoint**: `/email/{email_id}`
-
-**Method**: GET
-
-**Parameters**:
-- `email_id` (path parameter, required): The ID of the email to retrieve
+**Endpoint**: `GET /metadata`
 
 **Response**:
 ```json
 {
-  "email_id": "email_123",
-  "subject": "Security Update: HashiCorp Vault CVE-2023-1234",
-  "date": "2023-06-15",
-  "sender": "security@hashicorp.com",
-  "vendor": "hashicorp",
-  "products": ["vault"],
-  "type": "security",
-  "content": "HashiCorp has released a security update for Vault addressing CVE-2023-1234...",
-  "attachments": []
-}
-```
-
-## Graph API Endpoints
-
-### List All Vendors
-
-Returns a list of all vendors in the system.
-
-**Endpoint**: `/vendors`
-
-**Method**: GET
-
-**Response**:
-```json
-{
-  "vendors": [
-    {
-      "name": "hashicorp",
-      "email_count": 42,
-      "product_count": 5
-    },
-    {
-      "name": "google",
-      "email_count": 37,
-      "product_count": 8
-    }
-  ],
-  "total": 15
-}
-```
-
-### Get Products by Vendor
-
-Returns all products associated with a specific vendor.
-
-**Endpoint**: `/products/{vendor}`
-
-**Method**: GET
-
-**Parameters**:
-- `vendor` (path parameter, required): The name of the vendor
-
-**Response**:
-```json
-{
-  "vendor": "hashicorp",
+  "vendors": ["google", "portworx", "hashicorp"],
   "products": [
+    "hcp, vault, terraform, boundary, packer",
+    "Portworx Enterprise",
+    "Gemini 2.5, Gemma 3"
+  ],
+  "types": [
+    "announcement, update",
+    "event, webinar",
+    "announcement, event, update, webinar"
+  ],
+  "sample_metadata": [
     {
-      "name": "vault",
-      "email_count": 18
-    },
-    {
-      "name": "terraform",
-      "email_count": 15
-    },
-    {
-      "name": "consul",
-      "email_count": 7
+      "vendor": "portworx",
+      "product": "Portworx Enterprise", 
+      "type": "event, webinar",
+      "date": "2024-05-29T13:06:24",
+      "email_id": "1d963cf7-ec7f-4dd6-83a2-1870e9e6bb4a",
+      "chunk_index": 0
     }
   ],
-  "total": 5
+  "total_documents": 18
 }
 ```
 
-### Get Vendors by Product
+### 3. Health Check
 
-Returns all vendors associated with a specific product.
+Checks API health and database connections.
 
-**Endpoint**: `/vendors/{product}`
-
-**Method**: GET
-
-**Parameters**:
-- `product` (path parameter, required): The name of the product
-
-**Response**:
-```json
-{
-  "product": "kubernetes",
-  "vendors": [
-    {
-      "name": "google",
-      "email_count": 12
-    },
-    {
-      "name": "hashicorp",
-      "email_count": 5
-    }
-  ],
-  "total": 2
-}
-```
-
-### Get Email Timeline
-
-Returns a timeline of emails with optional filters.
-
-**Endpoint**: `/timeline`
-
-**Method**: GET
-
-**Query Parameters**:
-- `vendor` (string, optional): Filter by vendor name
-- `product` (string, optional): Filter by product name
-- `type` (string, optional): Filter by email type
-- `days` (integer, optional): Number of days to look back (default: 30)
-- `limit` (integer, optional): Maximum number of results to return (default: 10)
-
-**Response**:
-```json
-{
-  "timeline": [
-    {
-      "email_id": "email_789",
-      "date": "2023-06-20",
-      "subject": "Terraform Cloud Migration Webinar",
-      "vendor": "hashicorp",
-      "product": "terraform",
-      "type": "webinar"
-    },
-    {
-      "email_id": "email_456",
-      "date": "2023-05-22",
-      "subject": "Critical security patch for Vault",
-      "vendor": "hashicorp",
-      "product": "vault",
-      "type": "security"
-    }
-  ],
-  "total": 2
-}
-```
-
-### Run Custom Cypher Query
-
-Executes a custom Cypher query against the Neo4j database.
-
-**Endpoint**: `/query`
-
-**Method**: POST
-
-**Request Body**:
-```json
-{
-  "query": "MATCH (e:Email)-[:FROM]->(v:Vendor) WHERE v.name = $vendor RETURN e.id AS email_id, e.date AS date, e.type AS type LIMIT 5",
-  "parameters": {
-    "vendor": "hashicorp"
-  }
-}
-```
-
-**Parameters**:
-- `query` (string, required): The Cypher query to execute
-- `parameters` (object, optional): Parameters for the Cypher query
-
-**Response**:
-```json
-{
-  "results": [
-    {
-      "email_id": "email_123",
-      "date": "2023-06-15",
-      "type": "security"
-    },
-    {
-      "email_id": "email_456",
-      "date": "2023-05-22",
-      "type": "security"
-    }
-  ],
-  "total": 2
-}
-```
-
-## Unified API Endpoints
-
-### Unified Search
-
-Performs a combined search using both vector and graph capabilities.
-
-**Endpoint**: `/unified_search`
-
-**Method**: POST
-
-**Request Body**:
-```json
-{
-  "query": "recent security updates from hashicorp",
-  "top_k": 5
-}
-```
-
-**Parameters**:
-- `query` (string, required): Natural language query text
-- `top_k` (integer, optional): Number of results to return (default: 5)
-
-**Response**:
-```json
-{
-  "results": [
-    {
-      "document": "HashiCorp has released a security update for Vault addressing CVE-2023-1234...",
-      "metadata": {
-        "vendor": "hashicorp",
-        "product": "vault",
-        "type": "security",
-        "date": "2023-06-15",
-        "email_id": "email_123"
-      },
-      "score": 0.92
-    }
-  ],
-  "related_entities": {
-    "products": [
-      {
-        "product": "vault",
-        "count": 3
-      },
-      {
-        "product": "terraform",
-        "count": 1
-      }
-    ],
-    "vendors": [
-      {
-        "vendor": "hashicorp",
-        "count": 4
-      }
-    ]
-  },
-  "extracted_parameters": {
-    "filters": {
-      "vendor": "hashicorp",
-      "type": "security"
-    },
-    "graph_filters": {
-      "days": 30
-    }
-  }
-}
-```
-
-### Natural Language Query
-
-Processes a natural language query and returns structured results.
-
-**Endpoint**: `/nl_query`
-
-**Method**: POST
-
-**Request Body**:
-```json
-{
-  "query": "How many emails from hashicorp in the past week?"
-}
-```
-
-**Parameters**:
-- `query` (string, required): Natural language query text
-
-**Response**:
-```json
-{
-  "answer": "There are 5 emails from hashicorp in the past week.",
-  "query_type": "count",
-  "parameters": {
-    "vendor": "hashicorp",
-    "days": 7
-  },
-  "data": {
-    "count": 5,
-    "emails": [
-      {
-        "email_id": "email_123",
-        "date": "2023-06-15",
-        "subject": "Security Update: HashiCorp Vault CVE-2023-1234"
-      }
-    ]
-  }
-}
-```
-
-## Health Check
-
-### API Health Check
-
-Checks the health status of the API and its dependencies.
-
-**Endpoint**: `/health`
-
-**Method**: GET
+**Endpoint**: `GET /health`
 
 **Response**:
 ```json
 {
   "status": "healthy",
-  "components": {
-    "api": "healthy",
-    "chromadb": "healthy",
-    "neo4j": "healthy"
-  },
-  "version": "1.0.0"
-}
-```
-
-## Error Responses
-
-All API endpoints return standard HTTP status codes:
-
-- `200 OK`: Request successful
-- `400 Bad Request`: Invalid request parameters
-- `401 Unauthorized`: Missing or invalid API key
-- `404 Not Found`: Resource not found
-- `500 Internal Server Error`: Server error
-
-Error response body:
-```json
-{
-  "error": {
-    "code": "invalid_parameter",
-    "message": "Invalid vendor name provided"
+  "document_count": 18,
+  "sample_document": {
+    "metadata_keys": ["product", "email_id", "chunk_index", "type", "vendor", "date"],
+    "document_preview": "Another Portworx 101: Hands-on Labs is coming right up!\nHi there,\n\nWe missed having you at our last "
   }
 }
 ```
 
-## Rate Limiting
+## Test Commands for QA
 
-API requests are rate-limited to 100 requests per minute per API key. Rate limit information is included in the response headers:
-
-```
-X-RateLimit-Limit: 100
-X-RateLimit-Remaining: 95
-X-RateLimit-Reset: 1623869430
+### Basic Health Check
+```bash
+curl http://localhost:8001/health
 ```
 
-## Pagination
-
-List endpoints support pagination using the following query parameters:
-
-- `page` (integer, optional): Page number (default: 1)
-- `per_page` (integer, optional): Number of items per page (default: 10, max: 100)
-
-Pagination information is included in the response:
-
-```json
-{
-  "pagination": {
-    "total": 42,
-    "per_page": 10,
-    "current_page": 1,
-    "total_pages": 5
-  },
-  "results": [
-    // ...
-  ]
-}
+### Get Available Data
+```bash
+curl http://localhost:8001/metadata
 ```
+
+### Test Query (bypasses LLM)
+```bash
+curl -X POST "http://localhost:8001/query" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "test query", "top_k": 3}'
+```
+
+### Real Query with LLM
+```bash
+curl -X POST "http://localhost:8001/query" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "What are the latest updates from hashicorp?",
+    "metadata_filters": {"vendor": "hashicorp"},
+    "top_k": 5,
+    "include_expired": false
+  }'
+```
+
+### Test Expiration Filtering
+```bash
+# This should exclude expired June 2024 Portworx events
+curl -X POST "http://localhost:8001/query" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "portworx hands-on labs",
+    "metadata_filters": {"vendor": "portworx"},
+    "include_expired": false
+  }'
+```
+
+### Include Expired Content
+```bash
+# This should include expired events
+curl -X POST "http://localhost:8001/query" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "portworx hands-on labs", 
+    "metadata_filters": {"vendor": "portworx"},
+    "include_expired": true
+  }'
+```
+
+## QA Testing Scenarios
+
+### 1. Basic Functionality
+- ✅ Health check returns 200 OK
+- ✅ Metadata endpoint shows available vendors/products
+- ✅ Test query bypasses LLM and returns documents
+
+### 2. Search Quality
+- ✅ Vendor filtering works (hashicorp, portworx, google)
+- ✅ Product filtering works
+- ✅ Type filtering works (event, webinar, announcement)
+
+### 3. Expiration Date Filtering
+- ✅ `include_expired: false` excludes past events (default)
+- ✅ `include_expired: true` includes past events
+- ✅ June 2024 Portworx events are filtered by default
+
+### 4. LLM Answer Generation
+- ✅ Real queries generate comprehensive answers
+- ✅ Sources are provided with metadata
+- ✅ AWS Bedrock integration working
+
+### 5. Error Handling
+- ✅ Invalid JSON returns 422 error
+- ✅ Empty results handled gracefully
+- ✅ AWS Bedrock errors handled gracefully
+
+## Current Data in System
+
+**Total Documents**: 18 chunks from processed emails
+
+**Available Vendors**:
+- `hashicorp` - HCP, Vault, Terraform updates
+- `portworx` - Portworx Enterprise events  
+- `google` - Gemini, Gemma announcements
+
+**Sample Queries for Testing**:
+- "What are the latest updates from hashicorp?"
+- "Show me portworx events"
+- "Tell me about google cloud announcements"
+- "Find security updates"
+- "Show me webinar invitations"
+
+## Notes for QA Team
+
+- **No authentication required** for testing
+- **Port 8001** (not 8000 - that's ChromaDB)
+- **Expiration filtering is automatic** unless explicitly disabled
+- **LLM responses may vary** but should be coherent and relevant
+- **Test both expired and non-expired content** scenarios

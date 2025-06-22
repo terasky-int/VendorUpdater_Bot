@@ -115,12 +115,19 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 - [ ] Enhance date range handling for queries like "recent" and "past week"
 - [ ] Implement better type filtering for composite types
 
-### 6.4 Phase 4: Analytics and Reporting 📅
+### 6.4 Phase 4: Docker Deployment ✅
+- [x] **RAG API Containerization**: Create standalone Docker container for RAG API
+- [x] **Ingestion Pipeline Containerization**: Create Docker container for email processing
+- [x] **Separate Container Architecture**: Organize Docker configs in separate subfolders
+- [x] **Remote Database Support**: Configure containers to connect to remote ChromaDB and Neo4j
+- [x] **Production Deployment**: Deploy RAG API for QA team testing
+
+### 6.5 Phase 5: Analytics and Reporting 📅
 - [ ] Add dashboard for vendor analytics
 - [ ] Create automated reports
 - [ ] Implement alerting for important updates
 
-### 6.5 Phase 5: Cleanup 📅
+### 6.6 Phase 6: Cleanup 📅
 - [ ] get rid of unused files and temporary created tools, that are no longer used.
 - [ ] Refresh and consolidate all docs
 

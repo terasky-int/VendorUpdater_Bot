@@ -2,6 +2,17 @@
 
 This folder contains Docker configurations for different components of the VendorUpdater Bot.
 
+## ⚠️ Important: Configuration Usage
+
+**Both containers use the global project configuration (`config/config.yaml`) which includes:**
+- AWS Bedrock model specifications and regions
+- ChromaDB connection settings
+- Neo4j database parameters  
+- Email processing configurations
+- RAG model settings
+
+**Environment variables can override config values at runtime.**
+
 ## Structure
 
 ```
@@ -10,6 +21,7 @@ Docker/
 │   ├── Dockerfile
 │   ├── docker-compose.yml
 │   ├── .env
+│   ├── requirements-rag.txt
 │   └── README.md
 ├── ingestion/        # Email ingestion pipeline container
 │   ├── Dockerfile
@@ -42,16 +54,25 @@ Each subfolder can be built independently:
 ```bash
 # RAG API
 cd rag-api/
-docker build -t rag-api .
+docker build -f Dockerfile -t rag-api ../..
 
 # Ingestion Pipeline  
 cd ingestion/
-docker build -t ingestion-pipeline .
+docker build -f Dockerfile -t ingestion-pipeline ../..
 ```
 
 ## Notes
 
 - Each container has its own configuration and environment files
 - Build context is set to the project root (../..) to access all source files
+- **Containers use global config/config.yaml for default settings**
+- Environment variables override config values at runtime
 - RAG API connects to remote databases
 - Ingestion pipeline can use local or remote databases
+
+## Production Status
+
+- ✅ RAG API: Production ready, deployed for QA testing
+- ✅ Ingestion Pipeline: Ready for deployment
+- ✅ Remote Database Support: ChromaDB and Neo4j connections working
+- ✅ Expiration Date Filtering: Implemented and tested
