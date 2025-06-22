@@ -1,0 +1,303 @@
+
+// Products Kubernetes
+CREATE (Vault:Product {name: 'HashiCorp Vault', compliance: ['PCI-DSS', 'SOC2', 'GDPR'], companies_that_purchased_this_product: ['Wix','Harel Insurance','Chubb','Playtika','Amdocs']});
+CREATE (UPWIND:Product {name: 'UPWind CWP', compliance: ['ISO27001', 'NIST', 'HIPAA'], companies_that_purchased_this_product: ['Playtika','eToro'], leading_questions: 'Is your infrastructure dependent on end-to-end security solutions?'});
+CREATE (Portworx:Product {name: 'Portworx Storage', companies_that_purchased_this_product: ['Telemessage', 'IDF'], leading_questions: 'Are you managing containerized applications that requires persistent storage with high availability?'});
+CREATE (Velero:Product {name: 'Velero Backup', companies_that_purchased_this_product: ['888','IDF'], leading_questions: 'Do you need cloud-native backup for Kubernetes?'});
+CREATE (ScaleOps:Product {name: 'ScaleOps', companies_that_purchased_this_product: ['Playtika', 'FreddieMac','Corralogix','Wiz'], leading_questions: 'Do you need to save money in your Kubernetes ? Do you have more than 2000 cores or vCPU accross all your kubernetes clusters ?'});
+CREATE (SpectroCloud:Product {name: 'Spectro Cloud', companies_that_purchased_this_product: ['HP Indigo', 'Jefferies','T-mobile','Tevel'], leading_questions: 'Do you need to manage more than 6 Kubernetes clusters ?'});
+CREATE (TMC:Product {name: 'Tanzu Mission Control', compliance: ['CIS'], companies_that_purchased_this_product: ['Payoneer', 'Ayalon insurance','GovIL','Skadden'], leading_questions: 'Do you need to manage more than 6 Kubernetes clusters ?'});
+CREATE (Backstage:Product {name: 'Backstage', companies_that_purchased_this_product: ['Harel insurance', 'ZIM','Discovery ZA'], leading_questions: 'Do you need developer portal?'});
+
+// Product Data Centre
+CREATE (VCF:Product {name: 'VMWare Cloud Foundation', companies_that_purchased_this_product: ['Harel Insurance', 'Amdocs','Jefferies','BNYM','Zerto'], leading_questions: 'Are you a strategic VMware customer that need hypervisor?'});
+CREATE (VVF:Product {name: 'VMWare VSphere Foundation', companies_that_purchased_this_product: ['Skadden', 'Clarivate'], leading_questions: 'Are you a corporate VMware customer that need a hypervisor?'});
+CREATE (VRA:Product {name: 'VMWare Aria Automation', companies_that_purchased_this_product: ['Payoneer', 'Algosec'], leading_questions: 'Do you need a self service portal, an automation orchestrator or an aggregated API for your software defined data center in private cloud ?'});
+CREATE (VRPOPS:Product {name: 'VMWare Aria Operations', companies_that_purchased_this_product: ['Tel Aviv stock exchange', 'Cato networks','Playtika'], leading_questions: 'Do you need a powerful troubleshooting and analisis tool for your VMware envrionment with managment packs to many different vendors ?'});
+CREATE (VSAN:Product {name: 'VMWare vSan', companies_that_purchased_this_product: ['Challange Group', 'Harel insurance','Metropolin'], leading_questions: 'Do you need software define storage capabiites for your private cloud?'});
+CREATE (NSX:Product {name: 'VMWare NSX', companies_that_purchased_this_product: ['CompanyA', 'CompanyB'], leading_questions: 'Do you need softare define networking capabilites for your private cloud?'});
+CREATE (VKS:Product {name: 'Tanzu Kubernetes Grid', companies_that_purchased_this_product: ['ZIM', 'Ayalon','Harel','GovIL','Mobileye','Ituran','Chubb','Skadden'], leading_questions: 'Do you need Kubernetes in your VMware environment?'});
+CREATE (VRLI:Product {name: 'VMWare Aria Operations for Logs', companies_that_purchased_this_product: ['Chubb','Harel'], leading_questions: 'Do you need to provide a solution for collecting and storing your logs and you own VVF/VCF?'});
+CREATE (SRM:Product {name: 'VMWare Site recovery manager', companies_that_purchased_this_product: ['Imperva','ZIM'], leading_questions: 'Do you need business continuity and disaster recovery solution that helps you plan, test, and run the recovery of virtual machines between main site and a recovery vCenter site?'});
+
+// Product Storage & Data Protection
+CREATE (Rubrik:Product {name: 'Rubrik', compliance: [], companies_that_purchased_this_product: ['First Internation Bank Israel', 'Playtika'], leading_questions: 'Do you need backup for your on-premise environment?'});
+CREATE (Commvault:Product {name: 'Commvault', compliance: [], companies_that_purchased_this_product: ['Israel Post Office', 'SolarEdge'], leading_questions: 'Do you need backup for your on-premise environment? Do you need backup for your SaaS ( SalesForce, Office 365, Jira, Github )?'});
+CREATE (Pure:Product {name: 'Pure Storage', compliance: [], companies_that_purchased_this_product: ['Playtika', 'Amdocs','Payoneer'], leading_questions: 'Do you need unifiend all flash storage for your on-premise environment?'});
+CREATE (Vast:Product {name: 'Vast Data', compliance: [], companies_that_purchased_this_product: ['Outbrain', 'Playtika'], leading_questions: 'Do you need NAS storage or object storage for your on-premise environment?'});
+//Add dell power store portfolio 
+
+
+// Product Cloud Offering
+CREATE (AWS:Product {name: 'AWS', compliance: [], companies_that_purchased_this_product: ['Harel', 'Playtika','Global-e'], leading_questions: 'Do you need public cloud infrastructure ? Or looking for public cloud resseller or integrator?'});
+CREATE (Azure:Product {name: 'Azure', compliance: [], companies_that_purchased_this_product: ['WSC Sports', 'Checkpoint'], leading_questions: 'Do you need public cloud infrastructure ? Or looking for public cloud resseller or integrator?'});
+CREATE (UPwindCSPM:Product {name: 'UPwind CSPM', compliance: ['ISO27001', 'NIST', 'HIPAA', 'PCI-DSS','SOC2'], companies_that_purchased_this_product: ['eToro', 'Playtika'], leading_questions: 'Do you need to secure your cloud infrastructure ? Do you need to secure your cloud resources ?'});
+CREATE (UPwindDSPM:Product {name: 'UPwind DSPM', compliance: ['GDPR'], companies_that_purchased_this_product: ['eToro', 'Wix'], leading_questions: 'Do you need to secure your data in your cloud environment ? Do you need to secure your data in your SaaS environment ?'});
+CREATE (Boundary:Product {name: 'Hashicorp Boundary', compliance: [], companies_that_purchased_this_product: ['HourOne', 'Final'], leading_questions: 'Do you need to provide secure access to your cloud resrouces with just in time credentials ?'});
+CREATE (Terraform:Product {name: 'Hashicorp Terraform', compliance: [], companies_that_purchased_this_product: ['Payoneer', 'Global-E','Playtika'], leading_questions: 'Do you need to manage your infrastructure with IaC approach ? Do you need to automate your infrastructure ?'});
+CREATE (CommvaultClumio:Product {name: 'Commvault clumio', compliance: [], companies_that_purchased_this_product: ['Global-E', '888'], leading_questions: 'Do you need to backup and provide DR for you cloud infrastructure ? Do you want to reduce costs of your cloud backups ?'});
+CREATE (GitHubSecurity:Product {name: 'GtiHub Security', compliance: ['NIST','CIS','SOC2','PCI'], companies_that_purchased_this_product: ['Harel', 'Playtika','Cognyte'], leading_questions: 'Do you need to static code analisys, software component analisis, or open source license scanning capabilities ?'});
+
+
+// Terasky repetable services/projects
+CREATE (PREKS:Product {name: 'Production ready EKS', companies_that_purchased_this_product: ['Payoneer', 'HourOne'], leading_questions: 'Are you a small company that would like a project for setiing up EKS with as many aws supported services as possible ?'});
+CREATE (TAG_MANAGER:Product {name: 'Automated tag manager for AWS', companies_that_purchased_this_product: ['Global-E', 'Playtika'], leading_questions: 'Do you need an automated way to discover and remediate resource tags in AWS ?'});
+CREATE (Landing_Zone:Product {name: 'Automation to setup landing zone in AWS or Azure', companies_that_purchased_this_product: ['Global-E', 'Playtika'], leading_questions: 'Do you need an automated way to setup landing zone in your ?'});
+
+// Products EUC
+CREATE (Horizon:Product {name: 'Omnissiah Horizon', compliance: [], companies_that_purchased_this_product: [], leading_questions: ['Do you need a VDI Solution?','Do you need a managed Desktop Solution?']});
+
+// Product Data Centre relations
+MATCH  (VKS:Product {name: 'Tanzu Kubernetes Grid'})
+MATCH  (VRPOPS:Product {name: 'VMWare Aria Operations'})
+CREATE (VRPOPS)-[:CAN_MONITOR {reason:'Need monitoring and troubleshooting tool for VKS and have VCF or VVF?'}]->(VKS);
+
+MATCH  (VCF:Product {name: 'VMWare Cloud Foundation'})
+MATCH  (VRA:Product {name: 'VMWare Aria Automation'})
+CREATE (VCF)-[:INCLUDES_IN_LICENSE {leading_question:'Need automation capabalities and have VCF?'}]->(VRA);
+
+MATCH  (VCF:Product {name: 'VMWare Cloud Foundation'})
+MATCH  (VRPOPS:Product {name: 'VMWare Aria Operations'})
+CREATE (VCF)-[:INCLUDES_IN_LICENSE {leading_question:'Need troubleshooting and analisis capabalities and have VCF?'}]->(VRPOPS);
+
+MATCH  (VVF:Product {name: 'VMWare VSphere Foundation'})
+MATCH  (VRPOPS:Product {name: 'VMWare Aria Operations'})
+CREATE (VVF)-[:INCLUDES_IN_LICENSE {leading_question:'Need troubleshooting and analisis capabalities and have VVF?'}]->(VRPOPS);
+
+MATCH  (VCF:Product {name: 'VMWare Cloud Foundation'})
+MATCH  (NSX:Product {name: 'VMWare NSX'})
+CREATE (VCF)-[:INCLUDES_IN_LICENSE {leading_question:'Need software defined networking capabalities and have VCF?'}]->(NSX);
+
+MATCH  (VCF:Product {name: 'VMWare Cloud Foundation'})
+MATCH  (VSAN:Product {name: 'VMWare vSan'})
+CREATE (VCF)-[:INCLUDES_IN_LICENSE {leading_question:'Need software defined storage capabalities and have VCF'}]->(VSAN);
+
+MATCH  (VVF:Product {name: 'VMWare VSphere Foundation'})
+MATCH  (VSAN:Product {name: 'VMWare vSan'})
+CREATE (VVF)-[:INCLUDES_IN_LICENSE {leading_question:'Need software defined storage capabalities and have VVF'}]->(VSAN);
+
+MATCH  (Vault:Product {name: 'HashiCorp Vault'})
+MATCH  (VSAN:Product {name: 'VMWare vSan'})
+CREATE (Vault)-[:CAN_ENCRYPT {leading_question:'Do you need to encrypt your data at rest with centrally managed KMS/KMIP?'}]->(VSAN);
+
+MATCH  (Vault:Product {name: 'HashiCorp Vault'})
+MATCH  (VVF:Product {name: 'VMWare VSphere Foundation'})
+CREATE (Vault)-[:CAN_PROVIDE_IAM {leading_question:'Need identity based access to resources (like AWS IAM) in your private cloud environment based on'}]->(VVF);
+
+MATCH  (Vault:Product {name: 'HashiCorp Vault'})
+MATCH  (VCF:Product {name: 'VMWare Cloud Foundation'})
+CREATE (Vault)-[:CAN_PROVIDE_IAM {leading_question:'Need identity based access to resources (like AWS IAM) in your private cloud environment based on'}]->(VCF);
+
+MATCH  (VVF:Product {name: 'VMWare VSphere Foundation'})
+MATCH (Terraform:Product {name: 'Hashicorp Terraform'})
+CREATE (Terraform)-[:CAN_MANAGE_IAC {leading_question:'Do you need infrastructure as code and automation capabilities for your VVF?'}]->(VVF);
+
+MATCH  (VSAN:Product {name: 'VMWare vSan'})
+MATCH  (VRA:Product {name: 'VMWare Aria Automation'})
+CREATE (VRA)-[:CAN_AUTOMATE {leading_question:'Do you need to provide automations for your software define storage and have VCF? for example automatic volumes provisioning, snapshots, prod db data copy to test environment'}]->(VSAN);
+
+MATCH  (NSX:Product {name: 'VMWare NSX'})
+MATCH  (VRA:Product {name: 'VMWare Aria Automation'})
+CREATE (VRA)-[:CAN_AUTOMATE {leading_question:'Do you need to provide automations for your software define network and have VCF?'}]->(NSX);
+
+MATCH  (NSX:Product {name: 'VMWare NSX'})
+MATCH  (VRPOPS:Product {name: 'VMWare Aria Operations'})
+CREATE (VRPOPS)-[:CAN_MONITOR {leading_question:'Need monitoring, analitics and troubleshooting for your NSX capabalities and have VCF'}]->(NSX);
+
+MATCH  (VSAN:Product {name: 'VMWare vSan'})
+MATCH  (VRPOPS:Product {name: 'VMWare Aria Operations'})
+CREATE (VRPOPS)-[:CAN_MONITOR {leading_question:'Need nitoring, analitics and troubleshooting capabalities for your VSAN'}]->(VSAN);
+
+MATCH (VRLI:Product {name: 'VMWare Aria Operations for Logs'})
+MATCH  (Vault:Product {name: 'HashiCorp Vault'})
+CREATE (VRLI)-[:CAN_GET_AUDIT_LOGS {leading_question:'Do you need to enable audit logs and have VVF/VCF'}]->(Vault);
+
+MATCH (SRM:Product {name: 'VMWare Site recovery manager'})
+MATCH (VCF:Product {name: 'VMWare Cloud Foundation'})
+CREATE (SRM)-[:CAN_PROVIDE_DR {leading_questions:'Do you need disaster recovery capabilities for your VMware Cloud Foundation environment?'}]->(VCF);
+
+MATCH (Horizon:Product {name: 'Omnissiah Horizon'})
+MATCH (VCF:Product {name: 'VMWare Cloud Foundation'})
+CREATE (Horizon)-[:RUNS_ON {reason:'Omnissiah Horizon VDI can be deployed on VMware Cloud Foundation for a unified VDI solution.'}]->(VCF);
+
+//SSH Keys vault use case + bondary 
+// Product Storage & Data Protection
+MATCH  (Commvault:Product {name: 'Veeam'})
+MATCH  (Pure:Product {name: 'Pure Storage'})
+CREATE (Commvault)-[:CAN_BACKUP {leading_question:'Need to backup data for your storage?'}]->(Pure);
+
+MATCH  (Commvault:Product {name: 'Veeam'})
+MATCH  (Vast:Product {name: 'Vast Data'})
+CREATE (Commvault)-[:CAN_BACKUP {leading_question:'Need to backup data for your storage?'}]->(Vast);
+
+MATCH  (Commvault:Product {name: 'Veeam'})
+MATCH  (VCF:Product {name: 'VMWare Cloud Foundation'})
+CREATE (Commvault)-[:CAN_BACKUP {leading_question:'Need to backup data for VCF storage?'}]->(VCF);
+
+MATCH  (Commvault:Product {name: 'Veeam'})
+MATCH  (VVF:Product {name: 'VMWare VSphere Foundation'})
+CREATE (Commvault)-[:CAN_BACKUP {leading_question:'Need to backup data for VVF? storage'}]->(VVF);
+
+MATCH  (Pure:Product {name: 'Pure Storage'})
+MATCH  (VCF:Product {name: 'VMWare Cloud Foundation'})
+CREATE (Pure)-[:CAN_PROVIDE_STORAGE {leading_question:'Need storage capabalities and have VCF?'}]->(VCF);
+
+MATCH  (Pure:Product {name: 'Pure Storage'})
+MATCH  (VVF:Product {name: 'VMWare VSphere Foundation'})
+CREATE (Pure)-[:CAN_PROVIDE_STORAGE {leading_question:'Need storage capabalities and have VVF?'}]->(VVF);
+
+MATCH  (Vast:Product {name: 'Vast Data'})
+MATCH  (VCF:Product {name: 'VMWare Cloud Foundation'})
+CREATE (Vast)-[:CAN_PROVIDE_STORAGE {leading_question:'Need storage capabalities and have VCF?'}]->(VCF);
+
+MATCH  (Vast:Product {name: 'Vast Data'})
+MATCH  (VVF:Product {name: 'VMWare VSphere Foundation'})
+CREATE (Vast)-[:CAN_PROVIDE_STORAGE {leading_question:'Need storage capabalities and have VVF'}]->(VVF);
+
+MATCH  (Pure:Product {name: 'Pure Storage'})
+MATCH  (VRPOPS:Product {name: 'VMWare Aria Operations'})
+CREATE (VRPOPS)-[:CAN_MONITOR {leading_question:'Need monitoring, analitics and troubleshooting capabalities for Pure ?'}]->(Pure);
+
+MATCH  (Vault:Product {name: 'HashiCorp Vault'})
+MATCH  (Pure:Product {name: 'Pure Storage'})
+CREATE (Vault)-[:CAN_ENCRYPT {leading_question:'Do you need to encrypt data at rest with centrally managed KMS/KMIP? Do you need to centrally managed cerfitifate to encrypt data in transit ?'}]->(Pure);
+
+MATCH  (Vault:Product {name: 'HashiCorp Vault'})
+MATCH  (Vast:Product {name: 'Vast Data'})
+CREATE (Vault)-[:CAN_ENCRYPT {leading_question:'Do you need to encrypt data at rest with centrally managed KMS/KMIP? Do you need to centrally managed cerfitifate to encrypt data in transit ?'}]->(Vast);
+
+MATCH  (Vault:Product {name: 'HashiCorp Vault'})
+MATCH  (Commvault:Product {name: 'Veeam'})
+CREATE (Vault)-[:CAN_ENCRYPT {leading_question:'Do you need to encrypt data at rest with centrally managed KMS/KMIP? Do you need to centrally managed cerfitifate to encrypt data in transit ?'}]->(Veeam);
+
+MATCH (Pure:Product {name: 'Pure Storage'})
+MATCH (Terraform:Product {name: 'Hashicorp Terraform'})
+CREATE (Terraform)-[:CAN_MANAGE_IAC {leading_question:'Do you want to manage your storage with infrastructure as code? Do you need automation for your storage ?'}]->(Pure);
+
+MATCH  (Vast:Product {name: 'Vast Data'})
+MATCH (Terraform:Product {name: 'Hashicorp Terraform'})
+CREATE (Terraform)-[:CAN_MANAGE_IAC {leading_question:'Do you want to manage your storage with infrastructure as code? Do you need automation for your storage ?'}]->(Vast);
+
+MATCH (Pure:Product {name: 'Pure Storage'})
+MATCH  (VRA:Product {name: 'VMWare Aria Automation'})
+CREATE (VRA)-[:CAN_AUTOMATE {leading_question:'Do you need to provide automations for your storage and have VCF? for example automatic volumes provisioning, snapshots, prod db data copy to test environment'}]->(Pure);
+
+//Kubernetes relations
+MATCH  (VKS:Product {name: 'Tanzu Kubernetes Grid'})
+MATCH  (VCF:Product {name: 'VMWare Cloud Foundation'})
+CREATE (VCF)-[:INCLUDES_IN_LICENSE {leading_question:'Need Kubernetes capabalities and have VCF'}]->(VKS);
+
+MATCH  (VKS:Product {name: 'Tanzu Kubernetes Grid'})
+MATCH  (VVF:Product {name: 'VMWare VSphere Foundation'})
+CREATE (VVF)-[:INCLUDES_IN_LICENSE {leading_question:'Need Kubernetes capabalities and have VVF'}]->(VKS);
+
+MATCH  (Vault:Product {name: 'HashiCorp Vault'})
+MATCH  (Portworx:Product {name: 'Portworx Storage'})
+CREATE (Vault)-[:CAN_ENCRYPT {leading_question:'Do you need to encrypt data at rest with centrally managed KMS/KMIP?'}]->(Portworx);
+
+MATCH  (UPWIND:Product {name: 'UPwind CWP'})
+MATCH  (VKS:Product {name: 'Tanzu Kubernetes Grid'})
+CREATE (VKS)-[:CAN_SECURE {leading_question:'Do you need Run Time Protection for your Kubernetes? Do you need to scan container images ?'}]->(UPWIND);
+    
+MATCH  (VKS:Product {name: 'Tanzu Kubernetes Grid'})
+MATCH  (Vault:Product {name: 'HashiCorp Vault'})
+CREATE (VKS)-[:CAN_SECURE {leading_question:'Do you want to encrypt secrets and provide certificates for your workloads in Kubernetes?'}]->(Vault);
+
+MATCH  (VKS:Product {name: 'Tanzu Kubernetes Grid'})
+MATCH  (Portworx:Product {name: 'Portworx Storage'})
+CREATE (VKS)-[:CAN_PROVIDE_STORAGE {leading_question:'Do you need to provides storage and DR capabilites to your Kubernetes? Do you need readWriteMany capabilities ?'}]->(Portworx);
+
+MATCH  (VKS:Product {name: 'Tanzu Kubernetes Grid'})
+MATCH  (Velero:Product {name: 'Velero Backup'})
+CREATE (VKS)-[:CAN_PROVIDE_BACKUP {leading_question:'Do you need to provides backup and DR capabilites to Kubernetes?'}]->(Velero);
+
+MATCH  (Kasten:Product {name: 'Kasten Backup'})
+MATCH  (Vault:Product {name: 'HashiCorp Vault'})
+CREATE (Kasten)-[:CAN_ENCRYPT {leading_question:'Do you need to encrypt data at rest with centrally managed KMS/KMIP?'}]->(Vault);
+
+MATCH  (VKS:Product {name: 'Tanzu Kubernetes Grid'})
+MATCH  (ScaleOps:Product {name: 'ScaleOps'})
+CREATE (VKS)-[:CAN_REDUCE_COSTS {leading_question:'Do you need to do cost optimization for your Kubernetes? Do you have more than 50 workloads or 20 worker nodes in your Kubernetes?'}]->(ScaleOps);
+
+MATCH (TMC:Product {name: 'Tanzu Mission Control'})
+MATCH  (VKS:Product {name: 'Tanzu Kubernetes Grid'})
+CREATE (TMC)-[:CAN_MANAGE_FLEET {leading_question:'Do you have to manage more than 6 VKS clusters ?'}]->(VKS);
+
+MATCH  (VKS:Product {name: 'Tanzu Kubernetes Grid'})
+MATCH (Backstage:Product {name: 'Tanzu Platform'})
+CREATE (Backstage)-[:CAN_BUILD_AND_DEPLOY_SOFTWARE {leading_question:' Do you want to simplify container images build process and deployment to Kuberetenes?'}]->(VKS);
+
+// Product Cloud Offering relations
+
+MATCH (PREKS:Product {name: 'Production ready EKS'})
+MATCH (AWS:Product {name: 'AWS'})
+CREATE (PREKS)-[:AUTOMATION_FOR_EKS_SETUP {leading_question:'Do you need low budget project to setup opinionated EKS in your environment ?'}]->(AWS); 
+
+MATCH (TAG_MANAGER:Product {name: 'Automated tag manager for AWS'})
+MATCH (AWS:Product {name: 'AWS'})
+CREATE (TAG_MANAGER)-[:AUTOAMTION_FOR_RESOURCE_TAGGER {leading_question:'Do you need to continuesly tag all your cloud resources ?'}]->(AWS); 
+
+MATCH (AWS:Product {name: 'AWS'})
+MATCH (UPwindCSPM:Product {name: 'UPwind CSPM'})
+CREATE (UPwindCSPM)-[:CAN_SECURE {leading_question:'Do you have compliances that are applicable to your cloud? Do you need to secure your cloud infrastructure? '}]->(AWS);
+
+MATCH (Azure:Product {name: 'Azure'})
+MATCH (UPwindCSPM:Product {name: 'UPwind CSPM'})
+CREATE (UPwindCSPM)-[:CAN_SECURE {leading_question:'Do you have compliances that are applicable to your cloud? Do you need to secure your cloud infrastructure?'}]->(Azure);
+
+MATCH (AWS:Product {name: 'AWS'})
+MATCH (UPwindDSPM:Product {name: 'UPwind DSPM'})
+CREATE (UPwindDSPM)-[:CAN_SECURE_DATA {leading_question:'Do you need to protect your data in S3 or Managed databases ?'}]->(AWS);
+
+MATCH (Azure:Product {name: 'Azure'})
+MATCH (UPwindDSPM:Product {name: 'UPwind DSPM'})
+CREATE (UPwindDSPM)-[:CAN_SECURE_DATA {leading_question:'Do you need to protect your data in object storage or Managed databases ?'}]->(Azure);
+
+MATCH (AWS:Product {name: 'AWS'})
+MATCH (Boundary:Product {name: 'Hashicorp Boundary'})
+CREATE (Boundary)-[:CAN_PROVIDE_SECURE_ACCESS {leading_question:'Do you need to provide secure access to your cloud resrouces with just in time credentials ?'}]->(AWS);
+
+MATCH (Azure:Product {name: 'Azure'})
+MATCH (Boundary:Product {name: 'Hashicorp Boundary'})
+CREATE (Boundary)-[:CAN_PROVIDE_SECURE_ACCESS {leading_question:'Do you need to provide secure access to your cloud resrouces with just in time credentials ?'}]->(Azure);
+
+MATCH (AWS:Product {name: 'AWS'})
+MATCH (Terraform:Product {name: 'Hashicorp Terraform'})
+CREATE (Terraform)-[:CAN_MANAGE_IAC {leading_question:'Do you want to build your infrastructure with IaC approach?'}]->(AWS);
+
+MATCH (Azure:Product {name: 'Azure'})
+MATCH (Terraform:Product {name: 'Hashicorp Terraform'})
+CREATE (Terraform)-[:CAN_MANAGE_IAC {leading_question:'Do you want to build your infrastructure with IaC approach?'}]->(Azure);
+
+MATCH (Vault:Product {name: 'HashiCorp Vault'})
+MATCH (Terraform:Product {name: 'Hashicorp Terraform'})
+CREATE (Terraform)-[:CAN_MANAGE_IAC {leading_question:'Do you want to configure your Vault with IaC approach?'}]->(Vault);
+
+MATCH (CommvaultClumio:Product {name: 'Commvault Clumio'})
+MATCH (AWS:Product {name: 'AWS'})
+CREATE (CommvaultClumio)-[:CAN_BACKUP {leading_question:'Do you need to backup and provide DR for you cloud infrastructure ? Do you want to reduce costs of your backups ?'}]->(AWS);
+
+MATCH (CommvaultClumio:Product {name: 'Commvault Clumio'})
+MATCH (Azure:Product {name: 'Azure'})
+CREATE (CommvaultClumio)-[:CAN_BACKUP {leading_question:'Do you need to backup and provide DR for you cloud infrastructure ? Do you want to reduce costs of your backups ?'}]->(Azure);
+
+MATCH (Vault:Product {name: 'HashiCorp Vault'})
+MATCH (Azure:Product {name: 'Azure'})
+CREATE (Vault)-[:CAN_ENCRYPT {leading_question:'Do you need to centrally manage your Azure Vault? Do you need to centrally manage access to your managed databases or cloud resources? Do you need to reduce KMS costs ?'}]->(Azure);
+
+MATCH (Vault:Product {name: 'HashiCorp Vault'})
+MATCH (AWS:Product {name: 'AWS'})
+CREATE (Vault)-[:CAN_ENCRYPT {leading_question:'Do you need to centrally manage your KMS? Do you need to centrally manage access to your managed databases or cloud resources? Do you need to reduce KMS costs ?'}]->(AWS);
+
+MATCH (SpectroCloud:Product {name: 'Spectro Cloud'})
+MATCH (Azure:Product {name: 'Azure'})
+CREATE (SpectroCloud)-[:CAN_MANAGE_FLEET {leading_question:'Do you have more than 6 Kubernetes clusters in your public cloud ?'}]->(Azure);
+
+MATCH (SpectroCloud:Product {name: 'Spectro Cloud'})
+MATCH (AWS:Product {name: 'AWS'})
+CREATE (SpectroCloud)-[:CAN_MANAGE_FLEET {leading_question:'Do you have more than 6 Kubernetes clusters in your public cloud ?'}]->(AWS);
+
+MATCH (SpectroCloud:Product {name: 'Spectro Cloud'})
+MATCH  (VVF:Product {name: 'VMWare VSphere Foundation'})
+CREATE (SpectroCloud)-[:CAN_MANAGE_FLEET {leading_question:'Do you want alternative to VKS kubernetes for your on-premise environment ?'}]->(VVF); 
+
