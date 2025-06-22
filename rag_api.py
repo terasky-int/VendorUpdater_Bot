@@ -4,6 +4,7 @@ from typing import Dict, List, Optional, Any
 import uvicorn
 import logging
 import json
+from datetime import datetime
 from src import llm_utils
 
 # Configure logging
@@ -15,6 +16,7 @@ class QueryRequest(BaseModel):
     query: str
     metadata_filters: Optional[Dict[str, str]] = None
     top_k: int = 5
+    include_expired: bool = False
 
 class MultiValueQueryRequest(BaseModel):
     query: str
@@ -72,12 +74,13 @@ async def query_endpoint(request: QueryRequest):
                 "ids": results["ids"] if "ids" in results else []
             }
             
-            # Apply post-filtering for special filters
-            if special_filters and search_results["metadatas"]:
+            # Apply post-filtering for special filters and expiration
+            if (special_filters or not request.include_expired) and search_results["metadatas"]:
                 filtered_docs = []
                 filtered_metas = []
                 filtered_distances = []
                 filtered_ids = []
+                current_date = datetime.now().date()
                 
                 for i, meta in enumerate(search_results["metadatas"]):
                     include_item = True
@@ -88,6 +91,19 @@ async def query_endpoint(request: QueryRequest):
                         if search_term.lower() not in field_value.lower():
                             include_item = False
                             break
+                    
+                    # Check expiration if not including expired content
+                    if include_item and not request.include_expired:
+                        for date_field in ["event_date", "registration_deadline", "expiration_date"]:
+                            date_value = meta.get(date_field)
+                            if date_value:
+                                try:
+                                    event_date = datetime.fromisoformat(date_value).date()
+                                    if event_date < current_date:
+                                        include_item = False
+                                        break
+                                except:
+                                    pass  # Invalid date format, keep the item
                     
                     if include_item:
                         filtered_docs.append(search_results["documents"][i])

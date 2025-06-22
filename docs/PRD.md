@@ -74,6 +74,7 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 - [ ] **Data Synchronization**: Address inconsistency between ChromaDB and Neo4j
 - [ ] **Email Chunking**: Improve tracking of chunks belonging to the same email
 - [ ] **Chunk Relationship Model**: Implement parent-child relationship between chunks and source emails
+- [x] **Expiration Date Tracking**: Extract and track event dates, deadlines, and expiration dates to prevent outdated content in search results
 
 ### 5.2 Validation and Testing
 - [x] **Data Quality Analysis**: Regular validation of data integrity
@@ -101,6 +102,11 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 - [ ] Improve data synchronization
 - [x] Enhance validation tools
 - [x] **Human-in-the-Middle Debugging**: Implement step-by-step debugging with manual validation of each processing stage
+- [x] **Expiration Date Tracking**: 
+  - [x] Add date extraction to classification pipeline
+  - [x] Extend metadata schema with event_date, expiration_date, registration_deadline
+  - [x] Update RAG API to filter expired content by default
+  - [x] Add date-based filtering options to search interface
 
 ### 6.3 Phase 3: Enhanced Search 🔄
 - [ ] Implement unified search API

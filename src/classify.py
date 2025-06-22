@@ -95,6 +95,68 @@ def classify_message_type(data,config):
         
     
 
+def extract_dates(data, config):
+    try:
+        client = boto3.client("bedrock-runtime", region_name=config["bedrock"]["region"])
+        model_id = config["bedrock"]["classification_model"]
+        
+        prompt = (
+            "Extract important dates from this email. Look for:\n"
+            "- Event dates (conferences, webinars, workshops, hands-on labs)\n"
+            "- Registration deadlines\n"
+            "- Expiration dates for offers\n"
+            "- Early bird deadlines\n"
+            "- Session dates and times\n\n"
+            "Convert all dates to YYYY-MM-DD format. Return only valid JSON:\n"
+            '{"event_date": "YYYY-MM-DD", "registration_deadline": "YYYY-MM-DD", "expiration_date": "YYYY-MM-DD"}\n'
+            "Use null for dates not found.\n\n"
+            f"Email content:\n{data['text'][:2000]}"
+        )
+
+        body = {
+            "anthropic_version": "bedrock-2023-05-31",
+            "max_tokens": 200,
+            "temperature": 0.0,
+            "messages": [{"role": "user", "content": prompt}]
+        }
+
+        response = client.invoke_model(
+            modelId=model_id,
+            body=json.dumps(body),
+            contentType="application/json",
+            accept="application/json"
+        )
+
+        response_body = response["body"].read().decode()
+        parsed = json.loads(response_body)
+
+        if isinstance(parsed, dict) and "content" in parsed:
+            content = parsed['content'][0]["text"]
+            logging.debug(f"Raw date extraction content: {content}")
+            try:
+                # Clean up the content before parsing
+                content = content.strip()
+                if content.startswith('```json'):
+                    content = content.replace('```json', '').replace('```', '').strip()
+                dates = json.loads(content)
+                logging.info(f"✅ Extracted dates: {dates}")
+                return dates
+            except Exception as e:
+                logging.error(f"❌ Failed to parse dates JSON: {content}, error: {e}")
+                # Try to extract dates with regex as fallback
+                import re
+                date_pattern = r'\b(\d{4}-\d{2}-\d{2})\b'
+                found_dates = re.findall(date_pattern, content)
+                if found_dates:
+                    return {"event_date": found_dates[0], "registration_deadline": None, "expiration_date": None}
+                return {"event_date": None, "registration_deadline": None, "expiration_date": None}
+        
+        return {"event_date": None, "registration_deadline": None, "expiration_date": None}
+
+    except Exception as e:
+        logging.error(f"❌ Date extraction failed: {str(e)}")
+        return {"event_date": None, "registration_deadline": None, "expiration_date": None}
+
 def classify_message_products(data,config):
     try:
         # Initialize Bedrock client
@@ -194,10 +256,17 @@ def classify_message_products(data,config):
 def label_content(data, config):
     type_classification = classify_message_type(data, config)
     product_classification = classify_message_products(data, config)
-    return {
+    extracted_dates = extract_dates(data, config)
+    
+    result = {
         "text": data.get("text"),
         "vendor": data.get("vendor"),
         "product": product_classification,
         "date": data.get("received_at"),
         "type": type_classification
     }
+    
+    # Add extracted dates to the result
+    result.update(extracted_dates)
+    
+    return result

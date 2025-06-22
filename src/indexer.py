@@ -11,9 +11,13 @@ def index_documents(texts, metadatas, ids, embeddings):
 
         # Normalize metadata
         required_fields = ["vendor", "product", "type", "date"]
+        optional_date_fields = ["event_date", "registration_deadline", "expiration_date"]
+        
         for m in metadatas:
             for field in required_fields:
                 m.setdefault(field, "unknown")
+            for field in optional_date_fields:
+                m.setdefault(field, None)
 
         collection = llm_utils.get_chroma_collection()
 
