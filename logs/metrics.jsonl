@@ -2,3 +2,5 @@
 {"emails_processed": 23, "processing_time": 266.54947686195374, "emails_per_second": 0.0862879202419584, "timestamp": "2025-06-19T14:13:02.578061"}
 {"emails_processed": 23, "processing_time": 197.42318987846375, "emails_per_second": 0.11650100484223305, "timestamp": "2025-06-19T14:20:51.270269"}
 {"emails_processed": 23, "processing_time": 289.1108376979828, "emails_per_second": 0.07955426431999328, "timestamp": "2025-06-22T22:05:41.940693"}
+{"emails_processed": 10, "processing_time": 144.74133896827698, "emails_per_second": 0.06908876255588395, "timestamp": "2025-06-23T14:52:01.945994"}
+{"emails_processed": 6, "processing_time": 74.59388899803162, "emails_per_second": 0.08043554345528664, "timestamp": "2025-06-23T15:06:48.917829"}

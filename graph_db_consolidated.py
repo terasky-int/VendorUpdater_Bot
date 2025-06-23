@@ -370,7 +370,7 @@ def find_security_emails(days=30):
     return run_graph_query(query, {"days": days})
 
 def cleanup_incorrect_relationships():
-    """Clean up incorrect vendor-product relationships based on config validation"""
+    """Clean up only clearly incorrect vendor-product relationships"""
     graph = connect_to_graph()
     if not graph:
         return False
@@ -383,29 +383,26 @@ def cleanup_incorrect_relationships():
         """
         relationships = graph.run(query).data()
         
-        # Load vendor products from config
-        vendor_products = load_vendor_products()
-        
-        # Check each relationship against the config
+        # Define clearly incorrect patterns only
+        # Be extremely conservative - only remove obvious mismatches
         removed_count = 0
         for rel in relationships:
             vendor = rel["vendor"]
             product = rel["product"]
             rel_id = rel["rel_id"]
             
-            is_valid = False
-            for known_vendor, products in vendor_products.items():
-                if (vendor.lower() in known_vendor.lower() or 
-                    known_vendor.lower() in vendor.lower()):
-                    for known_product in products:
-                        if product.lower() == known_product.lower():
-                            is_valid = True
-                            break
-                if is_valid:
-                    break
+            should_remove = False
+            vendor_lower = vendor.lower()
+            product_lower = product.lower()
             
-            # Remove invalid relationships
-            if not is_valid:
+            # Only remove very specific obviously wrong cases
+            # For example: if vendor is "unknown" or product is "unknown"
+            if (vendor_lower == "unknown" or product_lower == "unknown" or
+                vendor_lower == "" or product_lower == ""):
+                should_remove = True
+            
+            # Remove invalid relationships (extremely conservative)
+            if should_remove:
                 delete_query = f"""
                 MATCH ()-[r]-()
                 WHERE id(r) = {rel_id}
@@ -413,9 +410,12 @@ def cleanup_incorrect_relationships():
                 """
                 graph.run(delete_query)
                 removed_count += 1
-                logging.info(f"Removed incorrect relationship: {vendor} OFFERS {product}")
+                logging.info(f"Removed clearly invalid relationship: {vendor} OFFERS {product}")
         
-        logging.info(f"Cleaned up {removed_count} incorrect relationships")
+        if removed_count == 0:
+            logging.info("No clearly invalid relationships found to remove")
+        else:
+            logging.info(f"Cleaned up {removed_count} clearly invalid relationships")
         return True
     except Exception as e:
         logging.error(f"Failed to clean up relationships: {e}")
