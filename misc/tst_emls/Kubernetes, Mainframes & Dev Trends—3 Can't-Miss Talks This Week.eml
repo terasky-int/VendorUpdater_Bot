@@ -1,0 +1,298 @@
+Received: from GV1P194MB1761.EURP194.PROD.OUTLOOK.COM (2603:10a6:150:61::19)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Mon, 16 Jun 2025
+ 20:09:30 +0000
+Received: from DU7P189CA0002.EURP189.PROD.OUTLOOK.COM (2603:10a6:10:552::7) by
+ GV1P194MB1761.EURP194.PROD.OUTLOOK.COM (2603:10a6:150:61::19) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8835.28; Mon, 16 Jun 2025 20:09:12 +0000
+Received: from DB3PEPF0000885F.eurprd02.prod.outlook.com
+ (2603:10a6:10:552:cafe::a3) by DU7P189CA0002.outlook.office365.com
+ (2603:10a6:10:552::7) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8835.28 via Frontend Transport; Mon,
+ 16 Jun 2025 20:09:12 +0000
+Authentication-Results: spf=pass (sender IP is 147.253.220.155)
+ smtp.mailfrom=eom.mediaops.com; dkim=pass (signature was verified)
+ header.d=mediaops.com;dmarc=pass action=none
+ header.from=mediaops.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of eom.mediaops.com
+ designates 147.253.220.155 as permitted sender)
+ receiver=protection.outlook.com; client-ip=147.253.220.155;
+ helo=mta-253-220-155.emailoctopus.com.sparkpostmail.com; pr=E
+Received: from mta-253-220-155.emailoctopus.com.sparkpostmail.com
+ (147.253.220.155) by DB3PEPF0000885F.mail.protection.outlook.com
+ (10.167.242.10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8835.15 via Frontend
+ Transport; Mon, 16 Jun 2025 20:09:12 +0000
+Return-Path: msprvs1=20262VsEyb94M=bounces-1873-7946@eom.mediaops.com
+X-MSFBL: TBUkRYRk+wHqvIQn8e7XQz2LlIPRqa3sqeSfTv9c3zA=|eyJyIjoiZGF2aWRnQHR
+	lcmFza3kuY29tIiwic3ViYWNjb3VudF9pZCI6Ijc5NDYiLCJ0ZW5hbnRfaWQiOiJ
+	zcGNldSIsImN1c3RvbWVyX2lkIjoiMTg3MyIsIm1lc3NhZ2VfaWQiOiI2ODUwZTc
+	3OTUwNjg1MWVmNjAyYyJ9
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mediaops.com; s=eo;
+	t=1750104551; i=@mediaops.com;
+	bh=fjHUOAR+18YpjfmQ1J/Ktv2nkd6jPB9WySm+hf6YxyE=;
+	h=From:To:Subject:List-Unsubscribe:List-Unsubscribe-Post:Date:
+	 Message-ID:Content-Type:From:To:Cc:Subject;
+	b=Lc9yxe8hsOBc/kC8c2dXjv7nv29+ks6Rcl7/560M/6i0fdmHOP31NX0s1TE/ccJvh
+	 H5V19tcbpjuQ50dnpe6pEvRHEM4Y+/HGXymTZHWPlVETsEv7yVtpzgS6RT4tZaLIhW
+	 QXasS9KXL4geew3OkLXfj28PP0uHyXMQWnRTmGQ4=
+Received: from [10.95.193.252] ([10.95.193.252])
+	by i-0e7ab2fdf9aa000f5.mta3vrest.sd.prd.sparkpost (ecelerity 5.0.0.74499 r(msys-ecelerity:tags/5.0.0.7)) with REST
+	id C2/06-44178-7E970586; Mon, 16 Jun 2025 20:09:11 +0000
+From: Techstrong Learning Webinars <no-reply@mediaops.com>
+To: David Gidony <davidg@terasky.com>
+Subject: Kubernetes, Mainframes & Dev =?utf-8?Q?Trends=E2=80=943?=
+ Can't-Miss Talks This Week
+X-Entity-Ref-Id: acc0a415-fca2-4972-bde0-a5c4233d1e76
+X-EmailOctopus-Parent-Id: d5a5eeee-4ace-11f0-975c-8f0fb51c1064
+X-EmailOctopus-Parent-Type-Id: campaign
+X-EmailOctopus-List-Id: 677bba98-e4a8-11ef-adea-dbbea90af185
+X-EmailOctopus-List-Contact-Id: 71809080-e4a9-11ef-9ecf-9fd8208ac93b
+X-EmailOctopus-Started-Preparing-At: 2025-06-16T20:00:55+00:00
+X-EmailOctopus-Sent-At: 2025-06-16T20:09:11+00:00
+X-EmailOctopus-Team-Id: 75e557ca-30f4-11ec-96e5-06b4694bee2a
+X-EmailOctopus-Version: 4
+List-Unsubscribe: <https://alecto.eomail8.com/unsubscribe?ep=2&l=677bba98-e4a8-11ef-adea-dbbea90af185&lc=71809080-e4a9-11ef-9ecf-9fd8208ac93b&p=d5a5eeee-4ace-11f0-975c-8f0fb51c1064&pt=campaign&pv=4&spa=1750104055&t=1750104551&s=50e2453c7724802df836c5c9e110aa9344dace90177d240f403a3e945335104a>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Date: Mon, 16 Jun 2025 20:09:11 +0000
+Message-ID: <da0b9f758fc0732485a074c1b6e62326@mediaops.com>
+Content-Type: multipart/alternative; boundary=LaA5X5Ic
+X-MS-Exchange-Organization-ExpirationStartTime: 16 Jun 2025 20:09:12.1677
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 55961c49-8e63-456a-fdff-08ddad11a939
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB3PEPF0000885F:EE_|GV1P194MB1761:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: DB3PEPF0000885F.eurprd02.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 55961c49-8e63-456a-fdff-08ddad11a939
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:4;ARA:13230040|4022899009|3092899012|4092899012|2092899012|3072899012|13102899012|13012899012|12012899012|39142699007|31052699007|27102699006|69100299015|5062899012|29132699027|8096899003|13003099007|4076899003;
+X-Forefront-Antispam-Report: CIP:147.253.220.155;CTRY:GB;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mta-253-220-155.emailoctopus.com.sparkpostmail.com;PTR:mta-253-220-155.emailoctopus.com.sparkpostmail.com;CAT:NONE;SFS:(13230040)(4022899009)(3092899012)(4092899012)(2092899012)(3072899012)(13102899012)(13012899012)(12012899012)(39142699007)(31052699007)(27102699006)(69100299015)(5062899012)(29132699027)(8096899003)(13003099007)(4076899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Jun 2025 20:09:12.0116
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 55961c49-8e63-456a-fdff-08ddad11a939
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: DB3PEPF0000885F.eurprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GV1P194MB1761
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:18.6692023
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8835.025
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?THVYbzE5WUMxVGJPaUg0NWhEN2R2M2hUVGQ5UllhOHpqN3Z2dXQrcGZoMUVz?=
+ =?utf-8?B?Ym10TGxxMDZkZk1ib29MelpYM214Q3ZvUHM4ZnkvcFRSMVdRVENjWGR4dTR2?=
+ =?utf-8?B?Q1VwTDVIL3FlZHhlaTY0dzN0aXFHSWtHZzRueEJ3RTI2SllScE1YTGJlMjh5?=
+ =?utf-8?B?RTdVVXRsTkNYUFc4Sms4MXF1dHFUamdRam0reWxJcGQ3Zm5tdVh2S3pkOGhS?=
+ =?utf-8?B?eEx6cGZ1N2ZkZlZDWjVjNHllUEtlR1MxbDVqdnNFdGt5a25mY3lLSm5GR0wy?=
+ =?utf-8?B?S010aUdTSTQrU1ExTmlZdlpSSU92aGYxWUpKMlRLd2wraXhZNVBJRS9ENlcw?=
+ =?utf-8?B?WnpHcUI4OTBKaTRMa0JoSmhKeHV1WnpORFc1UFExUFNmNks0eUxkZElHNjJ5?=
+ =?utf-8?B?Yk9TMkRLMC9tenFBM1hHMDlkSTVlR0NLQndxUGFHcXlnVTVwaGNqdHNoMlJj?=
+ =?utf-8?B?RC9scmsxUEtDM1BpUWhXODgxTnF3c2hCRDU2NzZXTklGeWhqY3lSeGF3Z0R3?=
+ =?utf-8?B?RjJYWXBBeDlnNCtXL1pYdVZzMkJTYnZMbVFNQmJwTFZSbzBvRW85Q0tGSVhu?=
+ =?utf-8?B?dVVTVHo2MU9WeHdqMExZakRHNkZvaG9TeXdPN08rWGJ1UFdIcVhhaXhwYkNw?=
+ =?utf-8?B?ZDVQUVVBNmxvQU9OcE5rL2QrUEpPd3JuNE9uZlhTRitRTS8rZXFyU2UxZ2ZY?=
+ =?utf-8?B?eSs2T280eHMxcnhYSDRKTWpQYmxEaGwzQjV1VlU2TFJkalpFblBsWjJMRFQz?=
+ =?utf-8?B?dXF3M2E0UVMxdkNZZzFjZ21yZWNLK0N1bEhrZ1lvbUd2dXArcFgyVlorOFpp?=
+ =?utf-8?B?bTVhdTA2aHZsTVVUTnc3c1BLRW52WHUvamhXY04rZVFCeXdxQkJTbkNhYVEx?=
+ =?utf-8?B?QjRBR25HNUxURkJadmp2d1pqM3F1cmc1NVY1Z3VDL0xMKzdNNGVlNVRadlUz?=
+ =?utf-8?B?U0tYVFRzZjErbG5sZVFXcnM0Z3cwSjlTNmxRQzJqZWQwMlJTYUJ3WFpES1pK?=
+ =?utf-8?B?N3dDQTJBY3NjbVZ6Nm55b0JIOHA1S001UDJBYWxkV1diQ3EzUElmZmdJS3pi?=
+ =?utf-8?B?VCtZS1NucC84OXBYTFgxZERWOEhwKyt5SnlPSXU2Y25nNzVET3VDaGNKTGxU?=
+ =?utf-8?B?QXpMWXFkYnBMcGxycGVkUXBQWlRtbFlLZEZrOXowYmpwVTBlRkxTem9nRGZz?=
+ =?utf-8?B?VlFHNGZqcUFGTGp0SHM1RDZ3SmMzM0ExNkxvbGJZMmppc1JIUjZhaVdsaHJi?=
+ =?utf-8?B?SVUvSDVVaklpTXVyM1VzRitXM0ZHbElNakdNU3R2ZDNKYWI5ZzNkWXhsUzFx?=
+ =?utf-8?B?cVVxclQvTENzMm5ld3oxcmxKZDRDQkUrOFlDRE9UYkR3SDdsRWpEN2o4MWE4?=
+ =?utf-8?B?VnJVcE9OQ3l4em9ROVRMb0I5eU9HUHd1TmRtTGVpaklVQ0pwZEtxbjYvOHgv?=
+ =?utf-8?B?cUVhaHZvSjJPQ0pjbUwxWCs4RDJRenN2ZisxS0FTSGNnTlE5SXlCSjhjM2VF?=
+ =?utf-8?B?dnRzZmRtTVI3aTFtZEE3L1NhZjVBK2R4ZklkdXJpbFF0L3J1VXBNdXdteHBt?=
+ =?utf-8?B?TVJJYWcwd21oY3NPVUZJTFQzeG1FT0V5aVZmT2FybHF4dGJMeW1QTklGeEd1?=
+ =?utf-8?B?M2h2ZGtlK1N3SlhoUndEdXovcXNhRnFBNWVHcFg4OU8zdHJQZ2pnbzQrUGVv?=
+ =?utf-8?B?UmhIc0ZWenZlNGZrSUpaa29zTFQ5MHI0ZmhWUmFnWXBDdDhGeGNiaDlIaGI2?=
+ =?utf-8?B?VHcvdkd1ZzdJeEY5U1hxZ1VuMkk5WUREZ2VBR2E1NERCVFdqdHJtU2ZVakI2?=
+ =?utf-8?B?elZIZThBVXJzWVJLYldkQ2F5N2paNFFyR25PTk1qaXRNSytPVXlzTFNXdXNI?=
+ =?utf-8?B?VFkyN0ZQQW1jVDVKSnNUYUpPenlkQko3cXZsVkR0NEdvQnVHcUFVTEtObVNX?=
+ =?utf-8?B?UWFQZEtOTml4MFdQYWRsdmlpbmhUNWlqZi80S3lkTGZYdjlKb2VBem1tckdj?=
+ =?utf-8?B?bm01OTQrR3htczFGb3hjV1kxYlVNLzNKUzJzeWpWTWtndUNEYkEzQkR1TTlY?=
+ =?utf-8?B?OHhhNUI4Z1FSMGMrWTJlYVp6eTYrSlpPc3hiVk1IUGJ6MlV3MUdTZEZQcVJ1?=
+ =?utf-8?B?N0VxenFIa3lCNUgwcDRNODkwVW5obkFrUXg1Wmp5SU53by8xSEhhYTg1UFFq?=
+ =?utf-8?B?a2llekF6OExFYjk4MjBEMGhmTU5NUk00OGhYRWkrZXc3MC96R3ZmYUtGbEFr?=
+ =?utf-8?B?RElVNmF6ZkllRFlhU3d6OU83cTA2eEIzSUl4eGJaT2QyWjZCaElVVGJvYmFs?=
+ =?utf-8?B?alROU2V0RnNGMFBrS2RJYVR0U0RNVFZ6L3FJNVRjNHkzbHE0bno3bisxcWtm?=
+ =?utf-8?B?SFNrRVFQK1VPZ2N0aDFSUGlSZkN2a3laREppTUg0UVpoUURLRlRpb1IxWlNG?=
+ =?utf-8?B?UmE3TkhWMS9Pa2NsMzFsUkFPVHprc3dudFpVVSt4eWxtc28rMWU1Z1lFNzZF?=
+ =?utf-8?B?OTlsMFBWWlh4RmlCbi90MFhuL1RvaTh0MlF2ekR6SkhkekZHc3BtK29KUjY5?=
+ =?utf-8?B?eTRaSUJEaG1hMmI4UGJnNzI1dk5DeGJGdU42UmhLTHk2cnNaRGJacDFSeE9W?=
+ =?utf-8?B?cWlxWjIwZkJKdGVXa3J3UWlZMStKbFpCN3NOMDc4OXhkbURGTVVxeE1iYTlG?=
+ =?utf-8?B?bWwrWG1LZTlTV28raVFtNkZhUVg2Rkh2QUV5VGt5NVdNdHUwMmFiWmdIZVI5?=
+ =?utf-8?B?c2tZYVlDc1hraGpJVjRHSlUyOWVZaVJvSVBPTE8vUE02eFRoa1RsT2Q0S3Bu?=
+ =?utf-8?B?OCtFdmtjS2ZQRjcxY21oNTVFZTk4OXk1MWVrS1lySmFnWEtyYk5JS1VqVDdY?=
+ =?utf-8?B?VWV5VmhkbGk5d3JlNldTWVZwS2p2eHhtcnlVWWw3VTJIcmJydnJwZU1IaUwy?=
+ =?utf-8?Q?pvsdFEYVWDgBhejN?=
+MIME-Version: 1.0
+
+--LaA5X5Ic
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+
+Join us for a week of insight: modern Kubernetes strategies, a bold mainfra=
+me breakthrough, and trends from 1,000+ PlatformCon devs =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C  =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C
+From Kubernetes to Mainframes to PlatformCon trends=E2=80=94register once, =
+learn it all.
+=E2=9A=99=EF=B8=8F 3 Hot Topics. 1 Week. All the Insight You Need.
+
+This week, we're unpacking the trends, tools, and tactics shaping modern De=
+vOps and platform engineering. From Kubernetes at the edge, to mainframe De=
+vOps velocity, to what 1,000+ PlatformCon submissions reveal about 2025=E2=
+=80=99s direction=E2=80=94this is your all-access pass.
+
+  *   Discover how enterprises are scaling Kubernetes securely and efficien=
+tly
+  *   See why 90% of mainframe leaders say change isn=E2=80=99t fast enough=
+=E2=80=94and what to do about it
+  *   Get a sneak peek at PlatformCon 2025: AI, dev experience, and platfor=
+m-as-product
+
+Whether you're building the future of platforms, wrangling hybrid environme=
+nts, or rethinking legacy bottlenecks=E2=80=94there=E2=80=99s something her=
+e for you.
+
+Save Your Spot <https://eot.mediaops.com/f/a/6F_iTZICLIt75XFC_izgaw~~/AAAHU=
+RA~/l5XwyLHev-kVWrvv2uCf2KkbXfKNrA5RaXu9xghAkiowF4xw3rbr-Nl0vhVqrhC_VNQO3Yj=
+XG78FZ-vVBuGdcG9EHV5LYCs71CcnpRVYlDA9ajSDyk1jHW0dWmH-SZFmPzF66aL7e-O3Xj9Qcv=
+b-LhTmEYiWfnE5QwXPOeDH9UV9vxsHrLN9E9BtON9kVzB0kHR4kEjZ9wWcA_ueN-aqZam1pHSUh=
+TOG9_0NKZqiCK_pta2dtIPlofM5Y2Lued0yLLPFJ3tkbMSfqMdY6o9d3biY9zrdZDo5nf20Xs3C=
+kf7WFPZ5ui8U2vHscJFqbO6OB1O3e-RfwQL0jm4lhTk0nIVyOo_tZcQI6VwMwBJwQl677SfSzgH=
+xcXfiW2kZfduH>
+
+Can=E2=80=99t make it live? Register anyway and we=E2=80=99ll send you the =
+recordings.
+
+751 Park Of Commerce Drive, Suite 108, Boca Raton, Florida 33487-3622, USA
+
+Unsubscribe<https://eot.mediaops.com/f/a/AQT1HOlGl2arSB95McQf9g~~/AAAHURA~/=
+WMWXoAeyb1OK0MBmePCuC0_44rV4dAsBW1FThjD3LrfXdUsX_2QRt8PEmYOKx0TEuB_GbXJxJQN=
+vJITI-9apLSzmxOJFerLUU0sOWqqx-TirapJzLl4e26lAresBWRfaiFrTXNbDLhDCkET6vZ6eFP=
+lzS-RKo-7J9fz9o2TYBOlK3I1J8hcTrwID_xpP1sSIGTV358my74HZKCl_c0UOmbeQfGoulvfke=
+f4Lo2LorF5f9vaYBbXnhwXJ7EToe4FWCy2SZngDJ1v1pb3_qnbYNvhjaHnDybQ5OdaEqkP8TNjw=
+BHE1f-pMdOgO7BPt_iv9kpNDgH2nn4EpTmoaYaADdAx8MMjEMiB344jU6O1uphUWpws-KKbYWbp=
+C235tNxqLi4Kl93rMrP3T15sG4mrcSMrKg0GowuBSygbZhZ0hbjjfx72AWWPfAJZ6Xytn1qER>
+
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+--LaA5X5Ic
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html lang=3D"en"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<title>This Week: DevOps Deep Dives You Don=E2=80=99t Want to Miss</title>
+</head>
+<body style=3D"font-family: Arial, sans-serif; background-color: #ffffff; c=
+olor: #000000; padding: 20px;">
+<div style=3D"color:transparent;visibility:hidden;opacity:0;font-size:0px;b=
+order:0;max-height:1px;width:1px;margin:0px;padding:0px;border-width:0px!im=
+portant;display:none!important;line-height:0px!important;">
+<img border=3D"0" width=3D"1" height=3D"1" src=3D"https://eot.mediaops.com/=
+q/V7S6KQIl6HLQW5pcFDb11w~~/AAAHURA~/YLEKvUy3CUXrkDeacjyVD2zwftK6MLJ5C5O9QSd=
+EnhvLedKKKuB6J335oJ0-I8-NAvL3E5ZcGqjBE_DbUDWSDA~~" alt=3D""></div>
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">Join us fo=
+r a week of insight: modern Kubernetes strategies, a bold mainframe breakth=
+rough, and trends from 1,000+ PlatformCon devs&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=
+=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=
+=E2=80=8C&nbsp;</div>
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">From Kuber=
+netes to Mainframes to PlatformCon trends=E2=80=94register once, learn it a=
+ll.
+</div>
+<div style=3D"max-width: 600px; margin: 0 auto;">
+<h1 style=3D"font-size: 24px; color: #000;">=E2=9A=99=EF=B8=8F 3 Hot Topics=
+. 1 Week. All the Insight You Need.</h1>
+<p style=3D"font-size: 16px; line-height: 1.5;">This week, we're unpacking =
+the trends, tools, and tactics shaping modern DevOps and platform engineeri=
+ng. From Kubernetes at the edge, to mainframe DevOps velocity, to what 1,00=
+0+ PlatformCon submissions reveal
+ about 2025=E2=80=99s direction=E2=80=94this is your all-access pass. </p>
+<ul style=3D"font-size: 16px; line-height: 1.6;">
+<li>Discover how enterprises are scaling Kubernetes securely and efficientl=
+y</li><li>See why 90% of mainframe leaders say change isn=E2=80=99t fast en=
+ough=E2=80=94and what to do about it</li><li>Get a sneak peek at PlatformCo=
+n 2025: AI, dev experience, and platform-as-product</li></ul>
+<p style=3D"font-size: 16px; line-height: 1.5;">Whether you're building the=
+ future of platforms, wrangling hybrid environments, or rethinking legacy b=
+ottlenecks=E2=80=94there=E2=80=99s something here for you.
+</p>
+<div style=3D"text-align: center; margin: 30px 0;"><a href=3D"https://eot.m=
+ediaops.com/f/a/6F_iTZICLIt75XFC_izgaw~~/AAAHURA~/l5XwyLHev-kVWrvv2uCf2KkbX=
+fKNrA5RaXu9xghAkiowF4xw3rbr-Nl0vhVqrhC_VNQO3YjXG78FZ-vVBuGdcG9EHV5LYCs71Ccn=
+pRVYlDA9ajSDyk1jHW0dWmH-SZFmPzF66aL7e-O3Xj9Qcvb-LhTmEYiWfnE5QwXPOeDH9UV9vxs=
+HrLN9E9BtON9kVzB0kHR4kEjZ9wWcA_ueN-aqZam1pHSUhTOG9_0NKZqiCK_pta2dtIPlofM5Y2=
+Lued0yLLPFJ3tkbMSfqMdY6o9d3biY9zrdZDo5nf20Xs3Ckf7WFPZ5ui8U2vHscJFqbO6OB1O3e=
+-RfwQL0jm4lhTk0nIVyOo_tZcQI6VwMwBJwQl677SfSzgHxcXfiW2kZfduH" style=3D"displ=
+ay: inline-block; background-color: #000; color: #fff; padding: 12px 25px; =
+font-size: 16px; text-decoration: none; border-radius: 4px;">Save
+ Your Spot </a></div>
+<p style=3D"font-size: 14px; color: #555;">Can=E2=80=99t make it live? Regi=
+ster anyway and we=E2=80=99ll send you the recordings.
+</p>
+<div class=3D"footer">
+<div align=3D"center"><span style=3D"font-family: Arial; font-size: 12px; c=
+olor: #777;">751 Park Of Commerce Drive, Suite 108, Boca Raton, Florida 334=
+87-3622, USA<br>
+<br>
+<a href=3D"https://eot.mediaops.com/f/a/AQT1HOlGl2arSB95McQf9g~~/AAAHURA~/W=
+MWXoAeyb1OK0MBmePCuC0_44rV4dAsBW1FThjD3LrfXdUsX_2QRt8PEmYOKx0TEuB_GbXJxJQNv=
+JITI-9apLSzmxOJFerLUU0sOWqqx-TirapJzLl4e26lAresBWRfaiFrTXNbDLhDCkET6vZ6eFPl=
+zS-RKo-7J9fz9o2TYBOlK3I1J8hcTrwID_xpP1sSIGTV358my74HZKCl_c0UOmbeQfGoulvfkef=
+4Lo2LorF5f9vaYBbXnhwXJ7EToe4FWCy2SZngDJ1v1pb3_qnbYNvhjaHnDybQ5OdaEqkP8TNjwB=
+HE1f-pMdOgO7BPt_iv9kpNDgH2nn4EpTmoaYaADdAx8MMjEMiB344jU6O1uphUWpws-KKbYWbpC=
+235tNxqLi4Kl93rMrP3T15sG4mrcSMrKg0GowuBSygbZhZ0hbjjfx72AWWPfAJZ6Xytn1qER" s=
+tyle=3D"color:#a9a9a9;" target=3D"_blank">Unsubscribe</a>
+</span></div>
+</div>
+</div>
+<img border=3D"0" width=3D"1" height=3D"1" alt=3D"" src=3D"https://eot.medi=
+aops.com/q/nvr8NPsfiC_ZHcMtnkZoOw~~/AAAHURA~/Wasn3AbW_3wvD_xNy7xZCP7DCCWkCE=
+1OIaNdZluIleBfgC0UZS4JqLfKYER0tghRer38UAKi5iA9WtRMtLOJtg~~">
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+ </body>
+</html>
+
+--LaA5X5Ic--

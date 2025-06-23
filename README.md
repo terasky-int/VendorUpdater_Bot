@@ -52,9 +52,23 @@ VendorUpdater_Bot/
    NEO4J_URI=bolt://localhost:7687
    NEO4J_USER=neo4j
    NEO4J_PASSWORD=your_neo4j_password
+   NOTIFICATION_EMAIL=your_notification_email@gmail.com
+   NOTIFICATION_EMAIL_PASS=your_notification_email_password
    ```
 
 2. Adjust settings in `config/config.yaml` as needed.
+
+3. Configure email notifications (optional):
+   ```yaml
+   notifications:
+     enabled: true
+     smtp_server: smtp.gmail.com
+     smtp_port: 587
+     sender_email: ${NOTIFICATION_EMAIL}
+     sender_password: ${NOTIFICATION_EMAIL_PASS}
+     recipients:
+       - admin@company.com
+   ```
 
 ## Running Locally
 
@@ -106,6 +120,11 @@ python main.py --local --folder ./misc/tst_emls
 8. **Evaluation** (optional)
    - Run RAG tests on processed emails
    - Generate evaluation metrics
+
+9. **Notifications** (optional)
+   - Send email summary after each pipeline run
+   - Include processing statistics and email details
+   - Configurable recipients and SMTP settings
 
 ## Search and Query Capabilities
 

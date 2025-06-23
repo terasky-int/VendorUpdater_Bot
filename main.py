@@ -35,6 +35,8 @@ from src.unified_search import (
 # Import email processing functions
 from src import llm_utils, normalize, enrich, classify, chunker, embedder, indexer, manifest, evaluate
 from src.monitoring import check_health
+from src.pipeline_tracker import PipelineTracker
+from src.email_notifications import send_pipeline_summary_email
 
 # Load environment variables
 load_dotenv()
@@ -173,6 +175,10 @@ def run_pipeline():
     start_time = time.time()
     emails_processed = 0
     
+    # Initialize notification tracker
+    tracker = PipelineTracker()
+    tracker.start_run()
+    
     try:
         config = load_config()
 
@@ -245,6 +251,9 @@ def run_pipeline():
                 # Step 4: Classify content
                 classified_data = classify.label_content(enriched_data, config)
                 logging.info(f"Classified email {email_id} as {classified_data.get('type', 'unknown')}")
+                
+                # Track processed email for notifications
+                tracker.add_processed_email(email_obj, classified_data)
                 
                 if human_debug_enabled:
                     if not wait_for_user_input("4_classify_content", enriched_data, classified_data, email_id):
@@ -448,11 +457,19 @@ def run_pipeline():
         
     except Exception as e:
         logging.error(f"Pipeline failed: {str(e)}")
+        tracker.set_error(str(e))
         log_metrics({
             "emails_processed": emails_processed,
             "error": str(e)
         })
         raise
+    finally:
+        # Send notification email regardless of success/failure
+        try:
+            summary = tracker.get_summary()
+            send_pipeline_summary_email(config, summary)
+        except Exception as e:
+            logging.error(f"Failed to send notification: {e}")
 
 def load_config(path="config/config.yaml"):
     """Load configuration from YAML file"""

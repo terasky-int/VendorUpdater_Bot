@@ -30,11 +30,13 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 
 ### 3.1 Email Processing
 - [x] **Email Harvesting**: Fetch emails from IMAP server or read from local directory
+- [ ] **Microsoft Email Support**: Add support for Microsoft Exchange/Outlook email systems
 - [x] **Text Normalization**: Clean HTML, remove signatures, extract text from attachments
 - [x] **Metadata Extraction**: Extract sender, date, language, vendor information
 - [x] **Content Classification**: Classify email type and identify products using LLMs
 - [x] **Vector Storage**: Store text chunks and embeddings in ChromaDB
 - [x] **Graph Storage**: Create nodes and relationships in Neo4j
+- [x] **Email Notification System**: Implement notification system for processed emails
 
 ### 3.2 Search Capabilities
 - [x] **Vector Search**: Find relevant content based on semantic similarity
@@ -91,6 +93,8 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 - [ ] **Result Presentation**: Enhance formatting and organization of search results
 - [ ] **Visualization**: Add more graph visualizations for relationship exploration
 - [ ] **Fallback Mechanism**: Implement graceful handling of empty results with appropriate fallback strategies
+- [ ] **Error Handling in Unified Search**: Implement robust error handling for unified search operations
+- [ ] **Configuration Management**: Improve configuration management system
 
 ## 6. Development Roadmap
 
@@ -118,6 +122,17 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 - [ ] Add advanced filtering options
 - [ ] Enhance date range handling for queries like "recent" and "past week"
 - [ ] Implement better type filtering for composite types
+- [ ] **Search Functionality Improvements**:
+  - [ ] Fuzzy Matching: Implement fuzzy text matching for product and vendor names to handle typos and variations
+  - [ ] Query Expansion: Add synonyms for common terms to improve recall (e.g., "security" → "vulnerability", "protection")
+  - [ ] Relevance Tuning: Adjust the weighting between vector similarity and graph importance scores to optimize result ranking
+  - [ ] Caching Search Results: Cache frequent search queries with short TTL (30-60 seconds) to improve response time for repeated queries
+  - [ ] Pagination Support: Add offset/limit parameters to support paginated results for large result sets
+  - [ ] Faceted Search: Return facets (counts by vendor, product, type) to help users refine their searches
+  - [ ] Hybrid Filtering: Use a combination of exact and partial matching based on field type (exact for vendors, partial for content)
+  - [ ] Semantic Chunking: Improve document chunking to create more semantically meaningful segments for better retrieval
+  - [ ] Query Understanding: Add a preprocessing step to better extract search intent from natural language queries
+  - [ ] Performance Metrics: Add instrumentation to track search latency and result quality for continuous improvement
 
 ### 6.4 Phase 4: Docker Deployment ✅
 - [x] **RAG API Containerization**: Create standalone Docker container for RAG API
@@ -125,6 +140,8 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 - [x] **Separate Container Architecture**: Organize Docker configs in separate subfolders
 - [x] **Remote Database Support**: Configure containers to connect to remote ChromaDB and Neo4j
 - [x] **Production Deployment**: Deploy RAG API for QA team testing
+- [ ] **Test Docker Deployment**: Comprehensive testing of Docker deployment configurations
+- [ ] **Test API Endpoints**: Validate all API endpoints in deployed environment
 
 ### 6.5 Phase 5: Analytics and Reporting 📅
 - [ ] Add dashboard for vendor analytics
@@ -143,6 +160,18 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 ### 6.7 Phase 7: Cleanup 📅
 - [ ] get rid of unused files and temporary created tools, that are no longer used.
 - [ ] Refresh and consolidate all docs
+- [ ] **Optimize Folder Structure**:
+  - [ ] Move graph_api.py and graph_db.py into a dedicated graph/ directory
+  - [ ] Move rag_api.py into a dedicated api/ directory
+  - [ ] Consolidate test data in a more organized structure
+- [ ] **Clean Up Unused Files**:
+  - [ ] The misc/Design/ folder contains planning documents that could be moved to docs/
+  - [ ] Some test emails in misc/tst_emls/ might be redundant
+- [ ] **Create Comprehensive Documentation**:
+  - [ ] Add setup guides for all components
+  - [ ] Create user guides for different use cases
+  - [ ] Document API endpoints and parameters
+- [ ] **Documentation Gaps**: Address remaining documentation gaps
 
 ## 7. Success Metrics
 
@@ -152,6 +181,32 @@ VendorUpdater Bot is a system designed to process vendor emails, extract valuabl
 - [x] **System Reliability**: Pipeline completes without critical errors
 - [x] **Multi-Modal Storage**: Successful dual storage in ChromaDB (16+ documents) and Neo4j (with relationships)
 - [ ] **User Satisfaction**: Positive feedback on search quality and result relevance
+
+## 8. Testing Requirements
+
+### 8.1 Additional Tests Needed
+- [ ] **Confidence Level Validation**:
+  - [ ] Test that relationship confidence levels are correctly assigned
+  - [ ] Verify that high/medium/low confidence relationships are properly distinguished
+- [ ] **Graph-Enhanced Ranking**:
+  - [ ] Test that search results are properly re-ranked based on graph relationships
+  - [ ] Compare ranking with and without graph enhancement
+- [ ] **Fallback Mechanism**:
+  - [ ] Test the fallback to graph search when vector search returns no results
+  - [ ] Verify that the system gracefully handles empty results
+- [ ] **Error Handling**:
+  - [ ] Test with malformed queries
+  - [ ] Test with non-existent vendors/products
+  - [ ] Test with empty database
+- [ ] **Performance Testing**:
+  - [ ] Measure search response time with different query complexities
+  - [ ] Test with larger datasets to ensure scalability
+
+### 8.2 Graph Database Relationship Validation
+- [ ] **Implement the Enhanced Relationship Validation**
+- [ ] **Create the graph_db_enhanced.py module** as described in the documentation
+- [ ] **Add confidence levels to vendor-product relationships**
+- [ ] **Implement the validation tool**
 
 
 

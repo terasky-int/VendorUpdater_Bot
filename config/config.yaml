@@ -6,6 +6,15 @@ email:
   mark_as_read: True
   fetch_interval_minutes: 120
 
+notifications:
+  enabled: true
+  smtp_server: smtp.gmail.com
+  smtp_port: 587
+  sender_email: ${NOTIFICATION_EMAIL}
+  sender_password: ${NOTIFICATION_EMAIL_PASS}
+  recipients:
+    - davidg@terasky.com
+
 type_classification:
   labels:
     marketing:

@@ -1,0 +1,586 @@
+Received: from DB8P194MB0582.EURP194.PROD.OUTLOOK.COM (2603:10a6:10:15a::15)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Wed, 18 Jun 2025
+ 08:30:26 +0000
+Received: from AM0PR05CA0076.eurprd05.prod.outlook.com (2603:10a6:208:136::16)
+ by DB8P194MB0582.EURP194.PROD.OUTLOOK.COM (2603:10a6:10:15a::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8835.30; Wed, 18 Jun
+ 2025 08:30:23 +0000
+Received: from AM3PEPF0000A79B.eurprd04.prod.outlook.com
+ (2603:10a6:208:136:cafe::86) by AM0PR05CA0076.outlook.office365.com
+ (2603:10a6:208:136::16) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8835.32 via Frontend Transport; Wed,
+ 18 Jun 2025 08:30:23 +0000
+Authentication-Results: spf=pass (sender IP is 192.28.150.203)
+ smtp.mailfrom=bounce.goteleport.com; dkim=pass (signature was verified)
+ header.d=goteleport.com;dkim=pass (signature was verified)
+ header.d=mktdns.com;dmarc=pass action=none
+ header.from=goteleport.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of bounce.goteleport.com
+ designates 192.28.150.203 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.28.150.203;
+ helo=bounce.goteleport.com; pr=C
+Received: from bounce.goteleport.com (192.28.150.203) by
+ AM3PEPF0000A79B.mail.protection.outlook.com (10.167.16.106) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8857.21 via Frontend Transport; Wed, 18 Jun 2025 08:30:23 +0000
+X-MSFBL: 417N3VPkqrSEPgNjYTSqvt3cDv9h96mktlYd5zyHryM=|eyJnIjoiYmctYWJkLTQ
+	1NyIsInUiOiI4MTktV0hULTQ4MzowOjgyMjI6NTg5MjM6MjQ1MTM1Ojg2NTA6OTo
+	2NDMwNDozMTgyMzQ1IiwiciI6ImRhdmlkZ0B0ZXJhc2t5LmNvbSIsImIiOiJkdnA
+	tMTkyLTI4LTE1MC0yMDMifQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1750235421;
+	s=m1; d=goteleport.com; i=@goteleport.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=FYmngyzTCnS9tUcdTrukc52vDJmv9PTOOlyt4l1rVQc=;
+	b=T+US7HaAZiBXVoBWnhSMy9RmoTsn5iXQOvZkuCQdHsMSXETP7y4iXzAvqlHBMQwd
+	pCtxkLTA+9S7S0CKeS/omMW/dzSEAlOn0ChdlcSfwPW8g6u9MHLOUnOWjOuNQJplauO
+	oIobxh+jO6ccpfT4JcaBBydI4huWXb2uCEZE8iss=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1750235421;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=FYmngyzTCnS9tUcdTrukc52vDJmv9PTOOlyt4l1rVQc=;
+	b=b94h7bccPkes3yTubiCQ5hgixgD5M23s7i5pil6ANNCyRbFWMQQefdcCN3ku5zFK
+	NcmU9VPtnwkE0tVIZT4Pu3lVTJjX9+li8QYBV5+Jme6UKv3eiGJTfOEj1wxACm/KuDo
+	QzaxUcw5qBQAVBj94E9qdwwNRrTUvs2cbBk02I1k=
+Date: Wed, 18 Jun 2025 03:30:21 -0500 (CDT)
+From: Teleport <hello@goteleport.com>
+Reply-To: hello@goteleport.com
+To: davidg@terasky.com
+Message-ID: <41679864.366628843.1750235421735@abmktmail-batch1f.marketo.org>
+Subject: Securing Non-Human Identities
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_366628842_1435037587.1750235421735"
+X-Binding: bg-abd-457
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://em.goteleport.com/u/ODE5LVdIVC00ODMAAAGbISHMJHiegBMCOq8Z9E0tLCmH9VBlgvXxLO7LKIBcoDULpHly4p_8c-2OD81zuJbs6bC0Owo=?emailAddress=ODE5LVdIVC00ODMAAAGbISHMJK3SmsArr_Vup3Ve6x4fx96jynL0eLukIz2Sqri1Ub2Thf-Zyt8i4EwpC9uRFkE>, <mailto:GFMXS5SIPBIFQM2JNNKE442WOM2XMYJWPF3T2PI=.64304.8650.9@unsub-ab.mktomail.com>
+X-MarketoID: 819-WHT-483:0:8222:58923:245135:8650:9:64304:3182345
+X-Mailfrom: 819-WHT-483.0.64304.0.0.8650.9.3182345@bounce.goteleport.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+Return-Path: 819-WHT-483.0.64304.0.0.8650.9.3182345@bounce.goteleport.com
+X-MS-Exchange-Organization-ExpirationStartTime: 18 Jun 2025 08:30:23.6185
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: d8d52933-66a2-4739-9aea-08ddae425eb0
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM3PEPF0000A79B:EE_|DB8P194MB0582:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AM3PEPF0000A79B.eurprd04.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: d8d52933-66a2-4739-9aea-08ddae425eb0
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:3;ARA:13230040|4022899009|31052699007|2092899012|3072899012|69100299015|39142699007|1032899013|12012899012|2066899003|8096899003|13003099007|4076899003;
+X-Forefront-Antispam-Report: CIP:192.28.150.203;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:bounce.goteleport.com;PTR:bounce.goteleport.com;CAT:NONE;SFS:(13230040)(4022899009)(31052699007)(2092899012)(3072899012)(69100299015)(39142699007)(1032899013)(12012899012)(2066899003)(8096899003)(13003099007)(4076899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Jun 2025 08:30:23.0567
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: d8d52933-66a2-4739-9aea-08ddae425eb0
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AM3PEPF0000A79B.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8P194MB0582
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.6793750
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8857.014
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?SStod1Q1U3lPckovK09kWVJ6NVhzOFhIZjZyK2Nsb2duV2lLaDJBVno1N2dp?=
+ =?utf-8?B?WFV1ekxFRStsRy9TVkkxNlFpS1pwY1pIc1Y5SHY4WFY2Z2Erc3RMNjVWNTFk?=
+ =?utf-8?B?aDNpcHliOVJ2VjNWQnpWVGNBazgwNWJWMWhtODFqczEzNndPWUlLRHBXU1FW?=
+ =?utf-8?B?NVA2NlBMdnMvSmJwN1hqY3dpQmI3MXppVlFiZXc1TUJXMVVpbVJSdnZCQ0Fa?=
+ =?utf-8?B?ZUVWd3UzbS93UkZJaFM0VDdjM1BYUUxFb0d6M2dmRHlGS2JsUTJZU0lwNXV4?=
+ =?utf-8?B?bWVTS1psalM4K2hyaWJtdEIyVDhFbnVPcS9LRE9xeFBLY29HV0dnd0EyaEMx?=
+ =?utf-8?B?bXAzVmJwMXlRN2gxb3VtckdXcHF6NzY3RjdkZkJZc2NwSzA0aGhpRi96R1d2?=
+ =?utf-8?B?T0NXcm9nZER6UHlYQWhvQ3F0cG8wOGRMdE5YOEFuV3dPeGdpa2ZXdmhLcGI4?=
+ =?utf-8?B?M2lOZ1h4RmJNUlJvTWZENGYzYWRXOStEUnhTYzFFc0dCejlheHIxdllQYzJI?=
+ =?utf-8?B?b0dweVNlTUROWUZBNElIbTByV0VmVU5JMTlQeE5QbndSUm5QNEt1dlNKNFZr?=
+ =?utf-8?B?U1ZFd2hpWFB6dUpmL05KTXJGYk0wNDkrRVRZaFErQk1ZMlFsVFFUNEY3ZUNM?=
+ =?utf-8?B?V2JFMCtlQUdIWWh0VTczL0RMQzhhd2xnWEpmYktMaTd2dWhVbllnZXVwK2dj?=
+ =?utf-8?B?WkMxZlZpdEFxY3lMOG1ITkQ5QWFvODJFSFA3L1NOT05yTWZQdHV2cVNDVTR0?=
+ =?utf-8?B?Nmw4OHJ0bzVVaE9BaWtNRkZxN3pLUklzZXgwcTM4a1l4amJWWWdKRUlYMU1z?=
+ =?utf-8?B?UUdwSjBFMmhaTjA1SFdLVzRvckNvbUViMldyNzFTNnNSaW0rOW56L3k4UW5h?=
+ =?utf-8?B?UDUrVVdqYkd3S2dpRHlWZVhpTkpOQ1RYZWNmZXdkRktwYUM4aG1uQVA1Mjht?=
+ =?utf-8?B?bHMxWXpxZ3JuYkgvSU1FRVNlOXB2QjdlRjJEdWltZ3prbVZINnhxc081ZTMx?=
+ =?utf-8?B?Z3ZTbEZub3dUeEdSWmJKUGk2S0grN0tRLzhxL3l4OUJoeHljemVnS3Y4OFFh?=
+ =?utf-8?B?RmYzVks2TFlrcjk3aGZ3MzcyMCs0Rk50TWdQUk9QOGZPZThZR01nMzdpNHNY?=
+ =?utf-8?B?S0VUNTJHWDdOL3NDOVJzYlJjclJ5T2x5YWR2aEV4YklVRUtnbXRzY3ZQMXUz?=
+ =?utf-8?B?eS9iZDQ1djBOcjN5R2QrcU9Rb2VVWHl4em5xbVJFNENVOEt0cTRXdklsamNT?=
+ =?utf-8?B?MUhROHFxZjJpdU9zbW14QUFJdlR5M1BrSW9tUVIyNloyYm9hUjRweW9FMlJR?=
+ =?utf-8?B?K1FPUjZ2THZubkxiT1dXTWQ5bTk4SFBaVkZ6S3hFNzE1anZQQW9rZTZMc2E0?=
+ =?utf-8?B?azdaaGJUdE9nM2xQZUZiU2F3ZmtUQlViQlFYUEVPTGdobzFVNkdrQTAzem5W?=
+ =?utf-8?B?WFpMQkdWMFloLzgwcFVyYkZrTllGcGdrbE1hZXp4aGxpWnZMMWdURCtuUXBP?=
+ =?utf-8?B?M3BBekRUR3FMS25obHcwdHdEbTdUUGd4UzYxdjErSlJzelhkZUV6dEtKdmNW?=
+ =?utf-8?B?dy94MmNoOWpNalVYcXRLLysxZlhmVVF6a29xVmkvZXgwc2RSZ2huYXY0ejJG?=
+ =?utf-8?B?RGoxYXFtSnpaR2hZWGFFd0pmWlFsT2laT0x1TmQ2TnF6WGsyK1hvQjc1cTZm?=
+ =?utf-8?B?YXdsVVNGYlJGQ0QxWkd2MlZZakUxT2NUM1ducXZFdUVtS0tyTDZxUEhsYlg3?=
+ =?utf-8?B?cGJHN0ZxeHhQSGd0d0hCbFlHTklneEl1N1FCaC9qNjdaaDVoZ1l0aExDZ25R?=
+ =?utf-8?B?ZTM2elBkWmVDQ1lJM1IxVnA1ZXMvMWF2K3Z0YmhKRGNMQU8wQzVManJsbDVX?=
+ =?utf-8?B?b0Zrc2dnODdjLythVnNwdHlQeXZySm5Gdit4dXZ6aytuM3RYSDJ4bUhvTjll?=
+ =?utf-8?B?ODcrK1lZcW9DeDZoN05QL1JXZ09tUEQ3MHNwMFlWL1c4WmdkUXpTR2VwazRV?=
+ =?utf-8?B?WCtONkhaRTNFb2FLZzRGak5mQjllRnJvQ09VVVFSSTl2NVBrMWlGcFZ1UUFW?=
+ =?utf-8?B?S1d0bVhPY1dXRDhwNzI5V3g2azROZm1MNUlkS09pRnluQytTcE90NTc2bG9G?=
+ =?utf-8?B?dzhNTnVGSUJBcHB4elROalY2ekZvQjlSTHFUZFpXRk9kVjBCMEdUT1p0WXFM?=
+ =?utf-8?B?N01LenN4TkFiZk1NVDdwdEV0dkJIMGpmeWphT2NNQmpIUzdxZVhxMHpNYm9y?=
+ =?utf-8?B?K2VpNEI1dkZyRkFVRFBXV2t6eEhuczBXc296WmtrV2J1N0w1SjdGRUNlNmZQ?=
+ =?utf-8?B?QW43UzlvaEdlMmNmMElvalRSVitRdEZ1NkU0VWhrUGJuekhldlRBQUFFTXU5?=
+ =?utf-8?B?Q2EyK0MzcGIzNGZGOGZKZXNxakxYY1JkcDNQUWhvU3NCQ3kyOG50SlQ5VzIy?=
+ =?utf-8?B?R01UV3ZXeTVDclVXWVFWSGhxREN0Y3RjcDJyRnlEc1V1S3pkZUNPeUFVUVhi?=
+ =?utf-8?B?UVZPNm84ZkxKWlJSMnRSQ1E1WGp5UWJYa2tmcklGMGRQT1dmN1EyUUtIL1ZR?=
+ =?utf-8?B?VW54Z1k4WWs0M000aERweHhab2FSVjZEOWIzUGpXVTlPN2I0K0tYNjRzYkFR?=
+ =?utf-8?B?OHRmZzJLSDltenlrdHpqemdBQ0FIcVBIRXJJbi9FblRweDBjZWt2dVc1QjBM?=
+ =?utf-8?B?L3lYRktnUTFuY1VsL3d6M1FOWFhhdkdIUkx3OE41RTQ2OFV5VWtZS0tmNi9J?=
+ =?utf-8?Q?vU=3D?=
+MIME-Version: 1.0
+
+------=_Part_366628842_1435037587.1750235421735
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+As infrastructure becomes more automated, non-human identities (NHIs)
+[Top Use Cases & Trends in Machine & Workload]<https://em.goteleport.com/dc=
+/jMgablFq4j_E9G9NC2zET1tvJ_kSt09RC4hQu0VXcYhlSiHQR-p4PKY8AfVseCFLuRlMyV8TGI=
+v8EQPnGaL1vuVNUMWkej4pOdmNEwQqnrjgzovzpnEXBx_c_j9wA36ufREBARTzY_WFa71JyaMWD=
+oTul6nVQuydkbybdMMR9b7Dhk3Gy3lwD1XjbhBbL-mnf4JTZrsuaMnepV0c0FU7qg=3D=3D/ODE=
+5LVdIVC00ODMAAAGbISHMJJOMKNio2pwCWS1228ZLOSLz23R0uOkZdSv2_r-sDHpIawI0e2ZNx4=
+MEqUyW2arJ-VY=3D>
+
+Hi David,
+
+As infrastructure becomes more automated, non-human identities (NHIs)=E2=80=
+=94like CI/CD tools, service agents, and orchestration systems=E2=80=94are =
+increasingly responsible for deploying and managing critical workloads. But=
+ many still operate with persistent credentials, excessive privileges, and =
+limited visibility.
+
+Join us Wednesday, June 25 at 10 AM PT for a live webinar on the top use ca=
+ses and trends in machine and workload identity, presented by experts from =
+Teleport and the Non-Human Identity Management Group.
+
+Key Takeaways:
+
+  *   How to harden CI/CD pipelines without slowing down delivery
+  *   How to replace long-lived credentials in Infrastructure-as-Code workf=
+lows
+  *   How to enable secure, federated service-to-service trust across envir=
+onments
+
+This session will give you a clear model for managing non-human identity ri=
+sk=E2=80=94one rooted in Zero Trust and built for automation.
+
+Register Now<https://em.goteleport.com/dc/jMgablFq4j_E9G9NC2zET1tvJ_kSt09RC=
+4hQu0VXcYhlSiHQR-p4PKY8AfVseCFLuRlMyV8TGIv8EQPnGaL1vuVNUMWkej4pOdmNEwQqnrjg=
+zovzpnEXBx_c_j9wA36ufREBARTzY_WFa71JyaMWDoTul6nVQuydkbybdMMR9b7Dhk3Gy3lwD1X=
+jbhBbL-mnf4JTZrsuaMnepV0c0FU7qg=3D=3D/ODE5LVdIVC00ODMAAAGbISHMJJOMKNio2pwCW=
+S1228ZLOSLz23R0uOkZdSv2_r-sDHpIawI0e2ZNx4MEqUyW2arJ-VY=3D>
+
+Teleport, 2100 Franklin St, Suite 400, Oakland, CA 94612
+
+If you no longer wish to receive these emails anymore, click on the followi=
+ng link:
+
+UNSUBSCRIBE<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbISHMJHRqmDM4uvthL=
+qJj_12DnLGWQaN2u5IV-Crz6AKzPtbIbY-ndJRiCoqSKEqmqClEHDM=3D>
+
+TERMS OF SERVICE<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbISHMJM56H7ck=
+S5BfJTujUR6oW7Hp6GKzHdAIVMS7SYxP0pIEJjZabvwEqHWimmtcYE8ScO4=3D> | PRIVACY P=
+OLICY<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbISHMJPQ2vYe2RIy_qsr56fc=
+TKio0RAMt1P6Zd52dXZuP_ROMQWsniBv2i_V8Sm258VG75Rc=3D> | SECURITY POLICY<http=
+s://em.goteleport.com/ODE5LVdIVC00ODMAAAGbISHMJH8BAMi02o_1joyAfQ_tkahizUoUy=
+hjYL1BKy2FYFSZR65S0j-vCQQ9-a-_T73ytW-I=3D>
+
+<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbISHMJKL9pgIxBpfIzr44ZPfuw4zD=
+pDAtL4hSa5T5wmmruwiJt57vl_GMGiasOtSLcJ8X25A=3D>
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_366628842_1435037587.1750235421735
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:=
+schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:offi=
+ce"><!--
+Built by upcraft.io
+--><head><!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>=20
+</xml><![endif]-->
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+<!-- START Marketo Variables --><!-- Global Variables--><!-- Background Var=
+iables--><!-- Content Variables--><!-- Toggle Variables--><!-- Button 1 Var=
+iables--><!-- Button 2 Variables--><!-- END Marketo Variables -->
+<title>Company Name</title>
+<style>
+/* START - WEBFONTS, ALWAYS use import method for email to avoid automation=
+ tracking issues */
+@import url('https://fonts.googleapis.com/css?family=3DOpen+Sans:300,400,60=
+0,700&display=3Dswap');
+/* END - WEBFONTS, ALWAYS use import method for email to avoid automation t=
+racking issues */
+=09
+/* START - Universal styles */
+body {
+    font-family: arial, helvetica;
+    font-size: 14px;
+    line-height: 1.6em;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: 100%;
+}
+img, a img {
+    outline: none;
+    text-decoration: none;
+    border: none;
+    -ms-interpolation-mode: bicubic;
+}
+.imgblock img {
+    display: block;
+}
+.img100, .img100 img {
+    width: 100% !important;
+    height: auto !important;
+}
+p {
+    margin-top: 0;
+    padding-top: 0;
+}
+a {
+    color: #047AED;
+}
+
+/* END - Universal styles  */
+=09
+/* START - Mobile universal styles */
+@media screen and (max-width: 480px) {
+body {
+    margin: 0 !important;
+    padding: 0;
+}
+.t100 {
+    width: 100% !important;
+    float: none !important;
+}
+.mimg100 img, .mimg100 {
+    width: 100% !important;
+    height: auto !important;
+}
+.logoimg {
+    max-width: 125px !important;
+    height: auto !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.heightauto {
+    height: auto !important;
+}
+.p0 {
+    padding: 0 !important;
+}
+.pt5 {
+    padding-top: 5px !important;
+}
+.pr5 {
+    padding-right: 5px !important;
+}
+.pb5 {
+    padding-bottom: 5px !important;
+}
+.pl5 {
+    padding-left: 5px !important;
+}
+.pt10 {
+    padding-top: 10px !important;
+}
+.pr10 {
+    padding-right: 10px !important;
+}
+.pb10 {
+    padding-bottom: 10px !important;
+}
+.pl10 {
+    padding-left: 10px !important;
+}
+.p15 {
+    padding: 16px !important;
+}
+.pt15 {
+    padding-top: 16px !important;
+}
+.pr15 {
+    padding-right: 16px !important;
+}
+.pb15 {
+    padding-bottom: 16px !important;
+}
+.pl15 {
+    padding-left: 16px !important;
+}
+.pt20 {
+    padding-top: 20px !important;
+}
+.pr20 {
+    padding-right: 20px !important;
+}
+.pb20 {
+    padding-bottom: 20px !important;
+}
+.pl20 {
+    padding-left: 20px !important;
+}
+.pt30 {
+    padding-top: 30px !important;
+}
+.pr30 {
+    padding-right: 30px !important;
+}
+.pb30 {
+    padding-bottom: 30px !important;
+}
+.pl30 {
+    padding-left: 30px !important;
+}
+.plr15 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+.mpad {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+}
+/* END - Mobile universal styles */
+
+/* START - Webfont fix, keeps Outlook from rendering Times. Loads for all d=
+evices except Outlook. */
+@media {
+body {
+font-family: 'Open Sans', sans-serif !important;
+}
+}
+
+/* END - Webfont fix, keeps Outlook from rendering Times. Loads for all dev=
+ices except Outlook. */
+
+=09
+=09
+/* START - Custom CSS */
+=09
+/* END -  Custom CSS */
+=09
+=09
+=09
+/* START - Custom mobile CSS */
+@media screen and (max-width: 480px) {
+}
+/* END -  Custom mobile CSS */
+</style><!--[if (gte mso 9)|(IE)]>
+<style type=3D"text/css">
+table {
+border-collapse: collapse;
+border-spacing: 0; }
+</style>
+<![endif]-->
+</head>
+<body style=3D"background: #DDDDDD; min-width:100%; margin:10px; padding:0;=
+">
+<style type=3D"text/css">div#emailPreHeader{ display: none !important; }</s=
+tyle>
+<div id=3D"emailPreHeader" style=3D"mso-hide:all; visibility:hidden; opacit=
+y:0; color:transparent; mso-line-height-rule:exactly; line-height:0; font-s=
+ize:0px; overflow:hidden; border-width:0; display:none !important;">
+As infrastructure becomes more automated, non-human identities (NHIs)</div>
+<table width=3D"600" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"t100" style=3D"width:600px;">
+<tbody>
+<tr>
+<td id=3D"wrapper" style=3D"background: #ffffff; padding: 0;" class=3D"mkto=
+Container">
+<table width=3D"600" style=3D"width:600px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100 mktoModule" id=3D"img13508=
+ca48-e060-45f9-8ede-1fd6246a0d78">
+<tbody>
+<tr>
+<td style=3D"padding: 0;" class=3D"mimg100">
+<div class=3D"mktoImg" id=3D"kdf9292b68b685-86aa-4cd3-9f7b-8fdf8b8f2f41" mk=
+tolockimgsize=3D"true" mktolockimgstyle=3D"true">
+<a href=3D"https://em.goteleport.com/dc/jMgablFq4j_E9G9NC2zET1tvJ_kSt09RC4h=
+Qu0VXcYhlSiHQR-p4PKY8AfVseCFLuRlMyV8TGIv8EQPnGaL1vuVNUMWkej4pOdmNEwQqnrjgzo=
+vzpnEXBx_c_j9wA36ufREBARTzY_WFa71JyaMWDoTul6nVQuydkbybdMMR9b7Dhk3Gy3lwD1Xjb=
+hBbL-mnf4JTZrsuaMnepV0c0FU7qg=3D=3D/ODE5LVdIVC00ODMAAAGbISHMJJOMKNio2pwCWS1=
+228ZLOSLz23R0uOkZdSv2_r-sDHpIawI0e2ZNx4MEqUyW2arJ-VY=3D" target=3D"_blank">=
+<img style=3D"display:block;" alt=3D"Top Use Cases &amp; Trends in Machine =
+&amp; Workload" src=3D"https://learn.goteleport.co/rs/819-WHT-483/images/to=
+p-use-cases-and-trends-in-machine-and-workload-identity.png" width=3D"600" =
+class=3D"mimg100"></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"mktoModule" id=3D"slkgsdg">
+<tbody>
+<tr>
+<td style=3D"background: #FFFFFF;">
+<table width=3D"540" style=3D"width:540px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100" id=3D"CS-2" mktoname=3D"M=
+odule">
+<tbody>
+<tr>
+<td style=3D" padding: 15px 0 0px 0;" class=3D"mpad mktoText" id=3D"skgodkd=
+">
+<p>Hi&nbsp;David,<br>
+<br>
+As infrastructure becomes more automated, non-human identities (NHIs)=E2=80=
+=94like CI/CD tools, service agents, and orchestration systems=E2=80=94are =
+increasingly responsible for deploying and managing critical workloads. But=
+ many still operate with persistent credentials,
+ excessive privileges, and limited visibility. <br>
+<br>
+Join us Wednesday, June 25 at 10 AM PT for a live webinar on the top use ca=
+ses and trends in machine and workload identity, presented by experts from =
+Teleport and the Non-Human Identity Management Group.
+<br>
+<br>
+Key Takeaways: <br>
+</p>
+<ul>
+<li>How to harden CI/CD pipelines without slowing down delivery</li><li>How=
+ to replace long-lived credentials in Infrastructure-as-Code workflows</li>=
+<li>How to enable secure, federated service-to-service trust across environ=
+ments</li></ul>
+<p>This session will give you a clear model for managing non-human identity=
+ risk=E2=80=94one rooted in Zero Trust and built for automation.
+<br>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"mktoModule" id=3D"slkgodk08df1066-967b-452b-a670-408473981b86">
+<tbody>
+<tr>
+<td style=3D"background: #FFFFFF;">
+<table width=3D"540" style=3D"width:540px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100" id=3D"BT-1-C" mktoname=3D=
+"Module">
+<tbody>
+<tr>
+<td style=3D"padding: 16px 0 16px 0;">
+<table border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" class=3D"cta" style=3D"background-color:#512FC9;font-f=
+amily:sans-serif;font-size:16px;font-weight:bold;text-align:center;-webkit-=
+text-size-adjust:none; padding: 14px 28px 14px 28px; line-height: 1; border=
+-radius:0px;">
+<a href=3D"https://em.goteleport.com/dc/jMgablFq4j_E9G9NC2zET1tvJ_kSt09RC4h=
+Qu0VXcYhlSiHQR-p4PKY8AfVseCFLuRlMyV8TGIv8EQPnGaL1vuVNUMWkej4pOdmNEwQqnrjgzo=
+vzpnEXBx_c_j9wA36ufREBARTzY_WFa71JyaMWDoTul6nVQuydkbybdMMR9b7Dhk3Gy3lwD1Xjb=
+hBbL-mnf4JTZrsuaMnepV0c0FU7qg=3D=3D/ODE5LVdIVC00ODMAAAGbISHMJJOMKNio2pwCWS1=
+228ZLOSLz23R0uOkZdSv2_r-sDHpIawI0e2ZNx4MEqUyW2arJ-VY=3D" style=3D"color: #f=
+fffff; text-decoration: none;">Register
+ Now</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"600" style=3D"width:600px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100 mktoModule" id=3D"F-1">
+<tbody>
+<tr>
+<td style=3D"padding: 16px 0 16px 0; text-align: center; background: #F5F5F=
+5; font-size: 12px; line-height: 1.4em;" class=3D"mktoText" id=3D"kdjwe9">
+<div style=3D"text-align: center;">
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-size: 14px; font-family: arial, helvetica, sans-serif; =
+color: #000000; background-color: transparent; font-weight: 400; font-varia=
+nt: normal; text-decoration: none; vertical-align: baseline; white-space: p=
+re-wrap;">Teleport, 2100 Franklin
+ St, Suite 400, Oakland, CA 94612</span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-family: arial, helvetica, sans-serif; font-size: 14px;"=
+><span style=3D"color: #000000; background-color: transparent; font-weight:=
+ 400; font-variant: normal; text-decoration: none; vertical-align: baseline=
+; white-space: pre-wrap;">If you no
+ longer wish to receive these emails anymore, click on the following link: =
+</span>
+</span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-family: arial, helvetica, sans-serif; color: #000000; f=
+ont-size: 14px;"><a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbI=
+SHMJHRqmDM4uvthLqJj_12DnLGWQaN2u5IV-Crz6AKzPtbIbY-ndJRiCoqSKEqmqClEHDM=3D" =
+style=3D"color: #000000;">UNSUBSCRIBE</a></span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<br>
+<span style=3D"font-family: arial, helvetica, sans-serif; color: #000000; f=
+ont-size: 14px;"><a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbI=
+SHMJM56H7ckS5BfJTujUR6oW7Hp6GKzHdAIVMS7SYxP0pIEJjZabvwEqHWimmtcYE8ScO4=3D" =
+style=3D"color: #000000;" target=3D"_blank">TERMS
+ OF SERVICE</a> | <a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGb=
+ISHMJPQ2vYe2RIy_qsr56fcTKio0RAMt1P6Zd52dXZuP_ROMQWsniBv2i_V8Sm258VG75Rc=3D"=
+ style=3D"color: #000000;">
+PRIVACY POLICY</a> | <a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAA=
+AGbISHMJH8BAMi02o_1joyAfQ_tkahizUoUyhjYL1BKy2FYFSZR65S0j-vCQQ9-a-_T73ytW-I=
+=3D" style=3D"color: #000000;">
+SECURITY POLICY</a></span><br>
+</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbISHMJKL9pgIxBpfIzr=
+44ZPfuw4zDpDAtL4hSa5T5wmmruwiJt57vl_GMGiasOtSLcJ8X25A=3D"></a><img src=3D"h=
+ttps://em.goteleport.com/trk?t=3D1&amp;mid=3DODE5LVdIVC00ODMAAAGbISHMJdgtv1=
+xqEohMRXeOHYG15TBobJ7r2f7Leb6SdLvsXa8Sa1EykV6xTmcgbVm-frNDwiK7HZxX-Ghy3aNAm=
+lq4OVszo2wDG-gaaf9eiRn876SA6JZEqV_OidG9gkzvRvRXYh2MBQ" width=3D"1" height=
+=3D"1" style=3D"display:none !important;" alt=3D"">
+<p><font face=3D"Verdana" size=3D"1"></font></p>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+------=_Part_366628842_1435037587.1750235421735--
