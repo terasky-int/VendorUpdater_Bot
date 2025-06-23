@@ -448,86 +448,20 @@ async def unified_search_endpoint(query: str, top_k: int = 5):
 async def natural_language_query(query: str):
     """Process a natural language query and return structured results"""
     try:
-        # Process the query
-        processed = process_search_query(query)
-        query_lower = query.lower()
+        # Import the enhanced NL processor
+        from src.nl_query_processor import process_natural_language_query
         
-        # Determine query type
-        query_type = "search"  # Default
+        # Process the query with enhanced NL understanding
+        result = process_natural_language_query(query)
         
-        if "how many" in query_lower or "count" in query_lower:
-            query_type = "count"
-        elif "list" in query_lower or "what products" in query_lower:
-            query_type = "list"
-        
-        # Handle different query types
-        if query_type == "count":
-            # Count emails
-            vendor = processed["filters"].get("vendor")
-            days = processed["graph_filters"].get("days", 30)
-            
-            count = count_recent_emails(vendor, days)
-            
-            time_period = f"in the past {days} days" if days else ""
-            vendor_str = f"from {vendor}" if vendor else ""
-            
-            answer = f"There are {count} emails {vendor_str} {time_period}."
-            
-            return {
-                "answer": answer.strip(),
-                "query_type": "count",
-                "parameters": {
-                    "vendor": vendor,
-                    "days": days
-                },
-                "data": {
-                    "count": count
-                }
-            }
-            
-        elif query_type == "list":
-            # List products
-            vendor = processed["filters"].get("vendor")
-            
-            if vendor:
-                products = get_vendor_products_enhanced(vendor)
-                
-                return {
-                    "answer": f"Found {len(products)} products for {vendor}.",
-                    "query_type": "list",
-                    "parameters": {
-                        "vendor": vendor
-                    },
-                    "data": {
-                        "products": products
-                    }
-                }
-            else:
-                return {
-                    "answer": "Please specify a vendor to list products.",
-                    "query_type": "list",
-                    "parameters": {},
-                    "data": {}
-                }
-                
-        else:
-            # Default to search
-            results = unified_search(
-                processed["query_text"],
-                processed["filters"],
-                processed["graph_filters"],
-                5
-            )
-            
-            reranked = graph_enhanced_ranking(results, processed["query_text"])
-            formatted = format_search_results(reranked)
-            
-            return {
-                "answer": f"Found {len(formatted['results'])} results for your query.",
-                "query_type": "search",
-                "parameters": processed,
-                "data": formatted
-            }
+        return {
+            "query": query,
+            "intent": result["intent"],
+            "answer": result["answer"],
+            "data": result.get("results", result.get("items", [])),
+            "parameters": result["parameters"],
+            "query_type": "natural_language"
+        }
     
     except Exception as e:
         logging.error(f"Error processing natural language query: {e}")
