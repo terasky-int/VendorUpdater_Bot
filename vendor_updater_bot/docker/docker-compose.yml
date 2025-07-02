@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  vendor-updater-bot:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: vendor-updater-ingestion
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./config:/app/config
+      - ${EMAIL_FOLDER:-./misc/tst_emls}:/data/emails
+    environment:
+      - EMAIL_PASS=${EMAIL_PASS}
+      - NOTIFICATION_EMAIL=${NOTIFICATION_EMAIL}
+      - NOTIFICATION_EMAIL_PASS=${NOTIFICATION_EMAIL_PASS}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION:-eu-west-1}
+    restart: unless-stopped
+    # For cron-like scheduling:
+    # command: sh -c "while true; do python main.py --local --folder /data/emails; sleep 7200; done"

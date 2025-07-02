@@ -1,0 +1,156 @@
+email:
+  imap_server: imap.gmail.com
+  email_address: davidplayground333@gmail.com
+  email_password: ${EMAIL_PASS}
+  folder: INBOX
+  mark_as_read: True
+  fetch_interval_minutes: 120
+
+notifications:
+  enabled: true
+  smtp_server: smtp.gmail.com
+  smtp_port: 587
+  sender_email: ${NOTIFICATION_EMAIL}
+  sender_password: ${NOTIFICATION_EMAIL_PASS}
+  recipients:
+    - davidg@terasky.com
+
+type_classification:
+  labels:
+    marketing:
+      - promo
+      - event
+      - webinar
+      - announcement
+      - invite
+    security:
+      - vulnerability
+      - patch
+      - maintenance
+    technical:
+      - support
+      - update
+      - whitepaper
+  multi_label: True
+
+product_classification:
+  vendors:
+    hashicorp:
+      - HCP
+      - vault
+      - terraform
+      - boundary
+      - consul
+      - nomad
+      - packer
+      - waypoint
+      - sentinel
+      - terraform cloud
+    palo alto:
+      - prisma cloud
+      - cortex xdr
+      - cortex xpanse
+      - cortex xsoar
+    snyk:
+      - snyk code
+      - snyk open source
+      - snyk container
+      - snyk iaac
+      - snyk developer security
+    aqua security:
+      - cloud native security platform
+      - container security
+      - serverless security
+      - runtime protection
+      - vulnerability management
+    prompt security:
+      - prompt security platform
+      - prompt security employee
+      - prompt security developer
+      - prompt security homegrown
+    dell storage:
+      - powerstore
+      - powermax
+      - unity xt
+      - isilon
+      - vnx
+      - powerflex
+    pure storage:
+      - flashblade
+      - flasharray
+      - pure1
+      - airgap
+      - cloud block store
+    aws:
+      - ec2
+      - s3
+      - rds
+      - lambda
+      - dynamodb
+      - cloudformation
+      - cloudwatch
+      - vpc
+    azure:
+      - virtual machines
+      - app service
+      - azure sql database
+      - azure storage
+      - azure functions
+      - azure kubernetes service
+    gcp:
+      - compute engine
+      - cloud storage
+      - cloud sql
+      - cloud functions
+      - kubernetes engine
+      - bigquery
+    broadcom:
+      - VMWare
+      - vSphere
+      - NSX
+      - vSAN
+      - vRealize
+  multi_label: True
+
+data_processing:
+  language_support:
+    - en
+    - he
+  chunk_size_tokens: 512
+  chunk_overlap: 20
+  save_intermediate_artifacts: True
+
+embedding:
+  provider: amazon
+  model: amazon.titan-embed-text-v2:0
+  region: eu-west-1
+
+bedrock:
+  region: eu-west-1
+  embedding_model: amazon.titan-embed-text-v2:0
+  classification_model: anthropic.claude-3-haiku-20240307-v1:0
+
+indexing:
+  vector_db: chromadb
+  hybrid_search: True
+  manifest_path: ./index_manifest.jsonl
+
+vector_store:
+  persist_directory: data/chroma
+  collection_name: vendor_emails
+  # Remote ChromaDB configuration (uncomment and update to use remote instance)
+  use_remote: true
+  remote_host: "aipg.dudelabz.com"  # Replace with your remote server IP
+  remote_port: 8000
+
+ocr:
+  tesseract_path: "C:\\Users\\DavidGidony\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe"
+
+storage:
+  manifest_file: "manifest.jsonl"
+
+debug:
+  enabled: True
+  verbose_logging: True
+  save_all_artifacts: False
+  human_in_the_middle: False
