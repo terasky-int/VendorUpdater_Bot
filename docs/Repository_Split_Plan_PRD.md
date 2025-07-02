@@ -330,6 +330,7 @@ Both repositories connect to shared databases:
 - [x] Fix missing functions in both repositories
 - [x] Verify ChromaDB connectivity in both systems
 - [x] Update documentation for each repository (README.md)
+- [x] Make tests resilient to missing AWS credentials
 - [ ] Run pre-migration baseline tests
 - [ ] Execute post-migration validation tests
 - [ ] Run performance regression tests
