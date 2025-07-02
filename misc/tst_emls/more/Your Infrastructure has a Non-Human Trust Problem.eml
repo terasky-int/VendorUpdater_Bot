@@ -1,0 +1,578 @@
+Received: from VI1P194MB0592.EURP194.PROD.OUTLOOK.COM (2603:10a6:800:15e::14)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Tue, 24 Jun 2025
+ 06:46:13 +0000
+Received: from DUZPR01CA0159.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:4bd::16) by VI1P194MB0592.EURP194.PROD.OUTLOOK.COM
+ (2603:10a6:800:15e::14) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8857.29; Tue, 24 Jun
+ 2025 06:46:07 +0000
+Received: from DU2PEPF00028D11.eurprd03.prod.outlook.com
+ (2603:10a6:10:4bd:cafe::a8) by DUZPR01CA0159.outlook.office365.com
+ (2603:10a6:10:4bd::16) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8857.30 via Frontend Transport; Tue,
+ 24 Jun 2025 06:46:01 +0000
+Authentication-Results: spf=pass (sender IP is 192.28.150.203)
+ smtp.mailfrom=bounce.goteleport.com; dkim=pass (signature was verified)
+ header.d=goteleport.com;dkim=pass (signature was verified)
+ header.d=mktdns.com;dmarc=pass action=none
+ header.from=goteleport.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of bounce.goteleport.com
+ designates 192.28.150.203 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.28.150.203;
+ helo=bounce.goteleport.com; pr=C
+Received: from bounce.goteleport.com (192.28.150.203) by
+ DU2PEPF00028D11.mail.protection.outlook.com (10.167.242.25) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8880.14 via Frontend Transport; Tue, 24 Jun 2025 06:46:03 +0000
+X-MSFBL: diW00I2hMioR5VH1MMKQeDUx/g+/vy8QoV65MWgqf4s=|eyJiIjoiZHZwLTE5Mi0
+	yOC0xNTAtMjAzIiwiZyI6ImJnLWFiZC00NTciLCJ1IjoiODE5LVdIVC00ODM6MDo
+	4Mzk0OjU5NDkwOjI0NjAyNzo4NjUyOjk6NjQ4MjY6MzE4MjM0NSIsInIiOiJkYXZ
+	pZGdAdGVyYXNreS5jb20ifQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1750747562;
+	s=m1; d=goteleport.com; i=@goteleport.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=vQM0ia23NCOaIuZQcrUFdxEOGRTWR3L1H0/JEGAuZ1o=;
+	b=jwqmNo5MrQCeMHmnELzOcVpJR8aA4oj+iVtA1bZF+J9q7nV2d6nS2ktXvNk+AhTP
+	4EhA7f2kK9QNbYuCJveKt18nSlxRiBBWFpOEy9AH7MXks7THmVUOm9hXBasaPv+R7c4
+	K3u5dtcULz5vQAjiD4ELiChLj3NDpd/tERhoFmB0=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1750747562;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=vQM0ia23NCOaIuZQcrUFdxEOGRTWR3L1H0/JEGAuZ1o=;
+	b=a6QPfRVHYhSg13KVHJZsdB3BxuH8NerojhRkmXt+1ACqmwUQ59V+JeYIG7Uh/djM
+	T/tTo8v4ahWODYUInnssZCdOK+6Xi6SjL0nj1VM9CoEpUqU1Kl2cliQiAGZVU+DLW5l
+	Z9iJecEgCBZ/1rxv2c4nkVnxaxksxAEM21bNXu6w=
+Date: Tue, 24 Jun 2025 01:46:02 -0500 (CDT)
+From: Teleport <hello@goteleport.com>
+Reply-To: hello@goteleport.com
+To: davidg@terasky.com
+Message-ID: <344457810.43983117.1750747562394@abmktmail-batch1f.marketo.org>
+Subject: Your Infrastructure has a Non-Human Trust Problem
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_43983116_708258102.1750747562394"
+X-Binding: bg-abd-457
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://em.goteleport.com/u/ODE5LVdIVC00ODMAAAGbP6hxl58KjQaKVg8C8XES05u2I7_NXY0cfLonSYwCvZUgel4_03-e3qyBvKppTNRZQypIqkw=?emailAddress=ODE5LVdIVC00ODMAAAGbP6hxlqv-PshaUiJkHHx1Ek4_qWjglW_v-YzRt7TWBDrPsxl3B0QUeGEeTvhpR38ntRM>, <mailto:GFMXS5SIPBIFQM2JNNKE442WOM2XMYJWPF3T2PI=.64826.8652.9@unsub-ab.mktomail.com>
+X-MarketoID: 819-WHT-483:0:8394:59490:246027:8652:9:64826:3182345
+X-Mailfrom: 819-WHT-483.0.64826.0.0.8652.9.3182345@bounce.goteleport.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+Return-Path: 819-WHT-483.0.64826.0.0.8652.9.3182345@bounce.goteleport.com
+X-MS-Exchange-Organization-ExpirationStartTime: 24 Jun 2025 06:46:03.7100
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 644ea1f5-f867-44b2-e204-08ddb2eac9f8
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DU2PEPF00028D11:EE_|VI1P194MB0592:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: DU2PEPF00028D11.eurprd03.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 644ea1f5-f867-44b2-e204-08ddb2eac9f8
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:5;ARA:13230040|12012899012|3072899012|1032899013|2092899012|5062899012|69100299015|27102699006|4022899009|31052699007|39142699007|13003099007|8096899003|4076899003|2066899003;
+X-Forefront-Antispam-Report: CIP:192.28.150.203;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:bounce.goteleport.com;PTR:bounce.goteleport.com;CAT:NONE;SFS:(13230040)(12012899012)(3072899012)(1032899013)(2092899012)(5062899012)(69100299015)(27102699006)(4022899009)(31052699007)(39142699007)(13003099007)(8096899003)(4076899003)(2066899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 24 Jun 2025 06:46:03.1418
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 644ea1f5-f867-44b2-e204-08ddb2eac9f8
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: DU2PEPF00028D11.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1P194MB0592
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:10.1238770
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8880.015
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?ajFtb3BwelhNSHB5ZUpWSThBQktabkdTUmFGOXlPWXcvS3dDd1p4SVVZVDlt?=
+ =?utf-8?B?TFltWE9udkVCTTJDMTVKdGRHMlFWNXFITkdJZ215cEJBbm1TVndFd09mdTNj?=
+ =?utf-8?B?cnY1ZlRrM1o1dEdQaEhtdXFBS044WWJFK01tNnBGQnd1L2trNnBiWEN4KzZD?=
+ =?utf-8?B?eUlMMzJJSGFVUmpBdVQyaDlYVjRWbldvb1hnVTFYVGp6TzRVY2FzSVFxQjVM?=
+ =?utf-8?B?QW5LbWlyTm9hYlFsM0NhOGEvOUVWNG05WEhSMThwWGV5U3Nna2R6cTFVU2Ux?=
+ =?utf-8?B?QVN0dUxPQlprNTZ1WG05NkRqR296c2E3TWUrMzdKTVdLRVZsMXlOZUNEbFN3?=
+ =?utf-8?B?ZjZDeHJraGdRd2ljSk1RVjAyK0plczIzYno1Q3I1ZW16T25YdTRRT3RYUDl5?=
+ =?utf-8?B?Tk9qa3dIeFpDMDdHM0ZhSVdYVUJ1MDhPdUx5dFB1QldwYUF5UVVHTzVaeUJt?=
+ =?utf-8?B?c0VnNk1SKzZsWDU3NHg0U2pZdjBLQ0RuaW1uellPMHB5TkwyNW85SHZJWTdG?=
+ =?utf-8?B?MUkvL0ljdHU4ZkJSanBzTElDMHp6MWtOZm1sdm1pOGdiRGVPdlNtMTFneDQ1?=
+ =?utf-8?B?NUpXekttbTkyb0NGQm9mc09WZUh3VGR1LzNlYVJEZEZEN0plbWlPMFNuS1g2?=
+ =?utf-8?B?QVZtY24waExDd3AxTFFpbERuVFRZZUhjZlFZWEU4YXQ1SDB3Y1htQ2t3N2JB?=
+ =?utf-8?B?NVZXcW1ZWTNzZnJhdEgxY1lzS2VYQ0s0b3hha3A4MVZKcXpKTW1kaXl3Ui9j?=
+ =?utf-8?B?U3VFQlNYUVVEOWkxOENxdUk4dDVQSSthem5SeTBOUzB5ZU1JWU5qdjlWaDFJ?=
+ =?utf-8?B?ZTNTQUJtMEY1S1dnWi8wajluZ2JHdkZlVWd5VURlTlBPQlEzcWwyd3J0amUy?=
+ =?utf-8?B?NGI2YjdKVUJwaUNPeEh3ZWFkVXRjdGVRdDgwanptL2hYOGZXQ25MQXNSYzVy?=
+ =?utf-8?B?eTFackxvVGVoa1RWUjJiVzQrNWRWQTRuL0R2Q1hyajZiQWpaZUZ6bTFzenNM?=
+ =?utf-8?B?bW1abXVkMHorQkdKM2x6UWgvTkxidU85eEMyZnNjc0l0cmVMY3YzczZBMVJJ?=
+ =?utf-8?B?Nmo2R2k0Q1hoeFpxT1YraWtoTy9vbFgyOFJtZUJncUZKU2dYWjBvRUZGRll6?=
+ =?utf-8?B?U2tVTUVYL0UwL3c1VEoxelk1TGFYRWNHU0xOT3pvQlZheVRiS2RrekZQNFBP?=
+ =?utf-8?B?S2RhTmVhTU55dXBBSkxNdEROU1FNM0lzL0tiOFBUTHpDUHN5QnRIQ0x1NzVl?=
+ =?utf-8?B?ZTBFTHlPdXhZZyt1WldNejJIWStmcUNwRmhIcXdxcG1DSk1vNGJCQTcyNkE1?=
+ =?utf-8?B?VnQ2YmQ2STJVRXlmU2RJVktEYVJrMXlzeC9weGd4alBtNmozSkxjdXFPMGht?=
+ =?utf-8?B?akdFeXhlY0JsUXpmdVhQbFBad2YzODF5WUkrRW9zVExZMTQzR1FmTTcyOHQz?=
+ =?utf-8?B?Z2JsSzFIUllkVTN1NDVGTVFLcVVPZTlMU2RSRzV3d3ZTZlc1aU4yNGtFZ2Jz?=
+ =?utf-8?B?aHl0OVdRdWZYYVRCM1hYamJhNHJqaEMxc05rRElrM2dWOXNRZVd2K0dKcTVa?=
+ =?utf-8?B?M0hVY05SNForcEsrVmd3UWVXS3Zra3JsbXB0a2kyeVo5cnh4RWQ2ekpZNzRR?=
+ =?utf-8?B?SHRQN3QrRHZvb0hPMm43eDYwbHlQMDlPbWNCV0hneVBnTDk2bWprS3NXbStJ?=
+ =?utf-8?B?cVBKRDNxdE9XdjFyTmIrT3RkMnRwQy9CNlFZbDJIM2pHcG8rWmNmcE95cUxL?=
+ =?utf-8?B?UHhCaktXWENuV2YzL1FCOFhQbjBpS2ttTkVEUTZocDVoVzY5aDNUaWl2dWo3?=
+ =?utf-8?B?aGV1TEFCbFZVNzAva2lqQ0VXMUVvQzJRNFBtZkhqZ3hnbi9JNmtQZWhFY3oy?=
+ =?utf-8?B?N0NURVZMbjUzN3MrKzc4UTlLeGtURExqbkpQT2lBT0EwVFNURGVvTkE0R3Fv?=
+ =?utf-8?B?VFFMMko3ZGJPU1J2WGFDaWtNeHBKV29vcHVTK3BYVjU1b3Y1OWVrRTNpN3oy?=
+ =?utf-8?B?K1g4MlZkemN5RDBBenZkSjM3N21rZ2QyUGU0dUVRTFRRT2pOcjltZlMwK25v?=
+ =?utf-8?B?d2lmeFk1QzBDeGNXcmIxVDhqSC9QQWVxalE1amhHYXkveTFid3hrL0V3cWhw?=
+ =?utf-8?B?NEQwNFZvVHh4NmZCbXVHYUd1WVdNZ1hENmJHZDRncVZVT3JpQXB2TmN5aWd3?=
+ =?utf-8?B?anM2QWUxN1hXU2dCQTFzbkxLOTN1NmkvRzVOQlJTZHRLM1k4dlRnS29MTmNs?=
+ =?utf-8?B?ck5xVE1ndkovQy9hVGl4eFV0N2x2K0s4QmtJS2RYVXgzYjZESjF6NkZyRmtF?=
+ =?utf-8?B?TnNEaFltWThHeTJvb3dIb0s1WTlNVWloSXIySDRRZE9QazlKOVhHMlpZSHVQ?=
+ =?utf-8?B?L3dNdHkyUlJEcTVqckg5NHZsSlhTZlc2N2gzRUtLTVJ0OTVLck1scGVZTFVr?=
+ =?utf-8?B?ZjJBY2JwdisrcUxKak15aElHTGZQd3dObHdUbEgrTlNGT202Z3V6N2ZDU0Jl?=
+ =?utf-8?B?clNZV2pERnhRK3hxU2xUMnNVL3g5WU12WkNWdGs4ZEhQaHRHSDZ4YWdEaGww?=
+ =?utf-8?B?NHR1RmJMYXdMSVBWemhmN0d4VHVNeVRJV1dkd3ZtZ1JYOVJreWRiMmwwbjJH?=
+ =?utf-8?B?bUxYQVRqSVpKN1ZUN1RrZVBqVVZscW15c1hRbFNSa25raHFqY3YwdGVlb0po?=
+ =?utf-8?B?WldYQ3JwMU9iTkFBM2ExUFh0L3crL0dlbUpPTHN6cnh5a3dJRkZ4Q2pEMEhj?=
+ =?utf-8?Q?SA=3D?=
+MIME-Version: 1.0
+
+------=_Part_43983116_708258102.1750747562394
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Aligning with the Department of Defense (DoD) Zero Trust strategy just got =
+simpler.
+[Your Infrastructure Has a Non-Human Trust Problem]<https://em.goteleport.c=
+om/ODE5LVdIVC00ODMAAAGbP6hxlqvTYjcHce1c20gpQVkNXYOtgO5NhcoxGqplkKt7fUxZPii2=
+qq0SE5rUuL2YU02SDPs=3D>
+
+Hi David,
+
+Bots push code. CI/CD pipelines deploy to prod. AI agents trigger real-worl=
+d actions.
+
+These non-human identities (NHIs) are trusted to power your automation work=
+flows. Yet many of these machine actors still rely on standing privileges o=
+r static credentials like API keys to run =E2=80=93 all with limited oversi=
+ght.
+
+Read our latest blog, Your Infrastructure Has a Non-Human Trust Problem<htt=
+ps://em.goteleport.com/ODE5LVdIVC00ODMAAAGbP6hxlqvTYjcHce1c20gpQVkNXYOtgO5N=
+hcoxGqplkKt7fUxZPii2qq0SE5rUuL2YU02SDPs=3D>, to discover four of the ways c=
+ustomers are using Teleport Machine & Workload Identity<https://em.gotelepo=
+rt.com/ODE5LVdIVC00ODMAAAGbP6hxlw-1zdg4OO73m4rxwGc7Qzt5I4FXTx0WwEZnHBW6NJTC=
+Ne1GolDtanwiW5W0oZrCgqw=3D> to bring trust and traceability to non-human id=
+entities as they interact with infrastructure, including:
+
+  *   Securing CI/CD pipelines
+  *   Infrastructure-as-Code (IaC) automation
+  *   Unifying federated identity across multi-cloud
+  *   Securing Model Context Protocol (MCP) for AI agents and LLMs
+
+Learn More<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbP6hxlqvTYjcHce1c20=
+gpQVkNXYOtgO5NhcoxGqplkKt7fUxZPii2qq0SE5rUuL2YU02SDPs=3D>
+
+Teleport, 2100 Franklin St, Suite 400, Oakland, CA 94612
+
+If you no longer wish to receive these emails anymore, click on the followi=
+ng link:
+
+UNSUBSCRIBE<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbP6hxlzknGti4LRr59=
+I81P2gu1FL3aXSWQZQ7tnUqH7DU8y2N5ih7FoHK861-Ir8ItWbp3Eo=3D>
+
+TERMS OF SERVICE<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbP6hxlyUwm2_B=
+eJL8W1SEkptEYdV_hiX_ICMkSZK7CyJZHK1HjLdb8C17lUl9qIfOQpnBc80=3D> | PRIVACY P=
+OLICY<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbP6hxl94eQ9MKjPNEyXwRI_b=
+pRHsn34dC8SDZQXAfgqTohfRGJbyRho736XTzaL0grVbIHKQ=3D> | SECURITY POLICY<http=
+s://em.goteleport.com/ODE5LVdIVC00ODMAAAGbP6hxl5QzBnYmXWJPnLhOuMHvdt0YmVZdQ=
+8m76YTWmnNBlJSarGVUADPAxYAaWwcY-OgtA_M=3D>
+
+<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbP6hxl6_jcd8sqjeox3JRUx2LN1CP=
+EoECEsPI3yUe76KAIlY3uYjYMDrHI_EaTzX5Nacl_Ks=3D>
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_43983116_708258102.1750747562394
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:=
+schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:offi=
+ce"><!--
+Built by upcraft.io
+--><head><!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>=20
+</xml><![endif]-->
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+<!-- START Marketo Variables --><!-- Global Variables--><!-- Background Var=
+iables--><!-- Content Variables--><!-- Toggle Variables--><!-- Button 1 Var=
+iables--><!-- Button 2 Variables--><!-- END Marketo Variables -->
+<title>Company Name</title>
+<style>
+/* START - WEBFONTS, ALWAYS use import method for email to avoid automation=
+ tracking issues */
+@import url('https://fonts.googleapis.com/css?family=3DOpen+Sans:300,400,60=
+0,700&display=3Dswap');
+/* END - WEBFONTS, ALWAYS use import method for email to avoid automation t=
+racking issues */
+=09
+/* START - Universal styles */
+body {
+    font-family: arial, helvetica;
+    font-size: 14px;
+    line-height: 1.6em;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: 100%;
+}
+img, a img {
+    outline: none;
+    text-decoration: none;
+    border: none;
+    -ms-interpolation-mode: bicubic;
+}
+.imgblock img {
+    display: block;
+}
+.img100, .img100 img {
+    width: 100% !important;
+    height: auto !important;
+}
+p {
+    margin-top: 0;
+    padding-top: 0;
+}
+a {
+    color: #047AED;
+}
+
+/* END - Universal styles  */
+=09
+/* START - Mobile universal styles */
+@media screen and (max-width: 480px) {
+body {
+    margin: 0 !important;
+    padding: 0;
+}
+.t100 {
+    width: 100% !important;
+    float: none !important;
+}
+.mimg100 img, .mimg100 {
+    width: 100% !important;
+    height: auto !important;
+}
+.logoimg {
+    max-width: 125px !important;
+    height: auto !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.heightauto {
+    height: auto !important;
+}
+.p0 {
+    padding: 0 !important;
+}
+.pt5 {
+    padding-top: 5px !important;
+}
+.pr5 {
+    padding-right: 5px !important;
+}
+.pb5 {
+    padding-bottom: 5px !important;
+}
+.pl5 {
+    padding-left: 5px !important;
+}
+.pt10 {
+    padding-top: 10px !important;
+}
+.pr10 {
+    padding-right: 10px !important;
+}
+.pb10 {
+    padding-bottom: 10px !important;
+}
+.pl10 {
+    padding-left: 10px !important;
+}
+.p15 {
+    padding: 16px !important;
+}
+.pt15 {
+    padding-top: 16px !important;
+}
+.pr15 {
+    padding-right: 16px !important;
+}
+.pb15 {
+    padding-bottom: 16px !important;
+}
+.pl15 {
+    padding-left: 16px !important;
+}
+.pt20 {
+    padding-top: 20px !important;
+}
+.pr20 {
+    padding-right: 20px !important;
+}
+.pb20 {
+    padding-bottom: 20px !important;
+}
+.pl20 {
+    padding-left: 20px !important;
+}
+.pt30 {
+    padding-top: 30px !important;
+}
+.pr30 {
+    padding-right: 30px !important;
+}
+.pb30 {
+    padding-bottom: 30px !important;
+}
+.pl30 {
+    padding-left: 30px !important;
+}
+.plr15 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+.mpad {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+}
+/* END - Mobile universal styles */
+
+/* START - Webfont fix, keeps Outlook from rendering Times. Loads for all d=
+evices except Outlook. */
+@media {
+body {
+font-family: 'Open Sans', sans-serif !important;
+}
+}
+
+/* END - Webfont fix, keeps Outlook from rendering Times. Loads for all dev=
+ices except Outlook. */
+
+=09
+=09
+/* START - Custom CSS */
+=09
+/* END -  Custom CSS */
+=09
+=09
+=09
+/* START - Custom mobile CSS */
+@media screen and (max-width: 480px) {
+}
+/* END -  Custom mobile CSS */
+</style><!--[if (gte mso 9)|(IE)]>
+<style type=3D"text/css">
+table {
+border-collapse: collapse;
+border-spacing: 0; }
+</style>
+<![endif]-->
+</head>
+<body style=3D"background: #DDDDDD; min-width:100%; margin:10px; padding:0;=
+">
+<style type=3D"text/css">div#emailPreHeader{ display: none !important; }</s=
+tyle>
+<div id=3D"emailPreHeader" style=3D"mso-hide:all; visibility:hidden; opacit=
+y:0; color:transparent; mso-line-height-rule:exactly; line-height:0; font-s=
+ize:0px; overflow:hidden; border-width:0; display:none !important;">
+Aligning with the Department of Defense (DoD) Zero Trust strategy just got =
+simpler.</div>
+<table width=3D"600" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"t100" style=3D"width:600px;">
+<tbody>
+<tr>
+<td id=3D"wrapper" style=3D"background: #ffffff; padding: 0;" class=3D"mkto=
+Container">
+<table width=3D"600" style=3D"width:600px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100 mktoModule" id=3D"img13508=
+ca48-e060-45f9-8ede-1fd6246a0d78">
+<tbody>
+<tr>
+<td style=3D"padding: 0;" class=3D"mimg100">
+<div class=3D"mktoImg" id=3D"kdf9292b68b685-86aa-4cd3-9f7b-8fdf8b8f2f41" mk=
+tolockimgsize=3D"true" mktolockimgstyle=3D"true">
+<a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbP6hxlqvTYjcHce1c20=
+gpQVkNXYOtgO5NhcoxGqplkKt7fUxZPii2qq0SE5rUuL2YU02SDPs=3D" target=3D"_blank"=
+><img style=3D"display:block;" alt=3D"Your Infrastructure Has a Non-Human T=
+rust Problem" src=3D"https://learn.goteleport.co/rs/819-WHT-483/images/your=
+-infrastructure-has-a-non-human-trust-problem.jpg" width=3D"600" class=3D"m=
+img100"></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"mktoModule" id=3D"slkgsdg">
+<tbody>
+<tr>
+<td style=3D"background: #FFFFFF;">
+<table width=3D"540" style=3D"width:540px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100" id=3D"CS-2" mktoname=3D"M=
+odule">
+<tbody>
+<tr>
+<td style=3D" padding: 15px 0 0px 0;" class=3D"mpad mktoText" id=3D"skgodkd=
+">
+<p>Hi David,&nbsp;</p>
+<p>Bots push code. CI/CD pipelines deploy to prod. AI agents trigger real-w=
+orld actions.
+<br>
+<br>
+These non-human identities (NHIs) are trusted to power your automation work=
+flows. Yet many of these machine actors still rely on standing privileges o=
+r static credentials like API keys to run =E2=80=93 all with limited oversi=
+ght.
+<br>
+<br>
+Read our latest blog, <a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMA=
+AAGbP6hxlqvTYjcHce1c20gpQVkNXYOtgO5NhcoxGqplkKt7fUxZPii2qq0SE5rUuL2YU02SDPs=
+=3D" target=3D"_blank">
+<em>Your Infrastructure Has a Non-Human Trust Problem</em></a>, to discover=
+ four of the ways customers are using
+<a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbP6hxlw-1zdg4OO73m4=
+rxwGc7Qzt5I4FXTx0WwEZnHBW6NJTCNe1GolDtanwiW5W0oZrCgqw=3D" target=3D"_blank"=
+>
+Teleport Machine &amp; Workload Identity</a> to bring trust and traceabilit=
+y to non-human identities as they interact with infrastructure, including:
+<br>
+</p>
+<ul>
+<li>Securing CI/CD pipelines</li><li>Infrastructure-as-Code (IaC) automatio=
+n</li><li>Unifying federated identity across multi-cloud</li><li>Securing M=
+odel Context Protocol (MCP) for AI agents and LLMs</li></ul>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"mktoModule" id=3D"slkgodk08df1066-967b-452b-a670-408473981b86">
+<tbody>
+<tr>
+<td style=3D"background: #FFFFFF;">
+<table width=3D"540" style=3D"width:540px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100" id=3D"BT-1-C" mktoname=3D=
+"Module">
+<tbody>
+<tr>
+<td style=3D"padding: 16px 0 16px 0;">
+<table border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" class=3D"cta" style=3D"background-color:#512FC9;font-f=
+amily:sans-serif;font-size:16px;font-weight:bold;text-align:center;-webkit-=
+text-size-adjust:none; padding: 14px 28px 14px 28px; line-height: 1; border=
+-radius:0px;">
+<a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbP6hxlqvTYjcHce1c20=
+gpQVkNXYOtgO5NhcoxGqplkKt7fUxZPii2qq0SE5rUuL2YU02SDPs=3D" style=3D"color: #=
+ffffff; text-decoration: none;">Learn More</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"600" style=3D"width:600px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100 mktoModule" id=3D"F-1">
+<tbody>
+<tr>
+<td style=3D"padding: 16px 0 16px 0; text-align: center; background: #F5F5F=
+5; font-size: 12px; line-height: 1.4em;" class=3D"mktoText" id=3D"kdjwe9">
+<div style=3D"text-align: center;">
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-size: 14px; font-family: arial, helvetica, sans-serif; =
+color: #000000; background-color: transparent; font-weight: 400; font-varia=
+nt: normal; text-decoration: none; vertical-align: baseline; white-space: p=
+re-wrap;">Teleport, 2100 Franklin
+ St, Suite 400, Oakland, CA 94612</span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-family: arial, helvetica, sans-serif; font-size: 14px;"=
+><span style=3D"color: #000000; background-color: transparent; font-weight:=
+ 400; font-variant: normal; text-decoration: none; vertical-align: baseline=
+; white-space: pre-wrap;">If you no
+ longer wish to receive these emails anymore, click on the following link: =
+</span>
+</span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-family: arial, helvetica, sans-serif; color: #000000; f=
+ont-size: 14px;"><a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbP=
+6hxlzknGti4LRr59I81P2gu1FL3aXSWQZQ7tnUqH7DU8y2N5ih7FoHK861-Ir8ItWbp3Eo=3D" =
+style=3D"color: #000000;">UNSUBSCRIBE</a></span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<br>
+<span style=3D"font-family: arial, helvetica, sans-serif; color: #000000; f=
+ont-size: 14px;"><a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbP=
+6hxlyUwm2_BeJL8W1SEkptEYdV_hiX_ICMkSZK7CyJZHK1HjLdb8C17lUl9qIfOQpnBc80=3D" =
+style=3D"color: #000000;" target=3D"_blank">TERMS
+ OF SERVICE</a> | <a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGb=
+P6hxl94eQ9MKjPNEyXwRI_bpRHsn34dC8SDZQXAfgqTohfRGJbyRho736XTzaL0grVbIHKQ=3D"=
+ style=3D"color: #000000;">
+PRIVACY POLICY</a> | <a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAA=
+AGbP6hxl5QzBnYmXWJPnLhOuMHvdt0YmVZdQ8m76YTWmnNBlJSarGVUADPAxYAaWwcY-OgtA_M=
+=3D" style=3D"color: #000000;">
+SECURITY POLICY</a></span><br>
+</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbP6hxl6_jcd8sqjeox3=
+JRUx2LN1CPEoECEsPI3yUe76KAIlY3uYjYMDrHI_EaTzX5Nacl_Ks=3D"></a><img src=3D"h=
+ttps://em.goteleport.com/trk?t=3D1&amp;mid=3DODE5LVdIVC00ODMAAAGbP6hxl2g4xY=
+rE12t18EEVyKJpdFDztjlFwImDLeBlabsdczfiKBxQwWyCjKWOvtnXPeAqm0r9j-GRIUINJxXYS=
+YANvohjtk63WuEtNhsm_QWEVoV6bdlpiTNubqMeg4N2M5NVBGHTRw" width=3D"1" height=
+=3D"1" style=3D"display:none !important;" alt=3D"">
+<p><font face=3D"Verdana" size=3D"1"></font></p>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+------=_Part_43983116_708258102.1750747562394--

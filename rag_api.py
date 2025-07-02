@@ -102,8 +102,8 @@ async def query_endpoint(request: QueryRequest):
                                     if event_date < current_date:
                                         include_item = False
                                         break
-                                except:
-                                    pass  # Invalid date format, keep the item
+                                except Exception as e:
+                                    logging.exception("Error parsing date", exc_info=True)  # Log the exception details
                     
                     if include_item:
                         filtered_docs.append(search_results["documents"][i])

@@ -4,3 +4,8 @@
 {"emails_processed": 23, "processing_time": 289.1108376979828, "emails_per_second": 0.07955426431999328, "timestamp": "2025-06-22T22:05:41.940693"}
 {"emails_processed": 10, "processing_time": 144.74133896827698, "emails_per_second": 0.06908876255588395, "timestamp": "2025-06-23T14:52:01.945994"}
 {"emails_processed": 6, "processing_time": 74.59388899803162, "emails_per_second": 0.08043554345528664, "timestamp": "2025-06-23T15:06:48.917829"}
+{"emails_processed": 6, "processing_time": 77.04141211509705, "emails_per_second": 0.07788019242217704, "timestamp": "2025-06-23T21:22:33.845568"}
+{"emails_processed": 62, "processing_time": 730.4110972881317, "emails_per_second": 0.08488370484812378, "timestamp": "2025-06-23T21:36:30.462872"}
+{"emails_processed": 0, "error": "[WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond", "timestamp": "2025-06-24T13:57:59.106708"}
+{"emails_processed": 13, "processing_time": 189.436687707901, "emails_per_second": 0.06862451068636267, "timestamp": "2025-06-24T14:30:24.906983"}
+{"emails_processed": 7, "processing_time": 73.93859577178955, "emails_per_second": 0.0946731531337896, "timestamp": "2025-06-29T09:45:24.617063"}

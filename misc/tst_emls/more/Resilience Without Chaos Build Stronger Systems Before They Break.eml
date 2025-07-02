@@ -1,0 +1,304 @@
+Received: from AS8P194MB1692.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:379::17)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Mon, 23 Jun 2025
+ 16:46:56 +0000
+Received: from AS4P251CA0027.EURP251.PROD.OUTLOOK.COM (2603:10a6:20b:5d3::13)
+ by AS8P194MB1692.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:379::17) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8857.27; Mon, 23 Jun
+ 2025 16:46:54 +0000
+Received: from AM2PEPF0001C70B.eurprd05.prod.outlook.com
+ (2603:10a6:20b:5d3:cafe::4b) by AS4P251CA0027.outlook.office365.com
+ (2603:10a6:20b:5d3::13) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8857.29 via Frontend Transport; Mon,
+ 23 Jun 2025 16:46:54 +0000
+Authentication-Results: spf=pass (sender IP is 147.253.220.155)
+ smtp.mailfrom=eom.mediaops.com; dkim=pass (signature was verified)
+ header.d=mediaops.com;dmarc=pass action=none
+ header.from=mediaops.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of eom.mediaops.com
+ designates 147.253.220.155 as permitted sender)
+ receiver=protection.outlook.com; client-ip=147.253.220.155;
+ helo=mta-253-220-155.emailoctopus.com.sparkpostmail.com; pr=E
+Received: from mta-253-220-155.emailoctopus.com.sparkpostmail.com
+ (147.253.220.155) by AM2PEPF0001C70B.mail.protection.outlook.com
+ (10.167.16.199) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8880.14 via Frontend
+ Transport; Mon, 23 Jun 2025 16:46:54 +0000
+Return-Path: msprvs1=2026968voKMz4=bounces-1873-7946@eom.mediaops.com
+X-MSFBL: nzOWoeADqhcugm94aA9D2gsi5hcBdsYIuc0ZnXJyvZQ=|eyJzdWJhY2NvdW50X2l
+	kIjoiNzk0NiIsIm1lc3NhZ2VfaWQiOiI2ODU1ZmQ4NDU5Njg3M2UyNTA0MSIsInI
+	iOiJkYXZpZGdAdGVyYXNreS5jb20iLCJjdXN0b21lcl9pZCI6IjE4NzMiLCJ0ZW5
+	hbnRfaWQiOiJzcGNldSJ9
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mediaops.com; s=eo;
+	t=1750697213; i=@mediaops.com;
+	bh=1ltubbuKFdD14frgunStOkWIqgsU8hJ981sqfEB1Ia8=;
+	h=From:To:Subject:List-Unsubscribe:List-Unsubscribe-Post:Date:
+	 Message-ID:Content-Type:From:To:Cc:Subject;
+	b=grdml7nVpVipFIIIaZ7YLLSbvpwEpMsJwm56KH/VFsLIbOrQ6lvENTtU0lmkHrZ7T
+	 oyxH6CwIhUYXJA//xRlZezsxcChTkd0HWEW7raVoRbgMTgnmv3fCHwGga4K5KYPoYZ
+	 VoIfiguzsyUg5mcMttcpVo1oOEVeB/Hwu1CZpM8g=
+Received: from [10.95.212.95] ([10.95.212.95])
+	by i-0623289eec09cd383.mta3vrest.sd.prd.sparkpost (ecelerity 5.0.0.74499 r(msys-ecelerity:tags/5.0.0.7)) with REST
+	id 14/05-17423-DF489586; Mon, 23 Jun 2025 16:46:53 +0000
+From: Techstrong Learning Webinars <no-reply@mediaops.com>
+To: David Gidony <davidg@terasky.com>
+Subject: Resilience Without Chaos: Build Stronger Systems Before They Break
+X-Entity-Ref-Id: c8dcdb30-096c-40ca-a86f-1883ca3609a9
+X-EmailOctopus-Parent-Id: 85e2b3a6-5050-11f0-bcc5-fb4939be702b
+X-EmailOctopus-Parent-Type-Id: campaign
+X-EmailOctopus-List-Id: 677bba98-e4a8-11ef-adea-dbbea90af185
+X-EmailOctopus-List-Contact-Id: 71809080-e4a9-11ef-9ecf-9fd8208ac93b
+X-EmailOctopus-Started-Preparing-At: 2025-06-23T16:39:08+00:00
+X-EmailOctopus-Sent-At: 2025-06-23T16:46:53+00:00
+X-EmailOctopus-Team-Id: 75e557ca-30f4-11ec-96e5-06b4694bee2a
+X-EmailOctopus-Version: 4
+List-Unsubscribe: <https://alecto.eomail8.com/unsubscribe?ep=2&l=677bba98-e4a8-11ef-adea-dbbea90af185&lc=71809080-e4a9-11ef-9ecf-9fd8208ac93b&p=85e2b3a6-5050-11f0-bcc5-fb4939be702b&pt=campaign&pv=4&spa=1750696748&t=1750697213&s=38302ec25ec213323a7b6d0727850411defd90356d8b9bf0a35ed1f35fac2104>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Date: Mon, 23 Jun 2025 16:46:53 +0000
+Message-ID: <311fdec020016cefcf1e3f6ad5a2a231@mediaops.com>
+Content-Type: multipart/alternative; boundary=qv5rb9PI
+X-MS-Exchange-Organization-ExpirationStartTime: 23 Jun 2025 16:46:54.4003
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 0580dee1-b441-465b-e842-08ddb2758f71
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM2PEPF0001C70B:EE_|AS8P194MB1692:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AM2PEPF0001C70B.eurprd05.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 0580dee1-b441-465b-e842-08ddb2758f71
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:5;ARA:13230040|4022899009|5082899009|2092899012|69100299015|4092899012|3072899012|3092899012|5062899012|29132699027|13102899012|12012899012|31052699007|13012899012|39142699007|27102699006|13003099007|8096899003|4076899003;
+X-Forefront-Antispam-Report: CIP:147.253.220.155;CTRY:GB;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mta-253-220-155.emailoctopus.com.sparkpostmail.com;PTR:mta-253-220-155.emailoctopus.com.sparkpostmail.com;CAT:NONE;SFS:(13230040)(4022899009)(5082899009)(2092899012)(69100299015)(4092899012)(3072899012)(3092899012)(5062899012)(29132699027)(13102899012)(12012899012)(31052699007)(13012899012)(39142699007)(27102699006)(13003099007)(8096899003)(4076899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 23 Jun 2025 16:46:54.2117
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0580dee1-b441-465b-e842-08ddb2758f71
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AM2PEPF0001C70B.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8P194MB1692
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:02.7186438
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8857.026
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?RjVSS3dSOWphaXFuWTJJaGt2MHM3QVAwV3JzanhZcG00T0diYWlnd2lTcis4?=
+ =?utf-8?B?eUFvdHBNcWo4TzhwYk1jWVVkZkZBbFRmRENuOW1xYWl0YVpWTXFlYjFQS0xw?=
+ =?utf-8?B?OFZvVGo1WVRGT2ZVR1YwOWFWZEJtbDVsNmJ5YzFWVjYvMVNHTitFZ1ZFS2pw?=
+ =?utf-8?B?ZCtkL2cxNEoxRWg3T3QwS1MyMkxyOUIyR1JjZHRsdXpXRXhicFh0T3dpbnY0?=
+ =?utf-8?B?WGtYc011d2k0aHR6bkh5UmZVVDVKRTBra01KN1JsK0treTY4SUxCNHlUb21B?=
+ =?utf-8?B?dWlrMWpxdU9ibnlTck5GZTI1bktCR3RvdmFBRGhsKzJ1Z0g2SXZGcCtPOERs?=
+ =?utf-8?B?ZTJJS2VNVjNOYWc1YkhxOU54d3owYXAydEoxZ2lRR0hQRmdWcFVoTm5GVUgx?=
+ =?utf-8?B?Zng5azBOaDB3MElPYnFYb2NlbGFJQXFuVkU0S1JoVnRPRENoUmhuZDI0RS82?=
+ =?utf-8?B?YktiWDR4RUxLWmNsZlNnVjJaclFjY1RpUVZiZTl6a0J0TEVIMHpnTzNpVUN5?=
+ =?utf-8?B?NU43bUFuMnRvUENTY2tkV0hUTm83RGJwUTljNXdBcElkOHNBc2RnVHNBU3o2?=
+ =?utf-8?B?ZEtJcWtHMXREbHoyNzdLZnBDNVFpMDZBajhBRnJUay85alNvbUlkQnBGbjZt?=
+ =?utf-8?B?dWJHQjNnY1RCek56emZYbTJmdUJKblRqSmUyN1E1cEVPcW9FaVdUK29WTEw2?=
+ =?utf-8?B?NnZjZzl6ditybEtIRGFWdTRUNkdKeFdXNFFONis0ZGRRWkd3ZmhjREJDTldn?=
+ =?utf-8?B?bHJsZzJpSDZqeGZmM3dZeFV2VHJlRlJyRVdzMHd5Y0U3NDUrQ0xsOXdENDI5?=
+ =?utf-8?B?WVpDaUhOK3ZOamtraG9uU2Y1VmljS0ZrWTdoSlNQMjNQNVpvcmhzUHY5UjAz?=
+ =?utf-8?B?RTN6NjVZTGg0NDQxSnhPYm5URGhUMWZhSHBFMjJzNFpyZ1p3MmZKZnRCY09y?=
+ =?utf-8?B?WThPZUtXeEExVEpKalBmWmhicGRLY3pVMlBKcVUyZkZQVU5sU1NhMGtiU3Ex?=
+ =?utf-8?B?WDcxWUd4amwyU2ZHQkwycnNMYXBrMTFGZjR5VC9xNzdrbk1FOWhQNXhCZjNQ?=
+ =?utf-8?B?MW5uSXFmbE9odTIxV0hRenF4a0NRRGNPWkZ0L2xaWmcvUlJBcVhoVlhwaEZD?=
+ =?utf-8?B?S2xZNnhTZDNOZ2tva3h0dVlTSVdmT3ZIVHV3L3ZrU0xGblFibGY4NHNFUWF3?=
+ =?utf-8?B?MWFadERhN3pLMTNaWjJsSjQyWWlQSGc5UTNIend6TDFQVE5XL3MzUCtjZmRG?=
+ =?utf-8?B?LzdXYlFXTkg3dTJVVlcwR3F3VXMyWUE4b0Q0NEY1L0Jjc1R3SDl2dkErZjBK?=
+ =?utf-8?B?RGlaREVqd2Z6NGNZSnpuL3pNalJqekxYdDJpd0hUcEpjWnA0Q0ptSU5xZjFy?=
+ =?utf-8?B?SFZtc1VKdHpMNTVtQm1sUE4wMXFNTHQyckltbkp0UTdkS0RYK0xIZFh5aWtw?=
+ =?utf-8?B?SjlxTzVmTTFPVkt3WTVjMllVeHpCcmRpV3FtWmtDd2dyRnpyRzlXSldUWjdm?=
+ =?utf-8?B?K0VTNjhQbTlBL1ZBR2VpNUZMZUk5TXROcGRNRy8vZzJnbEkyNXNOVnphRXBm?=
+ =?utf-8?B?eHBPNithUGN6dlc5bmtxZGFtdEdxdGVWNG9jemRLM1o0NlpaS2o2WXpycmFw?=
+ =?utf-8?B?U0R1TjNpcDczNzVFTDQrb0RReHIwWXh6Q0VnMEFyWEJUVitMS2JWaUhoQThW?=
+ =?utf-8?B?R00ySXo3MmNvaFl4K01qTUlBbklaUkJYOHA0bHpaUURQdjAwQjVHTnBRbnIy?=
+ =?utf-8?B?Nnd4RHk4RmlzZ2FlYmVJNkpjdnRYZUFyTjFzZEgrWVpqbVl4cVlOTFlURmM2?=
+ =?utf-8?B?ZEJKQjRpSDNaTUNnbkFKM2JCdCtVT3p2RlU0ekhZRXN0QmlhM3hTSUxzdC9Q?=
+ =?utf-8?B?N3c4dlRmUGwyT1VhZXRjUnZMYzI0VE52aVF5Rk52N2dTRXFQVk1uTTdpeUVT?=
+ =?utf-8?B?ZWNTcjdrUGlKK2ZncS91Z013MWpINWlHK3BuYlBIdGNidjcvR0ZtbTl2cElI?=
+ =?utf-8?B?UERDdmFEMVZXcFdkZGxKenhPQUIxZE5zb01mK0pjcTRKTHhaRGY3NzUvUVFx?=
+ =?utf-8?B?blNUUHl1dUFhbkUwNWM2Y2F1Wnp1SjZFdCtxUlZKclhxL0I0aHlQL2FhVkVU?=
+ =?utf-8?B?TXRrTnZlOTJrM2E3ZXFHOHdaNHFKQkR6WE1jbldXS0NleDI3VjhPcFdDdkJl?=
+ =?utf-8?B?a3NqTXczWDB2dlF2RzBQRDIvQ3FwRE12b09sVk1iZHJWcGlYVWdKUi9PQkM1?=
+ =?utf-8?B?cjJYS1c2UTc1d2xYbktlWVRONzBpeVNhV1BFc242MEpKMm9qZEFDcmdnTDVt?=
+ =?utf-8?B?R3lma3pWZFQ1K1E0L1JWaGhzY01lWGZ5RGxjTnpPV3ozbDNPRWF5UmZBKzFG?=
+ =?utf-8?B?SW9kMW4yZjNETnZ2aU1ieGM3aGVpZWhneW82bWY1V1NRQ0d1d2twQm9wRzNR?=
+ =?utf-8?B?ZEhzT0Z2R251dStyTTVlRHVray9TUlQ3Q2o1L01oT2R5RWphVmk4bFlYY3hs?=
+ =?utf-8?B?YTA2VUc5OWFVdVV2elVvNjN0TjRXR1o3bTI3U3p4SkQyWFZva21XVE5rbXBF?=
+ =?utf-8?B?eFJoNjQ2eW8ydTh1aUhQT0hPbW55a0YxYytoWjI5UHhTVjRPTzNXQkhaU2ZR?=
+ =?utf-8?B?em5oZWNSSnVGbGlOWU1WNkE3Zlp4aldwelhpK0ZNMkE4ajVnV3hJUU5nb292?=
+ =?utf-8?B?ZFhKRFRFNjNNNDhQb2hQb2tua3Y0MVZnMGJsZU41QlhBQVRFVVRZM0NJOXpk?=
+ =?utf-8?B?UzFZdVNXcGNRaHdldGJDUDVZNlFWL2U1d2lUV2pLL0o0d0FUMnFXTWRpWEht?=
+ =?utf-8?B?Z3ZQWmNzY0lxRUZJTzZZN3EyOFBvQnBpQjZFdnEzdm1Bd29hRUt1b2x1MzU5?=
+ =?utf-8?B?MUFVR1E3U0JkUWoweHFJRmppYUtYRE4zY0xKb1FUZzh6Sm9BTG9LMHRLbG81?=
+ =?utf-8?B?WlNNNW9OcVRPM0dNamtTVE1TZVF4UmhKR05weW5pZWRKZitFU1RBem1jVFU1?=
+ =?utf-8?B?K0RUc0xKKy9yaCt5VkgwdG0wK203djNqQlljenE5K2s4cFExZDNhbWtGMnVK?=
+ =?utf-8?B?MHpqRmZWM0pTZDU3N0tkSGtFZlQwdmw1NTB5ejJvQ1VhOUtpNWhsZlMxN3BG?=
+ =?utf-8?Q?nzqhfYehY?=
+MIME-Version: 1.0
+
+--qv5rb9PI
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+
+Learn how to strengthen your SDLC with Internet Performance Monitoring=E2=
+=80=94without taking things offline. =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C  =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =
+=E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=
+=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=
+=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C
+Build resilient systems without breaking things=E2=80=94learn how IPM fits =
+into your SDLC. =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C =E2=80=8C=
+ =E2=80=8C
+=F0=9F=9B=A0=EF=B8=8F Resilience Without Chaos: Strengthen Your SDLC
+
+Chaos engineering doesn=E2=80=99t have to mean taking systems offline just =
+to test them. This session explores how to identify weaknesses early=E2=80=
+=94without causing disruption.
+
+Learn how Internet Performance Monitoring (IPM) fits into your CI/CD pipeli=
+ne to uncover bottlenecks, validate reliability, and improve user experienc=
+e from the start.
+
+What You=E2=80=99ll Learn:
+
+  *   How IPM helps build resilient, internet-facing systems
+  *   Why small, intentional disruptions beat risky outages
+  *   Ways to align testing with experience-level objectives (XLOs)
+
+Register Now <https://eot.mediaops.com/f/a/Tp-zc09z2v5Jtrutt59rBA~~/AAAHURA=
+~/pFpZwc5WqU7iUpxjxI-MBDx8wklbbh2AmhJFPIpLyTta361iLGZunPnJiSENAwZB9QV4I_mqy=
+qW_HqRnPCsICY8gxHVIGa9bL14ZpggoXfELOkq1uhW6fzSMD3lkzhUYEDYO-6UAUmG_hF--zR_8=
+FVwN_b-i_5SeTb9znUubZXK_3HISAJyNXXMQO6u_Zgje17yzeIoQM0vlwb72Sn0KUCnW7za2i3A=
+3pk1CVSL7lkod3cWBAM4QyOZi7gg9ZuBF_n24z_afStY_5bd25zoMohSgpRXfFKEkxonLBk9e5M=
+y68_oDyUDtA-Vy9eKb6MOM8V6G8udR9zaXnAeUWbhMiBCBDRviaATGwtxUee6QmBkl-Eb6eaubf=
+HcIh4viF6uVHcN_izoqhS2KkG7t4aoURw~~>
+
+Can=E2=80=99t join live? Register anyway to access the full session on-dema=
+nd.
+
+751 Park Of Commerce Drive, Suite 108, Boca Raton, Florida 33487-3622, USA
+
+Unsubscribe<https://eot.mediaops.com/f/a/z6py9IbKghzwMx4Wpt5_Rg~~/AAAHURA~/=
+nhvwsSYm7Xpeu9gTTFoSgZsJvxwBHY35TjL8YKHOTxIhOOT-J6o7mCPDI_SBII7PyVR0L2xyB2X=
+tikNFr3-UFwzxr1l9CwPEup_BFRXb8DXDI5lPxV5a8uyZOWdwN7ZlhWd7ARgJnzKQBjVW5Qv44V=
+7GGLjPmeeXy08pm2DbxAZAp5EdplFgmufOZzaX0ZORwBUMY2vE0I57j-juD-UJkCVTIYkBp1m8L=
+OscPNKJqXe_Ni9bc7E21vBZ0fq9l2jmvljOaMumFWbaNJJaVcAKxN-k5dtQrgCEb3Fi19-CQlID=
+QrnAQrtyoY3TweQDMPbIzdnLsT8ePe_2mDaFn9aCXnBVGwCF17NPjIXkjZhXoArbpdP0dWSncK2=
+FKJiPqsXOyufMl0laDM0Eu_zalugTAYWMsnCn6Lt8RzJQiZGBfZ6MhepBZ5wSH8St4zMWQACP>
+
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+--qv5rb9PI
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html><html lang=3D"en"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<title>Resilience Through Chaos: Integrating IPM into Your Observable SDLC<=
+/title>
+</head>
+<body style=3D"font-family: Arial, sans-serif; background-color: #ffffff; c=
+olor: #000000; padding: 20px;">
+<div style=3D"color:transparent;visibility:hidden;opacity:0;font-size:0px;b=
+order:0;max-height:1px;width:1px;margin:0px;padding:0px;border-width:0px!im=
+portant;display:none!important;line-height:0px!important;">
+<img border=3D"0" width=3D"1" height=3D"1" src=3D"https://eot.mediaops.com/=
+q/4LyS7L0-wBgB93Ma7ror-A~~/AAAHURA~/tB6S-Sh0Xyqf4nvottnDGFMypb-c5yPSbaOHnWB=
+9FMl1xyoQVJv7bS7iNv_w7bKuJrw6EVYK0my7YDUjf5sUww~~" alt=3D""></div>
+Learn how to strengthen your SDLC with Internet Performance Monitoring=E2=
+=80=94without taking things offline.&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;&nbsp;=E2=80=8C&nb=
+sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nb=
+sp;
+<div></div>
+<!-- Hidden preview text for email clients -->
+<div style=3D"display: none; max-height: 0px; overflow: hidden;">Build resi=
+lient systems without breaking things=E2=80=94learn how IPM fits into your =
+SDLC.&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;=E2=
+=80=8C&nbsp;=E2=80=8C&nbsp;=E2=80=8C&nbsp;
+</div>
+<div style=3D"max-width: 600px; margin: 0 auto;">
+<h1 style=3D"font-size: 24px; color: #000;">=F0=9F=9B=A0=EF=B8=8F Resilienc=
+e Without Chaos: Strengthen Your SDLC</h1>
+<p style=3D"font-size: 16px; line-height: 1.5;">Chaos engineering doesn=E2=
+=80=99t have to mean taking systems offline just to test them. This session=
+ explores how to identify weaknesses early=E2=80=94without causing disrupti=
+on.
+</p>
+<p style=3D"font-size: 16px; line-height: 1.5;">Learn how Internet Performa=
+nce Monitoring (IPM) fits into your CI/CD pipeline to uncover bottlenecks, =
+validate reliability, and improve user experience from the start.
+</p>
+<h2 style=3D"font-size: 20px;">What You=E2=80=99ll Learn:</h2>
+<ul style=3D"font-size: 16px; line-height: 1.6;">
+<li>How IPM helps build resilient, internet-facing systems</li><li>Why smal=
+l, intentional disruptions beat risky outages</li><li>Ways to align testing=
+ with experience-level objectives (XLOs)</li></ul>
+<div style=3D"text-align: center; margin: 30px 0;"><a href=3D"https://eot.m=
+ediaops.com/f/a/Tp-zc09z2v5Jtrutt59rBA~~/AAAHURA~/pFpZwc5WqU7iUpxjxI-MBDx8w=
+klbbh2AmhJFPIpLyTta361iLGZunPnJiSENAwZB9QV4I_mqyqW_HqRnPCsICY8gxHVIGa9bL14Z=
+pggoXfELOkq1uhW6fzSMD3lkzhUYEDYO-6UAUmG_hF--zR_8FVwN_b-i_5SeTb9znUubZXK_3HI=
+SAJyNXXMQO6u_Zgje17yzeIoQM0vlwb72Sn0KUCnW7za2i3A3pk1CVSL7lkod3cWBAM4QyOZi7g=
+g9ZuBF_n24z_afStY_5bd25zoMohSgpRXfFKEkxonLBk9e5My68_oDyUDtA-Vy9eKb6MOM8V6G8=
+udR9zaXnAeUWbhMiBCBDRviaATGwtxUee6QmBkl-Eb6eaubfHcIh4viF6uVHcN_izoqhS2KkG7t=
+4aoURw~~" style=3D"display: inline-block; background-color: #0056b3; color:=
+ #fff; padding: 12px 25px; font-size: 16px; text-decoration: none; border-r=
+adius: 4px;">Register
+ Now </a></div>
+<p style=3D"font-size: 14px; color: #555;">Can=E2=80=99t join live? Registe=
+r anyway to access the full session on-demand.
+</p>
+<div class=3D"footer">
+<div align=3D"center"><span style=3D"font-family: Arial; font-size: 12px; c=
+olor: #777;">751 Park Of Commerce Drive, Suite 108, Boca Raton, Florida 334=
+87-3622, USA<br>
+<br>
+<a href=3D"https://eot.mediaops.com/f/a/z6py9IbKghzwMx4Wpt5_Rg~~/AAAHURA~/n=
+hvwsSYm7Xpeu9gTTFoSgZsJvxwBHY35TjL8YKHOTxIhOOT-J6o7mCPDI_SBII7PyVR0L2xyB2Xt=
+ikNFr3-UFwzxr1l9CwPEup_BFRXb8DXDI5lPxV5a8uyZOWdwN7ZlhWd7ARgJnzKQBjVW5Qv44V7=
+GGLjPmeeXy08pm2DbxAZAp5EdplFgmufOZzaX0ZORwBUMY2vE0I57j-juD-UJkCVTIYkBp1m8LO=
+scPNKJqXe_Ni9bc7E21vBZ0fq9l2jmvljOaMumFWbaNJJaVcAKxN-k5dtQrgCEb3Fi19-CQlIDQ=
+rnAQrtyoY3TweQDMPbIzdnLsT8ePe_2mDaFn9aCXnBVGwCF17NPjIXkjZhXoArbpdP0dWSncK2F=
+KJiPqsXOyufMl0laDM0Eu_zalugTAYWMsnCn6Lt8RzJQiZGBfZ6MhepBZ5wSH8St4zMWQACP" s=
+tyle=3D"color:#a9a9a9;" target=3D"_blank">Unsubscribe</a>
+</span></div>
+</div>
+<img border=3D"0" width=3D"1" height=3D"1" alt=3D"" src=3D"https://eot.medi=
+aops.com/q/gspbfITZ_vggBfRRM_i1xg~~/AAAHURA~/iCaRpg8bJUlURbhF7TWzZtBTlMQPcW=
+F1PBqlFXKrDzLEhvkjC2lqpGIrZT5tOVMc4OaE88hj-KNpTu45z609zA~~">
+</div>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+--qv5rb9PI--

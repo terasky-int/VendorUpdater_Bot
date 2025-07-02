@@ -15,12 +15,12 @@ def get_neo4j_config():
     # Default values
     default_uri = "bolt://localhost:7687"
     default_user = "neo4j"
-    default_password = "password"
+    # default_password = "password"
     
     # Get values from environment variables
     uri = os.environ.get("NEO4J_URI", default_uri)
     user = os.environ.get("NEO4J_USER", default_user)
-    password = os.environ.get("NEO4J_PASSWORD", default_password)
+    password = os.environ.get("NEO4J_PASSWORD")
     
     logging.debug(f"Using Neo4j configuration: URI={uri}, USER={user}")
     

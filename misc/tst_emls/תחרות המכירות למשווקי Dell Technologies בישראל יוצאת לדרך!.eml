@@ -1,0 +1,1102 @@
+Received: from PA3P194MB2743.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:4d3::14)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Sun, 29 Jun 2025
+ 07:23:00 +0000
+Received: from AS8PR04CA0162.eurprd04.prod.outlook.com (2603:10a6:20b:331::17)
+ by PA3P194MB2743.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:4d3::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8880.23; Sun, 29 Jun
+ 2025 07:22:58 +0000
+Received: from AM4PEPF00027A5E.eurprd04.prod.outlook.com
+ (2603:10a6:20b:331:cafe::a6) by AS8PR04CA0162.outlook.office365.com
+ (2603:10a6:20b:331::17) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8880.25 via Frontend Transport; Sun,
+ 29 Jun 2025 07:22:58 +0000
+Authentication-Results: spf=pass (sender IP is 147.234.43.53)
+ smtp.mailfrom=publicators.com; dkim=pass (signature was verified)
+ header.d=publicators.com;dmarc=pass action=none
+ header.from=publicators.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of publicators.com
+ designates 147.234.43.53 as permitted sender)
+ receiver=protection.outlook.com; client-ip=147.234.43.53;
+ helo=mail113.publicators.com; pr=C
+Received: from mail113.publicators.com (147.234.43.53) by
+ AM4PEPF00027A5E.mail.protection.outlook.com (10.167.16.72) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8901.15 via Frontend Transport; Sun, 29 Jun 2025 07:22:57 +0000
+Received: from DealerN2 (unknown [10.0.0.218])
+	by mail113.publicators.com (Postfix) with ESMTPA id 8B71223F03
+	for <davidg@terasky.com>; Sun, 29 Jun 2025 10:15:08 +0300 (IDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=publicators.com;
+	s=mail113; t=1751181308;
+	bh=QXq/QQ+SZz/xhZ5AI0hb7cmzj5+baNCjcUiCQSGatr8=;
+	h=Reply-To:X-Publicators-ID:Precedence:Feedback-ID:List-Unsubscribe:
+	 From:To:Subject:Date:Message-ID:MIME-Version:Content-Type:
+	 Content-Transfer-Encoding:X-Mailer:Content-Class:Importance:
+	 Priority:X-MimeOLE:From;
+	b=0M6SOlxcz20sp5vU6Sm174wQIF75Wqax36kTbuobbjEoZhDPAiiNbyY05sMR5y4LK
+	 sLVopNSzgPP2aobDkP9kLLm8dA6FBNqfQtvqgJg2XtXdXdOOqJUMmVVsZRu2pRCJX8
+	 OJNSBagPuYUmmj6oq+RixnwnvuW3MUvQFsDx0kdg=
+Reply-To: "Dell Technologies Israel" <Dana.Cohen@dell.com?>
+X-Publicators-ID: 9005449664_550923706
+Precedence: bulk
+Feedback-ID: 859127:1552:1:pubfbl
+List-Unsubscribe: <mailto:removefromheader@publicators.com?subject=unsubscribe X-Publicators-ID:9005449664_550923706>
+From: "Dell Technologies Israel" <DellEmc@publicators.com>
+To: <davidg@terasky.com>
+Subject: =?utf-8?B?16rXl9eo15XXqiDXlNee15vXmdeo15XXqiDXnNee16nXldeV16fXmSBEZWxsIA==?=
+	=?utf-8?B?VGVjaG5vbG9naWVzINeR15nXqdeo15DXnCDXmdeV16bXkNeqINec15PXqNeaIQ==?=
+Date: Sun, 29 Jun 2025 10:15:08 +0300
+Message-ID: <D5DD293EDAD54E77BF8E1C1984D23D40@DealerN2>
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-Mailer: Microsoft CDO for Windows 2000
+Content-Class: urn:content-classes:message
+X-MimeOLE: Produced By Microsoft MimeOLE
+Return-Path: DellEmc@publicators.com
+X-MS-Exchange-Organization-ExpirationStartTime: 29 Jun 2025 07:22:57.8454
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: b9781a6e-a1d6-4395-e177-08ddb6ddc5c3
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM4PEPF00027A5E:EE_|PA3P194MB2743:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AM4PEPF00027A5E.eurprd04.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: b9781a6e-a1d6-4395-e177-08ddb6ddc5c3
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|69100299015|4022899009|1032899013|8096899003|2066899003|4076899003;
+X-Forefront-Antispam-Report: CIP:147.234.43.53;CTRY:IL;LANG:he;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail113.publicators.com;PTR:mail113.publicators.com;CAT:NONE;SFS:(13230040)(69100299015)(4022899009)(1032899013)(8096899003)(2066899003)(4076899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Jun 2025 07:22:57.6725
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b9781a6e-a1d6-4395-e177-08ddb6ddc5c3
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AM4PEPF00027A5E.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA3P194MB2743
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:02.4595423
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8880.026
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?YlZUdGRhRHN5aGxwNTl1NmNjOWVkNm1WVmdQWTlSK1EzaGlhc2NpRVZyVTdz?=
+ =?utf-8?B?MUhDTXZiZ3pIeDNIaTlBZEREM0grKzkxcllQUzBkN1RBc2wrWGRUWnNTUkxn?=
+ =?utf-8?B?YUdyOWFRdDRJU2phWUxKSGU2N0hPNFdzcEl2ajE4OEtnVHZFeXVHR3paTUNB?=
+ =?utf-8?B?NFRoUGs4ZG1BcTBvRnhUWFhzbTdrMEcvWXpEaG1aSDNKWGxUV0N0UDlrK1l0?=
+ =?utf-8?B?NzlDdnFoY0RzaGEybWFuNmJOMTZTTW40OVBJd056eVhnbEtlYXJtRVIzb2NI?=
+ =?utf-8?B?VE9YSnBZeEhnNGlSQnkvZmtrRURHdHpuTjVyelo4YVhraDlyNUR6TTE1dXlQ?=
+ =?utf-8?B?Ni8zK3ZyVk9xZDhoaDduQzgrc1NvRFhsYnFPc1NrVmhtanlQU3lVN2hHbndn?=
+ =?utf-8?B?eDNqaGVXZUt3RW5FQnBrRlc2VE9KSGJyNG5INStTSm5RYkpmSGxGeHlTdzE5?=
+ =?utf-8?B?ZDdPOGFBakNPcjE0dWFlN2wwNG9kRnlsV1dzTzhQK1pWVWpZOGwva1gwWjFl?=
+ =?utf-8?B?SnpvNiszMGZHS05kYURCc1RxUlUydWJKaFZ3SmZWUVFoaDFPTjBKd0MzRXBi?=
+ =?utf-8?B?aExMajNsYVk3dHV5NGs0TjMvZ1hUdDJ4U3pReE5MQkREVjFlVnV0UDNVNXVL?=
+ =?utf-8?B?VXludEZvMVZmb2ZwOHVXbkJ4UXF4b09wMnRVc2NNWmpLOS91T0ljckJyUDNW?=
+ =?utf-8?B?V1dmZ3o4MTZlMk5LTENUcThoWTZvbExYUnRhd1N6K1JHQUIvRDN1N1o3cWZK?=
+ =?utf-8?B?UUVDSW4zOC9ybS9BK25MT2NQZ2NjdDRnOENKbWZYUmdNODZkajl1YjFsQ21m?=
+ =?utf-8?B?cm9kbDhqeHpFamlXSDc5ZmkrNWlJcHBROE52S0ludnZzNG1ick5GWlNkRE5C?=
+ =?utf-8?B?WXpOZS9aYXY4bWdwTlpCN2hkbm1nRjEvalZnT1lrQVV0cU1xdWxwWmMwbTRR?=
+ =?utf-8?B?Z3BSRHU0dlc2WGdaYWdHMDVLWVRFa25mTVdoWElwc0J4OG5PdGl5Tys3b3Qy?=
+ =?utf-8?B?dUo2dkNXZlFoQTlRM20zV1dYVkNGOFlYRUlhaUlXRTdweGZnV0lYaDlMVkFs?=
+ =?utf-8?B?eHFyeGFZOUxaOWhLOHU2OFlNMGxnSDAzME1Oc3d4b0ZpZExLbUVhaFBYNzlP?=
+ =?utf-8?B?ZUw2SW5aVVVQeTRRQmZBR2lVOUpWTjA0LzUyQmRBZHl6dmFxOVViWXc1TEJo?=
+ =?utf-8?B?NjhjSkZiNDNwRVk0MHJ3cXY5MjVZV1RQdVlWY0V0cVNwUU85OVYyUXdqWjFY?=
+ =?utf-8?B?d3ArN0xOcGwrSmpsWkVSWUhsYlBFTXlIcUsxN1NRaWF2Y1NxRG5GaEFPOU44?=
+ =?utf-8?B?TG1MTmZEeGNoUm5oTTY5SnBUa1Q3Y2VqS3dNMXlzMzdpbXNkQkJ5T3k4dmtD?=
+ =?utf-8?B?bmNTb2U2YmxzcUdOVlJsdk8xdExRMis3OFpnSXBKMlRsVVl0VXBJVGE2WTM1?=
+ =?utf-8?B?RC9WRWlMaXh4MXVrbVRNbCtGa1dhRGVlSmpkQjA5amJLYXFraWtZcURRQmxH?=
+ =?utf-8?B?cHAyUXlIWnVRQWVsV2Q0ZVNldnhxTnVDa3pDUk5oTE5nNjRRK1hHa2Q3bjNP?=
+ =?utf-8?B?TTZ5elZpZmVvWFFBc3I1TFVVUGVFNHZYY0lKZmV3QjNIdDZsRGlRVy8vc3c4?=
+ =?utf-8?B?NEhRamZuRmRJSXNMaHVTMW9JaVl4TGFtM3g1dmNlRzJFbXdsTEJUeCsvT21j?=
+ =?utf-8?B?dUllVVFCN1RPM1JpV1lwVDZTVEh6YzA4enBFUDJuandVczhRT2RIU2tzeG82?=
+ =?utf-8?B?VWszMGdrbXNCM0lQWkhsRDdHZzlmdUdXRTNUT2loYTQ4bHc5ekN1MDZvWStk?=
+ =?utf-8?B?bE1BTCtkVjhYQzEwdkNqY1V0V2U5RlZCRmJHQytnU1cxc2Fxa2pWeXRRZVI4?=
+ =?utf-8?B?UzJab2t6MkhSSzZaMGFPNVkwd1JTSFkweGFaZFlleFFkZHV0K2V2WHpxZVR4?=
+ =?utf-8?B?aUoyczlqcml5SnRZRDNDV2twQlI2MTZGWEYycldaVXRndEx3WjJFYmlZMmlM?=
+ =?utf-8?B?VDdyRE02bExLV1gzYmV3RzFuOFhMWWY1MTl6YWtnZXJuejZQd0QzTlpHV21F?=
+ =?utf-8?B?ZC8yVnhWZWJ2ZnFPMlRqOWZWVTlxVXFGdHpQZG9POGdyWDgxRmhtZVR6Vmtx?=
+ =?utf-8?B?UTEyZ0RkUU5pZEpvM1E5RmdPQzdyemFTUGI2K3p6bGxRYXJoeVgzL2hta2NR?=
+ =?utf-8?B?cERTT1ZMRWRsci91eXd1YWdONXpYcEhMcFJrTWNrNVdMZXVsOTNrZi8raXJB?=
+ =?utf-8?B?aGQ4dlNXbVNubDZhcjVLcGE5YzdQdXZjUjlHYVlFUHpiY21yalJzbVNNMG5C?=
+ =?utf-8?B?M2RYV2pDQ3ZzV0lkOFY1eDQwMWZJVDBYYmRSWGZsT3p3SFdtandmUlFibkly?=
+ =?utf-8?B?Z09ubS9NSEo5ak5ibkduaC9xbmh5NjFHTnMzSVpFWmZoQ0c3QUhRSWI5RUtl?=
+ =?utf-8?B?RnpjajIrWlFXTk5Jc1FUNkt4eTFZRnJsdjdTYVgrbWdiR3hQZVdpdEZ0VFFq?=
+ =?utf-8?B?NzE3SElrYkVIWEhwQWZyeHJpNWN4RUNMOTE5elZaYkhxSlZEbEJmQldLNkFF?=
+ =?utf-8?B?M3lGL0phMng4MnNMTTlYSVhMYWY3MUtYMHMxaWxjNGpTUGtqTGJtN0ZRa083?=
+ =?utf-8?B?M1Juc3RnY2YxZUhBN2w1Ti9ZZWR4c003UWxLQjJOUUl2R2JDZHMwVFhlcitL?=
+ =?utf-8?B?RnhCRWlWSm9NU2FtVzk4dGNlVFBLeVdYMzVXblZZMDRnSTc5K2FrajRBVU9S?=
+ =?utf-8?B?VUk5V1M2aTJQSGVYYXRNVUo0SHdrK3lnRjRtZXdncHc2TDJKTzZ1MFdnbU9x?=
+ =?utf-8?B?ajZaR1IySGIrUnVkRVVzR0xVSUdndlVuUUJtcFFvSEFsWU9sSllFK1p5NkMy?=
+ =?utf-8?B?eEVmSGl0RmFlcE52eXFMbzRoVUNac0JoeFNZSnJ5bmFXUHdFbUNuaEJsdHN5?=
+ =?utf-8?B?NE5abTZGbG1YRFFHYkVPWHBEQ1dqV29Bb2FpWHpXRTcra1Y0MVZsTWpXWlRh?=
+ =?utf-8?Q?SbJZomQEfOpgCg=3D?=
+MIME-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta http-equiv=3D"Content-Language" content=3D"he">
+<base target=3D"_blank">
+<title>=D7=AA=D7=97=D7=A8=D7=95=D7=AA =D7=94=D7=9E=D7=9B=D7=99=D7=A8=D7=95=
+=D7=AA =D7=9C=D7=9E=D7=A9=D7=95=D7=95=D7=A7=D7=99 Dell Technologies =D7=91=
+=D7=99=D7=A9=D7=A8=D7=90=D7=9C =D7=99=D7=95=D7=A6=D7=90=D7=AA =D7=9C=D7=93=
+=D7=A8=D7=9A!</title>
+</head>
+<body>
+<p dir=3D"rtl"><font face=3D"arial,helvetica,sans-serif" size=3D"2" style=
+=3D"font-size: 11px; font-family: Arial;"><style type=3D"text/css">
+
+</style><!-- offline:start //--></p>
+<center>
+<p dir=3D"rtl" lang=3D"he"><font face=3D"Arial" size=3D"2" color=3D"#6D6D6D=
+" style=3D"font-size: 11px;">&nbsp;=D7=90=D7=9D =D7=90=D7=99=D7=A0=D7=9A =
+=D7=A8=D7=95=D7=90=D7=94 =D7=94=D7=95=D7=93=D7=A2=D7=94 =D7=96=D7=95 =D7=91=
+=D7=A6=D7=95=D7=A8=D7=94 =D7=AA=D7=A7=D7=99=D7=A0=D7=94, =D7=90=D7=A0=D7=90=
+ =D7=9C=D7=97=D7=A5/=D7=99
+<a href=3D"https://www.publicators.com/app/drd.asp?p=3D9005449664_550923706=
+_10987339">
+<font size=3D"2" face=3D"Arial" color=3D"#6D6D6D" style=3D"font-size: 11px;=
+"><strong>=D7=9B=D7=90=D7=9F</strong></font></a></font></p>
+</center>
+<!-- offline:end //--><img src=3D"http://www.publicators.com/app/do.asp?id=
+=3D9005449664_550923706" width=3D"1" height=3D"1" border=3D"0" alt=3D"">
+<div align=3D"center" class=3D"bl-template bl-content-removable" id=3D"temp=
+late-body" style=3D"width: 100%;">
+<!-- BEGIN TEMPLATE OUTER -->
+<div><!-- END TEMPLATE MARGIN --></div>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" clas=
+s=3D"bl-template-main-wrapper" style=3D"width: 100%; background-color: #f9f=
+9f9; border-collapse: collapse; border-collapse: collapse !important; mso-t=
+able-lspace: 0pt !important; mso-table-rspace: 0pt !important;" align=3D"ce=
+nter" valign=3D"top" is-new-template=3D"0">
+<tbody>
+<tr>
+<!-- BEGIN TEMPLATE MARGIN (Outside Margin - Padding) -->
+<td class=3D"bl-template-margin" width=3D"100%" align=3D"center" style=3D"m=
+argin: 0px; padding: 18px 0; border-collapse: collapse !important; mso-tabl=
+e-lspace: 0pt !important; mso-table-rspace: 0pt !important;" valign=3D"top"=
+>
+<!-- BEGIN TEMPLATE WRAPPER (Background) -->
+<div><!-- END TEMPLATE CONTAINER --></div>
+<table class=3D"template-main-table bl-template-background" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" style=3D"width: 600px; background-color: =
+rgb(255, 255, 255); direction: rtl; text-align: right; border-collapse: col=
+lapse !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !=
+important;" valign=3D"top" width=3D"600">
+<tbody>
+<tr>
+<!-- BEGIN TEMPLATE CONTAINER (Border, Inner Padding) -->
+<td class=3D"bl-template-border" style=3D"width: 600px; padding: 0px; borde=
+r: 0px solid rgb(96, 96, 96); border-collapse: collapse !important; mso-tab=
+le-lspace: 0pt !important; mso-table-rspace: 0pt !important;" valign=3D"top=
+" width=3D"600">
+<!-- BEGIN ZONES CONTAINER -->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"width: 600=
+px; border-collapse: collapse !important; mso-table-lspace: 0pt !important;=
+ mso-table-rspace: 0pt !important;" valign=3D"top" width=3D"600">
+<tbody>
+<tr>
+<!-- BEGIN Blocks Zone -->
+<td class=3D"bl-zone bl-zone-dropable ui-droppable ui-sortable" name=3D"Fra=
+meworkZone" style=3D"width: 600px; height: auto; border-collapse: collapse =
+!important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !import=
+ant;" width=3D"600" valign=3D"top">
+<div class=3D"bl-block bl-block-image" data-layout=3D"1" data-blocktype=3D"=
+image" name=3D"image" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0" data-block-order=3D"1" style=3D"z-index: 0;">
+<div class=3D"bl-block-content">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D" border-collapse: collapse !important; mso-table-lspace: 0pt !importan=
+t; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td class=3D"bl-block-content-table bl-block-dir-rtl" style=3D"direction: r=
+tl; border-collapse: collapse !important; mso-table-lspace: 0pt !important;=
+ mso-table-rspace: 0pt !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" clas=
+s=3D"bl-block-content-row bl-block-content-first-row bl-block-content-last-=
+row" style=3D" border-collapse: collapse !important; mso-table-lspace: 0pt =
+!important; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bl-block-content-row-inner" style=3D"border-col=
+lapse: collapse !important; padding-bottom: 9px; padding-top: 9px; border-c=
+ollapse: collapse !important; mso-table-lspace: 0pt !important; mso-table-r=
+space: 0pt !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"bl-block-c=
+ontent-column bl-block-content-new-column bl-1-column" align=3D"right" widt=
+h=3D"600" style=3D"width: 600px; border-collapse: collapse !important; mso-=
+table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bl-padding-1-column bl-content-wrapper no-side-=
+padding" width=3D"600" style=3D"direction: ltr; padding: 0px; border-collap=
+se: collapse !important;">
+<div class=3D"bl-block-content-item bl-block-content-item-image bl-in-edit-=
+mode-single" style=3D"text-align: center; height: auto;">
+<a href=3D"https://www.publicators.com/app/drd.asp?p=3D9005449664_550923706=
+_10987340" title=3D"=D7=94=D7=99=D7=A8=D7=A9=D7=9E=D7=95 =D7=A2=D7=9B=D7=A9=
+=D7=99=D7=95" target=3D"_blank" style=3D"text-decoration: none;"><img borde=
+r=3D"0" width=3D"600" style=3D"display: block; margin: 0px auto; height: au=
+to !important;" height=3D"308" src=3D"https://www.publicators.com/app/image=
+s/1552/2025/737804FY26Q2IsraelLaunch_01.jpg" alt=3D"737804FY26Q2IsraelLaunc=
+h_01" data-expandible=3D"yes"></a></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class=3D"bl-block bl-block-text" data-blocktype=3D"text" data-layout=
+=3D"1" name=3D"text" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0" data-block-order=3D"2" style=3D"z-index: 0; height: auto !importa=
+nt;">
+<div class=3D"bl-block-content">
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D" border-collapse: collapse !important; mso-table-lspace: 0pt !importan=
+t; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td class=3D"bl-block-content-table bl-block-dir-rtl" style=3D"direction: r=
+tl; border-collapse: collapse !important; mso-table-lspace: 0pt !important;=
+ mso-table-rspace: 0pt !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" clas=
+s=3D"bl-block-content-row bl-block-content-first-row bl-block-content-last-=
+row" style=3D" border-collapse: collapse !important; mso-table-lspace: 0pt =
+!important; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bl-block-content-row-inner" style=3D"border-col=
+lapse: collapse !important; padding-bottom: 9px; padding-top: 9px; border-c=
+ollapse: collapse !important; mso-table-lspace: 0pt !important; mso-table-r=
+space: 0pt !important;">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"bl-block-c=
+ontent-column bl-block-content-new-column bl-1-column" align=3D"left" width=
+=3D"600" style=3D"width: 600px; border-collapse: collapse !important; mso-t=
+able-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"bl-padding-1-column bl-content-wrapper" width=
+=3D"600" style=3D"width: 600px; direction: ltr; padding: 0px 18px; border-c=
+ollapse: collapse !important; mso-table-lspace: 0pt !important; mso-table-r=
+space: 0pt !important;">
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" class=3D"bl-block-c=
+ontent-item-container" width=3D"100%" style=3D" border-collapse: collapse !=
+important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !importa=
+nt;">
+<tbody>
+<tr>
+<td class=3D"bl-block-content-item-container-inner" style=3D" border-collap=
+se: collapse !important; mso-table-lspace: 0pt !important; mso-table-rspace=
+: 0pt !important;">
+<div class=3D"bl-block-content-item bl-block-content-item-text cke_contents=
+_rtl cke_focus" style=3D"direction: rtl; text-align: right; line-height: 1.=
+2;min-height: 8px;font-style: normal;font-size: 15px;color: #606060;">
+<p data-start=3D"105" data-end=3D"118" style=3D"text-align: center; margin:=
+ 1em 0px;"><strong data-start=3D"105" data-end=3D"118">=D7=A9=D7=95=D7=AA=
+=D7=A4=D7=99=D7=9D =D7=99=D7=A7=D7=A8=D7=99=D7=9D,</strong></p>
+<p data-start=3D"120" data-end=3D"209" style=3D"text-align: center; margin:=
+ 1em 0px;">=D7=94=D7=9E=D7=A8=D7=95=D7=A5 =D7=94=D7=AA=D7=97=D7=99=D7=9C =
+=E2=80=93 =D7=AA=D7=97=D7=A8=D7=95=D7=AA =D7=94=D7=9E=D7=9B=D7=99=D7=A8=D7=
+=95=D7=AA =D7=A9=D7=9C Dell Technologies =D7=99=D7=95=D7=A6=D7=90=D7=AA =D7=
+=9C=D7=93=D7=A8=D7=9A,<br>
+=D7=95=D7=96=D7=94 =D7=94=D7=96=D7=9E=D7=9F =D7=9C=D7=94=D7=95=D7=9B=D7=99=
+=D7=97 =D7=A9=D7=90=D7=AA=D7=9D =D7=91=D7=98=D7=95=D7=A4!</p>
+<p data-start=3D"211" data-end=3D"303" style=3D"text-align: center; margin:=
+ 1em 0px;">=F0=9F=8E=AF
+<strong data-start=3D"214" data-end=3D"303">90 =D7=9E=D7=A7=D7=95=D7=9E=D7=
+=95=D7=AA. 60 =D7=99=D7=9E=D7=99=D7=9D. =D7=94=D7=96=D7=93=D7=9E=D7=A0=D7=
+=95=D7=AA =D7=90=D7=97=D7=AA =D7=9C=D7=96=D7=9B=D7=95=D7=AA<br>
+=D7=91=D7=99=D7=95=D7=9E=D7=99=D7=99=D7=9D =D7=A9=D7=9C =D7=97=D7=95=D7=95=
+=D7=99=D7=94 =D7=94=D7=9B=D7=9C =D7=9B=D7=9C=D7=95=D7=9C =D7=A2=D7=9D Dell =
+Technologies.</strong></p>
+<p data-start=3D"305" data-end=3D"465" style=3D"text-align: center; margin:=
+ 1em 0px;"><strong>=D7=90=D7=96 =D7=90=D7=99=D7=9A =D7=9E=D7=A6=D7=98=D7=A8=
+=D7=A4=D7=99=D7=9D =D7=9C=D7=90=D7=AA=D7=92=D7=A8 =D7=94=D7=9E=D7=9B=D7=99=
+=D7=A8=D7=95=D7=AA =D7=94=D7=9B=D7=99 =D7=A9=D7=95=D7=95=D7=94 =D7=A9=D7=99=
+=D7=A9?</strong><br data-start=3D"344" data-end=3D"347">
+=D7=A0=D7=9B=D7=A0=D7=A1=D7=99=D7=9D =D7=A2=D7=9B=D7=A9=D7=99=D7=95 =D7=9C=
+=D6=BE<strong data-start=3D"359" data-end=3D"379">EMEA Rewards Hub</strong>=
+, =D7=91=D7=95=D7=93=D7=A7=D7=99=D7=9D =D7=90=D7=AA =D7=94=D7=99=D7=A2=D7=
+=93=D7=99=D7=9D =D7=94=D7=90=D7=99=D7=A9=D7=99=D7=99=D7=9D =D7=95=D7=99=D7=
+=95=D7=A6=D7=90=D7=99=D7=9D =D7=9C=D7=93=D7=A8=D7=9A =E2=80=93<br>
+=D7=91=D7=99=D7=9F =D7=94=D7=AA=D7=90=D7=A8=D7=99=D7=9B=D7=99=D7=9D <strong=
+ data-start=3D"433" data-end=3D"462">3 =D7=91=D7=99=D7=95=D7=A0=D7=99 =D7=
+=A2=D7=93 1 =D7=91=D7=90=D7=95=D7=92=D7=95=D7=A1=D7=98 2025</strong>.</p>
+<p data-start=3D"467" data-end=3D"557" style=3D"text-align: center; margin:=
+ 1em 0px;"><strong data-start=3D"467" data-end=3D"486">=D7=9E=D7=99 =D7=99=
+=D7=9B=D7=95=D7=9C =D7=9C=D7=94=D7=A9=D7=AA=D7=AA=D7=A3?</strong><br data-s=
+tart=3D"486" data-end=3D"489">
+=D7=A9=D7=95=D7=AA=D7=A4=D7=99 Titanium, Platinum, Gold =D7=95=D7=9E=D7=A9=
+=D7=95=D7=95=D7=A7=D7=99=D7=9D =D7=9E=D7=95=D7=A8=D7=A9=D7=99=D7=9D =D7=A9=
+=D7=9C Dell Technologies.</p>
+<p data-start=3D"559" data-end=3D"710" style=3D"text-align: center; margin:=
+ 1em 0px;"><strong data-start=3D"559" data-end=3D"571"></strong><strong>&nb=
+sp;=D7=90=D7=99=D7=9C=D7=95 =D7=9E=D7=95=D7=A6=D7=A8=D7=99=D7=9D =D7=A0=D7=
+=9B=D7=9C=D7=9C=D7=99=D7=9D =D7=91=D7=AA=D7=97=D7=A8=D7=95=D7=AA?</strong><=
+br data-start=3D"571" data-end=3D"574">
+=D7=9E=D7=95=D7=A6=D7=A8=D7=99 =D7=9E=D7=97=D7=A9=D7=95=D7=91 =D7=A7=D7=A6=
+=D7=94, =D7=90=D7=97=D7=A1=D7=95=D7=9F =D7=95=D7=A9=D7=A8=D7=AA=D7=99=D7=9D=
+ =D7=9E=D7=91=D7=99=D7=AA Dell <span dir=3D"RTL">=D7=9E=D7=91=D7=95=D7=A1=
+=D7=A1=D7=99 =D7=9E=D7=A2=D7=91=D7=93=D7=99</span> Intel<span dir=3D"RTL">.=
+<br>
+=D7=9E=D7=A2=D7=91=D7=93=D7=99=D7=9D =D7=94=D7=A0=D7=9B=D7=9C=D7=9C=D7=99=
+=D7=9D =D7=91=D7=9E=D7=91=D7=A6=D7=A2:</span><br data-start=3D"630" data-en=
+d=3D"633">
+=E2=9C=94 Intel<span style=3D"font-size:8px;">=C2=AE</span> Core=E2=84=A2 U=
+ltra 5 / 7 / 9<br data-start=3D"663" data-end=3D"666">
+=E2=9C=94 Intel<span style=3D"font-size:8px;">=C2=AE</span> Core=E2=84=A2 i=
+5 / i7 / i9<br data-start=3D"693" data-end=3D"696">
+=E2=9C=94 <span style=3D"font-size:8px;">&nbsp;<span style=3D"color: rgb(96=
+, 96, 96); font-family: arial, sans-serif; text-align: right; background-co=
+lor: rgb(255, 255, 255);">=C2=AE</span></span>Intel<span style=3D"font-size=
+:8px;">=C2=AE</span> Xeon</p>
+<p data-start=3D"712" data-end=3D"798" style=3D"text-align: center; margin:=
+ 1em 0px;">=F0=9F=8E=9F=EF=B8=8F
+<strong data-start=3D"716" data-end=3D"754">=D7=9E=D7=A6=D7=98=D7=A8=D7=A4=
+=D7=99=D7=9D =D7=A2=D7=9B=D7=A9=D7=99=D7=95 =D7=93=D7=A8=D7=9A =D7=94=D6=BE=
+EMEA Rewards Hub</strong> =E2=80=93<br>
+=D7=95=D7=A0=D7=9B=D7=A0=D7=A1=D7=99=D7=9D =D7=9C=D7=90=D7=AA=D7=92=D7=A8 =
+=D7=94=D7=9E=D7=9B=D7=99=D7=A8=D7=95=D7=AA =D7=94=D7=90=D7=95=D7=9C=D7=98=
+=D7=99=D7=9E=D7=98=D7=99=D7=91=D7=99 =D7=A9=D7=9C =D7=99=D7=A9=D7=A8=D7=90=
+=D7=9C. <u><a href=3D"https://www.publicators.com/app/drd.asp?p=3D900544966=
+4_550923706_10987341" title=3D"=D7=94=D7=A8=D7=A9=D7=9E=D7=94" target=3D"_b=
+lank" style=3D"color: rgb(0, 0, 255); text-decoration: none;">=D7=9C=D7=94=
+=D7=A8=D7=A9=D7=9E=D7=94</a></u> =D7=90=D7=95
+<u><a href=3D"https://www.publicators.com/app/drd.asp?p=3D9005449664_550923=
+706_10987342" title=3D"=D7=94=D7=AA=D7=97=D7=91=D7=A8=D7=95=D7=AA" target=
+=3D"_blank" style=3D"color: rgb(0, 0, 255); text-decoration: none;">=D7=94=
+=D7=AA=D7=97=D7=91=D7=A8=D7=95=D7=AA &gt;</a></u></p>
+<p data-start=3D"800" data-end=3D"910" style=3D"text-align: center; margin:=
+ 1em 0px;">=F0=9F=93=85
+<strong data-start=3D"803" data-end=3D"822">Save The Date</strong><br data-=
+start=3D"822" data-end=3D"825">
+=D7=94=D7=9E=D7=99=D7=A7=D7=95=D7=9D =D7=94=D7=9E=D7=93=D7=95=D7=99=D7=A7 =
+=D7=A9=D7=9C =D7=97=D7=95=D7=95=D7=99=D7=99=D7=AA =D7=94=D6=BEOvernight =D7=
+=94=D7=99=D7=95=D7=A7=D7=A8=D7=AA=D7=99=D7=AA =D7=99=D7=99=D7=97=D7=A9=D7=
+=A3 =D7=91=D7=A7=D7=A8=D7=95=D7=91 =E2=80=93<br>
+=D7=91=D7=99=D7=A0=D7=AA=D7=99=D7=99=D7=9D, <u><a href=3D"https://www.publi=
+cators.com/app/drd.asp?p=3D9005449664_550923706_10987343" title=3D"=D7=A2=
+=D7=93=D7=9B=D7=A0=D7=95 =D7=90=D7=AA =D7=94=D7=AA=D7=90=D7=A8=D7=99=D7=9A =
+=D7=91=D7=99=D7=95=D7=9E=D7=9F" target=3D"_blank" style=3D"color: rgb(0, 0,=
+ 255); text-decoration: none;">=D7=A2=D7=93=D7=9B=D7=A0=D7=95 =D7=90=D7=AA =
+=D7=94=D7=AA=D7=90=D7=A8=D7=99=D7=9A =D7=91=D7=99=D7=95=D7=9E=D7=9F.</a></u=
+></p>
+<p data-start=3D"912" data-end=3D"932" style=3D"text-align: center; margin:=
+ 1em 0px;"><span style=3D"font-weight: bolder; color: rgb(96, 96, 96); font=
+-family: arial, sans-serif; font-size: 15px; text-align: center; background=
+-color: rgb(255, 255, 255);">!</span><strong>Let
+ The Game Begin</strong></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div><!-- END ZONES CONTAINER --></div>
+</td>
+</tr>
+</tbody>
+</table>
+<div><!-- END TEMPLATE WRAPPER --></div>
+</td>
+</tr>
+</tbody>
+</table>
+<div><!-- END TEMPLATE OUTER --></div>
+<style id=3D"t-st-1" type=3D"text/css">=0A=
+    .bl-template {=0A=
+        FONT-SIZE: 15px;=0A=
+        /*FONT-FAMILY: arial, sans-serif;=0A=
+        FONT-WEIGHT: normal;=0A=
+        COLOR: #606060;=0A=
+        FONT-STYLE: normal;=0A=
+    }=0A=
+=0A=
+        .bl-template .bl-block-content-item {=0A=
+            FONT-SIZE: 15px;=0A=
+           /* FONT-FAMILY: arial, sans-serif;*/=0A=
+            COLOR: #606060;=0A=
+            FONT-STYLE: normal;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-text {=0A=
+            DIRECTION: rtl;=0A=
+            TEXT-ALIGN: right;=0A=
+            MIN-HEIGHT: 8px;=0A=
+            LINE-HEIGHT: 1.2;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-text {=0A=
+            FONT-SIZE: 15px;=0A=
+            /*FONT-FAMILY: arial, sans-serif;*/=0A=
+            COLOR: #606060;=0A=
+            FONT-STYLE: normal;=0A=
+        }=0A=
+=0A=
+        .bl-template A {=0A=
+            WORD-WRAP: break-word !important;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            COLOR: #00008c;=0A=
+            OUTLINE-WIDTH: medium;=0A=
+            OUTLINE-STYLE: none;=0A=
+            BORDER-LEFT: 0px;=0A=
+            OUTLINE-COLOR: invert;=0A=
+        }=0A=
+=0A=
+        .bl-template IMG {=0A=
+            BORDER-TOP: 0px;=0A=
+            HEIGHT: auto !important;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            VERTICAL-ALIGN: top;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            OUTLINE-WIDTH: medium;=0A=
+            OUTLINE-STYLE: none;=0A=
+            TEXT-DECORATION: none;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: inline-block !important;=0A=
+            OUTLINE-COLOR: invert;=0A=
+        }=0A=
+=0A=
+        .bl-template A IMG {=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            OUTLINE-WIDTH: medium;=0A=
+            OUTLINE-STYLE: none;=0A=
+            TEXT-DECORATION: none;=0A=
+            BORDER-LEFT: 0px;=0A=
+            OUTLINE-COLOR: invert;=0A=
+        }=0A=
+=0A=
+        .bl-template TABLE {=0A=
+            BORDER-COLLAPSE: collapse !important;=0A=
+            mso-table-lspace: 0pt;=0A=
+            mso-table-rspace: 0pt;=0A=
+        }=0A=
+=0A=
+        .bl-template TD {=0A=
+            BORDER-COLLAPSE: collapse !important;=0A=
+            mso-table-lspace: 0pt;=0A=
+            mso-table-rspace: 0pt;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-template-border {=0A=
+            BORDER-COLLAPSE: collapse !important;=0A=
+            mso-table-lspace: 0pt;=0A=
+            mso-table-rspace: 0pt;=0A=
+        }=0A=
+=0A=
+        .bl-template P {=0A=
+            MARGIN: 1em 0px;=0A=
+        }=0A=
+=0A=
+        .bl-template H1 {=0A=
+            FONT-SIZE: 40px;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #606060 !important;=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            MARGIN: 0px;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: block;=0A=
+            LETTER-SPACING: normal !important;=0A=
+            LINE-HEIGHT: 1.15;=0A=
+            PADDING-RIGHT: 0px;=0A=
+            BACKGROUND-COLOR: transparent;=0A=
+        }=0A=
+=0A=
+        .bl-template H2 {=0A=
+            FONT-SIZE: 26px;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #606060 !important;=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            MARGIN: 0px;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: block;=0A=
+            LETTER-SPACING: normal !important;=0A=
+            LINE-HEIGHT: normal;=0A=
+            PADDING-RIGHT: 0px;=0A=
+            BACKGROUND-COLOR: transparent;=0A=
+        }=0A=
+=0A=
+        .bl-template H3 {=0A=
+            FONT-SIZE: 18px;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            FONT-WEIGHT: bold;=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            MARGIN: 0px;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: block;=0A=
+            LETTER-SPACING: normal;=0A=
+            LINE-HEIGHT: 1.1;=0A=
+            PADDING-RIGHT: 0px;=0A=
+            BACKGROUND-COLOR: transparent;=0A=
+        }=0A=
+=0A=
+        .bl-template H4 {=0A=
+            FONT-SIZE: 16px;=0A=
+            BORDER-TOP: 0px;=0A=
+            BORDER-RIGHT: 0px;=0A=
+            BORDER-BOTTOM: 0px;=0A=
+            FONT-WEIGHT: bold;=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            MARGIN: 0px;=0A=
+            BORDER-LEFT: 0px;=0A=
+            DISPLAY: block;=0A=
+            LETTER-SPACING: normal;=0A=
+            LINE-HEIGHT: 1.1;=0A=
+            PADDING-RIGHT: 0px;=0A=
+            BACKGROUND-COLOR: transparent;=0A=
+        }=0A=
+=0A=
+        .bl-template H1 A {=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #6dc6dd;=0A=
+        }=0A=
+=0A=
+        .bl-template H2 A {=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #6dc6dd;=0A=
+        }=0A=
+=0A=
+        .bl-template H3 A {=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #6dc6dd;=0A=
+        }=0A=
+=0A=
+        .bl-template H4 A {=0A=
+            FONT-WEIGHT: bold;=0A=
+            COLOR: #6dc6dd;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-padding-1-column {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 18px;=0A=
+            PADDING-RIGHT: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-padding-2-columns-left {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 18px;=0A=
+            PADDING-RIGHT: 0px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-padding-2-columns-right {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            PADDING-RIGHT: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-padding-3-columns {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 18px;=0A=
+            PADDING-RIGHT: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .no-side-padding {=0A=
+            PADDING-BOTTOM: 0px !important;=0A=
+            PADDING-TOP: 0px !important;=0A=
+            PADDING-LEFT: 0px !important;=0A=
+            PADDING-RIGHT: 0px !important;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-product .bl-column-first .bl-padding-3-colum=
+ns {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 18px;=0A=
+            PADDING-RIGHT: 0px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-product .bl-column-middle .bl-padding-3-colu=
+mns {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 9px;=0A=
+            PADDING-RIGHT: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-product .bl-column-last .bl-padding-3-column=
+s {=0A=
+            PADDING-BOTTOM: 0px;=0A=
+            PADDING-TOP: 0px;=0A=
+            PADDING-LEFT: 0px;=0A=
+            PADDING-RIGHT: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-first-row .bl-block-content-row-inne=
+r {=0A=
+            PADDING-TOP: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-last-row .bl-block-content-row-inner=
+ {=0A=
+            PADDING-BOTTOM: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .social-items-container {=0A=
+            TEXT-ALIGN: center;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-logo {=0A=
+            TEXT-ALIGN: right;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-viewweb {=0A=
+            TEXT-ALIGN: center;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-column .bl-block-content-item-contai=
+ner + .bl-block-content-item-container .bl-block-content-item-container-inn=
+er {=0A=
+            PADDING-TOP: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-articleleft .bl-block-content-column .bl-blo=
+ck-content-item-container + .bl-block-content-item-container .bl-block-cont=
+ent-item-container-inner {=0A=
+            PADDING-TOP: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-articleright .bl-block-content-column .bl-bl=
+ock-content-item-container + .bl-block-content-item-container .bl-block-con=
+tent-item-container-inner {=0A=
+            PADDING-TOP: 9px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-textunderimage .bl-block-content-column .bl-=
+block-content-item + .bl-block-content-item-container .bl-block-content-ite=
+m-container-inner {=0A=
+            PADDING-TOP: 18px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-product .bl-block-content-item-title H2 {=0A=
+            FONT-SIZE: 24px;=0A=
+            LINE-HEIGHT: 75% !important;=0A=
+        }=0A=
+=0A=
+=0A=
+        .bl-template .non-editable-content.bl-block-content-item-image {=0A=
+            FONT-SIZE: 15px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-footer .bl-block-content-row {=0A=
+            BACKGROUND-COLOR: #f9f9f9;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-footer .bl-block-content-layout-1 .social-it=
+ems-container {=0A=
+            TEXT-ALIGN: left;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-footer .bl-block-content-layout-3 .bl-block-=
+content-item-headerlinks > DIV {=0A=
+            TEXT-ALIGN: left;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-button bl-block-dir-rtl A {=0A=
+            DIRECTION: rtl;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-item-button bl-block-dir-rtl {=0A=
+            DIRECTION: rtl;=0A=
+        }=0A=
+=0A=
+        .bl-template .social-items-container IMG {=0A=
+            PADDING-BOTTOM: 2px;=0A=
+            PADDING-TOP: 2px;=0A=
+            PADDING-LEFT: 2px;=0A=
+            PADDING-RIGHT: 2px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-divider .bl-block-content-item-container-inn=
+er {=0A=
+            PADDING-BOTTOM: 3px;=0A=
+            PADDING-TOP: 3px;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-content-row-inner {=0A=
+            DIRECTION: ltr;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-content-wrapper {=0A=
+            DIRECTION: ltr;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-dir-rtl .bl-block-columns-container {=0A=
+            DIRECTION: rtl;=0A=
+        }=0A=
+=0A=
+        .bl-template .bl-block-dir-rtl .bl-block-content-item-container-inn=
+er {=0A=
+            DIRECTION: rtl;=0A=
+        }=0A=
+=0A=
+        .bl-template .ui-sortable.bl-zone-dropable {=0A=
+            MIN-HEIGHT: 0px !important;=0A=
+        }=0A=
+=0A=
+    .bl-footer-adv-sep {=0A=
+        BORDER-TOP: 1px inset;=0A=
+        BORDER-RIGHT: 1px inset;=0A=
+        BORDER-BOTTOM: 1px inset;=0A=
+        MARGIN: 0px 0px 20px;=0A=
+        BORDER-LEFT: 1px inset;=0A=
+    }=0A=
+=0A=
+    .bl-template UL {=0A=
+        MARGIN-BOTTOM: 0px;=0A=
+        PADDING-BOTTOM: 0px;=0A=
+        PADDING-TOP: 0px;=0A=
+        MARGIN-TOP: 0px;=0A=
+    }=0A=
+=0A=
+    .bl-template OL {=0A=
+        MARGIN-BOTTOM: 0px;=0A=
+        PADDING-BOTTOM: 0px;=0A=
+        PADDING-TOP: 0px;=0A=
+        MARGIN-TOP: 0px;=0A=
+    }=0A=
+=0A=
+    .bl-template .bl-block-dir-ltr .left.bl-block-4-cloumns-wrapper {=0A=
+        PADDING-RIGHT: 6px;=0A=
+    }=0A=
+=0A=
+    .bl-template .bl-block-dir-ltr .right.bl-block-4-cloumns-wrapper {=0A=
+        PADDING-LEFT: 6px;=0A=
+    }=0A=
+=0A=
+    .bl-template .bl-block-dir-rtl .left.bl-block-4-cloumns-wrapper {=0A=
+        PADDING-LEFT: 6px;=0A=
+    }=0A=
+=0A=
+    .bl-template .bl-block-dir-rtl .right.bl-block-4-cloumns-wrapper {=0A=
+        PADDING-RIGHT: 6px;=0A=
+    }=0A=
+    =0A=
+    =0A=
+</style><style id=3D"t-st-2" title=3D"resp" popo=3D"1" type=3D"text/css">=
+=0A=
+=0A=
+        @media only screen =0A=
+    and (max-device-width: 640px), =0A=
+    only screen and (max-device-width: 730px), =0A=
+    only screen and (max-width: 480px)=0A=
+        { =0A=
+            .hide-in-mobile { display: none; }=0A=
+        }=0A=
+=0A=
+      @media screen and (max-width: 480px) {=0A=
+      =0A=
+        .hide-in-mobile { display: none; }=0A=
+      =0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-template-margin"] {=0A=
+            padding: 0 0 !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] table[class*=3D"template-main-table"] {=
+=0A=
+            margin-right: 0px !important;=0A=
+            margin-left: 0px !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] table[class*=3D"template-main-table"],=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-template-border"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-template-border"] > tab=
+le,=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-1-column"],=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-2-columns"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-3-columns"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-zone"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-zone"] > table,=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] {=0A=
+            display: block !important; /* 20-6-2016 */=0A=
+            width: 320px !important;=0A=
+        }=0A=
+=0A=
+            div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-i=
+nner"] table[class*=3D"bl-block-content-column"] {=0A=
+                width: 100% !important;=0A=
+            }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-template-border"] {=0A=
+            border-width: 0px !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-2-columns"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-3-columns"] {=0A=
+            width: 100% !important;=0A=
+            max-width: 600px !important;=0A=
+        }=0A=
+        =0A=
+        /* 20-6-2016 */=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-4-columns"], =0A=
+        {=0A=
+            display: block !important;=0A=
+            max-width: 600px !important;=0A=
+            width: 100% !important;=0A=
+        }=0A=
+        =0A=
+        div[class*=3D"bl-template"] div[class*=3D"bl-block-content-item-ima=
+ge"] img {=0A=
+            width: 100% !important;=0A=
+            height: auto !important;=0A=
+        }=0A=
+        =0A=
+        div[class*=3D"bl-template"] .bl-content-wrapper {=0A=
+            width: 100% !important;=0A=
+        }=0A=
+        =0A=
+        /* 14-5-2017 */=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-2-columns"] .bl-cont=
+ent-wrapper {=0A=
+            width: 282px !important;=0A=
+        }=0A=
+        =0A=
+        /* 14-5-2017 */=0A=
+        div[class*=3D"bl-template"] table[class*=3D"bl-1-column"] .bl-conte=
+nt-wrapper.bl-padding-1-column {=0A=
+            width: 480px !important;=0A=
+        }=0A=
+        =0A=
+        div[class*=3D"bl-template"] td[class*=3D"no-side-padding"] img {=0A=
+            /*max-width: 320px !important;*/=0A=
+            max-width: 320px !important;=0A=
+        }=0A=
+        =0A=
+        /* 4/4/2017 */=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-1-column"] img =
+{=0A=
+            =0A=
+            /* 14-5-2017 */=0A=
+            /* width: 100% !important; */=0A=
+            width: auto !important;=0A=
+            =0A=
+            max-width: 100% !important;=0A=
+        }=0A=
+        =0A=
+        .bl-2-columns .bl-block-content-item-td-textContent,.bl-2-columns .=
+bl-block-content-item-td-imageContent,.bl-2-columns .bl-block-content-item-=
+td-titleContent, =0A=
+        .bl-3-columns .bl-block-content-item-td-textContent,.bl-3-columns .=
+bl-block-content-item-td-imageContent,.bl-3-columns .bl-block-content-item-=
+td-titleContent {  =0A=
+            height: auto !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-1-column"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-2-columns-left"=
+],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-2-columns-right=
+"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-padding-3-columns"] {=
+=0A=
+            padding: 0px 18px 18px 18px !important;=0A=
+        }=0A=
+        =0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table:last-child td[class*=3D"bl-padding-1-column"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table:last-child td[class*=3D"bl-padding-2-columns-left"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table:last-child td[class*=3D"bl-padding-2-columns-right"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table:last-child td[class*=3D"bl-padding-3-columns"] {=0A=
+            padding: 0px 18px 0px 18px !important;=0A=
+        }=0A=
+=0A=
+        /*strech in Iphone*/=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-row-inner=
+"] table td[class*=3D"bl-padding-1-column"].no-side-padding {=0A=
+                padding: 0px 0px 0px 0px !important;=0A=
+            }=0A=
+=0A=
+        div[class*=3D"bl-template"] div[class*=3D"bl-block-share"] table:la=
+st-child td[class*=3D"bl-content-wrapper"] {=0A=
+            padding: 0px !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-block-content-column"] =
+{=0A=
+            display: block !important;=0A=
+            max-width: 600px !important;=0A=
+            width: 100% !important;=0A=
+        }=0A=
+=0A=
+            div[class*=3D"bl-template"] table[class*=3D"bl-block-columns-co=
+ntainer"],=0A=
+            div[class*=3D"bl-template"] td[class*=3D"bl-block-content-colum=
+n"] > table {=0A=
+                max-width: 600px !important;=0A=
+                width: 100% !important;=0A=
+            }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-column-first"],=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-column-middle"] {=0A=
+            padding-bottom: 18px !important;=0A=
+        }=0A=
+=0A=
+        div[class*=3D"bl-template"] td[class*=3D"bl-2-columns-last"] {=0A=
+        }=0A=
+=0A=
+=0A=
+        div[class*=3D"bl-template"] span[class*=3D"bl-menu-break-row"] {=0A=
+            display: block !important;=0A=
+        }=0A=
+    }=0A=
+=0A=
+    /*Keep these styles here so they will be included in all campaigns (inl=
+iner will not remove them)*/=0A=
+    body {=0A=
+        width: 100% !important;=0A=
+        -webkit-text-size-adjust: none;=0A=
+        -ms-text-size-adjust: none;=0A=
+        margin: 0;=0A=
+        padding: 0;=0A=
+    }=0A=
+=0A=
+    #outlook a {=0A=
+        padding: 0;=0A=
+    }=0A=
+=0A=
+    .ReadMsgBody {=0A=
+        width: 100%;=0A=
+    }=0A=
+=0A=
+    .ExternalClass {=0A=
+        width: 100% !important;=0A=
+        line-height: 100% !important;=0A=
+    }=0A=
+=0A=
+    .yshortcuts {=0A=
+        color: #5187bd;=0A=
+    }=0A=
+=0A=
+        .yshortcuts a span {=0A=
+            color: #5187bd;=0A=
+            border-bottom: none !important;=0A=
+            background: none !important;=0A=
+        }=0A=
+=0A=
+</style></div>
+<table bgcolor=3D"#FFFFFF" align=3D"center" cellpadding=3D"3" cellspacing=
+=3D"0" border=3D"0" dir=3D"rtl" lang=3D"he" style=3D"border: 1px groove #66=
+6666;">
+<tbody>
+<tr>
+<td align=3D"center"><font face=3D"Arial" size=3D"2" color=3D"#333333" styl=
+e=3D"font-size: 11px;"><b>=D7=A4=D7=A8=D7=A1=D7=95=D7=9E=D7=AA</b></font></=
+td>
+</tr>
+<tr>
+<td><font face=3D"Arial" size=3D"2" color=3D"#666666" style=3D"font-size: 1=
+1px;">=D7=94=D7=95=D7=93=D7=A2=D7=94 =D7=96=D7=95 =D7=A0=D7=A9=D7=9C=D7=97=
+=D7=94 =D7=A2&quot;=D7=99 Dell Technologies Israel, =D7=94=D7=9E=D7=93=D7=
+=A2 7, =D7=94=D7=A8=D7=A6=D7=9C=D7=99=D7=94, Dana.Cohen@dell.com=E2=80=8F<b=
+r>
+=D7=94=D7=A0=D7=9A =D7=A8=D7=A9=D7=90=D7=99, =D7=91=D7=9B=D7=9C =D7=A2=D7=
+=AA, =D7=9C=D7=94=D7=95=D7=93=D7=99=D7=A2 =D7=A2=D7=9C =D7=A1=D7=99=D7=A8=
+=D7=95=D7=91=D7=9A =D7=9C=D7=A7=D7=91=D7=9C =D7=93=D7=91=D7=A8=D7=99 =D7=A4=
+=D7=A8=D7=A1=D7=95=D7=9E=D7=AA, =D7=9C=D7=9C=D7=90 =D7=AA=D7=A9=D7=9C=D7=95=
+=D7=9D, =D7=A2&quot;=D7=99 =D7=A9=D7=9C=D7=99=D7=97=D7=AA =D7=94=D7=95=D7=
+=93=D7=A2=D7=AA =D7=A1=D7=99=D7=A8=D7=95=D7=91 =D7=9C=D7=9B=D7=AA=D7=95=D7=
+=91=D7=AA Dana.Cohen@dell.com=E2=80=8F<br>
+=D7=90=D7=95 =D7=A2&quot;=D7=99 =D7=9C=D7=97=D7=99=D7=A6=D7=94 =D7=A2=D7=9C=
+ =D7=94=D7=A7=D7=99=D7=A9=D7=95=D7=A8 =D7=9C=D7=94=D7=A1=D7=A8=D7=94 =D7=94=
+=D7=9E=D7=95=D7=A4=D7=99=D7=A2 =D7=91=D7=AA=D7=97=D7=AA=D7=99=D7=AA =D7=94=
+=D7=94=D7=95=D7=93=D7=A2=D7=94. </font></td>
+</tr>
+</tbody>
+</table>
+<br>
+<center>
+<p dir=3D"rtl" lang=3D"he"><font face=3D"Arial" size=3D"2" color=3D"#6D6D6D=
+" style=3D"font-size: 11px;">=D7=9C=D7=94=D7=A1=D7=A8=D7=94 =D7=9E=D7=A8=D7=
+=A9=D7=99=D7=9E=D7=AA =D7=94=D7=AA=D7=A4=D7=95=D7=A6=D7=94 =D7=90=D7=A0=D7=
+=90 =D7=9C=D7=97=D7=A5/=D7=99&nbsp;<a href=3D"https://www.publicators.com/a=
+pp/drd.asp?p=3D9005449664_550923706_10987344"><font size=3D"2" face=3D"Aria=
+l" color=3D"#6D6D6D" style=3D"font-size: 11px;"><strong>=D7=9B=D7=90=D7=9F<=
+/strong></font></a></font></p>
+</center>
+<center>
+<p dir=3D"ltr"><font face=3D"Arial" size=3D"2" color=3D"#6D6D6D" style=3D"f=
+ont-size: 11px;">To unsubscribe
+<a href=3D"https://www.publicators.com/app/drd.asp?p=3D9005449664_550923706=
+_10987345">
+<font size=3D"2" face=3D"Arial" color=3D"#6D6D6D" style=3D"font-size: 11px;=
+"><strong>click here</strong></font></a></font></p>
+</center>
+</font>
+<p></p>
+<p align=3D"left" lang=3D"he" dir=3D"ltr" style=3D"font-family: tahoma; col=
+or: gray; margin-left: 20px; font-size: 10px">
+Powered by <a target=3D"_blank" href=3D"https://www.publicators.com/app/drd=
+.asp?p=3D9005449664_550923706_10987346">
+<font size=3D"1" style=3D"font-family: tahome; color: blue; font-size: 10px=
+; text-decoration: none">Publicators</font></a></p>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
