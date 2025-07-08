@@ -1,0 +1,617 @@
+Received: from PA3P194MB2798.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:4d4::19)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Tue, 8 Jul 2025
+ 06:45:35 +0000
+Received: from AS8PR04CA0112.eurprd04.prod.outlook.com (2603:10a6:20b:31e::27)
+ by PA3P194MB2798.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:4d4::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8901.26; Tue, 8 Jul
+ 2025 06:45:32 +0000
+Received: from AM3PEPF0000A79A.eurprd04.prod.outlook.com
+ (2603:10a6:20b:31e:cafe::a5) by AS8PR04CA0112.outlook.office365.com
+ (2603:10a6:20b:31e::27) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8901.27 via Frontend Transport; Tue,
+ 8 Jul 2025 06:45:32 +0000
+Authentication-Results: spf=pass (sender IP is 192.28.150.203)
+ smtp.mailfrom=bounce.goteleport.com; dkim=pass (signature was verified)
+ header.d=goteleport.com;dkim=pass (signature was verified)
+ header.d=mktdns.com;dmarc=pass action=none
+ header.from=goteleport.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of bounce.goteleport.com
+ designates 192.28.150.203 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.28.150.203;
+ helo=bounce.goteleport.com; pr=C
+Received: from bounce.goteleport.com (192.28.150.203) by
+ AM3PEPF0000A79A.mail.protection.outlook.com (10.167.16.105) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8901.15 via Frontend Transport; Tue, 8 Jul 2025 06:45:31 +0000
+X-MSFBL: GmDdOpV8uT6VEdjf964+yo4ffC/fwoY13VGmReKnOHQ=|eyJ1IjoiODE5LVdIVC0
+	0ODM6MDo4ODU4OjYxMTU4OjI0ODUwNTo4NzYxOjk6NjYxNDA6MzE4MjM0NSIsImI
+	iOiJkdnAtMTkyLTI4LTE1MC0yMDMiLCJyIjoiZGF2aWRnQHRlcmFza3kuY29tIiw
+	iZyI6ImJnLWFiZC00NTcifQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1751957129;
+	s=m1; d=goteleport.com; i=@goteleport.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=tCh5RfSm/bbpl0/9LxBoMXXMedX/aBUeACIE343qGIY=;
+	b=Mv9iuAGAh5QPigupyMaYDVq0c+QSlB5GLe+n/omsJZWahxqv4gEoaqEltjUgkZuY
+	LXHcSOTFeIX66Pkujzv1eMGu4dXS+xbDbWpz9faFo0/s/KsircT5nODg60JFxYXAoLe
+	SynzuNScvvA42K1bkXV3Euz7/d+G3ikQlKkxclBA=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1751957129;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=tCh5RfSm/bbpl0/9LxBoMXXMedX/aBUeACIE343qGIY=;
+	b=loObaxNj1/msGSPDb31RGpOItZWqYUVnC2339vKwk7J63PGjp4nT2rLcU+nZYq73
+	gEQgDtA+B5/vcPwzBoL9vMZcI/mDYSjudRO657QHEIquwgDjv35LBraZOMhPgn7zRJ9
+	SuoYt7wNoijn2+uTXh9B6SFigBTEIaKXlBoWN9Vs=
+Date: Tue, 8 Jul 2025 01:45:29 -0500 (CDT)
+From: Teleport <hello@goteleport.com>
+Reply-To: hello@goteleport.com
+To: davidg@terasky.com
+Message-ID: <1205553876.239833894.1751957129726@abmktmail-batch1f.marketo.org>
+Subject: Can your SIEM or CNAPP explain how identities move through systems?
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_239833893_500336853.1751957129725"
+X-Binding: bg-abd-457
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://em.goteleport.com/u/ODE5LVdIVC00ODMAAAGbh8D5-pq-tTP7_n9WsqJTA83dbSCVyKNndc-fmrc9ZeFjZK4xrVv8B67Mhev2lB7D1N5H8-Q=?emailAddress=ODE5LVdIVC00ODMAAAGbh8D5-iYvmkpywUnUcLKISQDciGVjnhR3WY8y67nO0q8iUJ94ZXJPony95adoWgMDfsU>, <mailto:GFMXS5SIPBIFQM2JNNKE442WOM2XMYJWPF3T2PI=.66140.8761.9@unsub-ab.mktomail.com>
+X-MarketoID: 819-WHT-483:0:8858:61158:248505:8761:9:66140:3182345
+X-Mailfrom: 819-WHT-483.0.66140.0.0.8761.9.3182345@bounce.goteleport.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+Return-Path: 819-WHT-483.0.66140.0.0.8761.9.3182345@bounce.goteleport.com
+X-MS-Exchange-Organization-ExpirationStartTime: 08 Jul 2025 06:45:32.0345
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 0b400962-13dd-4c5f-1447-08ddbdeb08e0
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM3PEPF0000A79A:EE_|PA3P194MB2798:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AM3PEPF0000A79A.eurprd04.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 0b400962-13dd-4c5f-1447-08ddbdeb08e0
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:4;ARA:13230040|69100299015|39142699007|4022899009|27102699006|31052699007|1032899013|12012899012|5062899012|3072899012|2092899012|13003099007|2066899003|4076899003|8096899003;
+X-Forefront-Antispam-Report: CIP:192.28.150.203;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:bounce.goteleport.com;PTR:ErrorRetry;CAT:NONE;SFS:(13230040)(69100299015)(39142699007)(4022899009)(27102699006)(31052699007)(1032899013)(12012899012)(5062899012)(3072899012)(2092899012)(13003099007)(2066899003)(4076899003)(8096899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 Jul 2025 06:45:31.5427
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0b400962-13dd-4c5f-1447-08ddbdeb08e0
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AM3PEPF0000A79A.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PA3P194MB2798
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.6324981
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8901.023
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?M25XV2dnQTFmUEhQMFluZkRjaGRSZHJxQll6VytseHI2OXlUNVVVWFRqcHAr?=
+ =?utf-8?B?MXRQZFpzK2xiSzh4eFZObjBEQlE0L2Y3ZWJmKzgrejI2ZGlKUzU3bk05clM3?=
+ =?utf-8?B?ODNScVJsSGZuaVYwZWtVMzlzRU5MbXQxZC8rVDkxUG9nQkRjRzFWUzlvc2hJ?=
+ =?utf-8?B?OTI1eEw5K2paZysxQU42WG9KY1RRK3QxMkxkMkRWc0RMZHcxZjVEYzY1MCtm?=
+ =?utf-8?B?aGo4SGE0NlU1Y0RTWTZiU2M5aFltMURDOHo2NS8yMG1aT244QjAyMjZSeUlR?=
+ =?utf-8?B?OEh0THhDTFhIb1NDK3JCbklQbFUyanQ5OUlRMi9JbmlyK0U2L1BzeWIrRWlj?=
+ =?utf-8?B?dnpSM2dvOHFwbFE3eE50TUdDQkNjNGFiL2dkNUUzU2p0RDJYc3lrSUxHOVBV?=
+ =?utf-8?B?S3MwOXZSdkJKNm9uM2ZFakUyWURvcnJFMUlocEVuT0xzSkF5dHh0SUxHWndw?=
+ =?utf-8?B?TmI4cWtuY3N3aVNLcUxXQTZYWlptTWpzRGwzNkhzaUtlSzJNS1dyS25rMWR2?=
+ =?utf-8?B?TFdsdG1Xb2FML1VmQStLbDNwVE12dE1BTnlyTXBRVWYxSkYva3RadjdKcGM2?=
+ =?utf-8?B?MDEreWo1UGRnc1hBM3dPMm91V0xReFEzMEFDTWkvMkUwMHdHMkxub1ZwTjU2?=
+ =?utf-8?B?TzdwYURqNVhVUWFnbzRRdjFPTkU5R2M0cUVzbHBOSkVXNFlJbnpSM2l6ckc3?=
+ =?utf-8?B?K3VOL00veHU3NEpOZFdyQ2p6M2RxY1pXaWR6bHl6NDBJWGpvTThvQTM0Nytp?=
+ =?utf-8?B?WmRGYjBnTDZERmpQN2haVWhreC95UDUyTnA2YjlDRTkyTnJUalpaVW1jVm9E?=
+ =?utf-8?B?bUloa1lkL2hGNnM5ZnBDa3l4c2l0NlFrSUpuSzRrRVJjUStQT2Q4bUdnVDVS?=
+ =?utf-8?B?TzRsNjUvL2dCQ21WeCs5d1R3TEpxcGw3b1p6bmR1NnpKanNMOHd4M2dPUW1U?=
+ =?utf-8?B?b25paGQ3N2lDOHMxRTg5LzNwVnpnMUR0Nyt6bENwVDdGN3BETEcrOS9sQlVi?=
+ =?utf-8?B?UjBoM3BPS0ZFOXpycXczaEluUE1TUjFzWDVhOW9yMlQ5bnRNT0tyZnoxYWRI?=
+ =?utf-8?B?Y1JPVUovUzJ4UGNJYnpWQWU0RGs2OGcvUEhieGVIcHFVNlZBWnFvcGN6bDMr?=
+ =?utf-8?B?aStnU0ExdHhzNmEwbmU0cHBJWThvNVNEd2JZY3NQZ3M0aW94YVZ6VG1SRnZY?=
+ =?utf-8?B?Qm9WSWcwcFNNakhTZjdVQWJYQXphd2VlK2txZTR3dTdqWG1PbkxwOE42dHZX?=
+ =?utf-8?B?SGhqU0U1VWhSb24vSjgrd284LzZ0RHlYQ1V3aEJ1Q1QzSFdHWnFmZmtsL3pJ?=
+ =?utf-8?B?b3I3Rm5STEF6RTRDZld0VVBOVTlwN29yOVRiV0k4eGl3WHBZYjVQZERBVWJ1?=
+ =?utf-8?B?SG56V0lMZWNNT1g5RklXVXk0aTVaYUpPUVRaZCtjTS9KYS9hZnQwdkl4WGZQ?=
+ =?utf-8?B?b09jWktmRkpYcTI2RDR5YmE2R1o2TFlhclA2YmN3QjZONDRrSExaYllqYndw?=
+ =?utf-8?B?QWwvUmxxSmhSTHFEdEZpRXpnTTZuOFJHZEx6Tm03OCs0SWc5ZlJxQ3U4Rko2?=
+ =?utf-8?B?VXc5czNvcFkrNXo2YmlMR3JnMWFIdUFoVm9Yd0tYWERRMFlzZkM0S05UT0k0?=
+ =?utf-8?B?WDRSQ01PaXAwTlVSTkFoR0Z3ZkFJRXlJMjNtMnkrUjM1MVdHK1FDRk95eStX?=
+ =?utf-8?B?L1J5L0x6djNTbzc3WUY2UFhmWXRWODNIRytWcUlXelNES1FvRjlvZ0kxQzZG?=
+ =?utf-8?B?V2NtR2UreHhoRXdGYjhOSU9sU0h2cVFmSGdNTkRRTCtnc1dxNjBDSTBVNUk3?=
+ =?utf-8?B?RGYrV0drRUNYUFhaeHRmaXZDNGU5U2lYRWo2eFQ4Ym80Zkpzck04dlZhdU1O?=
+ =?utf-8?B?Y1d4Nko2ODd4TWlHNTc2RDNrQ3hXaTF4aDRrSmdFNy9UTENiWlUwY3h0dXZ5?=
+ =?utf-8?B?cEswdHhpQUtTQ1JlbnRZQ2E4SEcxVVZNeExnUTBFckpoV2xkV1pJaWpXSVIx?=
+ =?utf-8?B?RlRoWXBJaXU1dU05TWNFWFBCRVNqeXdMbFhTWElkakZsdmVMRDB0QW5uUTRI?=
+ =?utf-8?B?Q0s3eDFyalRSTkJlMWpkZzdhNXVEWFFiUXRPVlBWdHF0NW1QYTVFcFFKN2dt?=
+ =?utf-8?B?OTFxMllRWnZCU0t3dkNZZnNDNDJidTQ0ZnlaZ1hneTJ5WUVGbnBpNjF4NVlU?=
+ =?utf-8?B?S3N0eksvWEhvVTUrSG03cGlGRHJMRXMwV3Ztcm1TdmRGK0pKNzNMbEdXRUVo?=
+ =?utf-8?B?d2pCMkhLV0g0dzNnRC82ZlhiK2dBdHBscE9WS2l4REtseDJQNWxZc3RhODVp?=
+ =?utf-8?B?blNDekhxeGJPeHFIZWwvVTF3NGZkN1Z2QlE5WWhyTHY4cXVpMUgrZUNLY3Zk?=
+ =?utf-8?B?eG5qdVpXZnBWb2lvL3oxSk1YM2libGZXZDFJZnZMRWdMY3M0dnI2bWZwSnVK?=
+ =?utf-8?B?Mk41a2x3QUQ3bGo4MUF1Ykd4Ym8rLzZaRDRxQ21TN2k1bnF5TmF0eURqZktP?=
+ =?utf-8?B?bU9zb1lOYUN3MkN6ZnBVd09EcG0xUWsxTFd5ZXd2Ny9USk42d1JIMlBHdit6?=
+ =?utf-8?B?VkhyTnhsYzNPaVlYVzVYNWo5TitXbi94blo1QTZsOHZMejdIU3IwRFpCWUx1?=
+ =?utf-8?B?anh5MWp0azlRSHhWaFpWeE02aUZrYWdTc1lVcmdiaG5wRldXdVVLbmFHY1or?=
+ =?utf-8?B?R2VlbHNHRkhQRUlCUjNucTd2RUEzQ2dNaWtQaXZPTCtXc1RTdmVpWmU3TVhL?=
+ =?utf-8?Q?7Ou2OSwHSeOjEb9rCM42VWo?=
+MIME-Version: 1.0
+
+------=_Part_239833893_500336853.1751957129725
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Your SIEM collects millions of events. Your CNAPP monitors cloud configurat=
+ions.
+[The 2-Minute Investigation: How Teleport Identity Security Sees What Your =
+SIEM can't]<https://em.goteleport.com/dc/jMgablFq4j_E9G9NC2zET1ADnLv8nRY0_e=
+qoDKv4pi1P_72f1aZd2ll-oKQFumzx3ycGYmSKDqqIPvDTCldPuBNY9qUgWY_CulfktlryM-10V=
+ePWLKzZRJtAdSTb0dGCBo9GrCq4HRDY8W_oIdCvxADWKMX6JN_ZKQVTKT3ZeOmsc9Gtu5NyCSnG=
+eaxeFUdOeNmy2V9nEekipFEIorF-BTFOaDBVwUwh2N7-wNdI4T8Yrv6-j4uf4m7gjkld_N_tOAB=
+Kr900t4xJCLwogbctsA=3D=3D/ODE5LVdIVC00ODMAAAGbh8D5-n7myTrAJzpLlQOX0ywzjTqH8=
+VAz3JdLP0wchi4CAJcq7LwqPQ-xrt70nKCzzJdqA00=3D>
+
+Hi David,
+
+Your SIEM collects millions of events. Your CNAPP monitors cloud configurat=
+ions. But can either tell you how a developer's Okta group membership led t=
+o unexpected production access through three different systems? Can they in=
+stantly trace an API key's journey from GitHub to your crown jewel database=
+s?
+
+Now, with Teleport Identity Security, we're correlating signals from identi=
+ty providers (Okta), code systems (GitHub), and cloud trails (AWS) to deliv=
+er something neither SIEMs nor CNAPPs can provide: real-time behavioral int=
+elligence about how identities actually move through your systems. It's not=
+ about replacing these tools. It's about answering the critical questions t=
+hey can't.
+
+Join Rob Picard, Security Engineer and Ben Arent, Director of Product at Te=
+leport<https://em.goteleport.com/dc/jMgablFq4j_E9G9NC2zET1ADnLv8nRY0_eqoDKv=
+4pi1P_72f1aZd2ll-oKQFumzx3ycGYmSKDqqIPvDTCldPuBNY9qUgWY_CulfktlryM-10VePWLK=
+zZRJtAdSTb0dGCBo9GrCq4HRDY8W_oIdCvxADWKMX6JN_ZKQVTKT3ZeOmsc9Gtu5NyCSnGeaxeF=
+UdOeNmy2V9nEekipFEIorF-BTFOaDBVwUwh2N7-wNdI4T8Yrv6-j4uf4m7gjkld_N_tOABKr900=
+t4xJCLwogbctsA=3D=3D/ODE5LVdIVC00ODMAAAGbh8D5-n7myTrAJzpLlQOX0ywzjTqH8VAz3J=
+dLP0wchi4CAJcq7LwqPQ-xrt70nKCzzJdqA00=3D>, as they demonstrate how identity=
+ behavioral intelligence changes everything:
+
+  *   See a real 2-hour investigation condensed to 2 minutes using actual i=
+ncident data
+  *   Follow identity chains across systems that traditional tools see as i=
+solated events or static risks
+  *   Discover hidden access paths like inherited permissions and shadow SS=
+H keys as they're being used, not just configured
+  *   Get AI-powered explanations of complex session behavior without manua=
+l log analysis
+  *   Act on first-party detections that only Teleport's infrastructure pos=
+ition can provide
+
+Register Now<https://em.goteleport.com/dc/jMgablFq4j_E9G9NC2zET1ADnLv8nRY0_=
+eqoDKv4pi1P_72f1aZd2ll-oKQFumzx3ycGYmSKDqqIPvDTCldPuBNY9qUgWY_CulfktlryM-10=
+VePWLKzZRJtAdSTb0dGCBo9GrCq4HRDY8W_oIdCvxADWKMX6JN_ZKQVTKT3ZeOmsc9Gtu5NyCSn=
+GeaxeFUdOeNmy2V9nEekipFEIorF-BTFOaDBVwUwh2N7-wNdI4T8Yrv6-j4uf4m7gjkld_N_tOA=
+BKr900t4xJCLwogbctsA=3D=3D/ODE5LVdIVC00ODMAAAGbh8D5-n7myTrAJzpLlQOX0ywzjTqH=
+8VAz3JdLP0wchi4CAJcq7LwqPQ-xrt70nKCzzJdqA00=3D>
+
+Teleport, 2100 Franklin St, Suite 400, Oakland, CA 94612
+
+If you no longer wish to receive these emails anymore, click on the followi=
+ng link:
+
+UNSUBSCRIBE<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbh8D5-oxx1wTVCnKIW=
+gr9QYEKeVSTNVGlCk9HavjXObjHhPAlVqoFT95xt9t8qTwZVnqNwA0=3D>
+
+TERMS OF SERVICE<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbh8D5-pCavAOI=
+RsbupdzCJ0z6NAySucF9bVxN7pBSyI_vFzHHgG9NhNOzWBi8wmGEK3QkD_s=3D> | PRIVACY P=
+OLICY<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbh8D5-le3LeMqrpc4wlcK1Iq=
+MiESAc874ZU1gwUM10SAg1PIO_sYXLO0HAVPR4rsQ9_rkfcg=3D> | SECURITY POLICY<http=
+s://em.goteleport.com/ODE5LVdIVC00ODMAAAGbh8D5-mYUGLi_8kyDK5vDpQUwaY8BbTiYk=
+emSGa_AfmtndK31dB6z4DeKMzgiq8at5FnPmzM=3D>
+
+<https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbh8D5-j01h_MbPnCpnYiWrX0bPYFX=
+hDjNmdVZJuyYCVpGwXr9STaigUJEZBNH5JLWhRXxRYE=3D>
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_239833893_500336853.1751957129725
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:=
+schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:offi=
+ce"><!--
+Built by upcraft.io
+--><head><!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>=20
+</xml><![endif]-->
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+<!-- START Marketo Variables --><!-- Global Variables--><!-- Background Var=
+iables--><!-- Content Variables--><!-- Toggle Variables--><!-- Button 1 Var=
+iables--><!-- Button 2 Variables--><!-- END Marketo Variables -->
+<title>Company Name</title>
+<style>
+/* START - WEBFONTS, ALWAYS use import method for email to avoid automation=
+ tracking issues */
+@import url('https://fonts.googleapis.com/css?family=3DOpen+Sans:300,400,60=
+0,700&display=3Dswap');
+/* END - WEBFONTS, ALWAYS use import method for email to avoid automation t=
+racking issues */
+=09
+/* START - Universal styles */
+body {
+    font-family: arial, helvetica;
+    font-size: 14px;
+    line-height: 1.6em;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: 100%;
+}
+img, a img {
+    outline: none;
+    text-decoration: none;
+    border: none;
+    -ms-interpolation-mode: bicubic;
+}
+.imgblock img {
+    display: block;
+}
+.img100, .img100 img {
+    width: 100% !important;
+    height: auto !important;
+}
+p {
+    margin-top: 0;
+    padding-top: 0;
+}
+a {
+    color: #047AED;
+}
+
+/* END - Universal styles  */
+=09
+/* START - Mobile universal styles */
+@media screen and (max-width: 480px) {
+body {
+    margin: 0 !important;
+    padding: 0;
+}
+.t100 {
+    width: 100% !important;
+    float: none !important;
+}
+.mimg100 img, .mimg100 {
+    width: 100% !important;
+    height: auto !important;
+}
+.logoimg {
+    max-width: 125px !important;
+    height: auto !important;
+}
+.text-center {
+    text-align: center !important;
+}
+.heightauto {
+    height: auto !important;
+}
+.p0 {
+    padding: 0 !important;
+}
+.pt5 {
+    padding-top: 5px !important;
+}
+.pr5 {
+    padding-right: 5px !important;
+}
+.pb5 {
+    padding-bottom: 5px !important;
+}
+.pl5 {
+    padding-left: 5px !important;
+}
+.pt10 {
+    padding-top: 10px !important;
+}
+.pr10 {
+    padding-right: 10px !important;
+}
+.pb10 {
+    padding-bottom: 10px !important;
+}
+.pl10 {
+    padding-left: 10px !important;
+}
+.p15 {
+    padding: 16px !important;
+}
+.pt15 {
+    padding-top: 16px !important;
+}
+.pr15 {
+    padding-right: 16px !important;
+}
+.pb15 {
+    padding-bottom: 16px !important;
+}
+.pl15 {
+    padding-left: 16px !important;
+}
+.pt20 {
+    padding-top: 20px !important;
+}
+.pr20 {
+    padding-right: 20px !important;
+}
+.pb20 {
+    padding-bottom: 20px !important;
+}
+.pl20 {
+    padding-left: 20px !important;
+}
+.pt30 {
+    padding-top: 30px !important;
+}
+.pr30 {
+    padding-right: 30px !important;
+}
+.pb30 {
+    padding-bottom: 30px !important;
+}
+.pl30 {
+    padding-left: 30px !important;
+}
+.plr15 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+.mpad {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+}
+/* END - Mobile universal styles */
+
+/* START - Webfont fix, keeps Outlook from rendering Times. Loads for all d=
+evices except Outlook. */
+@media {
+body {
+font-family: 'Open Sans', sans-serif !important;
+}
+}
+
+/* END - Webfont fix, keeps Outlook from rendering Times. Loads for all dev=
+ices except Outlook. */
+
+=09
+=09
+/* START - Custom CSS */
+=09
+/* END -  Custom CSS */
+=09
+=09
+=09
+/* START - Custom mobile CSS */
+@media screen and (max-width: 480px) {
+}
+/* END -  Custom mobile CSS */
+</style><!--[if (gte mso 9)|(IE)]>
+<style type=3D"text/css">
+table {
+border-collapse: collapse;
+border-spacing: 0; }
+</style>
+<![endif]-->
+</head>
+<body style=3D"background: #DDDDDD; min-width:100%; margin:10px; padding:0;=
+">
+<style type=3D"text/css">div#emailPreHeader{ display: none !important; }</s=
+tyle>
+<div id=3D"emailPreHeader" style=3D"mso-hide:all; visibility:hidden; opacit=
+y:0; color:transparent; mso-line-height-rule:exactly; line-height:0; font-s=
+ize:0px; overflow:hidden; border-width:0; display:none !important;">
+Your SIEM collects millions of events. Your CNAPP monitors cloud configurat=
+ions.</div>
+<table width=3D"600" border=3D"0" align=3D"center" cellpadding=3D"0" cellsp=
+acing=3D"0" class=3D"t100" style=3D"width:600px;">
+<tbody>
+<tr>
+<td id=3D"wrapper" style=3D"background: #ffffff; padding: 0;" class=3D"mkto=
+Container">
+<table width=3D"600" style=3D"width:600px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100 mktoModule" id=3D"img13508=
+ca48-e060-45f9-8ede-1fd6246a0d78">
+<tbody>
+<tr>
+<td style=3D"padding: 0;" class=3D"mimg100">
+<div class=3D"mktoImg" id=3D"kdf9292b68b685-86aa-4cd3-9f7b-8fdf8b8f2f41" mk=
+tolockimgsize=3D"true" mktolockimgstyle=3D"true">
+<a href=3D"https://em.goteleport.com/dc/jMgablFq4j_E9G9NC2zET1ADnLv8nRY0_eq=
+oDKv4pi1P_72f1aZd2ll-oKQFumzx3ycGYmSKDqqIPvDTCldPuBNY9qUgWY_CulfktlryM-10Ve=
+PWLKzZRJtAdSTb0dGCBo9GrCq4HRDY8W_oIdCvxADWKMX6JN_ZKQVTKT3ZeOmsc9Gtu5NyCSnGe=
+axeFUdOeNmy2V9nEekipFEIorF-BTFOaDBVwUwh2N7-wNdI4T8Yrv6-j4uf4m7gjkld_N_tOABK=
+r900t4xJCLwogbctsA=3D=3D/ODE5LVdIVC00ODMAAAGbh8D5-n7myTrAJzpLlQOX0ywzjTqH8V=
+Az3JdLP0wchi4CAJcq7LwqPQ-xrt70nKCzzJdqA00=3D" target=3D"_blank"><img style=
+=3D"display:block;" alt=3D"The 2-Minute Investigation: How Teleport Identit=
+y Security Sees What Your SIEM can't" src=3D"https://learn.goteleport.co/rs=
+/819-WHT-483/images/the-2-minute-investigation-how-teleport-identity-securi=
+ty-sees-what-your-siem-cant.png" width=3D"600" class=3D"mimg100"></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"mktoModule" id=3D"slkgsdg">
+<tbody>
+<tr>
+<td style=3D"background: #FFFFFF;">
+<table width=3D"540" style=3D"width:540px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100" id=3D"CS-2" mktoname=3D"M=
+odule">
+<tbody>
+<tr>
+<td style=3D" padding: 15px 0 0px 0;" class=3D"mpad mktoText" id=3D"skgodkd=
+">
+<p>Hi David,&nbsp;</p>
+<p>Your SIEM collects millions of events. Your CNAPP monitors cloud configu=
+rations. But can either tell you how a developer's Okta group membership le=
+d to unexpected production access through three different systems? Can they=
+ instantly trace an API key's journey
+ from GitHub to your crown jewel databases? <br>
+<br>
+Now, with Teleport Identity Security, we're correlating signals from identi=
+ty providers (Okta), code systems (GitHub), and cloud trails (AWS) to deliv=
+er something neither SIEMs nor CNAPPs can provide: real-time behavioral int=
+elligence about how identities actually
+ move through your systems. It's not about replacing these tools. It's abou=
+t answering the critical questions they can't.
+<br>
+<br>
+<a href=3D"https://em.goteleport.com/dc/jMgablFq4j_E9G9NC2zET1ADnLv8nRY0_eq=
+oDKv4pi1P_72f1aZd2ll-oKQFumzx3ycGYmSKDqqIPvDTCldPuBNY9qUgWY_CulfktlryM-10Ve=
+PWLKzZRJtAdSTb0dGCBo9GrCq4HRDY8W_oIdCvxADWKMX6JN_ZKQVTKT3ZeOmsc9Gtu5NyCSnGe=
+axeFUdOeNmy2V9nEekipFEIorF-BTFOaDBVwUwh2N7-wNdI4T8Yrv6-j4uf4m7gjkld_N_tOABK=
+r900t4xJCLwogbctsA=3D=3D/ODE5LVdIVC00ODMAAAGbh8D5-n7myTrAJzpLlQOX0ywzjTqH8V=
+Az3JdLP0wchi4CAJcq7LwqPQ-xrt70nKCzzJdqA00=3D" target=3D"_blank" id=3D"">Joi=
+n
+ Rob Picard, Security Engineer and Ben Arent, Director of Product at Telepo=
+rt</a>, as they demonstrate how identity behavioral intelligence changes ev=
+erything:
+<br>
+</p>
+<ul>
+<li>See a real 2-hour investigation condensed to 2 minutes using <strong>ac=
+tual incident data</strong></li><li><strong>Follow identity chains across s=
+ystems</strong> that traditional tools see as isolated events or static ris=
+ks</li><li><strong>Discover hidden access paths</strong> like inherited per=
+missions and shadow SSH keys as they're being used, not just configured</li=
+><li><strong>Get AI-powered explanations</strong> of complex session behavi=
+or without manual log analysis</li><li><strong>Act on first-party detection=
+s</strong> that only Teleport's infrastructure position can provide</li></u=
+l>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"mktoModule" id=3D"slkgodk08df1066-967b-452b-a670-408473981b86">
+<tbody>
+<tr>
+<td style=3D"background: #FFFFFF;">
+<table width=3D"540" style=3D"width:540px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100" id=3D"BT-1-C" mktoname=3D=
+"Module">
+<tbody>
+<tr>
+<td style=3D"padding: 16px 0 16px 0;">
+<table border=3D"0" align=3D"center" cellpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" class=3D"cta" style=3D"background-color:#512FC9;font-f=
+amily:sans-serif;font-size:16px;font-weight:bold;text-align:center;-webkit-=
+text-size-adjust:none; padding: 14px 28px 14px 28px; line-height: 1; border=
+-radius:0px;">
+<a href=3D"https://em.goteleport.com/dc/jMgablFq4j_E9G9NC2zET1ADnLv8nRY0_eq=
+oDKv4pi1P_72f1aZd2ll-oKQFumzx3ycGYmSKDqqIPvDTCldPuBNY9qUgWY_CulfktlryM-10Ve=
+PWLKzZRJtAdSTb0dGCBo9GrCq4HRDY8W_oIdCvxADWKMX6JN_ZKQVTKT3ZeOmsc9Gtu5NyCSnGe=
+axeFUdOeNmy2V9nEekipFEIorF-BTFOaDBVwUwh2N7-wNdI4T8Yrv6-j4uf4m7gjkld_N_tOABK=
+r900t4xJCLwogbctsA=3D=3D/ODE5LVdIVC00ODMAAAGbh8D5-n7myTrAJzpLlQOX0ywzjTqH8V=
+Az3JdLP0wchi4CAJcq7LwqPQ-xrt70nKCzzJdqA00=3D" style=3D"color: #ffffff; text=
+-decoration: none;">Register
+ Now</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table width=3D"600" style=3D"width:600px;" border=3D"0" align=3D"center" c=
+ellpadding=3D"0" cellspacing=3D"0" class=3D"t100 mktoModule" id=3D"F-1">
+<tbody>
+<tr>
+<td style=3D"padding: 16px 0 16px 0; text-align: center; background: #F5F5F=
+5; font-size: 12px; line-height: 1.4em;" class=3D"mktoText" id=3D"kdjwe9">
+<div style=3D"text-align: center;">
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-size: 14px; font-family: arial, helvetica, sans-serif; =
+color: #000000; background-color: transparent; font-weight: 400; font-varia=
+nt: normal; text-decoration: none; vertical-align: baseline; white-space: p=
+re-wrap;">Teleport, 2100 Franklin
+ St, Suite 400, Oakland, CA 94612</span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-family: arial, helvetica, sans-serif; font-size: 14px;"=
+><span style=3D"color: #000000; background-color: transparent; font-weight:=
+ 400; font-variant: normal; text-decoration: none; vertical-align: baseline=
+; white-space: pre-wrap;">If you no
+ longer wish to receive these emails anymore, click on the following link: =
+</span>
+</span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<span style=3D"font-family: arial, helvetica, sans-serif; color: #000000; f=
+ont-size: 14px;"><a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbh=
+8D5-oxx1wTVCnKIWgr9QYEKeVSTNVGlCk9HavjXObjHhPAlVqoFT95xt9t8qTwZVnqNwA0=3D" =
+style=3D"color: #000000;">UNSUBSCRIBE</a></span></p>
+<p style=3D"line-height: 1.38; text-align: center; margin-top: 0pt; margin-=
+bottom: 0pt;">
+<br>
+<span style=3D"font-family: arial, helvetica, sans-serif; color: #000000; f=
+ont-size: 14px;"><a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbh=
+8D5-pCavAOIRsbupdzCJ0z6NAySucF9bVxN7pBSyI_vFzHHgG9NhNOzWBi8wmGEK3QkD_s=3D" =
+style=3D"color: #000000;" target=3D"_blank">TERMS
+ OF SERVICE</a> | <a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGb=
+h8D5-le3LeMqrpc4wlcK1IqMiESAc874ZU1gwUM10SAg1PIO_sYXLO0HAVPR4rsQ9_rkfcg=3D"=
+ style=3D"color: #000000;">
+PRIVACY POLICY</a> | <a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAA=
+AGbh8D5-mYUGLi_8kyDK5vDpQUwaY8BbTiYkemSGa_AfmtndK31dB6z4DeKMzgiq8at5FnPmzM=
+=3D" style=3D"color: #000000;">
+SECURITY POLICY</a></span><br>
+</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<a href=3D"https://em.goteleport.com/ODE5LVdIVC00ODMAAAGbh8D5-j01h_MbPnCpnY=
+iWrX0bPYFXhDjNmdVZJuyYCVpGwXr9STaigUJEZBNH5JLWhRXxRYE=3D"></a><img src=3D"h=
+ttps://em.goteleport.com/trk?t=3D1&amp;mid=3DODE5LVdIVC00ODMAAAGbh8D5-kL5fD=
+WscYFhqX1K0VmMqSuvwY64buOz4XFOW52kzOg4RW75tX3T9LSP7pgqQw-fUaeG1AxwfzUyz4Vxh=
+F492GUk8qv3e_LjcH62kL7Q0I_MFX3Lf4OgOQ7lUIPvqCC2RRCEjw" width=3D"1" height=
+=3D"1" style=3D"display:none !important;" alt=3D"">
+<p><font face=3D"Verdana" size=3D"1"></font></p>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+------=_Part_239833893_500336853.1751957129725--

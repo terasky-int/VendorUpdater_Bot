@@ -12,14 +12,17 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Create directory structure
-RUN mkdir -p src api graph && touch src/__init__.py api/__init__.py graph/__init__.py
+# Create directory structure and __init__.py files
+RUN mkdir -p src api graph tests ui && \
+    touch src/__init__.py api/__init__.py graph/__init__.py tests/__init__.py ui/__init__.py
 
 # Copy application files
 COPY src/ src/
 COPY api/ api/
 COPY graph/ graph/
 COPY config/ config/
+COPY tests/ tests/
+COPY ui/ ui/
 
 # Set environment variables
 ENV PYTHONPATH=/app

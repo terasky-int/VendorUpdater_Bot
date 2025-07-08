@@ -7,7 +7,7 @@ from pydantic import BaseModel
 from typing import Dict, List, Optional, Any
 import uvicorn
 import logging
-from .graph_db_consolidated import (
+from graph_db_consolidated import (
     get_vendor_products, 
     get_related_vendors, 
     get_email_timeline,

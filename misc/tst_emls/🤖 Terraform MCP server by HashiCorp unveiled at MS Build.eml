@@ -1,0 +1,2896 @@
+Received: from AM9P194MB1202.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:3af::8)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Wed, 18 Jun 2025
+ 12:34:25 +0000
+Received: from AM8P191CA0027.EURP191.PROD.OUTLOOK.COM (2603:10a6:20b:21a::32)
+ by AM9P194MB1202.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:3af::8) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8857.19; Wed, 18 Jun
+ 2025 12:34:22 +0000
+Received: from AM3PEPF0000A791.eurprd04.prod.outlook.com
+ (2603:10a6:20b:21a:cafe::b2) by AM8P191CA0027.outlook.office365.com
+ (2603:10a6:20b:21a::32) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8835.30 via Frontend Transport; Wed,
+ 18 Jun 2025 12:34:22 +0000
+Authentication-Results: spf=pass (sender IP is 192.28.144.154)
+ smtp.mailfrom=bounce.hashicorp.com; dkim=pass (signature was verified)
+ header.d=reply.hashicorp.com;dkim=pass (signature was verified)
+ header.d=mktdns.com;dmarc=pass action=none
+ header.from=reply.hashicorp.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of bounce.hashicorp.com
+ designates 192.28.144.154 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.28.144.154;
+ helo=bounce.hashicorp.com; pr=C
+Received: from bounce.hashicorp.com (192.28.144.154) by
+ AM3PEPF0000A791.mail.protection.outlook.com (10.167.16.120) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8857.21 via Frontend Transport; Wed, 18 Jun 2025 12:34:21 +0000
+X-MSFBL: JHqZQwheT20vtZ/wNxEkOj7cNKbM05xYPi5oAss9ZGU=|eyJiIjoiZHZwLTE5Mi0
+	yOC0xNDQtMTU0IiwiciI6ImRhdmlkZ0B0ZXJhc2t5LmNvbSIsInUiOiI4NDUtWkx
+	GLTE5MTowOjQ0MzA0OjIzNTYyOToxMDU3NDA0Ojk1NzQwOjk6MTkxMDMzOjI1OTc
+	wMjE5IiwiZyI6ImJnLWFiZC0zMjcifQ==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1750250034;
+	s=m2; d=reply.hashicorp.com; i=@reply.hashicorp.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=epCdi3bDQxAeQOQdORDJ8qlw+BewCzaVrWYImuQSWyw=;
+	b=DcfAv259OJkXUUuZYuS5pmA+Ald+o8j9BADe3PFi2DNZRqyF45c95bETDnxDDqlR
+	Wko9lgPxMhRI7nqxV/X/SafMq6P+znHZG0udejT3NEbym0B7H/oCEQQDbAVK1KZLz8/
+	I2Bxl5hLFZsq7hF3R5Gww2i9RAgZOFus3DQh89RQiLv08XmtwRExrwRZ2LgHV5Wla+8
+	I34nvmX2BZCmwpY3gGMVA+VWkDmkDA4moL2F0bWIgdsvqaQHCSUbI3rH419S0n06CqV
+	pHfO2xcW2S+sBFFTb8GVr/7nqRyZES1lTFqxIBjB/NxSH+fzNc2dINmxIh1DTUYOGKl
+	W7tPg8FwXg==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1750250034;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=List-Unsubscribe:List-Unsubscribe-Post:Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=epCdi3bDQxAeQOQdORDJ8qlw+BewCzaVrWYImuQSWyw=;
+	b=XVLbpVA+rT73alXTtWN3YeDJ4v034DNMRLijB5Z6hRjoMUHDfQ8ZQW0obpNC+FE2
+	4BZXpjShQP8XeZbaBzEyK678Rz9TWi6rbBalTGlWTQ98eHnVK5vYxkcvz2hyfFLSNZ8
+	6b59ATwKJPXEB/ejWLLHjcvSPo1yOSZNhZKsQwy0=
+Date: Wed, 18 Jun 2025 07:33:54 -0500 (CDT)
+From: HashiCorp <newsletter@reply.hashicorp.com>
+Reply-To: newsletter@reply.hashicorp.com
+To: davidg@terasky.com
+Message-ID: <881449058.369547859.1750250034820@abmktmail-batch1m.marketo.org>
+Subject: =?UTF-8?Q?=F0=9F=A4=96_Terraform_MCP_server_by_H?=
+ =?UTF-8?Q?ashiCorp_unveiled_at_MS_Build?=
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_369547857_743546382.1750250034819"
+X-Binding: bg-abd-327
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://view.hashicorp.com/u/ODQ1LVpMRi0xOTEAAAGbIgDGcSPLNuWBHgmhahy7gFjqFd3QF7kyY2nudCVRp-JwzGRf_SR6MJwV74jjjSsLmY9EBdM=?emailAddress=ODQ1LVpMRi0xOTEAAAGbIgDGcLobsrnkDX0L0PzAChynwxSG9J2xhNesHiA3kWxGdqXmAwoEFHuMI8bLrxCdSHE>, <mailto:ORIGQ6LYFVCXEMCRHFSTKMDNGYYHMZCWJBCU6SRTJ5XWURBWM52WOUZWMM4VO3DRNBUFKPI=.191033.95740.9@unsub-ab.mktomail.com>
+X-MarketoID: 845-ZLF-191:0:44304:235629:1057404:95740:9:191033:25970219
+X-PVIQ: mkto-845ZLF191-000001-000000-191033
+X-Mailfrom: 845-ZLF-191.0.191033.0.0.95740.9.25970219@bounce.hashicorp.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+Return-Path: 845-ZLF-191.0.191033.0.0.95740.9.25970219@bounce.hashicorp.com
+X-MS-Exchange-Organization-ExpirationStartTime: 18 Jun 2025 12:34:22.2246
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 0cc6a2f3-ed81-4a83-a195-08ddae6473fa
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM3PEPF0000A791:EE_|AM9P194MB1202:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AM3PEPF0000A791.eurprd04.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 0cc6a2f3-ed81-4a83-a195-08ddae6473fa
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|4022899009|5073199012|5063199012|4123199012|1032899013|69100299015|39142699007|31052699007|8096899003|13003099007|2066899003;
+X-Forefront-Antispam-Report: CIP:192.28.144.154;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:bounce.hashicorp.com;PTR:bounce.hashicorp.com;CAT:NONE;SFS:(13230040)(4022899009)(5073199012)(5063199012)(4123199012)(1032899013)(69100299015)(39142699007)(31052699007)(8096899003)(13003099007)(2066899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 18 Jun 2025 12:34:21.8752
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0cc6a2f3-ed81-4a83-a195-08ddae6473fa
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AM3PEPF0000A791.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM9P194MB1202
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.5417252
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8857.014
+X-Message-Flag: Follow up
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(4710137)(4713078)(4999163)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?QkVJbUY1OHgzZitiNmJ5V3pSSHRpQktuTnY2TlovRWQza2RiSjNqT2kyeEhF?=
+ =?utf-8?B?Y01yUDhkSG4xa2Q4NVpQMzIwVDlHdzR4TWVhZk1ud0JLV1k5YWYxdUQzQ3Q2?=
+ =?utf-8?B?bGl0dWYrRGpTc0lIWmliSVZtaGxCYXJUNjlQRjNDd0RSY29XVXQ1NXJtamZs?=
+ =?utf-8?B?Unp0NUZaZUkva3JSVG5QSGRSZnloaENXR0pvemtvdVdqSHUyRjZCSnFZKys0?=
+ =?utf-8?B?Y1hkZUtEbVFSdS90WkNpM1NIZTNSRVdlVUR1eEY5emx1UjBDTXorS2ozZWlP?=
+ =?utf-8?B?Rys0RjZKZVMzRDdqblBBSFlRVzgzZUpRa0d6QmNVUExldmt2NjFZWUE2aVlu?=
+ =?utf-8?B?TitUY201VlZoZFB0cldjLzdKemthc3ZnZWNYTVN5TFd6b3BuR2pKNTBXRk95?=
+ =?utf-8?B?ODRyNEtOcDhpUENpd29sRDhnS1ZVdnRFaEl0Yk5HNXdLYWIrcDBMNDNKWlph?=
+ =?utf-8?B?UnZRWnowK2M3MVhhSDFQb0FkQzAvRmpSVHpRdmFqY3pNNElNYmEwZVFyTUc1?=
+ =?utf-8?B?MzE2ZG9UM1k1K2hvSWt1VU03MGFBS2xpTFlkaEFzRjRZL0xGSTVMZ3RNVzFl?=
+ =?utf-8?B?c1B4MmxQdXBXeXRyVGR5U29HR01SZ1BxYkN0MVJhaWt1OXVWZCt6UU5ZdEUz?=
+ =?utf-8?B?S2IvRis0WkVnWGorSzFCUEZJdUR6c1Zhdis4cGFpWUpjZSt4a0ZHRFhKWHhK?=
+ =?utf-8?B?NExZNHFwYUF0VnB6a2lMbkhNMGVzVlIxVTEzRGFJdkR5L0YxVEFwWEhMTTdp?=
+ =?utf-8?B?b2toRFpCU0RZL2t2cTRXZUJBMUNLZW5tUEJTQ29UU1NOYmt2bkFBOGpGZnhv?=
+ =?utf-8?B?RDhpNHczQTJDemNGUml0ZlhneE43VGl3cVRab053UHRsUlNmZkxIZ3RJY3du?=
+ =?utf-8?B?UkN1eUpKeFl0WENXbExJc0Vhc2YwOWhOTmQ2OXdOODlObkdEZ3ZncVArVE54?=
+ =?utf-8?B?cXZpeXZ2Y0VQZkRKcllBbmxsOWdXczhwajBNSWN5MTFrWDc5Wjl2QkQ3OThP?=
+ =?utf-8?B?S0pSeTBMSThJb0RMUTJSUXdoTkNmby9PS1FiSVpBTlZ2OWxzSERMVDBlS01X?=
+ =?utf-8?B?NFloLzJWaE9HZHJyQythdWY2T1hXZWhpSU1QTUZRaTA0bnZtemtzVnNsRjNl?=
+ =?utf-8?B?Tmh1ek9yK3N2WXFDOFVFYWNkU2JMSUcwTnRSS2ozM25PZVdzVEpsS285SE9T?=
+ =?utf-8?B?TUtZSVE4dUM4TTJEL3B1d1V1V2dlSjVNcFAzK0orV2pVUncwY3hNU2tCSzk1?=
+ =?utf-8?B?bjhJOXFEaEZQMmNPNDJ6UlcxOW1jUTA3eDZLT240ZnAvUXpqdzdpVmJ2YU8v?=
+ =?utf-8?B?QjZTdFBoYTZvUUt0L0I0ZGFKdDZGb2ZOWlczd25Ialc4d29vT05mSGgvS1A2?=
+ =?utf-8?B?NVNYeVF0dnR2SlVTS3BJUi91NW8rV09OT2tHL281b0hJbEYrYWcrcEJyWHUx?=
+ =?utf-8?B?YWRIY0FUVXg2dkdBRDRPMGdYSU1jRzFiSDBVcmNDV2Q0OGdqTXUyeDBhY3NQ?=
+ =?utf-8?B?RUw0WmJFbVhLdWhYeHBuTVA4M1F2eklrWjVZamwyd0w4bnhVMElaTllWL2hU?=
+ =?utf-8?B?V2N1REZsNkl3NXRaNWoyY2JneTRWZUNqVmlJTmlPZm44WDd3Q3lVeGgvS01w?=
+ =?utf-8?B?a3hrNGx5eGZYaUpSK0p2S1Iwb05mMUdsdTBIK3hyeTdsUTZVbzFzMTRHSW5o?=
+ =?utf-8?B?aEM2SnZHU3RWdkhMRkNOdWFTcUg2MWtiYUg0M2srY1lJbGZuU1p1OEJBbWo5?=
+ =?utf-8?B?RTAvODNwMXcwUnZ3aFFCWmFBMXN5WjhSVVg2dWtMcmdwVmZWSEtwS1lLS3lB?=
+ =?utf-8?B?MlVnSllSTlN6eE9XaTJZQyt1NE1qR2NvRHFzYjloem9wV21zaEs2QzZMbllv?=
+ =?utf-8?B?a01keDE0TjZUQnhVNENjV0dmMHhBQnYwREtaS0FYdjkrMnBranM0QUJOcDJO?=
+ =?utf-8?B?cU5zUDVsZ3luMG5ITUlnb0t1TlRkRXNUTnlXdzVJem9VME9nSllseTlTTXdz?=
+ =?utf-8?B?dUtzU2dwcnBveFMxY1FLRzVzeE1DQkNzTEJlbFNEOWZ4M25nMFdlbUZwN3Zr?=
+ =?utf-8?B?emt2MDJSakNGdFpPRXVPZjFmQzdXWmdBejF1T3RVSXNKajhWNnpBcWdUYXpn?=
+ =?utf-8?B?T3MvenlMYmZlSjBrVWFXOTE0ME45RlZZRWxyY3hvYThnZUxKdzBvRU0zTHQ2?=
+ =?utf-8?B?QWphbi8rMUI2Q0kxWUpZcmxjQVljc3NLQkg0Y3lKNkNvMGlDSUxteEIrQ0xv?=
+ =?utf-8?B?M1JZRUlYamh1Sm5BWTdjRTJsN3BCaVk1ZUcrYnFyS202S1FKSDBZSWtjY0dZ?=
+ =?utf-8?B?STZxK2wwZEg1OWI0ZEgyWVJnMGRLVHV5dXNqUkg4bnVWaHZPc1lOSW1SemtB?=
+ =?utf-8?B?c2RhcGN5WmgzbWFEYndDcUVYMXJVQnVybUVWKythVVdPTEpnM0prZVA5eDJD?=
+ =?utf-8?B?MEdJcitpcHF3ZzlMaC9sRlkxRStndFZWNzIwelhhV2xiUGx4dE5FV3hqMzBj?=
+ =?utf-8?B?K0tubEc1RENJdE5JbEtHbnBEYWltRUtMQmZKbTNYNHhSRS9WWjM5M3hYa2Ew?=
+ =?utf-8?B?RkpUZjZRaXdUV3o5RnVaMGYrU01tcG9PTEExMGpublhrTnpMaTBPRXp2M3dX?=
+ =?utf-8?B?L0NlNW81TzZxeTkxU1IzVXVoK3VaM0pZZVc0NGgxOExKVjFVaFlLS2tmREsr?=
+ =?utf-8?B?MTQyeVFJdTN0SjhZZ3gzdHhhYmgvd0ZSY2EzN2I3M1BSNG9GUHpTNFhYMTR5?=
+ =?utf-8?B?NnhtTGx4Um03djNQZjUrMytJaTViOFZ2VU5nVVgwbjZOOHhPUzZ0RVJ0bTln?=
+ =?utf-8?B?bUE4dFdJWjVDRDc3dXkrekdCdDlOQkU1eW4wbmQyRUhJcEZBekhYR2liM21N?=
+ =?utf-8?Q?VNlhUBKTEvDKM5YxhAWnDHYgyOSQBLn0o9LuXuyQ=3D?=
+MIME-Version: 1.0
+
+------=_Part_369547857_743546382.1750250034819
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Watch our keynotes and read our roundups from HashiDays London 2025.
+View in browser<https://view.hashicorp.com/v/ODQ1LVpMRi0xOTEAAAGbIgDGcOzsPb=
+LoYh_dtKgRdVX9c8lnH6UDTc3ZLvPY1TYjh9NWsJXcD3kLDowYqTnl_nVBPWA=3D> | Update =
+your prefernces<https://go.hashicorp.com/UnsubscribePage.html?mkt_unsubscri=
+be=3D1&mkt_tok=3DODQ1LVpMRi0xOTEAAAGbIgDGcnobNdxZ_OQfpf87aBB7j5BqO1uIO4KXt9=
+PYsHrv-D-zL8_o_7jqSTJ5gf1aeRiAwc1EPqgAJ28w298HL2asS1C1Z3GUoMp2XXrpVqLaG7A>
+[HashiCorp logo] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcnnsa9=
+F2-608BqqGMZlbRx_8B0RlN57EZv0dSRevdTdVzwrVix_iziGSPaCYs3Kiuis=3D>
+[HashiCorp Logo]
+[HashiCorp logo] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcnnsa9=
+F2-608BqqGMZlbRx_8B0RlN57EZv0dSRevdTdVzwrVix_iziGSPaCYs3Kiuis=3D>
+A monthly newsletter with the latest and most relevant news about HashiCorp=
+=E2=80=99s products and community.
+[https://go.hashicorp.com/rs/845-ZLF-191/images/Announcement.png?version=3D=
+0]
+HashiCast: CHANGELOG<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcR8=
+rpyA61aPklJSxaVpcPvO_W6zXqY3El0DOwCJDRd0q58SM1tFBjopRoZHEqLCVLEw=3D> =E2=80=
+=94 The HashiCorp Terraform MCP server + what's new in Terraform 1.12, Cons=
+ul 1.21, and Boundary 0.19.2.
+=F0=9F=A4=9D From the HashiCorp community
+Developer self-service with HCP Waypoint and Minecraft<https://view.hashico=
+rp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcWWDq13uZIqfMxkM6ZGDcMXd5jgD83hYWjyOv9eXddCI=
+FgZGQWTz2D7Nnx_fFyWghj0=3D> =E2=80=94 This demo shows you how to set up sel=
+f-service provisioning for Minecraft servers and infrastructure (e.g., brid=
+ges and houses) in the Minecraft world, all using HCP Waypoint and Terrafor=
+m. Learn how Terraform works with Waypoint<https://view.hashicorp.com/ODQ1L=
+VpMRi0xOTEAAAGbIgDGcHlIcqC8A1yTeVBCVy6ZGQL0GnWTvhSoiK9EJmY57VARO3Tr6UsA9oOF=
+scYg916ZDp0=3D>, and how Waypoint actions work<https://view.hashicorp.com/O=
+DQ1LVpMRi0xOTEAAAGbIgDGcsw99wj3WxHLSbkjr25C8vbzvKg6DYpjmXRGqbLD4i9l3TmrFM3j=
+pWGojHMsTHY0Pd0=3D> in subsequent blogs.  by MATTIAS FJELLSTR=C3=96M
+.....
+Using MCPs to run Terraform<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGb=
+IgDGccxwqVvlXHeHW-CdQ-leQ6WXnywCMA8BQS1YBWiJvABO1hxc3uBslLXuXIS3NK8bBJ0=3D>=
+ =E2=80=94 Learn about MCP and how MCP client agents could add value to you=
+r Terraform workflows. This post also highlights security considerations wh=
+en building these solutions. by WESTON PLATTER
+.....
+Managing AWS tags<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcWzWiY=
+FZ7xAO1xQOFNnl0vc4-SU3lV7NXbDITJhhCnLQPha3zFM-o7yrWOmK25DmjAs=3D> =E2=80=94=
+ Everyone needs a tagging strategy when managing cloud resources at scale. =
+Learn how to manage resource tagging for AWS with Terraform while also moni=
+toring and enforcing your resource tagging compliance rules. by MATTIAS FJE=
+LLSTR=C3=96M
+.....
+Threat modeling guide for software teams<https://view.hashicorp.com/ODQ1LVp=
+MRi0xOTEAAAGbIgDGcC8MPQJLAFB72A0XKsI3hrevGb_62JO4FdUEYAbneOFMrNoUZxJ7pY-GP9=
+xLV8NfNBA=3D> =E2=80=94 The Martin Fowler blog just issued a guide to threa=
+t modeling for software teams. Learn how to start and develop your threat m=
+odeling practices using different approaches across application development=
+ and infrastructure. by YAN CUI
+.....
+The pros and cons of Lambdalith<https://view.hashicorp.com/ODQ1LVpMRi0xOTEA=
+AAGbIgDGcVpoFfJRfinidJGRq2zGbesVb8sjaj9cNkZJGeLn9tXQQt9CgVJHU-HF9k8YD9GeMnU=
+=3D> =E2=80=94 Have you ever considered or ended up building a =E2=80=9CLam=
+bdalith=E2=80=9D? It=E2=80=99s a monolithic application using AWS Lambda. L=
+earn about the good and bad sides of this application and learn about some =
+of the nuances that are often overlooked. by GAYATHRI MOHAN
+.....
+Terraform: Data types, loops, indexes, and the =E2=80=9Cresource must be re=
+placed=E2=80=9D issue<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcK=
+Jkxv7ecv7GiDW-j7qCvR7BSIPYrUpzdRqgUfEZeFStqH5naRi7yylskl5s5VzzUHI=3D> =E2=
+=80=94 Get some advice on how to use indexes and loops in Terraform by look=
+ing at an example application that creates EKS access entries to give AWS I=
+AM users access to an EKS cluster. by ARSENY ZINCHENKO
+.....
+Weaponizing Dependabot: Pwn request at its finest<https://view.hashicorp.co=
+m/ODQ1LVpMRi0xOTEAAAGbIgDGcXzudLAOVxdwP06Hao-Gbp7tKiM9TIcXcTYULPBpUreTT_cEf=
+3LMAvWQtwAj-TfjsM0=3D> =E2=80=94 "Confused deputy" attacks are becoming the=
+ preferred method to attack AI chatbots<https://view.hashicorp.com/ODQ1LVpM=
+Ri0xOTEAAAGbIgDGcp7ZR3lrdSztXRAhR4jXToa_wTgoqwd09I9epoazTF4HctHcONRwSKfNHtB=
+XQSHUwWc=3D>. This blog shows how GitHub chatbots like Dependabot can be tr=
+icked into merging malicious code and doing other harmful things.  by BOOST=
+ SECURITY
+.....
+I think the Terraform state is great =E2=80=93 and I=E2=80=99m tired of pre=
+tending it=E2=80=99s not!<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIg=
+DGcPLyVDnpgzxFtWZPqNDtFkhlUc_vrHTcofbJ3dMy8Pkv43aCbKtejTQ5OkLlZARAWyo=3D> =
+=E2=80=94 Tinkering with the Terraform statefile and understanding how it w=
+orks can be tricky. But believe it or not, there are a lot of benefits to T=
+erraform being built this way. Learn how Terraform state gives you many adv=
+antages. by TOR IVAR
+
+[https://go.hashicorp.com/rs/845-ZLF-191/images/hashibits-imagespacer-1.png=
+?version=3D0]
+=F0=9F=8E=A1 HashiDays London 2025 in review
+Read about our infrastructure<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAA=
+GbIgDGcQtVjguiBQmnXLBnbH38R8aN08K-3DJoBl2DqvmAVfHjCfYPTyaVtPopTR3Mxal6tjQ=
+=3D> and security<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcUq0L0=
+_96iox8hdPfkdnF_h6Bk7zRACuiP2PxDWm_zDxUcleRpoRwYZwwH5icnBy6UE=3D> portfolio=
+ announcements and updates from HashiDays London 2025, and watch HashiCorp =
+Co-Founder Armon Dadgar=E2=80=99s opening keynote<https://view.hashicorp.co=
+m/ODQ1LVpMRi0xOTEAAAGbIgDGcly_Py1iNLVBvpw0zR_2ky2Pk-_0_hz9RrhPK0ZFnDxVkPSyM=
+1rXxhjMmgRdtObZiT8=3D>.
+
+[https://go.hashicorp.com/rs/845-ZLF-191/images/hashibits-imagespacer-1.png=
+?version=3D0]
+=E2=9C=A8 From HashiCorp
+Introducing HashiCorp Validated Patterns for product use cases<https://view=
+.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGctHBlQSrehDoD44s-3FFQ9iloJKUwCdaOfjE=
+PKfXSQvl4sIZ1CRz-f6p3D3EdGFowjs=3D> =E2=80=94 Looking for real-world guidan=
+ce on how to integrate, secure, or migrate systems with HashiCorp products?=
+ Our new Validated Patterns site shares proven solutions from the field. Ex=
+plore patterns built on thousands of successful customer outcomes. by DAN B=
+ROWN
+.....
+The 18-point secrets management checklist<https://view.hashicorp.com/ODQ1LV=
+pMRi0xOTEAAAGbIgDGcJDWXFa1RvptX2mQnANiuUhE6erXL5Py5ImZbAHkiloed77110b0zaB2J=
+T_8mOcWRdU=3D> =E2=80=94 Account compromise is a leading cause of breaches =
+in the cloud. Follow this 18-point secrets management checklist to make sur=
+e your organization is protected. by DAVID MILLS
+.....
+Transparent sessions now GA in HashiCorp Boundary<https://view.hashicorp.co=
+m/ODQ1LVpMRi0xOTEAAAGbIgDGcQa9i1WmgaSqq0u3IP3mbYknVIkKAvO6g_a7SyaEZIOhv4d6k=
+rVPbMCKM9EWPfvGbDw=3D> =E2=80=94 HashiCorp Boundary transparent sessions, n=
+ow generally available, makes the remote access experience seamless and tra=
+nsparent to end users. by VAN PHAN
+.....
+HashiCorp Vault and FIPS 140-3: Strengthening security and compliance<https=
+://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcC-IbDLQdnTYQTaBidIm2pRMnnd8w=
+vI3DsIpoCutGbnH7ib0_36e6vnD8jazqfiewTA=3D> =E2=80=94 HashiCorp Vault now su=
+pports FIPS 140-3, helping organizations strengthen security and meet the l=
+atest federal compliance standards. by RICH DUBOSE
+.....
+Terraform adds new pre-written Sentinel policies for AWS Foundational Secur=
+ity Best Practices<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcl-hI=
+yFHpswk1UI8Y770_fJ9QmUaCT_15CbOTYWRZJPEuvqSFgfD4vPV4FsmRopyp08=3D> =E2=80=
+=94 Want to use policy as code in your Terraform workflows but unsure where=
+ to begin? Check out HashiCorp and AWS=E2=80=99s new Sentinel policy sets t=
+o get started today. by MITCHELL ROSS
+.....
+The pain points of VPNs in enterprise IT<https://view.hashicorp.com/ODQ1LVp=
+MRi0xOTEAAAGbIgDGcvZmcTMgVNO8hgLjlU5euiw8q0wPGIBckpK8JXN4PIpkDdEiQJplXymkWl=
+MD4KfNsNA=3D> =E2=80=94 VPNs struggle to meet the evolving demands of today=
+=E2=80=99s dynamic, cloud-first environments. From outdated trust models an=
+d weak credential protections to limited visibility and disjointed user exp=
+erience, VPNs have security and operational gaps that modern enterprises sh=
+ould not ignore. by VAN PHAN
+.....
+Anonymize RAG data in IBM Granite and Ollama using HCP Vault<https://view.h=
+ashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcNAk2Q9GVfRYhJ1Yiz6POzblAYpLKbt7KKavJ6=
+VFLIRdxsz4uNO-w49i3IQqmBzMb4A=3D> =E2=80=94 Check out this example showing =
+how the transform secrets engine in HCP Vault Dedicated and Vault Enterpris=
+e can be configured to mask or tokenize sensitive data and pass it to IBM G=
+ranite, Ollama, and Open WebUI for RAG. by ROSEMARY WANG
+.....
+HashiCorp at Microsoft Build 2025: New products to automate, secure, and sc=
+ale on Azure<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcTf_924ZlXm=
+aJjcog91AQ5Px2-_F-G7_MPEebMsD115C231BGRJK2axYxoR_Z0bMyfc=3D> =E2=80=94 At M=
+icrosoft Build, HashiCorp and GitHub announced the beta launch of our offic=
+ial Terraform MCP server<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgD=
+GctEO-QtFcJsNAtzD1PLbfpkh3kqHbfbYeWYpapV--ni6iobWBSauNvL2A4mIocN3kfU=3D>, w=
+ith GitHub Copilot integration. Learn about all the collaborations and inte=
+grations we=E2=80=99ve been doing with Microsoft over the past several mont=
+hs.  by MIKE DOHENY
+
+[https://go.hashicorp.com/rs/845-ZLF-191/images/hashibits-imagespacer-1.png=
+?version=3D0]
+=F0=9F=8D=8E Attend a webinar or workshop
+Protect, detect, and remediate secrets at scale with HCP Vault Radar<https:=
+//view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcccb5g_GPa54ytvtSpFc88KG7xJfNn=
+zANp8qceEcd3VrkKy6L1dgMg3lcIwQE2dnxkU=3D>
+On demand =E2=80=94 In this 3-part series, you=E2=80=99ll learn how HCP Vau=
+lt Radar helps you find and secure leaked secrets =E2=80=94 like passwords =
+and API keys =E2=80=94 before hackers do.
+Secure introduction with Vault<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAA=
+AGbIgDGcFjL3CPZsFpBfs-DY5rqH49guJKK_eErckqwz0KnIuJ1FHCzcqDjH7RNqI5mOvMQr_k=
+=3D>
+Tuesday, July 10 =E2=80=94 Gain practical experience with response wrapping=
+ in Vault and understand how this feature can improve security posture and =
+ensure compliance with industry standards.
+Build, deploy, and manage everything as code with HashiCorp<https://view.ha=
+shicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcLFpxP632gYrj5EZ2u6Xa4Mn3NAhiOpTyPqjw2z=
+da1s5uHQ8Q3vOMSOU1oOMe2cdTcM=3D>
+Monday, July 16 =E2=80=94 Learn how both HashiCorp Terraform and the HashiC=
+orp Cloud Platform can be used to create and administer all areas of a mode=
+rn public cloud environment as code.
+Strengthen AWS infrastructure security with Sentinel in Terraform<https://v=
+iew.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcMIFlFgCZiRdJArwp9czdxX0SmUTC8zV5=
+K925PeQG6iwSUT_CLbrL3outCovcpMSUuw=3D>
+Monday July 23 =E2=80=94 Explore the power of Sentinel, HashiCorp=E2=80=99s=
+ policy as code framework, and how it enables proactive, automated complian=
+ce enforcement within Terraform deployments.
+[https://go.hashicorp.com/rs/845-ZLF-191/images/hashibits-imagespacer-1.png=
+?version=3D0]
+=F0=9F=97=93 Events
+HashiTalks Hub<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcUnolkSbF=
+tL_Jbxid00cmKKDSeElWPewx9Fhn5aB_51IQ21kCjoDzgk5CwJAyNPi71g=3D>
+May 2025 - January 2026 =E2=80=94 Check out the full schedule of HashiTalks=
+ events in 2025. Join speakers of all experience levels and curious learner=
+s sharing knowledge virtually.
+HashiTalks: Securely building<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAA=
+GbIgDGcQuSs8nFMLytgK7N1XJXXdM_oU7X2i9bVIHRmM74I9fNJpL-qXmXBf_KZdUw5gPpVfM=
+=3D>
+June 25-26 =E2=80=94 Join us for this free, virtual event for the HashiCorp=
+ community of security professionals, programmers, developers, and builders=
+.
+HashiDays Singapore<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcgZF=
+nLfVF5vY3g1k4tNzRSD80CawaJPgi-v78DhtbnnVioGxmhXPRlbZRq9e6snOYOQ=3D>
+July 22 =E2=80=94 Join us in Singapore for HashiCorp=E2=80=99s Asia-Pacific=
+ conference on all things hybrid cloud.
+HashiConf 2025<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcSpzhwmA-=
+i0f4RoJRt4CNp_KdlAVqahcqLnmRUHCqzjNY0djReBFLwdOV49RHL6YFx8=3D>
+September 24-26 =E2=80=94 Join us in San Francisco for keynotes, technical =
+sessions, hands-on labs, certifications, social events, and more. Featured =
+sessions and speakers have just been announced.
+What's your cloud maturity level?
+Find out what stage you=E2=80=99re at in your cloud adoption journey, and s=
+ee if you're ready for the security and infrastructure demands of the AI er=
+a.
+Take the test<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcDod-eAETD=
+09gj9dugTm6yrlkNL699Y7JDAwh51WEqUkrAFC3H9p3XY1o4qJxuOtuIA=3D>
+[HashiCorp logo] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGclGZkp=
+GGjnDUmcNUwkZliIcNdFj7Lof5L7e_hfTYM5ycxg-wnRRecjHyinxcGL2DKz0=3D>
+[HashiCorp Logo]
+<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGclGZkpGGjnDUmcNUwkZliIc=
+NdFj7Lof5L7e_hfTYM5ycxg-wnRRecjHyinxcGL2DKz0=3D>
+[HashiCorp Github] <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcZqF=
+qUSu1JQzlSv9FJRUoiNr9nmWUAh6l_8uUNkBGvjFk4BVaqzzRX-Xig6BnVrp33w=3D>
+[HashiCorp Github]
+<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcZqFqUSu1JQzlSv9FJRUoiN=
+r9nmWUAh6l_8uUNkBGvjFk4BVaqzzRX-Xig6BnVrp33w=3D>       [HashiCorp X]  <http=
+s://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcfVTvj3zTUkVq1r9wQtklghOWxvk=
+2qHcSRBTL_wUGAE4P087gC-9Sv2E_P8TBi9l-4s=3D>
+[HashiCorp X]
+<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcfVTvj3zTUkVq1r9wQtklgh=
+OWxvk2qHcSRBTL_wUGAE4P087gC-9Sv2E_P8TBi9l-4s=3D>       [HashiCorp Linkedin]=
+  <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcHduxYSn9DPS4zs_DeS6Z=
+YsQdOCVFCHNICUhHuG0N7TiQ7bNMAC9jAJo6Ky8CY0cwzU=3D>
+[Linkedin]
+<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcHduxYSn9DPS4zs_DeS6ZYs=
+QdOCVFCHNICUhHuG0N7TiQ7bNMAC9jAJo6Ky8CY0cwzU=3D>
+Manage Preferences <https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcK7n=
+UtNv-Wl9jOavEnn3vjQeUYZdjHihNJuWNgvP7Oxg9tHTtuj3Heo31rvuFgXDDg4=3D>      Un=
+subscribe<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcLkLoCeLCRbdWl=
+3P6aQfVC2hXR2EsNQdDVvKxZiaSYbW5RdpXyu5OTH3QmFFGrRhjKA=3D>      Contact Us<h=
+ttps://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcV6WvRe6Fi3h9Tdvmaot5SI19=
+8r092eNMqNaXJOp-2JEZBFeOwlYYvPFnvsj1g1ehlU=3D>      Privacy Policy <https:/=
+/view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcuu4F_8p2DkuaUMeuJ9nVvRIXGDFS8x=
+fna-XnykKw5iwUeJyEMwMlzJUDm8bePMXBbY=3D>
+Copyright =C2=A9 2025 HashiCorp. All rights reserved. 101 2nd St.#700, San =
+Francisco, CA 94105
+<https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcs5CV3zJw7jv4QSuhJuqQhe=
+TGlQ8AP9r-N6SMoA3X4BdwOn6TYunHrSXubhsc1Si46E=3D>
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_369547857_743546382.1750250034819
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html lang=3D"en" xmlns=3D"ht=
+tp://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns=
+:o=3D"urn:schemas-microsoft-com:office:office"><head><!--[if mso]>
+		<style>
+span, td, table, div {
+font-family: Arial, serif !important;
+}
+</style>
+		<![endif]--><!-- Global variables -->
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<title>Hashicorp</title>
+<!--[if gte mso 9]>
+																						<xml>
+																							<o:OfficeDocumentSettings>
+																								<o:AllowPNG/>
+																								<o:PixelsPerInch>96</o:PixelsPerInch>
+																							</o:OfficeDocumentSettings>
+																						</xml>
+																						<![endif]--><!--[if mso]>
+																						<style> body,table tr,table td,a, span,table.MsoNorma=
+lTable {font-family: Arial !important;}</style>
+																						<!--
+																						<![endif]-->
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1,=
+ minimum-scale=3D1, maximum-scale=3D1">
+<meta name=3D"robots" content=3D"noindex,nofollow">
+<meta content=3D"telephone=3Dno" name=3D"format-detection">
+<meta name=3D"format-detection" content=3D"date=3Dno">
+<meta name=3D"format-detection" content=3D"address=3Dno">
+<meta name=3D"format-detection" content=3D"email=3Dno">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta name=3D"color-scheme" content=3D"light dark">
+<meta name=3D"supported-color-schemes" content=3D"light dark">
+<style media=3D"all">
+      :root {
+        color-scheme: light dark;
+        supported-color-schemes: light dark;
+      }
+
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+
+      /* CLIENT-SPECIFIC STYLES */
+      /* Outlook.com / Hotmail */
+      .ExternalClass {
+        width: 100%;
+      }
+
+      .ReadMsgBody,
+      .ExternalClass,
+      .ExternalClass p,
+      .ExternalClass span,
+      .ExternalClass font,
+      .ExternalClass td,
+      .ExternalClass div {
+        line-height: 100%;
+      }
+
+      /* OL07-10-13"Read in browser link" */
+      #outlook a {
+        padding: 0 !important;
+      }
+
+      p,
+      .undoreset div p,
+      .undoreset p {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      /* Various OL fixes */
+      body {
+        -webkit-text-size-adjust: 100% !important;
+        -ms-text-size-adjust: 100% !important;
+      }
+
+      a {
+        color: #0046D1
+      }
+
+      table {
+        mso-table-lspace: 0pt !important;
+        mso-table-rspace: 0pt !important;
+      }
+
+      @-ms-viewport {
+        width: device-width !important;
+      }
+
+      img {
+        height: auto !important;
+        -ms-interpolation-mode: bicubic !important;
+      }
+    </style><style>
+      a {
+        color: #000000
+      }
+
+      th {
+        font-weight: normal !important
+      }
+
+      @media only screen and (max-width: 640px) {
+        .mobile-center {
+          text-align: center !important;
+          margin: 0 auto;
+          float: none !important;
+        }
+
+        .main {
+          width: 100% !important;
+          min-width: 100% !important;
+        }
+
+        .inner_table {
+          width: 90% !important;
+          margin: 0 auto !important;
+        }
+
+        .logomob {
+          max-width: 90% !important;
+          margin: 0 auto !important;
+          height: auto !important
+        }
+
+        .show {
+          display: block !important;
+          visibility: visible !important;
+        }
+
+        .fullWid img {
+          width: 100% !important;
+          height: auto !important;
+        }
+
+        .res {
+          width: 100% !important;
+          display: block;
+          height: auto !important
+        }
+
+        .block {
+          display: block;
+          margin: 0 auto;
+          float: none !important;
+          width: 100% !important;
+        }
+
+        .left_align {
+          text-align: left !important;
+        }
+
+        .center {
+          text-align: center !important;
+          margin: 0 auto;
+          float: none !important;
+        }
+
+        .hidden {
+          display: none !important;
+        }
+
+        .top_pad {
+          padding-top: 20px !important;
+        }
+
+        .top_pad1 {
+          padding-top: 30px !important;
+        }
+
+        .mobileimg {
+          width: 100%;
+          height: auto !important
+        }
+
+        .imgmaxwidth {
+          width: 600px !important;
+          max-width: 100% !important;
+          height: auto !important
+        }
+
+        .mobrad {
+          border-radius: 8px !important;
+        }
+
+        .mobrad img {
+          width: 100% !important;
+          height: auto !important;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          border-bottom-left-radius: 0px;
+          border-bottom-right-radius: 0px;
+        }
+
+        .botrad {
+          border-top-right-radius: 0px !important;
+          border-top-left-radius: 0px !important;
+          border-bottom-right-radius: 8px !important;
+          border-bottom-left-radius: 8px !important;
+        }
+
+        .mobilepadding {
+          padding-top: 30px !important;
+          padding-bottom: 30px !important;
+          padding-left: 0px !important;
+          padding-right: 0px !important;
+        }
+        .mobilePad, .px-md-2x {
+        width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        }
+        .noSidePad {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        }
+        .centerText {
+        text-align: center !important;
+        }
+        .tableCollapse {
+        width:100%;
+        }
+      }
+    </style><style>
+      @media (prefers-color-scheme: dark) {
+
+        /* Shows Dark Mode-Only Content, Like Images */
+        .dark-img {
+          display: block !important;
+          width: auto !important;
+          overflow: visible !important;
+          float: none !important;
+          max-height: inherit !important;
+          max-width: inherit !important;
+          line-height: auto !important;
+          margin-top: 0px !important;
+          visibility: inherit !important;
+        }
+
+        /* Hides Light Mode-Only Content, Like Images */
+        .light-img {
+          display: none;
+          display: none !important;
+        }
+
+        /* Custom Dark Mode Background Color */
+        .darkmode {
+          background-color: #272623 !important;
+        }
+
+        /* Custom Dark Mode Font Colors */
+        h1,
+        h2,
+        p,
+        span,
+        a,
+        b,
+        div {
+          color: #ffffff !important;
+        }
+        body, td.dm {background-color:#000000!important;}
+        td.dm-grey, table.dm-grey {background-color:#1d1e1f!important;}
+        td.dmbtn {border:1px solid #ffffff!important;}
+       =20
+      }
+
+      /* Shows Dark Mode-Only Content, Like Images */
+        [data-ogsc] td.dm, [data-ogsc] body {background-color:#000000!impor=
+tant;}
+        [data-ogsc] td.dm-grey, [data-ogsc] table.dm-grey {background-color=
+:#1d1e1f!important;}
+        [data-ogsc] td.dmbtn {border:1px solid #ffffff!important;}
+        [data-ogsc] .dark-img {
+        display: block !important;
+        width: auto !important;
+        overflow: visible !important;
+        float: none !important;
+        max-height: inherit !important;
+        max-width: inherit !important;
+        line-height: auto !important;
+        margin-top: 0px !important;
+        visibility: inherit !important;
+      }
+
+      /* Hides Light Mode-Only Content, Like Images */
+      [data-ogsc] .light-img {
+        display: none;
+        display: none !important;
+      }
+
+      /* Custom Dark Mode Background Color */
+      [data-ogsc] .darkmode {
+        background-color: #272623 !important;
+      }
+
+      /* Custom Dark Mode Font Colors */
+      [data-ogsc] h1,
+      [data-ogsc] h2,
+      [data-ogsc] p,
+      [data-ogsc] span,
+      [data-ogsc] a,
+      [data-ogsc] b {
+        color: #ffffff !important;
+      }
+
+      /* Custom Dark Mode Text Link Color */
+      [data-ogsc] .link {
+        color: #91ADD4 !important;
+      }
+    </style>
+</head>
+<body style=3D"width: 100%; min-width: 100%; margin-top: 0; margin-right: 0=
+; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; paddi=
+ng-bottom: 0; padding-left: 0;">
+<style type=3D"text/css">div#emailPreHeader{ display: none !important; }</s=
+tyle>
+<div id=3D"emailPreHeader" style=3D"mso-hide:all; visibility:hidden; opacit=
+y:0; color:transparent; mso-line-height-rule:exactly; line-height:0; font-s=
+ize:0px; overflow:hidden; border-width:0; display:none !important;">
+Watch our keynotes and read our roundups from HashiDays London 2025.</div>
+<table class=3D"full-container" align=3D"center" width=3D"100%" border=3D"0=
+" cellpadding=3D"00" cellspacing=3D"00" style=3D"border-spacing: 0; border-=
+collapse: collapse;margin: 0 auto;">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" style=3D"background-color:#ffffff;" class=3D"dm">
+<table class=3D"inner_table" id=3D"outer_table" width=3D"600" border=3D"0" =
+cellpadding=3D"00" cellspacing=3D"00" align=3D"center" style=3D"border-spac=
+ing: 0; border-collapse: collapse; width: 600px;max-width:600px!important; =
+margin: 0 auto; border: 0px solid #ffffff;">
+<tbody>
+<tr>
+<td class=3D"mktoContainer" id=3D"template-wrapper">
+<table class=3D"mktoModule" role=3D"presentation" id=3D"preheadone" cellpad=
+ding=3D"00" align=3D"center" cellspacing=3D"00" style=3D"margin:0 auto;widt=
+h:100%;border-collapse: collapse;border-spacing: 0;" border=3D"0" width=3D"=
+100%">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:600px;max-width:600px!important;bord=
+er-collapse: collapse;border-spacing: 0;" border=3D"0" width=3D"600">
+<tbody>
+<tr>
+<td height=3D"40" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"font-family: 'Helvetica Neue',Arial, sans-ser=
+if; font-size: 10px; line-height: 145%; mso-line-height-rule: exactly; colo=
+r: #727274; text-decoration:underline;text-align: center;">
+<div class=3D"mktoText" id=3D"Copy">
+<div><a href=3D"https://view.hashicorp.com/v/ODQ1LVpMRi0xOTEAAAGbIgDGcOzsPb=
+LoYh_dtKgRdVX9c8lnH6UDTc3ZLvPY1TYjh9NWsJXcD3kLDowYqTnl_nVBPWA=3D" alt=3D"vi=
+ew in browser" style=3D"color: #727274;">View in browser</a> |
+<a href=3D"https://go.hashicorp.com/UnsubscribePage.html?mkt_unsubscribe=3D=
+1&amp;mkt_tok=3DODQ1LVpMRi0xOTEAAAGbIgDGcnobNdxZ_OQfpf87aBB7j5BqO1uIO4KXt9P=
+YsHrv-D-zL8_o_7jqSTJ5gf1aeRiAwc1EPqgAJ28w298HL2asS1C1Z3GUoMp2XXrpVqLaG7A" a=
+lt=3D"update your perference" style=3D"color: #727274;">
+Update your prefernces</a> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"5" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"logo" cellpadding=
+=3D"00" align=3D"center" cellspacing=3D"00" style=3D"margin:0 auto;width:10=
+0%;border-collapse: collapse;border-spacing: 0;" border=3D"0" width=3D"100%=
+">
+<tbody>
+<tr>
+<td class=3D"dmwhitebg" valign=3D"top" style=3D"vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px; border-collapse: collapse;bor=
+der-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"20" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<th width=3D"100%" class=3D"center block" align=3D"center" style=3D"width: =
+600px; max-width:100%; text-align: center;">
+<div class=3D"mktoImg" id=3D"headerLogo1" mktolockimgsize=3D"false"><!-- st=
+art HEADER_LOGO --><a rel=3D"noopener" target=3D"_blank" href=3D"https://vi=
+ew.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcnnsa9F2-608BqqGMZlbRx_8B0RlN57EZv=
+0dSRevdTdVzwrVix_iziGSPaCYs3Kiuis=3D"><img class=3D"light-img" alt=3D"Hashi=
+Corp logo" src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/HashiCorp_=
+IBMCompany_Vertical.png?version=3D0" width=3D"94" style=3D"text-decoration:=
+ none; margin: 0 auto; padding: 0;" border=3D"0"><!-- The=20
+following Dark Mode logo image is hidden with MSO conditional code and inli=
+ne CSS, but will be revealed once Dark Mode is triggered --><!--[if !mso]>
+																																							<! -->
+<div class=3D"dark-img" style=3D"display:none; overflow:hidden; float:left;=
+ width:0px; max-height:0px; max-width:0px; line-height:0px; visibility:hidd=
+en;" align=3D"center">
+<img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/HashiCorp_IBMCom=
+pany_Vertical-white.png?version=3D0" width=3D"94" alt=3D"HashiCorp Logo" st=
+yle=3D"color: #ffffff;" border=3D"0">
+</div>
+<!--
+																																							<![endif]--></a><!-- end HEADER_LOGO=
+ --></div>
+</th>
+</tr>
+<tr>
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" id=3D"banner1" cellpadding=3D"00" align=3D"cent=
+er" cellspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: c=
+ollapse;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td valign=3D"middle" background=3D"https://go.hashicorp.com/rs/845-ZLF-191=
+/images/hashicorp-gradient-herobg.jpg?version=3D0" style=3D"background-imag=
+e:url('https://go.hashicorp.com/rs/845-ZLF-191/images/hashicorp-gradient-he=
+robg.jpg?version=3D0');background-repeat: no-repeat; background-size: cover=
+;background-position:left top;vertical-align:middle ;border-radius: 8px 8px=
+ 0px 0px;">
+<!--[if gte mso 9]>
+																																			<v:rect
+																																				xmlns:v=3D"urn:schemas-microsoft-com:vm=
+l" fill=3D"true" stroke=3D"false" style=3D"width:600px;max-width:600px!impo=
+rtant;display:block;height:159px;">
+																																				<v:fill type=3D"frame" src=3D"https://g=
+o.hashicorp.com/rs/845-ZLF-191/images/hashicorp-gradient-herobg.jpg?version=
+=3D0" color=3D"#000000" />
+																																				<v:textbox inset=3D"0,0,0,0">
+																																					<![endif]-->
+<table cellpadding=3D"00" cellspacing=3D"00" align=3D"center" class=3D"main=
+" style=3D"margin:0 auto; width:600px;max-width:600px!important;border-spac=
+ing: 0px;border-collapse: collapse;" border=3D"0" width=3D"600">
+<tbody>
+<tr>
+<td valign=3D"middle" height=3D"159">
+<table class=3D"inner_table" width=3D"350" style=3D"margin: 0 auto; width: =
+350px; border-spacing: 0px; border-collapse: collapse;" border=3D"0" cellsp=
+acing=3D"00" cellpadding=3D"00" align=3D"center">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"text-align:center">
+<div class=3D"mktoImg" id=3D"hashibitslogo-banner" mktolockimgsize=3D"false=
+"><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcnnsa9F2-60=
+8BqqGMZlbRx_8B0RlN57EZv0dSRevdTdVzwrVix_iziGSPaCYs3Kiuis=3D" target=3D"_bla=
+nk"><img class=3D"logowidth" alt=3D"HashiCorp logo" src=3D"https://go.hashi=
+corp.com/rs/845-ZLF-191/images/hashibits-grad-logo.png?version=3D0" width=
+=3D"150" border=3D"0" style=3D"height:auto !important;width:150px;max-width=
+:150px;">
+</a></div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td class=3D"dmwhite" style=3D"font-family: 'Helvetica Neue',Arial, sans-se=
+rif; color: #FFFFFE; font-size: 12px; line-height: 18px; mso-line-height-ru=
+le: exactly; text-align: center">
+<div class=3D"mktoText" id=3D"bannertext">
+<div>A monthly newsletter with the latest and most relevant news about Hash=
+iCorp=E2=80=99s products and community.
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]>
+																																				</v:textbox>
+																																			</v:rect>
+																																			<![endif]--></td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"announcementbannerd=
+f332417-a239-403d-a0fb-3347224d1907" cellpadding=3D"00" align=3D"center" ce=
+llspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collaps=
+e;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"background-Color:#1868F2;" bgcolor=3D"#1868F2">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td style=3D"padding-right:20px;">
+<div class=3D"mktoImg" id=3D"announceicon93f82ea7-343a-42e2-8ae7-b81199a801=
+0b"><img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/Announcement=
+.png?version=3D0" width=3D"20" style=3D"width:20px;height:auto">
+</div>
+</td>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+; font-size: 14px;font-weight:bold; line-height: 145%; mso-line-height-rule=
+: exactly; color: #FFFFFE; text-align: left;">
+<div class=3D"mktoText" id=3D"announcecopy43ef32e5-91ee-4c85-b92f-ce7abcb4c=
+2db">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcR8rpyA6=
+1aPklJSxaVpcPvO_W6zXqY3El0DOwCJDRd0q58SM1tFBjopRoZHEqLCVLEw=3D" style=3D"co=
+lor: #ffffff; font-weight: bold;">HashiCast: CHANGELOG</a>&nbsp;=E2=80=94 T=
+he HashiCorp Terraform MCP server + what's new in Terraform
+ 1.12, Consul 1.21, and Boundary 0.19.2. </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsarttitlee4=
+58f87a-3f15-4bac-a239-e5a75d85c5a9" cellpadding=3D"00" align=3D"center" cel=
+lspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse=
+;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"40" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 21px; line-height:30px;font-weight:bold;mso-line-height-rule: e=
+xactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitstitle49a13252-00ce-4658-9966-50d5af1=
+4fd8e">
+<div><span style=3D"color: #000000; font-family: 'Helvetica Neue', Arial, s=
+ans-serif; font-size: 21px; font-style: normal; font-variant-ligatures: nor=
+mal; font-variant-caps: normal; font-weight: bold; letter-spacing: normal; =
+orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widow=
+s: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: norma=
+l; text-decoration-thickness: initial; text-decoration-style: initial; text=
+-decoration-color: initial; float: none; display: inline !important;">&#129=
+309;&nbsp;</span>From
+ the HashiCorp community </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"20" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsartcd71317=
+c-b522-4e6a-9785-88b9d6ce0cd5" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticlec654587e-4a1c-4eef-a388-8d70d=
+c8d8c6a">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcWWDq13u=
+ZIqfMxkM6ZGDcMXd5jgD83hYWjyOv9eXddCIFgZGQWTz2D7Nnx_fFyWghj0=3D" style=3D"co=
+lor: #0046D1; font-weight: bold;">Developer self-service with HCP Waypoint =
+and Minecraft</a> =E2=80=94&nbsp;This demo shows you
+ how to set up self-service provisioning for Minecraft servers and infrastr=
+ucture (e.g., bridges and houses) in the Minecraft world, all using HCP Way=
+point and Terraform. Learn how
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcHlIcqC8A1yTe=
+VBCVy6ZGQL0GnWTvhSoiK9EJmY57VARO3Tr6UsA9oOFscYg916ZDp0=3D" target=3D"_blank=
+" id=3D"">
+Terraform works with Waypoint</a>, and how <a href=3D"https://view.hashicor=
+p.com/ODQ1LVpMRi0xOTEAAAGbIgDGcsw99wj3WxHLSbkjr25C8vbzvKg6DYpjmXRGqbLD4i9l3=
+TmrFM3jpWGojHMsTHY0Pd0=3D" target=3D"_blank" id=3D"">
+Waypoint actions work</a> in subsequent blogs.&nbsp; <span style=3D"color: =
+#727274;"><i>by MATTIAS FJELLSTR=C3=96M</i></span>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticle3465648d-37be-4e50-8610-b11c5186=
+2464">
+<div>..... </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsartac21b1f=
+c-4082-44f3-8c1a-f0565307e7d2" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticle75512f8a-e991-4316-a184-dd896=
+62a9513">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGccxwqVvl=
+XHeHW-CdQ-leQ6WXnywCMA8BQS1YBWiJvABO1hxc3uBslLXuXIS3NK8bBJ0=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">Using MCPs to run Terraform</a> =E2=80=94 L=
+earn about MCP and how MCP client agents could
+ add value to your Terraform workflows. This post also highlights security =
+considerations when building these solutions.
+<span style=3D"color:#727274"><i>by WESTON PLATTER</i></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticle68fae6c2-7713-4b05-8d39-e2a58bb6=
+9f05">
+<div>..... </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsarte65bcdb=
+d-8acb-4503-9019-541930cb9a45" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticleb25bdc07-6ce5-4095-b169-d9bfc=
+b85c0db">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcWzWiYFZ=
+7xAO1xQOFNnl0vc4-SU3lV7NXbDITJhhCnLQPha3zFM-o7yrWOmK25DmjAs=3D" style=3D"fo=
+nt-weight: bold;">Managing AWS tags</a> =E2=80=94 Everyone needs a tagging =
+strategy when managing cloud resources at scale.
+ Learn how to manage resource tagging for AWS with Terraform while also mon=
+itoring and enforcing your resource tagging compliance rules.
+<span style=3D"color: #727274;"><i>by MATTIAS FJELLSTR=C3=96M</i></span> </=
+div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticle083ef035-bd6f-4c97-aabc-7238da11=
+0e6b">
+<div>..... </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsartfed7e4c=
+f-9631-4542-b833-b57fb70b976a" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticle31e232ba-ebb7-4456-83ca-046cb=
+625f748">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcC8MPQJL=
+AFB72A0XKsI3hrevGb_62JO4FdUEYAbneOFMrNoUZxJ7pY-GP9xLV8NfNBA=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">Threat modeling guide for software teams</a=
+> =E2=80=94 The Martin Fowler blog just issued
+ a guide to threat modeling for software teams. Learn how to start and deve=
+lop your threat modeling practices using different approaches across applic=
+ation development and infrastructure.
+<span style=3D"color:#727274"><i>by YAN CUI</i></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticleb1174f3b-3428-4e86-bdf6-ccfb2406=
+e6b7">
+<div>..... </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsarta07e1e7=
+6-6c89-4aef-b0d5-2c3cf135c2ed" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticlea477aaf8-f33e-4e23-aaf7-9289b=
+dd1649a">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcVpoFfJR=
+finidJGRq2zGbesVb8sjaj9cNkZJGeLn9tXQQt9CgVJHU-HF9k8YD9GeMnU=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">The pros and cons of Lambdalith</a> =E2=80=
+=94 Have you ever considered or ended up building
+ a =E2=80=9CLambdalith=E2=80=9D? It=E2=80=99s a monolithic application usin=
+g AWS Lambda. Learn about the good and bad sides of this application and le=
+arn about some of the nuances that are often overlooked.
+<span style=3D"color:#727274"><i>by GAYATHRI MOHAN</i></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticle67b2d72f-26c3-4ccd-9b2e-408564b0=
+1837">
+<div>..... </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsart17dea52=
+4-45eb-4cc1-8a2a-7daacec83616" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticle7d1c4b4d-72af-4498-b3f3-f9879=
+24bec02">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcKJkxv7e=
+cv7GiDW-j7qCvR7BSIPYrUpzdRqgUfEZeFStqH5naRi7yylskl5s5VzzUHI=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">Terraform: Data types, loops, indexes, and =
+the =E2=80=9Cresource must be replaced=E2=80=9D issue</a>
+ =E2=80=94 Get some advice on how to use indexes and loops in Terraform by =
+looking at an example application that creates EKS access entries to give A=
+WS IAM users access to an EKS cluster.
+<span style=3D"color:#727274"><i>by ARSENY ZINCHENKO</i></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticle2f33fb2e-64ce-47fd-8444-1cbd65b5=
+a24e">
+<div>..... </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsartbffa754=
+0-a675-4b5b-8b88-5457f39c47a7" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticleddd9e3c1-3b1c-4130-b5cc-5dd58=
+0651248">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcXzudLAO=
+VxdwP06Hao-Gbp7tKiM9TIcXcTYULPBpUreTT_cEf3LMAvWQtwAj-TfjsM0=3D" style=3D"co=
+lor: #0046D1; font-weight: bold;">Weaponizing Dependabot: Pwn request at it=
+s finest</a> =E2=80=94 &quot;Confused deputy&quot; attacks
+ are becoming the preferred method to <a href=3D"https://view.hashicorp.com=
+/ODQ1LVpMRi0xOTEAAAGbIgDGcp7ZR3lrdSztXRAhR4jXToa_wTgoqwd09I9epoazTF4HctHcON=
+RwSKfNHtBXQSHUwWc=3D" target=3D"_blank" id=3D"">
+attack AI chatbots</a>. This blog shows how GitHub chatbots like Dependabot=
+ can be tricked into merging malicious code and doing other harmful things.=
+&nbsp;
+<span style=3D"color: #727274;"><i>by BOOST SECURITY</i></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticlee98d0c3b-229b-4650-a957-ffd8a505=
+d6bf">
+<div>..... </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsartfeef3ec=
+b-7809-4b3a-971a-39f0997aca4d" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticle40cc7f13-20b3-4593-9b71-4e4f8=
+ad30958">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcPLyVDnp=
+gzxFtWZPqNDtFkhlUc_vrHTcofbJ3dMy8Pkv43aCbKtejTQ5OkLlZARAWyo=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">I think the Terraform state is great =E2=80=
+=93 and I=E2=80=99m tired of pretending it=E2=80=99s not!</a>
+ =E2=80=94 Tinkering with the Terraform statefile and understanding how it =
+works can be tricky. But believe it or not, there are a lot of benefits to =
+Terraform being built this way. Learn how Terraform state gives you many ad=
+vantages.
+<span style=3D"color:#727274"><i>by TOR IVAR</i></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticle210a56b1-ebaa-4939-a201-bf43d3cf=
+389b"></div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"spacermodf9d248fd-a=
+2e8-4517-bea2-74aabf87b8ce" cellpadding=3D"00" align=3D"center" cellspacing=
+=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;border-=
+spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:100%;border-collapse: collapse;borde=
+r-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td height=3D"40" style=3D"height:40px">&nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"imagespacermodc52a0=
+827-5c71-41a7-b380-c626caa29be1" cellpadding=3D"00" align=3D"center" cellsp=
+acing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bo=
+rder-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"vertical-align: top;">
+<table class=3D"main" width=3D"100%" align=3D"center" cellpadding=3D"00" ce=
+llspacing=3D"00" border=3D"0" style=3D"border-spacing: 0px;border-collapse:=
+ collapse;margin: 0 auto;">
+<tbody>
+<tr>
+<td height=3D"0"></td>
+</tr>
+<tr>
+<td class=3D"fullWid center" align=3D"center" style=3D"text-align: center; =
+font-size: 1px; line-height: 1px; padding-left: 0; padding-right: 0;">
+<div class=3D"mktoImg" id=3D"imagespacer5475c6ff-8be1-4855-bf4d-4c97e0bebcc=
+0">
+<div><img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/hashibits-i=
+magespacer-1.png?version=3D0" width=3D"600" border=3D"0" style=3D"-ms-inter=
+polation-mode:bicubic; border-collapse:collapse; padding:0px; margin:0px au=
+to; border-spacing:0;width:600px;max-width:600px!important;">
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"0"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"iconlistheadline87f=
+5e3ef-9bac-43a0-af4b-8c769e008d00" cellpadding=3D"00" align=3D"center" cell=
+spacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;=
+border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:500px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"500">
+<tbody>
+<tr>
+<td height=3D"50" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"font-family: 'Helvetica Neue',Arial, sans-ser=
+if; font-weight:bold;font-size: 21px; line-height: 30px; mso-line-height-ru=
+le: exactly; color: #000000;text-align: center;">
+<div class=3D"mktoText" id=3D"headlineiconlist2949e6f4-8544-44db-b651-442e6=
+4829b50">
+<div><span style=3D"color: #000000; font-family: 'Helvetica Neue', Arial, s=
+ans-serif; font-size: 21px; font-style: normal; font-variant-ligatures: nor=
+mal; font-variant-caps: normal; font-weight: bold; letter-spacing: normal; =
+orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widow=
+s: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: norma=
+l; text-decoration-thickness: initial; text-decoration-style: initial; text=
+-decoration-color: initial; float: none; display: inline !important;">&#127=
+905;
+ HashiDays London 2025 in review</span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"CopyModule5bbad858-=
+b271-452d-a844-3d3db4498e2e" cellpadding=3D"00" align=3D"center" cellspacin=
+g=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;border=
+-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"font-family: 'Helvetica Neue',Arial, sans-ser=
+if; font-size: 14px; line-height: 145%; mso-line-height-rule: exactly; colo=
+r: #000000; text-align: center;">
+<div class=3D"mktoText" id=3D"Copyfreed9793282-ea4e-4c01-81ec-7bcd932408f9"=
+>Read about our
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcQtVjguiBQmnX=
+LBnbH38R8aN08K-3DJoBl2DqvmAVfHjCfYPTyaVtPopTR3Mxal6tjQ=3D">
+infrastructure</a> and <a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOT=
+EAAAGbIgDGcUq0L0_96iox8hdPfkdnF_h6Bk7zRACuiP2PxDWm_zDxUcleRpoRwYZwwH5icnBy6=
+UE=3D">
+security</a> portfolio announcements and updates from HashiDays London 2025=
+, and watch HashiCorp Co-Founder Armon Dadgar=E2=80=99s
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcly_Py1iNLVBv=
+pw0zR_2ky2Pk-_0_hz9RrhPK0ZFnDxVkPSyM1rXxhjMmgRdtObZiT8=3D">
+opening keynote</a>. </div>
+</td>
+</tr>
+<tr>
+<td height=3D"20" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"spacermod3237d28e-c=
+c21-4064-b753-5e76b0a26c69" cellpadding=3D"00" align=3D"center" cellspacing=
+=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;border-=
+spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:100%;border-collapse: collapse;borde=
+r-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td height=3D"40" style=3D"height:40px">&nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"imagespacermodeae99=
+0f6-6e65-48bf-8353-ddb1c4a59676" cellpadding=3D"00" align=3D"center" cellsp=
+acing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bo=
+rder-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"vertical-align: top;">
+<table class=3D"main" width=3D"100%" align=3D"center" cellpadding=3D"00" ce=
+llspacing=3D"00" border=3D"0" style=3D"border-spacing: 0px;border-collapse:=
+ collapse;margin: 0 auto;">
+<tbody>
+<tr>
+<td height=3D"0"></td>
+</tr>
+<tr>
+<td class=3D"fullWid center" align=3D"center" style=3D"text-align: center; =
+font-size: 1px; line-height: 1px; padding-left: 0; padding-right: 0;">
+<div class=3D"mktoImg" id=3D"imagespacerc4c52d85-4912-43b1-aae9-66a2119fca5=
+2">
+<div><img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/hashibits-i=
+magespacer-1.png?version=3D0" width=3D"600" border=3D"0" style=3D"-ms-inter=
+polation-mode:bicubic; border-collapse:collapse; padding:0px; margin:0px au=
+to; border-spacing:0;width:600px;max-width:600px!important;">
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"0"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsarttitle78=
+c22117-69b5-4e61-805e-39d7eafe95fd" cellpadding=3D"00" align=3D"center" cel=
+lspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse=
+;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 21px; line-height:30px;font-weight:bold;mso-line-height-rule: e=
+xactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitstitle559313c1-bd62-4a5b-93d8-9563925=
+96856">=E2=9C=A8 From HashiCorp
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"20" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsart39e3c98=
+d-81b7-4631-8167-1f5d91bcae20" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticle42d80312-f16b-4d8f-9143-a4d2f=
+c6683f4">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGctHBlQSr=
+ehDoD44s-3FFQ9iloJKUwCdaOfjEPKfXSQvl4sIZ1CRz-f6p3D3EdGFowjs=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">Introducing HashiCorp Validated Patterns fo=
+r product use cases</a> =E2=80=94 Looking for
+ real-world guidance on how to integrate, secure, or migrate systems with H=
+ashiCorp products? Our new Validated Patterns site shares proven solutions =
+from the field. Explore patterns built on thousands of successful customer =
+outcomes.
+<span style=3D"color:#727274"><i>by DAN BROWN</i></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticle23ec4fc0-af35-4f36-982d-a8ec3581=
+e499">
+<div>..... </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsartfca00d6=
+4-f364-420d-b928-ea2a2d3e3cc7" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticlef5036b3a-6dd4-43a9-9cbf-55e83=
+5602fb7">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcJDWXFa1=
+RvptX2mQnANiuUhE6erXL5Py5ImZbAHkiloed77110b0zaB2JT_8mOcWRdU=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">The 18-point secrets management checklist</=
+a> =E2=80=94 Account compromise is a leading cause
+ of breaches in the cloud. Follow this 18-point secrets management checklis=
+t to make sure your organization is protected.
+<span style=3D"color:#727274"><i>by DAVID MILLS</i></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticle36409841-cff2-4b14-9595-3f105da3=
+df7c">
+<div>..... </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsarte536a90=
+6-c376-4d68-95a4-2ec5ac7e434f" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticlef064fed7-092d-4081-abfc-54a75=
+f45b083">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcQa9i1Wm=
+gaSqq0u3IP3mbYknVIkKAvO6g_a7SyaEZIOhv4d6krVPbMCKM9EWPfvGbDw=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">Transparent sessions now GA in HashiCorp Bo=
+undary</a> =E2=80=94 HashiCorp Boundary transparent
+ sessions, now generally available, makes the remote access experience seam=
+less and transparent to end users.
+<span style=3D"color:#727274"><i>by VAN PHAN</i></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticlea8df33f8-7fdf-4aa3-bfa0-1b8b93e5=
+517d">
+<div>..... </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsart3ceef10=
+4-f2ee-4242-8912-4b72d4032288" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticle933be7df-1521-49e1-84f1-d6268=
+45b5832">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcC-IbDLQ=
+dnTYQTaBidIm2pRMnnd8wvI3DsIpoCutGbnH7ib0_36e6vnD8jazqfiewTA=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">HashiCorp Vault and FIPS 140-3: Strengtheni=
+ng security and compliance</a> =E2=80=94 HashiCorp
+ Vault now supports FIPS 140-3, helping organizations strengthen security a=
+nd meet the latest federal compliance standards.
+<span style=3D"color:#727274"><i>by RICH DUBOSE</i></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticleff3359cd-f545-4666-8490-d09d858c=
+b980">
+<div>..... </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsart92c049a=
+0-48d1-4922-8543-a02661689e90" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticle21b9f532-a186-4770-a678-141b3=
+5107c39">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcl-hIyFH=
+pswk1UI8Y770_fJ9QmUaCT_15CbOTYWRZJPEuvqSFgfD4vPV4FsmRopyp08=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">Terraform adds new pre-written Sentinel pol=
+icies for AWS Foundational Security Best
+ Practices</a> =E2=80=94 Want to use policy as code in your Terraform workf=
+lows but unsure where to begin? Check out HashiCorp and AWS=E2=80=99s new S=
+entinel policy sets to get started today.
+<span style=3D"color:#727274"><i>by MITCHELL ROSS</i></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticle56390a95-a7bf-43c9-9c2b-d10aee19=
+dc29">
+<div>..... </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsart09e47dd=
+e-6dd4-4f78-8bef-0438b55092c8" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticleed551b92-94a8-4537-a824-80d70=
+7ef4333">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcvZmcTMg=
+VNO8hgLjlU5euiw8q0wPGIBckpK8JXN4PIpkDdEiQJplXymkWlMD4KfNsNA=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">The pain points of VPNs in enterprise IT</a=
+> =E2=80=94 VPNs struggle to meet the evolving
+ demands of today=E2=80=99s dynamic, cloud-first environments. From outdate=
+d trust models and weak credential protections to limited visibility and di=
+sjointed user experience, VPNs have security and operational gaps that mode=
+rn enterprises should not ignore.
+<span style=3D"color:#727274"><i>by VAN PHAN</i></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticleeafc750f-5268-43c4-ad0d-441ae7a8=
+f7cb">
+<div>..... </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsart232b73e=
+1-cf4d-4168-a06a-560d2b5a2089" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticle292dd15c-2a01-4b6e-be4b-129b3=
+4a21009">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcNAk2Q9G=
+VfRYhJ1Yiz6POzblAYpLKbt7KKavJ6VFLIRdxsz4uNO-w49i3IQqmBzMb4A=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">Anonymize RAG data in IBM Granite and Ollam=
+a using HCP Vault</a> =E2=80=94 Check out this
+ example showing how the transform secrets engine in HCP Vault Dedicated an=
+d Vault Enterprise can be configured to mask or tokenize sensitive data and=
+ pass it to IBM Granite, Ollama, and Open WebUI for RAG.
+<span style=3D"color:#727274"><i>by ROSEMARY WANG</i></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticle60d10092-cffa-4c37-b5de-2776ec83=
+ff73">
+<div>..... </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsarte0fa448=
+c-1f29-4985-bbae-d97c3bb82632" cellpadding=3D"00" align=3D"center" cellspac=
+ing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 14px; line-height: 145%;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsarticle035ba000-f97d-4936-97bf-99fa3=
+7c9988b">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcTf_924Z=
+lXmaJjcog91AQ5Px2-_F-G7_MPEebMsD115C231BGRJK2axYxoR_Z0bMyfc=3D" style=3D"co=
+lor: #0046D1; font-weight: bold;">HashiCorp at Microsoft Build 2025: New pr=
+oducts to automate, secure, and scale
+ on Azure</a> =E2=80=94&nbsp;At Microsoft Build, HashiCorp and GitHub annou=
+nced the beta launch of our
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGctEO-QtFcJsNA=
+tzD1PLbfpkh3kqHbfbYeWYpapV--ni6iobWBSauNvL2A4mIocN3kfU=3D" target=3D"_blank=
+" id=3D"">
+official Terraform MCP server</a>, with GitHub Copilot integration. Learn a=
+bout all the collaborations and integrations we=E2=80=99ve been doing with =
+Microsoft over the past several months.&nbsp;
+<span style=3D"color: #727274;"><i>by MIKE DOHENY</i></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"padding-top:10px;font-family: 'Helvetica Neue',=
+Arial, sans-serif;font-size: 14px; line-height: 145%;mso-line-height-rule: =
+exactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"spacerarticled1b7a2a0-620a-4be6-9029-081416d6=
+2033"></div>
+</td>
+</tr>
+<tr>
+<td height=3D"10" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"spacermod81edbf38-7=
+b6a-4298-bc11-50c4d3cc0454" cellpadding=3D"00" align=3D"center" cellspacing=
+=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;border-=
+spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:100%;border-collapse: collapse;borde=
+r-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td height=3D"40" style=3D"height:40px">&nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"imagespacermodcc738=
+dc2-56ac-4e2c-8b9b-9eab139abe7b" cellpadding=3D"00" align=3D"center" cellsp=
+acing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bo=
+rder-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"vertical-align: top;">
+<table class=3D"main" width=3D"100%" align=3D"center" cellpadding=3D"00" ce=
+llspacing=3D"00" border=3D"0" style=3D"border-spacing: 0px;border-collapse:=
+ collapse;margin: 0 auto;">
+<tbody>
+<tr>
+<td height=3D"0"></td>
+</tr>
+<tr>
+<td class=3D"fullWid center" align=3D"center" style=3D"text-align: center; =
+font-size: 1px; line-height: 1px; padding-left: 0; padding-right: 0;">
+<div class=3D"mktoImg" id=3D"imagespacerbd073f71-d645-472c-ad40-ab7526f6a21=
+e">
+<div><img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/hashibits-i=
+magespacer-1.png?version=3D0" width=3D"600" border=3D"0" style=3D"-ms-inter=
+polation-mode:bicubic; border-collapse:collapse; padding:0px; margin:0px au=
+to; border-spacing:0;width:600px;max-width:600px!important;">
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"0"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsarttitlebf=
+0cfdf7-aa35-4fff-8556-3790fabc30dd" cellpadding=3D"00" align=3D"center" cel=
+lspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse=
+;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"40" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 21px; line-height:30px;font-weight:bold;mso-line-height-rule: e=
+xactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitstitle80c23336-f2fb-4e9c-93df-cbe3981=
+0bdf9">&#127822;&nbsp;Attend a webinar or workshop
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"20" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitseventlistc=
+826addc-fd3e-4b37-952f-2c2d1082241f" cellpadding=3D"00" align=3D"center" ce=
+llspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collaps=
+e;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"0" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 17px; line-height: 22px;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatetitle9e5fd175-6b9d-4b02-819c-e99=
+43435323c">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcccb5g_G=
+Pa54ytvtSpFc88KG7xJfNnzANp8qceEcd3VrkKy6L1dgMg3lcIwQE2dnxkU=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">Protect, detect, and remediate secrets at s=
+cale with HCP Vault Radar</a>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;padding-top:8px;font-size: 14px; line-height: 145%;mso-line-height-rule: e=
+xactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatedescription02c094d4-3250-40ce-9d=
+6d-2c084286239f">
+<div><b>On demand</b> =E2=80=94 In this 3-part series, you=E2=80=99ll learn=
+ how HCP Vault Radar helps you find and secure leaked secrets =E2=80=94 lik=
+e passwords and API keys =E2=80=94 before hackers do.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitseventlist2=
+2ab7540-8b14-4fd2-930e-9d9003d422eb" cellpadding=3D"00" align=3D"center" ce=
+llspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collaps=
+e;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"0" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 17px; line-height: 22px;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatetitle26f9a6d4-3094-4b7a-969b-ac5=
+6d76137da">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcFjL3CPZ=
+sFpBfs-DY5rqH49guJKK_eErckqwz0KnIuJ1FHCzcqDjH7RNqI5mOvMQr_k=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">Secure introduction with Vault</a>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;padding-top:8px;font-size: 14px; line-height: 145%;mso-line-height-rule: e=
+xactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatedescriptionfee2a683-2171-422d-91=
+fb-c5f41af90fdb">
+<div><b>Tuesday, July 10</b> =E2=80=94 Gain practical experience with respo=
+nse wrapping in Vault and understand how this feature can improve security =
+posture and ensure compliance with industry standards.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitseventlist7=
+d86bc4c-8673-41a8-97e1-ac631b264594" cellpadding=3D"00" align=3D"center" ce=
+llspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collaps=
+e;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"0" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 17px; line-height: 22px;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatetitle4a362e88-0b16-4864-9739-f68=
+c52ddcaa8">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcLFpxP63=
+2gYrj5EZ2u6Xa4Mn3NAhiOpTyPqjw2zda1s5uHQ8Q3vOMSOU1oOMe2cdTcM=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">Build, deploy, and manage everything as cod=
+e with HashiCorp</a>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;padding-top:8px;font-size: 14px; line-height: 145%;mso-line-height-rule: e=
+xactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatedescriptionc6af9e72-c920-4a4f-ab=
+60-93210fe68651">
+<div><b>Monday, July 16</b> =E2=80=94 Learn how both HashiCorp Terraform an=
+d the HashiCorp Cloud Platform can be used to create and administer all are=
+as of a modern public cloud environment as code.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitseventlist5=
+b3934d3-ac9d-449d-8e1a-cdf0a21a477d" cellpadding=3D"00" align=3D"center" ce=
+llspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collaps=
+e;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"0" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 17px; line-height: 22px;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatetitle5dd73e78-634b-4f14-b492-6a0=
+bd1d8d219">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcMIFlFgC=
+ZiRdJArwp9czdxX0SmUTC8zV5K925PeQG6iwSUT_CLbrL3outCovcpMSUuw=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">Strengthen AWS infrastructure security with=
+ Sentinel in Terraform</a>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;padding-top:8px;font-size: 14px; line-height: 145%;mso-line-height-rule: e=
+xactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatedescriptiondf7781fc-f476-44a3-96=
+20-4c27d9b964e8">
+<div><b>Monday July 23</b> =E2=80=94 Explore the power of Sentinel, HashiCo=
+rp=E2=80=99s policy as code framework, and how it enables proactive, automa=
+ted compliance enforcement within Terraform deployments.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"imagespacermodc8624=
+479-0d3a-4873-b295-22709362b810" cellpadding=3D"00" align=3D"center" cellsp=
+acing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse;bo=
+rder-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"vertical-align: top;">
+<table class=3D"main" width=3D"100%" align=3D"center" cellpadding=3D"00" ce=
+llspacing=3D"00" border=3D"0" style=3D"border-spacing: 0px;border-collapse:=
+ collapse;margin: 0 auto;">
+<tbody>
+<tr>
+<td height=3D"0"></td>
+</tr>
+<tr>
+<td class=3D"fullWid center" align=3D"center" style=3D"text-align: center; =
+font-size: 1px; line-height: 1px; padding-left: 0; padding-right: 0;">
+<div class=3D"mktoImg" id=3D"imagespacerf2671eb0-9382-47e3-a69d-095ecef78ad=
+e">
+<div><img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/hashibits-i=
+magespacer-1.png?version=3D0" width=3D"600" border=3D"0" style=3D"-ms-inter=
+polation-mode:bicubic; border-collapse:collapse; padding:0px; margin:0px au=
+to; border-spacing:0;width:600px;max-width:600px!important;">
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"0"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitsarttitle2d=
+40dbd8-9912-4d9a-a58e-d125ca583e5d" cellpadding=3D"00" align=3D"center" cel=
+lspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collapse=
+;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"40" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 21px; line-height:30px;font-weight:bold;mso-line-height-rule: e=
+xactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitstitle0977d461-a3dc-4102-bee4-5265455=
+e1b57">
+<div><span style=3D"color: #000000; font-family: 'Helvetica Neue', Arial, s=
+ans-serif; font-size: 21px; font-style: normal; font-variant-ligatures: nor=
+mal; font-variant-caps: normal; font-weight: bold; letter-spacing: normal; =
+orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widow=
+s: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: norma=
+l; text-decoration-thickness: initial; text-decoration-style: initial; text=
+-decoration-color: initial; float: none; display: inline !important;">&#128=
+467;&nbsp;Events</span>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"20" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitseventlistd=
+a21c224-751e-499c-9265-02e5fb33b135" cellpadding=3D"00" align=3D"center" ce=
+llspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collaps=
+e;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"0" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 17px; line-height: 22px;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatetitle867942d0-c6ec-4411-a124-fb5=
+39c283d87">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcUnolkSb=
+FtL_Jbxid00cmKKDSeElWPewx9Fhn5aB_51IQ21kCjoDzgk5CwJAyNPi71g=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">HashiTalks Hub</a>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;padding-top:8px;font-size: 14px; line-height: 145%;mso-line-height-rule: e=
+xactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatedescriptionc9ad2b0e-d1d8-4f7f-a8=
+da-aa40f7edcafc">
+<div><b>May 2025 - January 2026</b> =E2=80=94 Check out the full schedule o=
+f HashiTalks events in 2025. Join speakers of all experience levels and cur=
+ious learners sharing knowledge virtually.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitseventlist4=
+7950710-16eb-48fd-a2ff-f332855b4312" cellpadding=3D"00" align=3D"center" ce=
+llspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collaps=
+e;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"0" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 17px; line-height: 22px;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatetitle12695ac1-7195-48e0-aec7-0a9=
+107dd190f">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcQuSs8nF=
+MLytgK7N1XJXXdM_oU7X2i9bVIHRmM74I9fNJpL-qXmXBf_KZdUw5gPpVfM=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">HashiTalks: Securely building</a>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;padding-top:8px;font-size: 14px; line-height: 145%;mso-line-height-rule: e=
+xactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatedescription3cce085f-e2b6-4083-ae=
+46-96030a21177c">
+<div><b>June 25-26</b> =E2=80=94 Join us for this free, virtual event for t=
+he HashiCorp community of security professionals, programmers, developers, =
+and builders.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitseventliste=
+25b0b2a-5381-4b23-9a35-013c903c2c64" cellpadding=3D"00" align=3D"center" ce=
+llspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collaps=
+e;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"0" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 17px; line-height: 22px;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatetitle501d5f65-a1b0-4e4a-8a04-451=
+564a00a6b">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcgZFnLfV=
+F5vY3g1k4tNzRSD80CawaJPgi-v78DhtbnnVioGxmhXPRlbZRq9e6snOYOQ=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">HashiDays Singapore</a>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;padding-top:8px;font-size: 14px; line-height: 145%;mso-line-height-rule: e=
+xactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatedescription8619b9d4-9afa-4245-9e=
+f3-5d9478c11397">
+<div><b>July 22</b> =E2=80=94 Join us in Singapore for HashiCorp=E2=80=99s =
+Asia-Pacific conference on all things hybrid cloud.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" role=3D"presentation" id=3D"hashibitseventlist3=
+4a3d11a-6c3e-40ac-8cf0-aa3533681eb8" cellpadding=3D"00" align=3D"center" ce=
+llspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: collaps=
+e;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td bgcolor=3D"#ffffff" class=3D"dm" valign=3D"top" style=3D"background-Col=
+or:#ffffff;vertical-align: top;">
+<table class=3D"inner_table" cellpadding=3D"00" cellspacing=3D"00" align=3D=
+"center" style=3D"margin:0 auto; width:520px;border-collapse: collapse;bord=
+er-spacing: 0;" border=3D"0" width=3D"520">
+<tbody>
+<tr>
+<td height=3D"0" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;font-size: 17px; line-height: 22px;mso-line-height-rule: exactly; color: #=
+000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatetitle3495b6b0-05fb-4830-9cb8-67e=
+79492a6d4">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcSpzhwmA=
+-i0f4RoJRt4CNp_KdlAVqahcqLnmRUHCqzjNY0djReBFLwdOV49RHL6YFx8=3D" style=3D"co=
+lor: #0046D1;font-weight:bold;">HashiConf 2025</a>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td align=3D"left" style=3D"font-family: 'Helvetica Neue',Arial, sans-serif=
+;padding-top:8px;font-size: 14px; line-height: 145%;mso-line-height-rule: e=
+xactly; color: #000000; text-align: left;">
+<div class=3D"mktoText" id=3D"hashibitsdatedescription031ba33a-381f-49e3-84=
+d9-0a236c2232e8">
+<div><b>September 24-26</b> =E2=80=94 Join us in San Francisco for keynotes=
+, technical sessions, hands-on labs, certifications, social events, and mor=
+e. Featured sessions and speakers have just been announced.
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" id=3D"featuredCTAsignoffcbc3958a-8f73-4693-95b0=
+-56ce4ac7f99c" cellpadding=3D"00" align=3D"center" cellspacing=3D"00" style=
+=3D"margin:0 auto;width:100%;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td valign=3D"middle" background=3D"https://go.hashicorp.com/rs/845-ZLF-191=
+/images/Featured-Article-bg.png?version=3D0" style=3D"background-image:url(=
+'https://go.hashicorp.com/rs/845-ZLF-191/images/Featured-Article-bg.png?ver=
+sion=3D0');background-repeat: no-repeat; background-size: cover;background-=
+position:left top;vertical-align:middle ;border-radius: 8px;background-colo=
+r:#000000">
+<!--[if gte mso 9]>
+																																																						<v:rect
+																																																							xmlns:v=3D"urn:schem=
+as-microsoft-com:vml" fill=3D"true" stroke=3D"false" style=3D"width:600px;m=
+ax-width:600px!important;display:block;height:290px;">
+																																																							<v:fill type=3D"fram=
+e" src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/Featured-Article-b=
+g.png?version=3D0" color=3D"#000000" />
+																																																							<v:textbox inset=3D"=
+0,0,0,0">
+																																																								<![endif]-->
+<table cellpadding=3D"00" cellspacing=3D"00" align=3D"center" class=3D"main=
+" style=3D"margin:0 auto; width:600px;max-width:600px!important;border-spac=
+ing: 0px;border-collapse: collapse;" border=3D"0" width=3D"600">
+<tbody>
+<tr>
+<td valign=3D"middle" height=3D"290">
+<table class=3D"inner_table" width=3D"350" style=3D"margin: 0 auto; width: =
+350px; border-spacing: 0px; border-collapse: collapse;" border=3D"0" cellsp=
+acing=3D"00" cellpadding=3D"00" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"font-family: 'Helvetica Neue',Arial, sans-serif; color: #FFFFF=
+E; font-size: 24px;font-weight:bold; line-height: 28px; mso-line-height-rul=
+e: exactly; text-align: center">
+<div class=3D"mktoText" id=3D"featsignheaddc38bc37-2d05-4e6e-bd2f-5501811e3=
+0c3">
+<div><span style=3D"color: #ffffff;">What's your cloud maturity level?</spa=
+n> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"18" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td style=3D"font-family: 'Helvetica Neue',Arial, sans-serif; color: #FFFFF=
+E; font-size: 14px; line-height: 23px; mso-line-height-rule: exactly; text-=
+align: center">
+<div class=3D"mktoText" id=3D"featsigntext64e452b1-f38e-4460-aed7-3b93b416f=
+e3f">
+<div><span style=3D"color: #ffffff;">Find out what stage you=E2=80=99re at =
+in your cloud adoption journey, and see if you're ready for the security an=
+d infrastructure demands of the AI era.</span>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style=3D"padding-top:30px;">
+<div class=3D"mktoText" id=3D"signoffbtn02536ab5-826f-4d84-8d23-2cc877deec2=
+1">
+<div>
+<table cellpadding=3D"00" cellspacing=3D"00" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"border:1px solid #ffffff;font-weight:700; text-align: center; =
+color:#ffffff; text-decoration:none; font-size:14px;font-weight:700; line-h=
+eight:110%; font-family: 'Helvetica Neue',Arial, sans-serif; padding: 13px =
+35px; border-radius: 4px;">
+<a style=3D"text-decoration:none; color:#ffffff;" href=3D"https://view.hash=
+icorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcDod-eAETD09gj9dugTm6yrlkNL699Y7JDAwh51WE=
+qUkrAFC3H9p3XY1o4qJxuOtuIA=3D">Take the test</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]>
+																																																							</v:textbox>
+																																																						</v:rect>
+																																																						<![endif]--></td>
+</tr>
+<tr>
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+<table class=3D"mktoModule" id=3D"Footer" cellpadding=3D"00" align=3D"cente=
+r" cellspacing=3D"00" style=3D"margin:0 auto;width:100%;border-collapse: co=
+llapse;border-spacing: 0;" border=3D"0" width=3D"100%">
+<tbody>
+<tr>
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+<tr>
+<td valign=3D"top" class=3D"dm-grey" style=3D"vertical-align: top;border-ra=
+dius:8px;background-color:/*White*/ #ffffff;padding:24px 30px 24px 30px;" b=
+gcolor=3D"/*White*/ #ffffff">
+<div class=3D"mktoSnippet" id=3D"unsubscribeFooter">
+<table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" style=3D"margin: 0px auto; width: 100%!important; min-w=
+idth: 100%!important;" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"text-align: left; padding-bottom: 35px;">
+<div><!-- start HEADER_LOGO --><a rel=3D"noopener" target=3D"_blank" href=
+=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGclGZkpGGjnDUmcNUwkZl=
+iIcNdFj7Lof5L7e_hfTYM5ycxg-wnRRecjHyinxcGL2DKz0=3D"><img class=3D"light-img=
+" alt=3D"HashiCorp logo" src=3D"https://go.hashicorp.com/rs/845-ZLF-191/ima=
+ges/HashiCorp-logo-330x74px.png" width=3D"150" style=3D"text-decoration: no=
+ne; padding: 0;" border=3D"0"><!-- The=20
+following Dark Mode logo image is hidden with MSO conditional code and inli=
+ne CSS, but will be revealed once Dark Mode is triggered --><!--[if !mso]>
+						<! -->
+</a>
+<div class=3D"dark-img" style=3D"display: none; overflow: hidden; float: le=
+ft; width: 0px; max-height: 0px; max-width: 0px; line-height: 0px; visibili=
+ty: hidden;">
+<img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/HashiCorp_IBMCom=
+pany_Horizontal.png?version=3D0" width=3D"150" alt=3D"HashiCorp Logo" style=
+=3D"color: #ffffff;" border=3D"0">
+</div>
+<a rel=3D"noopener" target=3D"_blank" href=3D"https://view.hashicorp.com/OD=
+Q1LVpMRi0xOTEAAAGbIgDGclGZkpGGjnDUmcNUwkZliIcNdFj7Lof5L7e_hfTYM5ycxg-wnRRec=
+jHyinxcGL2DKz0=3D"><!--
+																																						=09
+						<![endif]--></a><!-- end HEADER_LOGO --></div>
+</td>
+<td style=3D"text-align: right; padding-bottom: 35px; text-decoration: none=
+;">
+<table cellpadding=3D"5" cellspacing=3D"00" align=3D"right">
+<tbody>
+<tr>
+<td><!-- start octocat icon --><a rel=3D"noopener" target=3D"_blank" href=
+=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcZqFqUSu1JQzlSv9FJRU=
+oiNr9nmWUAh6l_8uUNkBGvjFk4BVaqzzRX-Xig6BnVrp33w=3D"><img class=3D"light-img=
+" alt=3D"HashiCorp Github" src=3D"https://go.hashicorp.com/rs/845-ZLF-191/i=
+mages/Octocat Copy 3.png" width=3D"21" height=3D"20" style=3D"text-decorati=
+on: none; margin: 0 auto; padding: 0;" border=3D"0"><!-- The=20
+following Dark Mode logo image is hidden with MSO conditional code and inli=
+ne CSS, but will be revealed once Dark Mode is triggered --><!--[if !mso]>
+						<! -->
+</a>
+<div class=3D"dark-img" style=3D"display: none; overflow: hidden; float: le=
+ft; width: 0px; max-height: 0px; max-width: 0px; line-height: 0px; visibili=
+ty: hidden;" align=3D"center">
+<img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/Octocat-white.pn=
+g?version=3D0" width=3D"21" height=3D"20" alt=3D"HashiCorp Github" style=3D=
+"color: #ffffff;" border=3D"0">
+</div>
+<a rel=3D"noopener" target=3D"_blank" href=3D"https://view.hashicorp.com/OD=
+Q1LVpMRi0xOTEAAAGbIgDGcZqFqUSu1JQzlSv9FJRUoiNr9nmWUAh6l_8uUNkBGvjFk4BVaqzzR=
+X-Xig6BnVrp33w=3D"><!--
+																																						=09
+						<![endif]--></a><!-- end octocat icon --></td>
+<td><!-- start twitter icon --><a rel=3D"noopener" target=3D"_blank" href=
+=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcfVTvj3zTUkVq1r9wQtk=
+lghOWxvk2qHcSRBTL_wUGAE4P087gC-9Sv2E_P8TBi9l-4s=3D"><img class=3D"light-img=
+" alt=3D"HashiCorp X" src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images=
+/X-logo-black.png" width=3D"20" height=3D"20" style=3D"text-decoration: non=
+e; margin: 0 auto; padding: 0;" border=3D"0"><!-- The=20
+following Dark Mode logo image is hidden with MSO conditional code and inli=
+ne CSS, but will be revealed once Dark Mode is triggered --><!--[if !mso]>
+						<! -->
+</a>
+<div class=3D"dark-img" style=3D"display: none; overflow: hidden; float: le=
+ft; width: 0px; max-height: 0px; max-width: 0px; line-height: 0px; visibili=
+ty: hidden;" align=3D"center">
+<img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/X-logo-white.png=
+?version=3D0" width=3D"20" height=3D"20" alt=3D"HashiCorp X" style=3D"color=
+: #ffffff;" border=3D"0">
+</div>
+<a rel=3D"noopener" target=3D"_blank" href=3D"https://view.hashicorp.com/OD=
+Q1LVpMRi0xOTEAAAGbIgDGcfVTvj3zTUkVq1r9wQtklghOWxvk2qHcSRBTL_wUGAE4P087gC-9S=
+v2E_P8TBi9l-4s=3D"><!--
+																																						=09
+						<![endif]--></a><!-- end twitter icon --></td>
+<td><!-- start linkedin icon --><a rel=3D"noopener" target=3D"_blank" href=
+=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcHduxYSn9DPS4zs_DeS6=
+ZYsQdOCVFCHNICUhHuG0N7TiQ7bNMAC9jAJo6Ky8CY0cwzU=3D"><img class=3D"light-img=
+" alt=3D"HashiCorp Linkedin" src=3D"https://go.hashicorp.com/rs/845-ZLF-191=
+/images/Path Copy 9.png" width=3D"20" height=3D"20" style=3D"text-decoratio=
+n: none; margin: 0 auto; padding: 0;" border=3D"0"><!-- The=20
+following Dark Mode logo image is hidden with MSO conditional code and inli=
+ne CSS, but will be revealed once Dark Mode is triggered --><!--[if !mso]>
+						<! -->
+</a>
+<div class=3D"dark-img" style=3D"display: none; overflow: hidden; float: le=
+ft; width: 0px; max-height: 0px; max-width: 0px; line-height: 0px; visibili=
+ty: hidden;" align=3D"center">
+<img src=3D"https://go.hashicorp.com/rs/845-ZLF-191/images/linkedin-white.p=
+ng?version=3D0" width=3D"20" height=3D"20" alt=3D"Linkedin" style=3D"color:=
+ #ffffff;" border=3D"0">
+</div>
+<a rel=3D"noopener" target=3D"_blank" href=3D"https://view.hashicorp.com/OD=
+Q1LVpMRi0xOTEAAAGbIgDGcHduxYSn9DPS4zs_DeS6ZYsQdOCVFCHNICUhHuG0N7TiQ7bNMAC9j=
+AJo6Ky8CY0cwzU=3D"><!--
+																																						=09
+						<![endif]--></a><!-- end linkedin icon --></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan=3D"2" style=3D"padding-bottom: 25px; font-family: Helvetica,Ari=
+al,sans-serif; font-size: 14px; line-height: 17px; font-weight: normal; tex=
+t-align: left;">
+<div><a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcK7nUtNv=
+-Wl9jOavEnn3vjQeUYZdjHihNJuWNgvP7Oxg9tHTtuj3Heo31rvuFgXDDg4=3D" style=3D"co=
+lor: #000; text-decoration: none;">Manage Preferences
+</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.com/ODQ1LVpM=
+Ri0xOTEAAAGbIgDGcLkLoCeLCRbdWl3P6aQfVC2hXR2EsNQdDVvKxZiaSYbW5RdpXyu5OTH3QmF=
+FGrRhjKA=3D" target=3D"_blank" style=3D"color: #000001; text-decoration: no=
+ne;">
+Unsubscribe</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.=
+com/ODQ1LVpMRi0xOTEAAAGbIgDGcV6WvRe6Fi3h9Tdvmaot5SI198r092eNMqNaXJOp-2JEZBF=
+eOwlYYvPFnvsj1g1ehlU=3D" style=3D"color: #000001; text-decoration: none;">
+Contact Us</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href=3D"https://view.hashicorp.c=
+om/ODQ1LVpMRi0xOTEAAAGbIgDGcuu4F_8p2DkuaUMeuJ9nVvRIXGDFS8xfna-XnykKw5iwUeJy=
+EMwMlzJUDm8bePMXBbY=3D" style=3D"color: #000001; text-decoration: none;">
+Privacy Policy </a></div>
+</td>
+</tr>
+<tr>
+<td colspan=3D"2" style=3D"font-family: Helvetica,Arial,sans-serif; font-si=
+ze: 12px; line-height: 17px; font-weight: normal; text-decoration: none; co=
+lor: #656a70; text-align: left;">
+<div>Copyright =C2=A9 2025 HashiCorp. All rights reserved. 101 2nd St.#700,=
+ San Francisco, CA 94105
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"30" style=3D"line-height:1px;font-size:1px;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<a href=3D"https://view.hashicorp.com/ODQ1LVpMRi0xOTEAAAGbIgDGcs5CV3zJw7jv4=
+QSuhJuqQheTGlQ8AP9r-N6SMoA3X4BdwOn6TYunHrSXubhsc1Si46E=3D"></a><img src=3D"=
+https://view.hashicorp.com/trk?t=3D1&amp;mid=3DODQ1LVpMRi0xOTEAAAGbIgDGcpcG=
+6-ZEezG3xMM2_rPhV2wh8yonNj5kWMF3PYqRxQ6FdLOAUUplclJRDk-jtwDb85c3cj4929KAuY6=
+mCo2RvDm6SHNh2ba5qmUuAPekak2Gl8Dnbrx1ZpU4uhd-p1fGw2s7jduFHEJtOw" width=3D"1=
+" height=3D"1" style=3D"display:none !important;" alt=3D"">
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+ </body>
+</html>
+
+------=_Part_369547857_743546382.1750250034819--

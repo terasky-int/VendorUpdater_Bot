@@ -1,0 +1,735 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "TeraskyRag API",
+    "description": "RAG API for vendor email search with vector-based search capabilities using ChromaDB and AWS Bedrock for answer generation. Includes expiration date filtering to prevent outdated content from appearing in search results.",
+    "version": "0.1.0",
+    "contact": {
+      "name": "TeraskyRag Team"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8001",
+      "description": "Docker deployment (QA testing)"
+    },
+    {
+      "url": "http://localhost:8000",
+      "description": "Local development"
+    }
+  ],
+  "paths": {
+    "/query": {
+      "post": {
+        "summary": "Query Emails with RAG",
+        "description": "Performs vector search with LLM-generated answers and expiration filtering",
+        "tags": ["RAG"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryRequest"
+              },
+              "examples": {
+                "basic_query": {
+                  "summary": "Basic query example",
+                  "value": {
+                    "query": "What are the latest updates from hashicorp?",
+                    "top_k": 5,
+                    "include_expired": false
+                  }
+                },
+                "filtered_query": {
+                  "summary": "Query with metadata filters",
+                  "value": {
+                    "query": "What are the latest updates from hashicorp?",
+                    "metadata_filters": {
+                      "vendor": "hashicorp",
+                      "type": "security"
+                    },
+                    "top_k": 5,
+                    "include_expired": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful query response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QueryResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid JSON request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/metadata": {
+      "get": {
+        "summary": "Get Available Metadata",
+        "description": "Returns all available metadata values for filtering",
+        "tags": ["RAG"],
+        "responses": {
+          "200": {
+            "description": "Available metadata values",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "summary": "Health Check",
+        "description": "Checks API health and database connections",
+        "tags": ["System"],
+        "responses": {
+          "200": {
+            "description": "System health status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/graph/vendors": {
+      "get": {
+        "summary": "Get All Vendors",
+        "description": "Returns list of all vendors in the system",
+        "tags": ["Graph"],
+        "responses": {
+          "200": {
+            "description": "List of vendors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/graph/products/{vendor}": {
+      "get": {
+        "summary": "Get Products for Vendor",
+        "description": "Returns products offered by a specific vendor",
+        "tags": ["Graph"],
+        "parameters": [
+          {
+            "name": "vendor",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Vendor name"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of products for the vendor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "product": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/graph/timeline": {
+      "get": {
+        "summary": "Get Email Timeline",
+        "description": "Get timeline of emails with optional vendor/product filters",
+        "tags": ["Graph"],
+        "parameters": [
+          {
+            "name": "vendor",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by vendor name"
+          },
+          {
+            "name": "product",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by product name"
+          },
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "default": 30
+            },
+            "description": "Number of days to look back"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Email timeline",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TimelineEntry"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/graph/query": {
+      "post": {
+        "summary": "Run Custom Cypher Query",
+        "description": "Execute a custom Cypher query against the graph database",
+        "tags": ["Graph"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Cypher query to execute"
+                  },
+                  "parameters": {
+                    "type": "object",
+                    "description": "Query parameters"
+                  }
+                },
+                "required": ["query"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Query results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/unified": {
+      "post": {
+        "summary": "Unified Search",
+        "description": "Perform unified search using both vector and graph capabilities",
+        "tags": ["Search"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UnifiedSearchRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Unified search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnifiedSearchResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/nl": {
+      "post": {
+        "summary": "Natural Language Search",
+        "description": "Process natural language query and return structured results",
+        "tags": ["Search"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "Natural language query"
+                  }
+                },
+                "required": ["query"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Natural language search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NLSearchResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/debug/raw_search": {
+      "post": {
+        "summary": "Raw Search Debug",
+        "description": "Perform raw search without filtering for debugging",
+        "tags": ["Debug"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string"
+                  },
+                  "top_k": {
+                    "type": "integer",
+                    "default": 5
+                  }
+                },
+                "required": ["query"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Raw search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RawSearchResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/debug/collection_info": {
+      "get": {
+        "summary": "Collection Information",
+        "description": "Get detailed information about the ChromaDB collection",
+        "tags": ["Debug"],
+        "responses": {
+          "200": {
+            "description": "Collection information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CollectionInfoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "QueryRequest": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The search query text",
+            "example": "What are the latest updates from hashicorp?"
+          },
+          "metadata_filters": {
+            "type": "object",
+            "description": "Filters to apply",
+            "properties": {
+              "vendor": {
+                "type": "string",
+                "description": "Filter by vendor name"
+              },
+              "product": {
+                "type": "string",
+                "description": "Filter by product name"
+              },
+              "type": {
+                "type": "string",
+                "description": "Filter by email type"
+              }
+            }
+          },
+          "top_k": {
+            "type": "integer",
+            "description": "Number of results to return",
+            "default": 5,
+            "minimum": 1,
+            "maximum": 20
+          },
+          "include_expired": {
+            "type": "boolean",
+            "description": "Include expired events",
+            "default": false
+          }
+        },
+        "required": ["query"]
+      },
+      "QueryResponse": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "string",
+            "description": "LLM-generated answer based on retrieved documents"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            }
+          }
+        }
+      },
+      "Source": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Source text content"
+          },
+          "metadata": {
+            "$ref": "#/components/schemas/DocumentMetadata"
+          }
+        }
+      },
+      "DocumentMetadata": {
+        "type": "object",
+        "properties": {
+          "vendor": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "email_id": {
+            "type": "string"
+          },
+          "chunk_index": {
+            "type": "integer"
+          }
+        }
+      },
+      "MetadataResponse": {
+        "type": "object",
+        "properties": {
+          "vendors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sample_metadata": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DocumentMetadata"
+            }
+          },
+          "total_documents": {
+            "type": "integer"
+          }
+        }
+      },
+      "HealthResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": ["healthy", "unhealthy"]
+          },
+          "document_count": {
+            "type": "integer"
+          },
+          "sample_document": {
+            "type": "object",
+            "properties": {
+              "metadata_keys": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "document_preview": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "TimelineEntry": {
+        "type": "object",
+        "properties": {
+          "email_id": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "type": {
+            "type": "string"
+          },
+          "vendor": {
+            "type": "string"
+          },
+          "product": {
+            "type": "string"
+          }
+        }
+      },
+      "UnifiedSearchRequest": {
+        "type": "object",
+        "properties": {
+          "query_text": {
+            "type": "string",
+            "description": "Search query text"
+          },
+          "filters": {
+            "type": "object",
+            "description": "Metadata filters for vector search"
+          },
+          "graph_filters": {
+            "type": "object",
+            "description": "Graph filters (vendor, product, type, date range)"
+          },
+          "top_k": {
+            "type": "integer",
+            "default": 5
+          }
+        },
+        "required": ["query_text"]
+      },
+      "UnifiedSearchResponse": {
+        "type": "object",
+        "properties": {
+          "documents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metadatas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DocumentMetadata"
+            }
+          },
+          "related_entities": {
+            "type": "object",
+            "properties": {
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              },
+              "vendors": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      },
+      "NLSearchResponse": {
+        "type": "object",
+        "properties": {
+          "query_text": {
+            "type": "string"
+          },
+          "filters": {
+            "type": "object"
+          },
+          "graph_filters": {
+            "type": "object"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "RawSearchResponse": {
+        "type": "object",
+        "properties": {
+          "documents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metadatas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DocumentMetadata"
+            }
+          },
+          "distances": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CollectionInfoResponse": {
+        "type": "object",
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "document_count": {
+            "type": "integer"
+          },
+          "metadata_keys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sample_documents": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          },
+          "detail": {
+            "type": "string",
+            "description": "Detailed error information"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "RAG",
+      "description": "Retrieval-Augmented Generation endpoints for email search and question answering"
+    },
+    {
+      "name": "Graph",
+      "description": "Graph database operations for exploring vendor-product relationships"
+    },
+    {
+      "name": "Search",
+      "description": "Advanced search capabilities combining vector and graph approaches"
+    },
+    {
+      "name": "Debug",
+      "description": "Debug and inspection endpoints for system troubleshooting"
+    },
+    {
+      "name": "System",
+      "description": "System health and status endpoints"
+    }
+  ]
+}
