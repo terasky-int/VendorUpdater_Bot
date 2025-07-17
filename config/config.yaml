@@ -123,10 +123,10 @@ data_processing:
 embedding:
   provider: amazon
   model: amazon.titan-embed-text-v2:0
-  region: eu-west-1
+  region: us-east-1
 
 bedrock:
-  region: eu-west-1
+  region: us-east-1
   embedding_model: amazon.titan-embed-text-v2:0
   classification_model: anthropic.claude-3-haiku-20240307-v1:0
 
@@ -140,7 +140,7 @@ vector_store:
   collection_name: vendor_emails
   # Remote ChromaDB configuration (uncomment and update to use remote instance)
   use_remote: true
-  remote_host: "aipg.dudelabz.com"  # Replace with your remote server IP
+  remote_host: "meetingsbot.teraskylabs.com"  # Replace with your remote server IP
   remote_port: 8000
 
 ocr:
@@ -156,7 +156,7 @@ rag:
 
 
 neo4j:
-  uri: bolt://aipg.dudelabz.com:7687
+  uri: bolt://meetingsbot.teraskylabs.com:7687
   user: neo4j
   password: ${NEO4J_PASSWORD}
   
