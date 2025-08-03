@@ -1,1 +1,0 @@
-# Source module for vendor_updater_bot

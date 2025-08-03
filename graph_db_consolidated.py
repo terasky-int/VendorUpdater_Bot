@@ -144,7 +144,7 @@ def analyze_text_for_relationships(text, vendor, product):
     return None  # No relationship found in text
 
 def add_email_to_graph(graph, email_id, metadata, email_text=None):
-    """Add email data to the graph database with relationship validation"""
+    """Add email data to the graph database using existing vendors and products"""
     try:
         # Extract metadata
         vendor = metadata.get("vendor", "unknown")
@@ -152,59 +152,78 @@ def add_email_to_graph(graph, email_id, metadata, email_text=None):
         email_type = metadata.get("type", "unknown")
         date = metadata.get("date", "1970-01-01")
         
-        # Create vendor node
-        vendor_node = Node("Vendor", name=vendor)
-        graph.merge(vendor_node, "Vendor", "name")
+        # Find existing vendor node (don't create new ones)
+        vendor_query = "MATCH (v:Vendor) WHERE toLower(v.name) CONTAINS toLower($vendor) RETURN v LIMIT 1"
+        vendor_result = graph.run(vendor_query, vendor=vendor).data()
+        if not vendor_result:
+            logging.warning(f"Vendor '{vendor}' not found in Neo4j, skipping email {email_id}")
+            return False
         
-        # Create email node
-        email_node = Node("Email", 
+        # Create enriched email node
+        email_node = Node("VendorEmail", 
                          id=email_id,
+                         title=metadata.get("subject", ""),
+                         sender=metadata.get("sender", ""),
+                         vendor=vendor,
+                         products=", ".join(product_str) if isinstance(product_str, list) else str(product_str),
+                         type=", ".join(email_type) if isinstance(email_type, list) else str(email_type),
                          date=date,
-                         type=email_type)
-        graph.merge(email_node, "Email", "id")
+                         chromaRef=email_id,
+                         source="vendorUpdater",
+                         sentiment=metadata.get("sentiment", "neutral"),
+                         urgency=metadata.get("urgency", "medium"),
+                         hasAttachments=metadata.get("has_attachments", False),
+                         embeddingModel="amazon.titan-embed-text-v1",
+                         classificationConfidence=metadata.get("confidence", 0.5))
+        graph.merge(email_node, "VendorEmail", "id")
         
-        # Create FROM relationship between email and vendor
-        from_rel = Relationship(email_node, "FROM", vendor_node)
-        graph.merge(from_rel)
+        # Create SENT_BY relationship to existing vendor
+        vendor_node = vendor_result[0]['v']
+        sent_by_rel = Relationship(email_node, "SENT_BY", vendor_node)
+        graph.merge(sent_by_rel)
         
         # Handle multiple products
         if isinstance(product_str, list):
-            # If product is already a list
             products = product_str
         elif isinstance(product_str, str):
-            # If product is a comma-separated string
             products = [p.strip() for p in product_str.split(",")]
         else:
-            # Fallback
             products = [str(product_str)]
         
         for product in products:
             if product:
-                # Create product node
-                product_node = Node("Product", name=product)
-                graph.merge(product_node, "Product", "name")
+                # Find existing product node (don't create new ones)
+                product_query = "MATCH (p:Product) WHERE toLower(p.name) CONTAINS toLower($product) RETURN p LIMIT 1"
+                product_result = graph.run(product_query, product=product).data()
                 
-                # Determine confidence level for this relationship
-                confidence = validate_vendor_product(vendor, product)
-                
-                # If we have email text, analyze it for additional confidence
-                if email_text and confidence != CONFIDENCE_HIGH:
-                    text_confidence = analyze_text_for_relationships(email_text, vendor, product)
-                    if text_confidence:
-                        # Use the higher confidence level
-                        confidence = text_confidence if text_confidence == CONFIDENCE_MEDIUM else confidence
-                
-                # Create ABOUT relationship between email and product
-                about_rel = Relationship(email_node, "ABOUT", product_node)
-                graph.merge(about_rel)
-                
-                # Always create OFFERS relationship but with appropriate confidence level
-                # This ensures all products have a vendor relationship
-                offers_rel = Relationship(vendor_node, "OFFERS", product_node, confidence=confidence)
-                graph.merge(offers_rel)
-                logging.info(f"Created OFFERS relationship between {vendor} and {product} with {confidence} confidence")
+                if product_result:
+                    product_node = product_result[0]['p']
+                    # Create RELATED_TO relationship between email and product
+                    related_to_rel = Relationship(email_node, "RELATED_TO", product_node)
+                    graph.merge(related_to_rel)
+                    logging.info(f"Created RELATED_TO relationship between email {email_id} and product {product}")
+                else:
+                    logging.warning(f"Product '{product}' not found in Neo4j")
         
-        logging.info(f"Added email {email_id} to graph database with enhanced validation")
+        # Create SIMILAR_TO relationships based on similarity criteria
+        similar_query = """
+        MATCH (e1:VendorEmail {id: $email_id})
+        MATCH (e2:VendorEmail)
+        WHERE e1.id <> e2.id 
+        AND e1.vendor = e2.vendor 
+        AND e1.sentiment = e2.sentiment
+        AND abs(e1.classificationConfidence - e2.classificationConfidence) < 0.3
+        WITH e1, e2, rand() as r
+        WHERE r < 0.1
+        MERGE (e1)-[:SIMILAR_TO {similarity: 0.8}]->(e2)
+        RETURN count(*) as created
+        """
+        
+        similar_result = graph.run(similar_query, email_id=email_id).data()
+        if similar_result and similar_result[0]["created"] > 0:
+            logging.info(f"Created {similar_result[0]['created']} SIMILAR_TO relationships for email {email_id}")
+        
+        logging.info(f"Added enriched email {email_id} to graph database")
         return True
     except Exception as e:
         logging.error(f"Failed to add email {email_id} to graph: {e}")
@@ -540,6 +559,41 @@ def mock_graph_data():
         "related_vendors": related_vendors,
         "email_timeline": email_timeline
     }
+
+def get_email_types_from_neo4j():
+    """Get all email types and labels from Neo4j"""
+    try:
+        # Get all VendorEmailType nodes
+        types = run_graph_query("MATCH (n:VendorEmailType) RETURN n.name AS name")
+        
+        # Get all VendorEmailClass nodes  
+        classes = run_graph_query("MATCH (n:VendorEmailClass) RETURN n.name AS name")
+        
+        # Combine all labels
+        all_labels = []
+        if types:
+            all_labels.extend([t["name"] for t in types])
+        if classes:
+            all_labels.extend([c["name"] for c in classes])
+            
+        return all_labels
+    except Exception as e:
+        logging.error(f"Failed to get email types from Neo4j: {e}")
+        return []
+
+def get_vendor_products_from_neo4j(vendor_name):
+    """Get products for a vendor from Neo4j"""
+    try:
+        query = """
+        MATCH (v:Vendor)-[r:MAKES]->(p:Product)
+        WHERE toLower(v.name) CONTAINS toLower($vendor)
+        RETURN p.name AS product
+        """
+        result = run_graph_query(query, {"vendor": vendor_name})
+        return [r["product"] for r in result] if result else []
+    except Exception as e:
+        logging.error(f"Failed to get vendor products from Neo4j: {e}")
+        return []
 
 if __name__ == "__main__":
     # Clean up incorrect relationships

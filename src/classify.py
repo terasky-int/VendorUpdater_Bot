@@ -5,17 +5,35 @@ import re
 
 def classify_message_type(data,config):
     try:
+        from graph_db_consolidated import get_email_types_from_neo4j
+        
         # Initialize Bedrock client
         client = boto3.client("bedrock-runtime", region_name=config["bedrock"]["region"])
         model_id = config["bedrock"]["classification_model"]
-        label_categories = config["type_classification"]["labels"]
-        all_labels = [label for group in label_categories.values() for label in group]
+        
+        # Get labels from Neo4j instead of config
+        all_labels = get_email_types_from_neo4j()
+        if not all_labels:
+            logging.warning("No email types found in Neo4j, using fallback")
+            all_labels = ["announcement", "event", "webinar", "product update", "security", "vulnerability"]
+            
         label_list = ", ".join(all_labels)
-        # Prompt asking for clean JSON list only
+        # Enhanced prompt for comprehensive classification
         prompt = (
             "You are a classification model for vendor emails.\n"
-            f"Classify the email into one or more of the following types:\n{label_list}.\n"
-            "Return only a valid JSON list of matching labels, with no explanation or extra text.\n\n"
+            f"Classify the email and provide a JSON response with:\n"
+            "{\n"
+            "  \"types\": [\"type1\", \"type2\"],\n"
+            "  \"sentiment\": \"positive|neutral|negative\",\n"
+            "  \"urgency\": \"low|medium|high|critical\",\n"
+            "  \"confidence\": 0.85\n"
+            "}\n\n"
+            f"Available types: {label_list}\n\n"
+            "Instructions:\n"
+            "- types: Select matching email types\n"
+            "- sentiment: positive (announcements/features), negative (issues/vulnerabilities), neutral (informational)\n"
+            "- urgency: critical (security alerts), high (breaking changes), medium (updates), low (marketing)\n"
+            "- confidence: Rate classification confidence 0.0-1.0\n\n"
             f"Email content:\n{data['text']}"
         )
 
@@ -81,17 +99,21 @@ def classify_message_type(data,config):
         else:
             raise ValueError(f"Unsupported response format: {parsed}")
 
-        # Final validation
-        if isinstance(labels, list) and all(isinstance(x, str) for x in labels):
-            label_string = ", ".join(labels)
-            logging.info(f"✅ Classified labels: {label_string}")
+        # Final validation - now expecting dict with types, sentiment, urgency, confidence
+        if isinstance(labels, dict) and "types" in labels:
+            logging.info(f"✅ Enhanced classification: {labels}")
             return labels
+        elif isinstance(labels, list) and all(isinstance(x, str) for x in labels):
+            # Fallback for old format
+            result = {"types": labels, "sentiment": "neutral", "urgency": "medium", "confidence": 0.5}
+            logging.info(f"✅ Fallback classification: {result}")
+            return result
         else:
             raise ValueError(f"Parsed labels are not valid: {labels}")
 
     except Exception as e:
         logging.error(f"❌ Classification failed: {str(e)}")
-        return "unknown"
+        return {"types": ["unknown"], "sentiment": "neutral", "urgency": "medium", "confidence": 0.0}
         
     
 
@@ -166,14 +188,18 @@ def extract_dates(data, config):
 
 def classify_message_products(data,config):
     try:
+        from graph_db_consolidated import get_vendor_products_from_neo4j
+        
         # Initialize Bedrock client
         client = boto3.client("bedrock-runtime", region_name=config["bedrock"]["region"])
         model_id = config["bedrock"]["classification_model"]
         vendor = (data.get("vendor") or "unknown").lower()
-        vendor_products = config["product_classification"]["vendors"].get(vendor, [])
-        product_list = ", ".join(vendor_products)
-        # Prompt asking for clean JSON list only
+        
+        # Get vendor products from Neo4j instead of config
+        vendor_products = get_vendor_products_from_neo4j(vendor)
+        
         if vendor_products:
+            product_list = ", ".join(vendor_products)
             hint_text = f"Try to identify product names discussed in this email. These might include (but are not limited to):\n{product_list}"
         else:
             hint_text = "Try to identify product names discussed in this email."
@@ -265,13 +291,30 @@ def label_content(data, config):
     product_classification = classify_message_products(data, config)
     extracted_dates = extract_dates(data, config)
     
-    result = {
-        "text": data.get("text"),
-        "vendor": data.get("vendor"),
-        "product": product_classification,
-        "date": data.get("received_at"),
-        "type": type_classification
-    }
+    # Handle enhanced classification format
+    if isinstance(type_classification, dict):
+        result = {
+            "text": data.get("text"),
+            "vendor": data.get("vendor"),
+            "product": product_classification,
+            "date": data.get("received_at"),
+            "type": type_classification.get("types", ["unknown"]),
+            "sentiment": type_classification.get("sentiment", "neutral"),
+            "urgency": type_classification.get("urgency", "medium"),
+            "confidence": type_classification.get("confidence", 0.5)
+        }
+    else:
+        # Fallback for old format
+        result = {
+            "text": data.get("text"),
+            "vendor": data.get("vendor"),
+            "product": product_classification,
+            "date": data.get("received_at"),
+            "type": type_classification if isinstance(type_classification, list) else [type_classification],
+            "sentiment": "neutral",
+            "urgency": "medium",
+            "confidence": 0.5
+        }
     
     # Add extracted dates to the result
     result.update(extracted_dates)
