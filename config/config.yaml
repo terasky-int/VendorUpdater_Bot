@@ -162,7 +162,7 @@ neo4j:
   
 debug:
   enabled: True
-  verbose_logging: True
+  verbose_logging: False
   save_all_artifacts: False
   human_in_the_middle: False
   evaluation:

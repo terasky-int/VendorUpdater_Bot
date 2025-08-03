@@ -152,35 +152,42 @@ def add_email_to_graph(graph, email_id, metadata, email_text=None):
         email_type = metadata.get("type", "unknown")
         date = metadata.get("date", "1970-01-01")
         
-        # Find existing vendor node (don't create new ones)
-        vendor_query = "MATCH (v:Vendor) WHERE toLower(v.name) CONTAINS toLower($vendor) RETURN v LIMIT 1"
+        # Find existing vendor node with flexible matching
+        vendor_query = "MATCH (v:Vendor) WHERE toLower(v.name) CONTAINS toLower($vendor) OR toLower($vendor) CONTAINS toLower(v.name) RETURN v LIMIT 1"
         vendor_result = graph.run(vendor_query, vendor=vendor).data()
-        if not vendor_result:
-            logging.warning(f"Vendor '{vendor}' not found in Neo4j, skipping email {email_id}")
-            return False
         
-        # Create enriched email node
+        # If no vendor found, create email without vendor relationship
+        if not vendor_result:
+            logging.warning(f"Vendor '{vendor}' not found in Neo4j, creating email without vendor relationship")
+            vendor_node = None
+        else:
+            vendor_node = vendor_result[0]['v']
+        
+        # Create enriched email node with string conversion
         email_node = Node("VendorEmail", 
                          id=email_id,
-                         title=metadata.get("subject", ""),
-                         sender=metadata.get("sender", ""),
-                         vendor=vendor,
+                         title=str(metadata.get("subject", "")),
+                         sender=str(metadata.get("sender", "")),
+                         vendor=str(vendor),
                          products=", ".join(product_str) if isinstance(product_str, list) else str(product_str),
                          type=", ".join(email_type) if isinstance(email_type, list) else str(email_type),
-                         date=date,
-                         chromaRef=email_id,
+                         date=str(date),
+                         chromaRef=str(email_id),
                          source="vendorUpdater",
-                         sentiment=metadata.get("sentiment", "neutral"),
-                         urgency=metadata.get("urgency", "medium"),
-                         hasAttachments=metadata.get("has_attachments", False),
+                         sentiment=str(metadata.get("sentiment", "neutral")),
+                         urgency=str(metadata.get("urgency", "medium")),
+                         hasAttachments=bool(metadata.get("has_attachments", False)),
                          embeddingModel="amazon.titan-embed-text-v1",
-                         classificationConfidence=metadata.get("confidence", 0.5))
+                         classificationConfidence=float(metadata.get("confidence", 0.5)))
         graph.merge(email_node, "VendorEmail", "id")
         
-        # Create SENT_BY relationship to existing vendor
-        vendor_node = vendor_result[0]['v']
-        sent_by_rel = Relationship(email_node, "SENT_BY", vendor_node)
-        graph.merge(sent_by_rel)
+        # Create SENT_BY relationship to existing vendor if found
+        if vendor_node:
+            sent_by_rel = Relationship(email_node, "SENT_BY", vendor_node)
+            graph.merge(sent_by_rel)
+            logging.info(f"Created SENT_BY relationship to vendor: {vendor}")
+        else:
+            logging.info(f"No vendor relationship created for email {email_id}")
         
         # Handle multiple products
         if isinstance(product_str, list):
