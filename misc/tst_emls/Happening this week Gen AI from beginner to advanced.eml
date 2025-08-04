@@ -1,0 +1,1662 @@
+Received: from AS8P194MB1493.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:3c8::14)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Tue, 29 Jul 2025
+ 15:05:46 +0000
+Received: from AM0PR02CA0202.eurprd02.prod.outlook.com (2603:10a6:20b:28f::9)
+ by AS8P194MB1493.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:3c8::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8964.26; Tue, 29 Jul
+ 2025 15:05:43 +0000
+Received: from AM4PEPF00027A5D.eurprd04.prod.outlook.com
+ (2603:10a6:20b:28f:cafe::c7) by AM0PR02CA0202.outlook.office365.com
+ (2603:10a6:20b:28f::9) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8989.11 via Frontend Transport; Tue,
+ 29 Jul 2025 15:05:43 +0000
+Authentication-Results: spf=pass (sender IP is 54.240.11.128)
+ smtp.mailfrom=amazonses.com; dkim=pass (signature was verified)
+ header.d=amazon.com;dkim=pass (signature was verified)
+ header.d=amazonses.com;dmarc=pass action=none
+ header.from=amazon.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of amazonses.com designates
+ 54.240.11.128 as permitted sender) receiver=protection.outlook.com;
+ client-ip=54.240.11.128; helo=a11-128.smtp-out.amazonses.com; pr=C
+Received: from a11-128.smtp-out.amazonses.com (54.240.11.128) by
+ AM4PEPF00027A5D.mail.protection.outlook.com (10.167.16.69) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8989.10
+ via Frontend Transport; Tue, 29 Jul 2025 15:05:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=pog7p5txl4ruqhixze35ey6av7ivmsea; d=amazon.com; t=1753801541;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:List-Unsubscribe-Post:List-Unsubscribe;
+	bh=/f4DPggjitIRLqO9gtXuy6F/6REvpE48uX5MxPRsuVI=;
+	b=ElBC1iDUXZ9NJp1EK5X++VQ0uQEioUOK6VLoz1dsNXdcsC8SWXfrbreXDel5AGWd
+	34it3w3vCEq6FSXVIaVvntR+sNSveLCxWY7EvrsRVZTNwq+iChy1o27wSx7TYR7WwY5
+	XI31J1Kf9RHXawQ9ELNAGlXpQ1EEMRD12vtEm2vk=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw; d=amazonses.com; t=1753801541;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:List-Unsubscribe-Post:List-Unsubscribe:Feedback-ID;
+	bh=/f4DPggjitIRLqO9gtXuy6F/6REvpE48uX5MxPRsuVI=;
+	b=PQux7pCk1rogDBIIm5DmNq+ayzPuuJAyc8mOrguR15W+GvtewpByxLlUYqWix49V
+	xtNJdhn7mwXXM8Pzv3P0Jq4MTmOXH3pI9VP+Hd12CfZLNETswdNvyvfPx+ljyIqijpe
+	A8vs+rN2iyVVLSSiUtzHK5CKfjc+HZNjMa9SC+No=
+X-MSFBL: dHIw6UFw2XOHmD1dwvv55wZxv2D6FkFPVd3d3L0IvMo=|eyJ1IjoiMTEyLVRaTS0
+	3NjY6MDo3Njk5NTQ6NDg5NjU2NzoyNDI3Mzk1MDoxMDg4MzA5Ojk6OTg2NTgzMzo
+	2Mjg1MDQ4MTQtMjcwMCIsImIiOiJkdnAtMTk5LTE1LTIxNS02NCIsImciOiJiZy1
+	zanItMDMiLCJyIjoiZGF2aWRnQHRlcmFza3kuY29tIn0=
+Date: Tue, 29 Jul 2025 15:05:41 +0000
+From: Amazon Web Services <aws-marketing-email-replies@amazon.com>
+Reply-To: aws-marketing-email-replies@amazon.com
+To: davidg@terasky.com
+Message-ID: <0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000@email.amazonses.com>
+Subject: Happening this week: Gen AI from beginner to advanced
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_143828905_777121327.1753801539791"
+X-Binding: bg-sjr-03
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://email.awscloud.com/u/MTEyLVRaTS03NjYAAAGb9bBwt6Dzufl__a8-8X1QvKjxTGNKmb0j1rotFv7XNGqCvk_ew-i-TMMrIXchAVW2ou5Ro_o=?emailAddress=MTEyLVRaTS03NjYAAAGb9bBwtl-qodBUA51O4Rm2M1ZRhY2j4LMVGpl68SVqoZpn1YS-Imq78crxnzR7g2uCXJ8>, <mailto:GBWDQNTDHFHVU43GKVBW4NJWHFVFQY2YIRBES4BWMVTESTTFIZ3E25KXKRFUCYLKFUYUSPI=.9865833.1088309.9@unsub-sj.mktomail.com>
+X-MarketoID: 112-TZM-766:0:769954:4896567:24273950:1088309:9:9865833:628504814-2700
+X-PVIQ: mkto-112TZM766-000001-000009-865833
+X-Mailfrom: 112-TZM-766.0.9865833.0.0.1088309.9.628504814-2700@bogus.marketo.net
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-AMAZON-MAIL-RELAY-REDIR: bb9b4539191b44348ef966232b7968de
+Feedback-ID: ::1.us-east-1.RV8Dsk7NvPH6aSFSPkfOynRPdT4LmMC2IC5pG2cIn10=:AmazonSES
+X-SES-Outgoing: 2025.07.29-54.240.11.128
+Return-Path: 0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000@amazonses.com
+X-MS-Exchange-Organization-ExpirationStartTime: 29 Jul 2025 15:05:43.1531
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 63313e14-6c9e-480d-1b72-08ddceb16392
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM4PEPF00027A5D:EE_|AS8P194MB1493:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AM4PEPF00027A5D.eurprd04.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 63313e14-6c9e-480d-1b72-08ddceb16392
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: -1
+X-Microsoft-Antispam: BCL:2;ARA:13230040|3092899012|32142699015|5062899012|12012899012|4092899012|1032899013|3072899012|2092899012|13012899012|13102899012|5082899009|6062899009|31052699007|69100299015|4022899009|2066899003|13003099007|8096899003;
+X-Forefront-Antispam-Report: CIP:54.240.11.128;CTRY:US;LANG:en;SCL:-1;SRV:;IPV:NLI;SFV:SFE;H:a11-128.smtp-out.amazonses.com;PTR:a11-128.smtp-out.amazonses.com;CAT:NONE;SFS:(13230040)(3092899012)(32142699015)(5062899012)(12012899012)(4092899012)(1032899013)(3072899012)(2092899012)(13012899012)(13102899012)(5082899009)(6062899009)(31052699007)(69100299015)(4022899009)(2066899003)(13003099007)(8096899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Jul 2025 15:05:42.8325
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 63313e14-6c9e-480d-1b72-08ddceb16392
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AM4PEPF00027A5D.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS8P194MB1493
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.8523124
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8964.025
+X-Microsoft-Antispam-Mailbox-Delivery:
+	wl:1;pcwl:1;ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(811242)(255002)(410001)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?Nkc1VnRXaVR2cFJ5MForVlNlYUJKWEdTY1FySDFZRjhlbTRjazB3Nk5iUng3?=
+ =?utf-8?B?YlBLRUxsdXlGY2M2R0N6SmNJeExJQTJkOTZ6MXhtdDNpRGp3cFI4TDcrUVc4?=
+ =?utf-8?B?VXF4UEVKbElWaWEzV2NKb3hDRUVuUFgyd3krL1NCM25GcUpoeUE3SXl5Qk5Z?=
+ =?utf-8?B?bld1dk9lYTNEdUZMWjFoRkxjQlhQRVFZOVNWc3dzUmVDWFNaNEdjRW1XR21B?=
+ =?utf-8?B?OTN4eWI4L1JPdlpXcmlRcjFyTUx5a3U3dUtWR3FYcThEQkRZZmR3bjdOSVZt?=
+ =?utf-8?B?SlE2SGZTcEkxei9JeDhibnpaOVFyYXI1cHVhd3VicGw4MTF2OG9yOTlEOFNv?=
+ =?utf-8?B?NXQxcU1PVlJ3STd3VW5meUZScjQyUDhWa3UyQStQMmFVRkcvUG1YZHppN09r?=
+ =?utf-8?B?dWRvZSswYmhoa01ubDk1UzZhSUpyblpIS3lWYnBwcFpQSmdRc2VxUFd2UXpV?=
+ =?utf-8?B?Mjh1bnU5aG0vNVEzMHVZL1IwbmZqR0krZlNlWTVyT0I2VXh1bkhEQklPOVVx?=
+ =?utf-8?B?T3F4Q1R0UEw1Q1YyMjRkd3BMalZXWkd5QW5OUnE3SnBkWTR5SVNQWlFJMVlI?=
+ =?utf-8?B?bDJDVHRtUnRHTUR0ck1HOHEwQjBUWFNCZUJLemxrVTJYTUNCVlA4SENhVkhB?=
+ =?utf-8?B?dnVsUTZCck9GOXJMVFIwd3dOeEJxWW50R3FKQUY2Y2RzYU85a0JPUjdOT3pW?=
+ =?utf-8?B?UzNLTi92ckkwMnEvcVo1VVZ1emtUTXhoYVJxd1FqZXduUkN6Ky81UHdMRC9o?=
+ =?utf-8?B?eDFWVnU5eVdidytFTTNuaXdUc2RiMFhRVjFqVGZxOEF3MFljdXpjR2VyMjZX?=
+ =?utf-8?B?S3lRNVloR0F2cThkZnE4cEZsQzZSWlRsZnA2eXZtaGw5NVd0b2F0Uk1QNk9j?=
+ =?utf-8?B?ZTVpUDJhZWNWK3A3Y29Zc3lRSjFvK1F5UEZsTmt5QWM1Sk1kRHc1cTlnUDJR?=
+ =?utf-8?B?RjVPa2c2TUgwZmdURm9ZSEgwc3hPUG5tWEd1RTNYckNHTDhBYmo2dDJJNzNR?=
+ =?utf-8?B?TG9JMkQrYmtDK0xHQ2NlMmp4aW9tS29MV2Z4eFprQXJscXp4TjJZLzVQZU1x?=
+ =?utf-8?B?Q0c2Q05tVGR3Vk84dHNLemFqNTlBelBUamd5QmRiN0xVWXozRjhSZ2RkVFZF?=
+ =?utf-8?B?b29LcFZTc1dVMU1XYzcvaXdDRS9hZE5BKzBVYitnSzNSZHBqMDVvU0ZIeWJM?=
+ =?utf-8?B?YmtoaDFZSG9mb0ZyM1JEUXdZak9VdlhhWUVLTTRzRzFVakFrTVcreTVSSTdt?=
+ =?utf-8?B?Y0hmY2hpaFRMSXhJb0g1cVUwT0ZFSldxakVJN3NPZE1jeHEzbXFhbVdqRy8y?=
+ =?utf-8?B?RDEyeXNlcm5pTXNkQ05GYVl4N2I4VXQwbExGTmNGSU93SFR2SXczSktLcTlh?=
+ =?utf-8?B?QTF4ZG02azA4ajVHYlRaU3REdnBRZ212N3U5a0lhdnFIdUFDSVFuQXp2ZWln?=
+ =?utf-8?B?bFZGYzhRdVdKVHJiME5WNkZLcGJXcFJya0dRQU02eEdqVCtCU2xIOW4zeUdD?=
+ =?utf-8?B?OXBiU0ZGQ01CVzVIRktqQnNhZFlFYWhHWXJFb2NPbnM4UkZYRWJnTFVsTFVH?=
+ =?utf-8?B?Qk9QN1o5bnF3OVJ4L0FnSmI2TTBhc2w4Wk54azhiTWtwZjNnbWY1OXZIV3pq?=
+ =?utf-8?B?MFlvK2VHR0ZJcFlUN3U5NFRXZEcxUnZCazl2M0N1Ulp5RXVKVUtob0pQQ3V4?=
+ =?utf-8?B?VEpNSEQxVnRsVDlJTUZXZG9pcjZFWmNLdXN5bnhjNzhGaWREZVIzYTFaQzFM?=
+ =?utf-8?B?bXN0d2dTVS96WERITnNGTFpPUGhXaFhjUm1UMG9QOUpCTDUyekpwUVhSSnpN?=
+ =?utf-8?B?cEMxTitzdnVjdlNjY1lkNmEvMzU1NUkrS0ZKZlE5cXhjV0ZlUERBaWtaWFVU?=
+ =?utf-8?B?UXJGYnpwYVhnZ0orMGRhTlRzeDljVGdXQ2hiUklzdjMrdEZlNVNXRlMvZ25q?=
+ =?utf-8?B?MXVKcUxoaTBIKzV2SHppdHpGTkpTczJ4TG1EMjgwc0VISDZ1MzJjR3p5MWp3?=
+ =?utf-8?B?Sm1SS1RhSkZ1MTFSNzNVWGNpQ1hVTVFYTXlqNFlueThMTVN1bzc1TnZoNWF2?=
+ =?utf-8?B?Zkp4Z0txbzE1VlF5a3FWU2tBZHNVVkY1dVZQcXljQmY2eThpYU1Ga3RPM2o5?=
+ =?utf-8?B?Z1Uxek1ML09heEFOdzdtMEwwU2dXQlptQzJXVUFXUFI5NnphY0lIWGxsc2hr?=
+ =?utf-8?B?bEpUNlFyaVB1U3JKaUNNTG5icGp0aUt3QXJJZ3I4dk1FUjVCM1FEMnFZNzU0?=
+ =?utf-8?B?L2hsVVB0NVVmaUtaVlZ0Tlg3aFQrYVkzSHh2S2Q2d20wbGhoN3ZRUzhMN0R3?=
+ =?utf-8?B?S2lraGtEUEJSOEpUR0Q1UDlCMzJJVThhN3lNNmRFUDB6Y0c4NUhHK3AwK0gv?=
+ =?utf-8?B?QzlBWVdXclNUYVRkc3hsTlVhcFVONDd4ZGgvdmFkRUU2RWxnN3lrOEw2Z1hI?=
+ =?utf-8?B?VWJoNUhJS0ZNR01HZTJ5UWVVYkJrcnZPOXhkK3d6enlLQnVhQ085SWNqSGZl?=
+ =?utf-8?B?YnBYV1RLVDJNVDRCRXpOOW91M296STFPdmlDd1p2ZzAraFJ1S2xyR0tOajJu?=
+ =?utf-8?B?NmFzK1AwbXIvSGpGc1BSLy9oNTgzSjZhbkczaW5IdG9WRHVQeEVqa0hhUlpS?=
+ =?utf-8?B?S2tZRkxUbVNzelhZaS9DdkpZZ3ZBWjBjaWRCZ0pQK2MvdnVzcWRMUEhtVjky?=
+ =?utf-8?B?cThad213a0orMzAyNzVZUUdsWFFWMHJ2NTRleHg2SEdhc1JWd3NoOEovOVVF?=
+ =?utf-8?B?THlFcWhpeEZUNlBWWEpEb3R0OU5tMmwzVkVRZW5OLzkrb2E0T0hCYTV5SDc3?=
+ =?utf-8?B?ajUrRXJMTGxPdnM3SlBNb29hZ0V2UjF6MGp3M3lDZWo0TUxsRFF3cFlLOVFp?=
+ =?utf-8?B?VGlGSHUyQ0FEMGwreHVMcFJlZz09?=
+MIME-Version: 1.0
+
+------=_Part_143828905_777121327.1753801539791
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Build your generative AI skills in 60 minutes.
+
+[AWS Logo] <https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.a=
+wscloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt58_ckdCqcODAZ_otVZW4CITwECEWjre6epbg=
+-aSydzi9M7EBzyIwbCM1QdUK20FHMc=3D/1/0100019856b7c889-159247be-b86f-45af-8fb=
+c-04e7bad6ae3a-000000/hayPmCSAeGJQs3Nfehxy6IxAmDY=3D436>
+
+Learn with AWS experts Live
+
+Join us this week for live, expert-led training to help you grow your skill=
+s in generative AI. Whether you=E2=80=99re just getting started or want to =
+go deeper, these sessions will equip you with practical skills you can use =
+right away.
+
+
+Time    Session
+Mon, 07/28
+9am - 10am PT   AWS Dev Hour: Amazon Q Developer
+Tue, 07/29
+11am - 12pm PT  Deep Dive into AWS Transform
+Wed, 07/30
+2pm - 3pm PT    AWS Innovations: AI Pulse
+Thu, 07/31
+9am - 10am PT   AWS Partner Pathways: Exploring AWS Certifications
+Fri, 08/01
+8am - 9am PT    Deep Dive into Agentic AI Frameworks
+Fri, 08/01
+9am - 10am PT   AWS Founders of the Future: An Agent Optimized World with C=
+rewAI
+
+Learn more<https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.aw=
+scloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt58_ckdCqcODAZ_otVZW4CITwECEWjre6epbg-=
+aSydzi9M7EBzyIwbCM1QdUK20FHMc=3D/2/0100019856b7c889-159247be-b86f-45af-8fbc=
+-04e7bad6ae3a-000000/XNUqK52A19RRGRiLHLOm4HgGS2E=3D436>
+
+Can=E2=80=99t attend live? Sign up<https://vmxwvcrs.r.us-east-1.awstrack.me=
+/L0/https:%2F%2Femail.awscloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt1u-x11kzxfxDk=
+_BEofO6qrJbve8H3g-sf5D-WrpdSZktQDddM7sceYCMSW4cR0wXhw=3D/1/0100019856b7c889=
+-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/59v-TzyqAQkdQB2mHelEHO_opSc=3D=
+436> to receive replays and updates on live and upcoming series.
+
+If you'd rather not receive future emails about AWS Training Live, please c=
+lick here<https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.aws=
+cloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwtz75hbMq33u9Zx9YoGhqalHSnvBLznjEwP-8bDi=
+2H8S-5sNr7s8nf2W-YPkFts6lH_A=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-=
+04e7bad6ae3a-000000/wj7etbFWTl5R-GkJxqvGxQhnKxY=3D436> to opt-out.
+
+
+[AWS Blog]<https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.aw=
+scloud.com%2Fdc%2FajD_BapU74vzOhWVQvr7pwr993A-PVrTjB0O_rEx8WJ7dBQUfoxL9U1eE=
+0YKWSfeaTD_FZO73OfeEP8-wjiyLD4k7oUNSg8BknI1J4Mtmh0FV57d4j52Us6sBtpyXKoqKo00=
+WBPz4KVv90Fm0EsGlpSj2UYJICrfcyAxrqPP2oL-x2vbWyLmAwFKuKF2Nd2l7jR4e1JkZdNPaCn=
+AxxFpJruzg29Bptj2kZhtuhkevdYr3Qqm50SgfegJZoD1kE4agHcfmqh4wOF1Tm1dFjUTLHJpum=
+zxwVnMjnfIlxOpFvFDYUtdeFuGPOcZLT1P3Aa4oVk4DGokwT-9IfY8de0NXvoIBdKuYt62RLrtZ=
+6AxTe4=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Js=
+m24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-=
+04e7bad6ae3a-000000/Dh2SNsQGbi6S_arzPlEg9DlMuuQ=3D436>    [AWS on   Twitter=
+] <https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.awscloud.c=
+om%2FMTEyLVRaTS03NjYAAAGb9bBwt_gJWMXTTacmZUyy2lCEZZX4_FtxUhGnQ3-DuYDmybmRpN=
+jyFB7UnBcQsHKPyzyEF9w=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad=
+6ae3a-000000/htu6O53Lpy5o_n_Qluxyz7nfJYw=3D436>   [AWS on Facebook] <https:=
+//vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com%2FMTEy=
+LVRaTS03NjYAAAGb9bBwtzYwUmoC6_hG7oUn4XNeIX1xu7t4ELJV6VAXq116styadrJg4TaXn36=
+NLTmSONoT5bQ=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000=
+000/kREX9f_4sXh6YGLjnuQnx89N5hE=3D436>     [AWS on Twitch] <https://vmxwvcr=
+s.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com%2FMTEyLVRaTS03N=
+jYAAAGb9bBwt5rVEeg0oh8LJtVVoAoNVNMpu3NWYQ6x91YCSwfNMj0S-f44JjaW2InXtZLQni5z=
+4sw=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/IL4_E=
+QlK1xHKlr6iX3ObygBjAe0=3D436>     [AWS on YouTube] <https://vmxwvcrs.r.us-e=
+ast-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com%2FMTEyLVRaTS03NjYAAAGb9=
+bBwt5sfpX94IdZPchOTqVXxrciV9S0lEOHHQ7mj71nAUDuSA01dT2pby29sZMPDQiE9y9g=3D/1=
+/0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/_g18B6IGoRHIl=
+nxQ4MAdjhL8SV0=3D436>     [AWS Podcast] <https://vmxwvcrs.r.us-east-1.awstr=
+ack.me/L0/https:%2F%2Femail.awscloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt6URCU4N=
+i1NPMLZf3lRLkjL5Yd4WYLdvdEg2xP6Dh5_Emy7q9v4jw0IF_mlo-FbqdkA=3D/1/0100019856=
+b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/A6thed03vhAnPSKSIdUw6QGE=
+IdU=3D436>
+
+My Account <https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.a=
+wscloud.com%2Fdc%2FyuZkfPEXXFT65tdReNucEvTRm1nqq5Eg9ByfCCxPZLBhFWAGCfvufj6d=
+hVwTzEtOolfnQ7I_aKw9vWMMUczpQvkJa_KOipHJBaR5Z_N8noWfZ5mPywR59lVAwdJR0-sCnLG=
+B6hYQB34ByGQIa4ewyMdyxX3uGQNB5RI6v5um-lGQrpFqtN6bKEeIyAkY5YgRDimHKdeTsT256l=
+rCgMiPL8QE8QQHP5BF3aSC1J-WmgwsQumGxQp56gpdnqXoyuADnhpGIJsFk9Q77zgINBb-Zs8Vr=
+ZfKJjcr9SI6iZO6GTXYbsDx0Vh1vENo2d2fevLQR52tAgzFaBUfVlTYkhpskoHU7xcg36fogjti=
+RSM5y0U=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-lyDJutJlnMRbE3J=
+sm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc=
+-04e7bad6ae3a-000000/kcXNDhX_rcNw49bmNAdLzvS_3Ag=3D436> | Getting Started<h=
+ttps://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com%2=
+Fdc%2FKwqiTCOQ16Q1JCi3MdelD3ZZGcncVANDEUTkhckMhmjKLpc5CeluLOBeryeJSliZOd7HS=
+aDnjFzd0Abmoc1XBv0D71RU8y0cwQ4LIu4quVAmSfsLq5LD7PBO_u0e4IIQGnK2zuu0xk2lWElp=
+OLJGPxk1yg5faTeKRlmm_XJ82dnLcKXhbzFSokVJDColKuF9bhpCJiD2vWyLjFpwdXjtthNbzmD=
+n7JVn4WRB8EkrIsfnI3YAHE6FC_jVe9YcZ3I5SfLVIKHHSt8Bf1MIS7AfhiAyyelxzERQFqJ6A7=
+W2caVUM5yp3ScOzZNL8BvkHtySxFiKuhhDZF-ceHCqr7OT0NsozuVTW2G5Zn69g-fi_2g3UXW4Q=
+nE05GgAAXTLCuLs%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-lyDJutJlnM=
+RbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c889-159247be-b86f-45af=
+-8fbc-04e7bad6ae3a-000000/nL71b_eliJRYFkG5qMmn8Bns7hw=3D436> | Products<htt=
+ps://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com%2Fd=
+c%2FKwqiTCOQ16Q1JCi3MdelD9sCd73ybn5pIK6Q1s91TsInZXxKJ-4uOvdXbGoTWMVFmcWjgoZ=
+kHIWHXLlU_8FVkim4eNFjvPWw1wRdvCihrIktXhQ1gHBB4NVTY93qU3PoMAZacCIkCzS9823a0G=
+QociTxGVobZ_KX0mtBkG7mJSpQikou4-HUMsVHrxjs3yfZbiyQqyCWZGj-p6ie9XtUwqRnUWMhL=
+6hH1bVRc4deIBUf8ZLw3DuD2eAm65FguIzQVYpya1Cua8S35Z5qc4ffdIA0Tq6qR1bgLQ5J5ypD=
+qPaQdWRqCtm3eFOPa8itkS5Dy7bkGIc1UOhvgxzu-O4HPNz8Kw7boRkIiXyLqPvB88E=3D%2FMT=
+EyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-z=
+XZAxyOHw-QlUT4=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-0=
+00000/M9zyaxSpuw_i3nD1dVrVd1fQAf0=3D436> | Solutions<https://vmxwvcrs.r.us-=
+east-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi=
+3MdelD4QZshU8GqrOd2k3p3rKZqhzwaMpBT8E9ly6lfYMY3yjrR944vEDSHxSkC7vhqkjxtSdFV=
+xO_N1DVEH-0lrv0oXHfyKdKC0iB3xB2mvNtCLbEnB5P15a8AsPXE1-Vl7xt9T0TtiJPStsHgFja=
+WWzCd5j1pBRfhN4ieaLoES95zuaGUtsdmod-Zre4zEs1v5XvJsi4z1L1aINRWt4LZqSABa8RwZw=
+7Q2uyQGdhdbKu7eyJD40GLi16s3OSkNVSGE-bi9uv-LWCz4xD-zWu2hy7twoG9e1EV8IKaG9k1d=
+NALOkkPSgCcdVtOOyEXobxe1-tpf32JlpRPY_-r9FBEERR9yhEDOf9_BeSO3XLWRo96-K%2FMTE=
+yLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zX=
+ZAxyOHw-QlUT4=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-00=
+0000/TeB9DUfqPi_EVwIBMeNwWYiphAE=3D436> | Pricing<https://vmxwvcrs.r.us-eas=
+t-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3Md=
+elD8mEuGpWjSN1ahZchBoZx6PBBUEBp30as5eEkDNdTHDlVNq_wIq7EgOK2r7Nr3i9oSst7_Vjw=
+yJamyLEj3Qq_zsMhMcyOqWH6coF_tXrDCzOTMzdYL7ro11KLI-hxwhZkhTFIRiUvb_Vlnanij9O=
+5srq8JHs82VNOmFF32T29kAasJEkPTkl094qZIppafbBdcnCBt-Z7rQ4UGHtpiSIGD4y43MWQGU=
+p2xCb3SL0_LVmr7amozpX6BfcWOyIPaxUYc8KH4YJU3aEjiC-M1shC42YrGVo8GeoOYJtAgro2P=
+ryWwuXA5G47_L9MzIgKr0BUxHkjcbd5GpUijuOZaBpsq8=3D%2FMTEyLVRaTS03NjYAAAGb9bBw=
+t0XIw11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/01=
+00019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/Cnzi1ImCiyvCXsyG=
+fvE20BxLDSo=3D436> | Partners<https://vmxwvcrs.r.us-east-1.awstrack.me/L0/h=
+ttps:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD5jQ51lhLdWIOW7AEK=
+XGYGULB8j8cCb2qYQqLsh0uh_FJhv-ZO8x9Y_bManAWMDEe_7Jirsx8Wl8eq8xIYNH2oV8LcR4H=
+TsmdtIyHtZWtIYVuyRqJYaLZZhnDeUZwBo0RuhIX9-OArOipUsv73vBT-feqSukpVECXT6Tuwvs=
+1UY1iAnTcip-OE-SCfNZZa5R0GIi7chpWOHyARolpNTvc7xm9tvPi12G5CSq8JAZzFsJmSTumRS=
+lYRxuQIlmD3yGDsKzSwb-hBfen0EeMDVzs4_d5NEaP1rHuk3elA0XxjpXmGyHRlGkqSLhYoIpLu=
+EPMNoecZV5OWiR5pqprOXWT_g=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM=
+7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c889-15924=
+7be-b86f-45af-8fbc-04e7bad6ae3a-000000/viP6WrX25MF8seCNCWJ4Ex-odsI=3D436> |=
+ Documentation<https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femai=
+l.awscloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwtxdqdd85RlmKBzcxSbh8B6a4ik2tx1L5w6=
+6FfA3ArXS5pUX0mUrvho2sTSl1TrWPcBQ=3D/1/0100019856b7c889-159247be-b86f-45af-=
+8fbc-04e7bad6ae3a-000000/sCRoXRH9ri1EYTnZwPSthVDE8yI=3D436> | Training<http=
+s://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com%2Fdc=
+%2FKwqiTCOQ16Q1JCi3MdelD1hIp1f2qRxHRhoDJWBUmM5wW620mmvVv6FECKR0rLCamloTEQ_q=
+YUs4OmeFcXC4DYCmqSZlq4d0NI6u8LXWawVQ8-WypFlFgBGcPM9FpwWVaPQIEIa0h69DUFOizT2=
+pw_SBP4A70y2gUoJyNAGmfCEC8RorrS_RQvD9LmMU8A8nAA4JhacAfA_giOSSd2vztdKSf8wFBp=
+7VsdUlIOkOJKGkeOF5yQSTNT9w1OtiGo5KoaI-Jk6xWHAs86VfiMLtiXPFDWQBe1OCRRRt_TLAS=
+YDM3S0sZn2fsxQoLHgodgWSIzEO_Ep92cDGa68xxlmxB8lmL5GK6QfzujwBixsOQ8E=3D%2FMTE=
+yLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zX=
+ZAxyOHw-QlUT4=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-00=
+0000/19zbXVtQGVkr1lLSrXAUHdX4d6Y=3D436> | Events & Webinars<https://vmxwvcr=
+s.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ=
+16Q1JCi3MdelD1n0M3o1Ml601F1cD0S1yZoK29DmYnvhMqLSVrWWvStZ2EqUa0hZPHjmz6bjU1U=
+Ta7l5lofBflv99FPiKeqt-YK_ryGNsRgSPk9b8loarSodyNh48fYtweSYJ3FIRYyk3Mgpx9sYP4=
+VYjkJyCqlokKgxiJK8ddKDja6Qm4gepz0Pexuy320lqKiWoncCFsJ_hrKYlYUvSbW2AzE-dlcsA=
+YT4_o2EApOzqN4UMtFfgsvHpydD5oAbGr33XK-hsVhnXiOikhcngCXV8yf80gF73nevPSATTOjU=
+vSNzip77jtOTwtDgZXSDkJfdkI4weoXIZYPPB-zC4o2UqfykIsdaInQ=3D%2FMTEyLVRaTS03Nj=
+YAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlU=
+T4=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/D7jZ3d=
+vPu6OJo2Nzz0MhHGHd9Pw=3D436> | AWS Activate<https://vmxwvcrs.r.us-east-1.aw=
+strack.me/L0/https:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD18t=
+_h1onwWPVSVq3tmAnNZvbw8ts9jTUseYd1K9A9C4QX444q8y6DeA7xrtezTSSQVGK5juCxZyuB1=
+3nb73u78XT_-qjWQP_q8vrfe0KExlzrIxY74asEr8lvCg4V29wS2vYs4hXed2ctc3b__hthPDEC=
+WJzOTNtWL8o9jookwxY-LO8lF472slBDsJr_WZf7q_GFfoK1xd3CvA9J4isOUDoSIaKCsWVhRjf=
+zrY36hioo63m5VCVwjJ9g524ZzUmUeduyCM4vVinXoF_NB2Z2px-K55tRtd0fjuElt2lMRWYSVV=
+0_9JQ09t3eGpovjSLLjtKqDvIZp7Y31rm89TvfehQs6GeKjIfnidBqkrR4qt%2FMTEyLVRaTS03=
+NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-Q=
+lUT4=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/I8hI=
+RPwgaio1YJVxlVSO6tww-jQ=3D436> | Marketplace<https://vmxwvcrs.r.us-east-1.a=
+wstrack.me/L0/https:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD78=
+in__VMI_zdbVDMzZ3kSvR93Srg3KACAeaH-feV6n8fFZFwLCyL52zEa_l-HxV0JCfghfbu1aUF3=
+cHGv91t_zUBGGShat6bUM3FMPmMyq-QpFwBTaJEjRRZ6iof4kIVrYkeCwXzE8i761enSAEVBTQk=
+WB6ZLflktx2EBOGEo6R8VBzc_pP-17xGF9ZCoulai3juUgLdNUWOs37obeCzDH79yPA2KUI7Y87=
+80yGe55NcUth9SSFcvgU3JZ1-Mzkwx9yK30nBU7b8WhI-yfPNm20XNO55-wfpSvDUv7I6rOoPMc=
+4FemnPiRCtzNBYl6lqWdfokoBlNEWkSJYFtBtsb41D2Pw4i6_J2va_Q7CUWSR%2FMTEyLVRaTS0=
+3NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-=
+QlUT4=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/d82=
+JcfeSWeLr9k4_FTDyBpV0q7Q=3D436> | What's New<https://vmxwvcrs.r.us-east-1.a=
+wstrack.me/L0/https:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD4n=
+87CSJUnooghbVARMp3WkrbY75_US-LruX-Vv4-vR9AhVy0-S0yAX4xBtmvlYMsUAIAudu5Gau9P=
+MvJb3oFqEOnlr6oyYYyzMJ9dbmi2njB5DRqGqEbnAnU4J0cZTk3VapNZhjpC-sIdOhA61ZDqm5g=
+bvDR8J2ZynMVEAb6kw6qs9q8McaORFNTlECh27Z0AfdAwrJh-lzJXov6xt0gYq5PkXMBReiGOxH=
+tHwtsY4DLfx4RdpzKeq4kwrVXGTJ0K5KHINkMHU09-3UJcz-6_4VSduHBCNhdu7bwchzI9md7f5=
+q-VQ8NMbF4Ix8h7UUJXg2gmk3DBDom-GCllKobAs=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw=
+11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019=
+856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/c6j_iF5q1mH6Nr68TP_ff=
+igjBMA=3D436> | Blog<https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%=
+2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelDzHH7BSS9MdSB9ovXKz-LIg9nOk=
+TB8cHgVabuRKAFKWcloaCCyTNJme_oSDwHpy5CYi8yTVtKWJz2iI1sK5EBYxHOJFBfp7xUAX35b=
+9r82LOrx2TTPvoAlK3UKVUyPNPo-G5SGbYhQesqq0RI11bA8Sa8M48dOtg9Bo1EwUeAf6F67EuK=
+6UOLMf6x3YMlqhstdOyU0f5gBEP8oCgvb4TOSjTFe9lP6I8Yao-WWIONV4jzRr1ypfeWFQWb7IX=
+PGR-x460xxDq4gKF3qWd4N_Y0UTnRvq3PaFAnJ1YnQ_ZJ_puv5awyIQMAPyc7_bsBHmJc2uPvh4=
+9XK8PFauSeLeDvWkw9lfK_VXTGMgrpkmS-2Td%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJ=
+ylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c=
+889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/3yIhT0wUBeUujo8isRW6VVmL94c=
+=3D436> | Analyst Reports<https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https=
+:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD5aQqce63OVL6baXF6dCre=
+2fFfS1oodd2_7Kq1Lg_WJRi8IOWMc6LUBIdAnqXU3Q57DzPoIXPrvykEcSl8H3zlDnWE7bzLwqZ=
+L6C1tsTOUsFGpTQbjKb8j_UxcsFIrYAkgGew6cs0My6F6uxe2q2UYCAtkLbIC_sqcoqgDoU6I57=
+Codsi0qb6matVw8JG5FK7W1LE1viHm0CYT002MeQyW6kIGpo_TLEynWXhlVhU0TiRNgPF2qjtUh=
+B6eG9juR9E4bGy54Oaaw3igedliBWrV2bYGLjIPi7LzRc51a_KnXv3t0peahUHzUEg3sHcLBze4=
+JQ2LR7xTqCxpprHtLTDfkUARhlQIybQE4WM3N6Txn2TdUWB82-JvtDFK0jbU4RnP8pg_B1o2luA=
+A_rp7WGueg=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-lyDJutJlnMRb=
+E3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c889-159247be-b86f-45af-8=
+fbc-04e7bad6ae3a-000000/6JTXatWZqOaYjAfo50cGMhWUspc=3D436>
+
+View Online<https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.a=
+wscloud.com%2Fv%2FMTEyLVRaTS03NjYAAAGb9bBwt2WPDt2I_dJFmHWT-cQLQmKWCtRlaRPWg=
+_R6tJzggMoSLwBINCHmKNvdsM1tUonNx7Y=3D/1/0100019856b7c889-159247be-b86f-45af=
+-8fbc-04e7bad6ae3a-000000/3T17n0EVEqUclTD55zNOTWQ5Hk4=3D436>
+
+
+If you'd rather not receive future emails from Amazon Web Services, unsubsc=
+ribe here<https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.aws=
+cloud.com%2Fdc%2FsRhgdM26bquWWERQj_H99lCavgYp1xy4_-5c9n1WxRAg-Iit3iVTUYZUZl=
+Qmzz1BTdI04NvsSqvrTM6rSnQGNE7u0izR2mDymghKXNuyYsuqtuhc5SXMWu64li6MykLWUx3OT=
+IajsmXd3jzQ3Hc1-zTkTIiBCh8ghBgXaZ53wo7acPbZYhdFaeij3R7VpUsKo3ddWNwiwhOF25Jq=
+jbF_aEHihSCez89gQvog1rxHH-1rlePscigiA86F8QdFGY_1a2uO8RKvXmtNB584kTTxP7djWjm=
+uIWMHbP89YBIaKlkG_yPPqp6K0qEVMagr0t6gRGVCWLHIdodPdH5ke9nsLklyrjpkySkS84rSov=
+qx84sEQM5FmWTjoFTWc63DxJ8MUzNlqZ4N7Dj1ChvqhFpgAr7DmE5qhDT02dgPPRAf5p14s5xdM=
+oeIwsZG0kBWlCo3IBq9lvId5sFtcWwremzCmQ=3D=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw=
+11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019=
+856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/-xQ2gcxYIz0DM0oerbrmu=
+x05KCs=3D436>.
+Amazon Web Services, Inc. is a subsidiary of Amazon.com, Inc. Amazon.com is=
+ a registered trademark of Amazon.com.
+This message was produced and distributed by Amazon Web Services, Inc. or i=
+ts affiliates<https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail=
+.awscloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt6mxRDcQeCXdltYtBlDAgga0asGmbReZMYJ=
+NBIvKl-5xS8zEnCxgwRmfK8k-Dwt3yDs=3D/1/0100019856b7c889-159247be-b86f-45af-8=
+fbc-04e7bad6ae3a-000000/tBcpRXPwiVrElotjUilg7VqPSpA=3D436>, 410 Terry Ave. =
+North, Seattle, WA 98109.
+=C2=A9 2025, Amazon Web Services, Inc. or its affiliates. All rights reserv=
+ed. Read our Privacy Notice<https://vmxwvcrs.r.us-east-1.awstrack.me/L0/htt=
+ps:%2F%2Femail.awscloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt-XennetPb2fZAHjepTk6=
+bLQBofvpCCKTSnt4QMcOTbmmgMfYGttPIaPr8JKjk9GMdg=3D/1/0100019856b7c889-159247=
+be-b86f-45af-8fbc-04e7bad6ae3a-000000/d0EMbhv2xn2dCW1rV8LhoM7NjU8=3D436>.
+
+<https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com=
+%2FMTEyLVRaTS03NjYAAAGb9bBwt9W4B3k_jTaEkY71Wp7FHcdaDQCtSCcc44nsgiI5Sdr1SBtV=
+pCeLs8hf6CA3Cve5yZ4=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6a=
+e3a-000000/HUUmFYEVIm9E_JM0pVEomsar60w=3D436>
+
+[https://vmxwvcrs.r.us-east-1.awstrack.me/I0/0100019856b7c889-159247be-b86f=
+-45af-8fbc-04e7bad6ae3a-000000/kcJq_p5_H1ZdEgRWZmvJa674Q64=3D436]
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_143828905_777121327.1753801539791
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3.=
+org/1999/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:sc=
+hemas-microsoft-com:office:office"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<title>Amazon Web Services</title>
+<!-- Always use in every email-->
+<meta content=3D"width=3Ddevice-width, minimal-ui, initial-scale=3D1.0, max=
+imum-scale=3D1.0, user-scalable=3D0;" name=3D"viewport">
+<meta content=3D"telephone=3Dno" name=3D"format-detection">
+<!-- For Dark Mode Code ----->
+<meta name=3D"color-scheme" content=3D"light dark">
+<meta name=3D"supported-color-schemes" content=3D"light dark only">
+<!-- MODULE 01 -----><!-- MODULE 02 STARTS -----><!--CTA Variable   --><sty=
+le>
+        @font-face {
+            font-family: 'AmazonEmber-Light';
+            src: url('https://pages.awscloud.com/rs/112-TZM-766/images/Amaz=
+onEmberDisplay_W_Lt.woff2') format('woff2'),
+                url('https://pages.awscloud.com/rs/112-TZM-766/images/Amazo=
+nEmberDisplay_W_Lt.woff') format('woff'),
+                url('https://pages.awscloud.com/rs/112-TZM-766/images/Amazo=
+nEmberDisplay_W_Lt.eot') format('eot');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'AmazonEmber';
+            src: url('https://pages.awscloud.com/rs/112-TZM-766/images/Amaz=
+onEmberDisplay_W_Rg.woff2') format('woff2'),
+                url('https://pages.awscloud.com/rs/112-TZM-766/images/Amazo=
+nEmberDisplay_W_Rg.woff') format('woff'),
+                url('https://pages.awscloud.com/rs/112-TZM-766/images/Amazo=
+nEmberDisplay_W_Rg.eot') format('eot'),
+                url('https://pages.awscloud.com/rs/112-TZM-766/images/Amazo=
+nEmberDisplay_W_Rg.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'AmazonEmber-Bold';
+            src: url('https://pages.awscloud.com/rs/112-TZM-766/images/Amaz=
+onEmberDisplay_W_Bd.woff2') format('woff2'),
+                url('https://pages.awscloud.com/rs/112-TZM-766/images/Amazo=
+nEmberDisplay_W_Bd.woff') format('woff'),
+                url('https://pages.awscloud.com/rs/112-TZM-766/images/Amazo=
+nEmberDisplay_W_Bd.eot') format('eot'),
+                url('https://pages.awscloud.com/rs/112-TZM-766/images/Amazo=
+nEmberDisplay_W_Bd.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'AmazonEmber-Heavy';
+            src: url('https://pages.awscloud.com/rs/112-TZM-766/images/Amaz=
+onEmberDisplay_W_He.woff2') format('woff2'),
+                url('https://pages.awscloud.com/rs/112-TZM-766/images/Amazo=
+nEmberDisplay_W_He.woff') format('woff'),
+                url('https://pages.awscloud.com/rs/112-TZM-766/images/Amazo=
+nEmberDisplay_W_He.eot') format('eot');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style><!--[if gte mso 9]>
+    <xml>
+     <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+     </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]--><!--[if mso]>
+    <style> body,table tr,table td, table th, a, span,table.MsoNormalTable =
+{ font-family: Arial, Helvetica, sans-serif !important;   }
+        strong , b {  font-weight: 700; font-family: Arial, Helvetica, sans=
+-serif !important;  font-size: 16px !important; line-height: 24px !importan=
+t;}
+    </style>
+    <!--<![endif]--><!--[if gte mso 9]>
+    <style type=3D"text/css">
+     .outlook{padding-top:0px !important;}
+    </style>
+    <![endif]--><style type=3D"text/css">
+        :root {
+            color-scheme: light dark;
+            supported-color-schemes: light dark;
+        }
+    </style><style type=3D"text/css">
+        .font-family-decor {
+            font-family: 'AmazonEmber';
+        }
+
+        strong {
+            font-weight: 600 !important;
+            font-family: 'AmazonEmber', Helvetica, arial, sans-serif !impor=
+tant;
+        }
+
+        b {
+            font-weight: 600 !important;
+            font-family: 'AmazonEmber', Helvetica, arial, sans-serif !impor=
+tant;
+        }
+    </style><style type=3D"text/css">
+        @media (prefers-color-scheme: dark) {
+            .btn-darkMode a {
+                color: #fefefe !important;
+                background-color: #161D26 !important;
+                /* background-color: #f3f3f3 !important;*/
+            }
+
+            .btn-darkMode2 {
+                border-color: #0972D3 !important;
+                color: #0972D3 !important;
+            }
+
+            .btn-darkMode2 a {
+                color: #161D26 !important;
+            }
+
+            .white {
+                color: #ffffff !important;
+            }
+
+            .dark {
+                color: #232F3E !important;
+            }
+
+            .dark2 {
+                color: #888888 !important;
+            }
+
+            .darkMode {
+                background: #000000 !important;
+            }
+
+            .lightMode {
+                background: #fefefe !important;
+            }
+
+            .lightMode1 {
+                background-color: #fefefe !important;
+            }
+
+            .hide-darkmode {
+                display: none;
+                display: none !important;
+            }
+
+            .show-darkmode {
+                display: table-row !important;
+                overflow: visible !important;
+                max-height: inherit !important;
+                line-height: auto !important;
+                visibility: inherit !important;
+            }
+
+            .dark-img {
+                display: block !important;
+                width: auto !important;
+                overflow: visible !important;
+                float: none !important;
+                max-height: inherit !important;
+                max-width: inherit !important;
+                line-height: auto !important;
+                margin-top: 0px !important;
+                visibility: inherit !important;
+            }
+
+            .light-img {
+                display: none;
+                display: none !important;
+            }
+
+            .nav-headerLinks td,
+            .nav-headerLinks td a {
+                color: #0972D3 !important;
+            }
+        }
+    </style><style type=3D"text/css">
+        @media (prefers-color-scheme: dark) {
+            [data-ogsc] .btn-darkMode {
+                color: #fefefe !important;
+                background-color: #161D26 !important;
+                /* background-color: #f3f3f3 !important;*/
+            }
+
+            /*.btn-darkMode {
+     color: #161D26 !important;
+     background-color: #f3f3f3 !important;
+     }*/
+            [data-ogsc] .btn-darkMode a {
+                color: #161D26 !important;
+            }
+
+            [data-ogsc] .btn-darkMode2 {
+                border-color: #0972D3 !important;
+                color: #0972D3 !important;
+            }
+
+            [data-ogsc] .btn-darkMode2 a {
+                color: #161D26 !important;
+            }
+
+            [data-ogsc] .white {
+                color: #ffffff !important;
+            }
+
+            [data-ogsc] .darkMode {
+                background: #000000 !important;
+            }
+
+            [data-ogsc] .dark {
+                color: #232F3E !important;
+            }
+
+            [data-ogsc] .dark2 {
+                color: #888888 !important;
+            }
+
+            [data-ogsc] .lightMode {
+                background: #fefefe !important;
+            }
+
+            [data-ogsc] .lightMode1 {
+                background-color: #fefefe !important;
+            }
+
+            [data-ogsc] .hide-darkmode {
+                display: none;
+                display: none !important;
+            }
+
+            [data-ogsc] .show-darkmode {
+                display: table-row !important;
+                overflow: visible !important;
+                max-height: inherit !important;
+                line-height: auto !important;
+                visibility: inherit !important;
+            }
+
+            [data-ogsc] .dark-img {
+                display: block !important;
+                width: auto !important;
+                overflow: visible !important;
+                float: none !important;
+                max-height: inherit !important;
+                max-width: inherit !important;
+                line-height: auto !important;
+                margin-top: 0px !important;
+                visibility: inherit !important;
+            }
+
+            [data-ogsc] .light-img {
+                display: none;
+                display: none !important;
+            }
+
+            [data-ogsc] .nav-headerLinks td,
+            [data-ogsc] .nav-headerLinks td a {
+                color: #0972D3 !important;
+            }
+
+            /** .darkmodecolor{
+      color: #f7f7f7 !important;
+     }
+     [data-ogsc] .darkmodecolor{
+      color: #f7f7f7 !important;
+     }
+     .lightmodecolor{
+      color: #161D26 !important;
+     }
+     [data-ogsc] .lightmodecolor{
+      color: #161D26 !important;
+     }**/
+        }
+    </style><style>
+        @media (prefers-color-scheme: dark) {
+            .dark-img {
+                display: block !important;
+                width: auto !important;
+                overflow: visible !important;
+                float: none !important;
+                max-height: inherit !important;
+                max-width: inherit !important;
+                line-height: auto !important;
+                margin-top: 0px !important;
+                visibility: inherit !important;
+            }
+
+            .white {
+                color: #ffffff !important;
+            }
+
+            .light-img {
+                display: none !important;
+            }
+
+            .bgwhite {
+                background-color: #ffffff !important;
+            }
+
+
+        }
+    </style><style media=3D"all">
+        html {
+            -webkit-text-size-adjust: none;
+        }
+
+        body {
+            -webkit-font-smoothing: antialiased !important;
+            -webkit-text-size-adjust: none !important;
+            width: 100% !important;
+            height: 100% !important;
+            font-family: 'AmazonEmber', Helvetica, arial, sans-serif;
+        }
+
+        p,
+        .undoreset div p,
+        .undoreset p {
+            margin-top: 14px;
+            margin-bottom: 14px;
+        }
+
+        body,
+        table tr,
+        table td,
+        a,
+        span,
+        table.MsoNormalTable,
+        th {
+            font-family: 'AmazonEmber', Arial, Helvetica, sans-serif;
+        }
+
+        .btnLine {
+            text-decoration: underline !important;
+        }
+
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        a {
+            outline: none !important;
+            color: #006CE0;
+        }
+
+        ul {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+            padding-left: 30px !important;
+        }
+
+        @media only screen and (max-width: 640px) {
+            .main {
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+
+            .deviceWidth1 {
+                width: 90% !important;
+                min-width: 90% !important;
+            }
+
+            .deviceWidth2 {
+                width: 80% !important;
+                min-width: 80% !important
+            }
+
+            .block {
+                display: block !important;
+                margin: 0 auto !important;
+                width: 100% !important;
+            }
+
+            .center {
+                text-align: center !important;
+            }
+
+            .space {
+                height: 8px;
+            }
+
+            .imgWidth img {
+                max-width: 300px;
+            }
+
+            .full-width img {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            .pad-top {
+                padding-top: 20px !important;
+            }
+
+            .left {
+                text-align: left !important;
+            }
+
+            .bordernone {
+                border: none !important;
+            }
+
+            .deskImg {
+                display: none !important;
+            }
+
+            .mobileImg {
+                display: block !important;
+            }
+
+            .cta-hide {
+                display: inline-block !important;
+            }
+
+            .cta-show {
+                display: none !important;
+            }
+
+            .pad-top32 {
+                padding-top: 32px !important;
+            }
+
+            .height10 {
+                height: 10px !important;
+            }
+
+            .mob-80 {
+                width: 80px !important;
+                height: auto !important;
+            }
+
+            .pad-top10 {
+                padding-top: 10px !important;
+            }
+
+            .border-btm {
+                border-bottom: 1px solid #B6BEC9 !important;
+                border-right: 0px solid #B6BEC9 !important;
+            }
+
+            img.mob-widd {
+                width: 104px !important;
+            }
+
+            .font-24 {
+                font-size: 24px !important;
+                line-height: 30px !important;
+            }
+
+            table.logos2-width {
+                width: 250px !important;
+                min-width: 250px !important;
+            }
+
+            .logos1-width {
+                width: 340px !important;
+                min-width: 340px !important;
+            }
+
+            .pd-lft {
+                padding-left: 8px;
+            }
+
+        }
+
+        @media only screen and (max-width: 425px) {
+            img.mob-widd-d {
+                width: 88px !important;
+
+            }
+        }
+    </style>
+</head>
+<body style=3D"margin-bottom: 0; -webkit-text-size-adjust: 100%; padding-bo=
+ttom: 0;  margin-top: 0; margin-right: 0; -ms-text-size-adjust: 100%; margi=
+n-left: 0; padding-top: 0; padding-right: 0; padding-left: 0; width: 100%;"=
+>
+<!-- OUTER TABLE STARTS -->
+<table class=3D"full-wrap" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%" style=3D"border-spacing: 0; mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; =
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse;margin:0 auto;">
+<tbody>
+<tr>
+<!-- Email Body BG Color define -->
+<td class=3D"darkMode" bgcolor=3D"#ffffff" style=3D"background-color:#fffff=
+f"><!-- outer width define in this table -->
+<table class=3D"main mktoContainer" id=3D"template-wrapper" cellpadding=3D"=
+0" cellspacing=3D"0" align=3D"center" border=3D"0" width=3D"680" style=3D"b=
+order-collapse:collapse; margin:0 auto; width:680px; min-width:680px;">
+<tbody>
+<tr class=3D"mktoModule" id=3D"Hidden-Pre-Headerde0415a6-2c06-4aa1-a272-3ec=
+7718eb9f8">
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" border=3D"0" wi=
+dth=3D"100%" style=3D"border-collapse: collapse; margin:0 auto; min-width:1=
+00%;">
+<tbody>
+<tr>
+<td class=3D"white" style=3D"display:none !important; visibility:hidden; ms=
+o-hide:all; font-size:1px; color:#ffffff; line-height:1px; max-height:0px; =
+max-width:0px; opacity:0; overflow:hidden;">
+<div class=3D"mktoText" id=3D"preheadertextacf819c7-e08a-4ece-ac1c-06350a18=
+be77">
+<div>Build your generative AI skills in 60 minutes. </div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class=3D"mktoModule" id=3D"module01">
+<td>
+<table class=3D"main" width=3D"680" cellpadding=3D"0" cellspacing=3D"0" sty=
+le=3D"border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;margin:=
+0 auto;width: 680px;" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"lightMode1" background=3D"https://pages.awscloud.com/rs/112-TZ=
+M-766/images/IImg-Gradient_B.jpg" bgcolor=3D"#ffffff" border=3D"0" style=3D=
+"background-image:  url('https://pages.awscloud.com/rs/112-TZM-766/images/I=
+Img-Gradient_B.jpg');background-repeat:no-repeat;background-position:top;ba=
+ckground-size: contain;background-color:#ffffff;">
+<!--[if gte mso 9]>
+                  <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D=
+"true" stroke=3D"false" style=3D"width:680px;display:block;height:78px;">
+                     <v:fill type=3D"frame"  src=3D"https://pages.awscloud.=
+com/rs/112-TZM-766/images/IImg-Gradient_B.jpg" color=3D"#ffffff" />
+                     <v:textbox inset=3D"0,0,0,0">
+                      <![endif]-->
+<table class=3D"main" width=3D"680" align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" style=3D"width:680px; margin:0 auto; border-spac=
+ing: 0;">
+<tbody>
+<tr>
+<td height=3D"24" style=3D"line-height:1px;font-size:1px;">&nbsp; </td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"text-align: center; width: 50px;">
+<div class=3D"mktoText" id=3D"mod01-logo">
+<div><a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Fema=
+il.awscloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt58_ckdCqcODAZ_otVZW4CITwECEWjre6=
+epbg-aSydzi9M7EBzyIwbCM1QdUK20FHMc=3D/1/0100019856b7c889-159247be-b86f-45af=
+-8fbc-04e7bad6ae3a-000000/hayPmCSAeGJQs3Nfehxy6IxAmDY=3D436" target=3D"_bla=
+nk"><img src=3D"https://pages.awscloud.com/rs/112-TZM-766/images/AWS_logo_R=
+GB_BLK 1-dark.png" width=3D"50" border=3D"0" alt=3D"AWS Logo">
+</a></div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"24" style=3D"line-height:1px;font-size:1px;">&nbsp; </td>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]>
+                     </v:textbox>
+                  </v:rect>
+                  <![endif]--></td>
+</tr>
+<tr>
+<td class=3D"lightMode" bgcolor=3D"#ffffff" style=3D"background-color: #fff=
+fff;">
+<table class=3D"deviceWidth1" width=3D"600" align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" style=3D"width:600px; margin:0 auto; bor=
+der-spacing: 0;">
+<tbody>
+<tr>
+<td class=3D"dark center font-24" style=3D"text-align: center;font-family: =
+'AmazonEmber', Helvetica, arial, sans-serif; font-size:36px; line-height:44=
+px; color: #161D26; mso-line-height-rule:exactly;font-weight: bold;">
+<div class=3D"mktoText" id=3D"mod01-heading">
+<div>Learn with AWS experts Live </div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td class=3D"lightMode" bgcolor=3D"#ffffff" height=3D"40" style=3D"backgrou=
+nd-color: #ffffff;line-height:1px;font-size:1px;">
+&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class=3D"mktoModule" id=3D"module-03">
+<td>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-s=
+pacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin:0 auto;widt=
+h:100%;" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"lightMode" style=3D"background-color:#ffffff;" bgcolor=3D"#fff=
+fff">
+<table class=3D"deviceWidth1" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt; margin:0 auto;width:600px;" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td height=3D"0" style=3D"line-height:0px;font-size:0px;"></td>
+</tr>
+<tr>
+<td class=3D"dark" valign=3D"top" style=3D"font-family:AmazonEmber,arial, H=
+elvetica, sans-serif; font-size:16px;line-height:24px; font-weight:normal; =
+color:#232B37; text-align: left; mso-line-height-rule: exactly;">
+<div class=3D"mktoText" id=3D"mod03-text">
+<div>Join us this week for live, expert-led training to help you grow your =
+skills in generative AI. Whether you=E2=80=99re just getting started or wan=
+t to go deeper, these sessions will equip you with practical skills you can=
+ use right away.
+<br>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"40" style=3D"line-height:1px;font-size:1px;">&nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class=3D"mktoModule" id=3D"module-1151699b35-dca4-4d94-bc31-df714c34ee0=
+7">
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" border=3D"0" wi=
+dth=3D"100%" style=3D"margin:0 auto; min-width:100%;">
+<tbody>
+<tr>
+<td class=3D"darkMode lightMode" bgcolor=3D"#ffffff" style=3D"background-co=
+lor: #ffffff;">
+<table class=3D"deviceWidth1" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt; margin:0 auto;width:600px;" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td height=3D"0" style=3D"font-size: 0px; line-height: 0px;"></td>
+</tr>
+<tr>
+<td class=3D"dark" valign=3D"top" style=3D"vertical-align:top;color:#161D26=
+;font-size: 28px;line-height: 36px;text-align:left;font-family:'AmazonEmber=
+', Helvetica, arial, sans-serif;font-weight:600;">
+<div class=3D"mktoText" id=3D"event-agendaa98bfef4-532c-462c-9fc1-e3b953c3e=
+9ec"></div>
+</td>
+</tr>
+<tr>
+<td height=3D"16" style=3D"font-size: 1px; line-height: 1px;">&nbsp; </td>
+</tr>
+<tr>
+<td class=3D"dark" style=3D"vertical-align:top;color:#232F3E;font-size: 14p=
+x;line-height: 20px;text-align:left;font-family:'AmazonEmber', Helvetica, a=
+rial, sans-serif;font-weight:normal;">
+<div class=3D"mktoText" id=3D"agendaTable4b-Content32d3042d-b92f-436d-b043-=
+ffaa38073708">
+<div>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" styl=
+e=3D"border: 0;">
+<tbody>
+<tr>
+<td bgcolor=3D"#F3F3F6" valign=3D"top" class=3D"agendaWidth" width=3D"300" =
+style=3D"font-size: 16px; line-height: 24px; padding: 16px 16px 16px 16px; =
+color: #161d26; font-weight: 600; width: 150px; border-top-left-radius: 8px=
+; border: 1px solid #D1D1D6;">
+Time</td>
+<td width=3D"300" bgcolor=3D"#F3F3F6" valign=3D"top" class=3D"agendaPad" st=
+yle=3D"font-size: 16px; line-height: 24px; padding: 16px 16px 16px 16px; bo=
+rder-bottom: 1px solid #D1D1D6; border-top: 1px solid #D1D1D6; border-right=
+: 1px solid #D1D1D6; color: #161d26; font-weight: 600; width: 450px; border=
+-top-right-radius: 8px;">
+Session</td>
+</tr>
+<tr>
+<td valign=3D"top" class=3D"agendaPad" style=3D"font-size: 14px; line-heigh=
+t: 20px; color: #141f2e; padding: 16px 16px 16px 16px; border-bottom: 1px s=
+olid #D1D1D6; border-right: 1px solid #D1D1D6; border-left: 1px solid #D1D1=
+D6;">
+Mon,&nbsp;07/28<br>
+9am - 10am PT</td>
+<td valign=3D"top" class=3D"agendaPad" style=3D"font-size: 14px; line-heigh=
+t: 20px; color: #141f2e; padding: 16px 16px 16px 16px; border-bottom: 1px s=
+olid #D1D1D6; border-right: 1px solid #D1D1D6;">
+<em>AWS Dev Hour: Amazon Q Developer</em></td>
+</tr>
+<tr>
+<td valign=3D"top" class=3D"agendaPad" style=3D"font-size: 14px; line-heigh=
+t: 20px; color: #141f2e; padding: 16px 16px 16px 16px; border-bottom: 1px s=
+olid #D1D1D6; border-right: 1px solid #D1D1D6; border-left: 1px solid #D1D1=
+D6;">
+Tue,&nbsp;07/29<br>
+11am - 12pm PT</td>
+<td valign=3D"top" class=3D"agendaPad" style=3D"font-size: 14px; line-heigh=
+t: 20px; color: #141f2e; padding: 16px 16px 16px 16px; border-bottom: 1px s=
+olid #D1D1D6; border-right: 1px solid #D1D1D6;">
+<em>Deep Dive into AWS Transform</em></td>
+</tr>
+<tr>
+<td valign=3D"top" class=3D"agendaPad" style=3D"font-size: 14px; line-heigh=
+t: 20px; color: #141f2e; padding: 16px 16px 16px 16px; border-bottom: 1px s=
+olid #D1D1D6; border-right: 1px solid #D1D1D6; border-left: 1px solid #D1D1=
+D6;">
+Wed,&nbsp;07/30<br>
+2pm - 3pm PT</td>
+<td valign=3D"top" class=3D"agendaPad" style=3D"font-size: 14px; line-heigh=
+t: 20px; color: #141f2e; padding: 16px 16px 16px 16px; border-bottom: 1px s=
+olid #D1D1D6; border-right: 1px solid #D1D1D6;">
+<em>AWS Innovations: AI Pulse</em></td>
+</tr>
+<tr>
+<td valign=3D"top" class=3D"agendaPad" style=3D"font-size: 14px; line-heigh=
+t: 20px; color: #141f2e; padding: 16px 16px 16px 16px; border-bottom: 1px s=
+olid #D1D1D6; border-right: 1px solid #D1D1D6; border-left: 1px solid #D1D1=
+D6;">
+Thu,&nbsp;07/31<br>
+9am - 10am PT</td>
+<td valign=3D"top" class=3D"agendaPad" style=3D"font-size: 14px; line-heigh=
+t: 20px; color: #141f2e; padding: 16px 16px 16px 16px; border-bottom: 1px s=
+olid #D1D1D6; border-right: 1px solid #D1D1D6;">
+<em>AWS Partner Pathways: Exploring AWS Certifications</em></td>
+</tr>
+<tr>
+<td valign=3D"top" class=3D"agendaPad" style=3D"font-size: 14px; line-heigh=
+t: 20px; color: #141f2e; padding: 16px 16px 16px 16px; border-bottom: 1px s=
+olid #D1D1D6; border-right: 1px solid #D1D1D6; border-left: 1px solid #D1D1=
+D6;">
+Fri,&nbsp;08/01<br>
+8am - 9am PT</td>
+<td valign=3D"top" class=3D"agendaPad" style=3D"font-size: 14px; line-heigh=
+t: 20px; color: #141f2e; padding: 16px 16px 16px 16px; border-bottom: 1px s=
+olid #D1D1D6; border-right: 1px solid #D1D1D6;">
+<em>Deep Dive into Agentic AI Frameworks</em></td>
+</tr>
+<tr>
+<td valign=3D"top" class=3D"agendaPad" style=3D"font-size: 14px; line-heigh=
+t: 20px; color: #141f2e; padding: 16px 16px 16px 16px; border-bottom: 1px s=
+olid #D1D1D6; border-right: 1px solid #D1D1D6; border-left: 1px solid #D1D1=
+D6; border-bottom-left-radius: 8px;">
+Fri,&nbsp;08/01<br>
+9am - 10am PT</td>
+<td valign=3D"top" class=3D"agendaPad" style=3D"font-size: 14px; line-heigh=
+t: 20px; color: #141f2e; padding: 16px 16px 16px 16px; border-bottom: 1px s=
+olid #D1D1D6; border-right: 1px solid #D1D1D6; border-bottom-right-radius: =
+8px;">
+<em>AWS Founders of the Future: An Agent Optimized World with CrewAI</em></=
+td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"20" style=3D"font-size: 1px; line-height: 1px;">&nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class=3D"mktoModule" id=3D"module-10626bb64b-f2ff-4c1e-8c4b-66061b22b11=
+c">
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" border=3D"0" wi=
+dth=3D"100%" style=3D"margin:0 auto; min-width:100%;">
+<tbody>
+<tr>
+<td class=3D"lightMode" bgcolor=3D"#ffffff" style=3D"background-color: #fff=
+fff;">
+<table class=3D"deviceWidth1" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt; margin:0 auto;width:600px;" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td height=3D"0" style=3D"line-height:0px;font-size:0px;"></td>
+</tr>
+<tr>
+<td class=3D"dark" valign=3D"top" style=3D"vertical-align:top;">
+<div>
+<div class=3D"mktoText" id=3D"primary-btndfce9176-dc9a-4eb2-949a-4697835524=
+5b">
+<table align=3D"left" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td class=3D"btn-darkMode" style=3D"border-radius: 40px; background-color: =
+#161d26;" align=3D"center">
+<a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.aw=
+scloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt58_ckdCqcODAZ_otVZW4CITwECEWjre6epbg-=
+aSydzi9M7EBzyIwbCM1QdUK20FHMc=3D/2/0100019856b7c889-159247be-b86f-45af-8fbc=
+-04e7bad6ae3a-000000/XNUqK52A19RRGRiLHLOm4HgGS2E=3D436" target=3D"_blank" s=
+tyle=3D"font-size: 16px; font-family: 'AmazonEmber', Helvetica, arial,sans-=
+serif; font-weight: bold; color: #ffffff; text-decoration: none; display: i=
+nline-block; border: 2px solid #161D26; padding: 12px 24px; border-radius: =
+50px; line-height: 20px; text-align: center;">Learn
+ more</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"40" style=3D"line-height:1px;font-size:1px;">&nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class=3D"mktoModule" id=3D"module-0312e9080c-d4a5-4ee5-8b65-47a8b792983=
+9">
+<td>
+<table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-s=
+pacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin:0 auto;widt=
+h:100%;" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"lightMode" style=3D"background-color:#ffffff;" bgcolor=3D"#fff=
+fff">
+<table class=3D"deviceWidth1" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt; margin:0 auto;width:600px;" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td height=3D"0" style=3D"line-height:0px;font-size:0px;"></td>
+</tr>
+<tr>
+<td class=3D"dark" valign=3D"top" style=3D"font-family:AmazonEmber,arial, H=
+elvetica, sans-serif; font-size:16px;line-height:24px; font-weight:normal; =
+color:#232B37; text-align: left; mso-line-height-rule: exactly;">
+<div class=3D"mktoText" id=3D"mod03-text51e8f86b-3d90-453f-8a00-ba8da4fdb31=
+6">
+<div>Can=E2=80=99t attend live? <a href=3D"https://vmxwvcrs.r.us-east-1.aws=
+track.me/L0/https:%2F%2Femail.awscloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt1u-x1=
+1kzxfxDk_BEofO6qrJbve8H3g-sf5D-WrpdSZktQDddM7sceYCMSW4cR0wXhw=3D/1/01000198=
+56b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/59v-TzyqAQkdQB2mHelEHO=
+_opSc=3D436" target=3D"_blank" style=3D"color: #006ce0; text-decoration: no=
+ne;">
+Sign up</a> to receive replays and updates on live and upcoming series. </d=
+iv>
+<div><br>
+</div>
+<div><span style=3D"font-size: 12px;"><em>If you'd rather not receive futur=
+e emails about AWS Training Live, please
+<a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.aw=
+scloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwtz75hbMq33u9Zx9YoGhqalHSnvBLznjEwP-8bD=
+i2H8S-5sNr7s8nf2W-YPkFts6lH_A=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc=
+-04e7bad6ae3a-000000/wj7etbFWTl5R-GkJxqvGxQhnKxY=3D436" target=3D"_blank" s=
+tyle=3D"color: #006ce0; text-decoration: none;">
+click here</a> to opt-out.</em></span> </div>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"40" style=3D"line-height:1px;font-size:1px;">&nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class=3D"mktoModule" id=3D"module-12">
+<td>
+<table cellpadding=3D"0" cellspacing=3D"0" align=3D"center" border=3D"0" wi=
+dth=3D"100%" style=3D"margin:0 auto; min-width:100%;">
+<tbody>
+<tr>
+<td class=3D"lightMode" bgcolor=3D"#ffffff" style=3D"background-color: #fff=
+fff;">
+<table class=3D"deviceWidth1" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt; margin:0 auto;width:600px;" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td height=3D"16" style=3D"font-size: 1px; line-height: 1px;">&nbsp; </td>
+</tr>
+<tr>
+<td class=3D"" style=3D"vertical-align:top;color:#888888;font-size: 14px;li=
+ne-height: 20px;text-align:left;font-family:'AmazonEmber',arial,helvetica;f=
+ont-weight:normal;">
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td class=3D"dark2">
+<div class=3D"mktoSnippet" id=3D"footersnippet1">
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td class=3D"social-container" style=3D"padding: 20px 0px 10px; text-align:=
+ center;" width=3D"100%" align=3D"center">
+<span class=3D"socialPod"><a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.=
+me/L0/https:%2F%2Femail.awscloud.com%2Fdc%2FajD_BapU74vzOhWVQvr7pwr993A-PVr=
+TjB0O_rEx8WJ7dBQUfoxL9U1eE0YKWSfeaTD_FZO73OfeEP8-wjiyLD4k7oUNSg8BknI1J4Mtmh=
+0FV57d4j52Us6sBtpyXKoqKo00WBPz4KVv90Fm0EsGlpSj2UYJICrfcyAxrqPP2oL-x2vbWyLmA=
+wFKuKF2Nd2l7jR4e1JkZdNPaCnAxxFpJruzg29Bptj2kZhtuhkevdYr3Qqm50SgfegJZoD1kE4a=
+gHcfmqh4wOF1Tm1dFjUTLHJpumzxwVnMjnfIlxOpFvFDYUtdeFuGPOcZLT1P3Aa4oVk4DGokwT-=
+9IfY8de0NXvoIBdKuYt62RLrtZ6AxTe4=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJyl=
+vKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c88=
+9-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/Dh2SNsQGbi6S_arzPlEg9DlMuuQ=
+=3D436" target=3D"_blank" title=3D"AWS Blog"><img src=3D"https://pages.awsc=
+loud.com/rs/112-TZM-766/images/Blog_GL_Social_2021.png" alt=3D"AWS Blog" wi=
+dth=3D"25" height=3D"25" border=3D"0" constrain=3D"true" imagepreview=3D"fa=
+lse"></a>&nbsp;</span>&nbsp;<span class=3D"socialPod">&nbsp;&nbsp;<a href=
+=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.awscloud.=
+com%2FMTEyLVRaTS03NjYAAAGb9bBwt_gJWMXTTacmZUyy2lCEZZX4_FtxUhGnQ3-DuYDmybmRp=
+NjyFB7UnBcQsHKPyzyEF9w=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-04e7ba=
+d6ae3a-000000/htu6O53Lpy5o_n_Qluxyz7nfJYw=3D436" target=3D"_blank" title=3D=
+"AWS on X"><img src=3D"https://pages.awscloud.com/rs/112-TZM-766/images/x-l=
+ogo-black-2.png?version=3D0" alt=3D"AWS on=20
+Twitter" width=3D"25" height=3D"25" border=3D"0" constrain=3D"true" imagepr=
+eview=3D"false"></a>&nbsp;</span><span class=3D"socialPod">&nbsp;<a href=3D=
+"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com=
+%2FMTEyLVRaTS03NjYAAAGb9bBwtzYwUmoC6_hG7oUn4XNeIX1xu7t4ELJV6VAXq116styadrJg=
+4TaXn36NLTmSONoT5bQ=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6a=
+e3a-000000/kREX9f_4sXh6YGLjnuQnx89N5hE=3D436" target=3D"_blank" title=3D"AW=
+S on Facebook"><img src=3D"https://pages.awscloud.com/rs/112-TZM-766/images=
+/Facebook_GL_Social_2021.png" alt=3D"AWS on Facebook" width=3D"25" height=
+=3D"25" border=3D"0" constrain=3D"true" imagepreview=3D"false"></a>&nbsp;
+ &nbsp;&nbsp;<a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%=
+2F%2Femail.awscloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt5rVEeg0oh8LJtVVoAoNVNMpu=
+3NWYQ6x91YCSwfNMj0S-f44JjaW2InXtZLQni5z4sw=3D/1/0100019856b7c889-159247be-b=
+86f-45af-8fbc-04e7bad6ae3a-000000/IL4_EQlK1xHKlr6iX3ObygBjAe0=3D436" target=
+=3D"_blank" title=3D"AWS on Twitch"><img src=3D"https://pages.awscloud.com/=
+rs/112-TZM-766/images/Twitch_GL_Social_2021.png" alt=3D"AWS on Twitch" widt=
+h=3D"25" height=3D"25" constrain=3D"true" imagepreview=3D"false"></a></span=
+>&nbsp;
+ &nbsp;<span class=3D"socialPod"> <a href=3D"https://vmxwvcrs.r.us-east-1.a=
+wstrack.me/L0/https:%2F%2Femail.awscloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt5sf=
+pX94IdZPchOTqVXxrciV9S0lEOHHQ7mj71nAUDuSA01dT2pby29sZMPDQiE9y9g=3D/1/010001=
+9856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/_g18B6IGoRHIlnxQ4MAd=
+jhL8SV0=3D436" target=3D"_blank" title=3D"AWS on YouTube">
+<img src=3D"https://pages.awscloud.com/rs/112-TZM-766/images/YouTube_GL_Soc=
+ial_2021.png" alt=3D"AWS on YouTube" width=3D"25" height=3D"25" border=3D"0=
+" constrain=3D"true" imagepreview=3D"false"></a></span>&nbsp; &nbsp;<span c=
+lass=3D"socialPod">
+<a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.aw=
+scloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt6URCU4Ni1NPMLZf3lRLkjL5Yd4WYLdvdEg2xP=
+6Dh5_Emy7q9v4jw0IF_mlo-FbqdkA=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc=
+-04e7bad6ae3a-000000/A6thed03vhAnPSKSIdUw6QGEIdU=3D436" target=3D"_blank" t=
+itle=3D"AWS Podcast">
+<img src=3D"https://pages.awscloud.com/rs/112-TZM-766/images/Podcast_GL_Soc=
+ial_2021.png" alt=3D"AWS Podcast" width=3D"25" height=3D"25" border=3D"0" c=
+onstrain=3D"true" imagepreview=3D"false"></a>
+</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"15" style=3D"font-size: 1px; line-height: 1px;">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"dark2">
+<div class=3D"mktoSnippet" id=3D"footersnippet2">
+<table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td class=3D"font-family-decor" style=3D"padding: 10px 0px 10px 0px; border=
+-top: 1px solid #e8e8e8;">
+<table style=3D"border-collapse: collapse;" width=3D"100%" cellspacing=3D"0=
+" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td align=3D"center">
+<table style=3D"border-collapse: collapse;" width=3D"100%" cellspacing=3D"0=
+" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"font-family-decor" style=3D"font-size: 9px; color: #999999; li=
+ne-height: 16px;" align=3D"center">
+<a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.aw=
+scloud.com%2Fdc%2FyuZkfPEXXFT65tdReNucEvTRm1nqq5Eg9ByfCCxPZLBhFWAGCfvufj6dh=
+VwTzEtOolfnQ7I_aKw9vWMMUczpQvkJa_KOipHJBaR5Z_N8noWfZ5mPywR59lVAwdJR0-sCnLGB=
+6hYQB34ByGQIa4ewyMdyxX3uGQNB5RI6v5um-lGQrpFqtN6bKEeIyAkY5YgRDimHKdeTsT256lr=
+CgMiPL8QE8QQHP5BF3aSC1J-WmgwsQumGxQp56gpdnqXoyuADnhpGIJsFk9Q77zgINBb-Zs8VrZ=
+fKJjcr9SI6iZO6GTXYbsDx0Vh1vENo2d2fevLQR52tAgzFaBUfVlTYkhpskoHU7xcg36fogjtiR=
+SM5y0U=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Js=
+m24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-=
+04e7bad6ae3a-000000/kcXNDhX_rcNw49bmNAdLzvS_3Ag=3D436" style=3D"color: #007=
+eb9; text-decoration: none;" target=3D"_blank">My
+ Account </a>| <a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https=
+:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD3ZZGcncVANDEUTkhckMhm=
+jKLpc5CeluLOBeryeJSliZOd7HSaDnjFzd0Abmoc1XBv0D71RU8y0cwQ4LIu4quVAmSfsLq5LD7=
+PBO_u0e4IIQGnK2zuu0xk2lWElpOLJGPxk1yg5faTeKRlmm_XJ82dnLcKXhbzFSokVJDColKuF9=
+bhpCJiD2vWyLjFpwdXjtthNbzmDn7JVn4WRB8EkrIsfnI3YAHE6FC_jVe9YcZ3I5SfLVIKHHSt8=
+Bf1MIS7AfhiAyyelxzERQFqJ6A7W2caVUM5yp3ScOzZNL8BvkHtySxFiKuhhDZF-ceHCqr7OT0N=
+sozuVTW2G5Zn69g-fi_2g3UXW4QnE05GgAAXTLCuLs%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw1=
+1_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/01000198=
+56b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/nL71b_eliJRYFkG5qMmn8B=
+ns7hw=3D436" style=3D"color: #007eb9; text-decoration: none;" target=3D"_bl=
+ank">
+Getting Started</a> | <a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L=
+0/https:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD9sCd73ybn5pIK6=
+Q1s91TsInZXxKJ-4uOvdXbGoTWMVFmcWjgoZkHIWHXLlU_8FVkim4eNFjvPWw1wRdvCihrIktXh=
+Q1gHBB4NVTY93qU3PoMAZacCIkCzS9823a0GQociTxGVobZ_KX0mtBkG7mJSpQikou4-HUMsVHr=
+xjs3yfZbiyQqyCWZGj-p6ie9XtUwqRnUWMhL6hH1bVRc4deIBUf8ZLw3DuD2eAm65FguIzQVYpy=
+a1Cua8S35Z5qc4ffdIA0Tq6qR1bgLQ5J5ypDqPaQdWRqCtm3eFOPa8itkS5Dy7bkGIc1UOhvgxz=
+u-O4HPNz8Kw7boRkIiXyLqPvB88E=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrV=
+qoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c889-15=
+9247be-b86f-45af-8fbc-04e7bad6ae3a-000000/M9zyaxSpuw_i3nD1dVrVd1fQAf0=3D436=
+" style=3D"color: #007eb9; text-decoration: none;" target=3D"_blank">
+Products</a> | <a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https=
+:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD4QZshU8GqrOd2k3p3rKZq=
+hzwaMpBT8E9ly6lfYMY3yjrR944vEDSHxSkC7vhqkjxtSdFVxO_N1DVEH-0lrv0oXHfyKdKC0iB=
+3xB2mvNtCLbEnB5P15a8AsPXE1-Vl7xt9T0TtiJPStsHgFjaWWzCd5j1pBRfhN4ieaLoES95zua=
+GUtsdmod-Zre4zEs1v5XvJsi4z1L1aINRWt4LZqSABa8RwZw7Q2uyQGdhdbKu7eyJD40GLi16s3=
+OSkNVSGE-bi9uv-LWCz4xD-zWu2hy7twoG9e1EV8IKaG9k1dNALOkkPSgCcdVtOOyEXobxe1-tp=
+f32JlpRPY_-r9FBEERR9yhEDOf9_BeSO3XLWRo96-K%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw1=
+1_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/01000198=
+56b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/TeB9DUfqPi_EVwIBMeNwWY=
+iphAE=3D436" style=3D"color: #007eb9; text-decoration: none;" target=3D"_bl=
+ank">
+Solutions</a> | <a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/http=
+s:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD8mEuGpWjSN1ahZchBoZx=
+6PBBUEBp30as5eEkDNdTHDlVNq_wIq7EgOK2r7Nr3i9oSst7_VjwyJamyLEj3Qq_zsMhMcyOqWH=
+6coF_tXrDCzOTMzdYL7ro11KLI-hxwhZkhTFIRiUvb_Vlnanij9O5srq8JHs82VNOmFF32T29kA=
+asJEkPTkl094qZIppafbBdcnCBt-Z7rQ4UGHtpiSIGD4y43MWQGUp2xCb3SL0_LVmr7amozpX6B=
+fcWOyIPaxUYc8KH4YJU3aEjiC-M1shC42YrGVo8GeoOYJtAgro2PryWwuXA5G47_L9MzIgKr0BU=
+xHkjcbd5GpUijuOZaBpsq8=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-=
+lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c889-159247be=
+-b86f-45af-8fbc-04e7bad6ae3a-000000/Cnzi1ImCiyvCXsyGfvE20BxLDSo=3D436" styl=
+e=3D"color: #007eb9; text-decoration: none;" target=3D"_blank">
+Pricing</a> | <a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:=
+%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD5jQ51lhLdWIOW7AEKXGYGU=
+LB8j8cCb2qYQqLsh0uh_FJhv-ZO8x9Y_bManAWMDEe_7Jirsx8Wl8eq8xIYNH2oV8LcR4HTsmdt=
+IyHtZWtIYVuyRqJYaLZZhnDeUZwBo0RuhIX9-OArOipUsv73vBT-feqSukpVECXT6Tuwvs1UY1i=
+AnTcip-OE-SCfNZZa5R0GIi7chpWOHyARolpNTvc7xm9tvPi12G5CSq8JAZzFsJmSTumRSlYRxu=
+QIlmD3yGDsKzSwb-hBfen0EeMDVzs4_d5NEaP1rHuk3elA0XxjpXmGyHRlGkqSLhYoIpLuEPMNo=
+ecZV5OWiR5pqprOXWT_g=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-ly=
+DJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c889-159247be-b=
+86f-45af-8fbc-04e7bad6ae3a-000000/viP6WrX25MF8seCNCWJ4Ex-odsI=3D436" style=
+=3D"color: #007eb9; text-decoration: none;" target=3D"_blank">
+Partners</a> | <a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https=
+:%2F%2Femail.awscloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwtxdqdd85RlmKBzcxSbh8B6a=
+4ik2tx1L5w66FfA3ArXS5pUX0mUrvho2sTSl1TrWPcBQ=3D/1/0100019856b7c889-159247be=
+-b86f-45af-8fbc-04e7bad6ae3a-000000/sCRoXRH9ri1EYTnZwPSthVDE8yI=3D436" styl=
+e=3D"color: #007eb9; text-decoration: none;" target=3D"_blank">
+Documentation</a> | <a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/=
+https:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD1hIp1f2qRxHRhoDJ=
+WBUmM5wW620mmvVv6FECKR0rLCamloTEQ_qYUs4OmeFcXC4DYCmqSZlq4d0NI6u8LXWawVQ8-Wy=
+pFlFgBGcPM9FpwWVaPQIEIa0h69DUFOizT2pw_SBP4A70y2gUoJyNAGmfCEC8RorrS_RQvD9LmM=
+U8A8nAA4JhacAfA_giOSSd2vztdKSf8wFBp7VsdUlIOkOJKGkeOF5yQSTNT9w1OtiGo5KoaI-Jk=
+6xWHAs86VfiMLtiXPFDWQBe1OCRRRt_TLASYDM3S0sZn2fsxQoLHgodgWSIzEO_Ep92cDGa68xx=
+lmxB8lmL5GK6QfzujwBixsOQ8E=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqo=
+M7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c889-1592=
+47be-b86f-45af-8fbc-04e7bad6ae3a-000000/19zbXVtQGVkr1lLSrXAUHdX4d6Y=3D436" =
+style=3D"color: #007eb9; text-decoration: none;" target=3D"_blank">
+Training</a> | <a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https=
+:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD1n0M3o1Ml601F1cD0S1yZ=
+oK29DmYnvhMqLSVrWWvStZ2EqUa0hZPHjmz6bjU1UTa7l5lofBflv99FPiKeqt-YK_ryGNsRgSP=
+k9b8loarSodyNh48fYtweSYJ3FIRYyk3Mgpx9sYP4VYjkJyCqlokKgxiJK8ddKDja6Qm4gepz0P=
+exuy320lqKiWoncCFsJ_hrKYlYUvSbW2AzE-dlcsAYT4_o2EApOzqN4UMtFfgsvHpydD5oAbGr3=
+3XK-hsVhnXiOikhcngCXV8yf80gF73nevPSATTOjUvSNzip77jtOTwtDgZXSDkJfdkI4weoXIZY=
+PPB-zC4o2UqfykIsdaInQ=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-l=
+yDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c889-159247be-=
+b86f-45af-8fbc-04e7bad6ae3a-000000/D7jZ3dvPu6OJo2Nzz0MhHGHd9Pw=3D436" style=
+=3D"color: #007eb9; text-decoration: none;" target=3D"_blank">
+Events &amp; Webinars</a> | <a href=3D"https://vmxwvcrs.r.us-east-1.awstrac=
+k.me/L0/https:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD18t_h1on=
+wWPVSVq3tmAnNZvbw8ts9jTUseYd1K9A9C4QX444q8y6DeA7xrtezTSSQVGK5juCxZyuB13nb73=
+u78XT_-qjWQP_q8vrfe0KExlzrIxY74asEr8lvCg4V29wS2vYs4hXed2ctc3b__hthPDECWJzOT=
+NtWL8o9jookwxY-LO8lF472slBDsJr_WZf7q_GFfoK1xd3CvA9J4isOUDoSIaKCsWVhRjfzrY36=
+hioo63m5VCVwjJ9g524ZzUmUeduyCM4vVinXoF_NB2Z2px-K55tRtd0fjuElt2lMRWYSVV0_9JQ=
+09t3eGpovjSLLjtKqDvIZp7Y31rm89TvfehQs6GeKjIfnidBqkrR4qt%2FMTEyLVRaTS03NjYAA=
+AGb9bBwt0XIw11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=
+=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/I8hIRPwg=
+aio1YJVxlVSO6tww-jQ=3D436" style=3D"color: #007eb9; text-decoration: none;"=
+ target=3D"_blank">
+AWS Activate</a> | <a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/h=
+ttps:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD78in__VMI_zdbVDMz=
+Z3kSvR93Srg3KACAeaH-feV6n8fFZFwLCyL52zEa_l-HxV0JCfghfbu1aUF3cHGv91t_zUBGGSh=
+at6bUM3FMPmMyq-QpFwBTaJEjRRZ6iof4kIVrYkeCwXzE8i761enSAEVBTQkWB6ZLflktx2EBOG=
+Eo6R8VBzc_pP-17xGF9ZCoulai3juUgLdNUWOs37obeCzDH79yPA2KUI7Y8780yGe55NcUth9SS=
+FcvgU3JZ1-Mzkwx9yK30nBU7b8WhI-yfPNm20XNO55-wfpSvDUv7I6rOoPMc4FemnPiRCtzNBYl=
+6lqWdfokoBlNEWkSJYFtBtsb41D2Pw4i6_J2va_Q7CUWSR%2FMTEyLVRaTS03NjYAAAGb9bBwt0=
+XIw11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100=
+019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/d82JcfeSWeLr9k4_FT=
+DyBpV0q7Q=3D436" style=3D"color: #007eb9; text-decoration: none;" target=3D=
+"_blank">
+Marketplace</a> | <a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/ht=
+tps:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD4n87CSJUnooghbVARM=
+p3WkrbY75_US-LruX-Vv4-vR9AhVy0-S0yAX4xBtmvlYMsUAIAudu5Gau9PMvJb3oFqEOnlr6oy=
+YYyzMJ9dbmi2njB5DRqGqEbnAnU4J0cZTk3VapNZhjpC-sIdOhA61ZDqm5gbvDR8J2ZynMVEAb6=
+kw6qs9q8McaORFNTlECh27Z0AfdAwrJh-lzJXov6xt0gYq5PkXMBReiGOxHtHwtsY4DLfx4Rdpz=
+Keq4kwrVXGTJ0K5KHINkMHU09-3UJcz-6_4VSduHBCNhdu7bwchzI9md7f5q-VQ8NMbF4Ix8h7U=
+UJXg2gmk3DBDom-GCllKobAs=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7=
+q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c889-159247=
+be-b86f-45af-8fbc-04e7bad6ae3a-000000/c6j_iF5q1mH6Nr68TP_ffigjBMA=3D436" st=
+yle=3D"color: #007eb9; text-decoration: none;" target=3D"_blank">
+What's New</a> | <a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/htt=
+ps:%2F%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelDzHH7BSS9MdSB9ovXKz-=
+LIg9nOkTB8cHgVabuRKAFKWcloaCCyTNJme_oSDwHpy5CYi8yTVtKWJz2iI1sK5EBYxHOJFBfp7=
+xUAX35b9r82LOrx2TTPvoAlK3UKVUyPNPo-G5SGbYhQesqq0RI11bA8Sa8M48dOtg9Bo1EwUeAf=
+6F67EuK6UOLMf6x3YMlqhstdOyU0f5gBEP8oCgvb4TOSjTFe9lP6I8Yao-WWIONV4jzRr1ypfeW=
+FQWb7IXPGR-x460xxDq4gKF3qWd4N_Y0UTnRvq3PaFAnJ1YnQ_ZJ_puv5awyIQMAPyc7_bsBHmJ=
+c2uPvh49XK8PFauSeLeDvWkw9lfK_VXTGMgrpkmS-2Td%2FMTEyLVRaTS03NjYAAAGb9bBwt0XI=
+w11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/010001=
+9856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/3yIhT0wUBeUujo8isRW6=
+VVmL94c=3D436" style=3D"color: #007eb9; text-decoration: none;" target=3D"_=
+blank">
+Blog</a> | <a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F=
+%2Femail.awscloud.com%2Fdc%2FKwqiTCOQ16Q1JCi3MdelD5aQqce63OVL6baXF6dCre2fFf=
+S1oodd2_7Kq1Lg_WJRi8IOWMc6LUBIdAnqXU3Q57DzPoIXPrvykEcSl8H3zlDnWE7bzLwqZL6C1=
+tsTOUsFGpTQbjKb8j_UxcsFIrYAkgGew6cs0My6F6uxe2q2UYCAtkLbIC_sqcoqgDoU6I57Cods=
+i0qb6matVw8JG5FK7W1LE1viHm0CYT002MeQyW6kIGpo_TLEynWXhlVhU0TiRNgPF2qjtUhB6eG=
+9juR9E4bGy54Oaaw3igedliBWrV2bYGLjIPi7LzRc51a_KnXv3t0peahUHzUEg3sHcLBze4JQ2L=
+R7xTqCxpprHtLTDfkUARhlQIybQE4WM3N6Txn2TdUWB82-JvtDFK0jbU4RnP8pg_B1o2luAA_rp=
+7WGueg=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XIw11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Js=
+m24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-=
+04e7bad6ae3a-000000/6JTXatWZqOaYjAfo50cGMhWUspc=3D436" target=3D"_blank" st=
+yle=3D"color: #146eb4; text-decoration: none;">
+Analyst Reports</a><br>
+<br>
+<span style=3D"font-size: 11px;"><strong><a href=3D"https://vmxwvcrs.r.us-e=
+ast-1.awstrack.me/L0/https:%2F%2Femail.awscloud.com%2Fv%2FMTEyLVRaTS03NjYAA=
+AGb9bBwt2WPDt2I_dJFmHWT-cQLQmKWCtRlaRPWg_R6tJzggMoSLwBINCHmKNvdsM1tUonNx7Y=
+=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/3T17n0EV=
+EqUclTD55zNOTWQ5Hk4=3D436" style=3D"color: #007eb9;=20
+text-decoration: none; font-size: 11px;" target=3D"_blank">View
+ Online</a></strong></span></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+<tr>
+<td height=3D"15" style=3D"font-size: 1px; line-height: 1px;">&nbsp;</td>
+</tr>
+<tr>
+<td class=3D"dark2">
+<div class=3D"mktoSnippet" id=3D"footersnippet3">
+<div class=3D"mktEditable" id=3D"Footer">
+<table style=3D"max-width: 600px;" class=3D"responsive-table" width=3D"100%=
+" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"font-family-decor" style=3D"font-size: 12px; line-height: 18px=
+; color: #666666;" align=3D"center">
+<dl><dt style=3D"color: #666666; font-size: 10px; text-align: center;">If y=
+ou'd rather not receive future emails from Amazon Web Services,
+<a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.aw=
+scloud.com%2Fdc%2FsRhgdM26bquWWERQj_H99lCavgYp1xy4_-5c9n1WxRAg-Iit3iVTUYZUZ=
+lQmzz1BTdI04NvsSqvrTM6rSnQGNE7u0izR2mDymghKXNuyYsuqtuhc5SXMWu64li6MykLWUx3O=
+TIajsmXd3jzQ3Hc1-zTkTIiBCh8ghBgXaZ53wo7acPbZYhdFaeij3R7VpUsKo3ddWNwiwhOF25J=
+qjbF_aEHihSCez89gQvog1rxHH-1rlePscigiA86F8QdFGY_1a2uO8RKvXmtNB584kTTxP7djWj=
+muIWMHbP89YBIaKlkG_yPPqp6K0qEVMagr0t6gRGVCWLHIdodPdH5ke9nsLklyrjpkySkS84rSo=
+vqx84sEQM5FmWTjoFTWc63DxJ8MUzNlqZ4N7Dj1ChvqhFpgAr7DmE5qhDT02dgPPRAf5p14s5xd=
+MoeIwsZG0kBWlCo3IBq9lvId5sFtcWwremzCmQ=3D=3D%2FMTEyLVRaTS03NjYAAAGb9bBwt0XI=
+w11_RLJylvKrVqoM7q-lyDJutJlnMRbE3Jsm24q7_nKvrQh-zXZAxyOHw-QlUT4=3D/1/010001=
+9856b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/-xQ2gcxYIz0DM0oerbrm=
+ux05KCs=3D436" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: 100%; color: #007eb9; font-size: 10px; text-decoration: none;">
+unsubscribe here</a>. </dt><dt style=3D"color: #666666; font-size: 10px; te=
+xt-align: center;">Amazon Web Services, Inc. is a subsidiary of Amazon.com,=
+ Inc. Amazon.com is a registered trademark of Amazon.com.
+</dt><dt style=3D"color: #666666; font-size: 10px; text-align: center;">Thi=
+s message was produced and distributed by Amazon Web Services, Inc. or its
+<a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.aw=
+scloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt6mxRDcQeCXdltYtBlDAgga0asGmbReZMYJNBI=
+vKl-5xS8zEnCxgwRmfK8k-Dwt3yDs=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc=
+-04e7bad6ae3a-000000/tBcpRXPwiVrElotjUilg7VqPSpA=3D436" style=3D"-ms-text-s=
+ize-adjust: 100%; -webkit-text-size-adjust: 100%; color: #007eb9; font-size=
+: 10px; text-decoration: none;">
+affiliates</a>, 410 Terry Ave. North, Seattle, WA 98109. </dt><dt style=3D"=
+color: #666666; font-size: 10px; text-align: center;">=C2=A9 2025, Amazon W=
+eb Services, Inc. or its affiliates. All rights reserved. Read our
+<a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.aw=
+scloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt-XennetPb2fZAHjepTk6bLQBofvpCCKTSnt4Q=
+McOTbmmgMfYGttPIaPr8JKjk9GMdg=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc=
+-04e7bad6ae3a-000000/d0EMbhv2xn2dCW1rV8LhoM7NjU8=3D436" style=3D"-ms-text-s=
+ize-adjust: 100%; -webkit-text-size-adjust: 100%; color: #007eb9; font-size=
+: 10px; text-decoration: none;">
+Privacy Notice</a>. </dt></dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td height=3D"20" style=3D"font-size: 1px; line-height: 1px;">&nbsp; </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<a href=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/L0/https:%2F%2Femail.aw=
+scloud.com%2FMTEyLVRaTS03NjYAAAGb9bBwt9W4B3k_jTaEkY71Wp7FHcdaDQCtSCcc44nsgi=
+I5Sdr1SBtVpCeLs8hf6CA3Cve5yZ4=3D/1/0100019856b7c889-159247be-b86f-45af-8fbc=
+-04e7bad6ae3a-000000/HUUmFYEVIm9E_JM0pVEomsar60w=3D436"></a><img src=3D"htt=
+ps://email.awscloud.com/trk?t=3D1&amp;mid=3DMTEyLVRaTS03NjYAAAGb9bBwuGmFoqI=
+reyTYqHYMdFeieySVMxafIFGgHzxn7iRYMBbn3R8or2CLEh4PUxBssAPRi2QBZJZBisFdq-vxee=
+ne0eA5JBrTtfMvzYbmlrCAKToZqnqc1xdtQVzT7bGYknmXGlY-x_f_CMOxoWuxUYpIyoCVnmNhg=
+g" width=3D"1" height=3D"1" style=3D"display:none !important;" alt=3D"">
+<p></p>
+<img alt=3D"" src=3D"https://vmxwvcrs.r.us-east-1.awstrack.me/I0/0100019856=
+b7c889-159247be-b86f-45af-8fbc-04e7bad6ae3a-000000/kcJq_p5_H1ZdEgRWZmvJa674=
+Q64=3D436" style=3D"display: none; width: 1px; height: 1px;">
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+ </body>
+</html>
+
+------=_Part_143828905_777121327.1753801539791--

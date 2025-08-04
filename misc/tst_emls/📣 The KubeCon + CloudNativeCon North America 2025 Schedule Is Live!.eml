@@ -1,0 +1,3005 @@
+Received: from PAWP194MB2319.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:471::7)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Thu, 31 Jul 2025
+ 15:22:57 +0000
+Received: from PAZP264CA0225.FRAP264.PROD.OUTLOOK.COM (2603:10a6:102:238::7)
+ by PAWP194MB2319.EURP194.PROD.OUTLOOK.COM (2603:10a6:102:471::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8989.11; Thu, 31 Jul
+ 2025 15:22:53 +0000
+Received: from AM4PEPF00025F99.EURPRD83.prod.outlook.com
+ (2603:10a6:102:238:cafe::e8) by PAZP264CA0225.outlook.office365.com
+ (2603:10a6:102:238::7) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8989.13 via Frontend Transport; Thu,
+ 31 Jul 2025 15:22:53 +0000
+Authentication-Results: spf=pass (sender IP is 158.247.20.24)
+ smtp.mailfrom=8112310m.linuxfoundation.org; dkim=pass (signature was
+ verified) header.d=8112310m.linuxfoundation.org;dkim=pass (signature was
+ verified) header.d=cncf.io;dmarc=pass action=none
+ header.from=cncf.io;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of
+ 8112310m.linuxfoundation.org designates 158.247.20.24 as permitted sender)
+ receiver=protection.outlook.com; client-ip=158.247.20.24;
+ helo=bid46zu.8112310m.linuxfoundation.org; pr=C
+Received: from bid46zu.8112310m.linuxfoundation.org (158.247.20.24) by
+ AM4PEPF00025F99.mail.protection.outlook.com (10.167.16.8) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.9009.0 via Frontend Transport; Thu, 31 Jul 2025 15:22:52 +0000
+Received: by 172.16.181.43 with SMTP id a0ckhq39om1k7eat2vwpwlvw3bnc912d225jhfsmwna;
+        Thu, 31 Jul 2025 15:22:51 GMT
+DKIM-Signature: v=1; s=hs2; d=8112310m.linuxfoundation.org; 
+        i=@8112310m.linuxfoundation.org; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id:list-unsubscribe-post; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=9oTrrIMY+HpgjkLDdSbLTu8idaWKm27Tbyx8q4yDOX4=; 
+        b=lLD4bI9PVBMxaG1HEtOJrPIv9cDFsPuvuS5ebhSha0BMZYVjYqcz8GyUlNJfP+
+         mBbhP0Ug8q3T3IjSnp8+6UCjv22CI4Kw5PoBMcmy/vLgO7wQGLoObC5S8YRegU3
+         3ddHLjA7wor8HPzakiL+m+5Vp/2wAVxWUgVz7JcmrxZD2qRmqC4S6tm742T1U9z
+         KX6q0vo+rEhPJiqQgn1wQbqjKflpS6IIndNRWyNTSUowuUPtcoUpYQsdIa+NP4f
+         /2E6XB3c24aeCbgSk2afa5O/F5wYTkgYWBf3TyNjlwf/03Z5n2Ej2c/SLZPvEbU
+         kVKL1L0agXeZaQDuDgZzSKhLEFqA==; q=dns/txt; t=1753967560; 
+        x=1754230360;
+DKIM-Signature: v=1; s=hs2-8112310; d=cncf.io; i=@cncf.io; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id:list-unsubscribe-post; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=9oTrrIMY+HpgjkLDdSbLTu8idaWKm27Tbyx8q4yDOX4=; 
+        b=aypopIMJV8voMc3ezwDv8JzivBfPhLvAixud7XA6AgeETwicmutCiAR40Xux0O
+         Y8knEpfiCkVGsy9PzOdrWsHoCtTST7qOxWIISZBPcYwhTH+DaAOtoiwZtNp687F
+         /Ut3QXTJ5WECnlN8r3q+DfzYSINwksxO2prBqhSSozZhBPXugIvCIs8X0JUrue0
+         xsbeQ3gKBSVPWB3B3yK6KjHjKDUmBi4iSy7l5TFcb04AUWVck420DkzVHiaL1Cb
+         pmTHIp7eW7jo74Jnq3uvq3tNvYTF2g6HKnoocotIHRfWISHx+e7EqjMGww9V5ZG
+         vyjFkMMW5GdjmZs6bLApbZw6BFQA==; q=dns/txt; t=1753967560; 
+        x=1754230360;
+Return-Path: 1axbvh7ieb2dbqmwnrvq56pger06485y06sh0v-davidg=terasky.com@8112310m.linuxfoundation.org
+X-HS-Cid: 1axe2j89b43wv1i0l9ghd8vmscrbpq778imq0f
+List-Unsubscribe: <mailto:1axc14ldlglxnduwjq53yxdg4ir6puzgtkn7jz-davidg=terasky.com@8112310m.linuxfoundation.org?subject=unsubscribe>, <https://hs-8112310.s.hubspotemail.net/subscription-preferences/v2/unsubscribe-all?data=W2nXS-N30h-z_W3F4BRR1BqnQbW237Fk21BgzJ9W3ZPFfl4fp0DlW4hmwjy3B--b9W2-HC6-4rCTjLW4cGLcX2RT7NlW38l2Wp3QRftKW3R0b34386PSFW41Zjl31NdGGmW1VdvZr47zMJCW2w0Jpp2KNkN6W4pzZYx2176YgW2qNm8V3T4cf6W45wgYq3XMHK-W2CDDzL4fQsYSW34ppZ01_8XHDW43Xthl2YwfTqW3SQJfS4fPbbMW3g0QLQ36kVCtW253jkn2-B9f9W4mpDfG1Vd5Q3W3VXg543Z-6TnW2MFZf_237LSHW3gvGsq2zyHrfW1ZwSBt2WfG35W3b1Cgw3yXrNcW3NLT024t6WCkW2-L5fv34jRKJW2Tlx053R1yVzW3QFkjQ2KHQgsW2vYxtB2HyTpsW3NSJrB3zb2pVW2TRFXj1S353FW3M16F62vyfn4W4cKfj03zjg_5W3LHQT72nQfhXW3B_pbs2pbqBPW4ff12p3FcLxdW34xW2v3M7NVlW45NK-03JFXGCW36F-h64hNbPGW41Lk6Q25pbyHW2PzX4N4004RcW4hHBt13BPyTWW2RBd5j47NzJyW2PVZTl2nGM6cW3b4x_Q3LNksxW2Kr4Yk2CHY3PW24W6Mc3GSVvgW3BM6Ld2vY7cB0>
+Date: Thu, 31 Jul 2025 08:22:51 -0700
+From: CNCF Events <no-reply@cncf.io>
+Reply-To: no-reply@cncf.io
+To: davidg@terasky.com
+Message-ID: <1753967535029.9b2bad14-16b3-41b1-9043-c3ac4b6d928d@8112310m.linuxfoundation.org>
+Subject: =?utf-8?Q?=F0=9F=93=A3_The_KubeCon_+_CloudNativeCon_No?=
+ =?utf-8?Q?rth_America_2025_Schedule_Is_Live!?=
+Content-Type: multipart/alternative;
+	boundary="----=_Part_1720776_60995590.1753967560025"
+X-Report-Abuse-To: abuse@hubspot.com (see
+ https://policy.hubspot.com/abuse-complaints)
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-MS-Exchange-Organization-ExpirationStartTime: 31 Jul 2025 15:22:52.4270
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: dd45b45d-1bb3-4607-55f4-08ddd0461de4
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM4PEPF00025F99:EE_|PAWP194MB2319:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: AM4PEPF00025F99.EURPRD83.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: dd45b45d-1bb3-4607-55f4-08ddd0461de4
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:4;ARA:13230040|3072899012|2092899012|69100299015|4022899009|12012899012|4123199012|5073199012|5063199012|5062899012|31052699007|39142699007|30052699003|1032899013|3112999003|13003099007|2066899003|4076899003|8096899003|136100200026;
+X-Forefront-Antispam-Report: CIP:158.247.20.24;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:bid46zu.8112310m.linuxfoundation.org;PTR:bid46zu.8112310m.linuxfoundation.org;CAT:NONE;SFS:(13230040)(3072899012)(2092899012)(69100299015)(4022899009)(12012899012)(4123199012)(5073199012)(5063199012)(5062899012)(31052699007)(39142699007)(30052699003)(1032899013)(3112999003)(13003099007)(2066899003)(4076899003)(8096899003)(136100200026);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 31 Jul 2025 15:22:52.1882
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: dd45b45d-1bb3-4607-55f4-08ddd0461de4
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AM4PEPF00025F99.EURPRD83.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PAWP194MB2319
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:05.5794207
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8989.013
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(4710137)(4712097)(4714117)(4999163)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?c05MTGNtT2g0aGtEZzZheDBlTUJqWUIxdU44bUlGcmo1QUorTkhVbHo0MjFO?=
+ =?utf-8?B?bENNR0k5eFB0QmRTVFBCdFVNV2s4UmwrelZPcWJLZ3NIVk9ZVE5HVUdEeHdv?=
+ =?utf-8?B?VitHdEhoMXhuMjl0dkJBanR1RHhtYmFvelZxRy9Xc2JEempzbWtMeXlmRmt0?=
+ =?utf-8?B?c2tZZ0NJUGx3Y2J3dnhNWmxRNWhVY1hPVUk5V0E1Y3A3U1ovMlVobC9qcnpt?=
+ =?utf-8?B?ZVdWWVV2TVdwM3pTQzhOcmlzdW5vdFp1eXBEaGVTUmNXZytQczlYbHZZSkxP?=
+ =?utf-8?B?WUJTN1I5RXI0emh4dTVoN2htalN1ZmtSSDFpNTRoTlZsRzNpZHdOd25VWEdP?=
+ =?utf-8?B?YjZyU1Zlc2Jhd0xRSHY1ZkxyUEE1UEdVcUFzd21BZkhlV0ZyWmVZeGowcStN?=
+ =?utf-8?B?d240SGVvbnoxV0pERUFGeHVGdGZFUFBlS2hCeDJjb2Q3MmtxcFJDV21iSkYy?=
+ =?utf-8?B?eGZ0OGZwa0gybEtnMDFCam5lUlpHb0lNN052UGRuSHhXWTJ0WUkzZU9CMEpP?=
+ =?utf-8?B?SGQ1bzFpS1AyQ1AyUjh4ZzdsYUE5aUdlN3docndndjByTUVaWGN4RjA2SnIy?=
+ =?utf-8?B?ZDdtUmJXYk9wZkJaTHgvVWhibHRUbENjcEx5WXg2WWpscnlkS0NIWjgrcUVE?=
+ =?utf-8?B?S04rUUtLaGVBTFdPM1VzRGVYS1dJSVI0RWVYajhtRkoxRXUxRkw1c2tEaG00?=
+ =?utf-8?B?TFhzMXJTd2F2aFpzdU81V0J2dUpMZzJlNitweEVFb1FyRGJ3VVBueUZ1Tk5K?=
+ =?utf-8?B?dHZPWlRCUHJIeUZVdnpzdUN0UHVELzlXeGhIYmg4TEZDUGFvRmlZajRRcU9p?=
+ =?utf-8?B?NEpBMXRUeFA3TUkrbUErRDdWNkR3QkEvTGNuWUh2N3dzRFBlZ0Npd2kwcnEz?=
+ =?utf-8?B?cWR5ck9IdGdVNkNHbitvZGp2blJvYWhnYTNHUzVqOUNMZmo0M1kzUk4vNWNF?=
+ =?utf-8?B?L05EU2NNdFp1QVk2Tm9OK2JJRTY2eExxN25UUm5Kb3lpUXFpcVJsMEpTZmt1?=
+ =?utf-8?B?d0Z4UjZUcjY4M3V1N0prTVZFa2NZZFBvakJGajIzUEtmT084aUQ0d3BDSjhT?=
+ =?utf-8?B?TWxZM0M3QS8wSENqWEJLSm1qT0VGcnYwdUJWVmtHZlR0UERkOGdab0FsaXV0?=
+ =?utf-8?B?VFVsdVdsd1BEVGM5QjBBNm53UUpFY0txTnAzM1VxMkgzUzNYb3NJSXhCOHZQ?=
+ =?utf-8?B?S2JwcVhZQTRGUkg3dlV3bW1TNW9BcDg3eWRDc2xiRVp0ZHJsYXMrQ09qWkRa?=
+ =?utf-8?B?bVVJNnVzNDAvSGpFZkJONHIyd2o0TXU2cnJJYVVrWjBRUDlXVE52cklReVFM?=
+ =?utf-8?B?RWsreGtCaFM1SU82V3RQZWVTTmdqVEkxNDlKSzZKTms5NzJUNDQ4elI2NUxJ?=
+ =?utf-8?B?Mm5TaW1TdWYxS3BuSmdWL1dJOTUzQldUbVdUeUFwMDdpd1E5K0pnVExwRXEx?=
+ =?utf-8?B?N3ZnQWFTWEdtUHZKd09TdThDWHFHK1RKREpFb2U4aXYwSDYvU0VJYnhHM3Rw?=
+ =?utf-8?B?NW5Odm1hQ1FDTWJuUEYxZCsrb29IV2c2eVhFWlZJWnJEREVaQmlNQ0xYWE9v?=
+ =?utf-8?B?VEpaZERUV01jdDZzYmFucnN0ZVd1QVNCdi8zUUdCL1hWTkJham55MDJCdFk1?=
+ =?utf-8?B?bFNaRzcrb3ZIcm5nZHc5NXhaanJzYWkwbnN2eGlhMjlHMTVoZjNHNEt3QlZm?=
+ =?utf-8?B?Nm5FVUNwYU1saUE1QTBEWlZsT1NMV1JSWG1qK2I2b3NiellwZWY4QTlML3Uv?=
+ =?utf-8?B?L1BIOEc1SzZhNVhRNkxob0tMdkptdWZDV0JXU2RheEdEZkp3NVNvMm9WRzA2?=
+ =?utf-8?B?MkNWbUFBcFk1b0xQemh0Uk5xM3ovdEJQTDdpalpFVnIxTnZDK2tBL096L3JV?=
+ =?utf-8?B?VGNhVGVBdjVPTVdjOHYrQ1BiMXJFNjN1b2w3SUR4YjNoM1h4Zm94RXl6a2w5?=
+ =?utf-8?B?NEtOSytGQW1GWmNUMGovbDlEYkZHakFqR1hoUFpoTHN4dmxmNUFXenRTVWlH?=
+ =?utf-8?B?UHNoMDFUL2VkODg0U3BaSXBFTDE4WHROQ0JraVNsTUE2L0FnTm12TTZ5SGlU?=
+ =?utf-8?B?d2lsc1BSSjdjSmNna09kVVg1eGYwLzc3bFlFWXFQdzNRN2pOZVRzWEoyWXdo?=
+ =?utf-8?B?cVkwVmR3UlNlZjlBUnFJNjhnNjQyZEZpRENaS3RPWnVRYVFnQWJUTEFBcGQ1?=
+ =?utf-8?B?cllSTldSaWwyMGxBV2FZcDdIZWd4OC9LV3laSTcxa1V2TmZrWG96Z2FRVldW?=
+ =?utf-8?B?MkFHYUFEZFRxV0V3VTVreVhMQXd3WTFadDFLWFlOYXRXNkp4cC96VjU4S1NZ?=
+ =?utf-8?B?bzR0MW5oZFROS09WRk1LdFZCSU9IbFV4M1oyd1hQN3B1NDVtSDQ4dWN1ZmJr?=
+ =?utf-8?B?cHRsa25BdGs3eG44NjUwUnE5VHRscDZyMGZ3Ky85d1F0NFRJeG04VnVTYks1?=
+ =?utf-8?B?eGtmMS80alpaSFc1U1VwOGJqREE4dkNZVmZxSGpnV0U5aFNMYnhWTU1LdVRR?=
+ =?utf-8?B?NnJVM29zcmZWUmdzb3hEQ2pKRC91MzRGcnlDL3QxOHhCOUphUmY0RTAxcDRy?=
+ =?utf-8?B?cTliUnhkNit6YitUdXNrUlMzZ0VsK0tWZGRmOEQxZjYzUCt5NmVwOXBWTVpG?=
+ =?utf-8?B?WE5pMm4rbG9UM3NoOGtHMHI1bDF5RWJDVEJXaHNxaUtOSFYxMUVRczNZeTlC?=
+ =?utf-8?B?M2FMaHBpUzN4YyswVmpSa3Y4N2lJRi9MMXE3Tk5WbStyQzRFYVFSaDZ6d1ov?=
+ =?utf-8?B?Ni8xYk42bHdFMWR3eTY3bE5aZklZUzJzMWlLWG51ZCtRVEJRbEpjYjhNUTVL?=
+ =?utf-8?B?aUJpMHZzMm9yekt0OThydWtXdE1CREN6SnNGc1Z2L0dkSU16UWpoRlBKUXpv?=
+ =?utf-8?B?UlNWeWk2ZFVTSkVMZWg2MFBzZVU0bzRacFJuYTN6N21RMU41VWtxajZ1OXZI?=
+ =?utf-8?B?WitVWVI1c2dqUXV2OTRtQk5xVnl3YmJaL0lBWlNQUXpSa0ZjR3ZDdVpGT0Fq?=
+ =?utf-8?B?cnNPWVdHSXZNZkFZYk12VjZqWmZMUG04aGU2RmFMNnVaOWltV1I5UFZ0N3hG?=
+ =?utf-8?B?Vk5tSmRMRm9FVW51NkN0U053V0g2VnlLMjgxWXI3Tm83d0d3WlA1ZjFkV3JC?=
+ =?utf-8?B?cEVMS3EwcEpnS3lMTHhrdUdaTGxaajNDSG5XWFBqZWRZQTM2d2MxdDRRZjR1?=
+ =?utf-8?B?NFYxWUVENVU3Z2ZGSWVLU3krRFhTL01HVzIvTGlJcXl5WHFOcUNtdkU5dWhG?=
+ =?utf-8?Q?omTiXDsBigbqmZ6oGE60aoNl+L5qpU62Ov0sOK+bCBnFbhD?=
+MIME-Version: 1.0
+
+------=_Part_1720776_60995590.1753967560025
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Explore 300+ sessions & keynotes and 18 co-located events happening this No=
+vember in ATL!
+View in browser<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MW=
+yJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYP5nR3bW8wM7ks6lZ3m-W92Rgtv2mJTCjW1=
+Ws2nR4Z1-tYW4mV80B6MLx3LVFTL288dnWQGW2M0bCy8Jmg-pVlfjPc64V_pmW6W4F7H4T8SlnW=
+4fHRlg9clCklN4VhqpQKZqPdW3Ft6q08sccdcW6_bpJG4SJBj0W5ZPP-P5d0CkCW41rWk01gWcQ=
+sN60HfTrMb098N55MpD_738zJW20PzG06SfP8-W1YTp9S7VxTwwW8Kh2sZ5SH5mhW6qqfTb1gD3=
+93W7nG8Tk5VfBDFW53_VmV1SD5X2W8XQMwd4Xh_rxW6_Q4tj6z_FSqVrPd2J5BcWGlW1lYzgl4b=
+Nfj4W1PC3Y74kM3Y9W2cjfp734bSZSW1SjQXL40yTlSW2_GDJY5FzrqMW2V3SCx6QvHm-W8X2cd=
+C3R90GxW1dMz6V528dYvW5sgzgp22qXYpW7dzZX65DZj_mW3-7J7R4XxLk0W3x5KC61Tm8w8W1d=
+TmNS1DKMsmVxtC2R8L1w44W8GfrxK1R_4sjW3hJGJ34X73plW3_BSGC28BWGjW32D1TD350XQCV=
+qcp7V2ff2FDMWhsJ8mbQKMf6PrLT804>
+[cncf-main-site-logo (1)] <https://email.linuxfoundation.org/e3t/Ctc/RI+113=
+/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3mqVGv8=
+TC1nm5qhW9lgSnV80F_WhW6h1XHB5pHwG8W9kVRC-7DWBNwN73VzrLB9K7MW6w5C893Vq4XJW7J=
+KMjK7qxn2yW78dfzp4NDb-CW8bHfpw7Fw43MW2GpWhB1hPf-hW27p1QN2ZzTJ0W2jLPW07dPTSM=
+W1RdTXx6kBcgPW7y1w1K2wLqZ1W7qWRyg6H7j0VN6BrWnVL2PWxW5x6hFB9ksM0sVBBBvH5WRGd=
+cW6zcLfd3_CKwpW4622nd6v_vHMW9gLC367yJ067N66y2HlkQXZzW1xqy7D78tsMmW70qCxt2VF=
+P0Xf38_nMM04>
+
+[Kubecon NA 2025 Schedule (Email)] <https://email.linuxfoundation.org/e3t/C=
+tc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jZ43qgz0W95jsWP6=
+lZ3l7W1nW2GV6HS-MPN91qptVBwNS-W4pnKGH30vG86W3k5R5z18DB3tW4_Hgrf2yYSyqW5YBwL=
+s3M7--fW17VL2m2CHRgfW7pV9dq3cwNk5VDYwGF6y5HHSW1Fsqr_3y6nf-W1qRy0G29sXxyW17j=
+Npt8qv04hW88XPq-3F5YPJW2Kjf-91RjgQLW2LwJ3K5kJBMbVGP2LL4tDSHCW8wNhy_4WMCm5W7=
+P-vcx2kW5vFW7cs0972ccXpvW3cwM9z1KDjTGW3JQ7Hh7ptNC9Vz9_BR6sds4GN53LzqY7c6mkW=
+4t7jhY2K2p96W5mjw0b4lTYQMN1xhrHMJsmjxW1pc13p6VpHlwW8QjwDy7MqzWtW3LdRYj63_TF=
+lN3mH213bZ_-Zf6KV2KR04>
+
+=E2=98=81=EF=B8=8F Cloud native community: Your moment is here!
+
+
+
+The full schedule<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/=
+MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX05nR3bW50kH_H6lZ3nPN52fNJRqmq9SW=
+20n7mg2001l8W63B1NC1QjRyqW7CgScS2hqQ9GN2sgcCjzD5LMVwk15320hFFhN5fYwGSD45nBW=
+5zHv432PvVjSW5X-bcJ2XgB4SVNdZ3F3dKmJtW3hh_vW8J6ZSbW5gwcgK9g-NQTW3QVbgx2RxXQ=
+LW3Z7Rdw7kqVysW18QtRH3HlR-nW1qH-Ms7d05W_W7pq5GM26-YffW6Kdl2J6kq0BJW4rNDVk4_=
+xmhwMlSHWBfGLq3W171T1K83V8vPW8yqwwb6MY4q3W42zCtf35S5fKN255Pcv61W31W15qVcT8F=
+yp7CW336-_S7Jzr-9W68H1p26_PnF5W7Wv6nM4MY-PMVPBV0h7bsmT7VvXgLy6mTYDPW29dy4R4=
+fjhM6W31C7K_1rQYWTf3c4LMH04> for KubeCon + CloudNativeCon North America<htt=
+ps://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZ=
+mQxW58c1_75zGfS9N6D7jZ43qgz0W95jsWP6lZ3lVW3lVKqP2YphqDW6gtcnL1Zdzz9W7GfctN7=
+J_R6VW60ZM7J8D022TW2QPHmX6xJfrrW8wy_1M3Fk85tW5LVHQ67jfbh7VRVvmP5hgjNHW5DzQ4=
+J3YphKsN3-8H7DHd1R5W95_xhq4YgkfvW5BXGrD8kqh9TW4mK4Jz1l5kLCW6DPxgp2nlDRRVqFm=
+sr2Gg3xlW6q4T1B6pcSGkW2bXGQt7b_z_LW2ZRwL-8SgbcmN46bqKknND1CW3tzkCn2bywnZW8l=
+kkmQ8bC8-dW2lxKrs7N21XYW91gvbx4TWKHtW2B0g4Y8JFdnKW5Wd_WB955C9sW476vWJ5GXd9Q=
+W5CFlgL1Jhdg6W19ZzM745TrVhN3gt0yVBgRKxF6sypzKdyNhdlzvlx04> is now live! Joi=
+n us November 10=E2=80=9313 in Atlanta<https://email.linuxfoundation.org/e3=
+t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX05nR3bW50kH=
+_H6lZ3lpMcKbWp189p5VHJ6St5G4dnHW22BzBW13LvFYW8lhYlj1lG2fQW3C-Z1m8xjKQnW5lvd=
+Hv4gf5YkW3hTFm97qq4cPW1tmQ9l6BmgDFW1Xd7kD8QXTNhW79X55z305Y8XW3bH8YQ14_KkMW2=
+xN6PY4mvyVFW7GBQr58xmPqkW4H8qWQ4XwSjZW7JmhQb1Sl2pgW2d88Pq45CjCfW1f12yQ8Xg6h=
+gW7vQ3qX6yt643W6VFRD_1jN647W1n8D907hT2S7W8jKJvX95SFCgW2WDJ0g4rzPkgVd4J788jh=
+gKGN8y_JVRD1hQNW75P6hn44vnckW8l6l-_1hsfp4W1rqT2Q90TdN5W8JKsV87vglWZW25PD8r7=
+pghCfW1pdQ111DKGkkW233-zq18Bs4PW8W6fzF2BfvjWf99-QG204> for 4=EF=B8=8F=E2=83=
+=A3 days packed with technical talks, hands-on learning, and real-world ins=
+ights from across the CNCF<https://email.linuxfoundation.org/e3t/Ctc/RI+113=
+/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3kDVc1x=
+_58zBLvqW35h2S05XTWKbW4-XVwj6-b778W3bGNjs7vh4qdW43WN2-2QKCPYW1hwY9Z1p7n7FW2=
+tl2Wg78YLFmW2QDm8R41zngFW7t2YH55R6FY2W6Hfr363p8LJ_W32-zVx4-KgfDW2k4cll8PXSy=
+1W3TnhMC3FPfB_W8k-thn9fbHcxW5Cn9D06y3TY3N38nFf4Xm2vFW5vzsTz2t7SQjW3skqjj46h=
+BGTW7HlG7f5cJ0ytN8MSHwXDlwn3W71-gk590VGmDW63Ln291NmrhYN32VyqrTGmWqW915pJ94X=
+-ZjMf5LKCvH04> ecosystem.
+
+
+
+With 300+ keynotes, lightning talks, CFP breakout and Maintainer Track sess=
+ions curated for developers, platform engineers, architects, and maintainer=
+s, this is where the future of cloud native comes into focus. Dive into the=
+ schedule and start planning your Atlanta adventure. =F0=9F=8D=91
+
+
+
+Explore the highlights:
+
+  *   Evicted! All the Ways Kubernetes Kills Your Pods (and How To Avoid Th=
+em)<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6v=
+lMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3kKW3-8mYM7JCCFXW87nHN334tcHtW=
+7TNtPR1NJ5PQW7C8rKw59VM4pW21HR4H8NtP-ZW5sKd3983HG5ZW1dsyWW63yfBkN93c7zz2j1Q=
+BW2ny6MS6TDLjBW8KM5mh2nFXxYW7by4g84Z4zDHW6xKWSz35vtmqVJyLK41MDFJ0W5YQDc35kX=
+mgHW1DVz4l7YL57KVxbd5W1thzg3W2KVKzB4-jlVFW5MZJVn8FWfcFN7jr0QyXqSZyW3GF-DJ7g=
+R772W5yPFX65ZQ8lqW4NrWz-5H56RyW4ztcm_6vwWnfW5Xzhb47ZdM3Sf69xSJT04> - Ahmet =
+Alp Balkan, LinkedIn
+
+  *   From Panic To Peace: Making K8s Controller Observability Suck Less<ht=
+tps://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6h=
+ZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3lgW5YGBlR7BYQcXW96TNsZ2XDrDbW5l-6cL=
+6K5nj2W6z4nRC3gC1gHVZ7MJm7vzG6KW5BRnj71LrzcrW8t_VTt5DFmtvW2stm9Y4-2xYmW7mdg=
+5B963n2GW70gmgH54nnjwN4Mw1FjWRy4TW1BWRHt3qFpcBW7CFwmG4JnRc5N8YFLBJ5Hy8JV2wz=
+-N1WPzPqW6cRflK3_GDNGN93SmRGWQvJrW5PJBKR99d0pRW7vjGHr4jyTzGW4MMZ7K6mJNPJW1s=
+GxBl5-Dh_yW6vYmxZ5yF6h5W871zn17F_1srW6GX6nL2gr6fNf85Wl5v04> - Cat Morris & =
+Derik Evangelista, Syntasso
+
+  *   Managing a Million Infra Resources at Spotify: Designing the Platform=
+ To Manage Change at Scale<https://email.linuxfoundation.org/e3t/Ctc/RI+113=
+/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3kFV3zr=
+s26pzsvYW7Ymcrs1KTyghW81dpXm8lHwjfW2hn67r1vpNNHW8chQf93lnJjnW8xs6jD5dkczjW2=
+1XLS84dVJWxW6thzPD4JpHmbW3T9t6w2p6yZxW4Src858HwHSdN3P9m_mXJPR1W2MXvDl7THXp4=
+VKB3Hr80zzqNW3Dgwjk2lNM2QN6SgC_XWd-z4W3P7wKZ6jCnTlW3wxKKM6Qv2g5W6L821x5PlfK=
+qW7wBmP93LvQlbW4bhl9n5M7H6sW69FLvs3KRDrqW73hsrj4x94D1W81ScdL73Z_VYW3vNQ0d5g=
+_kdvf1lKMyY04> - Oliver Soell & Fredrik Sommar, Spotify
+
+  *   Evolving Kubernetes Scheduling<https://email.linuxfoundation.org/e3t/=
+Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW=
+6lZ3lkW2yqrW-2Yx9Q1W91Trnr11jQG8W5zCF9357YgYbW1-Wv2n6FbSJtVzXGLZ1fR3pMW72dT=
+Cp53rG_xW7Kw9KR1HybzRW59gdMG6JNq38W7-LH8V29WFKKW3XMc_S2ZcZqBW2x1qyZ3mHSmgVp=
+2v8W4TrMCKW7N9HXx4v6VJ-W1mdfpT7bhS8WW4dTh6x94HR27V9p5Sc9553RnW71Q08b1k97wxW=
+3B4WvG8RMppFW6tRjqk1RfSPRW8rNstM5Q8b8pW46F_637RygWCW2C_TWX9jwnjqW4L4-QH5fnb=
+VxW8_1-Zd6wHGz9f4hjplj04> - Eric Tune & Wojciech Tyczy=C5=84ski, Google
+
+  *   Lessons Applied Building a Next-generation AI Proxy<https://email.lin=
+uxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGf=
+S9N6D7jYb3qgz0W7lCdLW6lZ3pjW62q9pl8pyKQtW75XPpp55RhrKW5CGzWT6KrnFPW3Kktkc7h=
+5JdkW8Z-Nvk1-t-fQW2xVc7c85KGNGW1bZRN48s3WqtW31v6773wf0x5W2xZzsH5KgfYpW5-qnq=
+r8gnJwKW79jq2r89ypw2N87fqVf9FV7KW97Bh9g24xLPkW8XBRmG79qPLnW83TDNS33bRvnW1WQ=
+1dm1MwLQhW6Qs0Lw3WWFv1W3sLw8j1cFkvqW4H04-P5TQtC2W90V5kp1FXgynW74cLxx2bZGylW=
+6s8BTB37_5bWW8rJBs-95NpTqW32HRvz3cCZ5Rf7PRyhF04> - John Howard, Solo.io
+
+  *   Shaping LTS Together: What We=E2=80=99ve Learned the Hard Way<https:/=
+/email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW=
+58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3lvN8DdklHsfw-MN34lcbNBf_prW1s56SC22ZGzsW=
+2RmNNr5wPbLqW2n7Wd23n1ktCW21p8V46P6f-vW17FSBy8FQL_kW8P65jg8BTCHPW4bd8Qv2Nvn=
+J0W3_ZQy62HZ-JKW8lVckq40YR_zW2m8DM-44NcdxN1xXXlKH1MCjW7hJR8J5s59fbVL_BjS7RT=
+BMkW5jKQKf2Cj0nSW7yQbxb4cS1sJW7lG8tz8dq1RGW67J6786wrBWSN274s6j4kR5FW39ySmK4=
+d94rBW1x5rJX6xfcnGW8FX-RC3Pg9x0W2bLy0Y6NqMb-f1yyNKj04> - Nikhita Raghunath =
+& Nikhila Kamath, Broadcom; Micah Hausler, AWS; Jeremy Rickard, Microsoft
+
+  *   The Missing Manual for Open Source Community Sustainability<https://e=
+mail.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58=
+c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3pcW5ZpM0d186SKgW8l7Ssc2TJPVkW4HvMVG1Ccpt3W=
+1f1J8b5Ch2frN44_MQ7KSFW1W46qRFW7QsMGBW1WgqlJ2bm0ddW6dPNMR8WMXCKW5dkYqn35Tbx=
+5W63syfh30hzPVW2hW-745BnKxFN8ybyGCn89D4W3MK_pX8F3k1_MdWqqNlg2K0W9b9Vcn4xt4W=
+3W5pkb814VYvlWW7CMFp22j9HTwW5yRWY48fpT8DVY77528HSrP2W6Z0yMp3zrmvjN8lP-Q5Wv0=
+k4VdSkXx4MhNzYW2FPrvH3t65zHW6l1dbR4FlBlLdpnR2-04> - Taylor Dolezal, Merly &=
+ Erica Hughberg, Tetrate
+
+  *   Not Forking Around: Leveraging NRI To Extend Kubernetes at Scale<http=
+s://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZm=
+QxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3pVW8Gs30X3hcnZYW2nXTwP37GQnfW60GCXh1x=
+X5SwW5ZpL9N3sqQL-N3VNH3Y1VDWxW3y8M3R5sLlQTMfV08vM8d-VMqm2t36QV2KVsK6vs7HhV1=
+5W5zknKJ8LFF_qW7PlKz386YbkCW6jXxx84dBdnVW81Vv-t5VchnSW8pM5V998WBbrN4VD98qFL=
+9HZW82pDR_8V25WXW3q-G0g93fJgYW6--hrR8Zp7l3W6-dwbQ98VPD8W8bjJmG54vnjZV6ySmd3=
+Vh2KpW3N7DBK40VZ2xW5qSG9D5sb2-vMD30xdc-xYxf7sqDrl04> - Johan Jensen & Wesle=
+y Bermbach, Uber
+
+  *   Creating and Maintaining Ephemeral Runtime Environments for 18,000 De=
+velopers <https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LF=
+nfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3nyW6kLCg66xTW2WVG6PJm8w=
+zBDcL1XYdc5LJdW2w6TsF2drLcTW52k35c2xpqLnW7Rf66468rpqzW4ntw0j1XqSFdW2gwHJL8H=
+SzdsW8r65sw1jdKd4W3Gw5MM48Mdn3W8ZWz9x8FChx7W1Sc8t112_9TwW6m8Chg42ylZmW3MJYL=
+H6t7jKZW2YRJFw4DnHWpVMrtlc56Js93W6WPWvG55mnv1W8tkw3j1sbsKMVMc6vw4fF58QW8gbM=
+qh8NVXV2W5sNWCM2kKY8MW6F5JTq9jV6B2W6_K-7w6KnZ3bW83ZlR43RGN4Tf6y0_5T04> - Al=
+exandre Astolpho Thomaz, Itau Unibanco
+
+  *   Models as Microservices, Platforms as Partners: Collaboratively Build=
+ing ML Infra at Hinge<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw-=
+-04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3p-N54SgrzSg=
+6fRW7bGrzl6nKb5HN6KmqLZqs3kpW3wFF3818J1hYW4rXhvH2pMn8FW7V1ht782W3XzV_4N9b8P=
+zRJLVDCrRp2wvfsjW820-Ts3bzvfPVnG_xH5wvvr6W6C-cbX6JNGCFW5pz2dr6Mx4MxN53x1YBS=
+-Y7PVmND1J7Cy5TnW2rKbXz3DswVdN2RNV-6CD-hMW4LnLKJ7FWqkXW5NldZ56LTjCbW82dwhN2=
+fV-KHW1YTmV58CJ9q8VQl40v3K7qFQW2Y9NnJ4dsDh7W4xV_Lv4Zvr6ZW3HjDmd43Dmvff6fv7T=
+j04> - Stephanie Pavlick, Hinge
+
+  *   Designing for Observability: From Noise To Insight<https://email.linu=
+xfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS=
+9N6D7jYb3qgz0W7lCdLW6lZ3pmW2CHyyv656RBmW4S4H--6qhy0vW7klDFY1JKlP_W3X51vG2lW=
+jyqW4GYls77bmsDZW1MWPhz406khGW1y1QsM3d8VZMW6Qn0LC5YRGt5W5fwYwt62bm3ZW3PYFzc=
+4LxyqbW2RWnPf2GmqzCW4yf6jw3M-xJ0W3hXrd-605_xBW6qqlnq4Q3FTDW8Qs_Pg5KDlb9W6H-=
+5cG6wChMBW58Rb228rnRXGVd5gsz4GFdHfW7GrYmD6FWYs_W8g1C4N5RC7z3W7YhW8f48Tj3RW3=
+F8YRf8d-3W1W1NP_Ky1JZQnHW4fSLP02yZc4Zf286gYR04> - Andrea Chomiak, Dash0
+
+  *   Taming Rollout Risks in Distributed Web Apps: A Location-Aware Gradua=
+l Deployment Approach<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw-=
+-04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3lSN2Qrqhhtv=
+kdRVhrWxg5xn0gfW1TWb_Z8hjM0BW6Hj5gJ5C4dQ4W7b5q4431r8QWVxMtCr8Xn5CwW6TD4nB50=
+tR5nW1QbjnK2B2SKKW7DRlz56qcqvQW5CtCLm7DswNRW94r99j3myhN5W4MmYd73K4jkZW7g4kJ=
+t7ThYJlW6DpNfS294C-VW7TWBjR5Kb1ZrN4SmmMqrWjZcVTLCv37wx8qSW8NR3GB6zdJ4WW4zxt=
+Ms6NHXGJW4STYFl92S0dfW7KhkPq8H2GGzW9k8M2-4hT2wjN5DWQd-cRg9yW1m750b3KTsqjf14=
+QnSb04> - Angela Victorio, American Airlines
+
+VIEW FULL SCHEDULE >> <https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw=
+--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX05nR3bW50kH_H6lZ3p2W3SwRzm5=
+t6GbRVs7l7f1XJ1s9W2GkjBs5GFq8xN23LcvDJtd5bW8x4q_X8cJPkDW1q2xpx7dZKFYW2gq89H=
+2ZBYCQN51qjkv4NvFQW6rKPYr8Y4kbBW86Lg-K6CJ97yN1ZgplTFR04tW3clKv57_0n4WW7jJV8=
+X8RpMf6W9jKWYf6rlZg-W3kxJbG6YxqqkV3TG7C4JYwWZV4Hsk97cmYGMN5DXvCZ_b8kjVZbd_M=
+7Rnv-vW889ZNw6m4FmMW7by6181jctpnW4c1_v74_Ph4kMxz7VySSnfkW3v9f_W5_9JKzW3QzVH=
+n8mtxBKM8jT63T-78SN1KG-9QsP_zlVTVFNQ3R2YDrW1JLW5N3pRCzbW6rc7F37sh4nZN1_R4Xv=
+BkdSmN2PhBQYRywRQf9lQPmg04>
+
+=F0=9F=97=BA=EF=B8=8F Choose Your Own Adventure!
+
+
+
+Register by August 26 and save up to $480! =F0=9F=92=B0 We have two pass ty=
+pes to suit your needs as well as special pricing for individuals, academic=
+s, and students.
+
+
+
+[KC + CNC NA 2025 - Reg Options-1] <https://email.linuxfoundation.org/e3t/C=
+tc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX05nR3bW50kH_H6=
+lZ3lxW2L_YSn83NK1yN4tqMn7ckk9gVTRhMW8jghw8W1B6TpQ77YGB_N4vwnXjqTt4_W72_hMt8=
+FtpGCW44xGGd1m5SLzW3r4dFD1Qyc55W5NSD4c2J0klsW6HLT0k8bJzcKW4Q89q-17W6RXW921Z=
+433NcR5PW4tLwcd4S1rG6W4GX-7b78vCRJW6k-lly1Y9zgkW4NcRwT1HHpVzN5KT6lkLG1QdN7j=
+Lf4Dm5r8WW7ZZMgK95JglxW6Rr2bj4Z0Q27W2R41QK5qz_kmW5cz4ll5KSlrQW5CsrX55Nh1zCW=
+1H9bJT4y_mDxW7Tvj4046w9bBW8cqBGb4bxqzfW7QCrWv4574kHW1-qc714scbp0W5wQRRD5PhY=
+gkW4WzKHd15vDLxVLC3Ly21k5q2VQ9Vv48kWBW4f1HScP004>
+REGISTER + SAVE >> <https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--0=
+4/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX05nR3bW50kH_H6lZ3n3VTfV5g6vZZV=
+PW6f_vpc2RrDr4W3-35yJ1zW2FHW8-ZbTv7hbTJ5N8Gv2b7nMf_ZW5Jrk_H7jGJmrW9cFCV71_K=
+ddJV15q_l88jHfhW6WB-d25bwXS9N7TqSx_MWMXcW6LxTXY3_S9fFW3fl0zp85q8NFN6Vgdm-rr=
+Sp8VG3F-H5Wr6-CW3xt3YF29qM08W1RKmWB3sCWb0W5VJ8DJ4YwnMGW8bysxD5b0mbnW7_FjkT2=
+7h5JgW13X3PH7pvfx1W7Lwn9-7hz8nDW6VdlGt5BJ5bnVZ3QtB83l1THW7D5yq0800qyMW1sj2J=
+33mpWP5N2THLLBWM-SQW8nj3gv7PqSnVVkG3TB2SL639W8gVBCj7Wq2NTW73jKG83JYh0gW4-vN=
+KC3nr8YvW4mwZQ16D71hZf73qvJP04>
+
+=F0=9F=9B=8E=EF=B8=8F Book Your Hotel.
+
+
+
+Book your stay at one of 10+ hotels within a short walk or drive of the con=
+vention center. Blocks start closing in October or as soon as they are full=
+. Don=E2=80=99t miss your chance to get a great rate - book today!
+
+SECURE A ROOM NOW >> <https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw-=
+-04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jXj5nR3bW5BWr2F6lZ3ltVmHdT96rq=
+_9wW3v57jG3LM5WVW2VLN2s7ycm_bW8s84pm3TRgJKW6gttzs9dhS1FW4MvHwJ3t1g7mW98jLbf=
+36-6BJW85vKZR63hzJRN2qYy5rq_CFZW8Kv4y11b8mx_W2m3htV98bZZxW160J5s4jJl6tN7dZs=
+511xpsnW7MDrw_1W_F1_W2XBZWC8bKNvJW3lfr507c0yNtW8BW0Nc7jWv95W5fDxjl8rjBsdW41=
+BXB72-8_-2W7C7L0Q8TB519VlQ6B_1VYKLBW49qWpW4ZFD1TN60RV0NVRyzDW1VYyfH75gxk1W7=
+B7fKh2yY-_-V1wZx-4DHy5cW1gT5_r1LGj9LW8b6mn-8YzHgKW4Y7wdP8bSCNMW6b78nv21LYQm=
+W2Tbz8S8SM7gCW1Y3fWz7Yxj2PN5gPddtpq7VcW6srtrJ71k-9qf9gD7CR04>
+
+=F0=9F=A7=A9 Sponsor the Event.
+
+
+
+Get your brand in front of cloud native innovators and tap into 10,000+ dev=
+s, architects, and leaders. Sponsorship unlocks unmatched visibility, commu=
+nity connection, and credibility within one of the fastest-growing ecosyste=
+ms.
+
+
+
+Secure your KubeCon + CloudNativeCon level sponsorship<https://email.linuxf=
+oundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N=
+6D7jZ43qgz0W95jsWP6lZ3nFN6htq87tWjC5W3ZSmx99htNjgW1399pp4z-ds2W54Vmw5976Jdp=
+W14xx4D840xfFW7zq-Pq86tlRyN1q4f8wNlV17Vjh9HV24D-LLW74JXV04T2MYqW4tKpPP6VrLS=
+jW6HGcrl7p_zbKW4fshBX7mY515W3kyR6m3dTJ5cW43L92_3z--BzW4mt0SF67gD3cW4JHMCm5x=
+dLv0W1Mf4Wb1cNzP4MwHcG4j-8XsW7DY3192p_RHQW8QjrG85D8_CfW1svj0R6qPTGzW7wMTJj8=
+QQ31MW2sVrXZ4ZphFrW5WFhVv1NfrTfW6S7Vf_6kGzttW52kYG46p63gZW2R6g_12fx3rDN3TqZ=
+6gK_Jy-W5n1fhs6Gc_LSN5Jgm6-cLHydf1rF21204> and/or Marketing Promotional Opp=
+ortunity by Friday, August 22.
+
+Sponsor one or more CNCF-hosted co-located events<https://email.linuxfounda=
+tion.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX=
+W5nR3bW6N1X8z6lZ3pbW8hvsMs8gRhKNW7C-P_s7rX93GVX-QJS6FL6Y6W1c5VPL4pgr7zW6zb9=
+3G4bfmgPW6F3R064_gJyQVX3PxV4H4hp8W7WbPQf8LtQHxW2dbRwF2MJQjYW5jrfJv2kSZYCW9l=
+b_684-JrZjW5GwyQg5vffr8W7D2T8d9bnwJjW8qFR8X7BSyRBVgXZ_G2YTHkkW7wkDpf5_XFl8W=
+3_fLz74lZj2kN2C14BbTgsl3W8q8kCP4XQLQ5N1CY7R1YpGt2W5NJqcZ78_H66V3gVt92cNmBxV=
+lGdhP6gScNBN4sTnCHYS5CHW47Jpxq73pQy_W3vlpJC60YWw1W2nqVPt6ccLk5W6VgNYH4Hz5vD=
+W50W5mF3RsbbVW7-SzRn63nQc0W73M94q4VwnltW28C7Tx1RP8xfW49nsYD1RmV3ZW3NmXhC6C2=
+mt4W1k1HRm5ZM-dwW3GKbxR8ZfB6VW3YqD_S1pvS0SW2rb1dV8zmHS1f1TKntv04>=E2=80=94c=
+ontracts due by Wednesday, September 24.
+
+EXPLORE THE PROSPECTUS >> <https://email.linuxfoundation.org/e3t/Ctc/RI+113=
+/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3lgW1hf=
+897744N9wN51PCPnCTHSNW1GcTkq6Q_DQmW6m4yMZ5-3hqhW14y2v_4R90mrVJ54KZ2JGBY5W2C=
+f0d_3LM5DkW4H7vdC4VMwf6W5HC-ZH35c4N3W1SBjPC6R_qCqVNJvgz29V3zvN8J5vbvWgN2DW3=
+XLCDm2hPC_9W7pdTBp7QR8KWW7LGTl97ySN7WW1MmjB08lG76bW608d8h98RJwHW91VQVH3qkC1=
+zW3w0BxH6P6L3dVM4j811_8qqDW5pDPvs3Mr8D5W6fRCVf6fKyl4W29_7j_53Ty7kW6tPX639lh=
+DW8f8JkbKR04>
+
+Thank You to Our Sponsors!
+
+DIAMOND
+
+[google-cloud] <https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MW=
+yJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3nvW71_0vK375BkRW5=
+TYCgm5ltjvPW75DqTs6-pkFdW1H1YnF1HTkMVW7bfns13YT_8DLGGsmR81BQW6l41nl74cLGcW9=
+2KXfK664M_dW6nQSc96ldMPlN4W1Md7n9_t6W1wd5RW6yLRgBW7k8L0m6lbL28W6DtfGz7kHzTN=
+W4qGtKC2h_ZqYW9b_CpN7cWlZcW30Ktn43ztrKXW4pm5kq4GVNjDW3gDQPG5BCQXtW7p54vL5Hl=
+YdfW4GJBgX7VBMnRW1Xpck74Fr2qxW8vNlZ97FYHV9VpXklC3v_rt2N8zzgn0s0sWsf2dvPdC04=
+>
+[HAProxy-logo-cmyk-horizontal] <https://email.linuxfoundation.org/e3t/Ctc/R=
+I+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3p=
+YN3WLjrTRzTjTW4l_CPK3-RHQWW7W4CWW5kYsypW3yCd9c6dCV4vW6TBRCf61bLLCF2VClMdr6r=
+wW3Q2d2F2d72wgW42r03N6W7kKRW5sfbmY27S2gdW5Y-PG63XR34JW5NTkpg1z_vclW3Hm9yZ2J=
+QFZYW51lhvd4P5qYZW5GHzh41QdpmxW7JLlFc2TsRf-W1WpmdF6C-Wb_W3QJKCR2SmbN3Vg_TJ7=
+89f-sQW6fnPYc4p0VZNN2bbgqzPfKckW9dbfCc2qyvyNW2rP5S816DB6QW6XFwwV1YkkWgW7FKt=
+RF3mY4QGf7JN_2s04>
+[microsoft-azure-spn-1] <https://email.linuxfoundation.org/e3t/Ctc/RI+113/c=
+Zw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYP3qgz0W8wLKSR6lZ3ppW6WjrP=
+l2ZJB66W5-lBFf4ymbNdW8gBBJ-4z_m_WW8jyHWg2yVVhdW2q4dWk2b6D-RW2XwsPp1cPcRcW4N=
+RV8t8zhN6PW8qNCvK52clHzW1qs0yy8YJSltW8CZzSy7hFpc_W6sXwKs76_xlzW7hPhN_14L97k=
+W1-xcV120BgXwW8RGrBD2cS90WW1H177k6pYdGXW62r0MN454m9lW5mJnXn379ZdqW654nD07C-=
+wL-VcWyhy6QWJRcVWKCPg3n5zcmW6ZRlyf1Zz3THW28gPnG10wK1xW2fLfTt1FtPXDW3Yh2C39h=
+g2kGW6zq2yr3XcS5ZV3k3wQ6hpY_lW366PzF61vZ0pN79NLWHSPlRqf3N0WB604>
+[Oracle_rgb_web-2] <https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--0=
+4/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jZ45nR3bW95jVnq6lZ3mHW5GPnmz1QXV=
+snW9gT46n9dtjB9W1CL7bq54qf62MB48hYhcJGFW4x7ns22scMwSW4nKG7f2VtVR7N36flXRgDC=
+nkVltdpR9jn4bsW7yRdSt8pvFbjN56B4z-fyMZNW1c2kWB2XvQZ9W1yQMBh17Vc9VW1yZkR_5Lt=
+6mbW4vBfcS7XB48nW1dh5z28Wzrl0W9hWhQ62Ds4SMW13CjNg1QkT7YTcQkf4gDhk7VCDFZ27Tl=
+CHCW84Ht295fxwnKM6tYMQj6VPjW6ywg8j2JZm9pW4C9jBV7jtRP5W1MzF8s5p96wbW8J378K2M=
+rbQvN6FNg1SYQs1tW2wRXyM2RhRTqW9h6-192G9pZzW1p6mkG2cJ98hW4rvlsK1NXSpsW4kqVpm=
+3qR3jFW1WQdF18pPDqsVR50wD5_X6kVVflGX64GXQZ1N3rS1HH1pf1YW1HtncN8zK61_W3JmVTh=
+4g2p0QW5VrCts67nQbhW898ndg2kcqqTN7MQqkPb0N8fW7ZhyWT50pnKcW1Prk7Z8xb4kXW5gbq=
+8d1nLDq0V86x6b2lWbFXVpPc-J3qpC3CW5gRpF776wlMgf6bPn_Y04>
+[Red Hat logo] <https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MW=
+yJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3l1W2yp3Kr92-KNXW9=
+1hsMh4J3cL_V1YjbR1xfCk-N58BT1My0zJpW3zkdFN1GpGhwW7JGrDC3HQn3GW6dTqWg11mp8nW=
+716h_l2VB1g7W8z2TRF6PjGhMN59BbXPxl6GJD6FnGNyl5qW1FsmWC6bdD86V8Cq5-2XgwrTW3W=
+NVCc5Ct8W_W72RVXd7C2CQDW2gsyby1ntlgQN8zv0bg54KPzW2Y7vXs3hYrpZW3fVCzc9588pgW=
+3w45Z47g-ZNcW3tVPYX5YsJLKW5-lwwj1gWRM-VjzDKg1132HxV9Kz2H464t6sf6yYcg004>
+[solo logo] <https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv=
+5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3kFW5sSFfR8Wz_pzN4qYx=
+PylcZh7W5gBgB94w29VmW3GnjVq5K9kfVVK979v6ngTygW5M5F2y5_lFXGW1wqLt98mVX38W3Hv=
+dGx6-_JpfW7j0fF21pk7fBW5-Xqxs4B6pxxW3gxF0G65d05hW6Qw7th4ryP_VW7CRcgd7tHncSW=
+1XgH6c8jFp3FW61V78f813GyVW6BJwtj80f9TJVL4-8y5vjq1GW9lqmjx2BS9KMW2m1p4Q40Xx4=
+hW2YcyR06TxhGYW8M646T5CGMTxN1J8yhgBSkfvW2yskBg4Mhw4yW7bVXQw6lWxrbf32kdzH04>
+
+PLATINUM
+
+Akamai<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfm=
+W6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYv3qgz0W7Y8-PT6lZ3n6N1QFNpFV65VFW8f1m836clTl=
+wW8y2srG5xP1HKVFk2P_9l3qzfW5jTTD23Smf5QW50PxGJ1zkD4ZN3MNmmKfklYkW2y7tH-7v2C=
+kvW3hvsfl9lTGW3W8hyZQC7CzTHGW3pFY0P1z6TVwN7hkBh7pzd7tW4RRLKz3mMFWtW90kSSw3l=
+fkzkN7W9NqL3V19yW28nJV36RnKLkW8pSxqj18v6LPW8GRDKP5gLYRcW78hVR98BDKl2W3t0cfx=
+1nsmYZW6hdggg6zkD7NW3sc_rk8nb94sW62rd2f1QtNftW6GhmgL20fx5-W5DldN51KQFZmW32H=
+74k5WXP_wf5bcR6404>
+
+AWS<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6v=
+lMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3nYW6Rwbf-1jgNRvW7Tsd4067N3lhN=
+24b34BCTFTGW2C135Z8hyjDZW1y6_h_4sZJL5W4qnR0_5_LdWVW29Vy798NqbbZW2H6R2Q77wgf=
+tW5wlxCp4j1QyrN8F6rGQ1YHWXW2H29--8LSVZ-W2-WL2y1KwBPhW8wqPF47f6KNXW1Vwc-33Bt=
+yJ8W4tLxHW7rlcPpN51W5hgvqJYcN2R5N0ZtZY6LW8jFgJ93tHnB4N2ys9BxJgKMYW6mjNkY5nD=
+87yW8GyrHg2gc-y4V6mPxw2mCHcXW4cxq7P3ZTMdhN1WBlKgY1RpYc69ZP04>
+
+CAST AI<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnf=
+mW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX02-Z-MW50kgx26lZ3kJW5WNRL_4BGf05W7xPb_55Wx=
+rZgW99Wx303pQyCNW6dsDZz5wjVc6W7vSR4n1zR8yHW3ygS5w2Z4fVfN62dB2-fX8DSW31Xqvr5=
+yr0ySW72FsW04JDwfMW4-WqnR4h4cQ6W2WzCMG7f5NG3W6bcn624WFvGXVzQSwT4MXmJ6N6g6Z4=
+1XgwncW71q2SD4Ll9-yW4KN9G31rVcpPf3SxRbH04>
+
+Chainguard<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3prW3sSjjN7gCFJjN2W_xCT=
+H6Cl7W3VwzV028p7S0W7lP3n51Z4LNmW32d-yk5XW-1wW8ycF4H5dYvgDMnDPtkmbC9CW63rk4v=
+6dytd2Vns4XX2HqKC9N24RyG94KTx_W69xDXl2S-XKJW1xcS6-6JXpp7W51bNYB3qdSQPW10-1h=
+-7fjRrRN30CStwsxvP2W2B82bm4c44jfVqt5QG6qnq4BW13lW5-5ZKC76W4nwWPw1kSt_1Vgx1y=
+W3wWvbZW9fRMvs5JzLGsN8ldTjKXk3qcW6rd4fQ8VvD65W1KyWHY5syS8Cf4QN1dd04>
+
+Dash0<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW=
+6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3mMW2-gkyB2rF1m0W3xx9P86bfdV=
+jN6SyKrhHTvfZW7yVWFY4-bwg5W4ZKsdf26BPv2W281FN24Jvbg6N2GyDSstqxHZN6QjY6C9LfQ=
+wN5N4cK-jsmyFW6-GSJ43Py5DTW2s9PkN2dwQP4N4hM0tGL3GnjW1-bXZv5MK3ckW7XcXN38DV7=
+NHW97sfZz7GXrhLW467LXK9fnFWRW5bLk8x90bBX2W5G9-Jw2z709fW2whjp88qqNM_W17FBpN1=
+s62P7W2jp5kV2HSGNkW7vjJLT903gt2N2QzZ4Y6-DR8W1TzGxW6h2B5hf8GGMlx04>
+
+Datadog<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnf=
+mW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3mzW2FKlkG41d1SwW2dNWGy1V6=
+RytW3PHxnG7mqXcDW10MmQZ4qD9ZRW8Q6B8B2j785JW8RlhyT4RWhqdW4PvGnc4rPwyJV9MW7H7=
+GxxV-N4Nrp5s37sMYW6YSr954yZSDgVwQFfS99fdBPW98FF4W4S4lCdW3M155J4xPC9BW89ScsC=
+4fpdt9VkMy_t91l4q1W2rpvLZ5QHwRpVnyc_W1SqLxHW5SqbCw4S3RhgW90pyNP6ScH23W6bfmK=
+33Pq7RcW3msKgT2Y5vzfW3_vFLF1gDlchN70blgrdPdqdVMdSDR15mJtWf2gGTKx04>
+
+DDN<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6v=
+lMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3kMVNbRT84GS5khW4m-zsx44pcwJW5=
+D4H3V6KRTDcW8gWYnR306ZqPN7jG7Q1FwGvLVw4TPV76jkNkW6Srd4v2TM1pgVc5VQp6NrbRpVw=
+RQMb6kvzvrW33xyGW2tXzL0W1Wjscz7sYz-nW5HR9Zm14jQ9xN4ZLpKQXVQTkW1RMcpw65jtWsW=
+8P1kCF16Pl9HW6hDdcd5QJCGQW3ZrnN11z_jqKW8Tp58g1R025zW2NsZnj1XggzZN1Vj62BJsgy=
+9W5gNJqp7QR61hW6D-B2x8q-fWwVPLkDT3LTjSNW6vQn_q8VmBtvf6VnWWj04>
+
+Heroku<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfm=
+W6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3myVbPTjy8GSzqsN110KdcDJSTt=
+W8gLvSb5rbdzCW3CLNJb1MxJD7W2dc7l09kgT8qW546lD18n9WNrVncxJ27n76hcW3lNmh_4L4g=
+fMW1MNLD18g7PYBW2SQXlm4KYYCGW3_RC2389s3xsW4mjDSl8T3f5mW6xgjxG6kg172VK71JM3L=
+BcpDF7v2S5NlDPFW82qt91351WFdW6fGvJJ1zBPgSW5xyCPc9lnMPPW8rjBWZ1QKjSjW7S4RlJ7=
+GSk2qN7KWsTS2yVj8W38R4fS8LPStQW4lfGDW7tJC6rW3LVdHd1ZsT6ff42Tvlx04>
+
+IBM<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6v=
+lMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3npVN98MZ2JxM8jW3sWppn1qhNWyW9=
+1jTYy2m3k4YW6KB71K6Kxpc5W5md65X1XJXN4W2B0WbN1FXnNvN3V5HsCRF6byW5ZxZ4D7YkrjF=
+W4GVsKs8TRy83W1xZ4F955tQRXW6p7v_p3MYdcNW77Rm11755j3XW8j35YL6dlFgmW36q17f4Rc=
+hSgW14kQN44n-2rpVgMjzd6bpxDPW8k7F7H67RzHvW8vDmrZ3B-RgSW70H7mv1KsvgkW7QRSNR1=
+txtS_N2qJ0QVM_QhBW6YQjWt77CTnBW373n3c83Y4FVW7lRt656S5ML2f6ThkZl04>
+
+Isovalent<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LF=
+nfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3mnW38X_Zq3_zzHXW6l3tpc2=
+RK2yLW97ShVp623N4VN2Y3nNLZM8BlW5F5rdX97WJT6N1vXxX8NgZPRW17xC4z5QRWJ9W25Z1Z9=
+2vVsvZF51z-YvcwqZN80zWBWzWghHW2rfzyl3WgWymW2nL0jN4QPZZHW7v4Nh538Q95VW2tctdL=
+64ZMrXW28ZLP-6zS8RWVT-Jlz9h1ChVW1nv4kG90l5CbW74lSSW97Mnp1W7Pp27f8K8-ZWV8cWR=
+17rsCL2W3GrcYd7Xc7jSW5VcfRT47qDPbW7qvDbL9lbS0VW2y6Jpq1wwC5Nf6Ntzsj04>
+
+Kubecost, an IBM Company<https://email.linuxfoundation.org/e3t/Ctc/RI+113/c=
+Zw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3p2W7b6DJ=
+43SpxxJW3_NN3c6fHGzyW7pnnQT6J9FshN7qZrPyPJ8sFW5wnmNk6mtkY4W6y9r1z3WJGz7W3kR=
+1jv3wNXrrW4TpKlx10bCHkW4S1JKK4sm_JdW8VwZ9c7rvlVjW411Kpv4ZdhyTW2XpCMl223cv2W=
+8FXG6g6wPjsTVB-w2m5JsskyW3QNrcT3GWBmgW3NzcsQ6qLs0YW94nXHD7rH29GW4fQX2s6lylK=
+1W6lvs7H7fLgp1W7n5YB28mcTB-W4fBkFm32LN4GW6-51kz4JB1hcW56sYfM2vNrkKW5CWbQP7J=
+cLc5f7r_SnR04>
+
+Nutanix<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnf=
+mW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYP3qgz0W8wLKSR6lZ3n8N2NZsm63pTZwW8cXG_n3d6d=
+n5N42ybwMldTkgW7yQLcc4y2k3XW86x1pB1RK2c-W2yhvKg3wQmJ6W17YWvQ1KF6z_W7qYrhD4z=
+h1QpW79xSVY79Jsp5W4y77bK6_Sgp_W3Z5bbV5ly4lMW323psP8THHHcW8XZZ6s764JYgW6h8Dk=
+K9356cRW7m1HJV5Q0jqvV50gVd7s29mVVMXfGR6BfmwCW8TwsCl47cHkGW3LNFGF6RNgKhVpJgt=
+85NcmhVW123q6G3ppVLyW2ZpZrR45lD3yN8sq68kZrxYHW9cv4_b7gszKGN50NxWdNySKrW5_z-=
+Bs8tG9D6W92wX2r7whV-8W1RQ4gh5p9ZxKf2BPmxd04>
+
+Octopus Deploy<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWy=
+Jv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3pwW6R_7j48N5kcLW6S=
+8yDS45jt_zW10cFL68XHwX6W4VwlfK1WRWs6W8qBTF24ZkXrjW5Pcjcm55S2S3W6Fztm71wRlQG=
+W2t7P_F63mJ4fW2tN6_r4yksHNVGWnFq13nc7LW2N9bLb5DwKcQW7s73k97XPnyQW8vrf-S54bs=
+X8W117ZgN4m5fzGW6hsY2-65nP2kW31FVLH682Y71W6JL4Wl20zwnNW5SKmHc15DdrrVtZTFb3n=
+zCPmW56s79J573P5JMjK8QHKZX9VW8-3SqZ1_PxG1W7sLdVV5S9_7cW84dH3j741dNdf1b1BqM0=
+4>
+
+Portworx by Pure Storage<https://email.linuxfoundation.org/e3t/Ctc/RI+113/c=
+Zw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3lwN9121_=
+rzqNCbW24d4WP7Vdf9mW8ZCy-w5HFrYQW3XFdNc1-XKmVN1ldvPtN50rvVzZKPx2nBS65W5-6Nr=
+b7pXN1CW42BRty3nK3J9W46gJ7468dpWxW4nF-Jb5xfRTVW2-Kb-41DtqB7N3F-nfpYg9BNW3hZ=
+3WR3Js9X6W7Gx23f2wYp65W5L9nKc7cPstjW7JPhqC51l26WW8szjC21CJs81W3svXLC7SF0T6W=
+4clym74GSSfKW5c6txS6TSVkTW4qrn_b4B-l67W6kh3K34ntRlWN37Z5D5SGMgzN911Yp635VzZ=
+f40p6F404>
+
+ScaleOps<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFn=
+fmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jXj2-Z-MW5BW0B06lZ3l5W3zv-S16ssPGWW31sYxH3K=
+nb8SW3q8j8w4Sz8tcW2LyDnw2m5bcqW7zCMN15ddgw0W1k9J2s5NWt8WW4wy0_v6hp8YzW1QnfG=
+X3vhKqLN3M83fQtDNgLW1_JtDh3DLlPjW2nWXLL2Q6QNZN7Hc1jQ4YvHXVP0yqp74gBDqN5xTwC=
+rHDTJvW6Ykyst3-Mkd2W3h8r231xF60pW4wc1mq121gXGN7sgl8kJbNrKf1QByT004>
+
+Splunk<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfm=
+W6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYP3qgz0W8wLKSR6lZ3pqW2vtbS57XPrHMW6hp4R_2zMM=
+YxN4wPj3xG4lVrW7H7twT1NXm0nW8dYqbm2-z0vBVYX67Q6V9KczW92G8_k1M9tHsW57mzJW2p_=
+R-RW6LYjmc3xj8skW8nC9RF4BZ1X3W1ZWwp33ZCjvjW98GbHl5qGRLbW59Nkhp1Wlj49VWFG-h4=
+6lKMtW4xWSTC2vj2XQW3yNTsV36RvlcW4PGjP982NSSyN4kS7qg-sNLYW16Jzhl8Y0j3DW8rYtg=
+-6SRWrcW6tgW-D5Rn6S_W6whptJ6dZlXkW9j9Dqs1NSmX2W3C7F_J1-qZv6W1wk3lt5VmccvW88=
+HfKW4xZt8dN3gbS1xt7P12N7sT93ygX6lyf3VcqFH04>
+
+SUSE<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6=
+vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3lRW2KRPjF162t1mW4FBhvY4jVmZm=
+W1j7WJq7hBrKrW2F8n-G3tBFZxW4Xw8Wf3gqN8kW4Zds9b8D7Z-JW3YsxnL2Kgv6SW6-kfFx1zH=
+_z9W75hlD619zMNjMYZ5WvJ0dYSVpB3tL29kTPjW7_FcMz88KlbbW1nnxrN61dGB2W1B6LJH57p=
+MHDN6pXqYHzwYs6W7hsmXt52Z07kW9lhbT66kY493W8BP4Gv26Py17W7LkH881HgtchN7jpD149=
+QBwZW82l2Pm6HNYShW8WJyFZ3g9PgLW8FhMf799GDK5W3RtXJV6hRdCYf5tr81l04>
+
+Tintri<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfm=
+W6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3nbW1Js04G46FHFdW8c2PVT9bV3=
+PJW98Hc8P6Sh9FcW8r6rTh8y6SP1N3Gm6j4LWz75MGrLfyHZS2VW8X309b3jhnVJW56Bgw73M5f=
+psW1m96F42Qj561W1Mn1NW5WK-FTW8RyhDw7cW4mmVYVD521MWh84MLglzwhfGf3W23hQvR13Sq=
+mnW1m4xJD2GtVyHN6D0R518QTw3W8H2_v26q_bwbVtryCJ6wMk6NW1Pl-0N9chxkcW91g-0g97f=
+SqDN7G9JtZRpP1MN7HDZ9WDpPcPW8Xq_3R7T7cWBW2knX7q93bTNMf21blsM04>
+
+VMware by Broadcom<https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04=
+/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jZ43qgz0W95jsWP6lZ3l7W7r-nYY59-D0=
+cW8J94dk62NyJSMPmgr5F2TdMW1CMmYw6tBP66W2ZmVQ24qmLFjW9jg_P35Nv7WdW57jP5Z20td=
+wBW8DJWpj6bQZ7hW1H6K4p3VwT-QW6r307T61-2XmW7M1xty63RWPrN3KhhCydqxQyVhnBPR7nF=
+F75W5-WqNl5-y4qrVlrHMZ7SP0_rW16cGKT5jmQ9tV4y4pB36K3xYW4p2Xqc69cYrwW3rhrfd5c=
+qLcvW8Q_9Nk6yk-7vW2Sq0xG5zHngHW2TLbm-8hpbKcW3Kty9q57jSsCW9gXL0Z3TKzBJW2HV_V=
+x3MnWhxW597vLh7zpCb4W2j22-W1CDVVZW91lVrh61b1v-W8chj3P73XSNxW3x4tT24j95hgf1B=
+NCFR04>
+
+Check out all our sponsors!<https://email.linuxfoundation.org/e3t/Ctc/RI+11=
+3/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX05nR3bW50kH_H6lZ3mKW5g=
+zMC03nGz3pW5pPB4b3XZj0FW1v0TwY6f-14BW2L9fcS25zpRzN5BYHCPyqzKRW17gXhT4BVrc4W=
+23gLPp3Pl2g2W356gVP6s7t_mW5mK_rb8t_s3JW4zFRxp8SzbKkVywx6-6njp6wW3RBsBD5N_m8=
+kW97swfD2VYVYrVjXrbc55-N64N4GPx7pFtsJKW4qrdDV6cpBBCW5Bx8Hm45L6NhN3RBk1nq8PV=
+nW8qpbdz2dFyqVW92bQWT2vfZ6fW2l1xJ31bnsswN1z9553Pjn8NW2lkmbY5rcFDbW71GKM0148=
+5fcW7lmvfx8pbF6PW8N3hJw6CMRwDN7Wxlqzx8g59W5bQ4Nh40JcPLW8nzrYV45nQBqW5QMkyS4=
+XSqtgVvk9Y91vQQdQN6WG9YZjzFk1f3-qWfl04>
+
+FOLLOW US
+
+[github-logo] <https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWy=
+Jv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3m0W8hqCRr1pGkQ0W6R=
+6_qS5PXKXBN46BJsVR9tPMVqnZm_8p360bMP_NQlKXqGTV_Wfrb21QlC2W1nsZx53pmcNqW5k1q=
+nC3yCKbBW4kdTJL7_Pq1SW82M-Bm2VZ-GSW6rPD_y2362ZsW67pLRL3phyfjW2WQB5q8Lb2mYW2=
+b0KRk7RRk4nW7XcPxc2jZkFRVmxSdR2x204sW7ybWVv3Rcn_DW2NnGlp2jndCnVJPKR548_9QbW=
+1Dkwkf33qhlLW7FZ6HG7YzPBxN99kx1TSrjWBV9DCxL2FTyq0W7w4wtT23dHLKd9kY_F04>
+[X] <https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6=
+vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3mCVTYc-85sr_WXN6YHYqvMyYJgW1=
+FqCQm8ntsYyW16FfhG1KCryhW7TTSvF1rLHYkW4LlTWL54BXm0N6rz7x7-j6J6Vvlyfr1SBMvGV=
+4mhCw6rDsB7W6SFdGM7c_GD-VR0qQ_8SS_JwW5dY9R_2-fbpwW7CHN7310pytnW8n_9ry21JJM2=
+W8lT1VJ5QR48-N31Xww9NqV90W642gjr85tx17W66zC105BYNrmVY4Z2L8kyt6GW8W0d_p8q0C4=
+hVqXtY_9lDXF6W92RNT416BvJzVK-wdR9f8LmxW83cZW63L1CVhf7GsMWW04>
+[LinkedIn] <https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5=
+LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jZ43qgz0W95jsWP6lZ3l8W5Pw0xV4ptwcmW4Dr6n=
+m496y51W1H95VF8GMX5HVrGC-n3FRCwpW5RCYmv8CK773VcRPJb3pxcQgW18Hz772NcnrTMYR2N=
+QVyl54W1WwTp_24-JnlW2pWnWH43w3lNW6knVGj86Fxs3W663qmK1zKw1HW7w62vG5YRCmZW6FP=
+C3j80pYqDW3ss5vB40Pv7-W94vmJc6sRR-4W3v2H_B2vb9wyN1P6GzVjwW7LTXmxM7b3657W4Vh=
+rWV3DDlVmW3XG5lT7YbC51V7k49Z5TgfyzW2WrY_r2RXkGBW7Jf_P55ZXnd_W2RN31t72BPRqW5=
+T_WTt5D44m2W5WqbZx6HvQYdW98JbNb2fV3sTW8cKFdv99dkqbW93bfXj2Pbv8bf4Gd5QP04>
+[YouTube] <https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYv3qgz0W7Y8-PT6lZ3kzW8b8nmP13HcqzW1cLY2g=
+6ZLmGhW3jBcf73F5wZFW8_5ktS74f8S8W2l91x11zq9PXW2XzfQw16jBCxN2tCLTp36CDnV446h=
+C9g5sb9W4X-gBt4sMb-5W1Q0s4n843fSyW88qdV76N0kLxW6Z8Kw_6yQfnKW3n47ks45jLvSW3v=
+fsgn19lNLkMbLn_XJxXkNW6r_1qf8__013W7vwwCW4KHWSLMwwQnj1KwJtW780BXr84wMSLW95x=
+fHT65qSkhW8qF9bX5_YNf1W1Tnmd17GF2g0N5WK-1S4C3HJW19_72J75JZc3W6FZYNZ59KRWLW1=
+DcYny996jvyf92zLRR04>
+[Facebook] <https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5=
+LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYP3qgz0W8wLKSR6lZ3mxW8xhxNn8ybZPBW5NncV=
+B4jtqTkW7lqHfS5yZ83BN7yTM51Lz_7LW2t-j8W1ryCQTW3y6BwL5kHK9CW4Cfr0T4DV40MW5WD=
+Y_n8X445-W7W-vM_8Vd6clW916PZt42yBZrW5FKW9P2P9vnSW1WBpwz70wbVxW3l48p38bqdgKW=
+4fjWW46RX2dmN7mgVvlPPWc8W84s0wS6Qk2WpN12dmVXClVxkW5HrvVt3ZxsjWVtDx9521QVcRW=
+1WyLHC14DSsGVS2Hj83_FmB6W3BVs261wjBQLW5C8k8k54rdPVW4dwggs2wsJhwW3RmZR94cNM3=
+JW8c1kTM8by9p7W1CbNyQ4XbJghW1fCD067c2SrBf7hR6JP04>
+This email was sent by: Cloud Native Computing Foundation
+
+548 Market St, PMB 57274, San Francisco, CA 94104-5401, United States
+
+Unsubscribe<https://hs-8112310.s.hubspotemail.net/hs/preferences-center/983=
+905/en/direct?data=3DW2nXS-N30h-GBW43ytsJ362x84W3T28Vd1Qc8xmW38fVmB43F1KgW2=
+KP98m2xMN-dW49Rgwv23qglhW3NDBGn34xtYPW30Jcjj4pmpdfW1SsksT1QzN_VW2vYrzk3yZy1=
+hW4fhcjk45wdQxW43DJ-K4rwTfcW3LHPZS2MRr9VW4cQhsk34FMmWW49z7Cz36pChGW3bfNjm49=
+RJTbW49vqhZ3SZ78fW3VRGX243GLPJW1Nf1Zd2-B9PwW3H4M4Q3_T7ZXW1S9Kjh3SLsbHW1QwXq=
+n1QzkwXW3DVPcj1_kG18W3dsn2d32xl2pW3dcvFr3z1gB_W2p6hJb2vTklSW47MPLq2HXVhrW1V=
+v796348tYbW2KrSGY38v0WHW36wTyl4tkctmW2WNCyf3NMhZGW3NFYDc2MPlm8W1Sb6CC3yQ7vK=
+W4kcn4n43xCRVW2Yf56M1-XBJKW2t47lb49HRl2W34ptgY2PRjtXW362r3G2nMNkqW2nQ7Mt2xB=
+vBtW3z95XK2YrsfLW3VZjDF3h-zMyW30D1TH2Ptw-jW1S2cYm38xxyHW4pFjg_1BJtC1W4hsVzm=
+4ckpnrW2KwD8W1VyxRNW1_9nry2zWn27W234S6c2zxplvW3jcqqh4cgtK2W41YwLW2r5JnwW2p5=
+S5d2RSgK1f1SzZ1w04&utm_campaign=3D10608228-KubeCon-NA-2025&utm_source=3Dhs_=
+email&utm_medium=3Demail&utm_content=3D373765930&_hsenc=3Dp2ANqtz--oAgNV0UO=
+zv2eA8EqDV4yw4zI8aCUw7EsU0HHxUEgaL1KZpKoD_wAapfk2x2kYOqQrkvl2EdzeM5-hqvXxPS=
+tPLjCcdA&_hsmi=3D373765930> Manage preferences<https://hs-8112310.s.hubspot=
+email.net/hs/preferences-center/983905/en/page?data=3DW2nXS-N30h-GBW43ytsJ3=
+62x84W3T28Vd1Qc8xmW38fVmB43F1KgW2KP98m2xMN-dW49Rgwv23qglhW3NDBGn34xtYPW30Jc=
+jj4pmpdfW1SsksT1QzN_VW2vYrzk3yZy1hW4fhcjk45wdQxW43DJ-K4rwTfcW3LHPZS2MRr9VW4=
+cQhsk34FMmWW49z7Cz36pChGW3bfNjm49RJTbW49vqhZ3SZ78fW3VRGX243GLPJW1Nf1Zd2-B9P=
+wW3H4M4Q3_T7ZXW1S9Kjh3SLsbHW1QwXqn1QzkwXW3DVPcj1_kG18W3dsn2d32xl2pW3dcvFr3z=
+1gB_W2p6hJb2vTklSW47MPLq2HXVhrW1Vv796348tYbW2KrSGY38v0WHW36wTyl4tkctmW2WNCy=
+f3NMhZGW3NFYDc2MPlm8W1Sb6CC3yQ7vKW4kcn4n43xCRVW2Yf56M1-XBJKW2t47lb49HRl2W34=
+ptgY2PRjtXW362r3G2nMNkqW2nQ7Mt2xBvBtW3z95XK2YrsfLW3VZjDF3h-zMyW30D1TH2Ptw-j=
+W1S2cYm38xxyHW4pFjg_1BJtC1W4hsVzm4ckpnrW2KwD8W1VyxRNW1_9nry2zWn27W234S6c2zx=
+plvW3jcqqh4cgtK2W41YwLW2r5JnwW2p5S5d2RSgK1f1SzZ1w04&utm_campaign=3D10608228=
+-KubeCon-NA-2025&utm_source=3Dhs_email&utm_medium=3Demail&utm_content=3D373=
+765930&_hsenc=3Dp2ANqtz--oAgNV0UOzv2eA8EqDV4yw4zI8aCUw7EsU0HHxUEgaL1KZpKoD_=
+wAapfk2x2kYOqQrkvl2EdzeM5-hqvXxPStPLjCcdA&_hsmi=3D373765930>
+
+
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_1720776_60995590.1753967560025
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3=
+.org/1999/xhtml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:=
+v=3D"urn:schemas-microsoft-com:vml" lang=3D"en"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<title>=F0=9F=93=A3 The KubeCon + CloudNativeCon North America 2025 Schedul=
+e Is Live!</title>
+<meta property=3D"og:title" content=3D"=F0=9F=93=A3 The KubeCon + CloudNati=
+veCon North America 2025 Schedule Is Live!">
+<meta name=3D"twitter:title" content=3D"=F0=9F=93=A3 The KubeCon + CloudNat=
+iveCon North America 2025 Schedule Is Live!">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+<!--[if gte mso 9]>
+  <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    <w:WordDocument xmlns:w=3D"urn:schemas-microsoft-com:office:word">
+      <w:DontUseAdvancedTypographyReadingMail/>
+    </w:WordDocument>
+  </xml>
+ =20
+  <style>
+    ul > li {
+      text-indent: -1em;
+    }
+  </style>
+<![endif]--><!--[if mso]>
+<style type=3D"text/css">
+ body, td {font-family: Arial, Helvetica, sans-serif;}
+ .hse-body-wrapper-table {background-color: #efefef;}
+</style>
+<![endif]--><!--[if mso | IE]>
+  <style type=3D"text/css">
+    .hse-column-container { border: none !important; padding: 0 !important;=
+ }
+  </style>
+<![endif]-->
+<meta name=3D"generator" content=3D"HubSpot">
+<meta property=3D"og:url" content=3D"https://email.linuxfoundation.org/the-=
+kubecon-cloudnativecon-north-america-2025-schedule-is-live">
+<meta name=3D"robots" content=3D"noindex,follow">
+<!--[if !((mso)|(IE))]><!-- --><style type=3D"text/css">@media only screen =
+and (max-width:639px){img.stretch-on-mobile,.hs_rss_email_entries_table img=
+,.hs-stretch-cta .hs-cta-img{height:auto !important;width:100% !important}
+.display_block_on_small_screens{display:block}.hs_padded{padding-left:20px =
+!important;padding-right:20px !important}
+.hs-hm,table.hs-hm{display:none}.hs-hd{display:block !important}table.hs-hd=
+{display:table !important}
+}@media only screen and (max-width:639px){.hse-border-m{border-left:1px sol=
+id #eaf0f6 !important;border-right:1px solid #eaf0f6 !important;box-sizing:=
+border-box}
+.hse-border-bottom-m{border-bottom:1px solid #eaf0f6 !important}.hse-border=
+-top-m{border-top:1px solid #eaf0f6 !important}
+.hse-border-top-hm{border-top:none !important}.hse-border-bottom-hm{border-=
+bottom:none !important}
+}.moz-text-html .hse-column-container{max-width:600px !important;width:600p=
+x !important}
+.moz-text-html .hse-column{display:table-cell;vertical-align:top}.moz-text-=
+html .hse-section .hse-size-4{max-width:200px !important;width:200px !impor=
+tant}
+.moz-text-html .hse-section .hse-size-6{max-width:300px !important;width:30=
+0px !important}
+.moz-text-html .hse-section .hse-size-12{max-width:600px !important;width:6=
+00px !important}
+@media only screen and (min-width:640px){.hse-column-container{max-width:60=
+0px !important;width:600px !important}
+.hse-column{display:table-cell;vertical-align:top}.hse-section .hse-size-4{=
+max-width:200px !important;width:200px !important}
+.hse-section .hse-size-6{max-width:300px !important;width:300px !important}=
+.hse-section .hse-size-12{max-width:600px !important;width:600px !important=
+}
+}@media only screen and (max-width:639px){.hse-body-wrapper-td{padding-top:=
+20px !important}
+#section_1652111251814 .hse-column-container{background-color:transparent !=
+important}
+#section_1652111251814 .hse-column-container{background-color:transparent !=
+important}
+}@media screen and (max-width:639px){.social-network-cell{display:inline-bl=
+ock} }
+@media only screen and (max-width:639px){.hse-body-wrapper-td{padding-botto=
+m:20px !important}
+#section_16947091896869 .hse-column-container{background-color:#fff !import=
+ant} }</style><!--<![endif]--><style type=3D"text/css">#hs_body #hs_cos_wra=
+pper_main a[x-apple-data-detectors]{color:inherit !important;text-decoratio=
+n:none !important;font-size:inherit !important;font-family:inherit !importa=
+nt;font-weight:inherit !important;line-height:inherit !important}
+a{text-decoration:underline}p{margin:0}body{-ms-text-size-adjust:100%;-webk=
+it-text-size-adjust:100%;-webkit-font-smoothing:antialiased;moz-osx-font-sm=
+oothing:grayscale}
+table{border-spacing:0;mso-table-lspace:0;mso-table-rspace:0}table,td{borde=
+r-collapse:collapse}
+img{-ms-interpolation-mode:bicubic}p,a,li,td,blockquote{mso-line-height-rul=
+e:exactly}</style>
+</head>
+<body id=3D"hs_body" bgcolor=3D"#efefef" style=3D"margin:0 !important; padd=
+ing:0 !important; font-family:Arial, sans-serif; font-size:15px; color:#234=
+96d; word-break:break-word">
+<div id=3D"preview_text" style=3D"display:none;font-size:1px;color:#efefef;=
+line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;" la=
+ng=3D"en">
+Explore 300+ sessions &amp; keynotes and 18 co-located events happening thi=
+s November in ATL!</div>
+<!--[if gte mso 9]>
+<v:background xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"t">
+    <v:fill type=3D"tile" size=3D"100%,100%" color=3D"#ffffff"/>
+</v:background>
+<![endif]-->
+<div class=3D"hse-body-background" lang=3D"en" style=3D"background-color:#e=
+fefef" bgcolor=3D"#efefef">
+<table role=3D"presentation" class=3D"hse-body-wrapper-table" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"margin:0; padding:0; width:100% !importan=
+t; min-width:320px !important; height:100% !important" width=3D"100%" heigh=
+t=3D"100%">
+<tbody>
+<tr>
+<td class=3D"hse-body-wrapper-td" valign=3D"top" style=3D"font-family:Arial=
+, sans-serif; font-size:15px; color:#23496d; word-break:break-word; padding=
+-top:20px; padding-bottom:20px">
+<div id=3D"hs_cos_wrapper_main" class=3D"hs_cos_wrapper hs_cos_wrapper_widg=
+et hs_cos_wrapper_type_dnd_area" style=3D"color: inherit; font-size: inheri=
+t; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-t=
+ype=3D"dnd_area">
+<div id=3D"section_1652111251814" class=3D"hse-section hse-section-first" s=
+tyle=3D"padding-left:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation">
+      <tr>
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column_1652111251814_0" class=3D"hse-column hse-size-12">
+<div id=3D"hs_cos_wrapper_module_165211125181138" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; f=
+ont-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widge=
+t" data-hs-cos-type=3D"module">
+<div style=3D"overflow:hidden">
+<table role=3D"presentation" class=3D"hse-pre-header hse-secondary" width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"text-align:right; fo=
+nt-family:Arial, sans-serif; font-size:12px; line-height:135%; color:#23496=
+d; margin-bottom:0; padding:0" align=3D"right">
+<tbody>
+<tr>
+<td align=3D"right" valign=3D"top" style=3D"color:#23496d; word-break:break=
+-word; text-align:right; font-family:Arial, sans-serif; font-size:12px; pad=
+ding:10px 0; margin-bottom:0; line-height:135%">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYP5nR3bW8wM7ks6lZ3m-W92Rgtv2mJTCjW1Ws2nR=
+4Z1-tYW4mV80B6MLx3LVFTL288dnWQGW2M0bCy8Jmg-pVlfjPc64V_pmW6W4F7H4T8SlnW4fHRl=
+g9clCklN4VhqpQKZqPdW3Ft6q08sccdcW6_bpJG4SJBj0W5ZPP-P5d0CkCW41rWk01gWcQsN60H=
+fTrMb098N55MpD_738zJW20PzG06SfP8-W1YTp9S7VxTwwW8Kh2sZ5SH5mhW6qqfTb1gD393W7n=
+G8Tk5VfBDFW53_VmV1SD5X2W8XQMwd4Xh_rxW6_Q4tj6z_FSqVrPd2J5BcWGlW1lYzgl4bNfj4W=
+1PC3Y74kM3Y9W2cjfp734bSZSW1SjQXL40yTlSW2_GDJY5FzrqMW2V3SCx6QvHm-W8X2cdC3R90=
+GxW1dMz6V528dYvW5sgzgp22qXYpW7dzZX65DZj_mW3-7J7R4XxLk0W3x5KC61Tm8w8W1dTmNS1=
+DKMsmVxtC2R8L1w44W8GfrxK1R_4sjW3hJGJ34X73plW3_BSGC28BWGjW32D1TD350XQCVqcp7V=
+2ff2FDMWhsJ8mbQKMf6PrLT804" style=3D"color:#00aebc; font-weight:normal; tex=
+t-decoration:underline; font-style:normal" data-hs-link-id=3D"0" data-hs-li=
+nk-id-v2=3D"xeYKte1n" target=3D"_blank">View
+ in browser</a> </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_1694709035196" class=3D"hse-section" style=3D"padding-le=
+ft:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column_1694709035196_0" class=3D"hse-column hse-size-12">
+<div id=3D"hs_cos_wrapper_module_16947090401801" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td class=3D"hs_padded" align=3D"center" valign=3D"top" style=3D"font-famil=
+y:Arial, sans-serif; color:#23496d; word-break:break-word; text-align:cente=
+r; padding:20px 20px 10px; font-size:0px">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3mqVGv8TC1nm5qhW9lgSnV8=
+0F_WhW6h1XHB5pHwG8W9kVRC-7DWBNwN73VzrLB9K7MW6w5C893Vq4XJW7JKMjK7qxn2yW78dfz=
+p4NDb-CW8bHfpw7Fw43MW2GpWhB1hPf-hW27p1QN2ZzTJ0W2jLPW07dPTSMW1RdTXx6kBcgPW7y=
+1w1K2wLqZ1W7qWRyg6H7j0VN6BrWnVL2PWxW5x6hFB9ksM0sVBBBvH5WRGdcW6zcLfd3_CKwpW4=
+622nd6v_vHMW9gLC367yJ067N66y2HlkQXZzW1xqy7D78tsMmW70qCxt2VFP0Xf38_nMM04" ta=
+rget=3D"_blank" style=3D"color:#00a4bd" data-hs-link-id=3D"0" data-hs-link-=
+id-v2=3D"KqruO40K"><img alt=3D"cncf-main-site-logo (1)" src=3D"https://emai=
+l.linuxfoundation.org/hs-fs/hubfs/cncf-main-site-logo%20(1).jpg?width=3D400=
+&amp;upscale=3Dtrue&amp;name=3Dcncf-main-site-logo%20(1).jpg" style=3D"outl=
+ine:none; text-decoration:none; border:none; max-width:100%; font-size:16px=
+" width=3D"200" align=3D"middle">
+</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:10px 20px">
+<div id=3D"hs_cos_wrapper_module_17325699139261" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table role=3D"none" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"vertical-align:top" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"font-family:Arial, sans-serif; color:#23496d;=
+ font-size:0; word-break:break-word">
+<p style=3D"font-size:1px;border-top:1px solid #000000;width:100%;margin:0 =
+auto;"></p>
+<!--[if mso]>
+        <table role=3D"none" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"font-size:1px;border-top:1px solid #000000;wid=
+th:560px;">
+          <tr>
+            <td style=3D"height:0;line-height:0">&nbsp;</td>
+          </tr>
+        </table>
+      <![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div id=3D"hs_cos_wrapper_module_17325643407962" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td align=3D"left" valign=3D"top" style=3D"font-family:Arial, sans-serif; c=
+olor:#23496d; word-break:break-word; text-align:left; padding:0px; font-siz=
+e:0px">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jZ43qgz0W95jsWP6lZ3l7W1nW2GV6HS-MPN91qptV=
+BwNS-W4pnKGH30vG86W3k5R5z18DB3tW4_Hgrf2yYSyqW5YBwLs3M7--fW17VL2m2CHRgfW7pV9=
+dq3cwNk5VDYwGF6y5HHSW1Fsqr_3y6nf-W1qRy0G29sXxyW17jNpt8qv04hW88XPq-3F5YPJW2K=
+jf-91RjgQLW2LwJ3K5kJBMbVGP2LL4tDSHCW8wNhy_4WMCm5W7P-vcx2kW5vFW7cs0972ccXpvW=
+3cwM9z1KDjTGW3JQ7Hh7ptNC9Vz9_BR6sds4GN53LzqY7c6mkW4t7jhY2K2p96W5mjw0b4lTYQM=
+N1xhrHMJsmjxW1pc13p6VpHlwW8QjwDy7MqzWtW3LdRYj63_TFlN3mH213bZ_-Zf6KV2KR04" t=
+arget=3D"_blank" style=3D"color:#00a4bd" data-hs-link-id=3D"0" data-hs-link=
+-id-v2=3D"XN4LsR9B"><img alt=3D"Kubecon NA 2025 Schedule (Email)" src=3D"ht=
+tps://email.linuxfoundation.org/hs-fs/hubfs/Kubecon%20NA%202025%20Schedule%=
+20(Email).png?width=3D1200&amp;upscale=3Dtrue&amp;name=3DKubecon%20NA%20202=
+5%20Schedule%20(Email).png" style=3D"outline:none; text-decoration:none; bo=
+rder:none; max-width:100%; font-size:16px" width=3D"600" align=3D"middle">
+</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:15px 20px 0px">
+<div id=3D"hs_cos_wrapper_module_17468100085221" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17468100085221_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; line-height:125%; font-weight:bol=
+d"><span style=3D"color: #000000; font-size: 16px;">=E2=98=81=EF=B8=8F Clou=
+d native community: Your moment is here!</span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:125%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:125%"><span style=3D"=
+font-size: 14px;"><span style=3D"color: #000000;">The
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX05nR3bW=
+50kH_H6lZ3nPN52fNJRqmq9SW20n7mg2001l8W63B1NC1QjRyqW7CgScS2hqQ9GN2sgcCjzD5LM=
+Vwk15320hFFhN5fYwGSD45nBW5zHv432PvVjSW5X-bcJ2XgB4SVNdZ3F3dKmJtW3hh_vW8J6ZSb=
+W5gwcgK9g-NQTW3QVbgx2RxXQLW3Z7Rdw7kqVysW18QtRH3HlR-nW1qH-Ms7d05W_W7pq5GM26-=
+YffW6Kdl2J6kq0BJW4rNDVk4_xmhwMlSHWBfGLq3W171T1K83V8vPW8yqwwb6MY4q3W42zCtf35=
+S5fKN255Pcv61W31W15qVcT8Fyp7CW336-_S7Jzr-9W68H1p26_PnF5W7Wv6nM4MY-PMVPBV0h7=
+bsmT7VvXgLy6mTYDPW29dy4R4fjhM6W31C7K_1rQYWTf3c4LMH04" style=3D"font-weight:=
+bold; text-decoration:none; color:#912666" rel=3D"noopener" data-hs-link-id=
+=3D"0" data-hs-link-id-v2=3D"jd9WAvew" target=3D"_blank">full
+ schedule</a></span> for </span><span style=3D"color: #912666;"><a href=3D"=
+https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ=
+6hZmQxW58c1_75zGfS9N6D7jZ43qgz0W95jsWP6lZ3lVW3lVKqP2YphqDW6gtcnL1Zdzz9W7Gfc=
+tN7J_R6VW60ZM7J8D022TW2QPHmX6xJfrrW8wy_1M3Fk85tW5LVHQ67jfbh7VRVvmP5hgjNHW5D=
+zQ4J3YphKsN3-8H7DHd1R5W95_xhq4YgkfvW5BXGrD8kqh9TW4mK4Jz1l5kLCW6DPxgp2nlDRRV=
+qFmsr2Gg3xlW6q4T1B6pcSGkW2bXGQt7b_z_LW2ZRwL-8SgbcmN46bqKknND1CW3tzkCn2bywnZ=
+W8lkkmQ8bC8-dW2lxKrs7N21XYW91gvbx4TWKHtW2B0g4Y8JFdnKW5Wd_WB955C9sW476vWJ5GX=
+d9QW5CFlgL1Jhdg6W19ZzM745TrVhN3gt0yVBgRKxF6sypzKdyNhdlzvlx04" style=3D"font=
+-weight:bold; text-decoration:none; color:#912666" data-hs-link-id=3D"1" da=
+ta-hs-link-id-v2=3D"xD+4TiXe" target=3D"_blank">KubeCon
+ + CloudNativeCon North America</a></span><span style=3D"color: #000000;"> =
+is now live! Join us November 10=E2=80=9313 in
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX05nR3bW50kH_H6lZ3lpMcKbWp189p5VHJ6St5G4=
+dnHW22BzBW13LvFYW8lhYlj1lG2fQW3C-Z1m8xjKQnW5lvdHv4gf5YkW3hTFm97qq4cPW1tmQ9l=
+6BmgDFW1Xd7kD8QXTNhW79X55z305Y8XW3bH8YQ14_KkMW2xN6PY4mvyVFW7GBQr58xmPqkW4H8=
+qWQ4XwSjZW7JmhQb1Sl2pgW2d88Pq45CjCfW1f12yQ8Xg6hgW7vQ3qX6yt643W6VFRD_1jN647W=
+1n8D907hT2S7W8jKJvX95SFCgW2WDJ0g4rzPkgVd4J788jhgKGN8y_JVRD1hQNW75P6hn44vnck=
+W8l6l-_1hsfp4W1rqT2Q90TdN5W8JKsV87vglWZW25PD8r7pghCfW1pdQ111DKGkkW233-zq18B=
+s4PW8W6fzF2BfvjWf99-QG204" style=3D"color:#000000; font-weight:bold; text-d=
+ecoration:none" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"WgLAqzK6" targe=
+t=3D"_blank">
+<span style=3D"color: #912666;">Atlanta</span></a> for 4=EF=B8=8F=E2=83=A3 =
+days packed with technical talks, hands-on learning, and real-world insight=
+s from across the
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W=
+7lCdLW6lZ3kDVc1x_58zBLvqW35h2S05XTWKbW4-XVwj6-b778W3bGNjs7vh4qdW43WN2-2QKCP=
+YW1hwY9Z1p7n7FW2tl2Wg78YLFmW2QDm8R41zngFW7t2YH55R6FY2W6Hfr363p8LJ_W32-zVx4-=
+KgfDW2k4cll8PXSy1W3TnhMC3FPfB_W8k-thn9fbHcxW5Cn9D06y3TY3N38nFf4Xm2vFW5vzsTz=
+2t7SQjW3skqjj46hBGTW7HlG7f5cJ0ytN8MSHwXDlwn3W71-gk590VGmDW63Ln291NmrhYN32Vy=
+qrTGmWqW915pJ94X-ZjMf5LKCvH04" style=3D"color:#912666; text-decoration:none=
+" data-hs-link-id=3D"1" data-hs-link-id-v2=3D"ps8S953c" target=3D"_blank"><=
+strong>CNCF</strong></a></span>
+ ecosystem.&nbsp;</span></span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:125%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:125%"><span style=3D"=
+color: #000000; font-size: 14px;">With
+<span style=3D"font-weight: bold;">300+</span> keynotes, lightning talks, C=
+FP breakout and Maintainer Track sessions curated for developers, platform =
+engineers, architects, and maintainers, this is where the future of cloud n=
+ative comes into focus. Dive into
+ the schedule and start planning your Atlanta adventure. =F0=9F=8D=91</span=
+></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:125%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:125%; font-weight:bol=
+d"><span style=3D"color: #000000; font-size: 14px;">Explore the highlights:=
+</span></p>
+<ul style=3D"mso-line-height-rule:exactly; line-height:175%">
+<li style=3D"line-height: 115%;"><span style=3D"color: #912666;"><a href=3D=
+"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMp=
+J6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3kKW3-8mYM7JCCFXW87nHN334tcHtW7TN=
+tPR1NJ5PQW7C8rKw59VM4pW21HR4H8NtP-ZW5sKd3983HG5ZW1dsyWW63yfBkN93c7zz2j1QBW2=
+ny6MS6TDLjBW8KM5mh2nFXxYW7by4g84Z4zDHW6xKWSz35vtmqVJyLK41MDFJ0W5YQDc35kXmgH=
+W1DVz4l7YL57KVxbd5W1thzg3W2KVKzB4-jlVFW5MZJVn8FWfcFN7jr0QyXqSZyW3GF-DJ7gR77=
+2W5yPFX65ZQ8lqW4NrWz-5H56RyW4ztcm_6vwWnfW5Xzhb47ZdM3Sf69xSJT04" style=3D"fo=
+nt-weight:bold; color:#912666; text-decoration:none" data-hs-link-id=3D"0" =
+data-hs-link-id-v2=3D"u/6R2EVS" target=3D"_blank"><span style=3D"font-size:=
+ 14px;">Evicted!
+ All the Ways Kubernetes Kills Your Pods (and How To Avoid Them)</span></a>=
+</span><span style=3D"font-size: 14px;"><span style=3D"color: #000000;"> - =
+Ahmet Alp Balkan,
+<span style=3D"font-weight: bold;">LinkedIn</span><br>
+<br>
+</span></span></li><li style=3D"line-height: 115%;"><span style=3D"font-siz=
+e: 14px;"><span style=3D"color: #912666;"><a href=3D"https://email.linuxfou=
+ndation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D=
+7jYb3qgz0W7lCdLW6lZ3lgW5YGBlR7BYQcXW96TNsZ2XDrDbW5l-6cL6K5nj2W6z4nRC3gC1gHV=
+Z7MJm7vzG6KW5BRnj71LrzcrW8t_VTt5DFmtvW2stm9Y4-2xYmW7mdg5B963n2GW70gmgH54nnj=
+wN4Mw1FjWRy4TW1BWRHt3qFpcBW7CFwmG4JnRc5N8YFLBJ5Hy8JV2wz-N1WPzPqW6cRflK3_GDN=
+GN93SmRGWQvJrW5PJBKR99d0pRW7vjGHr4jyTzGW4MMZ7K6mJNPJW1sGxBl5-Dh_yW6vYmxZ5yF=
+6h5W871zn17F_1srW6GX6nL2gr6fNf85Wl5v04" style=3D"font-weight:bold; text-dec=
+oration:none; color:#912666" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"ng=
+90iKdO" target=3D"_blank">From
+ Panic To Peace: Making K8s Controller Observability Suck Less</a></span><s=
+pan style=3D"color: #000000;"> - Cat Morris &amp; Derik Evangelista,
+<span style=3D"font-weight: bold;">Syntasso</span><br>
+<br>
+</span></span></li><li style=3D"line-height: 115%;"><span style=3D"font-siz=
+e: 14px;"><a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--=
+04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3kFV3zrs26pzs=
+vYW7Ymcrs1KTyghW81dpXm8lHwjfW2hn67r1vpNNHW8chQf93lnJjnW8xs6jD5dkczjW21XLS84=
+dVJWxW6thzPD4JpHmbW3T9t6w2p6yZxW4Src858HwHSdN3P9m_mXJPR1W2MXvDl7THXp4VKB3Hr=
+80zzqNW3Dgwjk2lNM2QN6SgC_XWd-z4W3P7wKZ6jCnTlW3wxKKM6Qv2g5W6L821x5PlfKqW7wBm=
+P93LvQlbW4bhl9n5M7H6sW69FLvs3KRDrqW73hsrj4x94D1W81ScdL73Z_VYW3vNQ0d5g_kdvf1=
+lKMyY04" style=3D"color:#00aebc; font-weight:bold; text-decoration:none" da=
+ta-hs-link-id=3D"0" data-hs-link-id-v2=3D"ArbmcO+t" target=3D"_blank"><span=
+ style=3D"color: #912666;">Managing
+ a Million Infra Resources at Spotify: Designing the Platform To Manage Cha=
+nge at Scale</span></a><span style=3D"color: #000000;"> - Oliver Soell &amp=
+; Fredrik Sommar,
+<span style=3D"font-weight: bold;">Spotify</span><br>
+<br>
+</span></span></li><li style=3D"line-height: 115%;"><span style=3D"font-siz=
+e: 14px;"><span style=3D"color: #912666;"><a href=3D"https://email.linuxfou=
+ndation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D=
+7jYb3qgz0W7lCdLW6lZ3lkW2yqrW-2Yx9Q1W91Trnr11jQG8W5zCF9357YgYbW1-Wv2n6FbSJtV=
+zXGLZ1fR3pMW72dTCp53rG_xW7Kw9KR1HybzRW59gdMG6JNq38W7-LH8V29WFKKW3XMc_S2ZcZq=
+BW2x1qyZ3mHSmgVp2v8W4TrMCKW7N9HXx4v6VJ-W1mdfpT7bhS8WW4dTh6x94HR27V9p5Sc9553=
+RnW71Q08b1k97wxW3B4WvG8RMppFW6tRjqk1RfSPRW8rNstM5Q8b8pW46F_637RygWCW2C_TWX9=
+jwnjqW4L4-QH5fnbVxW8_1-Zd6wHGz9f4hjplj04" style=3D"font-weight:bold; text-d=
+ecoration:none; color:#912666" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"=
+lLzzvk9a" target=3D"_blank">Evolving
+ Kubernetes Scheduling</a></span><span style=3D"color: #000000;"> - Eric Tu=
+ne &amp; Wojciech Tyczy=C5=84ski,
+<span style=3D"font-weight: bold;">Google</span><br>
+</span><span style=3D"color: #000000;"><br>
+</span></span></li><li style=3D"line-height: 115%;"><span style=3D"font-siz=
+e: 14px;"><a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--=
+04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3pjW62q9pl8py=
+KQtW75XPpp55RhrKW5CGzWT6KrnFPW3Kktkc7h5JdkW8Z-Nvk1-t-fQW2xVc7c85KGNGW1bZRN4=
+8s3WqtW31v6773wf0x5W2xZzsH5KgfYpW5-qnqr8gnJwKW79jq2r89ypw2N87fqVf9FV7KW97Bh=
+9g24xLPkW8XBRmG79qPLnW83TDNS33bRvnW1WQ1dm1MwLQhW6Qs0Lw3WWFv1W3sLw8j1cFkvqW4=
+H04-P5TQtC2W90V5kp1FXgynW74cLxx2bZGylW6s8BTB37_5bWW8rJBs-95NpTqW32HRvz3cCZ5=
+Rf7PRyhF04" style=3D"color:#00aebc; font-weight:bold; text-decoration:none"=
+ data-hs-link-id=3D"0" data-hs-link-id-v2=3D"vJ5G5bTu" target=3D"_blank"><s=
+pan style=3D"color: #912666;">Lessons
+ Applied Building a Next-generation AI Proxy</span></a><span style=3D"color=
+: #000000;"> - John Howard,
+<span style=3D"font-weight: bold;">Solo.io</span><br>
+</span><span style=3D"color: #000000;"><br>
+</span></span></li><li style=3D"line-height: 115%;"><span style=3D"font-siz=
+e: 14px;"><a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--=
+04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3lvN8DdklHsfw=
+-MN34lcbNBf_prW1s56SC22ZGzsW2RmNNr5wPbLqW2n7Wd23n1ktCW21p8V46P6f-vW17FSBy8F=
+QL_kW8P65jg8BTCHPW4bd8Qv2NvnJ0W3_ZQy62HZ-JKW8lVckq40YR_zW2m8DM-44NcdxN1xXXl=
+KH1MCjW7hJR8J5s59fbVL_BjS7RTBMkW5jKQKf2Cj0nSW7yQbxb4cS1sJW7lG8tz8dq1RGW67J6=
+786wrBWSN274s6j4kR5FW39ySmK4d94rBW1x5rJX6xfcnGW8FX-RC3Pg9x0W2bLy0Y6NqMb-f1y=
+yNKj04" style=3D"color:#00aebc; font-weight:bold; text-decoration:none" dat=
+a-hs-link-id=3D"0" data-hs-link-id-v2=3D"lfx9DXE6" target=3D"_blank"><span =
+style=3D"color: #912666;">Shaping
+ LTS Together: What We=E2=80=99ve Learned the Hard Way</span></a><span styl=
+e=3D"color: #000000;"> - Nikhita Raghunath &amp; Nikhila Kamath,
+<span style=3D"font-weight: bold;">Broadcom</span>; Micah Hausler, <span st=
+yle=3D"font-weight: bold;">
+AWS</span>; Jeremy Rickard, <span style=3D"font-weight: bold;">Microsoft</s=
+pan><br>
+<br>
+</span></span></li><li style=3D"line-height: 115%;"><span style=3D"font-siz=
+e: 14px;"><a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--=
+04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3pcW5ZpM0d186=
+SKgW8l7Ssc2TJPVkW4HvMVG1Ccpt3W1f1J8b5Ch2frN44_MQ7KSFW1W46qRFW7QsMGBW1WgqlJ2=
+bm0ddW6dPNMR8WMXCKW5dkYqn35Tbx5W63syfh30hzPVW2hW-745BnKxFN8ybyGCn89D4W3MK_p=
+X8F3k1_MdWqqNlg2K0W9b9Vcn4xt4W3W5pkb814VYvlWW7CMFp22j9HTwW5yRWY48fpT8DVY775=
+28HSrP2W6Z0yMp3zrmvjN8lP-Q5Wv0k4VdSkXx4MhNzYW2FPrvH3t65zHW6l1dbR4FlBlLdpnR2=
+-04" style=3D"color:#00aebc; text-decoration:none" data-hs-link-id=3D"0" da=
+ta-hs-link-id-v2=3D"wOXWPm5H" target=3D"_blank"><span style=3D"color: #9126=
+66;"><span style=3D"font-weight: bold;">The
+ Missing Manual for Open Source Community Sustainability</span></span></a><=
+span style=3D"color: #000000;"> - Taylor Dolezal,
+<span style=3D"font-weight: bold;">Merly</span> &amp; Erica Hughberg, <span=
+ style=3D"font-weight: bold;">
+Tetrate</span><br>
+<br>
+</span></span></li><li style=3D"line-height: 115%;"><span style=3D"font-siz=
+e: 14px;"><a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--=
+04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3pVW8Gs30X3hc=
+nZYW2nXTwP37GQnfW60GCXh1xX5SwW5ZpL9N3sqQL-N3VNH3Y1VDWxW3y8M3R5sLlQTMfV08vM8=
+d-VMqm2t36QV2KVsK6vs7HhV15W5zknKJ8LFF_qW7PlKz386YbkCW6jXxx84dBdnVW81Vv-t5Vc=
+hnSW8pM5V998WBbrN4VD98qFL9HZW82pDR_8V25WXW3q-G0g93fJgYW6--hrR8Zp7l3W6-dwbQ9=
+8VPD8W8bjJmG54vnjZV6ySmd3Vh2KpW3N7DBK40VZ2xW5qSG9D5sb2-vMD30xdc-xYxf7sqDrl0=
+4" style=3D"color:#00aebc; font-weight:bold; text-decoration:none" data-hs-=
+link-id=3D"0" data-hs-link-id-v2=3D"Fv+aO7Xg" target=3D"_blank"><span style=
+=3D"color: #912666;">Not
+ Forking Around: Leveraging NRI To Extend Kubernetes at Scale</span></a><sp=
+an style=3D"color: #000000;"> - Johan Jensen &amp; Wesley Bermbach,
+<span style=3D"font-weight: bold;">Uber</span><br>
+<br>
+</span></span></li><li style=3D"line-height: 115%;"><span style=3D"font-siz=
+e: 14px;"><a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--=
+04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3nyW6kLCg66xT=
+W2WVG6PJm8wzBDcL1XYdc5LJdW2w6TsF2drLcTW52k35c2xpqLnW7Rf66468rpqzW4ntw0j1XqS=
+FdW2gwHJL8HSzdsW8r65sw1jdKd4W3Gw5MM48Mdn3W8ZWz9x8FChx7W1Sc8t112_9TwW6m8Chg4=
+2ylZmW3MJYLH6t7jKZW2YRJFw4DnHWpVMrtlc56Js93W6WPWvG55mnv1W8tkw3j1sbsKMVMc6vw=
+4fF58QW8gbMqh8NVXV2W5sNWCM2kKY8MW6F5JTq9jV6B2W6_K-7w6KnZ3bW83ZlR43RGN4Tf6y0=
+_5T04" style=3D"color:#00aebc; font-weight:bold; text-decoration:none" data=
+-hs-link-id=3D"0" data-hs-link-id-v2=3D"WxzTOadW" target=3D"_blank"><span s=
+tyle=3D"color: #912666;">Creating
+ and Maintaining Ephemeral Runtime Environments for 18,000 Developers</span=
+> </a>
+<span style=3D"color: #000000;">- Alexandre Astolpho Thomaz, <span style=3D=
+"font-weight: bold;">
+Itau Unibanco</span><br>
+<br>
+</span></span></li><li style=3D"line-height: 115%;"><span style=3D"font-siz=
+e: 14px;"><a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--=
+04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3p-N54SgrzSg6=
+fRW7bGrzl6nKb5HN6KmqLZqs3kpW3wFF3818J1hYW4rXhvH2pMn8FW7V1ht782W3XzV_4N9b8Pz=
+RJLVDCrRp2wvfsjW820-Ts3bzvfPVnG_xH5wvvr6W6C-cbX6JNGCFW5pz2dr6Mx4MxN53x1YBS-=
+Y7PVmND1J7Cy5TnW2rKbXz3DswVdN2RNV-6CD-hMW4LnLKJ7FWqkXW5NldZ56LTjCbW82dwhN2f=
+V-KHW1YTmV58CJ9q8VQl40v3K7qFQW2Y9NnJ4dsDh7W4xV_Lv4Zvr6ZW3HjDmd43Dmvff6fv7Tj=
+04" style=3D"color:#00aebc; font-weight:bold; text-decoration:none" data-hs=
+-link-id=3D"0" data-hs-link-id-v2=3D"5lcDfgEb" target=3D"_blank"><span styl=
+e=3D"color: #912666;">Models
+ as Microservices, Platforms as Partners: Collaboratively Building ML Infra=
+ at Hinge</span></a><span style=3D"color: #000000;"> - Stephanie Pavlick,
+<span style=3D"font-weight: bold;">Hinge</span><br>
+<br>
+</span></span></li><li style=3D"line-height: 115%;"><span style=3D"font-siz=
+e: 14px;"><a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--=
+04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3pmW2CHyyv656=
+RBmW4S4H--6qhy0vW7klDFY1JKlP_W3X51vG2lWjyqW4GYls77bmsDZW1MWPhz406khGW1y1QsM=
+3d8VZMW6Qn0LC5YRGt5W5fwYwt62bm3ZW3PYFzc4LxyqbW2RWnPf2GmqzCW4yf6jw3M-xJ0W3hX=
+rd-605_xBW6qqlnq4Q3FTDW8Qs_Pg5KDlb9W6H-5cG6wChMBW58Rb228rnRXGVd5gsz4GFdHfW7=
+GrYmD6FWYs_W8g1C4N5RC7z3W7YhW8f48Tj3RW3F8YRf8d-3W1W1NP_Ky1JZQnHW4fSLP02yZc4=
+Zf286gYR04" style=3D"color:#00aebc; text-decoration:none" data-hs-link-id=
+=3D"0" data-hs-link-id-v2=3D"2SXT//s3" target=3D"_blank"><span style=3D"col=
+or: #912666;"><span style=3D"font-weight: bold;">Designing
+ for Observability: From Noise To Insight</span></span></a><span style=3D"c=
+olor: #000000;"> - Andrea Chomiak,
+<span style=3D"font-weight: bold;">Dash0</span><br>
+<br>
+</span></span></li><li style=3D"line-height: 115%;"><span style=3D"font-siz=
+e: 14px;"><a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--=
+04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3lSN2Qrqhhtvk=
+dRVhrWxg5xn0gfW1TWb_Z8hjM0BW6Hj5gJ5C4dQ4W7b5q4431r8QWVxMtCr8Xn5CwW6TD4nB50t=
+R5nW1QbjnK2B2SKKW7DRlz56qcqvQW5CtCLm7DswNRW94r99j3myhN5W4MmYd73K4jkZW7g4kJt=
+7ThYJlW6DpNfS294C-VW7TWBjR5Kb1ZrN4SmmMqrWjZcVTLCv37wx8qSW8NR3GB6zdJ4WW4zxtM=
+s6NHXGJW4STYFl92S0dfW7KhkPq8H2GGzW9k8M2-4hT2wjN5DWQd-cRg9yW1m750b3KTsqjf14Q=
+nSb04" style=3D"color:#00aebc; font-weight:bold; text-decoration:none" data=
+-hs-link-id=3D"0" data-hs-link-id-v2=3D"aYQw7szf" target=3D"_blank"><span s=
+tyle=3D"color: #912666;">Taming
+ Rollout Risks in Distributed Web Apps: A Location-Aware Gradual Deployment=
+ Approach</span></a><span style=3D"color: #000000;"> - Angela Victorio,
+<span style=3D"font-weight: bold;">American Airlines</span></span></span></=
+li></ul>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_1746810597457" class=3D"hse-section" style=3D"padding-le=
+ft:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column_1746810605008_0" class=3D"hse-column hse-size-12">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:0px 20px 5px">
+<div id=3D"hs_cos_wrapper_module_17468106049845" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"border-collapse:separate!important">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"middle" bgcolor=3D"#f37749" style=3D"font-fa=
+mily:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-wor=
+d; border-radius:8px; cursor:auto; background-color:#f37749; mso-padding-al=
+t:12px 18px">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX05nR3bW50kH_H6lZ3p2W3SwRzm5t6GbRVs7l7f1=
+XJ1s9W2GkjBs5GFq8xN23LcvDJtd5bW8x4q_X8cJPkDW1q2xpx7dZKFYW2gq89H2ZBYCQN51qjk=
+v4NvFQW6rKPYr8Y4kbBW86Lg-K6CJ97yN1ZgplTFR04tW3clKv57_0n4WW7jJV8X8RpMf6W9jKW=
+Yf6rlZg-W3kxJbG6YxqqkV3TG7C4JYwWZV4Hsk97cmYGMN5DXvCZ_b8kjVZbd_M7Rnv-vW889ZN=
+w6m4FmMW7by6181jctpnW4c1_v74_Ph4kMxz7VySSnfkW3v9f_W5_9JKzW3QzVHn8mtxBKM8jT6=
+3T-78SN1KG-9QsP_zlVTVFNQ3R2YDrW1JLW5N3pRCzbW6rc7F37sh4nZN1_R4XvBkdSmN2PhBQY=
+RywRQf9lQPmg04" target=3D"_blank" style=3D"color:#00a4bd; font-size:16px; f=
+ont-family:Arial, sans-serif; Margin:0; text-transform:none; text-decoratio=
+n:none; padding:12px 18px; display:block" data-hs-link-id=3D"1" data-hs-lin=
+k-id-v2=3D"eGf5/vQe"><strong style=3D"color:#ffffff;font-weight:bold;text-d=
+ecoration:none;font-style:normal;">VIEW
+ FULL SCHEDULE &gt;&gt;</strong> </a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_1741806533477" class=3D"hse-section" style=3D"padding-le=
+ft:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column_1741806533477_0" class=3D"hse-column hse-size-12">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:10px 20px">
+<div id=3D"hs_cos_wrapper_module_17298001203644" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table role=3D"none" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"vertical-align:top" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"font-family:Arial, sans-serif; color:#23496d;=
+ font-size:0; word-break:break-word">
+<p style=3D"font-size:1px;border-top:1px solid #000000;width:100%;margin:0 =
+auto;"></p>
+<!--[if mso]>
+        <table role=3D"none" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"font-size:1px;border-top:1px solid #000000;wid=
+th:560px;">
+          <tr>
+            <td style=3D"height:0;line-height:0">&nbsp;</td>
+          </tr>
+        </table>
+      <![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:10px 20px 0px">
+<div id=3D"hs_cos_wrapper_module_17394900578913" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17394900578913_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; font-weight:bold; font-size:18px;=
+ line-height:125%">
+<span style=3D"color: #000000;"><span style=3D"font-size: 18px;"><strong><s=
+pan style=3D"color: #000000;">=F0=9F=97=BA=EF=B8=8F Choose Your Own Adventu=
+re!&nbsp;</span></strong></span><br>
+</span></p>
+<p style=3D"mso-line-height-rule:exactly; font-size:14px; line-height:125%"=
+>&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; font-size:14px; line-height:125%;=
+ font-weight:normal">
+<span style=3D"color: #000000;">Register by August 26 and save up to $480! =
+=F0=9F=92=B0 We have two pass types to suit your needs as well as special p=
+ricing for individuals, academics, and students.</span><span style=3D"font-=
+size: 14px;"><span style=3D"color: #000000;"><br>
+</span></span></p>
+<p style=3D"mso-line-height-rule:exactly; font-size:14px; line-height:125%"=
+>&nbsp;</p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_1750723315542" class=3D"hse-section" style=3D"padding-le=
+ft:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column_1750723315542_0" class=3D"hse-column hse-size-12">
+<div id=3D"hs_cos_wrapper_module_17507233155141" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"font-family:Arial, sans-serif;=
+ color:#23496d; word-break:break-word; text-align:center; padding:0px; font=
+-size:0px">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX05nR3bW50kH_H6lZ3lxW2L_YSn83NK1yN4tqMn7=
+ckk9gVTRhMW8jghw8W1B6TpQ77YGB_N4vwnXjqTt4_W72_hMt8FtpGCW44xGGd1m5SLzW3r4dFD=
+1Qyc55W5NSD4c2J0klsW6HLT0k8bJzcKW4Q89q-17W6RXW921Z433NcR5PW4tLwcd4S1rG6W4GX=
+-7b78vCRJW6k-lly1Y9zgkW4NcRwT1HHpVzN5KT6lkLG1QdN7jLf4Dm5r8WW7ZZMgK95JglxW6R=
+r2bj4Z0Q27W2R41QK5qz_kmW5cz4ll5KSlrQW5CsrX55Nh1zCW1H9bJT4y_mDxW7Tvj4046w9bB=
+W8cqBGb4bxqzfW7QCrWv4574kHW1-qc714scbp0W5wQRRD5PhYgkW4WzKHd15vDLxVLC3Ly21k5=
+q2VQ9Vv48kWBW4f1HScP004" target=3D"_blank" style=3D"color:#00a4bd" data-hs-=
+link-id=3D"0" data-hs-link-id-v2=3D"PdTP0e1t"><img alt=3D"KC + CNC NA 2025 =
+- Reg Options-1" src=3D"https://email.linuxfoundation.org/hs-fs/hubfs/KC%20=
+%2B%20CNC%20NA%202025%20-%20Reg%20Options-1.png?width=3D1200&amp;upscale=3D=
+true&amp;name=3DKC%20%2B%20CNC%20NA%202025%20-%20Reg%20Options-1.png" style=
+=3D"outline:none; text-decoration:none; border:none; max-width:100%; font-s=
+ize:16px" width=3D"600" align=3D"middle">
+</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_1752102983702" class=3D"hse-section" style=3D"padding-le=
+ft:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column_1752102983702_0" class=3D"hse-column hse-size-12">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:15px 20px 10px">
+<div id=3D"hs_cos_wrapper_module_17521029836971" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"border-collapse:separate!important">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"middle" bgcolor=3D"#f37749" style=3D"font-fa=
+mily:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-wor=
+d; border-radius:8px; cursor:auto; background-color:#f37749; mso-padding-al=
+t:12px 18px">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX05nR3bW50kH_H6lZ3n3VTfV5g6vZZVPW6f_vpc2=
+RrDr4W3-35yJ1zW2FHW8-ZbTv7hbTJ5N8Gv2b7nMf_ZW5Jrk_H7jGJmrW9cFCV71_KddJV15q_l=
+88jHfhW6WB-d25bwXS9N7TqSx_MWMXcW6LxTXY3_S9fFW3fl0zp85q8NFN6Vgdm-rrSp8VG3F-H=
+5Wr6-CW3xt3YF29qM08W1RKmWB3sCWb0W5VJ8DJ4YwnMGW8bysxD5b0mbnW7_FjkT27h5JgW13X=
+3PH7pvfx1W7Lwn9-7hz8nDW6VdlGt5BJ5bnVZ3QtB83l1THW7D5yq0800qyMW1sj2J33mpWP5N2=
+THLLBWM-SQW8nj3gv7PqSnVVkG3TB2SL639W8gVBCj7Wq2NTW73jKG83JYh0gW4-vNKC3nr8YvW=
+4mwZQ16D71hZf73qvJP04" target=3D"_blank" style=3D"color:#00a4bd; font-size:=
+16px; font-family:Arial, sans-serif; Margin:0; text-transform:none; text-de=
+coration:none; padding:12px 18px; display:block" data-hs-link-id=3D"0" data=
+-hs-link-id-v2=3D"3SLWiMVc"><strong style=3D"color:#ffffff;font-weight:bold=
+;text-decoration:none;font-style:normal;">REGISTER
+ + SAVE &gt;&gt;</strong> </a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_1743019061612" class=3D"hse-section" style=3D"padding-le=
+ft:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column_1743019061612_0" class=3D"hse-column hse-size-12">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:5px 20px 10px">
+<div id=3D"hs_cos_wrapper_module_17430190504254" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table role=3D"none" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"vertical-align:top" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"font-family:Arial, sans-serif; color:#23496d;=
+ font-size:0; word-break:break-word">
+<p style=3D"font-size:1px;border-top:1px solid #000000;width:100%;margin:0 =
+auto;"></p>
+<!--[if mso]>
+        <table role=3D"none" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"font-size:1px;border-top:1px solid #000000;wid=
+th:560px;">
+          <tr>
+            <td style=3D"height:0;line-height:0">&nbsp;</td>
+          </tr>
+        </table>
+      <![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:10px 20px 5px">
+<div id=3D"hs_cos_wrapper_module_17430190954557" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17430190954557_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; line-height:125%; font-weight:bol=
+d"><span style=3D"color: #000000; font-size: 18px;">=F0=9F=9B=8E=EF=B8=8F B=
+ook Your Hotel.</span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:125%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:125%"><span style=3D"=
+color: #000000; font-size: 14px;">Book your stay at one of 10+ hotels withi=
+n a short walk or drive of the convention center. Blocks start closing in O=
+ctober or as soon as they are full.
+ Don=E2=80=99t miss your chance to get a great rate - book today!</span></p=
+>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_1746810693077" class=3D"hse-section" style=3D"padding-le=
+ft:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column_1746810693077_0" class=3D"hse-column hse-size-12">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:5px 20px">
+<div id=3D"hs_cos_wrapper_module_17430190644465" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"border-collapse:separate!important">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"middle" bgcolor=3D"#f37749" style=3D"font-fa=
+mily:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-wor=
+d; border-radius:8px; cursor:auto; background-color:#f37749; mso-padding-al=
+t:12px 18px">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jXj5nR3bW5BWr2F6lZ3ltVmHdT96rq_9wW3v57jG3=
+LM5WVW2VLN2s7ycm_bW8s84pm3TRgJKW6gttzs9dhS1FW4MvHwJ3t1g7mW98jLbf36-6BJW85vK=
+ZR63hzJRN2qYy5rq_CFZW8Kv4y11b8mx_W2m3htV98bZZxW160J5s4jJl6tN7dZs511xpsnW7MD=
+rw_1W_F1_W2XBZWC8bKNvJW3lfr507c0yNtW8BW0Nc7jWv95W5fDxjl8rjBsdW41BXB72-8_-2W=
+7C7L0Q8TB519VlQ6B_1VYKLBW49qWpW4ZFD1TN60RV0NVRyzDW1VYyfH75gxk1W7B7fKh2yY-_-=
+V1wZx-4DHy5cW1gT5_r1LGj9LW8b6mn-8YzHgKW4Y7wdP8bSCNMW6b78nv21LYQmW2Tbz8S8SM7=
+gCW1Y3fWz7Yxj2PN5gPddtpq7VcW6srtrJ71k-9qf9gD7CR04" target=3D"_blank" style=
+=3D"color:#00a4bd; font-size:16px; font-family:Arial, sans-serif; Margin:0;=
+ text-transform:none; text-decoration:none; padding:12px 18px; display:bloc=
+k" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"cw3mj2Gp"><strong style=3D"c=
+olor:#ffffff;font-weight:bold;text-decoration:none;font-style:normal;">SECU=
+RE
+ A ROOM NOW &gt;&gt;</strong> </a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"module_1746810672819" class=3D"hse-section" style=3D"padding-lef=
+t:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"module_1746810672819_0" class=3D"hse-column hse-size-12">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:10px 20px">
+<div id=3D"hs_cos_wrapper_module_17468106728116" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table role=3D"none" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"vertical-align:top" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"font-family:Arial, sans-serif; color:#23496d;=
+ font-size:0; word-break:break-word">
+<p style=3D"font-size:1px;border-top:1px solid #000000;width:100%;margin:0 =
+auto;"></p>
+<!--[if mso]>
+        <table role=3D"none" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"font-size:1px;border-top:1px solid #000000;wid=
+th:560px;">
+          <tr>
+            <td style=3D"height:0;line-height:0">&nbsp;</td>
+          </tr>
+        </table>
+      <![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"module_1746810674179" class=3D"hse-section" style=3D"padding-lef=
+t:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"module_1746810674179_0" class=3D"hse-column hse-size-12">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:10px 20px 5px">
+<div id=3D"hs_cos_wrapper_module_17468106741767" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17468106741767_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; line-height:134%; font-weight:bol=
+d; font-size:18px">
+<span style=3D"color: #000000;">=F0=9F=A7=A9 Sponsor the Event.</span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:125%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:125%"><span style=3D"=
+font-size: 14px; color: #000000;">Get your brand in front of cloud native i=
+nnovators and tap into 10,000+ devs, architects, and leaders. Sponsorship u=
+nlocks unmatched visibility, community
+ connection, and credibility within one of the fastest-growing ecosystems.&=
+nbsp;</span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:125%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:125%"><span style=3D"=
+font-size: 14px; color: #000000;">Secure your
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jZ43qgz0W=
+95jsWP6lZ3nFN6htq87tWjC5W3ZSmx99htNjgW1399pp4z-ds2W54Vmw5976JdpW14xx4D840xf=
+FW7zq-Pq86tlRyN1q4f8wNlV17Vjh9HV24D-LLW74JXV04T2MYqW4tKpPP6VrLSjW6HGcrl7p_z=
+bKW4fshBX7mY515W3kyR6m3dTJ5cW43L92_3z--BzW4mt0SF67gD3cW4JHMCm5xdLv0W1Mf4Wb1=
+cNzP4MwHcG4j-8XsW7DY3192p_RHQW8QjrG85D8_CfW1svj0R6qPTGzW7wMTJj8QQ31MW2sVrXZ=
+4ZphFrW5WFhVv1NfrTfW6S7Vf_6kGzttW52kYG46p63gZW2R6g_12fx3rDN3TqZ6gK_Jy-W5n1f=
+hs6Gc_LSN5Jgm6-cLHydf1rF21204" style=3D"color:#912666; font-weight:bold; te=
+xt-decoration:none" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"1LjJxywC" t=
+arget=3D"_blank">KubeCon
+ + CloudNativeCon level sponsorship</a></span> and/or Marketing Promotional=
+ Opportunity by Friday, August 22.&nbsp;</span></p>
+<p style=3D"mso-line-height-rule:exactly; line-height:125%; font-weight:bol=
+d"><br>
+<span style=3D"font-size: 14px; color: #000000;"><span style=3D"color: #912=
+666;"><a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/M=
+WyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jXW5nR3bW6N1X8z6lZ3pbW8hvsMs8gRhKNW=
+7C-P_s7rX93GVX-QJS6FL6Y6W1c5VPL4pgr7zW6zb93G4bfmgPW6F3R064_gJyQVX3PxV4H4hp8=
+W7WbPQf8LtQHxW2dbRwF2MJQjYW5jrfJv2kSZYCW9lb_684-JrZjW5GwyQg5vffr8W7D2T8d9bn=
+wJjW8qFR8X7BSyRBVgXZ_G2YTHkkW7wkDpf5_XFl8W3_fLz74lZj2kN2C14BbTgsl3W8q8kCP4X=
+QLQ5N1CY7R1YpGt2W5NJqcZ78_H66V3gVt92cNmBxVlGdhP6gScNBN4sTnCHYS5CHW47Jpxq73p=
+Qy_W3vlpJC60YWw1W2nqVPt6ccLk5W6VgNYH4Hz5vDW50W5mF3RsbbVW7-SzRn63nQc0W73M94q=
+4VwnltW28C7Tx1RP8xfW49nsYD1RmV3ZW3NmXhC6C2mt4W1k1HRm5ZM-dwW3GKbxR8ZfB6VW3Yq=
+D_S1pvS0SW2rb1dV8zmHS1f1TKntv04" style=3D"color:#912666; text-decoration:no=
+ne; font-weight:bold" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"UmaPue3M"=
+ target=3D"_blank">Sponsor
+ one or more CNCF-hosted co-located events</a></span>=E2=80=94<span style=
+=3D"font-weight: normal;">contracts due by</span> Wednesday, September 24.<=
+/span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_1743019067054" class=3D"hse-section" style=3D"padding-le=
+ft:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column_1743019067054_0" class=3D"hse-column hse-size-12">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:0px 20px 5px">
+<div id=3D"hs_cos_wrapper_module_17468106898108" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" style=3D"border-collapse:separate!important">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"middle" bgcolor=3D"#f37749" style=3D"font-fa=
+mily:Arial, sans-serif; font-size:15px; color:#23496d; word-break:break-wor=
+d; border-radius:8px; cursor:auto; background-color:#f37749; mso-padding-al=
+t:12px 18px">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3lgW1hf897744N9wN51PCPn=
+CTHSNW1GcTkq6Q_DQmW6m4yMZ5-3hqhW14y2v_4R90mrVJ54KZ2JGBY5W2Cf0d_3LM5DkW4H7vd=
+C4VMwf6W5HC-ZH35c4N3W1SBjPC6R_qCqVNJvgz29V3zvN8J5vbvWgN2DW3XLCDm2hPC_9W7pdT=
+Bp7QR8KWW7LGTl97ySN7WW1MmjB08lG76bW608d8h98RJwHW91VQVH3qkC1zW3w0BxH6P6L3dVM=
+4j811_8qqDW5pDPvs3Mr8D5W6fRCVf6fKyl4W29_7j_53Ty7kW6tPX639lhDW8f8JkbKR04" ta=
+rget=3D"_blank" style=3D"color:#00a4bd; font-size:16px; font-family:Arial, =
+sans-serif; Margin:0; text-transform:none; text-decoration:none; padding:12=
+px 18px; display:block" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"eQ9b263=
+x"><strong style=3D"color:#ffffff;font-weight:bold;text-decoration:none;fon=
+t-style:normal;">EXPLORE
+ THE PROSPECTUS &gt;&gt;</strong> </a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"module_1614021571877" class=3D"hse-section" style=3D"padding-lef=
+t:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column_1664463582339_0" class=3D"hse-column hse-size-12">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:10px 20px">
+<div id=3D"hs_cos_wrapper_module_17298794951192" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table role=3D"none" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"vertical-align:top" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"font-family:Arial, sans-serif; color:#23496d;=
+ font-size:0; word-break:break-word">
+<p style=3D"font-size:1px;border-top:1px solid #000000;width:100%;margin:0 =
+auto;"></p>
+<!--[if mso]>
+        <table role=3D"none" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"font-size:1px;border-top:1px solid #000000;wid=
+th:560px;">
+          <tr>
+            <td style=3D"height:0;line-height:0">&nbsp;</td>
+          </tr>
+        </table>
+      <![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:10px 20px">
+<div id=3D"hs_cos_wrapper_module_17298794888531" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17298794888531_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:18px=
+; line-height:175%; font-weight:bold" align=3D"center">
+<span style=3D"color: #000000;">Thank You to Our Sponsors!</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:5px 20px 0px">
+<div id=3D"hs_cos_wrapper_module_17298797382114" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17298797382114_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:16px=
+; line-height:175%; font-weight:bold" align=3D"center">
+<span style=3D"color: #000000;">DIAMOND</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_1738262420732" class=3D"hse-section" style=3D"padding-le=
+ft:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:200px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"200" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:200px">
+<![endif]-->
+<div id=3D"column_1738262420732_0" class=3D"hse-column hse-size-4">
+<div id=3D"hs_cos_wrapper_module_17374993786503" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td class=3D"hs_padded" align=3D"center" valign=3D"top" style=3D"font-famil=
+y:Arial, sans-serif; color:#23496d; word-break:break-word; text-align:cente=
+r; padding:10px 20px; font-size:0px">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3nvW71_0vK375BkRW5TYCgm=
+5ltjvPW75DqTs6-pkFdW1H1YnF1HTkMVW7bfns13YT_8DLGGsmR81BQW6l41nl74cLGcW92KXfK=
+664M_dW6nQSc96ldMPlN4W1Md7n9_t6W1wd5RW6yLRgBW7k8L0m6lbL28W6DtfGz7kHzTNW4qGt=
+KC2h_ZqYW9b_CpN7cWlZcW30Ktn43ztrKXW4pm5kq4GVNjDW3gDQPG5BCQXtW7p54vL5HlYdfW4=
+GJBgX7VBMnRW1Xpck74Fr2qxW8vNlZ97FYHV9VpXklC3v_rt2N8zzgn0s0sWsf2dvPdC04" tar=
+get=3D"_blank" style=3D"color:#00a4bd" data-hs-link-id=3D"0" data-hs-link-i=
+d-v2=3D"lN89qeAc"><img alt=3D"google-cloud" src=3D"https://email.linuxfound=
+ation.org/hs-fs/hubfs/FINOS%20Upload%20Test/google-cloud.png?width=3D320&am=
+p;upscale=3Dtrue&amp;name=3Dgoogle-cloud.png" style=3D"outline:none; text-d=
+ecoration:none; border:none; max-width:100%; font-size:16px" width=3D"160" =
+align=3D"middle">
+</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:200px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"200" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:200px">
+<![endif]-->
+<div id=3D"column_1738262420732_1" class=3D"hse-column hse-size-4">
+<div id=3D"hs_cos_wrapper_module_17382624329002" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td class=3D"hs_padded" align=3D"center" valign=3D"top" style=3D"font-famil=
+y:Arial, sans-serif; color:#23496d; word-break:break-word; text-align:cente=
+r; padding:25px 20px 0px; font-size:0px">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3pYN3WLjrTRzTjTW4l_CPK3=
+-RHQWW7W4CWW5kYsypW3yCd9c6dCV4vW6TBRCf61bLLCF2VClMdr6rwW3Q2d2F2d72wgW42r03N=
+6W7kKRW5sfbmY27S2gdW5Y-PG63XR34JW5NTkpg1z_vclW3Hm9yZ2JQFZYW51lhvd4P5qYZW5GH=
+zh41QdpmxW7JLlFc2TsRf-W1WpmdF6C-Wb_W3QJKCR2SmbN3Vg_TJ789f-sQW6fnPYc4p0VZNN2=
+bbgqzPfKckW9dbfCc2qyvyNW2rP5S816DB6QW6XFwwV1YkkWgW7FKtRF3mY4QGf7JN_2s04" ta=
+rget=3D"_blank" style=3D"color:#00a4bd" data-hs-link-id=3D"0" data-hs-link-=
+id-v2=3D"LzYPSaBI"><img alt=3D"HAProxy-logo-cmyk-horizontal" src=3D"https:/=
+/email.linuxfoundation.org/hs-fs/hubfs/HAProxy-logo-cmyk-horizontal.png?wid=
+th=3D320&amp;upscale=3Dtrue&amp;name=3DHAProxy-logo-cmyk-horizontal.png" st=
+yle=3D"outline:none; text-decoration:none; border:none; max-width:100%; fon=
+t-size:16px" width=3D"160" align=3D"middle">
+</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:200px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"200" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:200px">
+<![endif]-->
+<div id=3D"column_1738262420732_2" class=3D"hse-column hse-size-4">
+<div id=3D"hs_cos_wrapper_module_17468110507281" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td class=3D"hs_padded" align=3D"center" valign=3D"top" style=3D"font-famil=
+y:Arial, sans-serif; color:#23496d; word-break:break-word; text-align:cente=
+r; padding:20px 20px 10px; font-size:0px">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYP3qgz0W8wLKSR6lZ3ppW6WjrPl2ZJB66W5-lBFf=
+4ymbNdW8gBBJ-4z_m_WW8jyHWg2yVVhdW2q4dWk2b6D-RW2XwsPp1cPcRcW4NRV8t8zhN6PW8qN=
+CvK52clHzW1qs0yy8YJSltW8CZzSy7hFpc_W6sXwKs76_xlzW7hPhN_14L97kW1-xcV120BgXwW=
+8RGrBD2cS90WW1H177k6pYdGXW62r0MN454m9lW5mJnXn379ZdqW654nD07C-wL-VcWyhy6QWJR=
+cVWKCPg3n5zcmW6ZRlyf1Zz3THW28gPnG10wK1xW2fLfTt1FtPXDW3Yh2C39hg2kGW6zq2yr3Xc=
+S5ZV3k3wQ6hpY_lW366PzF61vZ0pN79NLWHSPlRqf3N0WB604" target=3D"_blank" style=
+=3D"color:#00a4bd" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"sIGvK4iB"><i=
+mg alt=3D"microsoft-azure-spn-1" src=3D"https://email.linuxfoundation.org/h=
+s-fs/hubfs/microsoft-azure-spn-1.png?width=3D320&amp;upscale=3Dtrue&amp;nam=
+e=3Dmicrosoft-azure-spn-1.png" style=3D"outline:none; text-decoration:none;=
+ border:none; max-width:100%; font-size:16px" width=3D"160" align=3D"middle=
+">
+</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"module_1738262579572" class=3D"hse-section" style=3D"padding-lef=
+t:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:200px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"200" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:200px">
+<![endif]-->
+<div id=3D"column_1743019709520_0" class=3D"hse-column hse-size-4">
+<div id=3D"hs_cos_wrapper_module_17363649792684" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td class=3D"hs_padded" align=3D"center" valign=3D"top" style=3D"font-famil=
+y:Arial, sans-serif; color:#23496d; word-break:break-word; text-align:cente=
+r; padding:40px 20px 0px; font-size:0px">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jZ45nR3bW95jVnq6lZ3mHW5GPnmz1QXVsnW9gT46n=
+9dtjB9W1CL7bq54qf62MB48hYhcJGFW4x7ns22scMwSW4nKG7f2VtVR7N36flXRgDCnkVltdpR9=
+jn4bsW7yRdSt8pvFbjN56B4z-fyMZNW1c2kWB2XvQZ9W1yQMBh17Vc9VW1yZkR_5Lt6mbW4vBfc=
+S7XB48nW1dh5z28Wzrl0W9hWhQ62Ds4SMW13CjNg1QkT7YTcQkf4gDhk7VCDFZ27TlCHCW84Ht2=
+95fxwnKM6tYMQj6VPjW6ywg8j2JZm9pW4C9jBV7jtRP5W1MzF8s5p96wbW8J378K2MrbQvN6FNg=
+1SYQs1tW2wRXyM2RhRTqW9h6-192G9pZzW1p6mkG2cJ98hW4rvlsK1NXSpsW4kqVpm3qR3jFW1W=
+QdF18pPDqsVR50wD5_X6kVVflGX64GXQZ1N3rS1HH1pf1YW1HtncN8zK61_W3JmVTh4g2p0QW5V=
+rCts67nQbhW898ndg2kcqqTN7MQqkPb0N8fW7ZhyWT50pnKcW1Prk7Z8xb4kXW5gbq8d1nLDq0V=
+86x6b2lWbFXVpPc-J3qpC3CW5gRpF776wlMgf6bPn_Y04" target=3D"_blank" style=3D"c=
+olor:#00a4bd" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"NPPdzcFY"><img al=
+t=3D"Oracle_rgb_web-2" src=3D"https://email.linuxfoundation.org/hs-fs/hubfs=
+/Oracle_rgb_web-2.png?width=3D320&amp;upscale=3Dtrue&amp;name=3DOracle_rgb_=
+web-2.png" style=3D"outline:none; text-decoration:none; border:none; max-wi=
+dth:100%; font-size:16px" width=3D"160" align=3D"middle">
+</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:200px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"200" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:200px">
+<![endif]-->
+<div id=3D"module_1738262579572_1" class=3D"hse-column hse-size-4">
+<div id=3D"hs_cos_wrapper_module_17374993427812" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td class=3D"hs_padded" align=3D"center" valign=3D"top" style=3D"font-famil=
+y:Arial, sans-serif; color:#23496d; word-break:break-word; text-align:cente=
+r; padding:0px 20px; font-size:0px">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3l1W2yp3Kr92-KNXW91hsMh=
+4J3cL_V1YjbR1xfCk-N58BT1My0zJpW3zkdFN1GpGhwW7JGrDC3HQn3GW6dTqWg11mp8nW716h_=
+l2VB1g7W8z2TRF6PjGhMN59BbXPxl6GJD6FnGNyl5qW1FsmWC6bdD86V8Cq5-2XgwrTW3WNVCc5=
+Ct8W_W72RVXd7C2CQDW2gsyby1ntlgQN8zv0bg54KPzW2Y7vXs3hYrpZW3fVCzc9588pgW3w45Z=
+47g-ZNcW3tVPYX5YsJLKW5-lwwj1gWRM-VjzDKg1132HxV9Kz2H464t6sf6yYcg004" target=
+=3D"_blank" style=3D"color:#00a4bd" data-hs-link-id=3D"0" data-hs-link-id-v=
+2=3D"FG3JL2C5"><img alt=3D"Red Hat logo" src=3D"https://email.linuxfoundati=
+on.org/hs-fs/hubfs/RedHat-new-3.png?width=3D320&amp;upscale=3Dtrue&amp;name=
+=3DRedHat-new-3.png" style=3D"outline:none; text-decoration:none; border:no=
+ne; max-width:100%; font-size:16px" width=3D"160" align=3D"middle">
+</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:200px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"200" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:200px">
+<![endif]-->
+<div id=3D"module_1738262579572_2" class=3D"hse-column hse-size-4">
+<div id=3D"hs_cos_wrapper_module_17468111191522" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table class=3D"hse-image-wrapper" role=3D"presentation" width=3D"100%" cel=
+lpadding=3D"0" cellspacing=3D"0">
+<tbody>
+<tr>
+<td class=3D"hs_padded" align=3D"center" valign=3D"top" style=3D"font-famil=
+y:Arial, sans-serif; color:#23496d; word-break:break-word; text-align:cente=
+r; padding:33px 20px 10px; font-size:0px">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3kFW5sSFfR8Wz_pzN4qYxPy=
+lcZh7W5gBgB94w29VmW3GnjVq5K9kfVVK979v6ngTygW5M5F2y5_lFXGW1wqLt98mVX38W3HvdG=
+x6-_JpfW7j0fF21pk7fBW5-Xqxs4B6pxxW3gxF0G65d05hW6Qw7th4ryP_VW7CRcgd7tHncSW1X=
+gH6c8jFp3FW61V78f813GyVW6BJwtj80f9TJVL4-8y5vjq1GW9lqmjx2BS9KMW2m1p4Q40Xx4hW=
+2YcyR06TxhGYW8M646T5CGMTxN1J8yhgBSkfvW2yskBg4Mhw4yW7bVXQw6lWxrbf32kdzH04" t=
+arget=3D"_blank" style=3D"color:#00a4bd" data-hs-link-id=3D"0" data-hs-link=
+-id-v2=3D"huQCwWCf"><img alt=3D"solo logo" src=3D"https://email.linuxfounda=
+tion.org/hs-fs/hubfs/solo%20logo.png?width=3D280&amp;upscale=3Dtrue&amp;nam=
+e=3Dsolo%20logo.png" style=3D"outline:none; text-decoration:none; border:no=
+ne; max-width:100%; font-size:16px" width=3D"140" align=3D"middle">
+</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_1733336782796" class=3D"hse-section" style=3D"padding-le=
+ft:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column_1733336782796_0" class=3D"hse-column hse-size-12">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:10px 20px">
+<div id=3D"hs_cos_wrapper_module_17298798513826" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table role=3D"none" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"vertical-align:top" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"font-family:Arial, sans-serif; color:#23496d;=
+ font-size:0; word-break:break-word">
+<p style=3D"font-size:1px;border-top:1px dotted #000000;width:100%;margin:0=
+ auto;">
+</p>
+<!--[if mso]>
+        <table role=3D"none" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"font-size:1px;border-top:1px dotted #000000;wi=
+dth:560px;">
+          <tr>
+            <td style=3D"height:0;line-height:0">&nbsp;</td>
+          </tr>
+        </table>
+      <![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:5px 20px 0px">
+<div id=3D"hs_cos_wrapper_module_17298798114515" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17298798114515_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:16px=
+; line-height:175%; font-weight:bold" align=3D"center">
+<span style=3D"color: #000000;">PLATINUM</span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_1732302390614" class=3D"hse-section" style=3D"padding-le=
+ft:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:300px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"300" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:300px">
+<![endif]-->
+<div id=3D"column_1732302390614_0" class=3D"hse-column hse-size-6">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:5px 20px 0px">
+<div id=3D"hs_cos_wrapper_module_17298799305688" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17298799305688_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYv3qgz0W=
+7Y8-PT6lZ3n6N1QFNpFV65VFW8f1m836clTlwW8y2srG5xP1HKVFk2P_9l3qzfW5jTTD23Smf5Q=
+W50PxGJ1zkD4ZN3MNmmKfklYkW2y7tH-7v2CkvW3hvsfl9lTGW3W8hyZQC7CzTHGW3pFY0P1z6T=
+VwN7hkBh7pzd7tW4RRLKz3mMFWtW90kSSw3lfkzkN7W9NqL3V19yW28nJV36RnKLkW8pSxqj18v=
+6LPW8GRDKP5gLYRcW78hVR98BDKl2W3t0cfx1nsmYZW6hdggg6zkD7NW3sc_rk8nb94sW62rd2f=
+1QtNftW6GhmgL20fx5-W5DldN51KQFZmW32H74k5WXP_wf5bcR6404" style=3D"font-weigh=
+t:bold; color:#912666; text-decoration:none" rel=3D"noopener" data-hs-link-=
+id=3D"0" data-hs-link-id-v2=3D"SUVYT40q" target=3D"_blank">Akamai</a></span=
+></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W=
+7lCdLW6lZ3nYW6Rwbf-1jgNRvW7Tsd4067N3lhN24b34BCTFTGW2C135Z8hyjDZW1y6_h_4sZJL=
+5W4qnR0_5_LdWVW29Vy798NqbbZW2H6R2Q77wgftW5wlxCp4j1QyrN8F6rGQ1YHWXW2H29--8LS=
+VZ-W2-WL2y1KwBPhW8wqPF47f6KNXW1Vwc-33BtyJ8W4tLxHW7rlcPpN51W5hgvqJYcN2R5N0Zt=
+ZY6LW8jFgJ93tHnB4N2ys9BxJgKMYW6mjNkY5nD87yW8GyrHg2gc-y4V6mPxw2mCHcXW4cxq7P3=
+ZTMdhN1WBlKgY1RpYc69ZP04" style=3D"font-weight:bold; color:#912666; text-de=
+coration:none" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-v2=3D=
+"sSLvRGyR" target=3D"_blank">AWS</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX02-Z-MW=
+50kgx26lZ3kJW5WNRL_4BGf05W7xPb_55WxrZgW99Wx303pQyCNW6dsDZz5wjVc6W7vSR4n1zR8=
+yHW3ygS5w2Z4fVfN62dB2-fX8DSW31Xqvr5yr0ySW72FsW04JDwfMW4-WqnR4h4cQ6W2WzCMG7f=
+5NG3W6bcn624WFvGXVzQSwT4MXmJ6N6g6Z41XgwncW71q2SD4Ll9-yW4KN9G31rVcpPf3SxRbH0=
+4" style=3D"font-weight:bold; color:#912666; text-decoration:none" rel=3D"n=
+oopener" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"P4k2ut7Y" target=3D"_b=
+lank">CAST
+ AI</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W=
+7lCdLW6lZ3prW3sSjjN7gCFJjN2W_xCTH6Cl7W3VwzV028p7S0W7lP3n51Z4LNmW32d-yk5XW-1=
+wW8ycF4H5dYvgDMnDPtkmbC9CW63rk4v6dytd2Vns4XX2HqKC9N24RyG94KTx_W69xDXl2S-XKJ=
+W1xcS6-6JXpp7W51bNYB3qdSQPW10-1h-7fjRrRN30CStwsxvP2W2B82bm4c44jfVqt5QG6qnq4=
+BW13lW5-5ZKC76W4nwWPw1kSt_1Vgx1yW3wWvbZW9fRMvs5JzLGsN8ldTjKXk3qcW6rd4fQ8VvD=
+65W1KyWHY5syS8Cf4QN1dd04" style=3D"font-weight:bold; color:#912666; text-de=
+coration:none" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-v2=3D=
+"qc2ZO3IQ" target=3D"_blank">Chainguard</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W=
+7lCdLW6lZ3mMW2-gkyB2rF1m0W3xx9P86bfdVjN6SyKrhHTvfZW7yVWFY4-bwg5W4ZKsdf26BPv=
+2W281FN24Jvbg6N2GyDSstqxHZN6QjY6C9LfQwN5N4cK-jsmyFW6-GSJ43Py5DTW2s9PkN2dwQP=
+4N4hM0tGL3GnjW1-bXZv5MK3ckW7XcXN38DV7NHW97sfZz7GXrhLW467LXK9fnFWRW5bLk8x90b=
+BX2W5G9-Jw2z709fW2whjp88qqNM_W17FBpN1s62P7W2jp5kV2HSGNkW7vjJLT903gt2N2QzZ4Y=
+6-DR8W1TzGxW6h2B5hf8GGMlx04" style=3D"font-weight:bold; color:#912666; text=
+-decoration:none" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-v2=
+=3D"YVrz6sba" target=3D"_blank">Dash0</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W=
+7lCdLW6lZ3mzW2FKlkG41d1SwW2dNWGy1V6RytW3PHxnG7mqXcDW10MmQZ4qD9ZRW8Q6B8B2j78=
+5JW8RlhyT4RWhqdW4PvGnc4rPwyJV9MW7H7GxxV-N4Nrp5s37sMYW6YSr954yZSDgVwQFfS99fd=
+BPW98FF4W4S4lCdW3M155J4xPC9BW89ScsC4fpdt9VkMy_t91l4q1W2rpvLZ5QHwRpVnyc_W1Sq=
+LxHW5SqbCw4S3RhgW90pyNP6ScH23W6bfmK33Pq7RcW3msKgT2Y5vzfW3_vFLF1gDlchN70blgr=
+dPdqdVMdSDR15mJtWf2gGTKx04" style=3D"font-weight:bold; color:#912666; text-=
+decoration:none" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-v2=
+=3D"ZGscjZBV" target=3D"_blank">Datadog</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3kMVNbRT84GS5khW4m-zsx4=
+4pcwJW5D4H3V6KRTDcW8gWYnR306ZqPN7jG7Q1FwGvLVw4TPV76jkNkW6Srd4v2TM1pgVc5VQp6=
+NrbRpVwRQMb6kvzvrW33xyGW2tXzL0W1Wjscz7sYz-nW5HR9Zm14jQ9xN4ZLpKQXVQTkW1RMcpw=
+65jtWsW8P1kCF16Pl9HW6hDdcd5QJCGQW3ZrnN11z_jqKW8Tp58g1R025zW2NsZnj1XggzZN1Vj=
+62BJsgy9W5gNJqp7QR61hW6D-B2x8q-fWwVPLkDT3LTjSNW6vQn_q8VmBtvf6VnWWj04" style=
+=3D"color:#00aebc; text-decoration:none; font-weight:bold" rel=3D"noopener"=
+ data-hs-link-id=3D"0" data-hs-link-id-v2=3D"/n6x4YaE" target=3D"_blank"><s=
+pan style=3D"color: #912666;">DDN</span></a></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W=
+7lCdLW6lZ3myVbPTjy8GSzqsN110KdcDJSTtW8gLvSb5rbdzCW3CLNJb1MxJD7W2dc7l09kgT8q=
+W546lD18n9WNrVncxJ27n76hcW3lNmh_4L4gfMW1MNLD18g7PYBW2SQXlm4KYYCGW3_RC2389s3=
+xsW4mjDSl8T3f5mW6xgjxG6kg172VK71JM3LBcpDF7v2S5NlDPFW82qt91351WFdW6fGvJJ1zBP=
+gSW5xyCPc9lnMPPW8rjBWZ1QKjSjW7S4RlJ7GSk2qN7KWsTS2yVj8W38R4fS8LPStQW4lfGDW7t=
+JC6rW3LVdHd1ZsT6ff42Tvlx04" style=3D"font-weight:bold; color:#912666; text-=
+decoration:none" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-v2=
+=3D"ZDRl7W+T" target=3D"_blank">Heroku</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W=
+7lCdLW6lZ3npVN98MZ2JxM8jW3sWppn1qhNWyW91jTYy2m3k4YW6KB71K6Kxpc5W5md65X1XJXN=
+4W2B0WbN1FXnNvN3V5HsCRF6byW5ZxZ4D7YkrjFW4GVsKs8TRy83W1xZ4F955tQRXW6p7v_p3MY=
+dcNW77Rm11755j3XW8j35YL6dlFgmW36q17f4RchSgW14kQN44n-2rpVgMjzd6bpxDPW8k7F7H6=
+7RzHvW8vDmrZ3B-RgSW70H7mv1KsvgkW7QRSNR1txtS_N2qJ0QVM_QhBW6YQjWt77CTnBW373n3=
+c83Y4FVW7lRt656S5ML2f6ThkZl04" style=3D"color:#912666; font-weight:bold; te=
+xt-decoration:none" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-=
+v2=3D"6oL1u4si" target=3D"_blank">IBM</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><span style=3D"color: #ff00aa;"><a href=3D"=
+https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ=
+6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3mnW38X_Zq3_zzHXW6l3tpc2RK2yLW97Sh=
+Vp623N4VN2Y3nNLZM8BlW5F5rdX97WJT6N1vXxX8NgZPRW17xC4z5QRWJ9W25Z1Z92vVsvZF51z=
+-YvcwqZN80zWBWzWghHW2rfzyl3WgWymW2nL0jN4QPZZHW7v4Nh538Q95VW2tctdL64ZMrXW28Z=
+LP-6zS8RWVT-Jlz9h1ChVW1nv4kG90l5CbW74lSSW97Mnp1W7Pp27f8K8-ZWV8cWR17rsCL2W3G=
+rcYd7Xc7jSW5VcfRT47qDPbW7qvDbL9lbS0VW2y6Jpq1wwC5Nf6Ntzsj04" style=3D"font-w=
+eight:bold; color:#912666; text-decoration:none" rel=3D"noopener" data-hs-l=
+ink-id=3D"0" data-hs-link-id-v2=3D"aPoL+6DS" target=3D"_blank">Isovalent</a=
+></span></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:300px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"300" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:300px">
+<![endif]-->
+<div id=3D"column_1732302390614_1" class=3D"hse-column hse-size-6">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:10px 20px">
+<div id=3D"hs_cos_wrapper_module_17323024172895" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_17323024172895_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3p2W7b6DJ43SpxxJW3_NN3c=
+6fHGzyW7pnnQT6J9FshN7qZrPyPJ8sFW5wnmNk6mtkY4W6y9r1z3WJGz7W3kR1jv3wNXrrW4TpK=
+lx10bCHkW4S1JKK4sm_JdW8VwZ9c7rvlVjW411Kpv4ZdhyTW2XpCMl223cv2W8FXG6g6wPjsTVB=
+-w2m5JsskyW3QNrcT3GWBmgW3NzcsQ6qLs0YW94nXHD7rH29GW4fQX2s6lylK1W6lvs7H7fLgp1=
+W7n5YB28mcTB-W4fBkFm32LN4GW6-51kz4JB1hcW56sYfM2vNrkKW5CWbQP7JcLc5f7r_SnR04"=
+ style=3D"color:#00aebc; font-weight:bold; text-decoration:none" rel=3D"noo=
+pener" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"lsMK1z2i" target=3D"_bla=
+nk"><span style=3D"color: #912666;">Kubecost,
+ an IBM Company</span></a></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYP3qgz0W=
+8wLKSR6lZ3n8N2NZsm63pTZwW8cXG_n3d6dn5N42ybwMldTkgW7yQLcc4y2k3XW86x1pB1RK2c-=
+W2yhvKg3wQmJ6W17YWvQ1KF6z_W7qYrhD4zh1QpW79xSVY79Jsp5W4y77bK6_Sgp_W3Z5bbV5ly=
+4lMW323psP8THHHcW8XZZ6s764JYgW6h8DkK9356cRW7m1HJV5Q0jqvV50gVd7s29mVVMXfGR6B=
+fmwCW8TwsCl47cHkGW3LNFGF6RNgKhVpJgt85NcmhVW123q6G3ppVLyW2ZpZrR45lD3yN8sq68k=
+ZrxYHW9cv4_b7gszKGN50NxWdNySKrW5_z-Bs8tG9D6W92wX2r7whV-8W1RQ4gh5p9ZxKf2BPmx=
+d04" style=3D"font-weight:bold; text-decoration:none; color:#912666" rel=3D=
+"noopener" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"vYAgFePJ" target=3D"=
+_blank">Nutanix</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W=
+7lCdLW6lZ3pwW6R_7j48N5kcLW6S8yDS45jt_zW10cFL68XHwX6W4VwlfK1WRWs6W8qBTF24ZkX=
+rjW5Pcjcm55S2S3W6Fztm71wRlQGW2t7P_F63mJ4fW2tN6_r4yksHNVGWnFq13nc7LW2N9bLb5D=
+wKcQW7s73k97XPnyQW8vrf-S54bsX8W117ZgN4m5fzGW6hsY2-65nP2kW31FVLH682Y71W6JL4W=
+l20zwnNW5SKmHc15DdrrVtZTFb3nzCPmW56s79J573P5JMjK8QHKZX9VW8-3SqZ1_PxG1W7sLdV=
+V5S9_7cW84dH3j741dNdf1b1BqM04" style=3D"font-weight:bold; text-decoration:n=
+one; color:#912666" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-=
+v2=3D"GUtmjii6" target=3D"_blank">Octopus
+ Deploy</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W=
+7lCdLW6lZ3lwN9121_rzqNCbW24d4WP7Vdf9mW8ZCy-w5HFrYQW3XFdNc1-XKmVN1ldvPtN50rv=
+VzZKPx2nBS65W5-6Nrb7pXN1CW42BRty3nK3J9W46gJ7468dpWxW4nF-Jb5xfRTVW2-Kb-41Dtq=
+B7N3F-nfpYg9BNW3hZ3WR3Js9X6W7Gx23f2wYp65W5L9nKc7cPstjW7JPhqC51l26WW8szjC21C=
+Js81W3svXLC7SF0T6W4clym74GSSfKW5c6txS6TSVkTW4qrn_b4B-l67W6kh3K34ntRlWN37Z5D=
+5SGMgzN911Yp635VzZf40p6F404" style=3D"font-weight:bold; color:#912666; text=
+-decoration:none" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-v2=
+=3D"096TN20j" target=3D"_blank">Portworx
+ by Pure Storage</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jXj2-Z-MW=
+5BW0B06lZ3l5W3zv-S16ssPGWW31sYxH3Knb8SW3q8j8w4Sz8tcW2LyDnw2m5bcqW7zCMN15ddg=
+w0W1k9J2s5NWt8WW4wy0_v6hp8YzW1QnfGX3vhKqLN3M83fQtDNgLW1_JtDh3DLlPjW2nWXLL2Q=
+6QNZN7Hc1jQ4YvHXVP0yqp74gBDqN5xTwCrHDTJvW6Ykyst3-Mkd2W3h8r231xF60pW4wc1mq12=
+1gXGN7sgl8kJbNrKf1QByT004" style=3D"font-weight:bold; text-decoration:none;=
+ color:#912666" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-v2=
+=3D"A1oICiBf" target=3D"_blank">ScaleOps</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYP3qgz0W=
+8wLKSR6lZ3pqW2vtbS57XPrHMW6hp4R_2zMMYxN4wPj3xG4lVrW7H7twT1NXm0nW8dYqbm2-z0v=
+BVYX67Q6V9KczW92G8_k1M9tHsW57mzJW2p_R-RW6LYjmc3xj8skW8nC9RF4BZ1X3W1ZWwp33ZC=
+jvjW98GbHl5qGRLbW59Nkhp1Wlj49VWFG-h46lKMtW4xWSTC2vj2XQW3yNTsV36RvlcW4PGjP98=
+2NSSyN4kS7qg-sNLYW16Jzhl8Y0j3DW8rYtg-6SRWrcW6tgW-D5Rn6S_W6whptJ6dZlXkW9j9Dq=
+s1NSmX2W3C7F_J1-qZv6W1wk3lt5VmccvW88HfKW4xZt8dN3gbS1xt7P12N7sT93ygX6lyf3Vcq=
+FH04" style=3D"color:#912666; font-weight:bold; text-decoration:none" rel=
+=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"dtyR1p/N" target=
+=3D"_blank">Splunk</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W=
+7lCdLW6lZ3lRW2KRPjF162t1mW4FBhvY4jVmZmW1j7WJq7hBrKrW2F8n-G3tBFZxW4Xw8Wf3gqN=
+8kW4Zds9b8D7Z-JW3YsxnL2Kgv6SW6-kfFx1zH_z9W75hlD619zMNjMYZ5WvJ0dYSVpB3tL29kT=
+PjW7_FcMz88KlbbW1nnxrN61dGB2W1B6LJH57pMHDN6pXqYHzwYs6W7hsmXt52Z07kW9lhbT66k=
+Y493W8BP4Gv26Py17W7LkH881HgtchN7jpD149QBwZW82l2Pm6HNYShW8WJyFZ3g9PgLW8FhMf7=
+99GDK5W3RtXJV6hRdCYf5tr81l04" style=3D"font-weight:bold; text-decoration:no=
+ne; color:#912666" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-v=
+2=3D"Bwp03KaJ" target=3D"_blank">SUSE</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W=
+7lCdLW6lZ3nbW1Js04G46FHFdW8c2PVT9bV3PJW98Hc8P6Sh9FcW8r6rTh8y6SP1N3Gm6j4LWz7=
+5MGrLfyHZS2VW8X309b3jhnVJW56Bgw73M5fpsW1m96F42Qj561W1Mn1NW5WK-FTW8RyhDw7cW4=
+mmVYVD521MWh84MLglzwhfGf3W23hQvR13SqmnW1m4xJD2GtVyHN6D0R518QTw3W8H2_v26q_bw=
+bVtryCJ6wMk6NW1Pl-0N9chxkcW91g-0g97fSqDN7G9JtZRpP1MN7HDZ9WDpPcPW8Xq_3R7T7cW=
+BW2knX7q93bTNMf21blsM04" style=3D"color:#912666; font-weight:bold; text-dec=
+oration:none" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"=
+cXye15mx" target=3D"_blank">Tintri</a></span></p>
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:14px=
+; line-height:125%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jZ43qgz0W=
+95jsWP6lZ3l7W7r-nYY59-D0cW8J94dk62NyJSMPmgr5F2TdMW1CMmYw6tBP66W2ZmVQ24qmLFj=
+W9jg_P35Nv7WdW57jP5Z20tdwBW8DJWpj6bQZ7hW1H6K4p3VwT-QW6r307T61-2XmW7M1xty63R=
+WPrN3KhhCydqxQyVhnBPR7nFF75W5-WqNl5-y4qrVlrHMZ7SP0_rW16cGKT5jmQ9tV4y4pB36K3=
+xYW4p2Xqc69cYrwW3rhrfd5cqLcvW8Q_9Nk6yk-7vW2Sq0xG5zHngHW2TLbm-8hpbKcW3Kty9q5=
+7jSsCW9gXL0Z3TKzBJW2HV_Vx3MnWhxW597vLh7zpCb4W2j22-W1CDVVZW91lVrh61b1v-W8chj=
+3P73XSNxW3x4tT24j95hgf1BNCFR04" style=3D"color:#912666; font-weight:bold; t=
+ext-decoration:none" rel=3D"noopener" data-hs-link-id=3D"0" data-hs-link-id=
+-v2=3D"NedtgAe3" target=3D"_blank">VMware
+ by Broadcom</a></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_16947091721334" class=3D"hse-section" style=3D"padding-l=
+eft:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column-1694709172133-0" class=3D"hse-column hse-size-12">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:10px 20px">
+<div id=3D"hs_cos_wrapper_module_17298801372179" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table role=3D"none" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"vertical-align:top" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"font-family:Arial, sans-serif; color:#23496d;=
+ font-size:0; word-break:break-word">
+<p style=3D"font-size:1px;border-top:1px dotted #000000;width:100%;margin:0=
+ auto;">
+</p>
+<!--[if mso]>
+        <table role=3D"none" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"font-size:1px;border-top:1px dotted #000000;wi=
+dth:560px;">
+          <tr>
+            <td style=3D"height:0;line-height:0">&nbsp;</td>
+          </tr>
+        </table>
+      <![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:5px 20px 0px">
+<div id=3D"hs_cos_wrapper_module_172988015139910" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; f=
+ont-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widge=
+t" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_172988015139910_" class=3D"hs_cos_wrapper =
+hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inheri=
+t; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"w=
+idget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; text-align:center; font-size:16px=
+; line-height:175%" align=3D"center">
+<span style=3D"color: #912666;"><a href=3D"https://email.linuxfoundation.or=
+g/e3t/Ctc/RI+113/cZw--04/MWyJv5LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jX05nR3bW=
+50kH_H6lZ3mKW5gzMC03nGz3pW5pPB4b3XZj0FW1v0TwY6f-14BW2L9fcS25zpRzN5BYHCPyqzK=
+RW17gXhT4BVrc4W23gLPp3Pl2g2W356gVP6s7t_mW5mK_rb8t_s3JW4zFRxp8SzbKkVywx6-6nj=
+p6wW3RBsBD5N_m8kW97swfD2VYVYrVjXrbc55-N64N4GPx7pFtsJKW4qrdDV6cpBBCW5Bx8Hm45=
+L6NhN3RBk1nq8PVnW8qpbdz2dFyqVW92bQWT2vfZ6fW2l1xJ31bnsswN1z9553Pjn8NW2lkmbY5=
+rcFDbW71GKM01485fcW7lmvfx8pbF6PW8N3hJw6CMRwDN7Wxlqzx8g59W5bQ4Nh40JcPLW8nzrY=
+V45nQBqW5QMkyS4XSqtgVvk9Y91vQQdQN6WG9YZjzFk1f3-qWfl04" style=3D"font-weight=
+:bold; color:#912666; text-decoration:none" rel=3D"noopener" data-hs-link-i=
+d=3D"0" data-hs-link-id-v2=3D"2kQxXIZI" target=3D"_blank">Check
+ out all our sponsors!</a></span></p>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:5px 20px 10px">
+<div id=3D"hs_cos_wrapper_module_16947091721332" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table role=3D"none" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=
+=3D"vertical-align:top" width=3D"100%">
+<tbody>
+<tr>
+<td align=3D"center" style=3D"font-family:Arial, sans-serif; color:#23496d;=
+ font-size:0; word-break:break-word">
+<p style=3D"font-size:1px;border-top:1px solid #000000;width:100%;margin:0 =
+auto;"></p>
+<!--[if mso]>
+        <table role=3D"none" align=3D"center" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" style=3D"font-size:1px;border-top:1px solid #000000;wid=
+th:560px;">
+          <tr>
+            <td style=3D"height:0;line-height:0">&nbsp;</td>
+          </tr>
+        </table>
+      <![endif]--></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div id=3D"hs_cos_wrapper_module_16947091721333" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_16947091721333_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<p style=3D"mso-line-height-rule:exactly; line-height:175%; font-weight:bol=
+d; text-align:center" align=3D"center">
+<span style=3D"color: #000000;">FOLLOW US</span></p>
+</div>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_16947091857796" class=3D"hse-section" style=3D"padding-l=
+eft:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff" bgcolor=
+=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column-1694709185779-0" class=3D"hse-column hse-size-12">
+<div id=3D"hs_cos_wrapper_module_16947091857795" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table role=3D"presentation" align=3D"center" style=3D"width: auto; text-al=
+ign: center; " class=3D"hs_cos_wrapper_type_social_module">
+<tbody>
+<tr align=3D"center">
+<td class=3D"social-network-cell" style=3D"font-family:Arial, sans-serif; f=
+ont-size:15px; color:#23496d; word-break:break-word">
+<table role=3D"presentation" align=3D"center" style=3D"width: auto; text-al=
+ign: center; " class=3D"hs_cos_wrapper_type_social_module_single">
+<tbody>
+<tr align=3D"center">
+<td class=3D"display_block_on_small_screens" style=3D"font-family:Arial, sa=
+ns-serif; font-size:15px; color:#23496d; word-break:break-word; padding:8px=
+ 5px; line-height:1; vertical-align:middle" valign=3D"middle">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3m0W8hqCRr1pGkQ0W6R6_qS=
+5PXKXBN46BJsVR9tPMVqnZm_8p360bMP_NQlKXqGTV_Wfrb21QlC2W1nsZx53pmcNqW5k1qnC3y=
+CKbBW4kdTJL7_Pq1SW82M-Bm2VZ-GSW6rPD_y2362ZsW67pLRL3phyfjW2WQB5q8Lb2mYW2b0KR=
+k7RRk4nW7XcPxc2jZkFRVmxSdR2x204sW7ybWVv3Rcn_DW2NnGlp2jndCnVJPKR548_9QbW1Dkw=
+kf33qhlLW7FZ6HG7YzPBxN99kx1TSrjWBV9DCxL2FTyq0W7w4wtT23dHLKd9kY_F04" style=
+=3D"color:#00a4bd; text-decoration:none !important" data-hs-link-id=3D"0" d=
+ata-hs-link-id-v2=3D"uXzaNZIq" target=3D"_blank"><img src=3D"https://email.=
+linuxfoundation.org/hs-fs/hubfs/github-logo.png?height=3D50&amp;upscale=3Dt=
+rue&amp;name=3Dgithub-logo.png" alt=3D"github-logo" height=3D"25" style=3D"=
+outline:none; text-decoration:none; border:none; width:auto!important; heig=
+ht:25px!important; vertical-align:middle" valign=3D"middle" width=3D"auto">
+</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"social-network-cell" style=3D"font-family:Arial, sans-serif; f=
+ont-size:15px; color:#23496d; word-break:break-word">
+<table role=3D"presentation" align=3D"center" style=3D"width: auto; text-al=
+ign: center; " class=3D"hs_cos_wrapper_type_social_module_single">
+<tbody>
+<tr align=3D"center">
+<td class=3D"display_block_on_small_screens" style=3D"font-family:Arial, sa=
+ns-serif; font-size:15px; color:#23496d; word-break:break-word; padding:8px=
+ 5px; line-height:1; vertical-align:middle" valign=3D"middle">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYb3qgz0W7lCdLW6lZ3mCVTYc-85sr_WXN6YHYqvM=
+yYJgW1FqCQm8ntsYyW16FfhG1KCryhW7TTSvF1rLHYkW4LlTWL54BXm0N6rz7x7-j6J6Vvlyfr1=
+SBMvGV4mhCw6rDsB7W6SFdGM7c_GD-VR0qQ_8SS_JwW5dY9R_2-fbpwW7CHN7310pytnW8n_9ry=
+21JJM2W8lT1VJ5QR48-N31Xww9NqV90W642gjr85tx17W66zC105BYNrmVY4Z2L8kyt6GW8W0d_=
+p8q0C4hVqXtY_9lDXF6W92RNT416BvJzVK-wdR9f8LmxW83cZW63L1CVhf7GsMWW04" style=
+=3D"color:#00a4bd; text-decoration:none !important" data-hs-link-id=3D"0" d=
+ata-hs-link-id-v2=3D"oks77k/V" target=3D"_blank"><img src=3D"https://email.=
+linuxfoundation.org/hs/hsstatic/TemplateAssets/static-1.262/img/hs_default_=
+template_images/modules/Follow+Me+-+Email/twitter_circle_black.png" alt=3D"=
+X" height=3D"25" style=3D"outline:none; text-decoration:none; border:none; =
+width:auto!important; height:25px!important; vertical-align:middle" valign=
+=3D"middle" width=3D"auto">
+</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"social-network-cell" style=3D"font-family:Arial, sans-serif; f=
+ont-size:15px; color:#23496d; word-break:break-word">
+<table role=3D"presentation" align=3D"center" style=3D"width: auto; text-al=
+ign: center; " class=3D"hs_cos_wrapper_type_social_module_single">
+<tbody>
+<tr align=3D"center">
+<td class=3D"display_block_on_small_screens" style=3D"font-family:Arial, sa=
+ns-serif; font-size:15px; color:#23496d; word-break:break-word; padding:8px=
+ 5px; line-height:1; vertical-align:middle" valign=3D"middle">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jZ43qgz0W95jsWP6lZ3l8W5Pw0xV4ptwcmW4Dr6nm=
+496y51W1H95VF8GMX5HVrGC-n3FRCwpW5RCYmv8CK773VcRPJb3pxcQgW18Hz772NcnrTMYR2NQ=
+Vyl54W1WwTp_24-JnlW2pWnWH43w3lNW6knVGj86Fxs3W663qmK1zKw1HW7w62vG5YRCmZW6FPC=
+3j80pYqDW3ss5vB40Pv7-W94vmJc6sRR-4W3v2H_B2vb9wyN1P6GzVjwW7LTXmxM7b3657W4Vhr=
+WV3DDlVmW3XG5lT7YbC51V7k49Z5TgfyzW2WrY_r2RXkGBW7Jf_P55ZXnd_W2RN31t72BPRqW5T=
+_WTt5D44m2W5WqbZx6HvQYdW98JbNb2fV3sTW8cKFdv99dkqbW93bfXj2Pbv8bf4Gd5QP04" st=
+yle=3D"color:#00a4bd; text-decoration:none !important" data-hs-link-id=3D"0=
+" data-hs-link-id-v2=3D"uFiL4R3v" target=3D"_blank"><img src=3D"https://ema=
+il.linuxfoundation.org/hs/hsstatic/TemplateAssets/static-1.262/img/hs_defau=
+lt_template_images/modules/Follow+Me+-+Email/linkedin_circle_black.png" alt=
+=3D"LinkedIn" height=3D"25" style=3D"outline:none; text-decoration:none; bo=
+rder:none; width:auto!important; height:25px!important; vertical-align:midd=
+le" valign=3D"middle" width=3D"auto">
+</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"social-network-cell" style=3D"font-family:Arial, sans-serif; f=
+ont-size:15px; color:#23496d; word-break:break-word">
+<table role=3D"presentation" align=3D"center" style=3D"width: auto; text-al=
+ign: center; " class=3D"hs_cos_wrapper_type_social_module_single">
+<tbody>
+<tr align=3D"center">
+<td class=3D"display_block_on_small_screens" style=3D"font-family:Arial, sa=
+ns-serif; font-size:15px; color:#23496d; word-break:break-word; padding:8px=
+ 5px; line-height:1; vertical-align:middle" valign=3D"middle">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYv3qgz0W7Y8-PT6lZ3kzW8b8nmP13HcqzW1cLY2g=
+6ZLmGhW3jBcf73F5wZFW8_5ktS74f8S8W2l91x11zq9PXW2XzfQw16jBCxN2tCLTp36CDnV446h=
+C9g5sb9W4X-gBt4sMb-5W1Q0s4n843fSyW88qdV76N0kLxW6Z8Kw_6yQfnKW3n47ks45jLvSW3v=
+fsgn19lNLkMbLn_XJxXkNW6r_1qf8__013W7vwwCW4KHWSLMwwQnj1KwJtW780BXr84wMSLW95x=
+fHT65qSkhW8qF9bX5_YNf1W1Tnmd17GF2g0N5WK-1S4C3HJW19_72J75JZc3W6FZYNZ59KRWLW1=
+DcYny996jvyf92zLRR04" style=3D"color:#00a4bd; text-decoration:none !importa=
+nt" data-hs-link-id=3D"0" data-hs-link-id-v2=3D"6MfF7z19" target=3D"_blank"=
+><img src=3D"https://email.linuxfoundation.org/hs/hsstatic/TemplateAssets/s=
+tatic-1.262/img/hs_default_template_images/modules/Follow+Me+-+Email/youtub=
+e_circle_black.png" alt=3D"YouTube" height=3D"25" style=3D"outline:none; te=
+xt-decoration:none; border:none; width:auto!important; height:25px!importan=
+t; vertical-align:middle" valign=3D"middle" width=3D"auto">
+</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"social-network-cell" style=3D"font-family:Arial, sans-serif; f=
+ont-size:15px; color:#23496d; word-break:break-word">
+<table role=3D"presentation" align=3D"center" style=3D"width: auto; text-al=
+ign: center; " class=3D"hs_cos_wrapper_type_social_module_single">
+<tbody>
+<tr align=3D"center">
+<td class=3D"display_block_on_small_screens" style=3D"font-family:Arial, sa=
+ns-serif; font-size:15px; color:#23496d; word-break:break-word; padding:8px=
+ 5px; line-height:1; vertical-align:middle" valign=3D"middle">
+<a href=3D"https://email.linuxfoundation.org/e3t/Ctc/RI+113/cZw--04/MWyJv5L=
+FnfmW6vlMpJ6hZmQxW58c1_75zGfS9N6D7jYP3qgz0W8wLKSR6lZ3mxW8xhxNn8ybZPBW5NncVB=
+4jtqTkW7lqHfS5yZ83BN7yTM51Lz_7LW2t-j8W1ryCQTW3y6BwL5kHK9CW4Cfr0T4DV40MW5WDY=
+_n8X445-W7W-vM_8Vd6clW916PZt42yBZrW5FKW9P2P9vnSW1WBpwz70wbVxW3l48p38bqdgKW4=
+fjWW46RX2dmN7mgVvlPPWc8W84s0wS6Qk2WpN12dmVXClVxkW5HrvVt3ZxsjWVtDx9521QVcRW1=
+WyLHC14DSsGVS2Hj83_FmB6W3BVs261wjBQLW5C8k8k54rdPVW4dwggs2wsJhwW3RmZR94cNM3J=
+W8c1kTM8by9p7W1CbNyQ4XbJghW1fCD067c2SrBf7hR6JP04" style=3D"color:#00a4bd; t=
+ext-decoration:none !important" data-hs-link-id=3D"0" data-hs-link-id-v2=3D=
+"vrLUBe/w" target=3D"_blank"><img src=3D"https://email.linuxfoundation.org/=
+hs/hsstatic/TemplateAssets/static-1.262/img/hs_default_template_images/modu=
+les/Follow+Me+-+Email/facebook_circle_black.png" alt=3D"Facebook" height=3D=
+"25" style=3D"outline:none; text-decoration:none; border:none; width:auto!i=
+mportant; height:25px!important; vertical-align:middle" valign=3D"middle" w=
+idth=3D"auto">
+</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+<div id=3D"section_16947091896869" class=3D"hse-section hse-section-last" s=
+tyle=3D"padding-left:10px; padding-right:10px">
+<div class=3D"hse-column-container" style=3D"min-width:280px; max-width:600=
+px; Margin-left:auto; Margin-right:auto; background-color:#ffffff; padding-=
+bottom:20px; padding-top:20px" bgcolor=3D"#ffffff">
+<!--[if (mso)|(IE)]>
+      <table align=3D"center" style=3D"width:600px;" cellpadding=3D"0" cell=
+spacing=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]--><!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;padding-bottom:20px; padding-top:=
+20px;">
+<![endif]--><!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"width:600px">
+<![endif]-->
+<div id=3D"column-1694709189686-0" class=3D"hse-column hse-size-12">
+<table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"1=
+00%" class=3D"" style=3D"">
+<tbody>
+<tr>
+<td class=3D"hs_padded" style=3D"font-family:Arial, sans-serif; font-size:1=
+5px; color:#23496d; word-break:break-word; padding:0px 20px">
+<div id=3D"hs_cos_wrapper_module_16947091896867" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<div id=3D"hs_cos_wrapper_module_16947091896867_" class=3D"hs_cos_wrapper h=
+s_cos_wrapper_widget hs_cos_wrapper_type_rich_text" style=3D"color: inherit=
+; font-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"wi=
+dget" data-hs-cos-type=3D"rich_text">
+<h2 style=3D"margin:0; mso-line-height-rule:exactly; font-size:8px; line-he=
+ight:175%; font-weight:normal; text-align:center" align=3D"center">
+<span style=3D"font-size: 12px; color: #000000;">This email was sent by: <s=
+pan style=3D"font-weight: normal;">
+Cloud Native Computing Foundation</span></span></h2>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div id=3D"hs_cos_wrapper_module_16947091896868" class=3D"hs_cos_wrapper hs=
+_cos_wrapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; fo=
+nt-size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget=
+" data-hs-cos-type=3D"module">
+<table role=3D"presentation" class=3D"hse-footer hse-secondary" width=3D"10=
+0%" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-family:Arial, sans-se=
+rif; font-size:12px; line-height:135%; color:#23496d; margin-bottom:0; padd=
+ing:0">
+<tbody>
+<tr>
+<td align=3D"center" valign=3D"top" style=3D"font-family:Arial, sans-serif;=
+ font-size:15px; color:#23496d; word-break:break-word; text-align:center; m=
+argin-bottom:0; line-height:135%; padding:10px 20px">
+<p style=3D"font-family:Arial, sans-serif;font-size:12px;font-weight:normal=
+;text-decoration:none;font-style:normal;color:#000000">
+548 Market St, PMB 57274, San Francisco, CA 94104-5401, United States </p>
+<p><a data-unsubscribe=3D"true" href=3D"https://hs-8112310.s.hubspotemail.n=
+et/hs/preferences-center/983905/en/direct?data=3DW2nXS-N30h-GBW43ytsJ362x84=
+W3T28Vd1Qc8xmW38fVmB43F1KgW2KP98m2xMN-dW49Rgwv23qglhW3NDBGn34xtYPW30Jcjj4pm=
+pdfW1SsksT1QzN_VW2vYrzk3yZy1hW4fhcjk45wdQxW43DJ-K4rwTfcW3LHPZS2MRr9VW4cQhsk=
+34FMmWW49z7Cz36pChGW3bfNjm49RJTbW49vqhZ3SZ78fW3VRGX243GLPJW1Nf1Zd2-B9PwW3H4=
+M4Q3_T7ZXW1S9Kjh3SLsbHW1QwXqn1QzkwXW3DVPcj1_kG18W3dsn2d32xl2pW3dcvFr3z1gB_W=
+2p6hJb2vTklSW47MPLq2HXVhrW1Vv796348tYbW2KrSGY38v0WHW36wTyl4tkctmW2WNCyf3NMh=
+ZGW3NFYDc2MPlm8W1Sb6CC3yQ7vKW4kcn4n43xCRVW2Yf56M1-XBJKW2t47lb49HRl2W34ptgY2=
+PRjtXW362r3G2nMNkqW2nQ7Mt2xBvBtW3z95XK2YrsfLW3VZjDF3h-zMyW30D1TH2Ptw-jW1S2c=
+Ym38xxyHW4pFjg_1BJtC1W4hsVzm4ckpnrW2KwD8W1VyxRNW1_9nry2zWn27W234S6c2zxplvW3=
+jcqqh4cgtK2W41YwLW2r5JnwW2p5S5d2RSgK1f1SzZ1w04&amp;utm_campaign=3D10608228-=
+KubeCon-NA-2025&amp;utm_source=3Dhs_email&amp;utm_medium=3Demail&amp;utm_co=
+ntent=3D373765930&amp;_hsenc=3Dp2ANqtz--oAgNV0UOzv2eA8EqDV4yw4zI8aCUw7EsU0H=
+HxUEgaL1KZpKoD_wAapfk2x2kYOqQrkvl2EdzeM5-hqvXxPStPLjCcdA&amp;_hsmi=3D373765=
+930" style=3D"font-family:Arial, sans-serif; font-size:12px; color:#d62293;=
+ font-weight:normal; text-decoration:underline; font-style:normal" data-hs-=
+link-id=3D"0" data-hs-link-id-v2=3D"SFRZzEXk" target=3D"_blank">Unsubscribe=
+</a>
+<a data-unsubscribe=3D"true" href=3D"https://hs-8112310.s.hubspotemail.net/=
+hs/preferences-center/983905/en/page?data=3DW2nXS-N30h-GBW43ytsJ362x84W3T28=
+Vd1Qc8xmW38fVmB43F1KgW2KP98m2xMN-dW49Rgwv23qglhW3NDBGn34xtYPW30Jcjj4pmpdfW1=
+SsksT1QzN_VW2vYrzk3yZy1hW4fhcjk45wdQxW43DJ-K4rwTfcW3LHPZS2MRr9VW4cQhsk34FMm=
+WW49z7Cz36pChGW3bfNjm49RJTbW49vqhZ3SZ78fW3VRGX243GLPJW1Nf1Zd2-B9PwW3H4M4Q3_=
+T7ZXW1S9Kjh3SLsbHW1QwXqn1QzkwXW3DVPcj1_kG18W3dsn2d32xl2pW3dcvFr3z1gB_W2p6hJ=
+b2vTklSW47MPLq2HXVhrW1Vv796348tYbW2KrSGY38v0WHW36wTyl4tkctmW2WNCyf3NMhZGW3N=
+FYDc2MPlm8W1Sb6CC3yQ7vKW4kcn4n43xCRVW2Yf56M1-XBJKW2t47lb49HRl2W34ptgY2PRjtX=
+W362r3G2nMNkqW2nQ7Mt2xBvBtW3z95XK2YrsfLW3VZjDF3h-zMyW30D1TH2Ptw-jW1S2cYm38x=
+xyHW4pFjg_1BJtC1W4hsVzm4ckpnrW2KwD8W1VyxRNW1_9nry2zWn27W234S6c2zxplvW3jcqqh=
+4cgtK2W41YwLW2r5JnwW2p5S5d2RSgK1f1SzZ1w04&amp;utm_campaign=3D10608228-KubeC=
+on-NA-2025&amp;utm_source=3Dhs_email&amp;utm_medium=3Demail&amp;utm_content=
+=3D373765930&amp;_hsenc=3Dp2ANqtz--oAgNV0UOzv2eA8EqDV4yw4zI8aCUw7EsU0HHxUEg=
+aL1KZpKoD_wAapfk2x2kYOqQrkvl2EdzeM5-hqvXxPStPLjCcdA&amp;_hsmi=3D373765930" =
+style=3D"font-family:Arial, sans-serif; font-size:12px; color:#d62293; font=
+-weight:normal; text-decoration:underline; font-style:normal" data-hs-link-=
+id=3D"0" data-hs-link-id-v2=3D"qjPJqCop" target=3D"_blank">
+Manage preferences</a> </p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!--[if gte mso 9]></table><![endif]--><!--[if (mso)|(IE)]></td><![endif]--=
+><!--[if (mso)|(IE)]></tr></table><![endif]--></div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<img src=3D"https://email.linuxfoundation.org/e3t/Cto/RI+113/cZw--04/MWyJv5=
+LFnfmW6vlMpJ6hZmQxW58c1_75zGfS9W6D7jH_3CNxxB132" alt=3D"" width=3D"1" heigh=
+t=3D"1" border=3D"0" style=3D"display:none!important;min-height:1px!importa=
+nt;width:1px!important;border-width:0!important;margin-top:0!important;marg=
+in-bottom:0!important;margin-right:0!important;margin-left:0!important;padd=
+ing-top:0!important;padding-bottom:0!important;padding-right:0!important;pa=
+dding-left:0!important">
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+------=_Part_1720776_60995590.1753967560025--

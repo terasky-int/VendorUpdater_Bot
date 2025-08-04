@@ -94,10 +94,9 @@ def process_search_query(query: str) -> Dict[str, Any]:
     if vendor_filter:
         filters["vendor"] = vendor_filter
     if product_filter:
-        filters["product"] = {"$contains": product_filter}
+        filters["product"] = product_filter
     if type_filter:
-        # Use contains operator for partial matching
-        filters["type"] = {"$contains": type_filter}
+        filters["type"] = type_filter
     
     # Build graph filters
     graph_filters = {}

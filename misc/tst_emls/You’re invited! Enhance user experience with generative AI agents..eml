@@ -1,0 +1,1475 @@
+Received: from DB9P194MB1322.EURP194.PROD.OUTLOOK.COM (2603:10a6:10:297::15)
+ by PAXP194MB1277.EURP194.PROD.OUTLOOK.COM with HTTPS; Fri, 1 Aug 2025
+ 09:07:55 +0000
+Received: from DU6P191CA0028.EURP191.PROD.OUTLOOK.COM (2603:10a6:10:53f::14)
+ by DB9P194MB1322.EURP194.PROD.OUTLOOK.COM (2603:10a6:10:297::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8989.16; Fri, 1 Aug
+ 2025 09:07:52 +0000
+Received: from DB3PEPF0000885E.eurprd02.prod.outlook.com
+ (2603:10a6:10:53f:cafe::50) by DU6P191CA0028.outlook.office365.com
+ (2603:10a6:10:53f::14) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8989.17 via Frontend Transport; Fri,
+ 1 Aug 2025 09:07:52 +0000
+Authentication-Results: spf=pass (sender IP is 2607:f8b0:4864:20::b4a)
+ smtp.mailfrom=google.com; dkim=pass (signature was verified)
+ header.d=google.com;dmarc=pass action=none
+ header.from=google.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of google.com designates
+ 2607:f8b0:4864:20::b4a as permitted sender) receiver=protection.outlook.com;
+ client-ip=2607:f8b0:4864:20::b4a; helo=mail-yb1-xb4a.google.com; pr=C
+Received: from mail-yb1-xb4a.google.com (2607:f8b0:4864:20::b4a) by
+ DB3PEPF0000885E.mail.protection.outlook.com (2603:10a6:18:3::609) with
+ Microsoft SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id
+ 15.20.9009.8 via Frontend Transport; Fri, 1 Aug 2025 09:07:51 +0000
+Received: by mail-yb1-xb4a.google.com with SMTP id 3f1490d57ef6-e81a449767aso1854694276.0
+        for <davidg@terasky.com>; Fri, 01 Aug 2025 02:07:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20230601; t=1754039271; x=1754644071; darn=terasky.com;
+        h=list-unsubscribe:list-unsubscribe-post:mime-version:subject
+         :message-id:to:reply-to:from:date:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=+SKG1WdABthTuyN+NM5IFdVaH0rkExkY89IMnLOTzP8=;
+        b=rorh3mRuWHiDT9v0NoJID6SVRQ0f3BFzCnMEfqJMOoOZ8iABbTYhAQfgsDAb6/tN+a
+         jbA7W7MdqNJSuGHaW+R1eoHrQtk4j7rPsnw0zlTKrgJ9ePmX0XLMOXyYJA5mEVb5yszg
+         M0DbjKApivbe7WWAs/58xXGQmx1L4y3QpBjgdhVUkmKjLUhZ/nYLIhrjB0nLTKJNS0nU
+         iXhElpZRJawGBknQZwUZd3Z8ObRdTbNjSYZHtvOhC/N/qnCAKdmWOHNoldPwpLA4fksQ
+         FkvzGP1qyJNvZoOzBQsqvCctecomLO8GHqCMvQm7wnm3f6a98ulnV/iStRaUkE+Rbswl
+         lllw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1754039271; x=1754644071;
+        h=list-unsubscribe:list-unsubscribe-post:mime-version:subject
+         :message-id:to:reply-to:from:date:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=+SKG1WdABthTuyN+NM5IFdVaH0rkExkY89IMnLOTzP8=;
+        b=TcW3LLuHCACO5tvpkZOpLNlghdgFyR/9goffZ/jj15lEj6KflWCHFklz8AIISaTD4i
+         xvW05soWxqx2kcB/O5jgDmF/EHTYPjEDNRttfsbNkm3EpOVgx3XesxVLw6O9bSBabwhX
+         onL09CK8U+whE+/ZJb4IzUlM2M6ur61lEAzmfdDZsxngzFPuNcAx5pSOaZIIIJskoour
+         rNIrf28XnA9tdE1+3/1Gucyg+p1441q1nmRsIFvQsbBrJsTV3UoXIRn3ZwOkqJoA28GF
+         pK5o24KhoKCmah244hPhE1FhXDdesO2lomZ4xAf9ORVMY1RvlncHsWBBrnXTEtPA3tN/
+         U7Pw==
+X-Gm-Message-State: AOJu0Yz8Z620VUpiZqo9HFW+akDB4Ly/vzqPQhvButP7t5vRw3mYIalw
+	Kbeb3NrGCSK1EXXN3Ewpqcy8MiZl1LQwBgS6K9zdPke2Gfe1xzM9tsBkezsGXrW0l+xPKo7xDtu
+	w7wd7I1tePNPPN7/deYl1fA==
+X-Google-Smtp-Source: AGHT+IFFJaSfG/3L7zM5quuzMuSorfaEneiHjI8mH2Ik6mjmiLU4OZ9H0SNxf0mUsDZM3KdbEYzj+dvqhlYRzAbvjQY=
+X-Received: by 2002:a05:6902:4a86:b0:e8e:26ff:b9bb with SMTP id 3f1490d57ef6-e8fe280ef94mr2247106276.47.1754039270986;
+        Fri, 01 Aug 2025 02:07:50 -0700 (PDT)
+Return-Path: 808-GJW-314.0.2675404.0.0.930650.9.41273417-28@google.com
+Received: from oak.mktdns.com (oak.mktdns.com. [199.15.214.195])
+        by gmr-mx.google.com with ESMTPS id 3f1490d57ef6-e8fd6d3f1b5si128801276.4.2025.08.01.02.07.50
+        for <davidg@terasky.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 01 Aug 2025 02:07:50 -0700 (PDT)
+X-MSFBL: nhttebTmqbHcw9m82bc5ij1xcXGJO4Y0Byc9CVCpLgs=|eyJiIjoiZHZwLTE5OS0
+	xNS0yMTQtMTk1IiwiciI6ImRhdmlkZ0B0ZXJhc2t5LmNvbSIsInUiOiI4MDgtR0p
+	XLTMxNDowOjU2NzY0NTo0ODE1Njc1OjE5NjA4NTUxOjkzMDY1MDo5OjI2NzU0MDQ
+	6NDEyNzM0MTctMjgiLCJnIjoiYmctc2pyLTE5NCJ9
+Date: Fri, 1 Aug 2025 04:07:49 -0500 (CDT)
+From: Google Cloud <googlecloud@google.com>
+Reply-To: contactcloud@google.com
+To: davidg@terasky.com
+Message-ID: <1936528873.176374054.1754039270028@sjmktmail-batch1m.marketo.org>
+Subject: =?UTF-8?Q?You=E2=80=99re_invited!_Enhance_user_expe?=
+ =?UTF-8?Q?rience_with_generative_AI_agents.?=
+Content-Type: multipart/alternative;
+	boundary="----=_Part_176374039_613071490.1754039269997"
+X-Binding: bg-sjr-194
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+List-Unsubscribe: <https://go.cloudplatformonline.com/u/ODA4LUdKVy0zMTQAAAGcA9vqZnnMOnk1017WVo_DX4Ibm5HYlhMIdHLRxhlJekhW9qv3Bh1kgl2MmzbK6-8ftTgiAps=?emailAddress=ODA4LUdKVy0zMTQAAAGcA9vqZWimCg9Jq6yW10D2_xwBhyszGPRMHZZ6NlcEhVT2gDMSt-R2Z21tR1xb5-TNJkw>, <mailto:MZDE26CMKJYG6URROFYW2NDCJFXVMNBYIVGXS53POMYGG2KVL4ZWUNDPHBVXETS7MZXTAPI=.2675404.930650.9@unsub-sj.mktomail.com>
+X-MarketoID: 808-GJW-314:0:567645:4815675:19608551:930650:9:2675404:41273417-28
+X-PVIQ: mkto-808GJW314-000001-000002-675404
+X-Mailfrom: 808-GJW-314.0.2675404.0.0.930650.9.41273417-28@google.com
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MS-Exchange-Organization-ExpirationStartTime: 01 Aug 2025 09:07:52.1023
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: d1a52b5f-8fb9-48a2-0380-08ddd0dae511
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB3PEPF0000885E:EE_|DB9P194MB1322:EE_|PAXP194MB1277:EE_
+X-MS-Exchange-Organization-AuthSource: DB3PEPF0000885E.eurprd02.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: d1a52b5f-8fb9-48a2-0380-08ddd0dae511
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:3;ARA:13230040|5082899009|39142699007|4092899012|5062899012|6062899009|31052699007|4022899009|69100299015|43022699015|1032899013|13102899012|3072899012|12012899012|2092899012|3092899012|13012899012|7093399015|2066899003|8096899003|13003099007;
+X-Forefront-Antispam-Report: CIP:2607:f8b0:4864:20::b4a;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mail-yb1-xb4a.google.com;PTR:mail-yb1-xb4a.google.com;CAT:NONE;SFS:(13230040)(5082899009)(39142699007)(4092899012)(5062899012)(6062899009)(31052699007)(4022899009)(69100299015)(43022699015)(1032899013)(13102899012)(3072899012)(12012899012)(2092899012)(3092899012)(13012899012)(7093399015)(2066899003)(8096899003)(13003099007);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Aug 2025 09:07:51.8729
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: d1a52b5f-8fb9-48a2-0380-08ddd0dae511
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: DB3PEPF0000885E.eurprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB9P194MB1322
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.6788418
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8989.013
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?L2dnUC9lQlc3OVpidjdYUnp3d1l4YldlK3JsOWtTV1kwb1NlNlF4NTdYTjk2?=
+ =?utf-8?B?aXNtb3FaTkJLQXV2L0VSL3dkcEEvSzg1TUxMUFJHd0REenB3TG1mUzhod2hz?=
+ =?utf-8?B?SGFCN0plZ3k5dytpTjZBTFhwM21MRERWN1pLZkhLTHBzUHcvSGxlTXF4NmhE?=
+ =?utf-8?B?cVk2bEhHM3dRcGczTGRrdjlOQ3ZBam9kSEF5c2E1b2R1c0lIeDFTU1RWNFRC?=
+ =?utf-8?B?U3cxNXVEek9FZGt0OVRTUUF4V0ZxWE81dmM0V2ptZnYyVlgyMyt0cVQwV1Rp?=
+ =?utf-8?B?WmszdzJOZnVuclBUa0h2YXZWZGsyNzQ1Tm4zRXUwTVRiZlRwNkVHWVZWbnhS?=
+ =?utf-8?B?ckdyMC9Wam9PZllrdUdWOWtTSTE1NEJoakdLajR2Z1M3K3preVYwdDF3N2l1?=
+ =?utf-8?B?U3ZEZWJSeGkzcVRGU1A3aXB5ejJkVGpEbW41NzdCWXo0aTR2bFBzbGtYRlA5?=
+ =?utf-8?B?eThmUlYxdmRIQ3ZTT2ZBamxlTFJUQjFOWDNmS0Eyd0tMdWkvcWxEYlZwcHRQ?=
+ =?utf-8?B?L0RlQVpVVno2VUptazBIMUcrRDEvOWZoRy9wUDh1Z1orR0xJVlRZcFJJcUhs?=
+ =?utf-8?B?WDlZSVExV0xaVW1jNTFBTnJKa2h5dmhyMWFoTE9wdFY0SEpnSFJMdUd4dk9F?=
+ =?utf-8?B?UEFDRmVQSmtGbFNqS2xSZUY4cTB1ZHhieStjTHJ1K28zZXNMR05CZS8xa1VC?=
+ =?utf-8?B?QU5UaFU0M2Q1MlNocmo1Ym8zSEY3OG5DVkNsSmNhQkpCZHY2YVcwMVFnNSt0?=
+ =?utf-8?B?QlNsZzVkV09zeGYySUJEc1RzYkNuaEtzMm9ab2tvM1grY0ZHMUpVL2l2NGw5?=
+ =?utf-8?B?VDNXaFBvU2NtditTanR1T0M3OFNqM0xkRVJCSS9Lb2RMYVhsOWFPZERMQ2VR?=
+ =?utf-8?B?VFVEbFd1b0tLQmNYRXBTUFFHb3h5ekdPU3JneDRaeWQ3VFVMNDBaa3BmVUVp?=
+ =?utf-8?B?Q1VlSG51Y0ROUU9jaVNHcFhRUmZ6RTRDSk9aNkZzRUNLTkx6Yy9sK0puUWJ2?=
+ =?utf-8?B?cDZsazBLSkxXRU41UkpUU0htWU1uVWRRMHA3dmNiVFFUbm5YcnRmUk0rN2RZ?=
+ =?utf-8?B?SE1ySmRvRWlEV2doWVBtTnJwVjFGRWQxRE0wVFlaQVludDBSeWlzcFl1UGVH?=
+ =?utf-8?B?aFdtM0ZBUGFScUJUUG83c3lwVnJsV05Uc21vZ0pNTk9Jc0MxM2JxemxKbEIy?=
+ =?utf-8?B?Um1xbG1SYThoUWl6blMwTno3b0pjcWhFOFZQUkdEdDVyazBZR3pXQU5mWEph?=
+ =?utf-8?B?bmpwRFNDaHJobjI4eU12SXpCTzF2MWh6WEs2a3RxVHZXYWpadTNIRXpVYklO?=
+ =?utf-8?B?Z090VXVkMEZuOTg5Ukx6L1RFaDA1M0NvajlUK05ZMnYva0JHY2hweHY0MW85?=
+ =?utf-8?B?SEJJZGYvWWJIY1hOeWcvMk1tNjdLU1NmTnNkcWJicHI1NEhhYUh1WkN6RXgx?=
+ =?utf-8?B?b3hGVGJkM1BxS0RXdDd6NWJNakVvNkphekU1QmlGL3hQK01NZk9PTlBqUGpF?=
+ =?utf-8?B?QUtRbGV6K0RnN3RFc2EyclVnZ3hTK0owdDZSd1B6QTZxUUtwNDhCanBFUktX?=
+ =?utf-8?B?ZzdXMEcwdkNaRm5HM1YzNkdlUkZqK1dELzZ5V2lxb1RTbVZDQkRtM1BlRTNw?=
+ =?utf-8?B?WXJKbDNXbXdyZlA2UTNqbEIwZUxqY2dKeFg4cE9mN3pTR1RINHJCbnJoMVRu?=
+ =?utf-8?B?TmoyZi82VUIyS1RVYTN5TndtejJNRzRtcWxldUNHZFdFNUMyRW5BcUdEMm5W?=
+ =?utf-8?B?ZEw0eXN3TnpTeDdBOGtYQ3ZTWnJYdFgrN3UzWGFpcFZtYzJXcjF6WFVuMUI3?=
+ =?utf-8?B?NkhIZ2picW1QZ1pWKzJjNlE5bmpqMHZ5bVRRZHF4djZaQ1FqdExXcGVUay9P?=
+ =?utf-8?B?eHJaWHRnUVBrVndZVE1iVW0zNmx5OTJ5K3BidWpmUEpoOHBEOW9wV1ZibHRp?=
+ =?utf-8?B?SXRVM3kwTkVmRjNxeVdKUkI2eHUrVm4zV2FJOFFEc28wdVVSb1JXMXdaR0NO?=
+ =?utf-8?B?U1hmZXEraGR2NGVYRU04MnlZd2xCY0VmTFIvMnlmRXRJNkNxRnBFU05QU3BM?=
+ =?utf-8?B?bGJLWFBWOTh5ZHExRmUwcGQybEdtZ29yNjRqbFN6c0RLWlRrMFlIVm9xTmQz?=
+ =?utf-8?B?VEpzaXdxSVFtRkF4SlRxTHlrZ1dBbHpmL0d1Z0lWNHRiV3RiWStUMjArOXZV?=
+ =?utf-8?B?TzkzVWJXeWM3TnB5SlY3WXdTYm1MNXlrcXRVZ21mWStYcnlyY3UwcnN6VDVS?=
+ =?utf-8?B?bTRLL3E5bXJDc2lTNzFqcXFLWGJLZ0FrenNOOFVsT3dGdkNDbmFrUjd3UFNv?=
+ =?utf-8?B?eHFWWTdhdmRuaGovbi8zMjM0YVZYbFI0WXd0QUgrWUlGNXNNS3ZvMTdVVkJQ?=
+ =?utf-8?B?UG84WDRET0h4YldON1FIWjlKK1UwVktTRWdBMlI4MjYxWnhWU1lrYTdkc2ho?=
+ =?utf-8?B?dWI5blVQcXNidWlwMVRBS3hFeDBnUXhrNjNXSHRVK0haZWRvSjczMWo1S3hV?=
+ =?utf-8?B?S2F0VFhWMzRqS3ZxS1MyazJtOFgrV01pZnhjeFlUdHE2djh3R2hYelBJWjlR?=
+ =?utf-8?B?QnhpZTR2Q1V2aC9FbVZiVHBHOUIxMHRDM1FUSGJKdnNObnV4MTN3V1N3WVFP?=
+ =?utf-8?B?MGdUbVphZXd5bFhFVXN6NllPTUw2TDg2TTFpV09VZGgxcjl1ZFZ2TDZsM0dS?=
+ =?utf-8?B?VGdadDM5UFY4WlBJVHRDWXdpY2U1WG5UYWF1bDlpTC9jQTY1OVVMVmIrejl6?=
+ =?utf-8?B?VmJGanVaMm5YSmNnQ0UwSnBmaDM3V2U2ZlVhV0RsZVJua0lld3F2STBoVmE1?=
+ =?utf-8?B?K1BNTS96WHIyMEs2SERPdjdTdy9xN0xCdGhKY29RWCs0a0ZFZFlJU3J2ek1H?=
+ =?utf-8?B?b2NJZ3Z6SzJ1NXdpUEM5NjFDN0llZ0hOY2s3b3RmYlFBYXhuYnNtdWxnaElX?=
+ =?utf-8?B?UEZEZnBIWmJvNTE0Z1RhY2kxNzVNYXREV3FHdVN5dnk4K2pBWmNsUzhRZmI0?=
+ =?utf-8?Q?eFb5o0sFkJcBy4JDmiXEUufCljF4p4eaLgY?=
+MIME-Version: 1.0
+
+------=_Part_176374039_613071490.1754039269997
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Unlock Business Value with AI agents
+[Google Cloud]
+Register now<https://go.cloudplatformonline.com/dc/H5v1VWmnrAFLqt38-dr4Kudk=
+o96t_OSLhD9dJYV60iHezWTBU-nz3eb4_-R9wEhAoqty0iWQEcxLRSKb6uNg7yYwioinq--mFrR=
+uJdE--rWpvYcsqHbCif6jYg_vI1s0kIVGEM6ATm7sMzZmXsOu4NnSthyc-m0w1Hka4ixwpi5Qvq=
+ybvv1_Ba6qo-NDGEv5QMt_g-I0FgMZY8EKsb4mA8MhUzMAIIulckMNemVplSWZ1l_VR0Ny2deYd=
+XTezITa_rNf8iCyG-uz9AIUt_GrmLLAGlBUFFRI3ngtbOH80YHTjlboba1JZexwwxMTUuMU/ODA=
+4LUdKVy0zMTQAAAGcA9vqZmfQtPBQ-UvlazpUvkDVjeqES9bWQImqS8jWls_bvK68Fz36E-U9vb=
+4KZCYkbpJLfIs=3D>
+[https://lp.cloudplatformonline.com/rs/808-GJW-314/images/SMB34882_hero_ima=
+ge.jpg?version=3D0]
+Empower Your Business with Next-Gen AI
+
+Design, develop, and deploy intelligent agents for real-world impact.
+
+August 12, 2025
+
+4:00 PM=E2=80=935:00 PM GMT
+
+[https://lp.cloudplatformonline.com/rs/808-GJW-314/images/cs4-icon-location=
+-email.png]  Online
+Register now<https://go.cloudplatformonline.com/dc/H5v1VWmnrAFLqt38-dr4Kudk=
+o96t_OSLhD9dJYV60iHezWTBU-nz3eb4_-R9wEhAoqty0iWQEcxLRSKb6uNg7yYwioinq--mFrR=
+uJdE--rWpvYcsqHbCif6jYg_vI1s0kIVGEM6ATm7sMzZmXsOu4NnSthyc-m0w1Hka4ixwpi5Qvq=
+ybvv1_Ba6qo-NDGEv5QMt_g-I0FgMZY8EKsb4mA8MhUzMAIIulckMNemVplSWZ1l_VR0Ny2deYd=
+XTezITa_rNf8iCyG-uz9AIUt_GrmLLAGlBUFFRI3ngtbOH80YHTjlboba1JZexwwxMTUuMU/ODA=
+4LUdKVy0zMTQAAAGcA9vqZmfQtPBQ-UvlazpUvkDVjeqES9bWQImqS8jWls_bvK68Fz36E-U9vb=
+4KZCYkbpJLfIs=3D>
+<https://go.cloudplatformonline.com/ODA4LUdKVy0zMTQAAAGcA9vqZhxJgrYLbP-018_=
+zXoTNZBCs0IfszOW9ES9MmnBTaX1wGlbV6U7T1C_f1Lqfrm9lb74=3D>
+
+Hi David,
+
+Are you ready to transform your business operations and create innovative u=
+ser experiences?
+
+Google Cloud invites you to an exclusive webinar, Startups Technical Guide:=
+ AI agents where we'll delve into how AI agents can drive significant busin=
+ess value and enhance customer interactions. This session is designed for f=
+ounders and technical leaders looking to move from an idea to production-re=
+ady AI agents.
+
+What You'll Discover:
+
+  *   Understanding AI agent value & strategy: Learn how AI agents drive bu=
+siness value, enhance user experiences, and the core intent behind building=
+ AI agents.
+  *   Building with Google Cloud's AI ecosystem: Explore Google Cloud's Ver=
+tex AI and the Agent Development Kit (ADK) as key tools for developing soph=
+isticated AI agents.
+  *   Agent operations for production readiness: Grasp the principles of Ag=
+entOps to ensure quality, safety, and seamless deployment of your agents in=
+ production.
+  *   Live demo & real-world activation: See a practical demonstration of b=
+uilding and activating an AI agent, showcasing its capabilities in action.
+
+This webinar is ideal for founders looking to integrate AI into their busin=
+ess strategy, technical leaders responsible for building and deploying AI s=
+olutions, and anyone else interested in understanding the practical applica=
+tions and operational aspects of AI agents.
+
+Don't miss this opportunity to learn how to leverage generative AI for rapi=
+d development, boost efficiency, and drive growth.
+
+Register now and secure your spot!
+
+Register now<https://go.cloudplatformonline.com/dc/H5v1VWmnrAFLqt38-dr4Kudk=
+o96t_OSLhD9dJYV60iHezWTBU-nz3eb4_-R9wEhAoqty0iWQEcxLRSKb6uNg7yYwioinq--mFrR=
+uJdE--rWpvYcsqHbCif6jYg_vI1s0kIVGEM6ATm7sMzZmXsOu4NnSthyc-m0w1Hka4ixwpi5Qvq=
+ybvv1_Ba6qo-NDGEv5QMt_g-I0FgMZY8EKsb4mA8MhUzMAIIulckMNemVplSWZ1l_VR0Ny2deYd=
+XTezITa_rNf8iCyG-uz9AIUt_GrmLLAGlBUFFRI3ngtbOH80YHTjlboba1JZexwwxMTUuMU/ODA=
+4LUdKVy0zMTQAAAGcA9vqZmfQtPBQ-UvlazpUvkDVjeqES9bWQImqS8jWls_bvK68Fz36E-U9vb=
+4KZCYkbpJLfIs=3D>
+See you there,
+The Google Cloud Team
+[https://lp.cloudplatformonline.com/rs/808-GJW-314/images/email-progress-ba=
+r.png]
+[Google Cloud]  [https://lp.cloudplatformonline.com/rs/808-GJW-314/images/h=
+h-img2.png]
+=C2=A9 2025 Google Cloud EMEA Ltd.
+70 Sir John Rogersons Quay, Dublin 2, Ireland
+
+We sent you this email because you have indicated that you are willing to r=
+eceive periodic emails on news, product updates, and invitations to events =
+from the Google Cloud team. If you no longer wish to receive these emails, =
+click on the following link to unsubscribe<https://cloud.google.com/prefere=
+nces/?mkt_unsubscribe=3D1ODA4LUdKVy0zMTQAAAGcA9vqZoc2xrMofCkRbA2mzwOE-jxCnA=
+RpFWT0rrHlTFnBwE9a5PFyDPySb4_rRDKWQ91xjX9YVn3H5gjqD8qxumxZAUvutRFbY09Fl_awN=
+JN3GQeoib0&Opt_In_Events__c=3DYes&Opt_In_Newsletter__c=3DYes&Opt_In_Offers_=
+_c=3DYes&Opt_In_Products__c=3DYes&Opt_In_Research__c=3DYes&preferenceCenter=
+Subscription1=3DYes&preferenceCenterSubscription2=3DYes&preferenceCenterSub=
+scription3=3DYes&preferenceCenterSubscription4=3DYes> or customize your com=
+munication preferences<https://cloud.google.com/preferences/?Opt_In_Events_=
+_c=3DYes&Opt_In_Newsletter__c=3DYes&Opt_In_Offers__c=3DYes&Opt_In_Products_=
+_c=3DYes&Opt_In_Research__c=3DYes&preferenceCenterSubscription1=3DYes&prefe=
+renceCenterSubscription2=3DYes&preferenceCenterSubscription3=3DYes&preferen=
+ceCenterSubscription4=3DYes>.
+[Blog]<https://go.cloudplatformonline.com/ODA4LUdKVy0zMTQAAAGcA9vqZgD8ScWZA=
+RzoGR1_0GnEDNlM8XIL1zHSP43ls0WXd64RDOkg0qaSRNX7HcyN3sUGqBQ=3D> [GitHub] <ht=
+tps://go.cloudplatformonline.com/ODA4LUdKVy0zMTQAAAGcA9vqZqeOyAY55O7xubTZ5R=
+ODNeXu6YJU6tUJ5JW4ZqXyUqJn64Wo2CV88oi9tpIVDVOmxiI=3D>      [LinkedIn] <http=
+s://go.cloudplatformonline.com/ODA4LUdKVy0zMTQAAAGcA9vqZl9QH24WEzEq6DtUy17l=
+Li3j4okCWg0ImJH6HAtH9XhHzSZgc2T3XA0poeD8pMzpZIE=3D>    [Twitter] <https://g=
+o.cloudplatformonline.com/ODA4LUdKVy0zMTQAAAGcA9vqZsKSUHOAyaUHusehHEn6TkCc1=
+fJDOUq_5mm-DbFfUePBuuxsBECNqlBy-tfeiJlMp9I=3D>     [Facebook] <https://go.c=
+loudplatformonline.com/ODA4LUdKVy0zMTQAAAGcA9vqZqSmDbxlDFduK3UNtVihxZZRX6K_=
+uKYhzDKx-moFXdGhJmF2i_Q5C1-MQYxlEIZFrLc=3D>
+<https://go.cloudplatformonline.com/ODA4LUdKVy0zMTQAAAGcA9vqZi2Jx4mh75iiKMw=
+ta1Sqx1VYwfR4kfsY0syCzzwCceHfrSceeJMJV-RD70HkOcTdXNU=3D>
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+------=_Part_176374039_613071490.1754039269997
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd"><html lang=3D"en" xmlns=3D"http://www.w3.org/199=
+9/xhtml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-m=
+icrosoft-com:office:office"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<!-- New V5 Google Cloud Email Template modified by @shakti 26/03/25 --><!-=
+-[if gte mso 9]>
+<style>
+li { text-indent: -1em; }
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml><![endif]--><!--[if mso]>
+<style>
+span, td, table, div, p, h1, h2, h3, h4, h5, h6, a {
+font-family: 'Google Sans','Noto Sans JP',Arial,sans-serif !important;
+}
+</style>
+<![endif]--><!--[if gte mso 9]>
+<style>
+body,table,th,td,p,span {
+-ms-text-size:100%;
+mso-table-lspace: 0pt !important;
+mso-table-rspace: 0pt !important;
+margin: 0 auto !important;
+}
+table {
+padding: 0 !important;}
+</style>
+<![endif]--><!-- EM TITLE --><!-- HEADER --><!-- HERO MODULE OPTIONS --><!-=
+- FOR BACKGROUND IMAGE ON IMAGE BACKGROUND CENTERED TEXT BLOCK MODULE --><!=
+-- INTRO PADDING DEPENDING ON HERO'S --><!-- CTA Module Padding--><!-- CTA =
+& LINKS --><!-- CUSTOM CSS OPTION FOR DEVS --><!-- CONFIRMATION MARKUP --><=
+!-- COLOR ACCENTS --><!-- Font Weight --><!-- IMAGE CARDS --><!-- RTL --><!=
+-- Two Columns Section CTA's --><!-- Footer --><!-- Tout --><!-- Testimonia=
+l --><!-- Spacer -->
+<title>Startups Technical Guide: AI agents</title>
+<style type=3D"text/css">
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 400;
+    mso-font-alt: Arial;
+    src: local('Google Sans Regular'), local('GoogleSans-Regular'), url('ht=
+tps://fonts.gstatic.com/s/googlesans/v6/4UaGrENHsxJlGDuGo1OIlL3Owps.ttf') f=
+ormat('truetype');
+  }
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 500;
+    mso-font-alt: Arial;
+    src: local('Google Sans Medium'), local('GoogleSans-Medium'), url('http=
+s://fonts.gstatic.com/s/googlesans/v6/4UabrENHsxJlGDuGo1OIlLU94YtzCwM.ttf')=
+ format('truetype');
+  }
+  @font-face {
+    font-family: 'Google Sans';
+    font-style: normal;
+    font-weight: 700;
+    mso-font-alt: Arial;
+    src: local('Google Sans Bold'), local('GoogleSans-Bold'), url('https://=
+fonts.gstatic.com/s/googlesans/v6/4UabrENHsxJlGDuGo1OIlLV154tzCwM.ttf') for=
+mat('truetype');
+  }
+  @font-face {
+    font-family: 'Google Sans Text';
+    font-weight: 700;
+    mso-font-alt: Arial;
+    font-style: normal;
+    src: url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/goog=
+lesanstext-bold-webfont.woff2') format('woff2'),
+        url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/googl=
+esanstext-bold-webfont.woff') format('woff'),
+        url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/Googl=
+eSansText-Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Google Sans Text';
+    font-style: normal;
+    font-weight: 500;
+    mso-font-alt: Arial;
+    src: url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/goog=
+lesanstext-medium-webfont.woff2') format('woff2'),
+        url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/googl=
+esanstext-medium-webfont.woff') format('woff'),
+        url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/Googl=
+eSansText-Medium.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Google Sans Text';
+    font-style: normal;
+    font-weight: 400;
+    mso-font-alt: Arial;
+    src: url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/goog=
+lesanstext-regular-webfont.woff2') format('woff2'),
+        url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/googl=
+esanstext-regular-webfont.woff') format('woff'),
+        url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/Googl=
+eSansText-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Google Sans Display';
+    font-style: normal;
+    font-weight: 700;
+    mso-font-alt: Arial;
+    src: url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/goog=
+lesansdisplay-bold-webfont.woff2') format('woff2'),
+        url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/googl=
+esansdisplay-bold-webfont.woff') format('woff'),
+        url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/Googl=
+eSansDisplay-Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Google Sans Display';
+    src: url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/goog=
+lesansdisplay-regular-webfont.woff2') format('woff2'),
+        url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/googl=
+esansdisplay-regular-webfont.woff') format('woff'),
+        url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/Googl=
+eSansDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    mso-font-alt: Arial;
+  }
+  @font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 500;
+    src: url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto=
+-sans-jp-v24-latin_japanese-500.woff');
+    src: local('Noto Sans Japanese Medium'), local('NotoSansJapanese-Medium=
+'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-500.eot?#iefix') format('embedded-opentype'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-500.woff2') format('woff2'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-500.woff') format('woff'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-500.ttf') format('truetype'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-500.svg#NotoSansJP') format('svg');
+  }
+  @font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 400;
+    src: url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto=
+-sans-jp-v24-latin_japanese-regular.woff');
+    src: local('Noto Sans Japanese Regular'), local('NotoSansJapanese-Regul=
+ar'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-regular.eot?#iefix') format('embedded-opentype'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-regular.woff2') format('woff2'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-regular.woff') format('woff'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-regular.ttf') format('truetype'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-regular.svg#NotoSansJP') format('svg');
+  }
+  @font-face {
+    font-family: 'Noto Sans JP';
+    font-style: normal;
+    font-weight: 700;
+    src: url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto=
+-sans-jp-v24-latin_japanese-700.woff');
+    src: local('Noto Sans Japanese Bold'), local('NotoSansJapanese-Bold'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-700.eot?#iefix') format('embedded-opentype'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-700.woff2') format('woff2'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-700.woff') format('woff'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-700.ttf') format('truetype'),
+    url('https://lp.cloudplatformonline.com/rs/808-GJW-314/images/noto-sans=
+-jp-v24-latin_japanese-700.svg#NotoSansJP') format('svg');
+  }
+  /* CLIENT-SPECIFIC STYLES */
+  body, table, th, td { -webkit-text-size-adjust: 100%; -ms-text-size-adjus=
+t: 100%; color: #5F6368; font-family: 'Google Sans','Noto Sans JP',Arial,sa=
+ns-serif; font-weight: 400; font-size: 14px;}
+  table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing:=
+ 0; color: #5F6368; font-family: 'Google Sans','Noto Sans JP',Arial,sans-se=
+rif;  font-size: 14px;}
+  img { -ms-interpolation-mode: bicubic; }
+  /* RESET STYLES */
+  img { border: 0; outline: none; text-decoration: none;}
+  table { border-collapse: collapse !important; }
+  body,
+  html {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    font-family: 'Google Sans','Noto Sans JP',Arial,sans-serif;
+    font-size: 14px;
+  }
+  a {text-decoration: underline;}
+  /* iOS BLUE LINKS */
+  a[x-apple-data-detectors] {
+    color: inherit !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    text-decoration: none !important;
+  }
+  /* Samsung blue links */
+  #MessageViewBody a {
+    color: inherit;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  /* SAMSUNG CENTER FIX */
+  #MessageViewBody,
+  #MessageWebViewDiv {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  /* ANDROID CENTER FIX */
+  div[style*=3D"margin: 16px 0;"] { margin: 0 !important; }
+ =20
+  /* HERO HEADER VERTICAL ALIGNMENT FIX */
+  .h177 {
+    height: 177px;
+  }
+ =20
+  .h112 {
+    height: 112px;
+  }
+ =20
+  .h212 {
+    height:212px;
+  }
+ =20
+</style><style type=3D"text/css">
+@media (prefers-color-scheme: dark) {
+    .lightBackground {
+      background-color: #dddddd !important;
+    }}
+a {
+    color: #1a73e8 !important;
+    text-decoration: underline;
+  }
+  a.whiteText {
+    color: #ffffff !important;
+  }
+  @media (prefers-color-scheme: dark) {
+    .lightImage {
+      color: #202124 !important;
+    }
+  }
+  @media (max-width: 600px) {
+    .container {
+      width: 95% !important;
+    }
+    .inner-container {
+      padding-left: 25px !important;
+      padding-right: 25px !important;
+    }
+    .inner-container-alt {
+      padding-left: 25px !important;
+      padding-right: 25px !important;
+    }
+    .inner-container.social-container {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+    img {
+      height: auto !important;
+      max-width: 100% !important;
+    }
+    img.logo {
+      width: 140px !important;
+    }
+    img.workspace-logo {
+      width: 127px !important;
+    }
+    img.partner-logo {
+      max-height: 30px !important;
+      width: auto !important;
+    }
+    .header {
+      padding: 24px 10px !important;
+    }
+    .workspace-header {
+      padding: 0 10px !important;
+    }
+    .h-logos {
+      width: 150px !important;
+    }
+    .h-logos2 {
+      width: 150px !important;
+    }
+    .showMobileHeaderCTA {
+      display: block !important;
+      width: 100% !important;
+    }
+    .width50 {
+      width: 50% !important;
+    }
+    h1.headline {
+      font-size: 24px !important;
+      line-height: 32px !important;
+    }
+    .headline-icon {
+      width: 50px !important;
+    }
+    .hom {
+      display: none !important;
+    }
+    .heroLocationText {
+      font-size: 16px !important;
+      line-height: 24px !important;
+    }
+    .heroLocationDateTime {
+      font-size: 20px !important;
+      line-height: 26px !important;
+    }
+    .heroFrameImg {
+      width: 95% !important;
+    }
+    .bgColorWhite {
+      background-color: #ffffff !important;
+    }
+    .bgColorGray {
+      background-color: #F1F3F4 !important;
+    }
+    .heroFullPadding {
+      padding-top: 113px !important;
+    }
+    .heroFullInnerPadding {
+      padding: 32px 16px 40px 16px !important;
+    }
+    .fullPhotoMobile {
+      height: 165px !important;
+      background-size:cover !important;
+      background-position: 100% 90% !important;
+    }
+    .mobileH1 {
+      display: block !important;
+      mso-hide: none !important;
+    }
+    .alignLeft {
+      direction: ltr !important;
+      text-align: left !important;
+    }
+    .mobile-height {
+      height: auto !important;
+    }
+    .mobile-map-img {
+      width: 100% !important;
+      display:block !important;
+      max-height:100% !important;
+      overflow:visible !important;
+    }
+    .mobile-pa-hero-img {
+      padding-bottom: 24px !important;
+      width: 100% !important;
+      display:block !important;
+      max-height:100% !important;
+      overflow:visible !important;
+    }
+    .mobile-map-img img{
+      width: 100% !important;
+    }
+    .width100 {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .mobile-block {
+      display: block !important;
+    }
+    .pad-t24 {
+      padding-top: 24px !important;
+    }
+    .pad-r0 {
+      padding-right: 0 !important;
+    }
+    .pad-t0 {
+      padding-top: 0 !important;
+    }
+    .pad-b40 {
+      padding-bottom: 40px !important;
+    }
+    .pad-b16 {
+      padding-bottom: 16px !important;
+    }
+    .pad-b12 {
+      padding-bottom: 12px !important;
+    }
+    .pad-b24 {
+      padding-bottom: 24px !important;
+    }
+    .pad-b20 {
+      padding-bottom: 20px !important;
+    }
+    .pad-b32 {
+      padding-bottom: 32px !important;
+    }
+    .pad-t16 {
+      padding-top: 16px !important;
+    }
+    .pad-t24 {
+      padding-top: 24px !important;
+    }=20
+    .pad-l15 {
+      padding-left: 15px !important;
+    }
+    .pad-l10 {
+      padding-left: 10px !important;
+    }
+    .pad-l0 {
+      padding-left: 0 !important;
+    }
+    .pad-all0 {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    .pad-location {
+      padding-top: 20px !important;
+      padding-left: 0 !important;
+    }
+    .pad-img-features {
+      padding-top: 16px !important;
+      padding-bottom: 24px !important;
+    }
+    .pad-map-cal1 {
+      padding: 24px 25px 14px 25px !important;
+      width: auto !important;
+    }
+    .pad-map-cal2 {
+      padding: 0 25px 20px 25px !important;
+      width: auto !important;
+    }
+    .pad-map-cal3 {
+      padding: 20px 25px 20px 25px !important;
+      width: auto !important;
+    }
+    .line-height16 {
+      line-height: 16px !important;
+    }
+    .line-height24 {
+      line-height: 24px !important;
+    }=20
+    .time {
+      width: 100% !important;
+      display: block !important;
+      border-bottom: none !important;
+      padding-bottom: 0!important;
+    }
+    .info {
+      width: 100% !important;
+      display: block !important;
+      padding-top: 0 !important;
+    }
+    .column {
+      max-width: 50% !important;
+      width: 49% !important;
+    }
+    .contents {
+      width: 90% !important;
+    }
+    .three-column img {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .p-column {
+      max-width: 50% !important;
+      width: 49% !important;
+      padding-bottom: 20px !important;
+    }
+    .partner-column img {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .prefooter-parent {
+      padding-bottom: 22px !important;
+    }
+    .no-float {
+      float: none !important;
+    }
+      /* HEADER VERTICAL ALIGNMENT FIX */
+    .h177 {
+      height: auto;
+    }
+    .h112 {
+      height: auto;
+    }
+
+    .h212 {
+      height: auto;
+    }   =20
+   =20
+  }
+  @media screen and (max-width: 380px) {
+    img.partner-logo {
+      max-height: 20px !important;
+      width: auto !important;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    .column {
+      max-width: 100% !important;
+      width: 100% !important;
+      text-align: center !important;
+    }
+    .contents {
+      width: 100% !important;
+    }
+    .three-column img {
+      width: 80% !important;
+      max-width: 80% !important;
+      margin: 0 auto !important;
+    }
+  }
+  img.no-arrow + div{
+    display: none !important;
+  }
+ =20
+</style>
+</head>
+<body style=3D"width: 100%; margin:0; padding:0 !important; background-colo=
+r: #f8f9fa;" bgcolor=3D"#f8f9fa">
+<style type=3D"text/css">div#emailPreHeader{ display: none !important; }</s=
+tyle>
+<div id=3D"emailPreHeader" style=3D"mso-hide:all; visibility:hidden; opacit=
+y:0; color:transparent; mso-line-height-rule:exactly; line-height:0; font-s=
+ize:0px; overflow:hidden; border-width:0; display:none !important;">
+Unlock Business Value with AI agents </div>
+<center style=3D"width: 100%; table-layout: fixed;">
+<div style=3D"background-color:#f8f9fa; width: 100%; max-width: 600px; marg=
+in: 0 auto;" bgcolor=3D"#f8f9fa">
+<!--[if mso]>
+<table role=3D"presentation" width=3D"600" cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" align=3D"center" style=3D"background-color:#f8f9fa;" bgcol=
+or=3D"#f8f9fa">
+<tr>
+<td>
+<![endif]-->
+<table role=3D"presentation" width=3D"600" class=3D"container" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center" style=3D"max-width:6=
+00px; width:600px; word-break: break-word; Margin: 0 auto;" bgcolor=3D"#FFF=
+FFF">
+<tbody>
+<tr>
+<td class=3D"mktoContainer" id=3D"moduleContainer" align=3D"center" valign=
+=3D"top" bgcolor=3D"#ffffff" style=3D"background-color: #ffffff;">
+<table role=3D"presentation" class=3D"mktoModule" id=3D"headerLogoCTAModule=
+3e162326-5292-4659-9051-e28e30ef22de" width=3D"600" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"center" style=3D"max-width:600px; width:=
+100%; background: #f8f9fa;">
+<tbody>
+<tr>
+<td dir=3D"ltr" valign=3D"top" style=3D"padding:24px 24px 24px 30px;" class=
+=3D"header mktoText" id=3D"header-Logo-cta479ad7a5-650f-4273-9c9d-b930e0e80=
+c0b">
+<table role=3D"presentation" width=3D"600" cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" align=3D"left" style=3D"max-width:600px; width:100%;">
+<tbody>
+<tr>
+<td class=3D"width50 pad-l0" valign=3D"middle" width=3D"300" align=3D"left"=
+ style=3D"font-family: 'Google Sans','Noto Sans JP',Arial,sans-serif; paddi=
+ng-left: 20px; font-size: 14px; vertical-align: middle; width: 300px; text-=
+align: left;">
+<img src=3D"https://lp.cloudplatformonline.com/rs/808-GJW-314/images/google=
+-cloud-2021-em.png" alt=3D"Google Cloud" class=3D"logo no-arrow" height=3D"=
+32" style=3D"max-height: 32px; display:block;">
+</td>
+<!--[if !mso]><!-->
+<td class=3D"showMobileHeaderCTA" valign=3D"middle" width=3D"300" align=3D"=
+right" style=3D"font-family: 'Google Sans','Noto Sans JP',Arial,sans-serif;=
+ font-size: 14px; vertical-align: middle; width: 300px; text-align: right; =
+display: none;">
+<table role=3D"presentation" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" align=3D"right">
+<tbody>
+<tr>
+<td align=3D"right" dir=3D"ltr" bgcolor=3D"#1a73e8" style=3D"border-radius:=
+ 4px;"><a class=3D"whiteText" href=3D"https://go.cloudplatformonline.com/dc=
+/H5v1VWmnrAFLqt38-dr4Kudko96t_OSLhD9dJYV60iHezWTBU-nz3eb4_-R9wEhAoqty0iWQEc=
+xLRSKb6uNg7yYwioinq--mFrRuJdE--rWpvYcsqHbCif6jYg_vI1s0kIVGEM6ATm7sMzZmXsOu4=
+NnSthyc-m0w1Hka4ixwpi5Qvqybvv1_Ba6qo-NDGEv5QMt_g-I0FgMZY8EKsb4mA8MhUzMAIIul=
+ckMNemVplSWZ1l_VR0Ny2deYdXTezITa_rNf8iCyG-uz9AIUt_GrmLLAGlBUFFRI3ngtbOH80YH=
+Tjlboba1JZexwwxMTUuMU/ODA4LUdKVy0zMTQAAAGcA9vqZmfQtPBQ-UvlazpUvkDVjeqES9bWQ=
+ImqS8jWls_bvK68Fz36E-U9vb4KZCYkbpJLfIs=3D" target=3D"_blank" style=3D"font-=
+family: 'Google Sans','Noto Sans JP',Arial,sans-serif; color: #ffffff; text=
+-decoration: none; font-size: 14px; letter-spacing: 1px; font-weight: bold;=
+ -webkit-border-radius: 4px; border-radius: 4px; border: 1px solid #1a73e8;=
+ margin: 0; padding: 14px 16px 14px 16px; display: inline-block;">Register
+ now</a> </td>
+</tr>
+</tbody>
+</table>
+</td>
+<!--<![endif]-->
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" class=3D"mktoModule" id=3D"heroNoFrameModulecb=
+485ed4-e188-48e9-83dd-3f5194020706" align=3D"center" width=3D"600" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"max-width:600px; width:=
+100%;">
+<tbody>
+<tr>
+<td valign=3D"top" class=3D"inner-container" style=3D"padding: 32px 50px 20=
+px 50px;">
+<table role=3D"presentation" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" width=3D"100%">
+<tbody>
+<tr>
+<td style=3D"width: 100%;"><!--[if (gte mso 9)|(IE)]>
+               =20
+<table dir=3D"rtl" width=3D"235" align=3D"right" cellpadding=3D"0" cellspac=
+ing=3D"0" border=3D"0">
+<tr>
+<td dir=3D"ltr"><![endif]-->
+<table role=3D"presentation" class=3D"width100" width=3D"235" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0" align=3D"right" dir=3D"rtl">
+<tbody>
+<tr>
+<td class=3D"pad-b24" align=3D"right" valign=3D"top">
+<div class=3D"mktoImg" id=3D"heroNoFrameImageeb4a7220-de89-4f1d-a828-845ee2=
+c8d1e4"><img src=3D"https://lp.cloudplatformonline.com/rs/808-GJW-314/image=
+s/SMB34882_hero_image.jpg?version=3D0" class=3D"width100" width=3D"235" alt=
+=3D"" border=3D"0" style=3D"display:block; width:100%; max-width:235px;">
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]></td>
+<td valign=3D"top" dir=3D"ltr"><![endif]-->
+<table role=3D"presentation" class=3D"width100" width=3D"265" style=3D"widt=
+h:265px;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left" d=
+ir=3D"ltr">
+<tbody>
+<tr>
+<td dir=3D"ltr" align=3D"left" valign=3D"middle" class=3D"pad-r0 h177" styl=
+e=3D"padding-right: 19px;" height=3D"177">
+<h1 class=3D"mktoText headline" id=3D"heroNoFrameTitled8078516-fa7e-45f2-83=
+62-8e193247d05b" style=3D"font-family:'Google Sans Display','Google Sans','=
+Noto Sans JP',Arial,sans-serif; font-size:32px; line-height:40px; color: #2=
+02124; font-weight: bold; margin: 0; padding: 0; text-align: left;">
+Empower Your Business with Next-Gen AI</h1>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if gte mso 9]></td>
+</tr>
+</table>
+<![endif]--></td>
+</tr>
+</tbody>
+</table>
+<!-- END OF HERO IMAGE AND HEADLINE --><!-- SUBHEADER AND EVENT INFO -->
+<table role=3D"presentation" width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" align=3D"left" style=3D"width:100%;">
+<tbody>
+<tr style=3D"mso-hide: none;">
+<td dir=3D"ltr" valign=3D"top" style=3D"padding: 24px 0 0; width: 100%;mso-=
+hide: none;">
+<p class=3D"mktoText" id=3D"heroNoFrameSubheadlineb67d886c-2e5f-46cd-908a-6=
+d1b926aba06" style=3D"font-family: 'Google Sans','Noto Sans JP',Arial,sans-=
+serif; font-size: 16px; line-height: 24px; color: #5F6368; text-align: left=
+; margin: 0; padding: 0;mso-hide: none;">
+Design, develop, and deploy intelligent agents for real-world impact.</p>
+</td>
+</tr>
+<tr style=3D"mso-hide: none;">
+<td dir=3D"ltr" style=3D"mso-hide: none;">
+<table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" style=3D"mso-hide: none;">
+<tbody>
+<tr style=3D"mso-hide: none;">
+<th dir=3D"ltr" class=3D"width100 mobile-block" valign=3D"top" style=3D"pad=
+ding: 24px 0 0; padding-right: 24px; text-align: left; font-weight: normal;=
+ mso-hide: none;">
+<p class=3D"date mktoText" id=3D"heroNoFrameDate42aedee3-79d9-47b4-8361-edb=
+66b81bac7" style=3D"color:#5F6368; font-family: 'Google Sans','Noto Sans JP=
+',Arial,sans-serif; font-weight: 400; font-size: 18px; line-height: 21px; m=
+argin: 0; padding: 0; mso-hide: none;">
+August 12, 2025</p>
+</th>
+<th dir=3D"ltr" class=3D"width100 mobile-block" valign=3D"top" style=3D"pad=
+ding: 24px 0 0; text-align: left; font-weight: normal; mso-hide: none;">
+<p class=3D"time mktoText" id=3D"heroNoFrameTime86ab1d81-1f21-4f78-b4d3-257=
+74a942997" style=3D"color: #5F6368; font-family: 'Google Sans','Noto Sans J=
+P',Arial,sans-serif; font-weight: 400; font-size: 18px; line-height: 21px; =
+margin: 0; padding: 0; mso-hide: none;">
+4:00 PM=E2=80=935:00 PM GMT</p>
+</th>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr style=3D"mso-hide: none;">
+<td dir=3D"ltr" valign=3D"top" style=3D"padding: 24px 0 0;mso-hide: none;">
+<table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" style=3D"mso-hide: none;">
+<tbody>
+<tr style=3D"mso-hide: none;">
+<td dir=3D"ltr" valign=3D"top" style=3D"font-family: 'Google Sans','Noto Sa=
+ns JP',Arial,sans-serif; height: 21px; padding-right: 16px;text-align: left=
+;mso-hide: none;">
+<img src=3D"https://lp.cloudplatformonline.com/rs/808-GJW-314/images/cs4-ic=
+on-location-email.png" alt=3D"" height=3D"21" style=3D"height: 21px !import=
+ant;">
+</td>
+<td dir=3D"ltr" class=3D"mktoText heroLocationText" id=3D"heroNoFrameLocati=
+oncc3c4df9-72f1-438a-b706-4f90de0d50c4" valign=3D"top" style=3D"color: #5F6=
+368; font-family: 'Google Sans','Noto Sans JP',Arial,sans-serif; font-weigh=
+t: 400; font-size: 14px; line-height: 21px; text-align: left;mso-hide: none=
+;">
+Online</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr style=3D"mso-hide: none;">
+<td dir=3D"ltr" valign=3D"top" style=3D"width: 100%;padding: 24px 0 0; mso-=
+hide: none;">
+<table role=3D"presentation" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" align=3D"left" style=3D"mso-hide: none;">
+<tbody>
+<tr style=3D"mso-hide: none;">
+<th class=3D"mobile-block width100 pad-b24" style=3D"font-weight: normal; t=
+ext-align: left; mso-hide: none;">
+<table role=3D"presentation" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" style=3D"mso-hide: none;">
+<tbody>
+<tr style=3D"mso-hide: none;">
+<td class=3D"mktoText" id=3D"heroNoFrameCTA8c9c9fb9-e4d9-4a74-923d-522fe8b3=
+c823" dir=3D"ltr" bgcolor=3D"#1a73e8" style=3D"border-radius: 4px; mso-hide=
+: none;">
+<a class=3D"whiteText" href=3D"https://go.cloudplatformonline.com/dc/H5v1VW=
+mnrAFLqt38-dr4Kudko96t_OSLhD9dJYV60iHezWTBU-nz3eb4_-R9wEhAoqty0iWQEcxLRSKb6=
+uNg7yYwioinq--mFrRuJdE--rWpvYcsqHbCif6jYg_vI1s0kIVGEM6ATm7sMzZmXsOu4NnSthyc=
+-m0w1Hka4ixwpi5Qvqybvv1_Ba6qo-NDGEv5QMt_g-I0FgMZY8EKsb4mA8MhUzMAIIulckMNemV=
+plSWZ1l_VR0Ny2deYdXTezITa_rNf8iCyG-uz9AIUt_GrmLLAGlBUFFRI3ngtbOH80YHTjlboba=
+1JZexwwxMTUuMU/ODA4LUdKVy0zMTQAAAGcA9vqZmfQtPBQ-UvlazpUvkDVjeqES9bWQImqS8jW=
+ls_bvK68Fz36E-U9vb4KZCYkbpJLfIs=3D" target=3D"_blank" style=3D"font-family:=
+ 'Google Sans','Noto Sans JP',Arial,sans-serif; color: #ffffff; text-decora=
+tion: none; font-size: 14px; letter-spacing: 1px; font-weight: bold; -webki=
+t-border-radius: 4px; border-radius: 4px; border: 1px solid #1a73e8; margin=
+: 0; padding: 14px 16px 14px 16px; display: inline-block;">Register
+ now</a></td>
+</tr>
+</tbody>
+</table>
+</th>
+<th class=3D"mobile-block width100 pad-l0 mktoText" id=3D"heroNoFrameOptOut=
+272b9466-879b-4ee1-b0d5-5c4164d80b74" style=3D"font-weight: normal; text-al=
+ign: left; padding-left: 24px; display: none !important; mso-hide:all;" val=
+ign=3D"middle">
+<a role=3D"button" href=3D"https://go.cloudplatformonline.com/ODA4LUdKVy0zM=
+TQAAAGcA9vqZhxJgrYLbP-018_zXoTNZBCs0IfszOW9ES9MmnBTaX1wGlbV6U7T1C_f1Lqfrm9l=
+b74=3D" target=3D"_blank" style=3D"font-family: 'Google Sans','Noto Sans JP=
+',Arial,sans-serif; color: #1a73e8; text-decoration: underline; margin: 0; =
+padding: 0; font-size: 14px; font-weight: 400; display: none !important; ms=
+o-hide:all;"></a></th>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" class=3D"mktoModule" id=3D"salutationModule" w=
+idth=3D"600" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"cent=
+er" style=3D"max-width:600px; width:100%;">
+<tbody>
+<tr>
+<td dir=3D"ltr" valign=3D"top" style=3D"padding:16px 50px 4px 50px;" class=
+=3D"inner-container">
+<p class=3D"mktoText" id=3D"greeting" style=3D"font-family: 'Google Sans Te=
+xt','Noto Sans JP',Arial,sans-serif; font-size: 14px; line-height: 24px; co=
+lor: #5F6368; text-align: left; margin: 0; padding: 0; font-weight: bold;">
+Hi David,</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" class=3D"mktoModule" id=3D"bodyCopyModule" wid=
+th=3D"600" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center=
+" style=3D"max-width:600px; width:100%;">
+<tbody>
+<tr>
+<td dir=3D"ltr" valign=3D"top" style=3D"padding:8px 50px 8px 50px;" class=
+=3D"inner-container">
+<p class=3D"mktoText" id=3D"bodyCopy" style=3D"font-family: 'Google Sans Te=
+xt','Noto Sans JP',Arial,sans-serif; font-size: 14px; line-height: 24px; co=
+lor: #5F6368; margin: 0; padding: 0; text-align: left;">
+Are you ready to transform your business operations and create innovative u=
+ser experiences?</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" class=3D"mktoModule" id=3D"bodyCopyModulec20c8=
+79c-56c6-42f0-a5ce-1c96c2ceea5c" width=3D"600" cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" align=3D"center" style=3D"max-width:600px; width:100%;=
+">
+<tbody>
+<tr>
+<td dir=3D"ltr" valign=3D"top" style=3D"padding:8px 50px 8px 50px;" class=
+=3D"inner-container">
+<p class=3D"mktoText" id=3D"bodyCopya028d177-39bc-45d2-bc56-31ccf0adf226" s=
+tyle=3D"font-family: 'Google Sans Text','Noto Sans JP',Arial,sans-serif; fo=
+nt-size: 14px; line-height: 24px; color: #5F6368; margin: 0; padding: 0; te=
+xt-align: left;">
+Google&nbsp;Cloud invites you to an exclusive webinar, <strong>Startups Tec=
+hnical Guide: AI agents</strong> where we'll delve into how AI agents can d=
+rive significant business value and enhance customer interactions. This ses=
+sion is designed for founders and technical
+ leaders looking to move from an idea to production-ready AI agents.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" class=3D"mktoModule" id=3D"unorderedListModule=
+16920095-1b96-4994-93fa-64eac651aecc" width=3D"600" cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" align=3D"center" style=3D"max-width:600px; width:=
+100%;">
+<tbody>
+<tr>
+<td dir=3D"ltr" valign=3D"top" style=3D"padding:8px 50px 8px 50px;" class=
+=3D"inner-container">
+<div class=3D"mktoText" id=3D"UnorderedList8b89d406-25a3-43a1-b81d-a81309c9=
+5d09" style=3D"font-family: 'Google Sans Text','Noto Sans JP',Arial,sans-se=
+rif; font-size: 14px; line-height: 24px; color: #5F6368; margin: 0; padding=
+: 0; text-align: left;">
+What You'll Discover:
+<ul style=3D"padding: 0; margin: 0; margin-left: 20px;">
+<li><strong>Understanding AI agent value &amp; strategy:</strong> Learn how=
+ AI agents drive business value, enhance user experiences, and the core int=
+ent behind building AI agents.</li><li><strong>Building with Google&nbsp;Cl=
+oud's AI ecosystem:</strong> Explore Google&nbsp;Cloud's Vertex AI and the =
+Agent Development Kit (ADK) as key tools for developing sophisticated AI ag=
+ents.</li><li><strong>Agent operations for production readiness:</strong> G=
+rasp the principles of AgentOps to ensure quality, safety, and seamless dep=
+loyment of your agents in production.</li><li><strong>Live demo &amp; real-=
+world activation:</strong> See a practical demonstration of building and ac=
+tivating an AI agent, showcasing its capabilities in action.</li></ul>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" class=3D"mktoModule" id=3D"bodyCopyModule303ad=
+c80-7044-434c-86e6-632a22f9d90e" width=3D"600" cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" align=3D"center" style=3D"max-width:600px; width:100%;=
+">
+<tbody>
+<tr>
+<td dir=3D"ltr" valign=3D"top" style=3D"padding:8px 50px 8px 50px;" class=
+=3D"inner-container">
+<p class=3D"mktoText" id=3D"bodyCopyf85ccab2-d46e-4ce9-ab61-fd45b059d7a7" s=
+tyle=3D"font-family: 'Google Sans Text','Noto Sans JP',Arial,sans-serif; fo=
+nt-size: 14px; line-height: 24px; color: #5F6368; margin: 0; padding: 0; te=
+xt-align: left;">
+This webinar is ideal for founders looking to integrate AI into their busin=
+ess strategy, technical leaders responsible for building and deploying AI s=
+olutions, and anyone else interested in understanding the practical applica=
+tions and operational aspects of
+ AI agents.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" class=3D"mktoModule" id=3D"bodyCopyModule303af=
+91c-1530-4c5d-b0e2-45ef33ef6c53" width=3D"600" cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" align=3D"center" style=3D"max-width:600px; width:100%;=
+">
+<tbody>
+<tr>
+<td dir=3D"ltr" valign=3D"top" style=3D"padding:8px 50px 8px 50px;" class=
+=3D"inner-container">
+<p class=3D"mktoText" id=3D"bodyCopyfbe09101-a845-4cdf-b3c8-445d1d823e4f" s=
+tyle=3D"font-family: 'Google Sans Text','Noto Sans JP',Arial,sans-serif; fo=
+nt-size: 14px; line-height: 24px; color: #5F6368; margin: 0; padding: 0; te=
+xt-align: left;">
+Don't miss this opportunity to learn how to leverage generative AI for rapi=
+d development, boost efficiency, and drive growth.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" class=3D"mktoModule" id=3D"bodyCopyModule56486=
+aa0-7e0c-40a7-8f84-1aa150f1189f" width=3D"600" cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" align=3D"center" style=3D"max-width:600px; width:100%;=
+">
+<tbody>
+<tr>
+<td dir=3D"ltr" valign=3D"top" style=3D"padding:8px 50px 8px 50px;" class=
+=3D"inner-container">
+<p class=3D"mktoText" id=3D"bodyCopy33750082-0b3d-4a3e-989e-db33da3ace30" s=
+tyle=3D"font-family: 'Google Sans Text','Noto Sans JP',Arial,sans-serif; fo=
+nt-size: 14px; line-height: 24px; color: #5F6368; margin: 0; padding: 0; te=
+xt-align: left;">
+<strong>Register now and secure your spot!</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" class=3D"mktoModule" id=3D"ctaModule469cb013-6=
+ed2-44d5-8f97-4c3ef2785eda" width=3D"600" cellspacing=3D"0" cellpadding=3D"=
+0" border=3D"0" align=3D"center" style=3D"max-width:600px; width:100%;">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding:16px 50px 16px 50px;" class=3D"inner-co=
+ntainer">
+<table role=3D"presentation" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" align=3D"left">
+<tbody>
+<tr>
+<td class=3D"mktoText" id=3D"ctaModuleContent25cab38f-0b33-43a3-8b1f-fa095d=
+d801a7" dir=3D"ltr" bgcolor=3D"#1a73e8" style=3D"border-radius: 3px;">
+<!-- NOTE: If using dynamic content replace the 2 variables with your link =
+and text --><a role=3D"button" class=3D"whiteText" href=3D"https://go.cloud=
+platformonline.com/dc/H5v1VWmnrAFLqt38-dr4Kudko96t_OSLhD9dJYV60iHezWTBU-nz3=
+eb4_-R9wEhAoqty0iWQEcxLRSKb6uNg7yYwioinq--mFrRuJdE--rWpvYcsqHbCif6jYg_vI1s0=
+kIVGEM6ATm7sMzZmXsOu4NnSthyc-m0w1Hka4ixwpi5Qvqybvv1_Ba6qo-NDGEv5QMt_g-I0FgM=
+ZY8EKsb4mA8MhUzMAIIulckMNemVplSWZ1l_VR0Ny2deYdXTezITa_rNf8iCyG-uz9AIUt_GrmL=
+LAGlBUFFRI3ngtbOH80YHTjlboba1JZexwwxMTUuMU/ODA4LUdKVy0zMTQAAAGcA9vqZmfQtPBQ=
+-UvlazpUvkDVjeqES9bWQImqS8jWls_bvK68Fz36E-U9vb4KZCYkbpJLfIs=3D" target=3D"_=
+blank" style=3D"font-family: 'Google Sans','Noto Sans JP',Arial,sans-serif;=
+ color: #ffffff; text-decoration: none; font-size: 14px; letter-spacing: 1p=
+x; font-weight: 500; -webkit-border-radius: 3px; border-radius: 3px; border=
+: 1px solid #1a73e8; padding: 14px 16px 14px 16px; display: inline-block;">=
+Register
+ now</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" class=3D"mktoModule" id=3D"signOffModule" widt=
+h=3D"600" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center"=
+ style=3D"max-width:600px; width:100%;">
+<tbody>
+<tr>
+<td dir=3D"ltr" valign=3D"top" style=3D"padding:8px 50px 30px 50px;" class=
+=3D"inner-container">
+<div class=3D"mktoText" id=3D"signOffContent" style=3D"font-family: 'Google=
+ Sans','Noto Sans JP',Arial,sans-serif; font-size: 14px; line-height: 24px;=
+ color: #5F6368; margin: 0; padding: 0; text-align: left;">
+See you there, <br>
+<strong>The Google Cloud Team</strong> </div>
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" class=3D"mktoModule" id=3D"googleColorsBarda8a=
+9645-ca7d-4844-9926-1f80a9645d95" width=3D"600" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" align=3D"center" style=3D"max-width:600px; width:100%=
+;">
+<tbody>
+<tr>
+<td><img class=3D"width100" src=3D"https://lp.cloudplatformonline.com/rs/80=
+8-GJW-314/images/email-progress-bar.png" alt=3D"" width=3D"600" style=3D"ma=
+x-width: 100%; width: 600px; display: block;">
+</td>
+</tr>
+</tbody>
+</table>
+<table role=3D"presentation" class=3D"mktoModule" id=3D"footerModule" width=
+=3D"600" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center" =
+style=3D"max-width:600px; width:100%; background: #f8f9fa;">
+<tbody>
+<tr>
+<td valign=3D"top" style=3D"padding: 40px 50px 0 50px;" class=3D"inner-cont=
+ainer">
+<table role=3D"presentation" width=3D"600" cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" style=3D"max-width:600px; width:100%;">
+<tbody>
+<tr>
+<td>
+<table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" style=3D"width: 100%;">
+<tbody>
+<tr>
+<td dir=3D"ltr" align=3D"left" style=3D"padding-bottom: 16px;">
+<table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" width=3D"100%" style=3D"width: 100%;">
+<tbody>
+<tr>
+<td dir=3D"ltr" align=3D"left" valign=3D"middle" style=3D"vertical-align: m=
+iddle;"><img class=3D"no-arrow mktoImg" id=3D"footerLogo" src=3D"https://lp=
+.cloudplatformonline.com/rs/808-GJW-314/images/google-cloud-a11y.png" alt=
+=3D"Google Cloud" width=3D"140" style=3D"width: 140px; display: block; marg=
+in: 0; border:=20
+none;" mktolockimgsize=3D"false">
+</td>
+<td dir=3D"ltr" align=3D"right" valign=3D"middle" style=3D"vertical-align: =
+middle; display: none !important; mso-hide:all;">
+<img class=3D"no-arrow mktoImg" id=3D"footerIcons" src=3D"https://lp.cloudp=
+latformonline.com/rs/808-GJW-314/images/hh-img2.png" width=3D"137" style=3D=
+"width: 137px; display: block; margin: 0; border: none; display: none !impo=
+rtant; mso-hide:all;" mktolockimgsize=3D"false">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td dir=3D"ltr" style=3D"font-family: 'Google Sans Text','Noto Sans JP',Ari=
+al,sans-serif; font-size: 12px; font-weight: 400; line-height: 18px; color:=
+ #5F6368; margin: 0; padding: 0; text-align: left; padding-bottom: 18px;">
+<div class=3D"mktoText" id=3D"footer-copyright-address">=C2=A9 2025 Google =
+Cloud EMEA Ltd.<br>
+70 Sir John Rogersons Quay, Dublin 2, Ireland<br>
+</div>
+<div><br>
+</div>
+<div class=3D"mktoText" id=3D"footer-copy">We sent you this email because y=
+ou have indicated that you are willing to receive periodic emails on news, =
+product updates, and invitations to events from the Google Cloud team. If y=
+ou no longer wish to receive these emails,
+ click on the following link to <a href=3D"https://cloud.google.com/prefere=
+nces/?mkt_unsubscribe=3D1ODA4LUdKVy0zMTQAAAGcA9vqZoc2xrMofCkRbA2mzwOE-jxCnA=
+RpFWT0rrHlTFnBwE9a5PFyDPySb4_rRDKWQ91xjX9YVn3H5gjqD8qxumxZAUvutRFbY09Fl_awN=
+JN3GQeoib0&amp;Opt_In_Events__c=3DYes&amp;Opt_In_Newsletter__c=3DYes&amp;Op=
+t_In_Offers__c=3DYes&amp;Opt_In_Products__c=3DYes&amp;Opt_In_Research__c=3D=
+Yes&amp;preferenceCenterSubscription1=3DYes&amp;preferenceCenterSubscriptio=
+n2=3DYes&amp;preferenceCenterSubscription3=3DYes&amp;preferenceCenterSubscr=
+iption4=3DYes" class=3D"mktNoTrack" style=3D"text-decoration: underline; co=
+lor: #1a73e8;" target=3D"_blank">
+unsubscribe</a> or <a href=3D"https://cloud.google.com/preferences/?Opt_In_=
+Events__c=3DYes&amp;Opt_In_Newsletter__c=3DYes&amp;Opt_In_Offers__c=3DYes&a=
+mp;Opt_In_Products__c=3DYes&amp;Opt_In_Research__c=3DYes&amp;preferenceCent=
+erSubscription1=3DYes&amp;preferenceCenterSubscription2=3DYes&amp;preferenc=
+eCenterSubscription3=3DYes&amp;preferenceCenterSubscription4=3DYes" class=
+=3D"mktNoTrack" style=3D"text-decoration: underline; color:=20
+#1a73e8;" target=3D"_blank">
+customize your communication preferences</a>.<!--https://lp.cloudplatformon=
+line.com/UnsubscribePage.html?mkt_unsubscribe=3D1&mkt_tok=3DODA4LUdKVy0zMTQ=
+AAAGcA9vqZoc2xrMofCkRbA2mzwOE-jxCnARpFWT0rrHlTFnBwE9a5PFyDPySb4_rRDKWQ91xjX=
+9YVn3H5gjqD8qxumxZAUvutRFbY09Fl_awNJN3GQeoib0-->
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td valign=3D"top" style=3D"padding:0 50px 40px 35px;" class=3D"inner-conta=
+iner social-container">
+<table role=3D"presentation" width=3D"600" cellspacing=3D"0" cellpadding=3D=
+"0" border=3D"0" style=3D"max-width:600px; width:100%;">
+<tbody>
+<tr>
+<td>
+<table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" style=3D"width: 100%;">
+<tbody>
+<tr>
+<td align=3D"left">
+<div class=3D"mktoText" id=3D"footerlinks">
+<table role=3D"presentation" class=3D"footer-icon-table" cellpadding=3D"0" =
+cellspacing=3D"0" border=3D"0" style=3D"width: auto;">
+<tbody>
+<tr>
+<td width=3D"48" style=3D"width: 48px; font-family: 'Roboto', Arial, sans-s=
+erif;"><a href=3D"https://go.cloudplatformonline.com/ODA4LUdKVy0zMTQAAAGcA9=
+vqZgD8ScWZARzoGR1_0GnEDNlM8XIL1zHSP43ls0WXd64RDOkg0qaSRNX7HcyN3sUGqBQ=3D"><=
+img src=3D"https://lp.cloudplatformonline.com/rs/808-GJW-314/images/blog-a1=
+1y.png" alt=3D"Blog" border=3D"0" height=3D"48" style=3D"height: 48px;" con=
+strain=3D"true" imagepreview=3D"false"></a></td>
+<td width=3D"48" style=3D"width: 48px; padding-left: 10px; font-family: 'Ro=
+boto', Arial, sans-serif;">
+<a href=3D"https://go.cloudplatformonline.com/ODA4LUdKVy0zMTQAAAGcA9vqZqeOy=
+AY55O7xubTZ5RODNeXu6YJU6tUJ5JW4ZqXyUqJn64Wo2CV88oi9tpIVDVOmxiI=3D"><img src=
+=3D"https://lp.cloudplatformonline.com/rs/808-GJW-314/images/github-a11y.pn=
+g" alt=3D"GitHub" border=3D"0" height=3D"48" style=3D"height: 48px;" constr=
+ain=3D"true" imagepreview=3D"false"></a></td>
+<td width=3D"48" style=3D"width: 48px; padding-left: 10px; font-family: 'Ro=
+boto', Arial, sans-serif;">
+<a href=3D"https://go.cloudplatformonline.com/ODA4LUdKVy0zMTQAAAGcA9vqZl9QH=
+24WEzEq6DtUy17lLi3j4okCWg0ImJH6HAtH9XhHzSZgc2T3XA0poeD8pMzpZIE=3D"><img src=
+=3D"https://lp.cloudplatformonline.com/rs/808-GJW-314/images/linkedin-a11y.=
+png" alt=3D"LinkedIn" border=3D"0" height=3D"48" style=3D"height: 48px;"></=
+a></td>
+<td width=3D"48" style=3D"width: 48px; padding-left: 10px; font-family: 'Ro=
+boto', Arial, sans-serif;">
+<a href=3D"https://go.cloudplatformonline.com/ODA4LUdKVy0zMTQAAAGcA9vqZsKSU=
+HOAyaUHusehHEn6TkCc1fJDOUq_5mm-DbFfUePBuuxsBECNqlBy-tfeiJlMp9I=3D"><img src=
+=3D"https://lp.cloudplatformonline.com/rs/808-GJW-314/images/logo_twitter_x=
+.png?version=3D2" alt=3D"Twitter" border=3D"0" height=3D"48" style=3D"heigh=
+t: 48px;"></a></td>
+<td width=3D"48" style=3D"width: 48px; padding-left: 10px; font-family: 'Ro=
+boto', Arial, sans-serif;">
+<a href=3D"https://go.cloudplatformonline.com/ODA4LUdKVy0zMTQAAAGcA9vqZqSmD=
+bxlDFduK3UNtVihxZZRX6K_uKYhzDKx-moFXdGhJmF2i_Q5C1-MQYxlEIZFrLc=3D"><img src=
+=3D"https://lp.cloudplatformonline.com/rs/808-GJW-314/images/facebook-a11y.=
+png" alt=3D"Facebook" border=3D"0" height=3D"48" style=3D"height: 48px;"></=
+a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if mso]>
+</td>
+</tr>
+</table>
+<![endif]--></div>
+</center>
+<a href=3D"https://go.cloudplatformonline.com/ODA4LUdKVy0zMTQAAAGcA9vqZi2Jx=
+4mh75iiKMwta1Sqx1VYwfR4kfsY0syCzzwCceHfrSceeJMJV-RD70HkOcTdXNU=3D"></a><img=
+ src=3D"https://go.cloudplatformonline.com/trk?t=3D1&amp;mid=3DODA4LUdKVy0z=
+MTQAAAGcA9vqZrE6rVt5mDcBfDeSP9ZVT6DdNHNlxSLNenmN2h5Qp0gKaYFkwvSnob48QP4BfHU=
+nEVQFOTI9Fz-a5bpQ2IzmZi0SPplMYGah7Ct1sX6JjWkqemeKp-lt09XJ0TC5e4roPUdBMkAhc8=
+yMWonIxWb8RzKt" width=3D"1" height=3D"1" style=3D"display:none !important;"=
+ alt=3D"">
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+ </body>
+</html>
+
+------=_Part_176374039_613071490.1754039269997--

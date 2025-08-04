@@ -1,0 +1,415 @@
+Received: from AS2P194MB1981.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:558::16)
+ by AS8P194MB1270.EURP194.PROD.OUTLOOK.COM with HTTPS; Tue, 29 Jul 2025
+ 19:00:06 +0000
+Received: from AM8P191CA0029.EURP191.PROD.OUTLOOK.COM (2603:10a6:20b:21a::34)
+ by AS2P194MB1981.EURP194.PROD.OUTLOOK.COM (2603:10a6:20b:558::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8964.26; Tue, 29 Jul
+ 2025 19:00:04 +0000
+Received: from AM3PEPF0000A790.eurprd04.prod.outlook.com
+ (2603:10a6:20b:21a:cafe::7d) by AM8P191CA0029.outlook.office365.com
+ (2603:10a6:20b:21a::34) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8989.11 via Frontend Transport; Tue,
+ 29 Jul 2025 19:00:04 +0000
+Authentication-Results: spf=pass (sender IP is 54.240.74.171)
+ smtp.mailfrom=amazonses.com; dkim=pass (signature was verified)
+ header.d=hashicorp.com;dkim=pass (signature was verified)
+ header.d=amazonses.com;dmarc=pass action=none
+ header.from=hashicorp.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of amazonses.com designates
+ 54.240.74.171 as permitted sender) receiver=protection.outlook.com;
+ client-ip=54.240.74.171; helo=a74-171.smtp-out.amazonses.com; pr=C
+Received: from a74-171.smtp-out.amazonses.com (54.240.74.171) by
+ AM3PEPF0000A790.mail.protection.outlook.com (10.167.16.119) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.8989.10
+ via Frontend Transport; Tue, 29 Jul 2025 19:00:03 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=3qwiktcdn2pkjwynvx4sexoklnzrd6dy; d=hashicorp.com; t=1753815602;
+	h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding;
+	bh=SUifvHR0Wt0MMXzt6HaVZcC3T2hb+pk8q2U+CnpOTv0=;
+	b=fWmGRYBucmim5t1KV3xbhakjEoXgKjdyJN+DVd4flMO+N5TtxvIwuLAN1V13tbvS
+	Uqq5u28PFght7RsTCtu//82kjrtv3QNW3T1NLT7+2FqAG8mri3BZVLQQQ7qdPrIjhpN
+	eDDpZ4wiAuEmSdJ83F1NXSBPj+QCe6T5nfMVev4k=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw; d=amazonses.com; t=1753815602;
+	h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+	bh=SUifvHR0Wt0MMXzt6HaVZcC3T2hb+pk8q2U+CnpOTv0=;
+	b=Ozvqmw3vj88+Mqo9qspo0iDL+GOu+jZQg4ldtrmHCSyFMyq3+Tk41ZMEtkg3/yzr
+	cMOqbDRIOsjcm74Qh9yFClCpqjVnjtv0sLukmBvZjp4zYjCl2XgRG5b5sOh9GLeVeUc
+	5XcKjmsLCGZrfUTngIOTrC2KjzND56fHJBAPpBds=
+Date: Tue, 29 Jul 2025 19:00:02 +0000
+From: HCP Terraform <no-reply@hashicorp.com>
+To: davidg@terasky.com
+Message-ID: <01000198578e54b5-184c6f2d-4146-4d16-90a8-fea4787b9d0e-000000@email.amazonses.com>
+Subject: Trial Ending in 1 Days
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_68891a314d42f_14c38857ba";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Feedback-ID: ::1.us-east-1.u+/Bet8Gi+FuFGPlXmRGe+MSHMXBC3nAzYHGbPJ+MUc=:AmazonSES
+X-SES-Outgoing: 2025.07.29-54.240.74.171
+Return-Path: 01000198578e54b5-184c6f2d-4146-4d16-90a8-fea4787b9d0e-000000@amazonses.com
+X-MS-Exchange-Organization-ExpirationStartTime: 29 Jul 2025 19:00:04.3277
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 256b3103-2e5d-43ef-13cf-08ddced220af
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: a982d310-fc08-418d-aca0-6b30ba7c0235:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AM3PEPF0000A790:EE_|AS2P194MB1981:EE_|AS8P194MB1270:EE_
+X-MS-Exchange-Organization-AuthSource: AM3PEPF0000A790.eurprd04.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 256b3103-2e5d-43ef-13cf-08ddced220af
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:2;ARA:13230040|3092899012|69100299015|12012899012|5062899012|3072899012|32142699015|2092899012|8096899003|13003099007|4076899003;
+X-Forefront-Antispam-Report: CIP:54.240.74.171;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:a74-171.smtp-out.amazonses.com;PTR:a74-171.smtp-out.amazonses.com;CAT:NONE;SFS:(13230040)(3092899012)(69100299015)(12012899012)(5062899012)(3072899012)(32142699015)(2092899012)(8096899003)(13003099007)(4076899003);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Jul 2025 19:00:03.6414
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 256b3103-2e5d-43ef-13cf-08ddced220af
+X-MS-Exchange-CrossTenant-Id: a982d310-fc08-418d-aca0-6b30ba7c0235
+X-MS-Exchange-CrossTenant-AuthSource: AM3PEPF0000A790.eurprd04.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AS2P194MB1981
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.2367495
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8989.010
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?U0ZKczNYV21MdTY2L2ljYldhU05xMTJON0NQdHNLdTVrcllIN3BIWEEwcmhL?=
+ =?utf-8?B?enhYRzZuVDNuUEhMWHJzaUxPNG52Zlg1R0lON2FsNnprSlZtckd6V0VoRVFO?=
+ =?utf-8?B?ZzYrZ3VDUEhWUnNDU2tNbjErNnlQZkwwUDE4SjlNdHRHWTNQbXRiWE1KMUNy?=
+ =?utf-8?B?bjdXMlczQ05UYmlJcnVkc21DbkJSMXdXQjd1YVcweGdWb3dHbFVKMDBoL09P?=
+ =?utf-8?B?dXIrd3J1ZTVEek5FK25YUk90R1VqdGt2cEtycFRBZDZTRzhPa01KMG8yMzJM?=
+ =?utf-8?B?K2tFY3duRjRiQXpNMHA5aDMvbXRlOG91T29kWWlSNVhabzdPZFlobFJEOCtD?=
+ =?utf-8?B?aFhvay9QbWZIYy9UZlJNaW9LY3ptRWV4ZERlR0t1RHliWXkxdkNLejJsVm5R?=
+ =?utf-8?B?UnVwbTZDSEtSc3RWQytUeVdaYU41NTRTQzZpblJXcWhaeW5wZWc0SXp4Zzc1?=
+ =?utf-8?B?M29uRVFLNkdmVkJjeFh4NmJJLzFkSHpaY0NEZ1ZzRmJXOGdBN00vcEpCQUdY?=
+ =?utf-8?B?Mk5NMUdxZWMvbmR0dCtSeExYLzA1RThCQ0dWM1AwQ2hkYnVxVTBmT2tnLzcr?=
+ =?utf-8?B?OUdMN3ZLTGF6c20rYTVJUGR6OWJid1FXclB5T0lyU1o0dCsvdVRrSWlBaFM0?=
+ =?utf-8?B?M1BpVVdSWENWTlhjZS9kakplMkc3WmcxMm1TRSt3ekNkL0JVSHhGZFA3Vm50?=
+ =?utf-8?B?eVRJSThUUUVsQnZ6d1MxWE11ZzVTK2tsSU9VTTlqZE1WUXYzM3lGSW5YZERt?=
+ =?utf-8?B?c0s0ZlJ6eHlXR1pqS2JlZE1hTS9oN0lraVlQZVczb1IyY1JJRW91b0ZtWThh?=
+ =?utf-8?B?UUZDYmhTREtyOEw0eW9scDJSR1NrbUh0cC9WcGpZaTRYVWx0VDhGYWhrNFlv?=
+ =?utf-8?B?QlRRTUNmVVM4MzJsSVhTSDA0bldVNTlNakFvaXkxQ3piWTVsMXJGc3B3T2V0?=
+ =?utf-8?B?NjZSWnA0T0FlVk4rdmxGZ3JDeENPOG5RN0kzSU9iUTVWUmRoUG85YXAwSHYv?=
+ =?utf-8?B?Q3V2T0l0UHdmRTYzR0dkZm5CK05QTnJlc3ZPQXFPMlFFQ2tlMk5vMXgyem1Q?=
+ =?utf-8?B?T05HdEtrbXBRRTJ5bTdlcytJQ2tUR3ZON3hrMWZHajdNektoT1BYMVl0U1l2?=
+ =?utf-8?B?dlVPVmp3Q2k0a2NGRlhWRFBkcmVUZzRBZ0FHa3pHMkJ5WVI0VldINUVLSFh2?=
+ =?utf-8?B?aXlqVVhac2xNeis1ckFacW5LTDROTVdUbEtyWTdwZ3l5aklyWlVXVUJYVlNi?=
+ =?utf-8?B?elRzcE1lOTdwVFJidjYxUDJrc0JJaHp2N3UvUzUvS292K09RcDlpRHJIczdJ?=
+ =?utf-8?B?WEkxUUROZHhLeVpuTkpkMFA4M3ZZWkw4K1hvT1ZUZXZmVHlIcGkxZnVVbllX?=
+ =?utf-8?B?QksxMUZacGlUOXhKUzRmNUFFRGpOdXlMd0VBdDM1V0ZZWVlSQUNUbERVRkhY?=
+ =?utf-8?B?eFhoV0FGU2NYbGJ0TkxWUDVyRmxvTXY4SzRxWVRRNjk1L2VKVk9wYlJXYWFz?=
+ =?utf-8?B?MGpKWU80T2hhR05Pd0xyR21nMjNyZy93VkNMMHJsb2JzRFAxYnZqUFRGSko0?=
+ =?utf-8?B?Tm9oN3laQ3BaRkVCb01ocDdsd04rVVdBVDQ1WnJZVFdxeGRCakFta1dCRHBZ?=
+ =?utf-8?B?RGhUSmpwYURGdmZOVzBXVmJZektUaVhianJPWGw2dms4MmdwVkI5VEtISmJY?=
+ =?utf-8?B?ZnNpZGhRNitwUmN5b1k1NGYwVElsdU90V2ZucmhrRHFvaUx3U0kzeGwvNWJq?=
+ =?utf-8?B?eDd4SGUveTJYN21tM2ZVbk9zMnFJSUc5T3l4RnVaSlBwMWhxaDkzWEx6NCtS?=
+ =?utf-8?B?N1FHMGNydk9PUUVuMXNRZWRpSlA0eHpsaEZNbkNGeVZBcSs2V3prUHR2QWVN?=
+ =?utf-8?B?dU0rWWdnZGlGR3lqNFNST3FWb0NQZlZUbVoxMEFRdHd4NENNQXFCbC9KTXFa?=
+ =?utf-8?B?ckZIeWJBN1NJQjVYTDVjOTdzWlpNeXpQUG02UFRmdGZvL21peVY3akMzQmYy?=
+ =?utf-8?B?VUhmUXp2Z0tmSDRLVnJuV2ZaeUg5M09VVDdabXFkZDVWclREQ1dhdWk5NDZH?=
+ =?utf-8?B?OEgwVVBHU2psZ0tVNHRGY01wSVJPUG8yNkxhckhoUWI0cGsyZi9XS3VzbVIx?=
+ =?utf-8?B?ZkVJTnh4QzU3dkg4MHNxcUlEbXRnbXZPekk5OGR3RFUxekdsZUQ5T0dkRGZt?=
+ =?utf-8?B?NU11ZXlsVlJZMzhPeTNFRm5MS0RqS1JhRERxTWdlRUluQzFKVWtiRldjQ0VL?=
+ =?utf-8?B?cmlEbm8yNFhCMWFmbGpSWGxrT1hsV1lxUFB0SFpxQmhVRzduTXZEMUF2N2Js?=
+ =?utf-8?B?amtHbGRLcDRQVUtkaS9SZHlVSFdhQVlrM212eEF1RlJUdGY4d2RvTTJLTHIy?=
+ =?utf-8?B?Z0VtUHZJSnRNWFFodmo1RENyeHAwNHRMZERzbGUxTzl6WEg3dVU3WTUvdmJ3?=
+ =?utf-8?B?OThjeXZOL0w4WElsNEZZcGRnNTFVTzFDdTNWUkVGVUM5T1VIMFRYVlM1dS9s?=
+ =?utf-8?B?dlNGL3hHb0NvdERtTDhQQWUzclIvRTM5Mm56ZDZEeFNXZ0MvbWpPNFJlSWls?=
+ =?utf-8?B?VytIZWt2Q3lkRFVLZWpGTnRHYjN1eFRSTkJiRTBSOFJHOVZYOUZrQ0R2cm9V?=
+ =?utf-8?B?VnJXcW1kS3liSTRLTEllTnBzaHNMSFR5MnEzdUNjZXVTSHhCeHAzdkZCMWp1?=
+ =?utf-8?B?Y2QwMkFLazQ1ZkdPUFVIdWxaZmlhZHIyZmdveFkraDhOS0JSTDNQdzlIS0ls?=
+ =?utf-8?B?Nk5FQTdMU1ZKbWNHdEVYSGxRS0MwMW5xZzBRcE9Id3c1ZHJuVGMxZ2o3SDR3?=
+ =?utf-8?B?PT0=?=
+MIME-Version: 1.0
+
+----==_mimepart_68891a314d42f_14c38857ba
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+HCP Terraform trial expiring
+[HCP Terraform Logo]
+Hello!
+
+Thank you for trying HCP Terraform=E2=80=99s paid features. This is a frien=
+dly reminder that the free trial for instruqt_gshethuj6qf4 will expire on J=
+uly 31.
+
+
+If the trial expires, you will be downgraded to a free account and you will=
+ lose access to your premium features.
+
+
+To continue using HCP Terraform's premium features, upgrade to a paid tier =
+that suits your organization=E2=80=99s needs. Your credit card will be bill=
+ed monthly, and you can cancel at any time.
+
+
+For more information, refer to the Terraform pricing and feature matrix<htt=
+ps://www.hashicorp.com/products/terraform/pricing>.
+
+
+You may also visit the Terraform product page<https://www.hashicorp.com/pro=
+ducts/terraform>. Thank you for being a HCP Terraform user.
+
+
+- The Terraform Team at HashiCorp
+
+Need help? Contact us<mailto:support@hashicorp.com>
+
+[Hashicorp Logo]
+
+HashiCorp 101 2nd St #700, San Francisco, CA 94105
+
+[CAUTION: This email originated from outside of the organization. Do not cl=
+ick links or open attachments unless you recognize the sender and know the =
+content is safe]
+
+----==_mimepart_68891a314d42f_14c38857ba
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html style=3D"box-sizing: border-box; background-color: #ff=
+f; font-size: 14px; -moz-osx-font-smoothing: grayscale; -webkit-font-smooth=
+ing: antialiased; min-width: 300px; overflow-x: hidden; overflow-y: scroll;=
+ text-rendering: optimizeLegibility; text-size-adjust: 100%; margin: 0; pad=
+ding: 0;"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta http-equiv=3D"x-ua-compatible" content=3D"ie=3Dedge">
+<title>HCP Terraform trial expiring</title>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1"=
+>
+<style>body {
+margin: 0; padding: 0;
+}
+img {
+height: auto; max-width: 100%;
+}
+body {
+font-family: -apple-system,blinkmacsystemfont,"Segoe UI",roboto,oxygen-sans=
+,ubuntu,cantarell,"Helvetica Neue",sans-serif;
+}
+body {
+color: #525761; font-size: 1rem; font-weight: 400; line-height: 1.5;
+}
+img {
+height: auto; max-width: 100%;
+}
+body.has-navbar-fixed-top {
+padding-top: 3.25rem;
+}
+body.has-navbar-fixed-bottom {
+padding-bottom: 3.25rem;
+}
+body {
+-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+body {
+width: 100% !important; height: 100% !important; padding: 0 !important; mar=
+gin: 0 !important; background-color: #e9ecef;
+}
+img {
+height: auto; line-height: 100%; text-decoration: none; border: 0; outline:=
+ none;
+}
+</style>
+</head>
+<body style=3D"box-sizing: inherit; font-family: -apple-system,blinkmacsyst=
+emfont,&quot;Segoe UI&quot;,roboto,oxygen-sans,ubuntu,cantarell,&quot;Helve=
+tica Neue&quot;,sans-serif; color: #525761; font-size: 1rem; font-weight: 4=
+00; line-height: 1.5; -ms-text-size-adjust: 100%; -webkit-text-size-adjust:=
+ 100%; width: 100% !important; height: 100% !important; margin: 0; padding:=
+ 0;" bgcolor=3D"#e9ecef">
+<div class=3D"preheader" style=3D"box-sizing: inherit; display: none; max-w=
+idth: 0; max-height: 0; overflow: hidden; font-size: 1px; line-height: 1px;=
+ color: #fff; opacity: 0;">
+HCP Terraform trial expiring </div>
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"box-sizing: inherit; border-collapse: collapse !important; border-spac=
+ing: 0; width: 100%; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%; mso-table-rspace: 0pt; mso-table-lspace: 0pt;">
+<tbody>
+<tr style=3D"box-sizing: inherit;">
+<td align=3D"center" bgcolor=3D"#e9ecef" style=3D"box-sizing: inherit; -ms-=
+text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-rspace: 0=
+pt; mso-table-lspace: 0pt; padding: 0;" valign=3D"top">
+<!--[if (gte mso 9)|(IE)]>
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"600">
+        <tr>
+          <td align=3D"center" valign=3D"top" width=3D"600">
+      <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"max-width: 600px; box-sizing: inherit; border-collapse: collapse !impo=
+rtant; border-spacing: 0; width: 100%; -ms-text-size-adjust: 100%; -webkit-=
+text-size-adjust: 100%; mso-table-rspace: 0pt; mso-table-lspace: 0pt;">
+<tbody>
+<tr style=3D"box-sizing: inherit;">
+<td align=3D"center" valign=3D"top" style=3D"box-sizing: inherit; -ms-text-=
+size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-rspace: 0pt; m=
+so-table-lspace: 0pt; padding: 32px 24px;">
+<img style=3D"height: 60px; box-sizing: inherit; max-width: 100%; -ms-inter=
+polation-mode: bicubic; line-height: 100%; text-decoration: none; outline: =
+none; border-width: 0;" alt=3D"HCP Terraform Logo" src=3D"https://cdn.terra=
+form.io/assets/mail/hcp-terraform-logo-70e4d047a050a33423b107fa9697ae13635e=
+6de645af42dc9a6cc9badf41b157.png">
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]--></td>
+</tr>
+<tr style=3D"box-sizing: inherit;">
+<td align=3D"center" bgcolor=3D"#e9ecef" style=3D"box-sizing: inherit; -ms-=
+text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-rspace: 0=
+pt; mso-table-lspace: 0pt; padding: 0;" valign=3D"top">
+<!--[if (gte mso 9)|(IE)]>
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"600">
+        <tr>
+          <td align=3D"center" valign=3D"top" width=3D"600">
+      <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"max-width: 600px; box-sizing: inherit; border-collapse: collapse !impo=
+rtant; border-spacing: 0; width: 100%; -ms-text-size-adjust: 100%; -webkit-=
+text-size-adjust: 100%; mso-table-rspace: 0pt; mso-table-lspace: 0pt;">
+<tbody>
+<tr style=3D"box-sizing: inherit;">
+<td bgcolor=3D"#ffffff" align=3D"left" style=3D"font-size: 16px; line-heigh=
+t: 24px; border-top-width: 3px; border-top-color: #d4dadf; border-top-style=
+: solid; box-sizing: inherit; -ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%; mso-table-rspace: 0pt; mso-table-lspace: 0pt; padding: 24px;=
+" valign=3D"top">
+<h1 class=3D"title" style=3D"font-size: 2rem; font-weight: 600; box-sizing:=
+ inherit; word-break: break-word; color: #000; line-height: 1.125; margin: =
+0 0 1.5rem; padding: 0;">
+Hello!</h1>
+<p style=3D"box-sizing: inherit; margin: 0; padding: 0;">Thank you for tryi=
+ng HCP Terraform=E2=80=99s paid features. This is a friendly reminder that =
+the free trial for
+<b style=3D"box-sizing: inherit;">instruqt_gshethuj6qf4</b> will expire on =
+July 31.
+</p>
+<br style=3D"box-sizing: inherit;">
+<p style=3D"box-sizing: inherit; margin: 0; padding: 0;">If the trial expir=
+es, you will be downgraded to a free account and you will lose access to yo=
+ur premium features.
+</p>
+<br style=3D"box-sizing: inherit;">
+<p style=3D"box-sizing: inherit; margin: 0; padding: 0;">To continue using =
+HCP Terraform's premium features, upgrade to a paid tier that suits your or=
+ganization=E2=80=99s needs. Your credit card will be billed monthly, and yo=
+u can cancel at any time.
+</p>
+<br style=3D"box-sizing: inherit;">
+<p style=3D"box-sizing: inherit; margin: 0; padding: 0;">For more informati=
+on, refer to the
+<a href=3D"https://www.hashicorp.com/products/terraform/pricing" style=3D"b=
+ox-sizing: inherit; color: #000; cursor: pointer; text-decoration: underlin=
+e; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+Terraform pricing and feature matrix</a>. </p>
+<br style=3D"box-sizing: inherit;">
+<p style=3D"box-sizing: inherit; margin: 0; padding: 0;">You may also visit=
+ the <a href=3D"https://www.hashicorp.com/products/terraform" style=3D"box-=
+sizing: inherit; color: #000; cursor: pointer; text-decoration: underline; =
+-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+Terraform product page</a>. Thank you for being a HCP Terraform user. </p>
+<br style=3D"box-sizing: inherit;">
+<p style=3D"box-sizing: inherit; margin: 0; padding: 0;">- The Terraform Te=
+am at HashiCorp
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]--></td>
+</tr>
+<tr style=3D"box-sizing: inherit;">
+<td align=3D"center" bgcolor=3D"#e9ecef" style=3D"box-sizing: inherit; -ms-=
+text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-rspace: 0=
+pt; mso-table-lspace: 0pt; padding: 32px;" valign=3D"top">
+<!--[if (gte mso 9)|(IE)]>
+      <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"600">
+        <tr>
+          <td align=3D"center" valign=3D"top" width=3D"600">
+      <![endif]-->
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"max-width: 600px; box-sizing: inherit; border-collapse: collapse !impo=
+rtant; border-spacing: 0; width: 100%; -ms-text-size-adjust: 100%; -webkit-=
+text-size-adjust: 100%; mso-table-rspace: 0pt; mso-table-lspace: 0pt;">
+<tbody>
+<tr style=3D"box-sizing: inherit;">
+<td align=3D"center" bgcolor=3D"#e9ecef" style=3D"font-size: 14px; line-hei=
+ght: 20px; color: #666; box-sizing: inherit; -ms-text-size-adjust: 100%; -w=
+ebkit-text-size-adjust: 100%; mso-table-rspace: 0pt; mso-table-lspace: 0pt;=
+ padding: 12px 24px;" valign=3D"top">
+<p style=3D"box-sizing: inherit; margin: 0; padding: 0;">Need help? <a href=
+=3D"mailto:support@hashicorp.com" style=3D"box-sizing: inherit; color: #000=
+; cursor: pointer; text-decoration: underline; -ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%;">
+Contact us</a></p>
+</td>
+</tr>
+<tr style=3D"box-sizing: inherit;">
+<td align=3D"center" style=3D"box-sizing: inherit; -ms-text-size-adjust: 10=
+0%; -webkit-text-size-adjust: 100%; mso-table-rspace: 0pt; mso-table-lspace=
+: 0pt; padding: 0;" valign=3D"top">
+<img alt=3D"Hashicorp Logo" src=3D"https://cdn.terraform.io/assets/mail/has=
+hicorp-logo-ed14ef2f0c38199f603e6df9e536b53d18816a8afea80943184d5fc27e5af61=
+4.png" style=3D"box-sizing: inherit; height: auto; max-width: 100%; -ms-int=
+erpolation-mode: bicubic; line-height: 100%; text-decoration: none; outline=
+: none; border-width: 0;">
+</td>
+</tr>
+<tr style=3D"box-sizing: inherit;">
+<td align=3D"center" bgcolor=3D"#e9ecef" style=3D"font-size: 14px; line-hei=
+ght: 20px; color: #666; box-sizing: inherit; -ms-text-size-adjust: 100%; -w=
+ebkit-text-size-adjust: 100%; mso-table-rspace: 0pt; mso-table-lspace: 0pt;=
+ padding: 12px 24px;" valign=3D"top">
+<p style=3D"box-sizing: inherit; margin: 0; padding: 0;">HashiCorp 101 2nd =
+St #700, San Francisco, CA 94105</p>
+</td>
+</tr>
+</tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]--></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<div style=3D"=E2=80=99border:solid" #9C6500=3D"" 1.0pt;padding:2.0pt=3D"" =
+2.0pt=3D"" 2.0pt=3D"" 2.0pt=E2=80=99=3D"">
+<p class=3D"=E2=80=9DMsoNormal=E2=80=9D" style=3D"=E2=80=9Dline-height:" 12=
+.0pt;=3D"" background:=3D"" #FFEB9C;=E2=80=9D=3D"">
+<b></b><span style=3D"=E2=80=9Dfont-size:" 10.0pt;=3D"" color:=3D"" black;=
+=E2=80=9D=3D"">[CAUTION: This email originated from outside of the organiza=
+tion. Do not click links or open attachments unless you recognize the sende=
+r and know the content is safe]<o:p></o:p></span></p>
+</div>
+</body>
+</html>
+
+----==_mimepart_68891a314d42f_14c38857ba--

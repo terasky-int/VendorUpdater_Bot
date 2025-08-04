@@ -143,32 +143,87 @@ def analyze_text_for_relationships(text, vendor, product):
     
     return None  # No relationship found in text
 
+def enhanced_vendor_matching(graph, detected_vendor, sender_email=None):
+    """Enhanced vendor matching using domains and aliases"""
+    try:
+        # Get all vendors with their domains and aliases
+        vendors_query = """
+        MATCH (v:Vendor)
+        RETURN v.name AS name, 
+               coalesce(v.associated_domains, '') AS domains,
+               coalesce(v.aliases, '') AS aliases
+        """
+        vendors = graph.run(vendors_query).data()
+        
+        detected_lower = detected_vendor.lower()
+        
+        # Strategy 1: Exact name match
+        for vendor in vendors:
+            if vendor['name'].lower() == detected_lower:
+                return vendor['name']
+        
+        # Strategy 2: Domain match (if sender_email provided)
+        if sender_email and '@' in sender_email:
+            sender_domain = sender_email.split('@')[1].lower()
+            for vendor in vendors:
+                domains = vendor['domains'].lower().split(',') if vendor['domains'] else []
+                for domain in domains:
+                    if domain.strip() and sender_domain == domain.strip():
+                        return vendor['name']
+        
+        # Strategy 3: Alias match
+        for vendor in vendors:
+            aliases = vendor['aliases'].lower().split(',') if vendor['aliases'] else []
+            for alias in aliases:
+                if alias.strip() and detected_lower == alias.strip():
+                    return vendor['name']
+        
+        # Strategy 4: Partial name match
+        for vendor in vendors:
+            vendor_name_lower = vendor['name'].lower()
+            if (detected_lower in vendor_name_lower or 
+                vendor_name_lower in detected_lower):
+                return vendor['name']
+        
+        return None  # No match found
+        
+    except Exception as e:
+        logging.error(f"Error in enhanced vendor matching: {e}")
+        return None
+
 def add_email_to_graph(graph, email_id, metadata, email_text=None):
-    """Add email data to the graph database using existing vendors and products"""
+    """Add email data to the graph database using enhanced vendor matching"""
     try:
         # Extract metadata
-        vendor = metadata.get("vendor", "unknown")
+        detected_vendor = metadata.get("vendor", "unknown")
         product_str = metadata.get("product", "unknown")
         email_type = metadata.get("type", "unknown")
         date = metadata.get("date", "1970-01-01")
+        sender_email = metadata.get("sender", "")
         
-        # Find existing vendor node with flexible matching
-        vendor_query = "MATCH (v:Vendor) WHERE toLower(v.name) CONTAINS toLower($vendor) OR toLower($vendor) CONTAINS toLower(v.name) RETURN v LIMIT 1"
-        vendor_result = graph.run(vendor_query, vendor=vendor).data()
+        # Use enhanced vendor matching
+        matched_vendor = enhanced_vendor_matching(graph, detected_vendor, sender_email)
         
-        # If no vendor found, create email without vendor relationship
-        if not vendor_result:
-            logging.warning(f"Vendor '{vendor}' not found in Neo4j, creating email without vendor relationship")
-            vendor_node = None
+        if matched_vendor:
+            vendor_query = "MATCH (v:Vendor {name: $vendor}) RETURN v LIMIT 1"
+            vendor_result = graph.run(vendor_query, vendor=matched_vendor).data()
+            vendor_node = vendor_result[0]['v'] if vendor_result else None
+            logging.info(f"Matched '{detected_vendor}' to vendor '{matched_vendor}'")
         else:
-            vendor_node = vendor_result[0]['v']
+            # Use 'Other' vendor node as fallback
+            logging.warning(f"No match found for '{detected_vendor}', using 'Other' vendor")
+            other_vendor_query = "MATCH (v:Vendor {name: 'Other'}) RETURN v LIMIT 1"
+            other_result = graph.run(other_vendor_query).data()
+            vendor_node = other_result[0]['v'] if other_result else None
+            matched_vendor = "Other"
         
         # Create enriched email node with string conversion
         email_node = Node("VendorEmail", 
                          id=email_id,
                          title=str(metadata.get("subject", "")),
-                         sender=str(metadata.get("sender", "")),
-                         vendor=str(vendor),
+                         sender=str(sender_email),
+                         vendor=str(detected_vendor),  # Keep original detected vendor
+                         matched_vendor=str(matched_vendor),  # Store matched vendor
                          products=", ".join(product_str) if isinstance(product_str, list) else str(product_str),
                          type=", ".join(email_type) if isinstance(email_type, list) else str(email_type),
                          date=str(date),
@@ -181,11 +236,11 @@ def add_email_to_graph(graph, email_id, metadata, email_text=None):
                          classificationConfidence=float(metadata.get("confidence", 0.5)))
         graph.merge(email_node, "VendorEmail", "id")
         
-        # Create SENT_BY relationship to existing vendor if found
+        # Create SENT_BY relationship to matched vendor if found
         if vendor_node:
             sent_by_rel = Relationship(email_node, "SENT_BY", vendor_node)
             graph.merge(sent_by_rel)
-            logging.info(f"Created SENT_BY relationship to vendor: {vendor}")
+            logging.info(f"Created SENT_BY relationship to vendor: {matched_vendor}")
         else:
             logging.info(f"No vendor relationship created for email {email_id}")
         
